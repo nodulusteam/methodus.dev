@@ -29,11 +29,12 @@
     "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
-    "mocha": "^2.5.3",
-    "chai": "^3.5.0",
-    "@types/node": "^7.0.31",
     "@types/chai": "^4.0.1",
-    "@types/mocha": "^2.2.41"
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^7.0.31",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "typescript": "^2.4.1"
   },
   "optionalDependencies": {
     "body-parser": "^1.17.2",
