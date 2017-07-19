@@ -1,4 +1,4 @@
-# @nodulus/rpc
+# Methodulus
 
 
 ### motivation
