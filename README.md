@@ -1,5 +1,5 @@
 # Methodulus
-
+![logo](https://travis-ci.org/nodulusteam/methodulus.svg?branch=master "travis.ci " )
 
 ### motivation
 i wanted to create a dynamic procedure flow, with each segment with it's own setup.
