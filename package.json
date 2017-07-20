@@ -11,7 +11,7 @@
     "prepare": "npm test",
     "prepublishOnly": "npm version patch",
     "pretest": "tsc",
-    "test": "mocha tests/*.spec.js --recursive"
+    "test": "mocha tests/*.spec.js --recursive --reporter list"
   },
   "author": "Roi ben haim ",
   "license": "ISC",

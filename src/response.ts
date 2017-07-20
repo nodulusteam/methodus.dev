@@ -1,17 +1,17 @@
 
 
-export class MethoError extends Error {
-    message: string;
+export class MethodError extends Error {
+    error: string;
     statusCode: number;
     constructor(message, statusCode) {
         super(message);
-        this.message = message;
+        this.error = message;
         this.statusCode = statusCode;
     }
 
 }
 
-export class MethoResult {
+export class MethodResult {
     result: any;
     constructor(result) {
         this.result = result;

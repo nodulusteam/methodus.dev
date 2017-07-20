@@ -4,6 +4,9 @@ const excludedProps = ['constructor'];
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
 import { MethodulusConfig } from './config';
+import { MethodResult, MethodError } from './response';
+
+
 
 let metadataKey = 'methodulus';
 export function MethodConfig(name: string, endpoint?: string) {
@@ -23,7 +26,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
         //  let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || {};
         // existingMetadata[propertyKey] = { verb, route, methodType } as MethodDescriptor;
         //  debug('define metadata', route);
-        target.methodulus = target.methodulus || {_descriptors: {}}
+        target.methodulus = target.methodulus || { _descriptors: {} }
         let metaObject = { verb, route, methodType }
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
         target.methodulus._descriptors[propertyKey] = metaObject as MethodDescriptor
@@ -47,7 +50,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
 
 
-            let result = null;
+            let result: MethodResult | MethodError | any = null;
             let proto = (this as any).prototype;
             if (!proto)
                 proto = (this as any).__proto__;
@@ -78,7 +81,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             // run and store the result
             switch (methodType) {
                 case MethodType.Local:
-                    result = await  originalMethod(...functionArgs);
+                    result = await originalMethod(...functionArgs);
                     break;
                 case MethodType.Http:
                     result = await http(functionArgs, methodulus, paramsMap);
@@ -94,7 +97,12 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
             if (sendFlag) {
                 let res = args[1];
-                res.send(result);
+                if (result && result.statusCode)
+                    res.status(result.statusCode);
+                else
+                    res.status(200);
+
+                res.send(result.result || result.error);
             }
             else {
                 // return the result of the original method
@@ -111,20 +119,24 @@ async function socketIO(functionArgs, methodulus, paramsMap) {
 
     var dataObject = {};
     functionArgs.forEach((element, index) => {
-        dataObject[paramsMap.filter((item)=>{
+        dataObject[paramsMap.filter((item) => {
             return item.index === index;
         })[0].name] = element;
     });
 
     let result = await global.methodulus.server._send('socketio', dataObject, methodulus);
-    return result;
+    if(result.error && result.statusCode)
+    {
+        throw (result);
+    }
+    return result.result;
 
 }
 
 
 
 
-async function http(functionArgs: any, methodulus: any, paramsMap: any[]) {   
+async function http(functionArgs: any, methodulus: any, paramsMap: any[]) {
     let result = await global.methodulus.server._send('rest', functionArgs, methodulus, paramsMap);
     return result;
 }

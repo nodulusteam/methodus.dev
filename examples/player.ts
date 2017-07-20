@@ -1,4 +1,4 @@
-import { Body, Method, MethodConfig, MethodType, Param, Query, Verbs, MethoError, MethoResult } from '../index';
+import { Body, Method, MethodConfig, MethodType, Param, Query, Verbs, MethodError, MethodResult } from '../index';
 import { Database } from '../tests/database/';
 const DB = new Database();
 
@@ -28,7 +28,7 @@ export class Player {
     public async create() {
         let p = new PlayerModel('1', 'player 1');
         await DB.Player.insert(p);
-        return new MethoResult(p)
+        return new MethodResult(p)
     }
 
     @Method(Verbs.Get, '/api/player/:player_id')

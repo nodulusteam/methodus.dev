@@ -55,8 +55,7 @@ export function Rest(port) {
                 return JSON.parse(result);
 
         } catch (error) {
-            console.log(error);
-            return error;
+            return error.error;
         }
 
 
