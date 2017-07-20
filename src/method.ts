@@ -6,7 +6,7 @@ import "reflect-metadata";
 import { MethodulusConfig } from './config';
 
 let metadataKey = 'methodulus';
-export function MethodConfig(name: string, endpoint: string) {
+export function MethodConfig(name: string, endpoint?: string) {
     debug('MethodConfig', name, endpoint);
     return function (target: any) {
         let existingMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
@@ -78,7 +78,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             // run and store the result
             switch (methodType) {
                 case MethodType.Local:
-                    result = originalMethod(...functionArgs);
+                    result = await  originalMethod(...functionArgs);
                     break;
                 case MethodType.Http:
                     result = await http(functionArgs, methodulus, paramsMap);

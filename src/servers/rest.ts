@@ -51,8 +51,9 @@ export function Rest(port) {
         debug(requestOptions);
         try {
             let result = await request(requestOptions);
-            return result;
-            
+            if (typeof result === 'string' && (result[0] === '{' || result[0] === '['))
+                return JSON.parse(result);
+
         } catch (error) {
             console.log(error);
             return error;

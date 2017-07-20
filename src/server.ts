@@ -22,8 +22,8 @@ export class Server {
                 verticalLayout: 'default'
             }, function (err, data) {
                 if (err) {
-                    console.log('Something went wrong...');
-                    console.dir(err);
+
+
                     return;
                 }
                 console.log(colors.blue(data));
@@ -37,7 +37,8 @@ export class Server {
         if (process.env.servers)
             MethodulusConfig.servers = process.env.servers.split(',');
 
-        console.log('process.env.servers', MethodulusConfig.servers);
+
+
         //debug('MethodulusConfig', JSON.parse(MethodulusConfig.servers.toString()));
         MethodulusConfig.servers.forEach((server) => {
             switch (server) {
@@ -66,6 +67,14 @@ export class Server {
             this._app[server].useClass(classType);
         });
 
+    }
+    public kill() {
+        ['http', 'socketio'].forEach((server) => {
+            if (this._app[server]) {
+                this._app[server].close();
+                delete this._app[server];
+            }
+        });
     }
 
     async _send(channel, params, message, parametersMap) {

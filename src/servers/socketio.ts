@@ -29,15 +29,22 @@ export function SocketIO(port, httpServer) {
     }
 
     io._send = async (functionArgs, methodulus, paramsMap) => {
-        debug('sending data in socket', functionArgs, methodulus, paramsMap);
-        let myUri = methodulus.endpoint;
-        var socket = require('socket.io-client')(myUri);
-        socket.on('connect', function () {
-            let messageName = methodulus.verb + '_' + methodulus.route;
-            socket.emit(messageName, functionArgs, (data) => {
-                debug('recieved result', data);
+        return new Promise(function (resolve, reject) {
+            debug('sending data in socket', functionArgs, methodulus, paramsMap);
+            let myUri = methodulus.endpoint;
+            var socket = require('socket.io-client')(myUri);
+            socket.on('connect', function () {
+                let messageName = methodulus.verb + '_' + methodulus.route;
+                socket.emit(messageName, functionArgs, (data) => {
+                    resolve(data);
+                    debug('recieved result', data);
+                });
             });
+
+
+
         });
+
     }
     return io;
 

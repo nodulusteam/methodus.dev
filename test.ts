@@ -37,7 +37,7 @@ async function spawn2() {
     let server = new Server(8080);
     server.useClass(TestClass);
 
-    const child1 = spawn(process.argv[0], ['./tests/servers/dynamic.js'], { detached: true, cwd: __dirname, env: { PORT: 8091, METHODTYPE: MethodType.Local } });
+    const child1 = spawn(process.argv[0], ['./tests/servers/dynamic.js'], { detached: true, cwd: __dirname, env: { servers: ['rest'], PORT: 8090, METHODTYPE: MethodType.Local } });
 
     setTimeout(async () => {
         let myClass = new TestClass();
@@ -100,5 +100,5 @@ async function spawn3() {
 }
 
 
-spawn3();
+spawn2();
 //testRest();
