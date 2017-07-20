@@ -1,8 +1,9 @@
 import { TestClass } from './tests/classes/test-class';
-import { Server, MethodType, MethodulusConfig } from './index';
+import { Proxify, Server, MethodType, MethodulusConfig } from './index';
 const { spawn } = require('child_process');
 
 
+ 
 
 async function testRest() {
 
@@ -100,5 +101,5 @@ async function spawn3() {
 }
 
 
-spawn2();
+//spawn2();
 //testRest();
