@@ -35,7 +35,7 @@ export class Server {
                 console.log(colors.blue(data));
             });
         } else {
-            console.log(colors.green(`*****     METHODOLOGY     *****`))
+            //console.log(colors.green(`*****     METHODOLOGY     *****`))
         }
 
         global.methodulus = { server: this };
@@ -43,7 +43,7 @@ export class Server {
         if (process.env.servers)
             MethodulusConfig.servers = process.env.servers.split(',');
 
-
+        let silent = process.env.silent;
 
         //debug('MethodulusConfig', JSON.parse(MethodulusConfig.servers.toString()));
         for (let i = 0; i < MethodulusConfig.servers.length; i++) {
@@ -53,8 +53,10 @@ export class Server {
             switch (server) {
                 case 'rest':
                     {
-                        console.log(colors.green(`Starting REST server on port`, port))
-                        this._app[server] =  Rest(port);
+
+                        if (!silent)
+                            console.log(colors.green(`Starting REST server on port`, port))
+                        this._app[server] = Rest(port);
                         var httpServer = http.createServer(this._app[server]);
                         this._app['http'] = httpServer;
                         //listen on provided ports
@@ -63,13 +65,15 @@ export class Server {
                     }
                 case 'socketio':
                     {
-                        console.log(colors.green(`Starting SOCKETIO server on port`, port))
-                        this._app[server] =  SocketIO(port, this._app['http']);
+                        if (!silent)
+                            console.log(colors.green(`Starting SOCKETIO server on port`, port))
+                        this._app[server] = SocketIO(port, this._app['http']);
                         break;
                     }
                 case 'amqp':
                     {
-                        console.log(colors.green(`Starting MQ server on port`, port))
+                        if (!silent)
+                            console.log(colors.green(`Starting MQ server on port`, port))
                         try {
 
                             this._app[server] = MQ(port, this._app['http']);

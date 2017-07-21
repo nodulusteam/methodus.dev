@@ -26,6 +26,7 @@ describe('initiate modes', function () {
 
         //run the client
         let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http);
+        this.timeout(2000);
         let result = await CallHelper();
 
 
