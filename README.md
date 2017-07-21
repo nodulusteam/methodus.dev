@@ -35,6 +35,10 @@ server.useClass(Player);
 
 #### the Player class
 ```
+import { Body, Method, MethodConfig, MethodType, Param, Query, Verbs, MethodError, MethodResult } from '../../index';
+import { PlayerModel } from '../models/player';
+
+
 @MethodConfig('Player')
 export class Player {
     @Method(Verbs.Post, '/api/player')
