@@ -37,6 +37,9 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
 
         let paramsMap: any[] = Reflect.getOwnMetadata('params', target, propertyKey) || [];
+        paramsMap.sort((a, b) => {
+            return a.index - b.index;
+        })
         debug('method params', propertyKey, paramsMap);
 
         // save a reference to the original method
