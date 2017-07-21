@@ -20,6 +20,9 @@
 `npm i -S methodulus`
 
 
+<img src="./examples/resources/slide1.png">
+
+
 #### Hello methodulus
 ```
 import { Player } from './player';
