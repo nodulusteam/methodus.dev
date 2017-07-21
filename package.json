@@ -3,6 +3,13 @@
   "version": "1.0.4",
   "description": "",
   "main": "index.js",
+  "homepage": "https://nodulusteam.github.io/methodulus/",
+  "keywords": [
+    "nodulus",
+    "rpc",
+    "microservice",
+    "microservices framework"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/roibh/methodulus.git"
@@ -13,8 +20,8 @@
     "pretest": "tsc",
     "test": "mocha tests/*.spec.js --recursive --reporter list"
   },
-  "author": "Roi ben haim ",
-  "license": "ISC",
+  "author": "nodulusteam <nodulusteam@gmail.com> (https://nodulusteam.github.io/methodulus/)",
+  "license": "(MIT OR Apache-2.0)",
   "dependencies": {
     "amqplib": "^0.5.1",
     "child-process-debug": "0.0.7",
