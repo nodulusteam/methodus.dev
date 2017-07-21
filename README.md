@@ -1,7 +1,7 @@
 # Methodulus
 
 
-<img src="./examples/resources/methodulus.png" alt="Drawing" style="max-width: 200px;"/>
+<img src="./examples/resources/methodulus.png" alt="Drawing" style="max-width: 200px!important;"/>
 
 
 ![logo](https://travis-ci.org/nodulusteam/methodulus.svg?branch=master "travis.ci " )
