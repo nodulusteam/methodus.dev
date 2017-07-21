@@ -29,6 +29,7 @@
     "debug": "^2.6.8",
     "errorhandler": "^1.5.0",
     "figlet": "^1.2.0",
+    "js-yaml": "^3.9.0",
     "method-override": "^2.3.9",
     "morgan": "^1.8.2",
     "nedb": "^1.8.0",

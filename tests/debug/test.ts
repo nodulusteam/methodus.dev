@@ -4,8 +4,8 @@ import {} from './servers'
 
 async function test() {
 
-    MethodulusConfig.config['TestClass'] = MethodType.Socket;
-    MethodulusConfig.servers = ["socketio"];
+   // MethodulusConfig.config['TestClass'] = MethodType.Socket;
+   // MethodulusConfig.servers = ["socketio"];
     let server = new Server(process.env.PORT);
     server.app.useClass(TestClass);
 

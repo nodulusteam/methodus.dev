@@ -1,4 +1,4 @@
-import { Body, Method, MethodConfig, MethodType, Param, Query, Verbs, MethodError, MethodResult } from '../../index';
+import { Body, Method, MethodConfig, Param, Query, Verbs, MethodError, MethodResult } from '../../index';
 import { PlayerModel } from '../models/player';
 
 @MethodConfig('Player')

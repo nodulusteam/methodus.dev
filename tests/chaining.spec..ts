@@ -2,7 +2,7 @@
 var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
 import { TestClass } from './classes/test-class';
-import { Server, MethodType, MethodulusConfig } from '../index';
+import { Server, MethodulusConfig,MethodType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper } from './helpers'
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');

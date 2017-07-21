@@ -2,7 +2,7 @@
 var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
 import { TestClass } from './classes/test-class';
-import { Server, MethodType, MethodulusConfig } from '../index';
+import { Server, MethodulusConfig, MethodType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper } from './helpers'
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
@@ -12,7 +12,7 @@ process.env.silent = true;
 
 describe('methodulus config defaults to "rest"', function () {
     it('loading configuration for methodulus', function () {
-        var config = require('../src/config').MethodulusConfig;
+        let config = new MethodulusConfig(['rest']);
         expect(config.servers[0]).to.equal('rest');
     });
 });
@@ -20,7 +20,7 @@ describe('methodulus config defaults to "rest"', function () {
 
 
 describe('initiate modes', function () {
-    xit('starting rest server', async (done) => {
+    it('starting rest server', async (done) => {
         //run the servers
         let server = ServerHelper(8090, 'rest', MethodType.Local);
 

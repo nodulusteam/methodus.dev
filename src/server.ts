@@ -1,5 +1,5 @@
 import { Rest, SocketIO, MQ, MQServer } from './servers';
-import { MethodulusConfig } from './config'
+import { MethodulusConfig, MethodulusConfigFromFile } from './config'
 const debug = require('debug')('methodulus');
 import http = require('http');
 import colors = require('colors');
@@ -14,15 +14,24 @@ export class Server {
     public app: any;//IApp;
     private _app: any = {};//IApp;
     private port: number = 0;
+    public config: MethodulusConfig;
     constructor(port?: number) {
         this.port = port || 0;
-        this.start(port);
+        //this.start(port);
     }
-    async start(port?: number) {
-        this.port = port || 0;
+
+    async startFromConfig() {
+        //MethodulusConfig = MethodulusConfigFromFile()
+    }
+    configure(config: MethodulusConfig) {
+        this.config = config
+        return this;
+    }
+    start(port?: number) {
+        this.port = this.port || port || 0;
         debug('activating server on ', port);
-        if (!process.env.silent) {
-            figlet.text('Methodulus!', {
+        if (!eval(process.env.silent)) {
+            figlet.text('Methodulus', {
                 font: 'Delta Corps Priest 1',
                 horizontalLayout: 'default',
                 verticalLayout: 'default'
@@ -41,33 +50,33 @@ export class Server {
         global.methodulus = { server: this };
 
         if (process.env.servers)
-            MethodulusConfig.servers = process.env.servers.split(',');
+            this.config.servers = process.env.servers.split(',');
 
-        let silent = process.env.silent;
+        let silent = eval(process.env.silent);
 
         //debug('MethodulusConfig', JSON.parse(MethodulusConfig.servers.toString()));
-        for (let i = 0; i < MethodulusConfig.servers.length; i++) {
+        for (let i = 0; i < this.config.servers.length; i++) {
 
-            let server = MethodulusConfig.servers[i];
+            let server = this.config.servers[i];
             // MethodulusConfig.servers.forEach(async (server) => {
             switch (server) {
                 case 'rest':
                     {
 
                         if (!silent)
-                            console.log(colors.green(`Starting REST server on port`, port))
-                        this._app[server] = Rest(port);
+                            console.log(colors.green(`Starting REST server on port`, this.port))
+                        this._app[server] = Rest(this.port);
                         var httpServer = http.createServer(this._app[server]);
                         this._app['http'] = httpServer;
                         //listen on provided ports
-                        httpServer.listen(port);
+                        httpServer.listen(this.port);
                         break;
                     }
                 case 'socketio':
                     {
                         if (!silent)
-                            console.log(colors.green(`Starting SOCKETIO server on port`, port))
-                        this._app[server] = SocketIO(port, this._app['http']);
+                            console.log(colors.green(`Starting SOCKETIO server on port`, this.port))
+                        this._app[server] = SocketIO(this.port, this._app['http']);
                         break;
                     }
                 case 'amqp':
@@ -76,7 +85,7 @@ export class Server {
                             console.log(colors.green(`Starting MQ server on port`, port))
                         try {
 
-                            this._app[server] = MQ(port, this._app['http']);
+                            this._app[server] = MQ(this.port, this._app['http']);
                             this._app[server].connection = new MQServer();
                             //this._app[server] = new MQServer();
                         } catch (error) {
@@ -87,10 +96,18 @@ export class Server {
                     }
             }
         }
+
+        let classes = this.config.classes.entries()
+        for (var i = 0; i < this.config.classes.size; i++) {
+            let element = classes.next();
+            this.useClass(element.value[1].classType);
+        }
+
+        return this;
     }
 
     public useClass(classType) {
-        MethodulusConfig.servers.forEach((server) => {
+        this.config.servers.forEach((server) => {
             this._app[server].useClass(classType);
         });
 

@@ -6,7 +6,12 @@ import "reflect-metadata";
 import { MethodulusConfig } from './config';
 import { MethodResult, MethodError } from './response';
 
-
+export enum MethodType {
+    Local = 'Local',
+    Http = 'Http',
+    MQ = 'MQ',
+    Socket = 'Socket',
+}
 
 let metadataKey = 'methodulus';
 export function MethodConfig(name: string, endpoint?: string) {
@@ -46,6 +51,8 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
         let originalMethod = descriptor.value;
         //methodType = methodType || MethodType.Local;
         descriptor.value = async function (...args: any[]) {
+            let config = global.methodulus.server.config;
+
             let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
             debug('existingClassMetadata', existingClassMetadata);
 
@@ -74,8 +81,10 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 functionArgs = args;
             }
 
-            debug('MethodulusConfig', MethodulusConfig.config[existingClassMetadata.name]);
-            methodType = MethodulusConfig.config[existingClassMetadata.name] || MethodType.Local;
+            debug('MethodulusConfig', config[existingClassMetadata.name]);
+            let methodinformation = config.classes.get(existingClassMetadata.name);
+            if(methodinformation)
+                methodType = methodinformation.methodType || MethodType.Local;
 
             // run and store the result
             switch (methodType) {
@@ -155,12 +164,12 @@ export class Verbs {
 
 }
 
-export class MethodType {
-    public static Local: string = 'Local';
-    public static Http: string = 'Http';
-    public static MQ: string = 'MQ';
-    public static Socket: string = 'Socket';
-}
+// export class MethodType {
+//     public static Local: string = 'Local';
+//     public static Http: string = 'Http';
+//     public static MQ: string = 'MQ';
+//     public static Socket: string = 'Socket';
+// }
 
 export interface MethodDescriptor {
     verb: Verbs;

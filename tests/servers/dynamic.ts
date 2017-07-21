@@ -1,10 +1,9 @@
 import { TestClass } from '../classes/test-class';
 import { Server, MethodType, MethodulusConfig } from '../../index';
 
-process.env.silent = true;
+process.env.silent = false;
 
+let config = new MethodulusConfig(process.env.servers);
+config.use(TestClass, process.env.METHODTYPE);
+const server = new Server(process.env.PORT).configure(config).start();
 
-MethodulusConfig.config['TestClass'] = process.env.METHODTYPE;
-MethodulusConfig.servers = process.env.servers;
-const server = new Server(process.env.PORT);
-server.useClass(TestClass);
