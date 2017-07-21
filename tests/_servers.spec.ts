@@ -20,7 +20,7 @@ describe('methodulus config defaults to "rest"', function () {
 
 
 describe('initiate modes', function () {
-    it('starting rest server', async (done) => {
+    xit('starting rest server', async (done) => {
         //run the servers
         let server = ServerHelper(8090, 'rest', MethodType.Local);
 

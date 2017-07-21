@@ -70,7 +70,7 @@ async function spawn2() {
     });
 
     child1.on('close', (code) => {
-        console.log(`child process exited with code ${code}`);
+        //console.log(`child process exited with code ${code}`);
     });
 
 
@@ -107,7 +107,7 @@ async function spawn3() {
     });
 
     child1.on('close', (code) => {
-        console.log(`child process exited with code ${code}`);
+        //console.log(`child process exited with code ${code}`);
     });
 
 
