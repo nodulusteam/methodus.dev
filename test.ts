@@ -3,7 +3,7 @@ import { Proxify, Server, MethodType, MethodulusConfig } from './index';
 const { spawn } = require('child_process');
 
 
- 
+
 
 async function testRest() {
 
@@ -23,13 +23,26 @@ async function testSocket() {
     MethodulusConfig.config['TestClass'] = MethodType.Socket;
     MethodulusConfig.servers = ["socketio"];
     let server = new Server(process.env.PORT);
-    server.app.useClass(TestClass);
+    server.useClass(TestClass);
 
     let myClass = new TestClass();
     myClass.action1(1654564654, "roicccccc");
 
 }
 
+
+async function testMQ() {
+    MethodulusConfig.config['TestClass'] = MethodType.MQ;
+    MethodulusConfig.servers = ["rest", "amqp"];
+    let server = await new Server(process.env.PORT);
+    server.useClass(TestClass);
+
+    let myClass = new TestClass();
+    let result = await myClass.action1(1654564654, "roicccccc");
+    console.log(result);
+}
+
+testMQ();
 
 async function spawn2() {
 
@@ -67,14 +80,14 @@ async function spawn2() {
 
 async function spawn3() {
 
-     MethodulusConfig.config['TestClass'] = MethodType.Socket;
-     MethodulusConfig.servers = ["socketio"];
-     let server = new Server(8080);
+    MethodulusConfig.config['TestClass'] = MethodType.Socket;
+    MethodulusConfig.servers = ["socketio"];
+    let server = new Server(8080);
     // server.useClass(TestClass);
 
     const child1 = spawn(process.argv[0], ['./tests/servers/dynamic.js'], {
         detached: true, cwd: __dirname,
-        env: { servers: ['rest','socketio'], PORT: 8091, METHODTYPE: MethodType.Local }
+        env: { servers: ['rest', 'socketio'], PORT: 8091, METHODTYPE: MethodType.Local }
     });
 
     setTimeout(async () => {

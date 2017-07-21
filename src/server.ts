@@ -1,4 +1,4 @@
-import { Rest, SocketIO } from './servers';
+import { Rest, SocketIO, MQ, MQServer } from './servers';
 import { MethodulusConfig } from './config'
 const debug = require('debug')('methodulus');
 import http = require('http');
@@ -13,7 +13,13 @@ const figlet = require('figlet');
 export class Server {
     public app: any;//IApp;
     private _app: any = {};//IApp;
-    constructor(port) {
+    private port: number = 0;
+    constructor(port?: number) {
+        this.port = port || 0;
+        this.start(port);
+    }
+    async start(port?: number) {
+        this.port = port || 0;
         debug('activating server on ', port);
         if (!process.env.silent) {
             figlet.text('Methodulus!', {
@@ -40,12 +46,15 @@ export class Server {
 
 
         //debug('MethodulusConfig', JSON.parse(MethodulusConfig.servers.toString()));
-        MethodulusConfig.servers.forEach((server) => {
+        for (let i = 0; i < MethodulusConfig.servers.length; i++) {
+
+            let server = MethodulusConfig.servers[i];
+            // MethodulusConfig.servers.forEach(async (server) => {
             switch (server) {
                 case 'rest':
                     {
                         console.log(colors.green(`Starting REST server on port`, port))
-                        this._app[server] = Rest(port);
+                        this._app[server] =  Rest(port);
                         var httpServer = http.createServer(this._app[server]);
                         this._app['http'] = httpServer;
                         //listen on provided ports
@@ -55,11 +64,25 @@ export class Server {
                 case 'socketio':
                     {
                         console.log(colors.green(`Starting SOCKETIO server on port`, port))
-                        this._app[server] = SocketIO(port, this._app['http']);
+                        this._app[server] =  SocketIO(port, this._app['http']);
+                        break;
+                    }
+                case 'amqp':
+                    {
+                        console.log(colors.green(`Starting MQ server on port`, port))
+                        try {
+
+                            this._app[server] = MQ(port, this._app['http']);
+                            this._app[server].connection = new MQServer();
+                            //this._app[server] = new MQServer();
+                        } catch (error) {
+                            console.log(error);
+                        }
+
                         break;
                     }
             }
-        })
+        }
     }
 
     public useClass(classType) {

@@ -16,6 +16,7 @@
   "author": "Roi ben haim ",
   "license": "ISC",
   "dependencies": {
+    "amqplib": "^0.5.1",
     "child-process-debug": "0.0.7",
     "colors": "^1.1.2",
     "debug": "^2.6.8",

@@ -15,6 +15,10 @@ export function MethodConfig(name: string, endpoint?: string) {
         let existingMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
         existingMetadata.endpoint = endpoint
         existingMetadata.name = name
+        let proto = target.prototype || target.__proto__;
+        proto.methodulus.name = name;
+        proto.methodulus.endpoint = endpoint;
+
         Reflect.defineMetadata(metadataKey, existingMetadata, target.prototype);
         debug('MethodConfig function', existingMetadata);
     }
@@ -27,7 +31,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
         // existingMetadata[propertyKey] = { verb, route, methodType } as MethodDescriptor;
         //  debug('define metadata', route);
         target.methodulus = target.methodulus || { _descriptors: {} }
-        let metaObject = { verb, route, methodType }
+        let metaObject = { verb, route, methodType, propertyKey }
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
         target.methodulus._descriptors[propertyKey] = metaObject as MethodDescriptor
 
@@ -38,17 +42,9 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
         // save a reference to the original method
         let originalMethod = descriptor.value;
         //methodType = methodType || MethodType.Local;
-
-
-
-
         descriptor.value = async function (...args: any[]) {
-
-
             let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
             debug('existingClassMetadata', existingClassMetadata);
-
-
 
             let result: MethodResult | MethodError | any = null;
             let proto = (this as any).prototype;
@@ -69,7 +65,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 paramsMap.forEach((item: any) => {
                     item.value = args[0][item.from][item.name] || args[0][item.from];
                     functionArgs.push(item.value);
-                })
+                });
 
             } else {
                 functionArgs = args;
@@ -89,8 +85,8 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 case MethodType.Socket:
                     result = await socketIO(functionArgs, methodulus, paramsMap);
                     break;
-                case MethodType.Q:
-                    result = await q(...args);
+                case MethodType.MQ:
+                    result = await mq(functionArgs, methodulus, paramsMap);
                     break;
             }
 
@@ -99,8 +95,8 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 let res = args[1];
                 if (result && result.statusCode)
                     res.status(result.statusCode);
-                else
-                    res.status(200);
+                // else
+                //     res.status(200);
 
                 res.send(result.result || result.error);
             }
@@ -125,8 +121,7 @@ async function socketIO(functionArgs, methodulus, paramsMap) {
     });
 
     let result = await global.methodulus.server._send('socketio', dataObject, methodulus);
-    if(result.error && result.statusCode)
-    {
+    if (result.error && result.statusCode) {
         throw (result);
     }
     return result.result;
@@ -141,9 +136,8 @@ async function http(functionArgs: any, methodulus: any, paramsMap: any[]) {
     return result;
 }
 
-async function q(...args: any[]) {
-    debug('q', ...args);
-    let result = null;
+async function mq(functionArgs, methodulus, paramsMap) {
+    let result = await global.methodulus.server._send('amqp', functionArgs, methodulus, paramsMap);
     return result;
 }
 
@@ -161,7 +155,7 @@ export class Verbs {
 export class MethodType {
     public static Local: string = 'Local';
     public static Http: string = 'Http';
-    public static Q: string = 'Q';
+    public static MQ: string = 'MQ';
     public static Socket: string = 'Socket';
 }
 
@@ -169,4 +163,5 @@ export interface MethodDescriptor {
     verb: Verbs;
     route: string;
     methodType: MethodType;
+    propertyKey: string;
 }

@@ -31,7 +31,7 @@ describe('initiate modes', function () {
 
         server.kill();
         client.kill();
-      
+
         expect(result.add).to.equal('added');
         this.timeout(2000);
         done();
@@ -46,10 +46,10 @@ describe('initiate modes', function () {
         let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket);
 
         let result = await CallHelper();
-       
+
         server.kill();
         client.kill();
-      
+
         expect(result.add).to.equal('added');
         this.timeout(2000);
         done();
@@ -71,4 +71,3 @@ describe('initiate modes', function () {
 
 
 });
- 
