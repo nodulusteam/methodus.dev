@@ -9,13 +9,19 @@ export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig 
     /**
      *
      */
-    constructor(classType: any, methodType: MethodType) {
+    constructor(classType: any, methodType: MethodType, resolver: Function | string) {
         this.classType = classType;
         this.methodType = methodType;
+        this.resolver = () => {
+            if (typeof resolver === 'string') {
+                return Promise.resolve(resolver);
+            }
+        }
 
     }
     public methodType: string = MethodType.Local;
     public classType: any;
+    public resolver: Function | string
 }
 
 export class MethodulusConfig implements Methodulus.IMethodulusConfig {
@@ -27,8 +33,8 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
     public servers: string[] = ['rest'];
     public port: number;
-    public use(classType: any, methodType: MethodType) {
-        this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType));
+    public use(classType: any, methodType: MethodType, resolver: Function | string) {
+        this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
     }
 }
 

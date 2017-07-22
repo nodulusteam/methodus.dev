@@ -29,9 +29,10 @@ export function SocketIO(port, httpServer) {
     }
 
     io._send = async (functionArgs, methodulus, paramsMap) => {
-        return new Promise(function (resolve, reject) {
+        return new Promise(async (resolve, reject) => {
             debug('sending data in socket', functionArgs, methodulus, paramsMap);
-            let myUri = methodulus.endpoint;
+
+            let myUri = await methodulus.resolver();
             var socket = require('socket.io-client')(myUri);
             socket.on('connect', function () {
                 let messageName = methodulus.verb + '_' + methodulus.route;

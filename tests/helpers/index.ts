@@ -26,9 +26,9 @@ export function ServerHelper(port, servers, methodType: MethodType) {
     return child1;
 }
 
-export function ClientHelper(classType, port, servers, methodType: MethodType) {
+export function ClientHelper(classType, port, servers, methodType: MethodType, resolver) {
     let config = new MethodulusConfig(servers);
-    config.use(classType,methodType);
+    config.use(classType,methodType,resolver);
 
     //MethodulusConfig.config[classType.name] = methodType;
     //MethodulusConfig.servers = servers;

@@ -9,7 +9,7 @@ const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 process.env.silent = true;
-
+const staticResolve = 'http://localhost:8090';
 
 
 
@@ -20,7 +20,7 @@ xdescribe('initiate 3 server modes', function () {
         let server2 = ServerHelper(8091, 'rest', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http);
+        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http,staticResolve);
         let result = await CallHelper();
 
 
@@ -38,7 +38,7 @@ xdescribe('initiate 3 server modes', function () {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket);
+        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket,staticResolve);
 
         let result = await CallHelper();
 
@@ -54,7 +54,7 @@ xdescribe('initiate 3 server modes', function () {
     it('starting [rest,socketio] server', async (done) => {
         let server = ServerHelper(8090, 'rest,socketio', MethodType.Local);
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest', 'socketio'], MethodType.Socket);
+        let client = ClientHelper(TestClass, 8080, ['rest', 'socketio'], MethodType.Socket,staticResolve);
         let result = await CallHelper();
         server.kill();
         client.kill();

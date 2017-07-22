@@ -31,14 +31,13 @@
  
 
 ```
-import { Player } from './player';
-import { Server, MethodType, MethodulusConfig } from 'methodulus';
+import { Player } from './controllers/player';
+import { Server, MethodulusConfig, MethodulusClassConfig, MethodType } from 'methodulus';
 
+let config = new MethodulusConfig(['rest']);
+config.use(Player, MethodType.Local, 'http://localhost:8090')
+const server = new Server(process.env.PORT || 8020).configure(config).start();
 
-MethodulusConfig.config['Player'] = MethodType.Local;
-MethodulusConfig.servers = ['rest'];
-const server = new Server(process.env.PORT || 8020);
-server.useClass(Player);
 
 ```
 

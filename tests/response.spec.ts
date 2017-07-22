@@ -4,7 +4,7 @@ var expect = chai.expect; // we are using the "expect" style of Chai
 import { TestClass } from './classes/test-class';
 import { Server, MethodType, MethodulusConfig } from '../index';
 import { ServerHelper, ClientHelper } from './helpers/'
-
+const staticResolve = 'http://localhost:8090';
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
@@ -23,7 +23,7 @@ describe('test method messages MetodError, MethodResult', function () {
         let server = ServerHelper(8090, 'rest', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http);
+        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http,staticResolve);
         let myClass = new TestClass();
         try {
             let result = await myClass.error();
@@ -49,7 +49,7 @@ describe('test method messages MetodError, MethodResult', function () {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket);
+        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket,staticResolve);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');
@@ -76,7 +76,7 @@ describe('test method messages MetodError, MethodResult', function () {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket);
+        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket,staticResolve);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');

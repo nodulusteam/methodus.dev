@@ -29,7 +29,8 @@ export function Rest(port) {
     }
     app._send = async (params, methodulus, paramsMap) => {
         debug('in _send:', params, methodulus, paramsMap);
-        let myUri = methodulus.endpoint + methodulus.route;
+        let baseUrl = await methodulus.resolver();
+        let myUri = baseUrl + methodulus.route;
         let body = null;
         paramsMap.forEach((item) => {
             item.value = params[item.index];

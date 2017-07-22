@@ -83,22 +83,23 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
             debug('MethodulusConfig', config[existingClassMetadata.name]);
             let methodinformation = config.classes.get(existingClassMetadata.name);
-            if(methodinformation)
+            if (methodinformation)
                 methodType = methodinformation.methodType || MethodType.Local;
 
+            let completeConfiguration = Object.assign({}, methodulus, methodinformation);
             // run and store the result
             switch (methodType) {
                 case MethodType.Local:
                     result = await originalMethod(...functionArgs);
                     break;
                 case MethodType.Http:
-                    result = await http(functionArgs, methodulus, paramsMap);
+                    result = await http(functionArgs, completeConfiguration, paramsMap);
                     break;
                 case MethodType.Socket:
-                    result = await socketIO(functionArgs, methodulus, paramsMap);
+                    result = await socketIO(functionArgs, completeConfiguration, paramsMap);
                     break;
                 case MethodType.MQ:
-                    result = await mq(functionArgs, methodulus, paramsMap);
+                    result = await mq(functionArgs, completeConfiguration, paramsMap);
                     break;
             }
 
