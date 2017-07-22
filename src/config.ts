@@ -31,7 +31,7 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
             this.classes = map;
     }
     public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
-    public servers: string[] = ['rest'];
+    public servers: string[] = ['express'];
     public port: number;
     public use(classType: any, methodType: MethodType, resolver: Function | string) {
         this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));

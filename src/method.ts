@@ -145,7 +145,7 @@ async function socketIO(functionArgs, methodulus, paramsMap) {
 
 
 async function http(functionArgs: any, methodulus: any, paramsMap: any[]) {
-    let result = await global.methodulus.server._send('rest', functionArgs, methodulus, paramsMap);
+    let result = await global.methodulus.server._send('express', functionArgs, methodulus, paramsMap);
     return result;
 }
 

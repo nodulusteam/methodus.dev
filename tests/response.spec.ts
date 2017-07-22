@@ -20,10 +20,10 @@ describe('test method messages MetodError, MethodResult', function () {
     it('error statusCode on REST', async (done) => {
         //run the servers
 
-        let server = ServerHelper(8090, 'rest', MethodType.Local);
+        let server = ServerHelper(8090, 'express', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http,staticResolve);
         let myClass = new TestClass();
         try {
             let result = await myClass.error();
@@ -72,7 +72,7 @@ describe('test method messages MetodError, MethodResult', function () {
 
     });
 
-    it('starting [rest,socketio] server', async (done) => {
+    it('starting [express,socketio] server', async (done) => {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client

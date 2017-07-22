@@ -10,22 +10,22 @@ var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 process.env.silent = true;
 const staticResolve = 'http://localhost:8090';
-describe('methodulus config defaults to "rest"', function () {
+describe('methodulus config defaults to "express"', function () {
     it('loading configuration for methodulus', function () {
-        let config = new MethodulusConfig(['rest']);
-        expect(config.servers[0]).to.equal('rest');
+        let config = new MethodulusConfig(['express']);
+        expect(config.servers[0]).to.equal('express');
     });
 });
 
 
 
 describe('initiate modes', function () {
-    xit('starting rest server', async (done) => {
+    xit('starting express server', async (done) => {
         //run the servers
-        let server = ServerHelper(8090, 'rest', MethodType.Local);
+        let server = ServerHelper(8090, 'express', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http,staticResolve);
         this.timeout(2000);
         let result = await CallHelper();
 
@@ -57,10 +57,10 @@ describe('initiate modes', function () {
 
     });
 
-    it('starting [rest,socketio] server', async (done) => {
-        let server = ServerHelper(8090, 'rest,socketio', MethodType.Local);
+    it('starting [express,socketio] server', async (done) => {
+        let server = ServerHelper(8090, 'express,socketio', MethodType.Local);
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest', 'socketio'], MethodType.Socket,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket,staticResolve);
         let result = await CallHelper();
         server.kill();
         client.kill();

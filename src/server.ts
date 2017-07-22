@@ -1,4 +1,4 @@
-import { Rest, SocketIO, MQ, MQServer } from './servers';
+import { Express, SocketIO, MQ, MQServer } from './servers';
 import { MethodulusConfig, MethodulusConfigFromFile } from './config'
 const debug = require('debug')('methodulus');
 import http = require('http');
@@ -60,12 +60,12 @@ export class Server {
             let server = this.config.servers[i];
             // MethodulusConfig.servers.forEach(async (server) => {
             switch (server) {
-                case 'rest':
+                case 'express':
                     {
 
                         if (!silent)
                             console.log(colors.green(`Starting REST server on port`, this.port))
-                        this._app[server] = Rest(this.port);
+                        this._app[server] = Express(this.port);
                         var httpServer = http.createServer(this._app[server]);
                         this._app['http'] = httpServer;
                         //listen on provided ports

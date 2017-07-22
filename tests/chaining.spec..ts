@@ -14,13 +14,13 @@ const staticResolve = 'http://localhost:8090';
 
 
 xdescribe('initiate 3 server modes', function () {
-    it('starting rest server', async (done) => {
+    it('starting express server', async (done) => {
         //run the servers
-        let server1 = ServerHelper(8090, 'rest', MethodType.Local);
-        let server2 = ServerHelper(8091, 'rest', MethodType.Local);
+        let server1 = ServerHelper(8090, 'express', MethodType.Local);
+        let server2 = ServerHelper(8091, 'express', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest'], MethodType.Http,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http,staticResolve);
         let result = await CallHelper();
 
 
@@ -51,10 +51,10 @@ xdescribe('initiate 3 server modes', function () {
 
     });
 
-    it('starting [rest,socketio] server', async (done) => {
-        let server = ServerHelper(8090, 'rest,socketio', MethodType.Local);
+    it('starting [express,socketio] server', async (done) => {
+        let server = ServerHelper(8090, 'express,socketio', MethodType.Local);
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['rest', 'socketio'], MethodType.Socket,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket,staticResolve);
         let result = await CallHelper();
         server.kill();
         client.kill();

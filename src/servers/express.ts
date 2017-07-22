@@ -13,7 +13,7 @@ const request = require('request-promise-native');
 
 import "reflect-metadata";
 
-export function Rest(port) {
+export function Express(port) {
 
     let app = express();
     //app.set("port", port);

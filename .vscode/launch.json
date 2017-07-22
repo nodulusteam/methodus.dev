@@ -33,7 +33,7 @@
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
                 "silent": "false",
-                "servers": "rest",
+                "servers": "express",
                 "MethodType": "Local"
             }
         },
@@ -69,7 +69,7 @@
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
                 "silent": "false",
-                "servers": "rest,amqp",
+                "servers": "express,amqp",
                 "MethodType": "Local"
             }
         },

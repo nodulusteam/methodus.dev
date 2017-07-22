@@ -1,3 +1,3 @@
 export { SocketIO } from './socketio';
-export { Rest } from './rest';
+export { Express } from './express';
 export { MQ, MQServer } from './mq';
