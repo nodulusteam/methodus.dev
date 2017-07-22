@@ -1,7 +1,7 @@
 import { Player } from './controllers/player';
 import { Server, MethodulusConfig, MethodulusClassConfig, MethodType } from '../index';
 
-let config = new MethodulusConfig(['rest']);
+let config = new MethodulusConfig(['express']);
 config.use(Player, MethodType.Local, 'http://localhost:8090')
 //config.classes.set('TestClass', new MethodulusClassConfig('TestClass', MethodType.Http));
 const server = new Server(process.env.PORT || 8020).configure(config).start();
