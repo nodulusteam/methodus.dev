@@ -1,8 +1,12 @@
-import { Express, SocketIO, MQ, MQServer } from './servers';
-import { MethodulusConfig, MethodulusConfigFromFile } from './config'
+import { Express, SocketIO, MQ, MQServer, Redis, RedisServer } from './servers';
+import { MethodulusConfig, MethodulusConfigFromFile } from './config';
+import { MethodType } from './method';
+
 const debug = require('debug')('methodulus');
 import http = require('http');
 import colors = require('colors');
+
+
 export interface IApp {
     set(key, value);
 }
@@ -94,13 +98,29 @@ export class Server {
 
                         break;
                     }
+                case 'redis':
+                    {
+                        if (!silent)
+                            console.log(colors.green(`Starting REDIS server on port`, port))
+                        try {
+
+                            this._app[server] = Redis(this.port, this._app['http']);
+                            this._app[server].connection = new RedisServer();
+                            //this._app[server] = new MQServer();
+                        } catch (error) {
+                            console.log(error);
+                        }
+
+                        break;
+                    }
             }
         }
 
         let classes = this.config.classes.entries()
         for (var i = 0; i < this.config.classes.size; i++) {
-            let element = classes.next();
-            this.useClass(element.value[1].classType);
+            let name, element = classes.next();
+            if (element.value[1].methodType === MethodType.Local)
+                this.useClass(element.value[1].classType);
         }
 
         return this;

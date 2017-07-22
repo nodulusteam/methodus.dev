@@ -4,6 +4,8 @@ import * as cookieParser from "cookie-parser";
 import * as logger from "morgan";
 import * as path from "path";
 import { MethodDescriptor, Verbs } from '../method';
+import { MethodError, MethodResult } from '../response';
+
 import errorHandler = require("errorhandler");
 import compression = require("compression");
 import methodOverride = require("method-override");
@@ -53,10 +55,11 @@ export function Express(port) {
         try {
             let result = await request(requestOptions);
             if (typeof result === 'string' && (result[0] === '{' || result[0] === '['))
-                return JSON.parse(result);
+                return new MethodResult(JSON.parse(result));
 
         } catch (error) {
-            return error.error;
+
+            throw (new MethodError(error.error, error.statusCode));
         }
 
 

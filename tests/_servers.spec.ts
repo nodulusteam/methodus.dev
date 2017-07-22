@@ -4,6 +4,10 @@ var expect = chai.expect; // we are using the "expect" style of Chai
 import { TestClass } from './classes/test-class';
 import { Server, MethodulusConfig, MethodType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper } from './helpers'
+
+
+
+
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
@@ -17,15 +21,13 @@ describe('methodulus config defaults to "express"', function () {
     });
 });
 
-
-
 describe('initiate modes', function () {
     xit('starting express server', async (done) => {
         //run the servers
         let server = ServerHelper(8090, 'express', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
         this.timeout(2000);
         let result = await CallHelper();
 
@@ -44,14 +46,49 @@ describe('initiate modes', function () {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
 
-        let result = await CallHelper();
+        try {
+            let result = await CallHelper();
+            if (result)
+                expect(result.add).to.equal('added');
+        } catch (error) {
+            console.log(error);
+        } finally {
+            server.kill();
+            client.kill();
 
-        server.kill();
-        client.kill();
 
-        expect(result.add).to.equal('added');
+        }
+
+
+
+        this.timeout(2000);
+        done();
+
+    });
+
+    xit('starting redis server', async (done) => {
+        let server = ServerHelper(8090, 'redis', MethodType.Local);
+
+        //run the client
+        let client = ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);
+
+        try {
+            let result = await CallHelper();
+            if (result)
+                expect(result.add).to.equal('added');
+        } catch (error) {
+            console.log(error);
+        } finally {
+            server.kill();
+            client.kill();
+
+
+        }
+
+
+
         this.timeout(2000);
         done();
 
@@ -60,7 +97,7 @@ describe('initiate modes', function () {
     it('starting [express,socketio] server', async (done) => {
         let server = ServerHelper(8090, 'express,socketio', MethodType.Local);
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket, staticResolve);
         let result = await CallHelper();
         server.kill();
         client.kill();

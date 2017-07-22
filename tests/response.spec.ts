@@ -19,26 +19,32 @@ export async function CallHelper(): Promise<any> {
 describe('test method messages MetodError, MethodResult', function () {
     it('error statusCode on REST', async (done) => {
         //run the servers
-
+        console.log('REST ---------------------------------------------------------------------------------');
         let server = ServerHelper(8090, 'express', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
         let myClass = new TestClass();
+
         try {
-            let result = await myClass.error();
-            expect(result).to.equal('error returned');
-        } catch (error) {
+            let result: any = await myClass.error();//myClass.action1(1, 'roi');
+            console.log('didn\'t catch', result);
+        }
+        catch (error) {
+            console.log('error catched', error);
             expect(error.error).to.equal('error returned');
+
         } finally {
+
+
 
             server.kill();
             client.kill();
 
             this.timeout(2000);
             done();
-
         }
+
 
 
 
@@ -46,18 +52,19 @@ describe('test method messages MetodError, MethodResult', function () {
     });
 
     it('error statusCode on SOCKET', async (done) => {
+        console.log('SOCKETIO ---------------------------------------------------------------------------------');
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');
-            expect(result.name).to.equal('roi');
+            console.log('didn\'t catch', result);
         }
         catch (error) {
             expect(error.error).to.equal('error returned');
-
+            console.log('error catched', error);
         } finally {
 
 
@@ -73,10 +80,11 @@ describe('test method messages MetodError, MethodResult', function () {
     });
 
     it('starting [express,socketio] server', async (done) => {
+        console.log('REST SOCKETIO ---------------------------------------------------------------------------------');
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket,staticResolve);
+        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');
@@ -97,7 +105,4 @@ describe('test method messages MetodError, MethodResult', function () {
 
 
     });
-
-
-
 });

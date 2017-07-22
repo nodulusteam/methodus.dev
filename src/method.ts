@@ -10,6 +10,7 @@ export enum MethodType {
     Local = 'Local',
     Http = 'Http',
     MQ = 'MQ',
+    Redis = 'Redis',
     Socket = 'Socket',
 }
 
@@ -56,7 +57,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
             debug('existingClassMetadata', existingClassMetadata);
 
-            let result: MethodResult | MethodError | any = null;
+            let methodResult: MethodResult | MethodError | any = null;
             let proto = (this as any).prototype;
             if (!proto)
                 proto = (this as any).__proto__;
@@ -88,34 +89,50 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
             let completeConfiguration = Object.assign({}, methodulus, methodinformation);
             // run and store the result
-            switch (methodType) {
-                case MethodType.Local:
-                    result = await originalMethod(...functionArgs);
-                    break;
-                case MethodType.Http:
-                    result = await http(functionArgs, completeConfiguration, paramsMap);
-                    break;
-                case MethodType.Socket:
-                    result = await socketIO(functionArgs, completeConfiguration, paramsMap);
-                    break;
-                case MethodType.MQ:
-                    result = await mq(functionArgs, completeConfiguration, paramsMap);
-                    break;
+            try {
+                switch (methodType) {
+                    case MethodType.Local:
+                        methodResult = await originalMethod(...functionArgs);
+                        break;
+                    case MethodType.Http:
+                        methodResult = await http(functionArgs, completeConfiguration, paramsMap);
+                        break;
+                    case MethodType.Socket:
+                        methodResult = await socketIO(functionArgs, completeConfiguration, paramsMap);
+                        break;
+                    case MethodType.MQ:
+
+                        methodResult = await mq(functionArgs, completeConfiguration, paramsMap);
+                        break;
+                    case MethodType.Redis:
+                        methodResult = await redis(functionArgs, completeConfiguration, paramsMap);
+                        break;
+                }
+            } catch (error) {
+                methodResult = error;
             }
+
 
 
             if (sendFlag) {
                 let res = args[1];
-                if (result && result.statusCode)
-                    res.status(result.statusCode);
+                if (methodResult && methodResult.statusCode)
+                    res.status(methodResult.statusCode);
                 // else
                 //     res.status(200);
+                if (methodResult.total)
+                    res.set("X-Total-Count", methodResult.total);
 
-                res.send(result.result || result.error);
+
+                res.send(methodResult.result || methodResult.error);
+                return;
             }
             else {
+                if (methodResult.error && methodResult.statusCode) {
+                    throw (methodResult);
+                }
                 // return the result of the original method
-                return result;
+                return methodResult.result;
             }
 
         };
@@ -132,12 +149,18 @@ async function socketIO(functionArgs, methodulus, paramsMap) {
             return item.index === index;
         })[0].name] = element;
     });
-
     let result = await global.methodulus.server._send('socketio', dataObject, methodulus);
-    if (result.error && result.statusCode) {
-        throw (result);
-    }
-    return result.result;
+    return result;
+    // try {
+
+    // } catch (error) {
+    //     return error;
+    // }
+
+    // if (result.error && result.statusCode) {
+    //     throw (result);
+    // }
+    // return result.result;
 
 }
 
@@ -153,6 +176,12 @@ async function mq(functionArgs, methodulus, paramsMap) {
     let result = await global.methodulus.server._send('amqp', functionArgs, methodulus, paramsMap);
     return result;
 }
+
+async function redis(functionArgs, methodulus, paramsMap) {
+    let result = await global.methodulus.server._send('redis', functionArgs, methodulus, paramsMap);
+    return result;
+}
+
 
 
 export class Verbs {

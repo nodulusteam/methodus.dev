@@ -13,8 +13,12 @@ export class MethodError extends Error {
 
 export class MethodResult {
     result: any;
-    constructor(result) {
+    total: number;
+    statusCode: number;
+    constructor(result, total?: number) {
         this.result = result;
+        if(total)
+            this.total = total;
     }
 
 }

@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "hello-server",
             "program": "${workspaceRoot}/examples/hello-server.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -17,6 +17,90 @@
                 "PORT": "8020",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug"
+            }
+        },
+            {
+            "type": "node",
+            "request": "launch",
+            "name": "hello-redis",
+            "program": "${workspaceRoot}/examples/hello-redis.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "resolver-function",
+            "program": "${workspaceRoot}/examples/resolver-function.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug"
+            }
+        },
+          {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic caller Http server",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "silent": "false",
+                "servers": "express",
+                "MethodType": "Http"
+            }
+        },
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "Run dynamic caller Redis server",
+                "program": "${workspaceRoot}/tests/servers/caller.js",
+                "cwd": "${workspaceRoot}/",
+                "console": "internalConsole",
+                "outFiles": [],
+                "sourceMaps": true,
+                "env": {
+                    "PORT": "8080",
+                    "DEBUG": "methodulus",
+                    "NODE_ENV": "debug",
+                    "silent": "false",
+                    "servers": "redis",
+                    "MethodType": "Redis"
+                }
+            },
+             {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic server Redis",
+            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "silent": "false",
+                "servers": "redis",
+                "MethodType": "Local"
             }
         },
         {
@@ -34,6 +118,24 @@
                 "NODE_ENV": "debug",
                 "silent": "false",
                 "servers": "express",
+                "MethodType": "Local"
+            }
+        },
+          {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic server Socketio",
+            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "silent": "false",
+                "servers": "socketio",
                 "MethodType": "Local"
             }
         },
@@ -90,6 +192,36 @@
                 "--inspect",
                 "--no-timeouts",
                 "tests/response.spec.js"
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "Run resolver test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "--debug",
+                "--inspect",
+                "--no-timeouts",
+                "tests/resolvers.spec.js"
             ],
             "sourceMaps": true,
             // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.

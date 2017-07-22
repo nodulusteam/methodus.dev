@@ -26,14 +26,14 @@ export class Player {
     public async read( @Param('player_id') playerId: number) {
         let result = await PlayerModel.getById(playerId);//<PlayerModel>.getById() DB.Player.find({ 'Id': playerId }); 
         console.log(result);
-        return new MethodResult(result);
+        return new MethodResult(result, 100);
     }
 
 
     @Method(Verbs.Get, '/api/player/:field/:value')
     public async getByField( @Param('field') field, @Param('value') value: number) {
-        let result = await PlayerModel.getByField(field, value);       
-        return new MethodResult(result);
+        let result = await PlayerModel.getByField(field, value);
+        return new MethodResult(result, 100);
     }
 
     @Method(Verbs.Put, '/api/player')

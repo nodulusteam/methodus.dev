@@ -1,3 +1,8 @@
+// import mock = require('mock-require');
+// mock('redis', require('redis-mock'));
+
+
+
 import { TestClass } from '../classes/test-class';
 import { Server, MethodType, MethodulusConfig } from '../../index';
 

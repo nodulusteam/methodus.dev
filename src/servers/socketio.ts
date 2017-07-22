@@ -1,6 +1,7 @@
 
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
+import { MethodError, MethodResult } from '../response';
 
 export function SocketIO(port, httpServer) {
     var io: any = null;
@@ -34,18 +35,22 @@ export function SocketIO(port, httpServer) {
 
             let myUri = await methodulus.resolver();
             var socket = require('socket.io-client')(myUri);
-            socket.on('connect', function () {
+            socket.on('connect', () => {
+                debug('socket connection ok');
                 let messageName = methodulus.verb + '_' + methodulus.route;
+                debug('messageName:method:recipient', messageName);
                 socket.emit(messageName, functionArgs, (data) => {
-                    resolve(data);
                     debug('recieved result', data);
+                    if (data.error && data.statusCode) {
+                        reject(new MethodError(data.error, data.statusCode));
+                    }
+                    else {
+                        resolve(new MethodResult(data));
+
+                    }
                 });
             });
-
-
-
         });
-
     }
     return io;
 
@@ -74,9 +79,14 @@ export class SocketIORouter {
                     functionArgs[item.index] = data[item.name];
                 })
                 proto[itemKey].bind(obj);
-                let result = await proto[itemKey](...functionArgs);
-                debug('result is:', result)
-                callback(result);
+                try {
+                    let result = await proto[itemKey](...functionArgs);
+                    debug('result is:', result)
+                    callback(result);
+                } catch (error) {
+                    callback(error);
+                }
+
             });
         });
     }
