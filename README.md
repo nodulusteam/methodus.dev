@@ -87,27 +87,63 @@ export class Player {
 ## MethodulusConfig
 > configuration must complete before the server starts.
 > configure each controller class to its desired state
+
+### Available servers
+an instamce of methodulus can run multiple listeners in different channels. the current list is:
+* `express`
+* `socketio`
+* `amqp`
+* `redis`
+### Resolver
+in order to access the correct service methodulus uses a resolver, which may be a literal containing the service uri or a promise returning the same.
+
+resolvers are attached to a class, allowing the application to use different resolvers for different services.
+
+here is a simple local configuration:
 ```
-MethodulusConfig.config['Player'] = MethodType.Local;
+let servers = ['express']; 
+let config = new MethodulusConfig(servers);
+let resolver = 'http://localhost:8090';
+config.use(TestClass, MethodType.Local,resolver);
+
 ```
-here we configure the class `Player` to run locally.
-### MethodType
+> The class `Player` to run locally.
+## MethodType
 > avaliable options are  `Local | Http | MQ | Socket`
-#### Local
+* `Local`
 run the code in the class, no proxy or transport required.
 
-#### Http
+* `Http`
 run the code using an http request to a microservice.
 
 
-#### MQ
+* `MQ`
 use amqp rpc to execute the class code
 
-#### Socket
+* `Socket`
 directly connect to a server using websocket connection.
+
+* `Redis`
+use redis rpc to execute the class code
 
 ## Server
 > creates an agnostic configured server.
 ```
 const server = new Server(process.env.PORT);
 ```
+
+Server methods are chainable and should e called in this order
+```
+const server = new Server(process.env.PORT).configure(config).start();
+```
+# Decorators
+## Class decorators
+### @MethodConfig
+### @Method
+## Parameter decorators
+### @Query
+### @Param
+### @Body
+### @Request
+### @Response
+
