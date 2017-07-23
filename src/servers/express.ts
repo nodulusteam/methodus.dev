@@ -3,8 +3,10 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as logger from "morgan";
 import * as path from "path";
-import { MethodDescriptor, Verbs } from '../method';
-import { MethodError, MethodResult } from '../response';
+import { MethodDescriptor, Verbs, MethodError, MethodResult } from '../index';
+
+
+import { fp } from '../fp';
 
 import errorHandler = require("errorhandler");
 import compression = require("compression");
@@ -72,8 +74,8 @@ export function Express(port) {
 export class ExpressRouter {
     public router: any;
     constructor(obj: any) {
-        let methodulus = obj.prototype.methodulus;
-        let proto = obj.prototype;
+        let proto = fp.proto(obj);
+        let methodulus = proto.methodulus;
         //let collection = Object.getOwnPropertyNames(proto);
         let autoRouter = express.Router();
         Object.keys(methodulus._descriptors).forEach(itemKey => {

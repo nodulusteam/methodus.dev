@@ -106,7 +106,7 @@ export class MQServer {
 export class MQRouter {
     public router: any;
     constructor(obj: any) {
-        let proto = obj.prototype || obj.__proto__;
+        let proto = fp.proto(obj);
         let methodulus = proto.methodulus;
 
         amqpConnect().then((conn) => {

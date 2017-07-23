@@ -17,6 +17,19 @@ export class fp {
         return object;
     }
 
+    public static proto(object: any): any {
+
+        let proto = object.prototype;
+        if (!proto)
+            proto = object.__proto__;
+
+        return proto;
+    }
+
+
+
+
+
     public static array(object: any): any[] {
 
         let arr: any[] = [];

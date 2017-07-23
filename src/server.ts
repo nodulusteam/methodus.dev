@@ -1,6 +1,6 @@
 import { Express, SocketIO, MQ, MQServer, Redis, RedisServer } from './servers';
-import { MethodulusConfig, MethodulusConfigFromFile } from './config';
-import { MethodType } from './method';
+import { MethodulusConfig, MethodulusConfigFromFile, MethodType } from './config';
+
 
 const debug = require('debug')('methodulus');
 import http = require('http');

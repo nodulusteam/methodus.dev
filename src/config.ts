@@ -1,8 +1,24 @@
 const yaml = require('js-yaml'),
     fs = require('fs');
+ 
+import { Verbs } from './rest';
 
-import { MethodType } from './method';
 
+
+export interface MethodDescriptor {
+    verb: Verbs;
+    route: string;
+    methodType: MethodType;
+    propertyKey: string;
+}
+
+export enum MethodType {
+    Local = 'Local',
+    Http = 'Http',
+    MQ = 'MQ',
+    Redis = 'Redis',
+    Socket = 'Socket',
+}
 
 
 export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig {
@@ -16,7 +32,7 @@ export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig 
             if (typeof resolver === 'string') {
                 return Promise.resolve(resolver);
             } else {
-                if(resolver)
+                if (resolver)
                     return resolver(classType.name);
             }
         }

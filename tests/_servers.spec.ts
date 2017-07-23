@@ -22,7 +22,7 @@ describe('methodulus config defaults to "express"', function () {
 });
 
 describe('initiate modes', function () {
-    xit('starting express server', async (done) => {
+    it('starting express server', async (done) => {
         //run the servers
         let server = ServerHelper(8090, 'express', MethodType.Local);
 
@@ -42,7 +42,7 @@ describe('initiate modes', function () {
 
     });
 
-    xit('starting socketio server', async (done) => {
+    it('starting socketio server', async (done) => {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
@@ -94,7 +94,7 @@ describe('initiate modes', function () {
 
     });
 
-    xit('starting [express,socketio] server', async (done) => {
+    it('starting [express,socketio] server', async (done) => {
         let server = ServerHelper(8090, 'express,socketio', MethodType.Local);
         //run the client
         let client = ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket, staticResolve);

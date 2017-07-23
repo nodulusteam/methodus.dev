@@ -2,6 +2,7 @@
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
 import { MethodError, MethodResult } from '../response';
+import { fp } from '../fp';
 
 export function SocketIO(port, httpServer) {
     var io: any = null;
@@ -33,13 +34,21 @@ export function SocketIO(port, httpServer) {
         return new Promise(async (resolve, reject) => {
             debug('sending data in socket', functionArgs, methodulus, paramsMap);
 
+            var dataObject = {};
+            functionArgs.forEach((element, index) => {
+                dataObject[paramsMap.filter((item) => {
+                    return item.index === index;
+                })[0].name] = element;
+            });
+            
+
             let myUri = await methodulus.resolver();
             var socket = require('socket.io-client')(myUri);
             socket.on('connect', () => {
                 debug('socket connection ok');
                 let messageName = methodulus.verb + '_' + methodulus.route;
                 debug('messageName:method:recipient', messageName);
-                socket.emit(messageName, functionArgs, (data) => {
+                socket.emit(messageName, dataObject, (data) => {
                     debug('recieved result', data);
                     if (data.error && data.statusCode) {
                         reject(new MethodError(data.error, data.statusCode));
@@ -62,7 +71,7 @@ let metadataKey = 'methodulus';
 export class SocketIORouter {
     public router: any;
     constructor(obj: any, socket: any) {
-        let proto = obj.prototype || obj.__proto__;
+        let proto = fp.proto(obj);
         let methodulus = proto.methodulus;
 
         Object.keys(methodulus._descriptors).forEach(itemKey => {

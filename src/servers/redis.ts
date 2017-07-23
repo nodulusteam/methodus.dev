@@ -121,7 +121,7 @@ export class RedisServer {
 export class RedisRouter {
     public router: any;
     constructor(obj: any) {
-        let proto = obj.prototype || obj.__proto__;
+        let proto = fp.proto(obj);
         let methodulus = proto.methodulus;
         let pub = redis.createClient(redis_addr);
         let sub = redis.createClient(redis_addr);
