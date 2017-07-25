@@ -1,6 +1,6 @@
 const yaml = require('js-yaml'),
     fs = require('fs');
- 
+
 import { Verbs } from './rest';
 
 
@@ -44,23 +44,50 @@ export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig 
 }
 
 export class MethodulusConfig implements Methodulus.IMethodulusConfig {
-    constructor(servers: string[], map?: Map<string, MethodulusClassConfig>) {
-        this.servers = servers;
+    constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
+        if (servers)
+            this.servers = servers;
+            
         if (map)
             this.classes = map;
     }
     public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
-    public servers: string[] = ['express'];
+    public servers: ServerConfig[];;
     public port: number;
     public use(classType: any, methodType: MethodType, resolver?: Function | string) {
         if (methodType === MethodType.Http && !resolver)
             throw (new Error('Http transport requires a resolver, pass in a string or a promise'))
         this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
     }
+     public run(serverType: Methodulus.ServerType, configuration: any)
+     {
+         this.servers = this.servers || [];
+         this.servers.push(new ServerConfig(serverType, configuration))
+        
+
+     }
 }
 
+export class ServerConfig
+{
+    constructor(type: Methodulus.ServerType, options: any)
+    {
+        this.type = type;
+        this.options = options;
+    }
+    type: Methodulus.ServerType;
+    options: any;
+}
 
 export function MethodulusConfigFromFile(configPath) {
     var doc = yaml.safeLoad(fs.readFileSync(configPath, 'utf8'));
     return doc;
 }
+
+  export enum ServerType
+    {
+        Express = 'express',
+        RabbitMQ = 'amqp',
+        Redis= 'redis',
+        Socket= 'socketio'
+    }

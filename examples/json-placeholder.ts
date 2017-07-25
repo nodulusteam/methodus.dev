@@ -1,9 +1,9 @@
-import { Player } from './controllers/player';
+import { JsonPlaceHolder } from './controllers/json-placeholder';
 import { Server, MethodulusConfig, MethodulusClassConfig, MethodType } from '../index';
 
 let config = new MethodulusConfig();
 config.run(Methodulus.ServerType.Express, {port:process.env.PORT || 8020 });
-config.use(Player, MethodType.Local, 'http://localhost:8090')
+config.use(JsonPlaceHolder, MethodType.Http, 'https://jsonplaceholder.typicode.com/')
 //config.classes.set('TestClass', new MethodulusClassConfig('TestClass', MethodType.Http));
 const server = new Server(process.env.PORT || 8020).configure(config).start();
 //server.useClass(Player);

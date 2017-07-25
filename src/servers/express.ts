@@ -7,6 +7,7 @@ import { MethodDescriptor, Verbs, MethodError, MethodResult } from '../index';
 
 
 import { fp } from '../fp';
+import { BaseServer } from './base';
 
 import errorHandler = require("errorhandler");
 import compression = require("compression");
@@ -17,21 +18,28 @@ const request = require('request-promise-native');
 
 import "reflect-metadata";
 
-export function Express(port) {
-
-    let app = express();
-    //app.set("port", port);
-    //this.app.use(compression());
-    app.use(bodyParser.urlencoded({
+export class Express extends BaseServer {
+    _app:any;
+    constructor(port)
+    {
+        super();
+        this._app = express();
+            this._app.use(bodyParser.urlencoded({
         extended: true
     }));
 
-    app.use(bodyParser.json());
-    app.useClass = function (classType) {
-        app.use(new ExpressRouter(classType).router);
+    this._app.use(bodyParser.json());
+     
+    }
+    
+    //app.set("port", port);
+    //this.app.use(compression());
+
+    useClass (classType) {
+        this._app.use(new ExpressRouter(classType).router);
 
     }
-    app._send = async (params, methodulus, paramsMap) => {
+    async _send (params, methodulus, paramsMap)  {
         debug('in _send:', params, methodulus, paramsMap);
         let baseUrl = await methodulus.resolver();
         let myUri = baseUrl + methodulus.route;
@@ -66,7 +74,7 @@ export function Express(port) {
 
 
     }
-    return app;
+   
 }
 
 

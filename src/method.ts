@@ -3,7 +3,7 @@
 const excludedProps = ['constructor'];
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
-import { MethodulusConfig, MethodDescriptor, MethodType } from './config';
+import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from './config';
 import { MethodResult, MethodError } from './response';
 import { fp } from './fp';
 import { RestParser, RestResponse, Verbs } from './rest';
@@ -73,7 +73,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
             //let methodulus = proto.methodulus;
             //methodulus.route = route;
-            let functionArgs: any[] = [];
+            let functionArgs: any[] = args;
             let ParserResponse = RestParser(args, paramsMap, functionArgs);
 
             let completeConfiguration = mergeMetadata(methodulus);
@@ -84,22 +84,22 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
             // run and store the result
             try {
-                let server: string | null = null;
+                let server: ServerType | null = null;
                 switch (methodType) {
                     case MethodType.Local:
-                        methodResult = await originalMethod(...functionArgs);
+                        methodResult = await originalMethod(...ParserResponse.args);
                         break;
                     case MethodType.Http:
-                        server = 'express';
+                        server = ServerType.Express;
                         break;
                     case MethodType.Socket:
-                        server = 'socketio';
+                        server = ServerType.Socket;
                         break;
                     case MethodType.MQ:
-                        server = 'amqp';
+                        server = ServerType.RabbitMQ;
                         break;
                     case MethodType.Redis:
-                        server = 'redis';
+                        server = ServerType.Redis;
                         break;
                 }
 
@@ -114,7 +114,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
 
             if (ParserResponse.isRest) {
-                RestResponse(ParserResponse.args, methodResult);
+                RestResponse(args,  methodResult);
                 return;
             }
             else {
@@ -122,7 +122,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                     throw (methodResult);
                 }
                 // return the result of the original method
-                return methodResult.result;
+                return methodResult;
             }
 
         };
@@ -133,7 +133,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
 
 
-async function send(server: string, functionArgs: any, methodulus: any, paramsMap: any[]) {
+async function send(server: ServerType, functionArgs: any, methodulus: any, paramsMap: any[]) {
     let result = await global.methodulus.server._send(server, functionArgs, methodulus, paramsMap);
     return result;
 }

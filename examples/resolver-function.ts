@@ -1,8 +1,8 @@
 import { Player } from './controllers/player';
 import { Server, MethodulusConfig, MethodulusClassConfig, MethodType } from '../index';
 
-let config = new MethodulusConfig(['express']);
-
+let config = new MethodulusConfig();
+config.run(Methodulus.ServerType.Express, {port:process.env.PORT || 8020 });
 let resolver = (name) => {
     console.log(name);
     return Promise.resolve('http://localhost:8090');

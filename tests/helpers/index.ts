@@ -13,15 +13,15 @@ export function ServerHelper(port, servers, methodType: MethodType) {
         cwd: path.resolve('./'), env: { silent: true, PORT: port, servers: servers, MethodType: methodType }
     });
     child1.stdout.on('data', async (data) => {
-        // console.error(`child stddata:\n${data}`);
+        console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-        //console.error(`child stderr:\n${data}`);
+       // console.error(`child stderr:\n${data}`);
     });
 
     child1.on('exit', function (code, signal) {
-        //console.log('child process exited with ' +
-        // `code ${code} and signal ${signal}`);
+       // console.log('child process exited with ' +
+        //    `code ${code} and signal ${signal}`);
     });
     return child1;
 }

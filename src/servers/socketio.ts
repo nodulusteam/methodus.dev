@@ -3,34 +3,44 @@ const debug = require('debug')('methodulus');
 import "reflect-metadata";
 import { MethodError, MethodResult } from '../response';
 import { fp } from '../fp';
-
-export function SocketIO(port, httpServer) {
-    var io: any = null;
-    if (httpServer)
-        io = require("socket.io")(httpServer);
-    else
-        io = require("socket.io").listen(port);
+import { BaseServer } from './base';
+let metadataKey = 'methodulus';
 
 
+export class SocketIO extends BaseServer {
+    _app: any;
+    constructor(port, httpServer) {
+        super()
+        var io: Methodulus.Server;
+        if (httpServer)
+            this._app = require("socket.io")(httpServer);
+        else
+            this._app = require("socket.io").listen(port);
 
-    io.classRouters = [];
-    io.sockets.on("connection", function (socket) {
-        socketHandler(socket);
 
-    });
+        this._app.sockets.on("connection", (socket) => {
+            this.socketHandler(socket);
+        });
 
-    function socketHandler(socket) {
-        io.classRouters.forEach((item) => {
+
+
+
+
+
+    }
+
+    useClass(classType) {
+        this.classRouters.push(classType);
+    }
+
+    socketHandler(socket) {
+        this._app.classRouters.forEach((item) => {
             new SocketIORouter(item, socket);
         })
 
     }
 
-    io.useClass = function (classType) {
-        io.classRouters.push(classType);
-    }
-
-    io._send = async (functionArgs, methodulus, paramsMap) => {
+    async _send(functionArgs, methodulus, paramsMap) {
         return new Promise(async (resolve, reject) => {
             debug('sending data in socket', functionArgs, methodulus, paramsMap);
 
@@ -40,7 +50,7 @@ export function SocketIO(port, httpServer) {
                     return item.index === index;
                 })[0].name] = element;
             });
-            
+
 
             let myUri = await methodulus.resolver();
             var socket = require('socket.io-client')(myUri);
@@ -51,24 +61,21 @@ export function SocketIO(port, httpServer) {
                 socket.emit(messageName, dataObject, (data) => {
                     debug('recieved result', data);
                     if (data.error && data.statusCode) {
-                        reject(new MethodError(data.error, data.statusCode));
+                        reject(data.error);
                     }
                     else {
-                        resolve(new MethodResult(data));
+                        resolve(data);
 
                     }
                 });
             });
         });
     }
-    return io;
 
 }
 
 
-let metadataKey = 'methodulus';
-
-export class SocketIORouter {
+export class SocketIORouter implements Methodulus.Router {
     public router: any;
     constructor(obj: any, socket: any) {
         let proto = fp.proto(obj);
@@ -84,10 +91,14 @@ export class SocketIORouter {
                 let paramsMap: any[] = Reflect.getOwnMetadata('params', proto, itemKey) || [];
                 debug('method params', itemKey, paramsMap);
                 let functionArgs: any = [];
+
+
                 paramsMap.forEach((item) => {
                     functionArgs[item.index] = data[item.name];
                 })
-                proto[itemKey].bind(obj);
+
+
+
                 try {
                     let result = await proto[itemKey](...functionArgs);
                     debug('result is:', result)

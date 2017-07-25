@@ -1,5 +1,5 @@
 import { Express, SocketIO, MQ, MQServer, Redis, RedisServer } from './servers';
-import { MethodulusConfig, MethodulusConfigFromFile, MethodType } from './config';
+import { MethodulusConfig, MethodulusConfigFromFile, MethodType,ServerType } from './config';
 
 
 const debug = require('debug')('methodulus');
@@ -53,8 +53,8 @@ export class Server {
 
         global.methodulus = { server: this };
 
-        if (process.env.servers)
-            this.config.servers = process.env.servers.split(',');
+        // if (process.env.servers)
+        //     this.config.servers = process.env.servers.split(',');
 
         let silent = eval(process.env.silent);
 
@@ -63,34 +63,34 @@ export class Server {
 
             let server = this.config.servers[i];
             // MethodulusConfig.servers.forEach(async (server) => {
-            switch (server) {
-                case 'express':
+            switch (server.type) {
+                case ServerType.Express:
                     {
 
                         if (!silent)
-                            console.log(colors.green(`Starting REST server on port`, this.port))
-                        this._app[server] = Express(this.port);
-                        var httpServer = http.createServer(this._app[server]);
+                            console.log(colors.green(`Starting REST server on port`, server.options.port))
+                        this._app[server.type] = new Express(server.options.port);
+                        var httpServer = http.createServer(this._app[server.type]._app);//this is the inside express instance
                         this._app['http'] = httpServer;
                         //listen on provided ports
-                        httpServer.listen(this.port);
+                        httpServer.listen(server.options.port);
                         break;
                     }
-                case 'socketio':
+                case ServerType.Socket:
                     {
                         if (!silent)
                             console.log(colors.green(`Starting SOCKETIO server on port`, this.port))
-                        this._app[server] = SocketIO(this.port, this._app['http']);
+                        this._app[server.type] = new SocketIO(this.port, this._app['http']);
                         break;
                     }
-                case 'amqp':
+                case ServerType.RabbitMQ:
                     {
                         if (!silent)
                             console.log(colors.green(`Starting MQ server on port`, port))
                         try {
 
-                            this._app[server] = MQ(this.port, this._app['http']);
-                            this._app[server].connection = new MQServer();
+                            this._app[server.type] = MQ(this.port, this._app['http']);
+                            this._app[server.type].connection = new MQServer();
                             //this._app[server] = new MQServer();
                         } catch (error) {
                             console.log(error);
@@ -98,14 +98,14 @@ export class Server {
 
                         break;
                     }
-                case 'redis':
+                case ServerType.Redis:
                     {
                         if (!silent)
                             console.log(colors.green(`Starting REDIS server on port`, port))
                         try {
 
-                            this._app[server] = Redis(this.port, this._app['http']);
-                            this._app[server].connection = new RedisServer();
+                            this._app[server.type] = new Redis(server.options);
+                            this._app[server.type].connection = new RedisServer();
                             //this._app[server] = new MQServer();
                         } catch (error) {
                             console.log(error);
@@ -128,7 +128,7 @@ export class Server {
 
     public useClass(classType) {
         this.config.servers.forEach((server) => {
-            this._app[server].useClass(classType);
+            this._app[server.type].useClass(classType);
         });
 
     }
@@ -141,7 +141,7 @@ export class Server {
         });
     }
 
-    async _send(channel, params, message, parametersMap) {
+    async _send(channel: ServerType, params, message, parametersMap) {
         return await this._app[channel]._send(params, message, parametersMap);
     }
 }

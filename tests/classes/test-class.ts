@@ -7,7 +7,7 @@ export class TestClass {
 
     @Method(Verbs.Get, '/posts/:id/:name')
     public action1( @Param('id') id: number, @Param('name') name: string) {
-        console.log('running action1 localy');
+        console.log('running action1 localysdsdfsdf', id, name );
         return new MethodResult({ id: id, name: name, add: 'added' });
     }
 

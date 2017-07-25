@@ -2,7 +2,7 @@
 var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
 import { TestClass } from './classes/test-class';
-import { Server, MethodulusConfig, MethodType } from '../index';
+import { Server, MethodulusConfig, MethodType, ServerType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper } from './helpers'
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
@@ -15,7 +15,8 @@ const staticResolve = 'http://localhost:8090';
 describe('testing resolver options', function () {
     it('Http without a resolver throws an error', (done) => {
 
-        let config = new MethodulusConfig(['express']);
+        let config = new MethodulusConfig();
+        config.run(ServerType.Express, {port:process.env.PORT || 8020 });
         try {
             config.use(TestClass, MethodType.Http);
         }
@@ -27,8 +28,8 @@ describe('testing resolver options', function () {
     });
     it('Http with function resolver', async (done) => {
 
-        let config = new MethodulusConfig(['express']);
-
+        let config = new MethodulusConfig();
+        config.run(ServerType.Express, {port:process.env.PORT || 8020 });
         let resolver = (name) => {
             console.log(name);
             return Promise.resolve('http://localhost:8090');

@@ -19,7 +19,7 @@
                 "NODE_ENV": "debug"
             }
         },
-            {
+        {
             "type": "node",
             "request": "launch",
             "name": "hello-redis",
@@ -34,6 +34,22 @@
                 "NODE_ENV": "debug"
             }
         },
+           {
+            "type": "node",
+            "request": "launch",
+            "name": "hello-server",
+            "program": "${workspaceRoot}/examples/json-placeholder.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug"
+            }
+        },
+
         {
             "type": "node",
             "request": "launch",
@@ -49,7 +65,7 @@
                 "NODE_ENV": "debug"
             }
         },
-          {
+        {
             "type": "node",
             "request": "launch",
             "name": "Run dynamic caller Http server",
@@ -67,25 +83,43 @@
                 "MethodType": "Http"
             }
         },
-            {
-                "type": "node",
-                "request": "launch",
-                "name": "Run dynamic caller Redis server",
-                "program": "${workspaceRoot}/tests/servers/caller.js",
-                "cwd": "${workspaceRoot}/",
-                "console": "internalConsole",
-                "outFiles": [],
-                "sourceMaps": true,
-                "env": {
-                    "PORT": "8080",
-                    "DEBUG": "methodulus",
-                    "NODE_ENV": "debug",
-                    "silent": "false",
-                    "servers": "redis",
-                    "MethodType": "Redis"
-                }
-            },
-             {
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic caller SocketIO server",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "silent": "false",
+                "servers": "socketio",
+                "MethodType": "Socket"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic caller Redis server",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "silent": "false",
+                "servers": "redis",
+                "MethodType": "Redis"
+            }
+        },
+        {
             "type": "node",
             "request": "launch",
             "name": "Run dynamic server Redis",
@@ -121,7 +155,7 @@
                 "MethodType": "Local"
             }
         },
-          {
+        {
             "type": "node",
             "request": "launch",
             "name": "Run dynamic server Socketio",

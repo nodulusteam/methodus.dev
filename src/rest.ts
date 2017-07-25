@@ -14,29 +14,35 @@ export class Verbs {
 }
 
 
-export function RestResponse(args, methodResult: MethodResult | MethodError | any) {
+export function RestResponse(args,  methodResult: MethodResult | MethodError | any) {
     let res = args[1];
-    if (methodResult && methodResult.statusCode)
-        res.status(methodResult.statusCode);
-    else
-        res.status(200);
+    if (res.status) {
+        if (methodResult && methodResult.statusCode)
+            res.status(methodResult.statusCode);
+        else
+            res.status(200);
 
-    if (methodResult.error !== undefined)
+        if (methodResult.error !== undefined)
 
-        if (methodResult.total)
-            res.set("X-Total-Count", methodResult.total);
+            if (methodResult.total)
+                res.set("X-Total-Count", methodResult.total);
 
-    if (methodResult.page)
-        res.set("X-Page", methodResult.page);
+        if (methodResult.page)
+            res.set("X-Page", methodResult.page);
 
-    res.send(methodResult.result || methodResult.error);
+        res.send(methodResult.result || methodResult.error);
+    } else {
+        console.log(args, methodResult, res);
+    }
+
 }
 
 
 export function RestParser(args, paramsMap, functionArgs): ParserResponse {
 
-    if (args.length > 2 && args[2].name === 'next')//this call came from an express route
+    if (args[0] && args[0].readable && args[1] && args[1].writable)//this call came from an express route
     {
+        functionArgs = [];
         paramsMap.forEach((item: any) => {
             item.value = args[0][item.from][item.name] || args[0][item.from];
             functionArgs.push(item.value);
