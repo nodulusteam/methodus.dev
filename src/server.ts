@@ -1,5 +1,5 @@
 import { Express, SocketIO, MQ, MQServer, Redis, RedisServer } from './servers';
-import { MethodulusConfig, MethodulusConfigFromFile, MethodType,ServerType } from './config';
+import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
 
 
 const debug = require('debug')('methodulus');
@@ -135,6 +135,8 @@ export class Server {
     public kill() {
         ['http', 'socketio'].forEach((server) => {
             if (this._app[server]) {
+
+
                 this._app[server].close();
                 delete this._app[server];
             }

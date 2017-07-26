@@ -31,14 +31,16 @@ describe('initiate modes', function () {
             client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
             this.timeout(2000);
             let result = await CallHelper();
-          
+
 
             expect(result.add).to.equal('added');
         } catch (error) {
-
+            console.log('got error', error);
         } finally {
-            server.kill();
-            client.kill();
+            if (server)
+                server.kill();
+            if (client)
+                client.kill();
 
 
 
@@ -71,8 +73,10 @@ describe('initiate modes', function () {
         } catch (error) {
             console.log(error);
         } finally {
-            server.kill();
-            client.kill();
+            if (server)
+                server.kill();
+            if (client)
+                client.kill();
             this.timeout(2000);
             done();
 
@@ -97,8 +101,10 @@ describe('initiate modes', function () {
         } catch (error) {
             console.log(error);
         } finally {
-            server.kill();
-            client.kill();
+            if (server)
+                server.kill();
+            if (client)
+                client.kill();
 
             this.timeout(2000);
             done();
@@ -122,8 +128,10 @@ describe('initiate modes', function () {
         } catch (error) {
 
         } finally {
-            server.kill();
-            client.kill();
+            if (Server)
+                server.kill();
+            if (client)
+                client.kill();
         }
 
 

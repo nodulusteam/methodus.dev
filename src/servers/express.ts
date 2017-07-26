@@ -31,7 +31,10 @@ export class Express extends BaseServer {
     this._app.use(bodyParser.json());
      
     }
-    
+    close()
+    {
+        this._app.close();
+    }
     //app.set("port", port);
     //this.app.use(compression());
 

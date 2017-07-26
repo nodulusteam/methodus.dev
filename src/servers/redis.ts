@@ -28,7 +28,7 @@ export class Redis extends BaseServer {
             sub.subscribe(corr);
             sub.on('message', (destination, msg) => {
                 if (corr == destination) {
-                    resolve(new MethodResult(fp.maybeJson(msg)));
+                    resolve(fp.maybeJson(msg));
                 }
             });
 

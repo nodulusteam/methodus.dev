@@ -121,8 +121,13 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 if (methodResult.error && methodResult.statusCode) {
                     throw (methodResult);
                 }
-                // return the result of the original method
-                return methodResult;
+                if(methodType === MethodType.Local)
+                    {
+// return the result of the original method
+                return methodResult.result;
+                    }else
+            return methodResult;
+                
             }
 
         };

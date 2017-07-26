@@ -10,7 +10,9 @@ let metadataKey = 'methodulus';
 export class SocketIO extends BaseServer {
     _app: any;
     constructor(port, httpServer) {
-        super()
+
+        super();
+        this.classRouters = [];
         var io: Methodulus.Server;
         if (httpServer)
             this._app = require("socket.io")(httpServer);
@@ -28,13 +30,15 @@ export class SocketIO extends BaseServer {
 
 
     }
-
+    close() {
+        this._app.close();
+    }
     useClass(classType) {
         this.classRouters.push(classType);
     }
 
     socketHandler(socket) {
-        this._app.classRouters.forEach((item) => {
+        this.classRouters.forEach((item) => {
             new SocketIORouter(item, socket);
         })
 
