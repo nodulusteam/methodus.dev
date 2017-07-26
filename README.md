@@ -32,9 +32,10 @@
 
 ```
 import { Player } from './controllers/player';
-import { Server, MethodulusConfig, MethodulusClassConfig, MethodType } from 'methodulus';
+import { ServerType, Server, MethodulusConfig, MethodulusClassConfig, MethodType } from 'methodulus';
 
-let config = new MethodulusConfig(['rest']);
+let config = new MethodulusConfig();
+config.run(ServerType.express, {port: process.env.PORT });
 config.use(Player, MethodType.Local, 'http://localhost:8090')
 const server = new Server(process.env.PORT || 8020).configure(config).start();
 
