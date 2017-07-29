@@ -3,12 +3,16 @@ const yaml = require('js-yaml'),
 
 import { Verbs } from './rest';
 
+export interface EventDescriptor extends MethodDescriptor{
+    name: string;
+    value?: any;
 
+}
 
 export interface MethodDescriptor {
-    verb: Verbs;
-    route: string;
-    methodType: MethodType;
+    verb?: Verbs;
+    route?: string;
+    methodType?: MethodType;
     propertyKey: string;
 }
 
@@ -47,7 +51,7 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
         if (servers)
             this.servers = servers;
-            
+
         if (map)
             this.classes = map;
     }
@@ -59,19 +63,16 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
             throw (new Error('Http transport requires a resolver, pass in a string or a promise'))
         this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
     }
-     public run(serverType: Methodulus.ServerType, configuration: any)
-     {
-         this.servers = this.servers || [];
-         this.servers.push(new ServerConfig(serverType, configuration))
-        
+    public run(serverType: Methodulus.ServerType, configuration: any) {
+        this.servers = this.servers || [];
+        this.servers.push(new ServerConfig(serverType, configuration))
 
-     }
+
+    }
 }
 
-export class ServerConfig
-{
-    constructor(type: Methodulus.ServerType, options: any)
-    {
+export class ServerConfig {
+    constructor(type: Methodulus.ServerType, options: any) {
         this.type = type;
         this.options = options;
     }
@@ -84,10 +85,9 @@ export function MethodulusConfigFromFile(configPath) {
     return doc;
 }
 
-  export enum ServerType
-    {
-        Express = 'express',
-        RabbitMQ = 'amqp',
-        Redis= 'redis',
-        Socket= 'socketio'
-    }
+export enum ServerType {
+    Express = 'express',
+    RabbitMQ = 'amqp',
+    Redis = 'redis',
+    Socket = 'socketio'
+}

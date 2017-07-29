@@ -40,6 +40,37 @@ export function Query(name?: string) {
 }
 
 
+export function Headers(name?: string) {
+    return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
+        let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];
+
+        if (name)
+            existingMetadata.push({ from: 'headers', index: parameterIndex, name: name });
+        else
+            existingMetadata.push({ from: 'headers', index: parameterIndex });
+
+        Reflect.defineMetadata(metadataKey, existingMetadata, target, propertyKey);
+    }
+}
+
+export function Cookies(name?: string) {
+    return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
+        let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];
+
+        if (name)
+            existingMetadata.push({ from: 'cookies', index: parameterIndex, name: name });
+        else
+            existingMetadata.push({ from: 'cookies', index: parameterIndex });
+
+        Reflect.defineMetadata(metadataKey, existingMetadata, target, propertyKey);
+    }
+}
+
+
+
+
+
+
 export function Response() {
     return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
         let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];
@@ -50,7 +81,7 @@ export function Response() {
 
 export function Request() {
     return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
-        let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];        
+        let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];
         existingMetadata.push({ from: 'request', index: parameterIndex });
         Reflect.defineMetadata(metadataKey, existingMetadata, target, propertyKey);
     }

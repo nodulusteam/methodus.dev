@@ -3,7 +3,7 @@ import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
 import * as logger from "morgan";
 import * as path from "path";
-import { MethodDescriptor, Verbs, MethodError, MethodResult } from '../index';
+import { MethodDescriptor, Verbs, MethodError, MethodResult, MethodEvent } from '../index';
 
 
 import { fp } from '../fp';
@@ -12,6 +12,7 @@ import { BaseServer } from './base';
 import errorHandler = require("errorhandler");
 import compression = require("compression");
 import methodOverride = require("method-override");
+import { console } from '../logger';
 const debug = require('debug')('methodulus');
 
 const request = require('request-promise-native');
@@ -19,31 +20,35 @@ const request = require('request-promise-native');
 import "reflect-metadata";
 
 export class Express extends BaseServer {
-    _app:any;
-    constructor(port)
-    {
+    _app: any;
+    constructor(port) {
         super();
         this._app = express();
-            this._app.use(bodyParser.urlencoded({
-        extended: true
-    }));
+        this._app.use(bodyParser.urlencoded({
+            extended: true
+        }));
 
-    this._app.use(bodyParser.json());
-     
+        this._app.use(bodyParser.json());
+
     }
-    close()
-    {
+    close() {
         this._app.close();
     }
     //app.set("port", port);
     //this.app.use(compression());
 
-    useClass (classType) {
+    useClass(classType) {
         this._app.use(new ExpressRouter(classType).router);
+        this._app.use(new ExpressEventBus(classType).router);
+    }
+
+
+    async _sendEvent(methodEvent: MethodEvent) {
 
     }
-    async _send (params, methodulus, paramsMap)  {
-        debug('in _send:', params, methodulus, paramsMap);
+
+    async _send(params, methodulus, paramsMap) {
+        console.debug('in _send:', params, methodulus, paramsMap);
         let baseUrl = await methodulus.resolver();
         let myUri = baseUrl + methodulus.route;
         let body = null;
@@ -64,7 +69,7 @@ export class Express extends BaseServer {
             requestOptions.json = true;
         }
 
-        debug(requestOptions);
+        console.debug(requestOptions);
         try {
             let result = await request(requestOptions);
             if (typeof result === 'string' && (result[0] === '{' || result[0] === '['))
@@ -72,12 +77,12 @@ export class Express extends BaseServer {
 
         } catch (error) {
 
-            throw (new MethodError(error.error, error.statusCode));
+            throw (new MethodError(error.error || error.message, error.statusCode, error.options));
         }
 
 
     }
-   
+
 }
 
 
@@ -91,6 +96,47 @@ export class ExpressRouter {
         let autoRouter = express.Router();
         Object.keys(methodulus._descriptors).forEach(itemKey => {
             let item = methodulus._descriptors[itemKey];
+            switch (item.verb) {
+                case Verbs.Get:
+                    autoRouter.get(item.route, proto[itemKey].bind(obj));
+                    break;
+                case Verbs.Post:
+                    autoRouter.post(item.route, proto[itemKey].bind(obj));
+
+                    break;
+                case Verbs.Delete:
+                    autoRouter.delete(item.route, proto[itemKey].bind(obj));
+
+                    break;
+                case Verbs.Head:
+                    autoRouter.head(item.route, proto[itemKey].bind(obj));
+
+                    break;
+                case Verbs.Put:
+                    autoRouter.put(item.route, proto[itemKey].bind(obj));
+
+                    break;
+            }
+        });
+
+        this.router = autoRouter;
+    }
+
+
+}
+
+
+
+
+export class ExpressEventBus {
+    public router: any;
+    constructor(obj: any) {
+        let proto = fp.proto(obj);
+        let methodulus = proto.methodulus;
+        //let collection = Object.getOwnPropertyNames(proto);
+        let autoRouter = express.Router();
+        Object.keys(methodulus._events).forEach(itemKey => {
+            let item = methodulus._events[itemKey];
             switch (item.verb) {
                 case Verbs.Get:
                     autoRouter.get(item.route, proto[itemKey].bind(obj));

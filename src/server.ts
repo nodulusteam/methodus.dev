@@ -1,10 +1,15 @@
-import { Express, SocketIO, MQ, MQServer, Redis, RedisServer } from './servers';
+import { Express, SocketIO, MQ, Redis, RedisServer } from './servers';
 import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
-
+import { MethodEvent } from './response';
+import { fp } from './fp';
+import { console } from './logger';
 
 const debug = require('debug')('methodulus');
 import http = require('http');
 import colors = require('colors');
+// Import events module
+var events = require('events');
+
 
 
 export interface IApp {
@@ -19,8 +24,11 @@ export class Server {
     private _app: any = {};//IApp;
     private port: number = 0;
     public config: MethodulusConfig;
+    private eventEmitter: any;
     constructor(port?: number) {
         this.port = port || 0;
+        // Create an eventEmitter object
+        this.eventEmitter = new events.EventEmitter();
         //this.start(port);
     }
 
@@ -31,12 +39,11 @@ export class Server {
         this.config = config
         return this;
     }
-    start(port?: number) {
-        this.port = this.port || port || 0;
-        debug('activating server on ', port);
-        if (!eval(process.env.silent)) {
+    async printlogo() {
+        return new Promise((resolve, reject) => {
+
             figlet.text('Methodulus', {
-                font: 'Delta Corps Priest 1',
+                font: 'Bigfig',//Delta Corps Priest 1
                 horizontalLayout: 'default',
                 verticalLayout: 'default'
             }, function (err, data) {
@@ -46,17 +53,24 @@ export class Server {
                     return;
                 }
                 console.log(colors.blue(data));
+                resolve();
             });
-        } else {
-            //console.log(colors.green(`*****     METHODOLOGY     *****`))
-        }
 
+
+        })
+    }
+    async start(port?: number) {
         global.methodulus = { server: this };
+        this.port = this.port || port || 0;
+        debug('activating server on ', port);
+
+        await this.printlogo();
+
 
         // if (process.env.servers)
         //     this.config.servers = process.env.servers.split(',');
 
-        let silent = eval(process.env.silent);
+
 
         //debug('MethodulusConfig', JSON.parse(MethodulusConfig.servers.toString()));
         for (let i = 0; i < this.config.servers.length; i++) {
@@ -67,8 +81,8 @@ export class Server {
                 case ServerType.Express:
                     {
 
-                        if (!silent)
-                            console.log(colors.green(`Starting REST server on port`, server.options.port))
+
+                        console.log(colors.green(`Starting REST server on port`, server.options.port))
                         this._app[server.type] = new Express(server.options.port);
                         var httpServer = http.createServer(this._app[server.type]._app);//this is the inside express instance
                         this._app['http'] = httpServer;
@@ -78,19 +92,19 @@ export class Server {
                     }
                 case ServerType.Socket:
                     {
-                        if (!silent)
-                            console.log(colors.green(`Starting SOCKETIO server on port`, this.port))
-                        this._app[server.type] = new SocketIO(this.port, this._app['http']);
+
+                        console.log(colors.green(`Starting SOCKETIO server on port`, this.port))
+                        this._app[server.type] = await new SocketIO(this.port, this._app['http']);
                         break;
                     }
                 case ServerType.RabbitMQ:
                     {
-                        if (!silent)
-                            console.log(colors.green(`Starting MQ server on port`, port))
+
+                        console.log(colors.green(`Starting MQ server on port`, port))
                         try {
 
-                            this._app[server.type] = MQ(this.port, this._app['http']);
-                            this._app[server.type].connection = new MQServer();
+                            this._app[server.type] = new MQ(this.port, this._app['http']);
+                           // this._app[server.type].connection = new MQServer();
                             //this._app[server] = new MQServer();
                         } catch (error) {
                             console.log(error);
@@ -100,8 +114,8 @@ export class Server {
                     }
                 case ServerType.Redis:
                     {
-                        if (!silent)
-                            console.log(colors.green(`Starting REDIS server on port`, port))
+
+                        console.log(colors.green(`Starting REDIS server on port`, port))
                         try {
 
                             this._app[server.type] = new Redis(server.options);
@@ -119,30 +133,56 @@ export class Server {
         let classes = this.config.classes.entries()
         for (var i = 0; i < this.config.classes.size; i++) {
             let name, element = classes.next();
-            if (element.value[1].methodType === MethodType.Local)
-                this.useClass(element.value[1].classType);
+            let _class = element.value[1];
+            if (_class.methodType === MethodType.Local) {
+                this.useClass(_class);
+            } else {
+                console.log(colors.green(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+            }
+
+
+
+
         }
 
         return this;
     }
 
-    public useClass(classType) {
+    public useClass(_class) {
         this.config.servers.forEach((server) => {
-            this._app[server.type].useClass(classType);
+            console.log(colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+            this._app[server.type].useClass(_class.classType);
         });
 
     }
+
+    // public bindEvents(classType) {
+    //     let proto = fp.proto(classType);
+    //     let methodulus = proto.methodulus;
+    //     //let collection = Object.getOwnPropertyNames(proto);
+
+    //     Object.keys(methodulus._events).forEach(itemKey => {
+    //         let item = methodulus._events[itemKey];
+    //         this.eventEmitter.on(item.name, proto[item.propertyKey]);
+    //         //methodulus.name + ':' +
+    //     });
+
+    // }
     public kill() {
         ['http', 'socketio'].forEach((server) => {
             if (this._app[server]) {
-
-
                 this._app[server].close();
                 delete this._app[server];
             }
         });
     }
 
+    async sendEvent(methodEvent: MethodEvent) {
+        this.config.servers.forEach((server) => {
+            this._app[server.type]._sendEvent(methodEvent);
+        });
+
+    }
     async _send(channel: ServerType, params, message, parametersMap) {
         return await this._app[channel]._send(params, message, parametersMap);
     }

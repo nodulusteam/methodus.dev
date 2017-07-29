@@ -23,7 +23,8 @@ describe('test method messages MetodError, MethodResult', function () {
         let server = ServerHelper(8090, 'express', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
+        let client =await  ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
+         this.timeout(4000);
         let myClass = new TestClass();
 
         try {
@@ -56,7 +57,8 @@ describe('test method messages MetodError, MethodResult', function () {
         let server = ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
+        let client = await ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
+        this.timeout(4000);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');
@@ -79,12 +81,12 @@ describe('test method messages MetodError, MethodResult', function () {
 
     });
 
-    it('starting [express,socketio] server', async (done) => {
+    it('starting [redis] server', async (done) => {
        // console.log('REST SOCKETIO ---------------------------------------------------------------------------------');
-        let server = ServerHelper(8090, 'socketio', MethodType.Local);
+        let server = ServerHelper(8090, 'redis', MethodType.Local);
 
         //run the client
-        let client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
+        let client = await ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');

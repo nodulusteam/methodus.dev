@@ -8,7 +8,7 @@ const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
-process.env.silent = true;
+
 const staticResolve = 'http://localhost:8090';
 
 

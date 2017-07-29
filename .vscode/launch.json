@@ -34,7 +34,7 @@
                 "NODE_ENV": "debug"
             }
         },
-           {
+        {
             "type": "node",
             "request": "launch",
             "name": "hello-server",
@@ -49,7 +49,6 @@
                 "NODE_ENV": "debug"
             }
         },
-
         {
             "type": "node",
             "request": "launch",
@@ -78,7 +77,58 @@
                 "PORT": "8080",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
+                "servers": "express",
+                "MethodType": "Http"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic caller MQ server",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "servers": "amqp",
+                "MethodType": "MQ"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic server FirstClass Http server - destination",
+            "program": "${workspaceRoot}/tests/servers/perclass/FirstClass.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8091",
+                "DEBUG": "*",
+                "NODE_ENV": "debug",
+                "DEBUG_FILE":"${workspaceRoot}\\log.txt",
+                "servers": "express",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic event caller Http server",
+            "program": "${workspaceRoot}/tests/servers/eventcaller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
                 "servers": "express",
                 "MethodType": "Http"
             }
@@ -96,7 +146,6 @@
                 "PORT": "8080",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "socketio",
                 "MethodType": "Socket"
             }
@@ -114,7 +163,6 @@
                 "PORT": "8080",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "redis",
                 "MethodType": "Redis"
             }
@@ -132,7 +180,6 @@
                 "PORT": "8090",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "redis",
                 "MethodType": "Local"
             }
@@ -150,7 +197,6 @@
                 "PORT": "8090",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "express",
                 "MethodType": "Local"
             }
@@ -168,7 +214,6 @@
                 "PORT": "8090",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "socketio",
                 "MethodType": "Local"
             }
@@ -186,7 +231,6 @@
                 "PORT": "8090",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "amqp",
                 "MethodType": "Local"
             }
@@ -204,9 +248,38 @@
                 "PORT": "8090",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug",
-                "silent": "false",
                 "servers": "express,amqp",
                 "MethodType": "Local"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "Run gateway test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "--debug",
+                "--inspect",
+                "--no-timeouts",
+                "tests/gateway.spec.js"
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug"
             }
         },
         {
@@ -302,15 +375,10 @@
         {
             "request": "launch",
             "console": "internalConsole",
-            // Name of configuration; appears in the launch configuration drop down menu.
             "name": "Run fp test",
-            // Type of configuration. Possible values: "node", "mono".
             "type": "node",
-            // Workspace relative or absolute path to the program.
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
-            // Automatically stop program after launch.
             "stopOnEntry": false,
-            // Command line arguments passed to the program.
             "args": [
                 "--debug",
                 "--inspect",
@@ -318,15 +386,35 @@
                 "tests/fp.spec.js"
             ],
             "sourceMaps": true,
-            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
             "cwd": "${workspaceRoot}",
-            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
             "runtimeExecutable": null,
-            // Environment variables passed to the program.
             "env": {
                 "PORT": "8020",
                 "DEBUG": "methodulus",
                 "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "Run events test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "stopOnEntry": false,
+            "args": [
+                "--debug",
+                "--inspect",
+                "--no-timeouts",
+                "tests/events.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "DEBUG_FILE": "${workspaceRoot}/logs/"
             }
         },
         {

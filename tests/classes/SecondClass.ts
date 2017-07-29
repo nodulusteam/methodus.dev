@@ -1,13 +1,12 @@
 import { Method, MethodConfig, Verbs, MethodType, Body, Param, Query, MethodResult, MethodError } from '../../index';
-const endPoint = 'http://localhost:8090';//https://jsonplaceholder.typicode.com';
 const debug = require('debug')('methodulus');
-@MethodConfig('TestClass', endPoint)
-export class TestClass {
+@MethodConfig('SecondClass')
+export class SecondClass {
     constructor() { }
 
     @Method(Verbs.Get, '/posts/:id/:name')
     public action1( @Param('id') id: number, @Param('name') name: string) {
-        console.log('running action1 localy', id, name);
+        console.log('running action1 in SecondClass', id, name );
         return new MethodResult({ id: id, name: name, add: 'added' });
     }
 
@@ -15,8 +14,7 @@ export class TestClass {
     @Method(Verbs.Get, '/posts/error')
     public error() {
         console.log('running error localy');
-        throw (new MethodError('error returned', 500));
-
+        return new MethodError('error returned', 500);
     }
 
 

@@ -1,23 +1,28 @@
 
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
-import {fp} from '../fp';
+import { fp } from '../fp';
 import { amqpConnect } from './amqp';
-export function MQ(port, httpServer) {
-    var io: any = {};
+import { BaseServer } from './base';
 
-    //return new Promise((resolve, reject) => {
-    io.classRouters = [];
+import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
+const metadataKey = 'methodulus';
+export class MQ extends BaseServer {
+    _app: any;
+    constructor(port, httpServer) {
+        super();
+    }
 
 
+    async _sendEvent(methodEvent: MethodEvent) {
 
-
-    io.useClass = function (classType) {
+    }
+    useClass(classType) {
         new MQRouter(classType);
 
     }
 
-    io._send = async (functionArgs, methodinformation, paramsMap) => {
+    async _send(functionArgs, methodinformation, paramsMap) {
         console.log(methodinformation);
         return new Promise((resolve, reject) => {
             amqpConnect().then((conn) => {
@@ -75,34 +80,10 @@ export function MQ(port, httpServer) {
 
 
 
-    return io;
-}
-function generateUuid() {
-    return Math.random().toString() +
-        Math.random().toString() +
-        Math.random().toString();
-}
-
-export class MethodMessage {
-    to: string;
-    message: any;
-    metadata: any;
-    args: any;
-}
-
-let metadataKey = 'methodulus';
-export class MQServer {
-    connection: any = null;
-    constructor() {
-        // amqpConnect().then((connection) => {
-        //     this.connection = connection
-
-
-        // });
-    }
-
 
 }
+
+
 export class MQRouter {
     public router: any;
     constructor(obj: any) {

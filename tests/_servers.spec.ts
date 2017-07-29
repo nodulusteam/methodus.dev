@@ -12,7 +12,7 @@ const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
-process.env.silent = true;
+
 const staticResolve = 'http://localhost:8090';
 // describe('methodulus config defaults to "express"', function () {
 //     it('loading configuration for methodulus', function () {
@@ -27,8 +27,8 @@ describe('initiate modes', function () {
         let server, client;
 
         try {
-            server = ServerHelper(8090, 'express', MethodType.Local);
-            client = ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
+            server = await ServerHelper(8090, 'express', MethodType.Local);
+            client = await ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
             this.timeout(2000);
             let result = await CallHelper();
 
@@ -45,7 +45,7 @@ describe('initiate modes', function () {
 
 
         }
-        this.timeout(2000);
+        this.timeout(5000);
         done();
         //run the client
 
@@ -62,11 +62,11 @@ describe('initiate modes', function () {
 
 
         try {
-            server = ServerHelper(8090, 'socketio', MethodType.Local);
+            server = await ServerHelper(8090, 'socketio', MethodType.Local);
 
             //run the client
-            client = ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
-
+            client = await ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
+            this.timeout(2000);
             let result = await CallHelper();
             if (result)
                 expect(result.add).to.equal('added');
@@ -77,7 +77,7 @@ describe('initiate modes', function () {
                 server.kill();
             if (client)
                 client.kill();
-            this.timeout(2000);
+            this.timeout(5000);
             done();
 
         }
@@ -91,10 +91,10 @@ describe('initiate modes', function () {
     it('starting redis server', async (done) => {
         let server, client;
         try {
-            server = ServerHelper(8090, 'redis', MethodType.Local);
+            server = await ServerHelper(8090, 'redis', MethodType.Local);
             //run the client
-            client = ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);
-
+            client = await ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);
+            this.timeout(2000);
             let result = await CallHelper();
             if (result)
                 expect(result.add).to.equal('added');
@@ -106,7 +106,7 @@ describe('initiate modes', function () {
             if (client)
                 client.kill();
 
-            this.timeout(2000);
+            this.timeout(4000);
             done();
 
         }
@@ -119,9 +119,9 @@ describe('initiate modes', function () {
     it('starting [express,socketio] server', async (done) => {
         let server, client;
         try {
-            server = ServerHelper(8090, 'express,socketio', MethodType.Local);
+            server = await ServerHelper(8090, 'express,socketio', MethodType.Local);
             //run the client
-            client = ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket, staticResolve);
+            client = await ClientHelper(TestClass, 8080, ['express', 'socketio'], MethodType.Socket, staticResolve);
 
             let result = await CallHelper();
             expect(result.add).to.equal('added');

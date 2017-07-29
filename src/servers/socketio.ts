@@ -1,7 +1,7 @@
 
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
-import { MethodError, MethodResult } from '../response';
+import { MethodError, MethodResult,MethodEvent } from '../response';
 import { fp } from '../fp';
 import { BaseServer } from './base';
 let metadataKey = 'methodulus';
@@ -43,7 +43,9 @@ export class SocketIO extends BaseServer {
         })
 
     }
+    async _sendEvent(methodEvent: MethodEvent) {
 
+    }
     async _send(functionArgs, methodulus, paramsMap) {
         return new Promise(async (resolve, reject) => {
             debug('sending data in socket', functionArgs, methodulus, paramsMap);
@@ -65,7 +67,7 @@ export class SocketIO extends BaseServer {
                 socket.emit(messageName, dataObject, (data) => {
                     debug('recieved result', data);
                     if (data.error && data.statusCode) {
-                        reject(data.error);
+                        reject(data);
                     }
                     else {
                         resolve(data);
@@ -84,6 +86,10 @@ export class SocketIORouter implements Methodulus.Router {
     constructor(obj: any, socket: any) {
         let proto = fp.proto(obj);
         let methodulus = proto.methodulus;
+
+        let existingClassMetadata = Reflect.getOwnMetadata(metadataKey, proto) || {};
+        existingClassMetadata.returnMessages = true;
+        Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
 
         Object.keys(methodulus._descriptors).forEach(itemKey => {
             let item = methodulus._descriptors[itemKey];

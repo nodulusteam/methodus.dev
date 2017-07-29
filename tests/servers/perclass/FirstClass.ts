@@ -1,13 +1,9 @@
-import { TestClass } from '../classes/test-class';
-import { FirstClass } from '../classes/FirstClass';
-import { ServerType, Server, MethodType, MethodulusConfig } from '../../index';
-
+import { FirstClass } from '../../classes/FirstClass';
+import { ServerType, Server, MethodType, MethodulusConfig } from '../../../index';
 
 
 let config = new MethodulusConfig();
-
 const redis_addr = '//192.168.99.100:32768';
- 
 
 if(process.env.servers)
 {
@@ -17,7 +13,6 @@ if(process.env.servers)
     })
 }
 
-config.use(TestClass, process.env.METHODTYPE, 'http://localhost:8090');
-config.use(FirstClass, process.env.METHODTYPE, 'http://localhost:8090');
+config.use(FirstClass, process.env.METHODTYPE, 'http://localhost:8091');
 const server = new Server(process.env.PORT).configure(config).start();
 
