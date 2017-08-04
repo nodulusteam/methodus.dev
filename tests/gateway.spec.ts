@@ -25,15 +25,15 @@ const staticResolve = 'http://localhost:8090';
 //     });
 // });
 
-describe('initiate modes', function () {
-    it('starting express server', async (done) => {
+describe('test gateway configuration', function () {
+    it('starting express gateway', async (done) => {
         //run the servers
         let server, server2, server3, client;
 
         try {
-            server = ServerClassHelper('FirstClass', 8091, 'express', MethodType.Local);
-            server2 = ServerClassHelper('SecondClass', 8092, 'express', MethodType.Local);
-            server3 = ServerClassHelper('ThirdClass', 8093, 'express', MethodType.Local);
+            server = await ServerClassHelper('FirstClass', 8091, 'express', MethodType.Local);
+            server2 = await ServerClassHelper('SecondClass', 8092, 'express', MethodType.Local);
+            server3 = await ServerClassHelper('ThirdClass', 8093, 'express', MethodType.Local);
 
 
 
@@ -49,7 +49,7 @@ describe('initiate modes', function () {
 
             //MethodulusConfig.config[classType.name] = methodType;
             //MethodulusConfig.servers = servers;
-            let client = new Server(8080).configure(config).start();
+            let client = await new Server(8080).configure(config).start();
 
 
 

@@ -1,4 +1,4 @@
-import { console, Method, MethodConfig, Verbs, MethodType, Body, Param, Query, MethodResult, MethodError, Event, EventName } from '../../index';
+import { logger, Method, MethodConfig, Verbs, MethodType, Body, Param, Query, MethodResult, MethodError, Event, EventName } from '../../index';
 
 process.env.methodulus_name = 'first-class';
 @MethodConfig('FirstClass')
@@ -7,9 +7,9 @@ export class FirstClass {
 
     @Method(Verbs.Get, '/posts/:id/:name')
     public action1( @Param('id') id: number, @Param('name') name: string) {
-        console.log('action1 in FirstClass', id, name);
+        logger.log('action1 in FirstClass', id, name);
         let result = new MethodResult({ value: 'FirstClass Data, from port' + process.env.NODE_PORT, add: 'added' });
-        console.log('the result as MethodResult', result);
+        logger.log('the result as MethodResult', result);
         return result;
     }
 
@@ -17,7 +17,8 @@ export class FirstClass {
     @Method(Verbs.Get, '/posts/error')
     public error() {
         console.log('running error localy');
-        return new MethodError('error returned', 500);
+        throw (new MethodError('error returned', 500))
+
     }
 
     @Event('FirstClassEvent', Verbs.Post, '/events/firstclass')

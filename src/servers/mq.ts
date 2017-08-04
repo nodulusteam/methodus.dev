@@ -4,7 +4,7 @@ import "reflect-metadata";
 import { fp } from '../fp';
 import { amqpConnect } from './amqp';
 import { BaseServer } from './base';
-
+import { MethodulusClassConfig } from '../config';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
 const metadataKey = 'methodulus';
 export class MQ extends BaseServer {
@@ -15,7 +15,18 @@ export class MQ extends BaseServer {
 
 
     async _sendEvent(methodEvent: MethodEvent) {
+        return new Promise((resolve, reject) => {
+            amqpConnect().then((conn) => {
+                conn.createChannel().then((ch) => {
+                    ch.sendToQueue('event-bus',
+                        new Buffer(JSON.stringify(methodEvent)));
+                    resolve(methodEvent);
 
+                });
+            });
+
+
+        });
     }
     useClass(classType) {
         new MQRouter(classType);
@@ -89,6 +100,38 @@ export class MQRouter {
     constructor(obj: any) {
         let proto = fp.proto(obj);
         let methodulus = proto.methodulus;
+
+
+
+        let config = global.methodulus.server.config;
+        let methodinformation: MethodulusClassConfig = config.classes.get(methodulus.name);
+
+
+        let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, proto) || {};
+        if (methodinformation.methodType !== MethodType.Local)
+            existingClassMetadata.returnMessages = true;
+        Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
+
+
+        if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
+            let eventsub = redis.createClient(redis_addr);
+            eventsub.subscribe('event-bus');
+            eventsub.on('message', async (destination, msg) => {
+                let parsedMessage = fp.maybeJson(msg) as MethodEvent;
+                if (proto.methodulus._events[parsedMessage.name]) {
+                    let pkey = proto.methodulus._events[parsedMessage.name].propertyKey;
+                    let result = await proto[pkey](parsedMessage.value);
+                    console.log('the result in the router after the call is', result);
+
+                }
+
+
+            });
+        }
+
+
+
+
 
         amqpConnect().then((conn) => {
             conn.createChannel().then((ch) => {

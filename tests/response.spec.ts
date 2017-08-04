@@ -54,7 +54,7 @@ describe('test method messages MetodError, MethodResult', function () {
 
     it('error statusCode on SOCKET', async (done) => {
        // console.log('SOCKETIO ---------------------------------------------------------------------------------');
-        let server = ServerHelper(8090, 'socketio', MethodType.Local);
+        let server = await ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
         let client = await ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
@@ -83,7 +83,7 @@ describe('test method messages MetodError, MethodResult', function () {
 
     it('starting [redis] server', async (done) => {
        // console.log('REST SOCKETIO ---------------------------------------------------------------------------------');
-        let server = ServerHelper(8090, 'redis', MethodType.Local);
+        let server = await ServerHelper(8090, 'redis', MethodType.Local);
 
         //run the client
         let client = await ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);

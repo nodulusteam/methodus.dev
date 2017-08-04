@@ -26,15 +26,14 @@ export function EventName() {
     }
 }
 
-export function Event(name: ByteString, verb: Verbs, route: string, methodType?: MethodType) {
-
+export function Event(name: string, verb: Verbs, route: string, methodType?: MethodType) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-
         target.methodulus = target.methodulus || { _events: {}, _descriptors: {} }
-        let metaObject: EventDescriptor = {name, verb, route, methodType, propertyKey }
+        let metaObject: EventDescriptor = { name, verb, route, methodType, propertyKey }
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
-        target.methodulus._descriptors[propertyKey] = metaObject as EventDescriptor
-
+        target.methodulus._events[name] = metaObject as EventDescriptor;
+  
+  
 
         let paramsMap: any[] = Reflect.getOwnMetadata('params', target, propertyKey) || [];
         paramsMap.sort((a, b) => {

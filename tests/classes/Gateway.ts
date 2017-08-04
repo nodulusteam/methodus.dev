@@ -1,7 +1,7 @@
 import { FirstClass } from './FirstClass';
 import { SecondClass } from './SecondClass';
 import { ThirdClass } from './ThirdClass';
-import { console, Event, MethodEvent, Method, MethodConfig, Verbs, ServerType, MethodError, MethodResult, MethodType } from '../../index'
+import { logger, Event, MethodEvent, Method, MethodConfig, Verbs, ServerType, MethodError, MethodResult, MethodType } from '../../index'
 
 
 

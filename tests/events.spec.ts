@@ -25,8 +25,8 @@ const staticResolve = 'http://localhost:8090';
 //     });
 // });
 
-describe('initiate modes', function () {
-    it('starting express server', async (done) => {
+xdescribe('initiate modes', function () {
+    xit('starting express server', async (done) => {
         //run the servers
         let server, server2, server3, client;
 

@@ -7,7 +7,7 @@ import "reflect-metadata";
 import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../config';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
-import { console } from '../logger';
+import { logger } from '../logger';
 import { RestParser, RestResponse, Verbs } from '../rest';
 let metadataKey = 'methodulus';
 

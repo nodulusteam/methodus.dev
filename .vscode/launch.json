@@ -178,7 +178,7 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8090",
-                "DEBUG": "methodulus",
+                "DEBUG": "*",
                 "NODE_ENV": "debug",
                 "servers": "redis",
                 "MethodType": "Local"

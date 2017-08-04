@@ -4,7 +4,7 @@ import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../respon
 import { MethodulusClassConfig, MethodType } from '../config';
 
 import { BaseServer } from './base';
-import { console } from '../logger';
+import { logger } from '../logger';
 const redis = require('redis');
 import { fp } from '../fp';
 const redis_addr = '//192.168.99.100:32768';
@@ -23,6 +23,13 @@ export class Redis extends BaseServer {
 
     }
     async _sendEvent(methodEvent: MethodEvent) {
+        return new Promise((resolve, reject) => {
+            let pub = redis.createClient(this.options.server);
+            logger.log('redis client created ');
+            pub.publish('event-bus', JSON.stringify(methodEvent));
+            logger.log('published event', methodEvent);
+            resolve(methodEvent);
+        });
 
     }
 
@@ -148,21 +155,28 @@ export class RedisRouter implements Methodulus.Router {
         Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
 
 
+        if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
+            let eventsub = redis.createClient(redis_addr);
+            eventsub.subscribe('event-bus');
+            eventsub.on('message', async (destination, msg) => {
+                let parsedMessage = fp.maybeJson(msg) as MethodEvent;
+                if (proto.methodulus._events[parsedMessage.name]) {
+                    let pkey = proto.methodulus._events[parsedMessage.name].propertyKey;
+                    let result = await proto[pkey](parsedMessage.value);
+                    console.log('the result in the router after the call is', result);
+
+                }
+
+
+            });
+        }
 
         sub.on('message', async (destination, msg) => {
             let parsedMessage = fp.maybeJson(msg) as MethodMessage;
             console.debug('running local method', parsedMessage.to);
 
 
-
-
-
-            proto[parsedMessage.to]
-
             let result = await proto[parsedMessage.to](...parsedMessage.args);
-
-
-
             console.log('the result in the router after the call is', result);
 
             pub.publish(parsedMessage.correlationId, JSON.stringify(result));

@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
-import * as logger from "morgan";
+ 
 import * as path from "path";
 import { MethodDescriptor, Verbs, MethodError, MethodResult, MethodEvent } from '../index';
 
@@ -12,7 +12,7 @@ import { BaseServer } from './base';
 import errorHandler = require("errorhandler");
 import compression = require("compression");
 import methodOverride = require("method-override");
-import { console } from '../logger';
+import { logger } from '../logger';
 const debug = require('debug')('methodulus');
 
 const request = require('request-promise-native');

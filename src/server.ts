@@ -2,7 +2,7 @@ import { Express, SocketIO, MQ, Redis, RedisServer } from './servers';
 import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
 import { MethodEvent } from './response';
 import { fp } from './fp';
-import { console } from './logger';
+import { logger } from './logger';
 
 const debug = require('debug')('methodulus');
 import http = require('http');
@@ -17,6 +17,7 @@ export interface IApp {
 }
 
 const figlet = require('figlet');
+
 
 
 export class Server {
@@ -100,11 +101,11 @@ export class Server {
                 case ServerType.RabbitMQ:
                     {
 
-                        console.log(colors.green(`Starting MQ server on port`, port))
+                        console.log(colors.green(`Starting MQ server`))
                         try {
 
                             this._app[server.type] = new MQ(this.port, this._app['http']);
-                           // this._app[server.type].connection = new MQServer();
+                            // this._app[server.type].connection = new MQServer();
                             //this._app[server] = new MQServer();
                         } catch (error) {
                             console.log(error);
@@ -115,7 +116,7 @@ export class Server {
                 case ServerType.Redis:
                     {
 
-                        console.log(colors.green(`Starting REDIS server on port`, port))
+                        console.log(colors.green(`Starting REDIS server`))
                         try {
 
                             this._app[server.type] = new Redis(server.options);
@@ -185,5 +186,10 @@ export class Server {
     }
     async _send(channel: ServerType, params, message, parametersMap) {
         return await this._app[channel]._send(params, message, parametersMap);
+    }
+
+    async registerEvent(channel, eventName) {
+        if (this._app[channel].registerEvent)
+            return await this._app[channel].registerEvent(event);
     }
 }

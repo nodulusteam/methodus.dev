@@ -38,7 +38,7 @@ export class MethodEvent {
         this.name = name;
 
 
-        global.methodulus.server.sendEvent(name, value);
+        global.methodulus.server.sendEvent(this);
 
     }
 
