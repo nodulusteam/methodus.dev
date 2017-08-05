@@ -15,16 +15,25 @@ export async function CallHelper(): Promise<any> {
     return result;
 }
 
+async function wait(timeout) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve();
+        }, timeout);
+    })
+
+}
+
 
 describe('test method messages MetodError, MethodResult', function () {
-    it('error statusCode on REST', async (done) => {
+    it('error statusCode on REST', async function (done) {
         //run the servers
-      //  console.log('REST ---------------------------------------------------------------------------------');
+        //  console.log('REST ---------------------------------------------------------------------------------');
         let server = ServerHelper(8090, 'express', MethodType.Local);
-
+        await wait(5 * 1000);
         //run the client
-        let client =await  ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
-         this.timeout(4000);
+        let client = await ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
+
         let myClass = new TestClass();
 
         try {
@@ -42,7 +51,7 @@ describe('test method messages MetodError, MethodResult', function () {
             server.kill();
             client.kill();
 
-            this.timeout(2000);
+            await wait(2 * 1000);
             done();
         }
 
@@ -53,12 +62,12 @@ describe('test method messages MetodError, MethodResult', function () {
     });
 
     it('error statusCode on SOCKET', async (done) => {
-       // console.log('SOCKETIO ---------------------------------------------------------------------------------');
+        // console.log('SOCKETIO ---------------------------------------------------------------------------------');
         let server = await ServerHelper(8090, 'socketio', MethodType.Local);
 
         //run the client
         let client = await ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
-        this.timeout(4000);
+        await wait(5 * 1000);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');
@@ -75,18 +84,20 @@ describe('test method messages MetodError, MethodResult', function () {
             client.kill();
 
             //expect(result.statusCode).to.equal(500);
-            this.timeout(2000);
+            await wait(2 * 1000);
             done();
         }
 
     });
 
     it('starting [redis] server', async (done) => {
-       // console.log('REST SOCKETIO ---------------------------------------------------------------------------------');
+        // console.log('REST SOCKETIO ---------------------------------------------------------------------------------');
         let server = await ServerHelper(8090, 'redis', MethodType.Local);
 
         //run the client
         let client = await ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);
+
+        await wait(5 * 1000);
         let myClass = new TestClass();
         try {
             let result: any = await myClass.error();//myClass.action1(1, 'roi');
@@ -100,11 +111,41 @@ describe('test method messages MetodError, MethodResult', function () {
             client.kill();
 
             //expect(result.statusCode).to.equal(500);
-            this.timeout(2000);
+            await wait(2 * 1000);
             done();
         }
 
 
 
     });
+
+    it('starting [amqp] server', async (done) => {
+        // console.log('REST SOCKETIO ---------------------------------------------------------------------------------');
+        let server = await ServerHelper(8090, 'amqp', MethodType.Local);
+
+        //run the client
+        let client = await ClientHelper(TestClass, 8080, ['amqp'], MethodType.MQ, staticResolve);
+
+        await wait(5 * 1000);
+        let myClass = new TestClass();
+        try {
+            let result: any = await myClass.error();//myClass.action1(1, 'roi');
+            expect(result.name).to.equal('roi');
+        }
+        catch (error) {
+            expect(error.error).to.equal('error returned');
+        } finally {
+            // console.log('test result', result);
+            server.kill();
+            client.kill();
+
+            //expect(result.statusCode).to.equal(500);
+            await wait(2 * 1000);
+            done();
+        }
+
+
+
+    });
+
 });

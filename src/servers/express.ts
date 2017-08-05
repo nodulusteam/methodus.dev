@@ -48,7 +48,7 @@ export class Express extends BaseServer {
     }
 
     async _send(params, methodulus, paramsMap) {
-        console.debug('in _send:', params, methodulus, paramsMap);
+        logger.debug('in _send:', params, methodulus, paramsMap);
         let baseUrl = await methodulus.resolver();
         let myUri = baseUrl + methodulus.route;
         let body = null;
@@ -69,7 +69,7 @@ export class Express extends BaseServer {
             requestOptions.json = true;
         }
 
-        console.debug(requestOptions);
+        logger.debug(requestOptions);
         try {
             let result = await request(requestOptions);
             if (typeof result === 'string' && (result[0] === '{' || result[0] === '['))
@@ -139,22 +139,22 @@ export class ExpressEventBus {
             let item = methodulus._events[itemKey];
             switch (item.verb) {
                 case Verbs.Get:
-                    autoRouter.get(item.route, proto[itemKey].bind(obj));
+                    autoRouter.get(item.route, proto[item.propertyKey].bind(obj));
                     break;
                 case Verbs.Post:
-                    autoRouter.post(item.route, proto[itemKey].bind(obj));
+                    autoRouter.post(item.route, proto[item.propertyKey].bind(obj));
 
                     break;
                 case Verbs.Delete:
-                    autoRouter.delete(item.route, proto[itemKey].bind(obj));
+                    autoRouter.delete(item.route, proto[item.propertyKey].bind(obj));
 
                     break;
                 case Verbs.Head:
-                    autoRouter.head(item.route, proto[itemKey].bind(obj));
+                    autoRouter.head(item.route, proto[item.propertyKey].bind(obj));
 
                     break;
                 case Verbs.Put:
-                    autoRouter.put(item.route, proto[itemKey].bind(obj));
+                    autoRouter.put(item.route, proto[item.propertyKey].bind(obj));
 
                     break;
             }

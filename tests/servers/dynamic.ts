@@ -1,6 +1,6 @@
 process.env.DEBUG = 'methodulus';
 
-
+import { EventsClass } from '../classes/events-class';
 import { TestClass } from '../classes/test-class';
 import { FirstClass } from '../classes/FirstClass';
 import { ServerType, Server, MethodType, MethodulusConfig } from '../../index';
@@ -19,6 +19,7 @@ if (process.env.servers) {
     })
 }
 
+config.use(EventsClass, MethodType.Local, 'http://localhost:8090');
 config.use(TestClass, process.env.METHODTYPE, 'http://localhost:8090');
 config.use(FirstClass, process.env.METHODTYPE, 'http://localhost:8090');
 const server = new Server(process.env.PORT).configure(config).start();

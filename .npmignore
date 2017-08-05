@@ -1,2 +1,4 @@
 *.ts
 examples
+.vscode
+tests

@@ -34,7 +34,7 @@ export class Redis extends BaseServer {
     }
 
     async _send(functionArgs, methodinformation, paramsMap) {
-        console.debug(functionArgs, methodinformation);
+        logger.debug(functionArgs, methodinformation);
         return new Promise((resolve, reject) => {
             let pub = redis.createClient(this.options.server);
             let sub = redis.createClient(this.options.client);
@@ -42,7 +42,7 @@ export class Redis extends BaseServer {
             sub.subscribe(corr);
             sub.on('message', (destination, msg) => {
                 if (corr == destination) {
-                    console.info('recieved the call result', msg);
+                    logger.info('recieved the call result', msg);
                     let m: MethodResult | MethodError | any = fp.maybeJson(msg);
                     if (m.statusCode && m.error)
                         reject(m);
@@ -173,11 +173,11 @@ export class RedisRouter implements Methodulus.Router {
 
         sub.on('message', async (destination, msg) => {
             let parsedMessage = fp.maybeJson(msg) as MethodMessage;
-            console.debug('running local method', parsedMessage.to);
+            logger.debug('running local method', parsedMessage.to);
 
 
             let result = await proto[parsedMessage.to](...parsedMessage.args);
-            console.log('the result in the router after the call is', result);
+            logger.log('the result in the router after the call is', result);
 
             pub.publish(parsedMessage.correlationId, JSON.stringify(result));
         });
