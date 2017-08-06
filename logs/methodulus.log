@@ -1,0 +1,945 @@
+[Fri Aug 04 2017 18:14:35 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:14:35 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:14:36 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:14:36 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:23:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:23:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:23:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:23:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:25:56 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:25:56 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:25:56 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:25:56 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:27:54 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:35:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:35:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 18:35:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 18:35:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 22:57:25 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 22:57:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 22:57:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 22:57:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 22:57:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 22:57:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 22:58:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 22:58:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 22:58:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 22:58:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 22:58:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 22:58:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 22:59:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 22:59:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 22:59:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 22:59:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 22:59:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 22:59:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:09:52 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:09:52 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:10:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:10:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:21:53 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:22:38 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:22:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:22:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:22:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:23:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:23:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:23:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:24:51 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:28:02 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:28:44 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:29:14 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:29:42 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:30:36 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:31:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:31:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:31:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:31:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:31:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:31:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:32:26 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:32:26 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:32:26 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:33:06 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:33:06 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:33:06 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:33:25 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:33:25 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:33:25 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:33:46 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:34:51 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:35:05 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:35:05 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:35:05 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:39:43 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:39:43 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:39:43 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:44:27 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:44:27 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:44:27 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:45:16 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:51:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:51:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:51:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:51:28 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:51:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:51:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:51:49 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:52:12 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:52:12 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:52:12 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:52:29 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:54:47 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:55:12 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:55:12 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:55:12 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:56:28 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:57:37 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:57:57 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:58:02 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Fri Aug 04 2017 23:58:02 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'the result in the router after the call is' undefined
+[Fri Aug 04 2017 23:58:03 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Fri Aug 04 2017 23:58:03 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'the result in the router after the call is' undefined
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Fri Aug 04 2017 23:58:19 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:01:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:01:35 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sat Aug 05 2017 00:01:35 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'the result in the router after the call is' undefined
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:02:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:02:40 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is undefined
+[Sat Aug 05 2017 00:05:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 00:05:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 00:05:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 00:06:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 00:06:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 00:06:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 00:06:20 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 00:06:20 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:06:20 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sat Aug 05 2017 00:06:20 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:06:20 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 00:08:06 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1654564654 roicccccc
+[Sat Aug 05 2017 00:08:06 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 00:14:26 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'GET',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 00:14:26 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 00:15:42 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'GET',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 00:15:42 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 00:16:07 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'GET',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 00:16:07 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 00:17:29 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 00:17:29 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:38:33 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:38:33 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:39:49 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:39:49 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:40:00 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:40:00 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:41:59 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:41:59 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:42:40 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:42:40 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:48:02 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:48:02 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:48:52 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:48:52 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:49:00 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:49:00 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:49:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:49:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:57:40 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:57:40 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:57:49 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:57:49 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:58:06 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:58:06 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:58:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:58:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 01:58:33 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 01:58:33 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:05:49 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:05:49 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:06:33 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:06:33 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:07:08 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:07:08 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:17:46 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:17:46 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:18:07 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:18:07 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:18:55 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:18:55 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:19:27 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:19:27 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:20:50 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:20:50 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:21:05 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Redis',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 02:21:06 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method error
+[Sat Aug 05 2017 02:43:57 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [] { verb: 'POST',
+  route: '/posts/error',
+  methodType: 'Http',
+  propertyKey: 'error',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } []
+[Sat Aug 05 2017 02:43:57 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'POST', uri: 'http://localhost:8090/posts/error' }
+[Sat Aug 05 2017 02:44:07 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 02:44:07 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 02:44:07 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 02:45:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 02:45:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 02:45:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:00:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1654564654 roicccccc
+[Sat Aug 05 2017 21:00:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:00:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Redis',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method action1
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] INFO first-class redis client created 
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] INFO first-class published event MethodEvent { value: { id: '333', name: 'roi' }, name: 'FirstClassEvent' }
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is { id: 1654564654, name: 'roicccccc', add: 'added' }
+[Sat Aug 05 2017 21:00:31 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller recieved the call result {"id":1654564654,"name":"roicccccc","add":"added"}
+[Sat Aug 05 2017 21:00:37 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:00:37 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:00:37 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:04:04 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:04:04 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:05:13 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:05:13 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:06:43 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:06:43 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:10:15 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1, 'roi' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:10:15 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET', uri: 'http://localhost:8090/posts/1/roi' }
+[Sat Aug 05 2017 21:13:09 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:13:09 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:14:03 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:14:03 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:14:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1654564654 roicccccc
+[Sat Aug 05 2017 21:14:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:15:36 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:15:36 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:15:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1654564654 roicccccc
+[Sat Aug 05 2017 21:15:46 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:17:03 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined 'in _send:' [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:17:03 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined { method: 'GET',
+  uri: 'http://localhost:8090/posts/1654564654/roicccccc' }
+[Sat Aug 05 2017 21:17:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1654564654 roicccccc
+[Sat Aug 05 2017 21:17:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:17:23 GMT+0300 (Jerusalem Daylight Time)] DEBUG undefined [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Redis',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 21:17:23 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method action1
+[Sat Aug 05 2017 21:17:23 GMT+0300 (Jerusalem Daylight Time)] INFO first-class redis client created 
+[Sat Aug 05 2017 21:17:23 GMT+0300 (Jerusalem Daylight Time)] INFO first-class published event MethodEvent { value: { id: '333', name: 'roi' }, name: 'FirstClassEvent' }
+[Sat Aug 05 2017 21:17:23 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is { id: 1654564654, name: 'roicccccc', add: 'added' }
+[Sat Aug 05 2017 21:17:23 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'recieved the call result' '{"id":1654564654,"name":"roicccccc","add":"added"}'
+[Sat Aug 05 2017 21:17:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:17:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:17:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:17:33 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:17:33 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:17:33 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:18:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:18:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:18:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:18:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:18:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:18:18 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:18:19 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:18:19 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:25:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:25:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:25:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:25:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:25:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:25:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:25:40 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:25:40 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:26:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:26:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:28:26 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:28:26 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:37:22 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:37:22 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:38:39 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:38:39 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:38:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:38:39 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:38:39 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'SecondClass',
+  classType: [Function: SecondClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:38:39 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8092/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:38:59 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:38:59 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:38:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:38:59 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:38:59 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'SecondClass',
+  classType: [Function: SecondClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:38:59 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8092/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:39:24 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:39:24 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:39:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:39:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:41:15 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'SecondClass',
+  classType: [Function: SecondClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:41:15 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8092/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:42:48 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'FirstClass',
+  classType: [Function: FirstClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:42:48 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8091/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:42:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:42:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:42:51 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'SecondClass',
+  classType: [Function: SecondClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:42:51 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8092/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:42:52 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class in _send: [ 1, 'roi from gateway' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Http',
+  propertyKey: 'action1',
+  endpoint: undefined,
+  name: 'ThirdClass',
+  classType: [Function: ThirdClass],
+  resolver: [Function] } [ { from: 'params', index: 0, name: 'id' },
+  { from: 'params', index: 1, name: 'name' } ]
+[Sat Aug 05 2017 21:42:52 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class { method: 'GET',
+  uri: 'http://localhost:8093/posts/1/roi from gateway' }
+[Sat Aug 05 2017 21:43:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:43:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:43:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:43:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:43:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:43:24 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:43:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Redis',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 21:43:28 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method action1
+[Sat Aug 05 2017 21:43:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class redis client created 
+[Sat Aug 05 2017 21:43:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class published event MethodEvent { value: { id: '333', name: 'roi' }, name: 'FirstClassEvent' }
+[Sat Aug 05 2017 21:43:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is { id: 1654564654, name: 'roicccccc', add: 'added' }
+[Sat Aug 05 2017 21:43:28 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller recieved the call result {"id":1654564654,"name":"roicccccc","add":"added"}
+[Sat Aug 05 2017 21:43:30 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:43:30 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:43:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:43:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:43:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:45:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:45:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:45:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:45:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:45:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:45:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:45:42 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Redis',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 21:45:42 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method action1
+[Sat Aug 05 2017 21:45:42 GMT+0300 (Jerusalem Daylight Time)] INFO first-class redis client created 
+[Sat Aug 05 2017 21:45:42 GMT+0300 (Jerusalem Daylight Time)] INFO first-class published event MethodEvent { value: { id: '333', name: 'roi' }, name: 'FirstClassEvent' }
+[Sat Aug 05 2017 21:45:42 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is { id: 1654564654, name: 'roicccccc', add: 'added' }
+[Sat Aug 05 2017 21:45:42 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller recieved the call result {"id":1654564654,"name":"roicccccc","add":"added"}
+[Sat Aug 05 2017 21:45:44 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:45:44 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:45:44 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:45:44 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:45:44 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:46:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:46:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:46:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:46:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:46:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:46:32 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:46:36 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Redis',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 21:46:36 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method action1
+[Sat Aug 05 2017 21:46:36 GMT+0300 (Jerusalem Daylight Time)] INFO first-class redis client created 
+[Sat Aug 05 2017 21:46:36 GMT+0300 (Jerusalem Daylight Time)] INFO first-class published event MethodEvent { value: { id: '333', name: 'roi' }, name: 'FirstClassEvent' }
+[Sat Aug 05 2017 21:46:36 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is { id: 1654564654, name: 'roicccccc', add: 'added' }
+[Sat Aug 05 2017 21:46:36 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller recieved the call result {"id":1654564654,"name":"roicccccc","add":"added"}
+[Sat Aug 05 2017 21:46:38 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 21:46:38 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 21:46:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:46:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:46:38 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:52:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 21:52:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 21:52:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 21:52:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:52:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 21:52:22 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 22:00:45 GMT+0300 (Jerusalem Daylight Time)] DEBUG event-caller [ 1654564654, 'roicccccc' ] { verb: 'GET',
+  route: '/posts/:id/:name',
+  methodType: 'Redis',
+  propertyKey: 'action1',
+  endpoint: 'http://localhost:8090',
+  name: 'TestClass',
+  classType: [Function: TestClass],
+  resolver: [Function] }
+[Sat Aug 05 2017 22:00:45 GMT+0300 (Jerusalem Daylight Time)] DEBUG first-class running local method action1
+[Sat Aug 05 2017 22:00:45 GMT+0300 (Jerusalem Daylight Time)] INFO first-class redis client created 
+[Sat Aug 05 2017 22:00:45 GMT+0300 (Jerusalem Daylight Time)] INFO first-class published event MethodEvent { value: { id: '333', name: 'roi' }, name: 'FirstClassEvent' }
+[Sat Aug 05 2017 22:00:45 GMT+0300 (Jerusalem Daylight Time)] INFO first-class the result in the router after the call is { id: 1654564654, name: 'roicccccc', add: 'added' }
+[Sat Aug 05 2017 22:00:45 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller recieved the call result {"id":1654564654,"name":"roicccccc","add":"added"}
+[Sat Aug 05 2017 22:00:47 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller action1 in FirstClass 1 roi from gateway
+[Sat Aug 05 2017 22:00:47 GMT+0300 (Jerusalem Daylight Time)] INFO event-caller the result as MethodResult MethodResult {
+  result: { value: 'FirstClass Data, from portundefined', add: 'added' } }
+[Sat Aug 05 2017 22:00:47 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 22:00:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 22:00:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 22:03:17 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sat Aug 05 2017 22:03:17 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sat Aug 05 2017 22:03:17 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sat Aug 05 2017 22:03:17 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 22:03:17 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sat Aug 05 2017 22:03:17 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 19:46:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 19:46:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 19:46:00 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 19:47:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 19:47:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 19:47:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 19:48:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 19:48:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 19:48:48 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 19:51:37 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 19:51:37 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 19:51:37 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 20:02:12 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:03:02 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:03:02 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sun Aug 06 2017 20:03:02 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 20:03:02 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 20:03:02 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 20:03:46 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:04:01 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 20:04:01 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sun Aug 06 2017 20:04:01 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 20:04:01 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 20:04:43 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:11:56 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:12:51 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:14:14 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:16:33 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:17:17 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:18:32 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:18:57 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:22:39 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:23:10 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:26:25 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 20:26:51 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:17:59 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:27:14 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:27:46 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:28:12 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:28:36 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:30:44 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:33:52 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:34:44 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:39:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:39:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:39:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:39:43 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:39:44 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:39:45 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:45:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:45:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:45:15 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:45:34 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:45:34 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:45:34 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:50:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:50:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:50:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:53:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:53:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:53:10 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:57:07 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:57:07 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:57:07 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:57:29 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:57:29 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:57:29 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:58:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:58:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:58:11 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:58:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:58:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:58:30 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 21:59:54 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 21:59:54 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 21:59:54 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 22:00:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 22:00:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 22:00:13 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 22:00:41 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 22:04:04 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 22:06:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 22:06:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent', 'PreEvent' ]
+[Sun Aug 06 2017 22:06:28 GMT+0300 (Jerusalem Daylight Time)] INFO first-class registering events bus for: [ 'FirstClassEvent' ]
+[Sun Aug 06 2017 22:06:47 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]
+[Sun Aug 06 2017 22:07:03 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'msg string is' '{"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}'
+[Sun Aug 06 2017 22:07:03 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 22:07:03 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 22:07:03 GMT+0300 (Jerusalem Daylight Time)] INFO first-class msg string is {"value":{"id":"333","name":"roi"},"name":"FirstClassEvent"}
+[Sun Aug 06 2017 22:07:28 GMT+0300 (Jerusalem Daylight Time)] INFO undefined 'registering events bus for:' [ 'FirstClassEvent', 'PreEvent', 'SecondClassEvent' ]

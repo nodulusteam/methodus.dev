@@ -1,4 +1,4 @@
-import { Express, SocketIO, MQ, Redis, RedisServer } from './servers';
+import { Express, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
 import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
 import { MethodEvent } from './response';
 import { fp } from './fp';
@@ -49,8 +49,6 @@ export class Server {
                 verticalLayout: 'default'
             }, function (err, data) {
                 if (err) {
-
-
                     return;
                 }
                 console.log(colors.blue(data));
@@ -64,28 +62,18 @@ export class Server {
         global.methodulus = { server: this };
         this.port = this.port || port || 0;
         debug('activating server on ', port);
-
         await this.printlogo();
 
-
-        // if (process.env.servers)
-        //     this.config.servers = process.env.servers.split(',');
-
-
-
-        //debug('MethodulusConfig', JSON.parse(MethodulusConfig.servers.toString()));
         for (let i = 0; i < this.config.servers.length; i++) {
-
             let server = this.config.servers[i];
-            // MethodulusConfig.servers.forEach(async (server) => {
+            let serverType = server.type;
             switch (server.type) {
                 case ServerType.Express:
                     {
-
-
+                        console.log(colors.green(JSON.stringify(server.options)))
                         console.log(colors.green(`Starting REST server on port`, server.options.port))
-                        this._app[server.type] = new Express(server.options.port);
-                        var httpServer = http.createServer(this._app[server.type]._app);//this is the inside express instance
+                        this._app[serverType] = new Express(server.options.port);
+                        var httpServer = http.createServer(this._app[serverType]._app);//this is the inside express instance
                         this._app['http'] = httpServer;
                         //listen on provided ports
                         httpServer.listen(server.options.port);
@@ -93,39 +81,39 @@ export class Server {
                     }
                 case ServerType.Socket:
                     {
-
                         console.log(colors.green(`Starting SOCKETIO server on port`, this.port))
-                        this._app[server.type] = await new SocketIO(this.port, this._app['http']);
+                        this._app[serverType] = await new SocketIO(this.port, this._app['http']);
                         break;
                     }
                 case ServerType.RabbitMQ:
                     {
-
                         console.log(colors.green(`Starting MQ server`))
                         try {
-
-                            this._app[server.type] = new MQ(this.port, this._app['http']);
-                            // this._app[server.type].connection = new MQServer();
-                            //this._app[server] = new MQServer();
+                            this._app[serverType] = new MQ(this.port, this._app['http']);
                         } catch (error) {
                             console.log(error);
                         }
-
+                        break;
+                    }
+                case ServerType.Kafka:
+                    {
+                        console.log(colors.green(`Starting Kafka server`))
+                        try {
+                            this._app[serverType] = new Kafka(this.port, this._app['http']);
+                        } catch (error) {
+                            console.log(error);
+                        }
                         break;
                     }
                 case ServerType.Redis:
                     {
-
                         console.log(colors.green(`Starting REDIS server`))
                         try {
-
-                            this._app[server.type] = new Redis(server.options);
-                            this._app[server.type].connection = new RedisServer();
-                            //this._app[server] = new MQServer();
+                            this._app[serverType] = new Redis(server.options);
+                            this._app[serverType].connection = new RedisServer();                         
                         } catch (error) {
                             console.log(error);
                         }
-
                         break;
                     }
             }

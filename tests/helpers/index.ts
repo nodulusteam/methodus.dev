@@ -10,13 +10,13 @@ const redis_addr = '//192.168.99.100:32768';
 export function ServerHelper(port, servers, methodType: MethodType) {
     const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/dynamic.js'], {
         detached: true,
-        cwd: path.resolve('./'), env: {  PORT: port, servers: servers, MethodType: methodType }
+        cwd: path.resolve('./'), env: { PORT: port, servers: servers, MethodType: methodType }
     });
     child1.stdout.on('data', async (data) => {
-        console.error(`child stddata:\n${data}`);
+        // console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-        // console.error(`child stderr:\n${data}`);
+        console.error(`child stderr:\n${data}`);
     });
 
     child1.on('exit', function (code, signal) {
@@ -28,26 +28,26 @@ export function ServerHelper(port, servers, methodType: MethodType) {
 
 
 export function ServerClassHelper(name, port, servers, methodType: MethodType) {
-    const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/perclass/'+name +'.js'], {
+    const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/perclass/' + name + '.js'], {
         detached: true,
-        cwd: path.resolve('./'), env: {  PORT: port, servers: servers, MethodType: methodType }
+        cwd: path.resolve('./'), env: { PORT: port, servers: servers, MethodType: methodType }
     });
     child1.stdout.on('data', async (data) => {
-        console.error(`child stddata:\n${data}`);
+        // console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-         console.error(`child stderr:\n${data}`);
+        console.error(`child stderr:\n${data}`);
     });
 
     child1.on('exit', function (code, signal) {
-         console.log('child process exited with ' +
-            `code ${code} and signal ${signal}`);
+        // console.log('child process exited with ' +
+        //   `code ${code} and signal ${signal}`);
     });
     return child1;
 }
 
 
-export function ClientHelper(classType, port, servers, methodType: MethodType, resolver) {
+export async function ClientHelper(classType, port, servers, methodType: MethodType, resolver) {
     let config = new MethodulusConfig(servers);
 
     if (servers) {
@@ -59,7 +59,7 @@ export function ClientHelper(classType, port, servers, methodType: MethodType, r
     config.use(classType, methodType, resolver);
     //MethodulusConfig.config[classType.name] = methodType;
     //MethodulusConfig.servers = servers;
-    let server = new Server(port).configure(config).start();
+    let server = await new Server(port).configure(config).start();
     return server;
 }
 

@@ -80,6 +80,9 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                     case MethodType.Redis:
                         server = ServerType.Redis;
                         break;
+                    case MethodType.Kafka:
+                        server = ServerType.Kafka;
+                        break;
                 }
 
                 if (server)

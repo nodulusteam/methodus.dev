@@ -24,6 +24,15 @@ const staticResolve = 'http://localhost:8090';
 //         expect(config.servers[0]).to.equal('express');
 //     });
 // });
+async function wait(timeout) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve();
+        }, timeout);
+    })
+
+}
+
 
 describe('test gateway configuration', function () {
     it('starting express gateway', async (done) => {
@@ -50,24 +59,35 @@ describe('test gateway configuration', function () {
             //MethodulusConfig.config[classType.name] = methodType;
             //MethodulusConfig.servers = servers;
             let client = await new Server(8080).configure(config).start();
-
-
-
-
-
-
-            this.timeout(2000);
+            await wait(5 * 1000);
+           
             let gw = new Gateway();
-            let result1: any = await gw.callFirstClass();
-            let result2: any = await gw.callSecondClass();
-            let result3: any = await gw.callThirdClass();
+            try {
+                let result1: any = await gw.callFirstClass();
+                expect(result1.add).to.equal('added');
+            } catch (err) {
+                console.log('call error', err);
+            }
+
+            try {
+                let result2: any = await gw.callSecondClass();
+                expect(result2.add).to.equal('added');
+            } catch (err) {
+                console.log('call error', err);
+            }
+
+            try {
+                let result3: any = await gw.callThirdClass();
+                expect(result3.add).to.equal('added');
+            } catch (err) {
+                console.log('call error', err);
+            }
 
 
-
-            expect(result1.add).to.equal('added');
         } catch (error) {
             console.log('got error', error);
         } finally {
+             await wait(5 * 1000);
             if (server)
                 server.kill();
             if (server2)
@@ -80,7 +100,7 @@ describe('test gateway configuration', function () {
 
 
         }
-        this.timeout(2000);
+       
         done();
         //run the client
 

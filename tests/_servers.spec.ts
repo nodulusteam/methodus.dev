@@ -41,21 +41,21 @@ describe('initiate modes', function () {
         } catch (error) {
             console.log('got error', error);
         } finally {
-            await wait(5 * 1000)
-            if (server)
-                server.kill();
-            if (client)
-                client.kill();
 
 
 
         }
+        await wait(5 * 1000)
+        if (server)
+            server.kill();
+        if (client)
+            client.kill();
 
         done();
 
     });
 
-    it('starting socketio server', async (done) => {
+    xit('starting socketio server', async (done) => {
         let server, client;
 
 
@@ -87,7 +87,7 @@ describe('initiate modes', function () {
 
     });
 
-    it('starting redis server', async (done) => {
+    xit('starting redis server', async (done) => {
         let server, client;
         try {
             server = await ServerHelper(8090, 'redis', MethodType.Local);
@@ -116,7 +116,7 @@ describe('initiate modes', function () {
 
     });
 
-    it('starting [amqp] server', async (done) => {
+    xit('starting [amqp] server', async (done) => {
         let server, client;
         try {
             server = await ServerHelper(8090, 'amqp', MethodType.Local);

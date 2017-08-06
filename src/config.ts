@@ -3,7 +3,7 @@ const yaml = require('js-yaml'),
 
 import { Verbs } from './rest';
 
-export interface EventDescriptor extends MethodDescriptor{
+export interface EventDescriptor extends MethodDescriptor {
     name: string;
     value?: any;
 
@@ -22,6 +22,7 @@ export enum MethodType {
     MQ = 'MQ',
     Redis = 'Redis',
     Socket = 'Socket',
+    Kafka = 'Kafka'
 }
 
 
@@ -63,7 +64,7 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
             throw (new Error('Http transport requires a resolver, pass in a string or a promise'))
         this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
     }
-    public run(serverType: Methodulus.ServerType, configuration: any) {
+    public run(serverType: ServerType, configuration: any) {
         this.servers = this.servers || [];
         this.servers.push(new ServerConfig(serverType, configuration))
 
@@ -72,11 +73,11 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
 }
 
 export class ServerConfig {
-    constructor(type: Methodulus.ServerType, options: any) {
+    constructor(type: ServerType, options: any) {
         this.type = type;
         this.options = options;
     }
-    type: Methodulus.ServerType;
+    type: ServerType;
     options: any;
 }
 
@@ -89,5 +90,6 @@ export enum ServerType {
     Express = 'express',
     RabbitMQ = 'amqp',
     Redis = 'redis',
-    Socket = 'socketio'
+    Socket = 'socketio',
+    Kafka = 'kafka'
 }

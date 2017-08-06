@@ -98,6 +98,26 @@
                 "MethodType": "MQ"
             }
         },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic caller Kafka server",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "methodulus",
+                "NODE_ENV": "debug",
+                "servers": "kafka",
+                "MethodType": "Kafka"
+            }
+        },
+
+
         {
             "type": "node",
             "request": "launch",
@@ -181,6 +201,23 @@
                 "DEBUG": "*",
                 "NODE_ENV": "debug",
                 "servers": "redis",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Run dynamic server Kafka",
+            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "*",
+                "NODE_ENV": "debug",
+                "servers": "kafka",
                 "MethodType": "Local"
             }
         },
