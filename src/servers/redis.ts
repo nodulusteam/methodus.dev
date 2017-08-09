@@ -149,10 +149,10 @@ export class RedisRouter implements Methodulus.Router {
         let methodinformation: MethodulusClassConfig = config.classes.get(methodulus.name);
 
 
-        let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, proto) || {};
-        if (methodinformation.methodType !== MethodType.Local)
-            existingClassMetadata.returnMessages = true;
-        Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
+        // let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, proto) || {};
+        // //if (methodinformation.methodType !== MethodType.Local)
+        // existingClassMetadata.returnMessages = true;
+        // Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
 
 
         if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {

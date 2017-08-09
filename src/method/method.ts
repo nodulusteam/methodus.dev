@@ -101,24 +101,13 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             if (ParserResponse.isRest) {
                 RestResponse(args, methodResult);
                 return;
-            }
-            else if (existingClassMetadata.returnMessages) {
-                return methodResult;
-            }
+            }         
             else {
                 if (methodResult.error && methodResult.statusCode) {
                     throw (methodResult);
                 }
-                // if (methodType === MethodType.Local)
-                //     return methodResult.result;
 
-                return methodResult.result;
-
-                // if (methodType === MethodType.Local) {
-                //     // return the result of the original method
-                //     return methodResult.result;
-                // } else
-                //     return methodResult;
+                return methodResult;            
 
             }
 

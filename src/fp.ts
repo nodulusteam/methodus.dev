@@ -1,3 +1,5 @@
+import { logger } from './logger';
+
 // export function maybeJson(value) {
 //     try {
 //         console.log(value);
@@ -44,6 +46,7 @@ export class fp {
         try {
             return JSON.parse(object);
         } catch (error) {
+            logger.error('error parsing JSON', object);
             return {};
         }
     }

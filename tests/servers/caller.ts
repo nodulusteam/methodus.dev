@@ -15,7 +15,7 @@ async function init() {
         })
     }
 
-    config.use(EventsClass, MethodType.Local, 'http://localhost:8090');
+    //config.use(EventsClass, MethodType.Local, 'http://localhost:8090');
     config.use(TestClass, process.env.METHODTYPE, 'http://localhost:8090');
     const server = await new Server(process.env.PORT).configure(config).start();
 

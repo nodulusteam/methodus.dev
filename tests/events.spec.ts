@@ -25,7 +25,18 @@ const staticResolve = 'http://localhost:8090';
 //     });
 // });
 
-xdescribe('initiate modes', function () {
+async function wait(timeout) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve();
+        }, timeout);
+    })
+
+}
+
+
+
+describe('initiate modes', function () {
     xit('starting express server', async (done) => {
         //run the servers
         let server, server2, server3, client;
@@ -121,8 +132,8 @@ xdescribe('initiate modes', function () {
 
 
 
-
-            this.timeout(5000);
+            await wait(5000);
+             
             let gw = new Gateway();
             let result1: any = await gw.callFirstClass();
             console.log('result1', result1);
