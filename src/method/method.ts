@@ -60,7 +60,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 methodType = completeConfiguration.methodType || MethodType.Local;
 
 
-
+            logger.info('**************************: ', methodType, propertyKey);
             // run and store the result
             try {
                 let server: ServerType | null = null;

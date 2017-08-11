@@ -1,4 +1,4 @@
-import { TestClass } from '../classes/test-class';
+import { TestClass } from '../classes/TestClass';
 import { EventsClass } from '../classes/events-class';
 import { Server, MethodType, MethodulusConfig } from '../../index';
 const redis_addr = '//192.168.99.100:32768';

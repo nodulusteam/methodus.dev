@@ -1,7 +1,7 @@
 // tests/config.js
 var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
-import { TestClass } from './classes/test-class';
+import { TestClass } from './classes/TestClass';
 import { Server, MethodulusConfig, MethodType, ServerType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper } from './helpers'
 const { spawn } = require('child_process');

@@ -1,7 +1,6 @@
-// no globals and typing support out of the box with intellisense
 import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from "alsatian";
-import { TestClass } from './classes/test-class';
-import { Server, ServerType, MethodulusConfig, MethodType } from '../index';
+import { TestClass } from './classes/TestClass';
+import { logger, Server, ServerType, MethodulusConfig, MethodType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper, PortHelper } from './helpers'
 
 const { spawn } = require('child_process');
@@ -10,14 +9,6 @@ var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 
 
-async function wait(timeout) {
-    return new Promise((resolve, reject) => {
-        setTimeout(function () {
-            resolve();
-        }, timeout);
-    })
-
-}
 
 
 
@@ -26,45 +17,45 @@ export class Servers {
 
     // use the async/await pattern in your tests as you would in your code
     @AsyncTest("asychronous test")
-   // @TestCase(ServerType.Express, MethodType.Http)
-    @TestCase(ServerType.RabbitMQ, MethodType.MQ)
-  //  @TestCase(ServerType.Socket, MethodType.Socket)
-  //  @TestCase(ServerType.Redis, MethodType.Redis)
-  //  @TestCase(ServerType.Kafka, MethodType.Kafka)
+    @TestCase(ServerType.Express, MethodType.Http)
+    //@TestCase(ServerType.RabbitMQ, MethodType.MQ)
+    @TestCase(ServerType.Socket, MethodType.Socket)
+    // @TestCase(ServerType.Redis, MethodType.Redis)
+    // @TestCase(ServerType.Kafka, MethodType.Kafka)
     @Timeout(50000)
     public async serverTest(serverType, methodType) {
         return new Promise(async (resolve, reject) => {
 
-            //run the servers
-            let server, client;
 
-            try {
-                let ports = PortHelper();
-                const staticResolve = 'http://localhost:' + ports.server;
-                server = await ServerHelper(ports.server, serverType, MethodType.Local);
-                client = await ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve);
-                // await wait(5 * 1000)
-                let methodResult = await CallHelper();
+            let ports = PortHelper();
+            const staticResolve = 'http://localhost:' + ports.server;
+            logger.info(`before servers ======================================================================`);
+            ServerHelper(ports.server, serverType, MethodType.Local).then(server => {
+                logger.info(`after servers ======================================================================`);
+                logger.info(`before client ======================================================================`);
+                wait(1000 * 10).then(() => {
+                    ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve).then(client => {
+                        logger.info(`======================================================================`);
+                        CallHelper().then(methodResult => {
+                            logger.info(`======================================================================`);
+                            if (server)
+                                server.kill();
 
-                Expect(methodResult.result.add).toEqual('added');
+                            if (client)
+                                client.kill();
 
-            } catch (error) {
-                console.log('got error', error);
-            } finally {
+                            Expect(methodResult.result.add).toEqual('added');
+                            if (server)
+                                server.kill();
 
-
-
-            }
-
-            if (server)
-                server.kill();
-
-            if (client)
-                client.kill();
-            resolve();
-
+                            if (client)
+                                client.kill();
+                            resolve();
+                        });
+                    })
+                })
+            });
         });
-
     }
 
     // pass arguments into your test functions to keep your test code from being repetative
@@ -75,4 +66,14 @@ export class Servers {
     // public addTest(firstNumber: number, secondNumber: number, expectedSum: number) {
     //     Expect(firstNumber + secondNumber).toBe(expectedSum);
     // }
+}
+
+
+async function wait(timeout) {
+    return new Promise((resolve, reject) => {
+        setTimeout(function () {
+            resolve();
+        }, timeout);
+    })
+
 }

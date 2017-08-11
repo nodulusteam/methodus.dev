@@ -38,11 +38,11 @@ export class MQ extends BaseServer {
 
     @Log()
     async _send(functionArgs, methodinformation, paramsMap) {
-
         return new Promise((resolve, reject) => {
             amqpConnect().then((conn) => {
 
                 conn.createChannel().then((ch) => {
+                    logger.info('>>>> channel created');
                     var q = methodinformation.name;
                     let methodMessage = new MethodMessage();
                     methodMessage.to = methodinformation.propertyKey;
@@ -52,17 +52,16 @@ export class MQ extends BaseServer {
                     let stringMessage = JSON.stringify(methodMessage);
 
                     ch.assertQueue('', { exclusive: true }).then((q) => {
+                        logger.info('>>>> queue created');
                         var corr = generateUuid();
                         ch.consume(q.queue, (msg) => {
-
-                            if (msg.properties.correlationId == corr) {
+                            logger.info('>>>> queue got message', msg.properties.correlationId === corr);
+                            if (msg.properties.correlationId === corr) {
+                                logger.info('>>>> resolving message', msg.content.toString());
                                 resolve(fp.maybeJson(msg.content.toString()));
-
-                                // console.log(' [.] Got %s', msg.content.toString());
-                                //setTimeout(function() { conn.close(); process.exit(0) }, 500);
                             }
                         }, { noAck: true });
-
+                        logger.info('>>>> send to queue', methodinformation.name, q.queue);
                         ch.sendToQueue(methodinformation.name,
                             new Buffer(stringMessage),
                             { correlationId: corr, replyTo: q.queue });
@@ -151,7 +150,7 @@ export class MQRouter {
                         // ch.assertQueue(q, { durable: false });
                         ch.prefetch(1);
                         console.log(' [x] Awaiting RPC requests on', q.queue);
-                        ch.consume(q.queue,   async (msg) => {
+                        ch.consume(q.queue, async (msg) => {
                             console.log('got message', msg);
 
                             if (msg.content) {

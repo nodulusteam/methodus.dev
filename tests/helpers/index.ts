@@ -1,5 +1,5 @@
-import { TestClass } from '../classes/test-class';
-import { Server, MethodType, MethodulusConfig } from '../../index';
+import { TestClass } from '../classes/TestClass';
+import { logger, Server, MethodType, MethodulusConfig } from '../../index';
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
@@ -18,21 +18,28 @@ export function PortHelper() {
 
 
 
-export function ServerHelper(port, servers, methodType: MethodType) {
+export async function ServerHelper(port, servers, methodType: MethodType): Promise<any> {
+    logger.info('in server helper');
     const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/dynamic.js'], {
-        detached: true,
-        cwd: path.resolve('./'), env: { PORT: port, servers: servers, MethodType: methodType }
+        detached: false,
+        cwd: path.resolve('./'),
+        execArgv: ['--debug-brk=6001'],
+        env: { PORT: port, servers: servers, MethodType: methodType }
     });
+
+    logger.info('after spawn');
+
     child1.stdout.on('data', async (data) => {
-        // console.error(`child stddata:\n${data}`);
+        console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-        //console.error(`child stderr:\n${data}`);
+        logger.error(`child stderr:\n${data}`);
+        // console.error(`child stderr:\n${data}`);
     });
 
     child1.on('uncaughtException', function (code, signal) {
-        // console.log('child process exited with ' +
-        //     `code ${code} and signal ${signal}`);
+        console.log('child process exited with ' +
+            `code ${code} and signal ${signal}`);
     });
 
 
@@ -42,14 +49,17 @@ export function ServerHelper(port, servers, methodType: MethodType) {
     });
 
     child1.on('exit', function (code, signal) {
-        // console.log('child process exited with ' +
-        //    `code ${code} and signal ${signal}`);
+        console.log('child process exited with ' +
+            `code ${code} and signal ${signal}`);
     });
+
     return child1;
+
+
 }
 
 
-export function ServerClassHelper(name, port, servers, methodType: MethodType) {
+export async function ServerClassHelper(name, port, servers, methodType: MethodType) {
     const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/perclass/' + name + '.js'], {
         detached: true,
         cwd: path.resolve('./'), env: { PORT: port, servers: servers, MethodType: methodType }
@@ -83,7 +93,7 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
     //MethodulusConfig.servers = servers;
     let server = await new Server(port).configure(config).start();
 
-     
+
     return server;
 }
 
@@ -91,8 +101,8 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 export async function CallHelper(): Promise<any> {
     let myClass = new TestClass();
     try {
-        let result = await myClass.action1(1654564654, "roicccccc");
-        return result;
+        return await myClass.action1(1654564654, "roicccccc");
+
     }
     catch (error) {
         console.log(error);

@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-      
         //E2E
         //REST
         {
@@ -263,18 +262,15 @@
             "request": "launch",
             "console": "internalConsole",
             // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "Run response test",
+            "name": "T Run response test",
             // Type of configuration. Possible values: "node", "mono".
             "type": "node",
             // Workspace relative or absolute path to the program.
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             // Automatically stop program after launch.
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "--debug",
-                "--inspect",
-                "--no-timeouts",
                 "tests/response.spec.js"
             ],
             "sourceMaps": true,
@@ -293,18 +289,16 @@
             "request": "launch",
             "console": "internalConsole",
             // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "Run resolver test",
+            "name": "T Run resolver test",
             // Type of configuration. Possible values: "node", "mono".
             "type": "node",
             // Workspace relative or absolute path to the program.
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             // Automatically stop program after launch.
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "--debug",
-                "--inspect",
-                "--no-timeouts",
+             
                 "tests/resolvers.spec.js"
             ],
             "sourceMaps": true,
@@ -323,7 +317,7 @@
             "request": "launch",
             "console": "internalConsole",
             // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "Run servers test",
+            "name": "T Run servers test",
             // Type of configuration. Possible values: "node", "mono".
             "type": "node",
             // Workspace relative or absolute path to the program.
@@ -349,14 +343,12 @@
         {
             "request": "launch",
             "console": "internalConsole",
-            "name": "Run fp test",
+            "name": "T Run fp test",
             "type": "node",
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+           "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "--debug",
-                "--inspect",
-                "--no-timeouts",
+             
                 "tests/fp.spec.js"
             ],
             "sourceMaps": true,
@@ -371,9 +363,9 @@
         {
             "request": "launch",
             "console": "internalConsole",
-            "name": "Run events test",
+            "name": "T Run events test",
             "type": "node",
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+           "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
                 "--debug",
@@ -391,8 +383,8 @@
                 "DEBUG_FILE": "${workspaceRoot}/logs/"
             }
         },
-          //Examples
-          {
+        //Examples
+        {
             "type": "node",
             "request": "launch",
             "name": "- hello-server",

@@ -2,7 +2,7 @@
 
 var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
-import { TestClass } from './classes/test-class';
+import { TestClass } from './classes/TestClass';
 import { Server, MethodulusConfig, MethodType } from '../index';
 import { ServerHelper, ClientHelper, CallHelper, PortHelper } from './helpers'
 

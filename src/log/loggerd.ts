@@ -18,10 +18,10 @@ export function Log() {
                     else {
                         name = 'no name';
                     }
-                    logger.log(`${_methodIdentifier}::${name}.${propertyKey} => `, args);
+                    logger.log(`${_methodIdentifier} :: ${name}.${propertyKey} => `, args);
                     let result = originalMethod.call(this, ...args);
                     if (result)
-                        logger.log(`${_methodIdentifier}:: ${name}.${propertyKey} <= `, result);
+                        logger.log(`${_methodIdentifier} :: ${name}.${propertyKey} <= `, result);
                     return result;
                 };
             }(methodIdentifier)
@@ -52,7 +52,7 @@ export function LogClass() {
         // the new constructor behaviour
         var f: any = function (_methodIdentifier) {
             return function (...args) {
-                logger.log(`${_methodIdentifier}::new ${original.name}()`, args);
+                logger.log(`${_methodIdentifier} :: new ${original.name}()`, args);
                 return new original(...args);
             }
         }(methodIdentifier);

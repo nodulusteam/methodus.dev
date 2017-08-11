@@ -4,6 +4,16 @@ const debug = require('debug')('methodulus')
 var log;
 var log_dir_file = '';
 
+const logrotate = require('logrotator');
+
+// use the global rotator 
+const rotator = logrotate.rotator;
+
+// or create a new instance 
+// var rotator = logrotate.create(); 
+
+
+
 if (process.env.NODE_LOG_DIR) {
     log_dir_file = path.normalize(process.env.NODE_LOG_DIR);
 }
@@ -23,7 +33,24 @@ if (!fs.existsSync(log_dir_file)) {
 }
 
 
-log = new Log('debug', fs.createWriteStream(path.join(log_dir_file, 'methodulus.log'), { flags: 'a' }))
+log = new Log('debug', fs.createWriteStream(path.join(log_dir_file, 'methodulus.log'), { flags: 'a' }));
+
+
+// check file rotation every 5 minutes, and rotate the file if its size exceeds 10 mb. 
+// keep only 3 rotated files and compress (gzip) them. 
+rotator.register(path.join(log_dir_file, 'methodulus.log'), {schedule: '5m', size: '1m', compress: true, count: 3});
+
+rotator.on('error', function(err) {
+ console.log('oops, an error occured!');
+});
+
+// 'rotate' event is invoked whenever a registered file gets rotated 
+rotator.on('rotate', function(file) {
+ console.log('file ' + file + ' was rotated!');
+});
+
+
+
 function arg(item: any) {
 
     let arr: any = [];
