@@ -32,7 +32,7 @@ describe('initiate modes', function () {
 
         try {
             let ports = PortHelper();
-            const staticResolve = 'http://localhost:' + ports.server;
+            const staticResolve = 'http://127.0.0.1:' + ports.server;
             server = await ServerHelper(ports.server, 'express', MethodType.Local);
             client = await ClientHelper(TestClass, ports.client, ['express'], MethodType.Http, staticResolve);
             await wait(5 * 1000)
@@ -65,7 +65,7 @@ describe('initiate modes', function () {
 
         try {
             let ports = PortHelper();
-            const staticResolve = 'http://localhost:' + ports.server;
+            const staticResolve = 'http://127.0.0.1:' + ports.server;
             server = await ServerHelper(ports.server, 'socketio', MethodType.Local);
 
             //run the client
@@ -99,7 +99,7 @@ describe('initiate modes', function () {
         let server, client;
         try {
             let ports = PortHelper();
-            const staticResolve = 'http://localhost:' + ports.server;
+            const staticResolve = 'http://127.0.0.1:' + ports.server;
             server = await ServerHelper(ports.server, 'redis', MethodType.Local);
             //run the client
             client = await ClientHelper(TestClass, ports.client, ['redis'], MethodType.Redis, staticResolve);
@@ -130,7 +130,7 @@ describe('initiate modes', function () {
         let server, client;
         try {
             let ports = PortHelper();
-            const staticResolve = 'http://localhost:' + ports.server;
+            const staticResolve = 'http://127.0.0.1:' + ports.server;
             server = await ServerHelper(ports.server, 'amqp', MethodType.Local);
             //run the client
             client = await ClientHelper(TestClass, ports.client, ['amqp'], MethodType.MQ, staticResolve);

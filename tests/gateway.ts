@@ -17,7 +17,7 @@ const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 
-const staticResolve = 'http://localhost:8090';
+const staticResolve = 'http://127.0.0.1:8090';
 // describe('methodulus config defaults to "express"', function () {
 //     it('loading configuration for methodulus', function () {
 //         let config = new MethodulusConfig(['express']);
@@ -48,13 +48,13 @@ xdescribe('test gateway configuration', function () {
 
             let config = new MethodulusConfig();
 
-            config.run(ServerType.Express, { port: 8080, client: redis_addr, server: redis_addr, amqp: 'localhost' });
+            config.run(ServerType.Express, { port: 8080, client: redis_addr, server: redis_addr, amqp: '127.0.0.1' });
 
 
             config.use(Gateway, MethodType.Local);
-            config.use(FirstClass, MethodType.Http, 'http://localhost:8091');
-            config.use(SecondClass, MethodType.Http, 'http://localhost:8092');
-            config.use(ThirdClass, MethodType.Http, 'http://localhost:8093');
+            config.use(FirstClass, MethodType.Http, 'http://127.0.0.1:8091');
+            config.use(SecondClass, MethodType.Http, 'http://127.0.0.1:8092');
+            config.use(ThirdClass, MethodType.Http, 'http://127.0.0.1:8093');
 
             //MethodulusConfig.config[classType.name] = methodType;
             //MethodulusConfig.servers = servers;

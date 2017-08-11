@@ -14,11 +14,11 @@ setTimeout(() => {
     console.log(`
 --------------------------------------------------------------------------------------------
 every thing is ready, your server is active at: 
-http://localhost:${process.env.PORT || 8020}/api/player
+http://127.0.0.1:${process.env.PORT || 8020}/api/player
 
 
 try browsing to
-http://localhost:${process.env.PORT || 8020}/api/player/1
+http://127.0.0.1:${process.env.PORT || 8020}/api/player/1
 `)
 
 

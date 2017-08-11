@@ -37,7 +37,7 @@ import { ServerType, Server, MethodulusConfig, MethodulusClassConfig, MethodType
 async function init(){
     let config = new MethodulusConfig();
     config.run(ServerType.express, {port: process.env.PORT });
-    config.use(Player, MethodType.Local, 'http://localhost:8090')
+    config.use(Player, MethodType.Local, 'http://127.0.0.1:8090')
     const server = await new Server(process.env.PORT || 8020).configure(config).start();
 
 }
@@ -161,7 +161,7 @@ here is a simple local configuration:
 ```
 let servers = ['express']; 
 let config = new MethodulusConfig(servers);
-let resolver = 'http://localhost:8090';
+let resolver = 'http://127.0.0.1:8090';
 config.use(TestClass, MethodType.Local,resolver);
 
 ```

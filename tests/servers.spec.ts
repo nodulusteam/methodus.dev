@@ -28,7 +28,7 @@ export class Servers {
 
 
             let ports = PortHelper();
-            const staticResolve = 'http://localhost:' + ports.server;
+            const staticResolve = 'http://127.0.0.1:' + ports.server;
             logger.info(`before servers ======================================================================`);
             ServerHelper(ports.server, serverType, MethodType.Local).then(server => {
                 logger.info(`after servers ======================================================================`);

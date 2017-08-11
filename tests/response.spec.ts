@@ -3,7 +3,7 @@ import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from "alsatia
 import { TestClass } from './classes/TestClass';
 import { ServerType, logger, Server, MethodType, MethodulusConfig } from '../index';
 import { ServerHelper, PortHelper, ClientHelper } from './helpers/'
-const staticResolve = 'http://localhost:8090';
+const staticResolve = 'http://127.0.0.1:8090';
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
@@ -23,7 +23,7 @@ export class Responses {
     public async responseTest(serverType, methodType) {
         return new Promise(async (resolve, reject) => {
             let ports = PortHelper();
-            const staticResolve = 'http://localhost:' + ports.server;
+            const staticResolve = 'http://127.0.0.1:' + ports.server;
             ServerHelper(ports.server, serverType, MethodType.Local).then(server => {
                 wait(1000 * 10).then(() => {
                     ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve).then(async (client) => {

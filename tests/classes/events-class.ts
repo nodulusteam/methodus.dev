@@ -1,5 +1,5 @@
 import { Event, Method, MethodConfig, Verbs, MethodType, Body, Param, Query, MethodResult, MethodError, MethodEvent } from '../../index';
-const endPoint = 'http://localhost:8090';//https://jsonplaceholder.typicode.com';
+const endPoint = 'http://127.0.0.1:8090';//https://jsonplaceholder.typicode.com';
 const debug = require('debug')('methodulus');
 @MethodConfig('EventsClass', endPoint)
 export class EventsClass {

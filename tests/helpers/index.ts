@@ -84,7 +84,7 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 
     if (servers) {
         servers.map(server => {
-            config.run(server, { port: port, client: redis_addr, server: redis_addr, amqp: 'localhost' });
+            config.run(server, { port: port, client: redis_addr, server: redis_addr, amqp: '127.0.0.1' });
 
         })
     }

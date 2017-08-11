@@ -18,7 +18,7 @@ async function test() {
 
     // var options = {
     //     method: 'POST',
-    //     url: 'http://localhost:8090/posts',
+    //     url: 'http://127.0.0.1:8090/posts',
     //     headers:
     //     {
     //         'postman-token': '04a12df6-cad2-b5cd-f5b9-c7de540964da',

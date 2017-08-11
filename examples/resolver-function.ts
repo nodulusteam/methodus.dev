@@ -5,7 +5,7 @@ let config = new MethodulusConfig();
 config.run(Methodulus.ServerType.Express, {port:process.env.PORT || 8020 });
 let resolver = (name) => {
     console.log(name);
-    return Promise.resolve('http://localhost:8090');
+    return Promise.resolve('http://127.0.0.1:8090');
 }
 
 config.use(Player, MethodType.Http, resolver)
@@ -19,11 +19,11 @@ setTimeout(() => {
     console.log(`
 --------------------------------------------------------------------------------------------
 every thing is ready, your server is active at: 
-http://localhost:${process.env.PORT || 8020}/api/player
+http://127.0.0.1:${process.env.PORT || 8020}/api/player
 
 
 try browsing to
-http://localhost:${process.env.PORT || 8020}/api/player/1
+http://127.0.0.1:${process.env.PORT || 8020}/api/player/1
 `)
 
 

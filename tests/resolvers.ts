@@ -9,7 +9,7 @@ const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 
-const staticResolve = 'http://localhost:8090';
+const staticResolve = 'http://127.0.0.1:8090';
 
 
 xdescribe('testing resolver options', function () {
@@ -32,7 +32,7 @@ xdescribe('testing resolver options', function () {
         config.run(ServerType.Express, {port:process.env.PORT || 8020 });
         let resolver = (name) => {
             console.log(name);
-            return Promise.resolve('http://localhost:8090');
+            return Promise.resolve('http://127.0.0.1:8090');
         }
 
         config.use(TestClass, MethodType.Http, resolver)
