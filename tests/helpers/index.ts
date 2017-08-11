@@ -6,6 +6,17 @@ var childProcessDebug = require('child-process-debug');
 // process.env.CONFIG_PATH = "./tests/config";
 // 
 const redis_addr = '//192.168.99.100:32768';
+const ports: any = []
+for (let i = 0; i < 100; i++) {
+    ports.push({ server: 8200 + i, client: 9200 + i });
+}
+let portsCounter = 0;
+export function PortHelper() {
+    return ports[portsCounter++];
+}
+
+
+
 
 export function ServerHelper(port, servers, methodType: MethodType) {
     const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/dynamic.js'], {
@@ -16,7 +27,18 @@ export function ServerHelper(port, servers, methodType: MethodType) {
         // console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-        console.error(`child stderr:\n${data}`);
+        //console.error(`child stderr:\n${data}`);
+    });
+
+    child1.on('uncaughtException', function (code, signal) {
+        // console.log('child process exited with ' +
+        //     `code ${code} and signal ${signal}`);
+    });
+
+
+    child1.on('SIGTERM', function (code, signal) {
+        console.log('child process exited with ' +
+            `code ${code} and signal ${signal}`);
     });
 
     child1.on('exit', function (code, signal) {
@@ -52,7 +74,7 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 
     if (servers) {
         servers.map(server => {
-            config.run(server, { port: process.env.PORT, client: redis_addr, server: redis_addr, amqp: 'localhost' });
+            config.run(server, { port: port, client: redis_addr, server: redis_addr, amqp: 'localhost' });
 
         })
     }
@@ -60,6 +82,8 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
     //MethodulusConfig.config[classType.name] = methodType;
     //MethodulusConfig.servers = servers;
     let server = await new Server(port).configure(config).start();
+
+     
     return server;
 }
 

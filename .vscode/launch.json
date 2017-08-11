@@ -4,70 +4,13 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+      
+        //E2E
+        //REST
         {
             "type": "node",
             "request": "launch",
-            "name": "hello-server",
-            "program": "${workspaceRoot}/examples/hello-server.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8020",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug"
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "hello-redis",
-            "program": "${workspaceRoot}/examples/hello-redis.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8020",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug"
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "hello-server",
-            "program": "${workspaceRoot}/examples/json-placeholder.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8020",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug"
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "resolver-function",
-            "program": "${workspaceRoot}/examples/resolver-function.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8020",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug"
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Run dynamic caller Http server",
+            "name": "* Rest caller",
             "program": "${workspaceRoot}/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -75,7 +18,7 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8080",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "servers": "express",
                 "MethodType": "Http"
@@ -84,44 +27,24 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic caller MQ server",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "name": "* Rest server",
+            "program": "${workspaceRoot}/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
-                "PORT": "8080",
-                "DEBUG": "methodulus",
+                "PORT": "8090",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
-                "servers": "amqp",
-                "MethodType": "MQ"
+                "servers": "express",
+                "MethodType": "Local"
             }
         },
-
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic caller Kafka server",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8080",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug",
-                "servers": "kafka",
-                "MethodType": "Kafka"
-            }
-        },
-
-
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Run dynamic server FirstClass Http server - destination",
+            "name": "* Rest - FirstClass server",
             "program": "${workspaceRoot}/tests/servers/perclass/FirstClass.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -131,7 +54,7 @@
                 "PORT": "8091",
                 "DEBUG": "*",
                 "NODE_ENV": "debug",
-                "DEBUG_FILE":"${workspaceRoot}\\log.txt",
+                "DEBUG_FILE": "${workspaceRoot}\\log.txt",
                 "servers": "express",
                 "MethodType": "Local"
             }
@@ -139,7 +62,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic event caller Http server",
+            "name": "* Rest event",
             "program": "${workspaceRoot}/tests/servers/eventcaller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -147,16 +70,16 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8080",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "servers": "express",
                 "MethodType": "Http"
             }
         },
-        {
+        { //MQ
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic caller SocketIO server",
+            "name": "| MQ caller",
             "program": "${workspaceRoot}/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -164,33 +87,16 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8080",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
-                "servers": "socketio",
-                "MethodType": "Socket"
+                "servers": "amqp",
+                "MethodType": "MQ"
             }
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic caller Redis server",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8080",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug",
-                "servers": "redis",
-                "MethodType": "Redis"
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Run dynamic server Redis",
+            "name": "| MQ server",
             "program": "${workspaceRoot}/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -198,16 +104,50 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8090",
-                "DEBUG": "*",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
-                "servers": "redis",
+                "servers": "amqp",
                 "MethodType": "Local"
             }
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic server Kafka",
+            "name": "| * MQ + Rest server",
+            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "express,amqp",
+                "MethodType": "Local"
+            }
+        },
+        { //KAFKA
+            "type": "node",
+            "request": "launch",
+            "name": "^ Kafka caller",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "kafka",
+                "MethodType": "Kafka"
+            }
+        },
+        { //Kafka
+            "type": "node",
+            "request": "launch",
+            "name": "^ Kafka server",
             "program": "${workspaceRoot}/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -221,10 +161,10 @@
                 "MethodType": "Local"
             }
         },
-        {
+        { //Redis
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic server Rest",
+            "name": "@ Redis server",
             "program": "${workspaceRoot}/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -232,33 +172,50 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8090",
-                "DEBUG": "methodulus",
+                "DEBUG": "*",
                 "NODE_ENV": "debug",
-                "servers": "express",
+                "servers": "redis",
                 "MethodType": "Local"
             }
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic server Socketio",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "name": "@ Redis caller",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
-                "PORT": "8090",
-                "DEBUG": "methodulus",
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "redis",
+                "MethodType": "Redis"
+            }
+        },
+        { //Socket
+            "type": "node",
+            "request": "launch",
+            "name": "# Socket caller",
+            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "servers": "socketio",
-                "MethodType": "Local"
+                "MethodType": "Socket"
             }
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "Run dynamic server MQ",
+            "name": "# Socket server",
             "program": "${workspaceRoot}/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -266,26 +223,9 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8090",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
-                "servers": "amqp",
-                "MethodType": "Local"
-            }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Run dynamic server MQ + Rest",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
-            "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
-            "outFiles": [],
-            "sourceMaps": true,
-            "env": {
-                "PORT": "8090",
-                "DEBUG": "methodulus",
-                "NODE_ENV": "debug",
-                "servers": "express,amqp",
+                "servers": "socketio",
                 "MethodType": "Local"
             }
         },
@@ -315,7 +255,7 @@
             // Environment variables passed to the program.
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug"
             }
         },
@@ -345,7 +285,7 @@
             // Environment variables passed to the program.
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug"
             }
         },
@@ -375,7 +315,7 @@
             // Environment variables passed to the program.
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug"
             }
         },
@@ -387,15 +327,12 @@
             // Type of configuration. Possible values: "node", "mono".
             "type": "node",
             // Workspace relative or absolute path to the program.
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             // Automatically stop program after launch.
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "--debug",
-                "--inspect",
-                "--no-timeouts",
-                "tests/_servers.spec.js"
+                "tests/servers.spec.js"
             ],
             "sourceMaps": true,
             // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
@@ -405,7 +342,7 @@
             // Environment variables passed to the program.
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug"
             }
         },
@@ -427,7 +364,7 @@
             "runtimeExecutable": null,
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug"
             }
         },
@@ -449,9 +386,70 @@
             "runtimeExecutable": null,
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "DEBUG_FILE": "${workspaceRoot}/logs/"
+            }
+        },
+          //Examples
+          {
+            "type": "node",
+            "request": "launch",
+            "name": "- hello-server",
+            "program": "${workspaceRoot}/examples/hello-server.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- hello-redis",
+            "program": "${workspaceRoot}/examples/hello-redis.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- hello-server",
+            "program": "${workspaceRoot}/examples/json-placeholder.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- resolver-function",
+            "program": "${workspaceRoot}/examples/resolver-function.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
             }
         },
         {

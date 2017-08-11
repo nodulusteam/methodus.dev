@@ -4,7 +4,7 @@ var chai = require('chai');
 var expect = chai.expect; // we are using the "expect" style of Chai
 import { TestClass } from './classes/test-class';
 import { Server, MethodulusConfig, MethodType } from '../index';
-import { ServerHelper, ClientHelper, CallHelper } from './helpers'
+import { ServerHelper, ClientHelper, CallHelper, PortHelper } from './helpers'
 
 
 
@@ -14,7 +14,7 @@ const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 
-const staticResolve = 'http://localhost:8090';
+
 async function wait(timeout) {
     return new Promise((resolve, reject) => {
         setTimeout(function () {
@@ -31,13 +31,15 @@ describe('initiate modes', function () {
         let server, client;
 
         try {
-            server = await ServerHelper(8090, 'express', MethodType.Local);
-            client = await ClientHelper(TestClass, 8080, ['express'], MethodType.Http, staticResolve);
+            let ports = PortHelper();
+            const staticResolve = 'http://localhost:' + ports.server;
+            server = await ServerHelper(ports.server, 'express', MethodType.Local);
+            client = await ClientHelper(TestClass, ports.client, ['express'], MethodType.Http, staticResolve);
             await wait(5 * 1000)
-            let result = await CallHelper();
+            let methodResult = await CallHelper();
 
 
-            expect(result.add).to.equal('added');
+            expect(methodResult.result.add).to.equal('added');
         } catch (error) {
             console.log('got error', error);
         } finally {
@@ -45,12 +47,14 @@ describe('initiate modes', function () {
 
 
         }
-        await wait(5 * 1000)
+        console.log('go done');
         if (server)
             server.kill();
+        console.log('go done');
         if (client)
             client.kill();
 
+        console.log('go done');
         done();
 
     });
@@ -60,18 +64,22 @@ describe('initiate modes', function () {
 
 
         try {
-            server = await ServerHelper(8090, 'socketio', MethodType.Local);
+            let ports = PortHelper();
+            const staticResolve = 'http://localhost:' + ports.server;
+            server = await ServerHelper(ports.server, 'socketio', MethodType.Local);
 
             //run the client
-            client = await ClientHelper(TestClass, 8080, ['socketio'], MethodType.Socket, staticResolve);
+            client = await ClientHelper(TestClass, ports.client, ['socketio'], MethodType.Socket, staticResolve);
             await wait(5 * 1000)
-            let result = await CallHelper();
-            if (result)
-                expect(result.add).to.equal('added');
+            let methodResult = await CallHelper();
+            if (methodResult)
+                expect(methodResult.result.add).to.equal('added');
+
+
         } catch (error) {
             console.log(error);
         } finally {
-            await wait(5 * 1000)
+
             if (server)
                 server.kill();
             if (client)
@@ -90,17 +98,19 @@ describe('initiate modes', function () {
     xit('starting redis server', async (done) => {
         let server, client;
         try {
-            server = await ServerHelper(8090, 'redis', MethodType.Local);
+            let ports = PortHelper();
+            const staticResolve = 'http://localhost:' + ports.server;
+            server = await ServerHelper(ports.server, 'redis', MethodType.Local);
             //run the client
-            client = await ClientHelper(TestClass, 8080, ['redis'], MethodType.Redis, staticResolve);
+            client = await ClientHelper(TestClass, ports.client, ['redis'], MethodType.Redis, staticResolve);
             await wait(5 * 1000)
-            let result = await CallHelper();
-            if (result)
-                expect(result.add).to.equal('added');
+            let methodResult = await CallHelper();
+            if (methodResult)
+                expect(methodResult.result.add).to.equal('added');
         } catch (error) {
             console.log(error);
         } finally {
-            await wait(5 * 1000)
+
             if (server)
                 server.kill();
             if (client)
@@ -119,16 +129,18 @@ describe('initiate modes', function () {
     xit('starting [amqp] server', async (done) => {
         let server, client;
         try {
-            server = await ServerHelper(8090, 'amqp', MethodType.Local);
+            let ports = PortHelper();
+            const staticResolve = 'http://localhost:' + ports.server;
+            server = await ServerHelper(ports.server, 'amqp', MethodType.Local);
             //run the client
-            client = await ClientHelper(TestClass, 8080, ['amqp'], MethodType.MQ, staticResolve);
+            client = await ClientHelper(TestClass, ports.client, ['amqp'], MethodType.MQ, staticResolve);
             await wait(5 * 1000)
-            let result = await CallHelper();
-            expect(result.add).to.equal('added');
+            let methodResult = await CallHelper();
+            expect(methodResult.result.add).to.equal('added');
         } catch (error) {
 
         } finally {
-            await wait(5 * 1000)
+
             if (Server)
                 server.kill();
             if (client)

@@ -12,7 +12,7 @@ process.env.CONFIG_PATH = "./tests/config";
 const staticResolve = 'http://localhost:8090';
 
 
-describe('testing resolver options', function () {
+xdescribe('testing resolver options', function () {
     it('Http without a resolver throws an error', (done) => {
 
         let config = new MethodulusConfig();

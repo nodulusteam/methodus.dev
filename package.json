@@ -19,7 +19,7 @@
     "prepublishOnly": "npm version patch",
     "pretest": "tsc",
     "test": "mocha tests/*.spec.js --recursive --reporter list",
-    "servers": "tsc && mocha tests/_servers.spec.js --recursive --reporter list"
+    "servers": "tsc && alsatian tests/servers.spec.js"
   },
   "author": "nodulusteam <nodulusteam@gmail.com> (https://nodulusteam.github.io/methodulus/)",
   "license": "(MIT OR Apache-2.0)",

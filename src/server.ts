@@ -2,7 +2,8 @@ import { Express, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
 import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
 import { MethodEvent } from './response';
 import { fp } from './fp';
-import { logger } from './logger';
+import { logger, Log, LogClass } from './log/';
+
 
 const debug = require('debug')('methodulus');
 import http = require('http');
@@ -19,7 +20,7 @@ export interface IApp {
 const figlet = require('figlet');
 
 
-
+@LogClass()
 export class Server {
     public app: any;//IApp;
     private _app: any = {};//IApp;
@@ -36,33 +37,41 @@ export class Server {
     async startFromConfig() {
         //MethodulusConfig = MethodulusConfigFromFile()
     }
+
+    @Log()
     configure(config: MethodulusConfig) {
         this.config = config
         return this;
     }
+
+    @Log()
     async printlogo() {
-        return new Promise((resolve, reject) => {
+        return new Promise(async (resolve, reject) => {
 
             figlet.text('Methodulus', {
                 font: 'Bigfig',//Delta Corps Priest 1
                 horizontalLayout: 'default',
                 verticalLayout: 'default'
-            }, function (err, data) {
+            }, async function (err, data) {
                 if (err) {
-                    return;
+                    resolve(err);
+                    //return;
                 }
-                console.log(colors.blue(data));
+                logger.info(colors.blue(data));
                 resolve();
             });
 
 
         })
     }
+
+
+    @Log()
     async start(port?: number) {
         global.methodulus = { server: this };
         this.port = this.port || port || 0;
         debug('activating server on ', port);
-        await this.printlogo();
+        // await this.printlogo();
 
         for (let i = 0; i < this.config.servers.length; i++) {
             let server = this.config.servers[i];
@@ -70,49 +79,49 @@ export class Server {
             switch (server.type) {
                 case ServerType.Express:
                     {
-                        console.log(colors.green(JSON.stringify(server.options)))
-                        console.log(colors.green(`Starting REST server on port`, server.options.port))
-                        this._app[serverType] = new Express(server.options.port);
+
+                        logger.info(colors.green(`Starting REST server on port`, server.options.port || port))
+                        this._app[serverType] = new Express(server.options.port || port);
                         var httpServer = http.createServer(this._app[serverType]._app);//this is the inside express instance
                         this._app['http'] = httpServer;
                         //listen on provided ports
-                        httpServer.listen(server.options.port);
+                        httpServer.listen(server.options.port || port);
                         break;
                     }
                 case ServerType.Socket:
                     {
-                        console.log(colors.green(`Starting SOCKETIO server on port`, this.port))
+                        logger.info(colors.green(`Starting SOCKETIO server on port`, this.port))
                         this._app[serverType] = await new SocketIO(this.port, this._app['http']);
                         break;
                     }
-                case ServerType.RabbitMQ:
+                case ServerType.RabbitMQ: ``
                     {
-                        console.log(colors.green(`Starting MQ server`))
+                        logger.info(colors.green(`Starting MQ server`))
                         try {
                             this._app[serverType] = new MQ(this.port, this._app['http']);
                         } catch (error) {
-                            console.log(error);
+                            logger.error(error);
                         }
                         break;
                     }
                 case ServerType.Kafka:
                     {
-                        console.log(colors.green(`Starting Kafka server`))
+                        logger.info(colors.green(`Starting Kafka server`))
                         try {
                             this._app[serverType] = new Kafka(this.port, this._app['http']);
                         } catch (error) {
-                            console.log(error);
+                            logger.error(error);
                         }
                         break;
                     }
                 case ServerType.Redis:
                     {
-                        console.log(colors.green(`Starting REDIS server`))
+                        logger.info(colors.green(`Starting REDIS server`))
                         try {
                             this._app[serverType] = new Redis(server.options);
-                            this._app[serverType].connection = new RedisServer();                         
+                            this._app[serverType].connection = new RedisServer();
                         } catch (error) {
-                            console.log(error);
+                            logger.error(error);
                         }
                         break;
                     }
@@ -126,7 +135,7 @@ export class Server {
             if (_class.methodType === MethodType.Local) {
                 this.useClass(_class);
             } else {
-                console.log(colors.green(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+                logger.info(colors.green(`using class ${_class.classType.name} in ${_class.methodType} mode`));
             }
 
 
@@ -139,7 +148,7 @@ export class Server {
 
     public useClass(_class) {
         this.config.servers.forEach((server) => {
-            console.log(colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+            logger.info(colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
             this._app[server.type].useClass(_class.classType);
         });
 

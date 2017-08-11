@@ -1,5 +1,5 @@
 const amqp = require('amqplib');
-
+import { logger, Log, LogClass } from '../log/';
 export async function amqpConnect() {
     if (global.methodulus.amqp) {
         return Promise.resolve(global.methodulus.amqp)

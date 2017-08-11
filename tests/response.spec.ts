@@ -25,7 +25,7 @@ async function wait(timeout) {
 }
 
 
-describe('test method messages MetodError, MethodResult', function () {
+xdescribe('test method messages MetodError, MethodResult', function () {
     it('error statusCode on REST', async function (done) {
         //run the servers
         //  console.log('REST ---------------------------------------------------------------------------------');

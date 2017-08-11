@@ -10,14 +10,15 @@ async function init() {
 
     if (process.env.servers) {
         process.env.servers.split(',').map(server => {
-            config.run(server, { 'source':'caller', port: process.env.PORT, client: redis_addr, server: redis_addr, amqp: 'localhost' });
+            config.run(server, { 'source': 'caller', port: process.env.PORT, client: redis_addr, server: redis_addr, amqp: 'localhost' });
 
         })
     }
 
     //config.use(EventsClass, MethodType.Local, 'http://localhost:8090');
     config.use(TestClass, process.env.METHODTYPE, 'http://localhost:8090');
-    const server = await new Server(process.env.PORT).configure(config).start();
+    let server = await new Server(process.env.PORT).configure(config).start();
+
 
     let myClass = new TestClass();
     try {

@@ -34,7 +34,7 @@ async function wait(timeout) {
 }
 
 
-describe('test gateway configuration', function () {
+xdescribe('test gateway configuration', function () {
     it('starting express gateway', async (done) => {
         //run the servers
         let server, server2, server3, client;

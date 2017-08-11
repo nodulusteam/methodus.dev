@@ -6,7 +6,7 @@ import { fp } from '../src/fp';
 
 
 
-describe('test custom function', function () {
+xdescribe('test custom function', function () {
     it('maybeJson', () => {
         //run the servers
         let object = { 'prop1': 1, prop2: 2 }

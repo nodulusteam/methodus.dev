@@ -1,36 +1,19 @@
-import { logger } from './logger';
-
-// export function maybeJson(value) {
-//     try {
-//         console.log(value);
-//         let parsed = JSON.parse(value);
-//         return parsed;
-//     } catch (error) {
-//         return null;
-//     }
-// }
-
+import { logger } from './log';
 
 export class fp {
     public static maybe(object: any): any {
-
         if (!object)
             return {};
         return object;
     }
 
     public static proto(object: any): any {
-
         let proto = object.prototype;
         if (!proto)
             proto = object.__proto__;
 
         return proto;
     }
-
-
-
-
 
     public static array(object: any): any[] {
 
@@ -79,9 +62,5 @@ export class fp {
             if (!object[property])
                 object[property] = defaultValue || null;
         }
-
     }
-
-
-
 }

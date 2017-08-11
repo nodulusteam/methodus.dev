@@ -7,7 +7,7 @@ import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../c
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
 import { RestParser, RestResponse, Verbs } from '../rest';
-
+import { logger, Log, LogClass } from '../log/';
 
 
 let metadataKey = 'methodulus';

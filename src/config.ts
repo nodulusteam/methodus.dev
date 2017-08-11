@@ -1,5 +1,7 @@
 const yaml = require('js-yaml'),
     fs = require('fs');
+    import { logger, Log, LogClass } from './log/';
+
 
 import { Verbs } from './rest';
 
@@ -25,11 +27,12 @@ export enum MethodType {
     Kafka = 'Kafka'
 }
 
-
+@LogClass()
 export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig {
     /**
      *
      */
+
     constructor(classType: any, methodType: MethodType, resolver?: Function | string) {
         this.classType = classType;
         this.methodType = methodType;
@@ -48,6 +51,7 @@ export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig 
     public resolver: Function | string
 }
 
+@LogClass()
 export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
         if (servers)
@@ -59,11 +63,15 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
     public servers: ServerConfig[];;
     public port: number;
+
+    @Log()
     public use(classType: any, methodType: MethodType, resolver?: Function | string) {
         if (methodType === MethodType.Http && !resolver)
             throw (new Error('Http transport requires a resolver, pass in a string or a promise'))
         this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
     }
+
+    @Log()
     public run(serverType: ServerType, configuration: any) {
         this.servers = this.servers || [];
         this.servers.push(new ServerConfig(serverType, configuration))
@@ -72,6 +80,8 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     }
 }
 
+
+@LogClass()
 export class ServerConfig {
     constructor(type: ServerType, options: any) {
         this.type = type;

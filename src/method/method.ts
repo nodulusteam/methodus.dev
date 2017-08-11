@@ -7,7 +7,7 @@ import "reflect-metadata";
 import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../config';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
-import { logger } from '../logger';
+import { logger, Log, LogClass } from '../log/';
 import { RestParser, RestResponse, Verbs } from '../rest';
 let metadataKey = 'methodulus';
 
@@ -66,7 +66,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 let server: ServerType | null = null;
                 switch (methodType) {
                     case MethodType.Local:
-                        methodResult = await originalMethod(...ParserResponse.args);
+                        methodResult = await originalMethod.apply(this, ParserResponse.args);
                         break;
                     case MethodType.Http:
                         server = ServerType.Express;
@@ -94,6 +94,8 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 //methodResult.error = error.message;
                 // methodResult.error = error;
                 methodResult.statusCode = methodResult.statusCode || 500;
+                //log the error
+                logger.error(error);
             }
 
 
@@ -101,13 +103,13 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             if (ParserResponse.isRest) {
                 RestResponse(args, methodResult);
                 return;
-            }         
+            }
             else {
                 if (methodResult.error && methodResult.statusCode) {
                     throw (methodResult);
                 }
 
-                return methodResult;            
+                return methodResult;
 
             }
 

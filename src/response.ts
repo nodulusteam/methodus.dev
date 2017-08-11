@@ -1,5 +1,6 @@
+import { logger, Log, LogClass } from './log/';
 
-
+@LogClass()
 export class MethodError extends Error {
     error: string;
     statusCode: number;
@@ -13,7 +14,7 @@ export class MethodError extends Error {
     }
 
 }
-
+@LogClass()
 export class MethodResult {
     result: any;
     page: any;
@@ -28,7 +29,7 @@ export class MethodResult {
     }
 
 }
-
+@LogClass()
 export class MethodEvent {
     name: string;
     value: any;
@@ -50,6 +51,7 @@ export function generateUuid() {
         Math.random().toString();
 }
 
+@LogClass()
 export class MethodMessage {
     to: string;
     message: any;
