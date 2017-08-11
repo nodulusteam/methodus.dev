@@ -1,6 +1,9 @@
 import "reflect-metadata";
 let metadataKey = 'params';
 const debug = require('debug')('methodulus');
+import { logger, Log, LogClass } from './log/';
+
+
 export function Body(name?: string) {
     return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
         let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];

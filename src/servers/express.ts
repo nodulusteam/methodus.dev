@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
- 
+
 import * as path from "path";
 import { MethodDescriptor, Verbs, MethodError, MethodResult, MethodEvent } from '../index';
 
@@ -12,13 +12,14 @@ import { BaseServer } from './base';
 import errorHandler = require("errorhandler");
 import compression = require("compression");
 import methodOverride = require("method-override");
-import { logger } from '../logger';
+import { logger, Log, LogClass } from '../log/';
 const debug = require('debug')('methodulus');
 
 const request = require('request-promise-native');
 
 import "reflect-metadata";
 
+@LogClass()
 export class Express extends BaseServer {
     _app: any;
     constructor(port) {
@@ -34,19 +35,19 @@ export class Express extends BaseServer {
     close() {
         this._app.close();
     }
-    //app.set("port", port);
-    //this.app.use(compression());
 
+    @Log()
     useClass(classType) {
         this._app.use(new ExpressRouter(classType).router);
         this._app.use(new ExpressEventBus(classType).router);
     }
 
-
+    @Log()
     async _sendEvent(methodEvent: MethodEvent) {
 
     }
 
+    @Log()
     async _send(params, methodulus, paramsMap) {
         logger.debug('in _send:', params, methodulus, paramsMap);
         let baseUrl = await methodulus.resolver();
@@ -76,8 +77,7 @@ export class Express extends BaseServer {
                 return new MethodResult(JSON.parse(result));
 
         } catch (error) {
-
-            throw (new MethodError(error.error || error.message, error.statusCode, error.options));
+            throw (new MethodError(error, error.statusCode, error.options));
         }
 
 
@@ -86,7 +86,7 @@ export class Express extends BaseServer {
 }
 
 
-
+@LogClass()
 export class ExpressRouter {
     public router: any;
     constructor(obj: any) {
@@ -128,6 +128,7 @@ export class ExpressRouter {
 
 
 
+@LogClass()
 export class ExpressEventBus {
     public router: any;
     constructor(obj: any) {

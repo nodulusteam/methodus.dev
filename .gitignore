@@ -3,3 +3,5 @@ node_modules/
 *.map
 *.d.ts
 !@types/*.d.ts
+examples/data/
+logs/

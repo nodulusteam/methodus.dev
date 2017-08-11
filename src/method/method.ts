@@ -7,7 +7,7 @@ import "reflect-metadata";
 import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../config';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
-import { logger } from '../logger';
+import { logger, Log, LogClass } from '../log/';
 import { RestParser, RestResponse, Verbs } from '../rest';
 let metadataKey = 'methodulus';
 
@@ -60,13 +60,13 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 methodType = completeConfiguration.methodType || MethodType.Local;
 
 
-
+            logger.info('**************************: ', methodType, propertyKey);
             // run and store the result
             try {
                 let server: ServerType | null = null;
                 switch (methodType) {
                     case MethodType.Local:
-                        methodResult = await originalMethod(...ParserResponse.args);
+                        methodResult = await originalMethod.apply(this, ParserResponse.args);
                         break;
                     case MethodType.Http:
                         server = ServerType.Express;
@@ -80,6 +80,9 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                     case MethodType.Redis:
                         server = ServerType.Redis;
                         break;
+                    case MethodType.Kafka:
+                        server = ServerType.Kafka;
+                        break;
                 }
 
                 if (server)
@@ -91,6 +94,8 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 //methodResult.error = error.message;
                 // methodResult.error = error;
                 methodResult.statusCode = methodResult.statusCode || 500;
+                //log the error
+                logger.error(error);
             }
 
 
@@ -99,23 +104,12 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
                 RestResponse(args, methodResult);
                 return;
             }
-            else if (existingClassMetadata.returnMessages) {
-                return methodResult;
-            }
             else {
                 if (methodResult.error && methodResult.statusCode) {
                     throw (methodResult);
                 }
-                // if (methodType === MethodType.Local)
-                //     return methodResult.result;
 
-                return methodResult.result;
-
-                // if (methodType === MethodType.Local) {
-                //     // return the result of the original method
-                //     return methodResult.result;
-                // } else
-                //     return methodResult;
+                return methodResult;
 
             }
 

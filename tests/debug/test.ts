@@ -1,4 +1,4 @@
-import { TestClass } from '../classes/test-class';
+import { TestClass } from '../classes/TestClass';
 import { Server, MethodType, MethodulusConfig } from '../../index';
 import {} from './servers'
 

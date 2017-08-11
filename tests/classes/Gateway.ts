@@ -38,13 +38,15 @@ export class Gateway {
     @Method(Verbs.Get, '/gateway/first')
     async callSecondClass() {
         let second = new SecondClass();
-        return await second.action1(1, 'roi from gateway');
+        let result = await second.action1(1, 'roi from gateway');
+        return new MethodResult(result);
     }
 
     @Method(Verbs.Get, '/gateway/first')
     async callThirdClass() {
         let third = new ThirdClass();
-        return await third.action1(1, 'roi from gateway');
+        let result = await third.action1(1, 'roi from gateway');
+        return new MethodResult(result);
     }
 
 

@@ -38,7 +38,7 @@ declare module Methodulus {
     }
 
      interface IServerConfig {
-          type: Methodulus.ServerType;
+          type: any;
           options: any;
      }
 

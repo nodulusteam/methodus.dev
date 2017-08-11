@@ -1,4 +1,5 @@
 import { MethodResult, MethodError } from './response';
+import { logger, Log, LogClass } from './log/';
 
 
 
@@ -14,26 +15,25 @@ export class Verbs {
 }
 
 
-export function RestResponse(args,  methodResult: MethodResult | MethodError | any) {
+
+export function RestResponse(args, methodResult: MethodResult | MethodError | any) {
     let res = args[1];
-    if (res.status) {
-        if (methodResult && methodResult.statusCode)
-            res.status(methodResult.statusCode);
-        else
-            res.status(200);
 
-        if (methodResult.error !== undefined)
+    if (methodResult && methodResult.statusCode)
+        res.status(methodResult.statusCode);
+    else
+        res.status(200);
 
-            if (methodResult.total)
-                res.set("X-Total-Count", methodResult.total);
+    if (methodResult.error !== undefined) {
+        if (methodResult.total)
+            res.set("X-Total-Count", methodResult.total);
 
         if (methodResult.page)
             res.set("X-Page", methodResult.page);
-
-        res.send(methodResult.result || methodResult.error);
-    } else {
-        console.log(args, methodResult, res);
     }
+
+    res.send(methodResult.result || methodResult.error);
+
 
 }
 
@@ -57,7 +57,7 @@ export function RestParser(args, paramsMap, functionArgs): ParserResponse {
 
 }
 
-
+@LogClass()
 export class ParserResponse {
     constructor(args: any, isRest: boolean) {
         this.args = args;
