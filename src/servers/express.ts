@@ -19,7 +19,7 @@ const request = require('request-promise-native');
 
 import "reflect-metadata";
 
-@LogClass()
+@LogClass(logger)
 export class Express extends BaseServer {
     _app: any;
     constructor(port) {
@@ -86,7 +86,7 @@ export class Express extends BaseServer {
 }
 
 
-@LogClass()
+@LogClass(logger)
 export class ExpressRouter {
     public router: any;
     constructor(obj: any) {
@@ -128,7 +128,7 @@ export class ExpressRouter {
 
 
 
-@LogClass()
+@LogClass(logger)
 export class ExpressEventBus {
     public router: any;
     constructor(obj: any) {

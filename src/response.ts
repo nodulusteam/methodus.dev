@@ -1,6 +1,6 @@
 import { logger, Log, LogClass } from './log/';
 
-@LogClass()
+@LogClass(logger)
 export class MethodError extends Error {
     error: string;
     statusCode: number;
@@ -14,7 +14,7 @@ export class MethodError extends Error {
     }
 
 }
-@LogClass()
+@LogClass(logger)
 export class MethodResult {
     result: any;
     page: any;
@@ -29,7 +29,7 @@ export class MethodResult {
     }
 
 }
-@LogClass()
+@LogClass(logger)
 export class MethodEvent {
     name: string;
     value: any;
@@ -39,7 +39,7 @@ export class MethodEvent {
         this.name = name;
 
 
-        global.methodulus.server.sendEvent(this);
+        //global.methodulus.server.sendEvent(this);
 
     }
 
@@ -51,7 +51,7 @@ export function generateUuid() {
         Math.random().toString();
 }
 
-@LogClass()
+@LogClass(logger)
 export class MethodMessage {
     to: string;
     message: any;

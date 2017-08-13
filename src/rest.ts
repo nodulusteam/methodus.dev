@@ -57,7 +57,7 @@ export function RestParser(args, paramsMap, functionArgs): ParserResponse {
 
 }
 
-@LogClass()
+@LogClass(logger)
 export class ParserResponse {
     constructor(args: any, isRest: boolean) {
         this.args = args;

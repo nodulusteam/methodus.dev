@@ -5,3 +5,5 @@ node_modules/
 !@types/*.d.ts
 examples/data/
 logs/
+coverage/
+.nyc_output/

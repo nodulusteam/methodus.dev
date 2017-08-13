@@ -9,7 +9,7 @@ import { MethodType, MethodulusClassConfig } from '../config';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
 const metadataKey = 'methodulus';
 
-@LogClass()
+@LogClass(logger)
 export class MQ extends BaseServer {
     _app: any;
     constructor(port, httpServer) {
@@ -72,7 +72,7 @@ export class MQ extends BaseServer {
     }
 }
 
-@LogClass()
+@LogClass(logger)
 export class MQRouter {
     public router: any;
     constructor(obj: any) {

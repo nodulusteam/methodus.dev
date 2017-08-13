@@ -383,6 +383,27 @@
                 "DEBUG_FILE": "${workspaceRoot}/logs/"
             }
         },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run classes test",
+            "type": "node",
+           "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+               
+                "tests/classes.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "DEBUG_FILE": "${workspaceRoot}/logs/"
+            }
+        },
         //Examples
         {
             "type": "node",

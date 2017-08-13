@@ -13,9 +13,15 @@ let metadataKey = 'methodulus';
 
 
 function mergeMetadata(methodulus) {
-    let config = global.methodulus.server.config;
-    let methodinformation = config.classes.get(methodulus.name);
-    return Object.assign({}, methodulus, methodinformation);
+    if (global.methodulus && global.methodulus.server) {
+        let config = global.methodulus.server.config;
+        let methodinformation = config.classes.get(methodulus.name);
+        return Object.assign({}, methodulus, methodinformation);
+    }else
+    {
+        return methodulus;
+    }
+
 }
 
 export function Method(verb: Verbs, route: string, methodType?: MethodType) {

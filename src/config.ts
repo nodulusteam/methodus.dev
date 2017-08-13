@@ -27,7 +27,7 @@ export enum MethodType {
     Kafka = 'Kafka'
 }
 
-@LogClass()
+@LogClass(logger)
 export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig {
     /**
      *
@@ -51,7 +51,7 @@ export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig 
     public resolver: Function | string
 }
 
-@LogClass()
+@LogClass(logger)
 export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
         if (servers)
@@ -81,7 +81,7 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
 }
 
 
-@LogClass()
+@LogClass(logger)
 export class ServerConfig {
     constructor(type: ServerType, options: any) {
         this.type = type;

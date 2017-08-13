@@ -20,7 +20,7 @@ export interface IApp {
 const figlet = require('figlet');
 
 
-@LogClass()
+@LogClass(logger)
 export class Server {
     public app: any;//IApp;
     private _app: any = {};//IApp;

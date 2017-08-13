@@ -18,8 +18,9 @@
     "prepare": "npm test",
     "prepublishOnly": "npm version patch",
     "pretest": "tsc",
-    "test": "alsatian tests/*.spec.js",
-    "servers": "tsc && alsatian tests/servers.spec.js"
+    "test": "alsatian tests/*.spec.js --tap | tap-dot",
+    "servers": "tsc && alsatian tests/servers.spec.js ",
+    "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
   },
   "author": "nodulusteam <nodulusteam@gmail.com> (https://nodulusteam.github.io/methodulus/)",
   "license": "(MIT OR Apache-2.0)",
@@ -35,18 +36,21 @@
     "js-yaml": "^3.9.0",
     "kafka-node": "^2.1.0",
     "log": "^1.4.0",
+    "logelas": "^1.0.10",
     "logrotator": "^1.1.0",
     "method-override": "^2.3.9",
     "mock-require": "^2.0.2",
     "morgan": "^1.8.2",
     "nedb": "^1.8.0",
     "nedb-promise": "^2.0.1",
+    "nyc": "^11.1.0",
     "redis": "^2.7.1",
     "reflect-metadata": "^0.1.10",
     "request": "^2.81.0",
     "request-promise-native": "^1.0.4",
     "socket.io": "^2.0.3",
-    "socket.io-client": "^2.0.3"
+    "socket.io-client": "^2.0.3",
+    "tap-dot": "^1.0.5"
   },
   "devDependencies": {
     "@types/chai": "^4.0.1",

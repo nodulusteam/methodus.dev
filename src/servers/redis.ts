@@ -10,7 +10,7 @@ import { fp } from '../fp';
 const redis_addr = '//192.168.99.100:32768';
 const metadataKey = 'methodulus';
 
-@LogClass()
+@LogClass(logger)
 export class Redis extends BaseServer {
     classRouters: Methodulus.Router[];
     options: any;
@@ -84,7 +84,7 @@ function generateUuid() {
 
 
 
-@LogClass()
+@LogClass(logger)
 export class RedisServer {
     connection: any = null;
     constructor() {
@@ -98,7 +98,7 @@ export class RedisServer {
 
 }
 
-@LogClass()
+@LogClass(logger)
 export class RedisRouter implements Methodulus.Router {
     public router: any;
     constructor(obj: any) {

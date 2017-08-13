@@ -15,7 +15,7 @@ const kafka = require('kafka-node'),
     KeyedMessage = kafka.KeyedMessage;
 
 
-@LogClass()
+@LogClass(logger)
 export class Kafka extends BaseServer {
     _app: any;
     constructor(port, httpServer) {
@@ -149,7 +149,7 @@ export class Kafka extends BaseServer {
 
 }
 
-@LogClass()
+@LogClass(logger)
 export class KafkaRouter {
     public router: any;
     constructor(obj: any) {

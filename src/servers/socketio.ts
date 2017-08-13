@@ -7,7 +7,7 @@ import { BaseServer } from './base';
 let metadataKey = 'methodulus';
 import { logger, Log, LogClass } from '../log/';
 
-@LogClass()
+@LogClass(logger)
 export class SocketIO extends BaseServer {
     _app: any;
     constructor(port, httpServer) {
@@ -83,7 +83,7 @@ export class SocketIO extends BaseServer {
 
 }
 
-@LogClass()
+@LogClass(logger)
 export class SocketIORouter implements Methodulus.Router {
     public router: any;
     constructor(obj: any, socket: any) {
