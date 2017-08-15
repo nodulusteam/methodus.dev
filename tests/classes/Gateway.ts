@@ -22,7 +22,7 @@ export class Gateway {
         let first = new FirstClass();
         let result = await first.action1(1, 'roi from gateway');
         console.log('first.action1()', result);
-        return new MethodResult(result);
+        return new MethodResult(result.result);
     }
 
 
@@ -39,14 +39,14 @@ export class Gateway {
     async callSecondClass() {
         let second = new SecondClass();
         let result = await second.action1(1, 'roi from gateway');
-        return new MethodResult(result);
+        return new MethodResult(result.result);
     }
 
     @Method(Verbs.Get, '/gateway/first')
     async callThirdClass() {
         let third = new ThirdClass();
         let result = await third.action1(1, 'roi from gateway');
-        return new MethodResult(result);
+        return new MethodResult(result.result);
     }
 
 

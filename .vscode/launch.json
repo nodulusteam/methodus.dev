@@ -232,18 +232,16 @@
             "request": "launch",
             "console": "internalConsole",
             // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "Run gateway test",
+            "name": "T Run gateway test",
             // Type of configuration. Possible values: "node", "mono".
             "type": "node",
             // Workspace relative or absolute path to the program.
-            "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             // Automatically stop program after launch.
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "--debug",
-                "--inspect",
-                "--no-timeouts",
+              
                 "tests/gateway.spec.js"
             ],
             "sourceMaps": true,
@@ -258,6 +256,35 @@
                 "NODE_ENV": "debug"
             }
         },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "T Run proxify test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+              
+                "tests/proxify.spec.js"
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+
         {
             "request": "launch",
             "console": "internalConsole",
