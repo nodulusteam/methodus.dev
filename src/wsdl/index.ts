@@ -15,7 +15,7 @@ export function Proxify(target: any) {
     let proxyString: string[] = [];
 
     proxyString.push(`
-        import { logger, Method, MethodConfig, Verbs, MethodType, Body, Param, Query, MethodResult, MethodError, Event, EventName } from '../../index';
+        import { logger, Method, MethodConfig, Verbs, MethodType, Body, Param, Query, MethodResult, MethodError, Event, EventName } from 'methodulus';
 
         @MethodConfig('${methodulus.name}')
         export class ${methodulus.name} {

@@ -29,28 +29,20 @@ export class Servers {
 
             let ports = PortHelper();
             const staticResolve = 'http://127.0.0.1:' + ports.server;
-            logger.info(`before servers ======================================================================`);
             ServerHelper(ports.server, serverType, MethodType.Local).then(server => {
-                logger.info(`after servers ======================================================================`);
-                logger.info(`before client ======================================================================`);
-                wait(1000 * 10).then(() => {
+                wait(1000 * 1).then(() => {
                     ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve).then(client => {
-                        logger.info(`======================================================================`);
                         CallHelper().then(methodResult => {
-                            logger.info(`======================================================================`);
                             if (server)
                                 server.kill();
 
                             if (client)
                                 client.kill();
 
-                            Expect(methodResult.result.add).toEqual('added');
-                            if (server)
-                                server.kill();
-
-                            if (client)
-                                client.kill();
+                            Expect(methodResult.result.add).toEqual('added');                          
                             resolve();
+                        }).catch((error) => {
+                            console.log(error);
                         });
                     })
                 })

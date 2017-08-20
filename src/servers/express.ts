@@ -71,6 +71,13 @@ export class Express extends BaseServer {
         }
 
         logger.debug(requestOptions);
+        let result = await this.finalSend(requestOptions);
+        return result;
+
+
+    }
+
+    async finalSend(requestOptions) {
         try {
             let result = await request(requestOptions);
             if (typeof result === 'string' && (result[0] === '{' || result[0] === '['))
@@ -79,8 +86,6 @@ export class Express extends BaseServer {
         } catch (error) {
             throw (new MethodError(error, error.statusCode, error.options));
         }
-
-
     }
 
 }

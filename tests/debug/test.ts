@@ -7,7 +7,7 @@ async function test() {
    // MethodulusConfig.config['TestClass'] = MethodType.Socket;
    // MethodulusConfig.servers = ["socketio"];
     let server = new Server(process.env.PORT);
-    server.app.useClass(TestClass);
+   // server.app.useClass(TestClass);
 
     let myClass = new TestClass();
     myClass.action1(1, "roi");

@@ -9,6 +9,7 @@ import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
 import { logger, Log, LogClass } from '../log/';
 import { RestParser, RestResponse, Verbs } from '../rest';
+import { Servers } from '../servers/serversList';
 let metadataKey = 'methodulus';
 
 
@@ -17,8 +18,7 @@ function mergeMetadata(methodulus) {
         let config = global.methodulus.server.config;
         let methodinformation = config.classes.get(methodulus.name);
         return Object.assign({}, methodulus, methodinformation);
-    }else
-    {
+    } else {
         return methodulus;
     }
 
@@ -52,7 +52,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             let proto = fp.proto(this);
 
 
-            let methodulus: any = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || {};
+            let methodulus: any = Reflect.getOwnMetadata(metadataKey, proto, propertyKey) || {};
             //console.debug('methodulus reflected', methodulus);
             Object.assign(methodulus, existingClassMetadata);
 
@@ -128,7 +128,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
 
 
 async function send(server: ServerType, functionArgs: any, methodulus: any, paramsMap: any[]) {
-    let result = await global.methodulus.server._send(server, functionArgs, methodulus, paramsMap);
+    let result = await Servers.send(server, functionArgs, methodulus, paramsMap);
     return result;
 }
 

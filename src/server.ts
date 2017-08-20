@@ -1,9 +1,9 @@
-import { Express, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
+import { Servers, Express, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
 import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
 import { MethodEvent } from './response';
 import { fp } from './fp';
 import { logger, Log, LogClass } from './log/';
-
+let metadataKey = 'methodulus';
 
 const debug = require('debug')('methodulus');
 import http = require('http');
@@ -22,8 +22,9 @@ const figlet = require('figlet');
 
 @LogClass(logger)
 export class Server {
-    public app: any;//IApp;
-    private _app: any = {};//IApp;
+    // public app: any;//IApp;
+    //private _app: any = {};//IApp;
+    private instanceId: string;
     private port: number = 0;
     public config: MethodulusConfig;
     private eventEmitter: any;
@@ -32,6 +33,8 @@ export class Server {
         // Create an eventEmitter object
         this.eventEmitter = new events.EventEmitter();
         //this.start(port);
+
+        this.instanceId = Servers.addServer(this);
     }
 
     async startFromConfig() {
@@ -80,25 +83,30 @@ export class Server {
                 case ServerType.Express:
                     {
 
-                        logger.info(colors.green(`Starting REST server on port`, server.options.port || port))
-                        this._app[serverType] = new Express(server.options.port || port);
-                        var httpServer = http.createServer(this._app[serverType]._app);//this is the inside express instance
-                        this._app['http'] = httpServer;
+                        logger.info(this, colors.green(`Starting REST server on port`, server.options.port || port));
+
+                        let app = Servers.set(this.instanceId, server.type, new Express(server.options.port || port));
+                        var httpServer = http.createServer(app._app);//this is the inside express instance
+                        Servers.set(this.instanceId, 'http', httpServer);
                         //listen on provided ports
                         httpServer.listen(server.options.port || port);
                         break;
                     }
                 case ServerType.Socket:
                     {
-                        logger.info(colors.green(`Starting SOCKETIO server on port`, this.port))
-                        this._app[serverType] = await new SocketIO(this.port, this._app['http']);
+                        logger.info(this, colors.green(`Starting SOCKETIO server on port`, this.port))
+
+                        let app = await new SocketIO(this.port, Servers.get(this.instanceId, 'http'));
+                        Servers.set(this.instanceId, server.type, app);
                         break;
                     }
                 case ServerType.RabbitMQ: ``
                     {
-                        logger.info(colors.green(`Starting MQ server`))
+                        logger.info(this, colors.green(`Starting MQ server`))
                         try {
-                            this._app[serverType] = new MQ(this.port, this._app['http']);
+                            let app = new MQ(this.port, Servers.get(this.instanceId, 'http'));
+                            Servers.set(this.instanceId, server.type, app);
+
                         } catch (error) {
                             logger.error(error);
                         }
@@ -106,9 +114,10 @@ export class Server {
                     }
                 case ServerType.Kafka:
                     {
-                        logger.info(colors.green(`Starting Kafka server`))
+                        logger.info(this, colors.green(`Starting Kafka server`))
                         try {
-                            this._app[serverType] = new Kafka(this.port, this._app['http']);
+                            let app = new Kafka(this.port, Servers.get(this.instanceId, 'http'));
+                            Servers.set(this.instanceId, server.type, app);
                         } catch (error) {
                             logger.error(error);
                         }
@@ -116,10 +125,12 @@ export class Server {
                     }
                 case ServerType.Redis:
                     {
-                        logger.info(colors.green(`Starting REDIS server`))
+                        logger.info(this, colors.green(`Starting REDIS server`))
                         try {
-                            this._app[serverType] = new Redis(server.options);
-                            this._app[serverType].connection = new RedisServer();
+                            let app: any = new Redis(server.options);
+                            app.connection = new RedisServer();
+                            Servers.set(this.instanceId, server.type, app);
+
                         } catch (error) {
                             logger.error(error);
                         }
@@ -132,11 +143,11 @@ export class Server {
         for (var i = 0; i < this.config.classes.size; i++) {
             let name, element = classes.next();
             let _class = element.value[1];
-            if (_class.methodType === MethodType.Local) {
-                this.useClass(_class);
-            } else {
-                logger.info(colors.green(`using class ${_class.classType.name} in ${_class.methodType} mode`));
-            }
+            //  if (_class.methodType === MethodType.Local) {
+            this.useClass(_class);
+            //  } else {
+            logger.info(this, colors.green(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+            //  }
 
 
 
@@ -148,10 +159,17 @@ export class Server {
 
     public useClass(_class) {
         this.config.servers.forEach((server) => {
-            logger.info(colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
-            this._app[server.type].useClass(_class.classType);
-        });
+            if (_class.classType) {
+                let proto = fp.proto(_class.classType);
+                let metaObject = Reflect.getOwnMetadata(metadataKey, proto);
+                metaObject.instanceId = this.instanceId;
+                Reflect.defineMetadata(metadataKey, metaObject, proto);
 
+                logger.info(this, colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+                Servers.get(this.instanceId, server.type).useClass(_class.classType);
+            }
+
+        });
     }
 
     // public bindEvents(classType) {
@@ -168,25 +186,25 @@ export class Server {
     // }
     public kill() {
         ['http', 'socketio'].forEach((server) => {
-            if (this._app[server]) {
-                this._app[server].close();
-                delete this._app[server];
-            }
+            // if (this._app[server]) {
+            //     this._app[server].close();
+            //     delete this._app[server];
+            // }
         });
     }
 
     async sendEvent(methodEvent: MethodEvent) {
         this.config.servers.forEach((server) => {
-            this._app[server.type]._sendEvent(methodEvent);
+            Servers.get(this.instanceId)._sendEvent(methodEvent);
         });
 
     }
     async _send(channel: ServerType, params, message, parametersMap) {
-        return await this._app[channel]._send(params, message, parametersMap);
+        return await Servers.get(this.instanceId)._send(params, message, parametersMap);
     }
 
     async registerEvent(channel, eventName) {
-        if (this._app[channel].registerEvent)
-            return await this._app[channel].registerEvent(event);
+        if (Servers.get(this.instanceId).registerEvent)
+            return await Servers.get(this.instanceId).registerEvent(event);
     }
 }

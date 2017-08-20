@@ -101,8 +101,8 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 export async function CallHelper(): Promise<any> {
     let myClass = new TestClass();
     try {
-        return await myClass.action1(1654564654, "roicccccc");
-
+        let value =  await myClass.action1(1654564654, "roicccccc");
+        return value;
     }
     catch (error) {
         console.log(error);
