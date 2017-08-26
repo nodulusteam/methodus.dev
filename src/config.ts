@@ -1,6 +1,6 @@
 const yaml = require('js-yaml'),
     fs = require('fs');
-    import { logger, Log, LogClass } from './log/';
+import { logger, Log, LogClass } from './log/';
 
 
 import { Verbs } from './rest';
@@ -51,6 +51,18 @@ export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig 
     public resolver: Function | string
 }
 
+export class MethodulusConfigurations {
+    static _configurations: any;
+    public static add(configurationInstance) {
+        this._configurations = configurationInstance;
+    }
+
+    public static get() {
+        return this._configurations;
+    }
+}
+
+
 @LogClass(logger)
 export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
@@ -59,6 +71,8 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
 
         if (map)
             this.classes = map;
+
+        MethodulusConfigurations.add(this);
     }
     public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
     public servers: ServerConfig[];;

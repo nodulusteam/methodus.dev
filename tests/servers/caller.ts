@@ -15,7 +15,7 @@ async function init() {
         })
     }
 
-    //config.use(EventsClass, MethodType.Local, 'http://127.0.0.1:8090');
+    //config.use(EventsClass, MethodType.MQ, 'http://127.0.0.1:8090');
     config.use(TestClass, process.env.METHODTYPE, 'http://127.0.0.1:8090');
     let server = await new Server(process.env.PORT).configure(config).start();
 

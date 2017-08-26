@@ -394,10 +394,7 @@
             "type": "node",
            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
-            "args": [
-                "--debug",
-                "--inspect",
-                "--no-timeouts",
+            "args": [             
                 "tests/events.spec.js"
             ],
             "sourceMaps": true,

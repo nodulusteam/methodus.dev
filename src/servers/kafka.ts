@@ -2,7 +2,7 @@
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
 import { fp } from '../fp';
-import { amqpConnect } from './amqp';
+import { AMQP } from './amqp';
 import { BaseServer } from './base';
 import { logger, Log, LogClass } from '../log/';
 import { MethodType, MethodulusClassConfig } from '../config';
@@ -25,7 +25,7 @@ export class Kafka extends BaseServer {
     @Log()
     async _sendEvent(methodEvent: MethodEvent) {
         return new Promise((resolve, reject) => {
-            amqpConnect().then((conn) => {
+            AMQP.connect().then((conn) => {
                 conn.createChannel().then((ch) => {
                     ch.assertExchange('event-bus', 'fanout', { durable: true });
                     ch.publish('event-bus', '', new Buffer(JSON.stringify(methodEvent)));
@@ -179,7 +179,7 @@ export class KafkaRouter {
         return new Promise((resolve, reject) => {
             if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
                 logger.log('registering events bus for:', Object.keys(proto.methodulus._events));
-                amqpConnect().then((conn) => {
+                AMQP.connect().then((conn) => {
                     conn.createChannel().then((ch) => {
 
                         let exchange = 'event-bus';

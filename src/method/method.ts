@@ -4,7 +4,7 @@ const excludedProps = ['constructor'];
 
 
 import "reflect-metadata";
-import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../config';
+import { MethodulusConfigurations, MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../config';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
 import { logger, Log, LogClass } from '../log/';
@@ -14,13 +14,13 @@ let metadataKey = 'methodulus';
 
 
 function mergeMetadata(methodulus) {
-    if (global.methodulus && global.methodulus.server) {
-        let config = global.methodulus.server.config;
-        let methodinformation = config.classes.get(methodulus.name);
-        return Object.assign({}, methodulus, methodinformation);
-    } else {
-        return methodulus;
-    }
+    // if (global.methodulus && global.methodulus.server) {
+    let config = MethodulusConfigurations.get();// global.methodulus.server.config;
+    let methodinformation = config.classes.get(methodulus.name);
+    return Object.assign({}, methodulus, methodinformation);
+    //  } else {
+    //  return methodulus;
+    //  }
 
 }
 
@@ -65,8 +65,6 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             if (completeConfiguration)
                 methodType = completeConfiguration.methodType || MethodType.Local;
 
-
-            logger.info('**************************: ', methodType, propertyKey);
             // run and store the result
             try {
                 let server: ServerType | null = null;

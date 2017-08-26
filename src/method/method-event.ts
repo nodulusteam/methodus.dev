@@ -3,16 +3,18 @@
 const excludedProps = ['constructor'];
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
-import { MethodulusConfig, EventDescriptor, MethodType, ServerType } from '../config';
+import { MethodulusConfigurations, MethodulusConfig, EventDescriptor, MethodType, ServerType } from '../config';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
 import { logger, Log, LogClass } from '../log/';
 import { RestParser, RestResponse, Verbs } from '../rest';
+import {Servers } from '../servers';
+
 let metadataKey = 'methodulus';
 
 
 function mergeMetadata(methodulus) {
-    let config = global.methodulus.server.config;
+    let config =MethodulusConfigurations.get();
     debug('MethodulusConfig', config[methodulus.name]);
     let methodinformation = config.classes.get(methodulus.name);
     return Object.assign({}, methodulus, methodinformation);
@@ -108,7 +110,7 @@ export function Event(name: string, verb: Verbs, route: string, methodType?: Met
 
 
 async function send(server: ServerType, functionArgs: any, methodulus: any, paramsMap: any[]) {
-    let result = await global.methodulus.server._send(server, functionArgs, methodulus, paramsMap);
+    let result = await Servers.send(server, functionArgs, methodulus, paramsMap);
     return result;
 }
 

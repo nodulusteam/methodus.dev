@@ -1,5 +1,5 @@
 import { TestClass } from '../classes/TestClass';
-import { logger, Server, MethodType, MethodulusConfig } from '../../index';
+import { logger, Server, MethodType, MethodulusConfig, MethodEvent } from '../../index';
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
@@ -19,22 +19,22 @@ export function PortHelper() {
 
 
 export async function ServerHelper(port, servers, methodType: MethodType): Promise<any> {
-    logger.info('in server helper');
+
     const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/dynamic.js'], {
         detached: false,
         cwd: path.resolve('./'),
         execArgv: ['--debug-brk=6001'],
-        env: { PORT: port, servers: servers, MethodType: methodType }
+        env: { PORT: port, servers: servers, MethodType: methodType, logName: 'server' }
     });
 
-    logger.info('after spawn');
+
 
     child1.stdout.on('data', async (data) => {
         console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-        logger.error(`child stderr:\n${data}`);
-        // console.error(`child stderr:\n${data}`);
+        //logger.error(`child stderr:\n${data}`);
+
     });
 
     child1.on('uncaughtException', function (code, signal) {
@@ -62,7 +62,7 @@ export async function ServerHelper(port, servers, methodType: MethodType): Promi
 export async function ServerClassHelper(name, port, servers, methodType: MethodType) {
     const child1 = childProcessDebug.spawn(process.argv[0], ['./tests/servers/perclass/' + name + '.js'], {
         detached: true,
-        cwd: path.resolve('./'), env: { PORT: port, servers: servers, MethodType: methodType }
+        cwd: path.resolve('./'), env: { PORT: port, servers: servers, MethodType: methodType, logName: 'server' }
     });
     child1.stdout.on('data', async (data) => {
         // console.error(`child stddata:\n${data}`);
@@ -80,6 +80,7 @@ export async function ServerClassHelper(name, port, servers, methodType: MethodT
 
 
 export async function ClientHelper(classType, port, servers, methodType: MethodType, resolver) {
+    process.env.logName = 'client';
     let config = new MethodulusConfig(servers);
 
     if (servers) {
@@ -101,12 +102,22 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 export async function CallHelper(): Promise<any> {
     let myClass = new TestClass();
     try {
-        let value =  await myClass.action1(1654564654, "roicccccc");
+        let value = await myClass.action1(1654564654, "roicccccc");
         return value;
     }
     catch (error) {
         console.log(error);
     }
 
+
+}
+
+
+export async function EventHelper(): Promise<any> {
+
+
+    let methodEvent = await new MethodEvent('FirstClassEvent', 'asdasdads')
+
+    return methodEvent;
 
 }

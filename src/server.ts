@@ -71,7 +71,7 @@ export class Server {
 
     @Log()
     async start(port?: number) {
-        global.methodulus = { server: this };
+        //global.methodulus = { server: this };
         this.port = this.port || port || 0;
         debug('activating server on ', port);
         // await this.printlogo();

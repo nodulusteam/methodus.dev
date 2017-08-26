@@ -1,6 +1,6 @@
 
 const uuidv1 = require('uuid/v1');
-
+import { MethodEvent } from '../response'
 export class Servers {
     public static instances: any = {};
     public static classes: any;
@@ -20,9 +20,22 @@ export class Servers {
             return this.instances[instanceId];
     }
 
+
+    public static async  emit(methodEvent: MethodEvent) {
+        let servers = [];
+        for (let instanceKey in this.instances) {
+            if (this.instances[instanceKey]['amqp']) {
+                this.instances[instanceKey]['amqp']._sendEvent(methodEvent);
+            }
+        }
+
+        // let result = await this.instances[methodulus.instanceId][server]._send(functionArgs, methodulus, paramsMap);
+        // return result;
+    }
+
     public static async  send(server, functionArgs, methodulus, paramsMap) {
 
-       let result= await this.instances[methodulus.instanceId][server]._send(functionArgs, methodulus, paramsMap);
-       return result;
+        let result = await this.instances[methodulus.instanceId][server]._send(functionArgs, methodulus, paramsMap);
+        return result;
     }
 }

@@ -37,7 +37,7 @@
     "figlet": "^1.2.0",
     "js-yaml": "^3.9.0",
     "kafka-node": "^2.1.0",
-    "logelas": "^1.0.13",
+    "logelas": "^1.0.17",
     "method-override": "^2.3.9",
     "mock-require": "^2.0.2",
     "nedb": "^1.8.0",
