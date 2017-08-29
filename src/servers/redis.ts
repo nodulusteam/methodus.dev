@@ -1,7 +1,7 @@
 const debug = require('debug')('methodulus');
 import "reflect-metadata";
 import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../response';
-import { MethodulusClassConfig, MethodType } from '../config';
+import { MethodulusClassConfig, MethodType, MethodulusConfigurations } from '../config';
 
 import { BaseServer } from './base';
 import { logger, Log, LogClass } from '../log/';
@@ -114,7 +114,7 @@ export class RedisRouter implements Methodulus.Router {
         sub.subscribe(q);
         //extract metadata for class and method
 
-        let config = global.methodulus.server.config;
+        let config = MethodulusConfigurations.get();
         let methodinformation: MethodulusClassConfig = config.classes.get(methodulus.name);
 
 

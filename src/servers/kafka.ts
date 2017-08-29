@@ -18,14 +18,16 @@ const kafka = require('kafka-node'),
 @LogClass(logger)
 export class Kafka extends BaseServer {
     _app: any;
-    constructor(port, httpServer) {
+    options: any;
+    constructor(connectionOptions) {
         super();
+        this.options = connectionOptions
     }
 
     @Log()
     async _sendEvent(methodEvent: MethodEvent) {
         return new Promise((resolve, reject) => {
-            AMQP.connect().then((conn) => {
+            AMQP.connect(this.options).then((conn) => {
                 conn.createChannel().then((ch) => {
                     ch.assertExchange('event-bus', 'fanout', { durable: true });
                     ch.publish('event-bus', '', new Buffer(JSON.stringify(methodEvent)));
@@ -44,7 +46,7 @@ export class Kafka extends BaseServer {
 
     @Log()
     useClass(classType) {
-        new KafkaRouter(classType);
+        new KafkaRouter(classType, this.options);
 
     }
 
@@ -152,7 +154,10 @@ export class Kafka extends BaseServer {
 @LogClass(logger)
 export class KafkaRouter {
     public router: any;
-    constructor(obj: any) {
+    options:any;
+    constructor(obj: any,options:any) {
+        this.options = options;
+
         let proto = fp.proto(obj);
         let methodulus = proto.methodulus;
         let config = global.methodulus.server.config;
@@ -179,7 +184,7 @@ export class KafkaRouter {
         return new Promise((resolve, reject) => {
             if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
                 logger.log('registering events bus for:', Object.keys(proto.methodulus._events));
-                AMQP.connect().then((conn) => {
+                AMQP.connect(this.options).then((conn) => {
                     conn.createChannel().then((ch) => {
 
                         let exchange = 'event-bus';

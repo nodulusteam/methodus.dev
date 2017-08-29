@@ -15,21 +15,24 @@ async function init() {
         })
     }
 
-    //config.use(EventsClass, MethodType.MQ, 'http://127.0.0.1:8090');
+    config.use(EventsClass, MethodType.MQ, 'http://127.0.0.1:8090');
     config.use(TestClass, process.env.METHODTYPE, 'http://127.0.0.1:8090');
     let server = await new Server(process.env.PORT).configure(config).start();
 
 
-    let myClass = new TestClass();
-    try {
-        console.log('calling action1 on testclass...');
-        let result = await myClass.action1(1, 'roi');
-        console.log('result of call is:  ', result);
-        // let result = await myClass.error();
-        return result;
-    } catch (error) {
-        return Promise.resolve(error);
-    }
+    //setInterval(async () => {
+        let myClass = new TestClass();
+        try {
+            console.log('calling action1 on testclass...');
+            let result = await myClass.action1(1, 'roi');
+            console.log('result of call is:  ', result);
+            // let result = await myClass.error();
+            return result;
+        } catch (error) {
+            return Promise.resolve(error);
+        }
+  //  }, 1000)
+
 
 }
 

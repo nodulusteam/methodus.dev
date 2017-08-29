@@ -104,7 +104,7 @@ export class Server {
                     {
                         logger.info(this, colors.green(`Starting MQ server`))
                         try {
-                            let app = new MQ(this.port, Servers.get(this.instanceId, 'http'));
+                            let app = new MQ(server.options);
                             Servers.set(this.instanceId, server.type, app);
 
                         } catch (error) {
@@ -116,7 +116,7 @@ export class Server {
                     {
                         logger.info(this, colors.green(`Starting Kafka server`))
                         try {
-                            let app = new Kafka(this.port, Servers.get(this.instanceId, 'http'));
+                            let app = new Kafka(server.options);
                             Servers.set(this.instanceId, server.type, app);
                         } catch (error) {
                             logger.error(error);

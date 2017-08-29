@@ -8,25 +8,26 @@ const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = "./tests/config";
 
+logger.truncate();
 
 
 
 
-@TestFixture("Test all servers RPC")
+@TestFixture('Test all servers RPC')
 export class Servers {
 
     // use the async/await pattern in your tests as you would in your code
-    @AsyncTest("asychronous test")
-    // @TestCase(ServerType.Express, MethodType.Http)
+    @AsyncTest('asychronous test')
+    @TestCase(ServerType.Express, MethodType.Http)
     @TestCase(ServerType.RabbitMQ, MethodType.MQ)
-    //  @TestCase(ServerType.Socket, MethodType.Socket)
-    // @TestCase(ServerType.Redis, MethodType.Redis)
+    @TestCase(ServerType.Socket, MethodType.Socket)
+   // @TestCase(ServerType.Redis, MethodType.Redis)
     // @TestCase(ServerType.Kafka, MethodType.Kafka)
     @Timeout(50000)
     public async serverTest(serverType, methodType) {
         return new Promise(async (resolve, reject) => {
 
-
+            console.log(`testing ${serverType}`);
             let ports = PortHelper();
             const staticResolve = 'http://127.0.0.1:' + ports.server;
             ServerHelper(ports.server, serverType, MethodType.Local).then(server => {
@@ -38,7 +39,7 @@ export class Servers {
 
                             if (client)
                                 client.kill();
-
+                            console.log(methodResult.result);
                             Expect(methodResult.result.add).toEqual('added');
                             resolve();
                         }).catch((error) => {

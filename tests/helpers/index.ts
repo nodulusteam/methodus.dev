@@ -33,7 +33,7 @@ export async function ServerHelper(port, servers, methodType: MethodType): Promi
         console.error(`child stddata:\n${data}`);
     });
     child1.stderr.on('data', (data) => {
-        //logger.error(`child stderr:\n${data}`);
+        logger.error(`child stderr:\n${data}`);
 
     });
 
@@ -100,6 +100,9 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 
 
 export async function CallHelper(): Promise<any> {
+
+
+    
     let myClass = new TestClass();
     try {
         let value = await myClass.action1(1654564654, "roicccccc");
