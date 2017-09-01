@@ -36,9 +36,9 @@
     "express": "^4.15.3",
     "figlet": "^1.2.0",
     "js-yaml": "^3.9.0",
-    "kafka-node": "^2.1.0",
+    "kafka-node": "^2.2.2",
     "lodash": "^4.17.4",
-    "logelas": "^1.0.18",
+    "logelas": "^1.0.20",
     "method-override": "^2.3.9",
     "mock-require": "^2.0.2",
     "nedb": "^1.8.0",
@@ -54,9 +54,9 @@
     "uuid": "^3.1.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.0.1",
-    "@types/mocha": "^2.2.41",
-    "@types/node": "^7.0.31",
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^7.0.43",
     "alsatian": "^2.0.0",
     "chai": "^3.5.0",
     "child-process-debug": "0.0.7",
@@ -64,7 +64,7 @@
     "nyc": "^11.1.0",
     "redis-mock": "^0.19.0",
     "sinon": "^3.2.1",
-    "typescript": "^2.4.1"
+    "typescript": "^2.5.2"
   },
   "optionalDependencies": {
     "body-parser": "^1.17.2",
