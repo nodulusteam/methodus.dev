@@ -106,7 +106,8 @@
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "servers": "amqp",
-                "MethodType": "Local"
+                "MethodType": "Local",
+                "test": "true"
             }
         },
         {
@@ -241,7 +242,6 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-              
                 "tests/gateway.spec.js"
             ],
             "sourceMaps": true,
@@ -269,7 +269,6 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-              
                 "tests/proxify.spec.js"
             ],
             "sourceMaps": true,
@@ -284,7 +283,6 @@
                 "NODE_ENV": "debug"
             }
         },
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -325,7 +323,6 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-             
                 "tests/resolvers.spec.js"
             ],
             "sourceMaps": true,
@@ -372,10 +369,9 @@
             "console": "internalConsole",
             "name": "T Run fp test",
             "type": "node",
-           "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-             
                 "tests/fp.spec.js"
             ],
             "sourceMaps": true,
@@ -392,9 +388,9 @@
             "console": "internalConsole",
             "name": "T Run events test",
             "type": "node",
-           "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
-            "args": [             
+            "args": [
                 "tests/events.spec.js"
             ],
             "sourceMaps": true,
@@ -412,10 +408,9 @@
             "console": "internalConsole",
             "name": "T Run classes test",
             "type": "node",
-           "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-               
                 "tests/classes.spec.js"
             ],
             "sourceMaps": true,

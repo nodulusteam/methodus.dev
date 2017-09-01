@@ -71,8 +71,13 @@ export class Express extends BaseServer {
         }
 
         logger.debug(requestOptions);
-        let result = await this.finalSend(requestOptions);
-        return result;
+        try {
+            let result = await this.finalSend(requestOptions);
+            return result;
+        } catch (error) {
+            return new MethodError(error);
+        }
+
 
 
     }

@@ -2,7 +2,7 @@ import { EventsClass } from '../classes/events-class';
 import { TestClass } from '../classes/TestClass';
 import { FirstClass } from '../classes/FirstClass';
 import { ServerType, Server, MethodType, MethodulusConfig } from '../../index';
-
+process.env.test=true;
 
 
 let config = new MethodulusConfig();

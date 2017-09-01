@@ -100,7 +100,7 @@ export class Server {
                         Servers.set(this.instanceId, server.type, app);
                         break;
                     }
-                case ServerType.RabbitMQ: ``
+                case ServerType.RabbitMQ:
                     {
                         logger.info(this, colors.green(`Starting MQ server`))
                         try {
@@ -166,7 +166,8 @@ export class Server {
                 Reflect.defineMetadata(metadataKey, metaObject, proto);
 
                 logger.info(this, colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
-                Servers.get(this.instanceId, server.type).useClass(_class.classType);
+                if (_class.methodType === MethodType.Local)
+                    Servers.get(this.instanceId, server.type).useClass(_class.classType);
             }
 
         });

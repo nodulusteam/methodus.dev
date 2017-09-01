@@ -1,0 +1,11 @@
+tmp/
+node_modules/
+test/
+coverage/
+src/
+.nyc_output/
+.gitignore
+.editorconfig
+.babelrc
+.eslintignore
+.eslintrc.yml

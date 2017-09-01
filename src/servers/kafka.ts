@@ -1,5 +1,10 @@
 
 const debug = require('debug')('methodulus');
+
+import { Container } from '../../container';
+
+
+
 import "reflect-metadata";
 import { fp } from '../fp';
 import { AMQP } from './amqp';
@@ -10,7 +15,7 @@ import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } f
 
 const metadataKey = 'methodulus';
 
-const kafka = require('kafka-node'),
+const kafka = Container.get('kafka-node'),
     Producer = kafka.Producer,
     KeyedMessage = kafka.KeyedMessage;
 
@@ -89,66 +94,9 @@ export class Kafka extends BaseServer {
             producer.on('error', function (err) {
                 console.log(err);
 
-            })
-
-
-
-            // amqpConnect().then((conn) => {
-
-            //     conn.createChannel().then((ch) => {
-            //         var q = methodinformation.name;
-            //         let methodMessage = new MethodMessage();
-            //         methodMessage.to = methodinformation.propertyKey;
-            //         methodMessage.metadata = methodinformation;
-            //         methodMessage.message = paramsMap;
-            //         methodMessage.args = functionArgs;
-            //         let stringMessage = JSON.stringify(methodMessage);
-
-            //         ch.assertQueue('', { exclusive: true }).then((q) => {
-            //             var corr = generateUuid();
-            //             ch.consume(q.queue, (msg) => {
-
-            //                 if (msg.properties.correlationId == corr) {
-            //                     resolve(fp.maybeJson(msg.content.toString()));
-
-            //                     // console.log(' [.] Got %s', msg.content.toString());
-            //                     //setTimeout(function() { conn.close(); process.exit(0) }, 500);
-            //                 }
-            //             }, { noAck: true });
-
-            //             ch.sendToQueue(methodinformation.name,
-            //                 new Buffer(stringMessage),
-            //                 { correlationId: corr, replyTo: q.queue });
-            //         });
-            //     });
-
-
-            //     // conn.createChannel().then((ch) => {
-            //     //     var q = methodinformation.name;
-            //     //     let methodMessage = new MethodMessage();
-            //     //     methodMessage.to = methodinformation.propertyKey;
-            //     //     methodMessage.metadata = methodinformation;
-            //     //     methodMessage.message = paramsMap;
-            //     //     methodMessage.args = functionArgs;
-            //     //     let stringMessage = JSON.stringify(methodMessage);
-            //     //     ch.assertQueue(q, { durable: false });
-            //     //     // Note: on Node 6 Buffer.from(msg) should be used
-            //     //     ch.sendToQueue(q, new Buffer(stringMessage));
-            //     //     resolve(q);
-            //     // });
-
-
-            // })
-
-
-
-
+            })        
         });
     }
-
-
-
-
 }
 
 @LogClass(logger)
@@ -182,61 +130,7 @@ export class KafkaRouter {
     @Log()
     async registerEvents(proto) {
         return new Promise((resolve, reject) => {
-            if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
-                logger.log('registering events bus for:', Object.keys(proto.methodulus._events));
-                AMQP.connect(this.options).then((conn) => {
-                    conn.createChannel().then((ch) => {
-
-                        let exchange = 'event-bus';
-                        ch.assertExchange(exchange, 'fanout', { durable: true });
-                        ch.assertQueue('', { exclusive: true, durable: true }).then((q) => {
-                            //   console.log(" [*] Waiting for messages in %s. To exit press CTRL+C", q.queue);
-
-
-                            ch.bindQueue(q.queue, exchange, '');
-
-                            ch.consume(q.queue, async (msg) => {
-
-
-
-
-
-                                if (msg.content) {
-                                    console.log(" [x] %s", msg.content.toString());
-
-                                    console.log('event message has arrived', msg.fields.routingKey);
-
-                                    logger.log('msg string is', msg.content.toString());
-                                    //parse message
-                                    try {
-
-                                        let parsedMessage = fp.maybeJson(msg.content.toString()) as MethodEvent;
-                                        if (proto.methodulus._events[parsedMessage.name]) {
-                                            let pkey = proto.methodulus._events[parsedMessage.name].propertyKey;
-                                            await proto[pkey](parsedMessage.value); //no results for an event                                          
-
-                                        }
-
-
-                                        // let parsedMessage = fp.maybeJson(msg.content.toString()) as MethodMessage;
-                                        //let result = await proto[parsedMessage.to](...parsedMessage.args);
-                                    } catch (error) {
-
-                                    }
-                                }
-                            }, { noAck: true });
-
-                            resolve();
-                        });
-                    });
-
-                });
-
-
-            }
-            else
-                resolve();
-
+            resolve();
         })
 
     }
@@ -245,8 +139,8 @@ export class KafkaRouter {
         return new Promise((resolve, reject) => {
 
 
-            let Consumer = kafka.Consumer,
-                client = new kafka.Client('192.168.99.100:2181');
+             let Consumer = kafka.Consumer,
+                 client = new kafka.Client('192.168.99.100:2181');
 
 
             let Kclient = new kafka.KafkaClient({ 'kafkaHost': '192.168.99.100:9092' });

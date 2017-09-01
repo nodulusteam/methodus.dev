@@ -65,6 +65,7 @@ export function Method(verb: Verbs, route: string, methodType?: MethodType) {
             if (completeConfiguration)
                 methodType = completeConfiguration.methodType || MethodType.Local;
 
+            completeConfiguration.propertyKey = propertyKey;
             // run and store the result
             try {
                 let server: ServerType | null = null;

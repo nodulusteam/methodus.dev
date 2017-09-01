@@ -5,7 +5,7 @@ import { fp } from '../fp';
 import { AMQP } from './amqp';
 import { BaseServer } from './base';
 import { logger, Log, LogClass } from '../log/';
-import { MethodType, MethodulusClassConfig, MethodulusConfigurations } from '../config';
+import { MethodType, MethodulusClassConfig, MethodulusConfigurations, ConnectionOptions } from '../config';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
 const metadataKey = 'methodulus';
 
@@ -21,7 +21,7 @@ export class MQ extends BaseServer {
 
 
     options: any;
-    constructor(options) {
+    constructor(options: ConnectionOptions) {
         super();
         this.options = options;
     }
@@ -30,7 +30,7 @@ export class MQ extends BaseServer {
     async _sendEvent(methodEvent: MethodEvent) {
         return new Promise((resolve, reject) => {
             AMQP.connect(this.options).then((conn) => {
-                conn.createChannel().then((ch) => {
+                createChannel(conn).then((ch) => {
                     ch.assertExchange('event-bus', 'fanout', { durable: true });
                     ch.publish('event-bus', '', new Buffer(JSON.stringify(methodEvent)));
                 });
@@ -55,7 +55,7 @@ export class MQ extends BaseServer {
         return new Promise((resolve, reject) => {
             AMQP.connect(this.options).then((conn) => {
 
-                conn.createChannel().then((ch) => {
+                createChannel(conn).then((ch) => {
 
                     var q = methodinformation.name;
                     let methodMessage = new MethodMessage();
@@ -107,7 +107,7 @@ export class MQ extends BaseServer {
 @LogClass(logger)
 export class MQRouter {
     public router: any;
-    options: any;
+    options: ConnectionOptions;
     methodulus: any;
     constructor(obj: any, options) {
         this.options = options;
@@ -135,13 +135,17 @@ export class MQRouter {
 
     }
 
+
+
     @Log()
     async registerEvents(proto) {
         return new Promise((resolve, reject) => {
             if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
                 logger.log(this, 'registering events bus for:', Object.keys(proto.methodulus._events));
+                this.options.name = proto.methodulus.name;
+
                 AMQP.connect(this.options).then((conn) => {
-                    conn.createChannel().then((ch) => {
+                    createChannel(conn).then((ch) => {
                         let exchange = 'event-bus';
                         ch.assertExchange(exchange, 'fanout', { durable: true });
                         ch.assertQueue('', { exclusive: true, durable: true }).then((q) => {
@@ -191,8 +195,9 @@ export class MQRouter {
     @Log()
     async registerRoutes(proto, methodulus, forceReconnect) {
         return new Promise((resolve, reject) => {
-            AMQP.connect(this.options,forceReconnect).then((conn) => {
-                conn.createChannel().then((ch) => {
+            this.options.name = methodulus.name;
+            AMQP.connect(this.options, forceReconnect).then((conn) => {
+                createChannel(conn).then((ch) => {
 
 
                     ch.on("error", () => {
@@ -303,3 +308,6 @@ export class MQRouter {
     }
 }
 
+function createChannel(conn) {
+    return Promise.resolve(conn.createChannel());
+}

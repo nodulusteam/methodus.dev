@@ -1,11 +1,13 @@
 const debug = require('debug')('methodulus');
+import { Container } from '../../container';
+
 import "reflect-metadata";
 import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../response';
 import { MethodulusClassConfig, MethodType, MethodulusConfigurations } from '../config';
 
 import { BaseServer } from './base';
 import { logger, Log, LogClass } from '../log/';
-const redis = require('redis');
+const redis = Container.get('redis');
 import { fp } from '../fp';
 const redis_addr = '//192.168.99.100:32768';
 const metadataKey = 'methodulus';
@@ -144,7 +146,7 @@ export class RedisRouter implements Methodulus.Router {
             let parsedMessage = fp.maybeJson(msg) as MethodMessage;
             logger.debug('running local method', parsedMessage.to);
 
-
+            
             let result = await proto[parsedMessage.to](...parsedMessage.args);
             logger.log('the result in the router after the call is', result);
 

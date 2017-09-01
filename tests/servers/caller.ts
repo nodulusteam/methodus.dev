@@ -1,3 +1,5 @@
+process.env.test=true;
+
 import { TestClass } from '../classes/TestClass';
 import { EventsClass } from '../classes/events-class';
 import { Server, MethodType, MethodulusConfig } from '../../index';

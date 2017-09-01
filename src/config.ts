@@ -117,3 +117,10 @@ export enum ServerType {
     Socket = 'socketio',
     Kafka = 'kafka'
 }
+
+
+export class ConnectionOptions
+{
+    amqp;
+    name;
+}
