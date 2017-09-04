@@ -7,6 +7,5 @@ examples/data/
 logs/
 coverage/
 .nyc_output/
-!tests/amqplib-mocks/*.js
-!tests/kafka-mocks/*.js
-!tests/redis-mocks/*.js
+!tests/**/*.js
+
