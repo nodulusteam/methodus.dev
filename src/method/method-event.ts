@@ -15,7 +15,7 @@ let metadataKey = 'methodulus';
 
 function mergeMetadata(methodulus) {
     let config =MethodulusConfigurations.get();
-    debug('MethodulusConfig', config[methodulus.name]);
+  
     let methodinformation = config.classes.get(methodulus.name);
     return Object.assign({}, methodulus, methodinformation);
 }
@@ -42,7 +42,7 @@ export function Event(name: string, verb: Verbs, route: string, methodType?: Met
         paramsMap.sort((a, b) => {
             return a.index - b.index;
         })
-        debug('method params', propertyKey, paramsMap);
+     
         // save a reference to the original method
         let originalMethod = descriptor.value;
         //methodType = methodType || MethodType.Local;
@@ -51,11 +51,10 @@ export function Event(name: string, verb: Verbs, route: string, methodType?: Met
             let proto = fp.proto(target);
             //extract metadata for class and method
             let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
-            debug('existingClassMetadata', existingClassMetadata);
-
+         
             let methodResult: MethodResult | MethodError | any = null;
             let methodulus: any = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || {};
-            debug('methodulus reflected', methodulus);
+          
             Object.assign(methodulus, existingClassMetadata);
 
             //let methodulus = proto.methodulus;

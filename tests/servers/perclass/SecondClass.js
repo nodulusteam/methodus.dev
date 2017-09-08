@@ -10,5 +10,5 @@ if (process.env.servers) {
     });
 }
 config.use(SecondClass_1.SecondClass, process.env.METHODTYPE, 'http://127.0.0.1:8092');
-const server = new index_1.Server(process.env.PORT).configure(config).start();
+new index_1.Server(process.env.PORT).configure(config).start();
 //# sourceMappingURL=SecondClass.js.map

@@ -2,7 +2,7 @@ import { FirstClass } from '../../classes/FirstClass';
 import { SecondClass } from '../../classes/SecondClass';
 import { ThirdClass } from '../../classes/ThirdClass';
 
-import { ServerType, Server, MethodType, MethodulusConfig } from '../../../index';
+import {  Server, MethodulusConfig } from '../../../index';
 
 
 let config = new MethodulusConfig();

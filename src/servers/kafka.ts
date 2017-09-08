@@ -1,7 +1,7 @@
 
 const debug = require('debug')('methodulus');
 
-import { Container } from '../../container';
+import { Container } from '../container';
 
 
 

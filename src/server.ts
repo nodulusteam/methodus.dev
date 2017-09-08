@@ -73,7 +73,7 @@ export class Server {
     async start(port?: number) {
         //global.methodulus = { server: this };
         this.port = this.port || port || 0;
-        debug('activating server on ', port);
+
         // await this.printlogo();
 
         for (let i = 0; i < this.config.servers.length; i++) {
@@ -94,9 +94,9 @@ export class Server {
                     }
                 case ServerType.Socket:
                     {
-                        logger.info(this, colors.green(`Starting SOCKETIO server on port`, this.port))
+                        logger.info(this, colors.green(`Starting SOCKETIO server on port`, server.options.port))
 
-                        let app = await new SocketIO(this.port, Servers.get(this.instanceId, 'http'));
+                        let app = await new SocketIO(server.options.port, Servers.get(this.instanceId, 'http'));
                         Servers.set(this.instanceId, server.type, app);
                         break;
                     }
@@ -208,4 +208,27 @@ export class Server {
         if (Servers.get(this.instanceId).registerEvent)
             return await Servers.get(this.instanceId).registerEvent(event);
     }
+}
+
+
+
+
+export class ConfiguredServer extends Server {
+    constructor(options?) {
+        super();
+        this.config = new MethodulusConfig();
+
+
+        options.servers.forEach(element => {
+            this.config.run(element.serverType, element.options);
+        });
+        options.classes.forEach(element => {
+            this.config.use(element.controller, element.methodType, element.resolver);
+        });
+
+        this.start();
+
+    }
+
+
 }

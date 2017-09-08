@@ -18,7 +18,7 @@ let FirstClass = class FirstClass {
     constructor() { }
     action1(id, name) {
         index_1.logger.log(this, 'action1 in FirstClass', id, name);
-        let result = new index_1.MethodResult({ value: 'FirstClass Data, from port' + process.env.NODE_PORT, add: 'added' });
+        let result = new index_1.MethodResult({ value: 'FirstClass Data', add: 'added' });
         index_1.logger.log(this, 'the result as MethodResult', result);
         return result;
     }

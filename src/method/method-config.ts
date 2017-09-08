@@ -12,7 +12,7 @@ import { logger, Log, LogClass } from '../log/';
 
 let metadataKey = 'methodulus';
 export function MethodConfig(name: string, endpoint?: string) {
-    debug('MethodConfig', name, endpoint);
+  
     return function (target: any) {
         let existingMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
         existingMetadata.endpoint = endpoint
@@ -22,6 +22,6 @@ export function MethodConfig(name: string, endpoint?: string) {
         proto.methodulus.endpoint = endpoint;
 
         Reflect.defineMetadata(metadataKey, existingMetadata, proto);
-        debug('MethodConfig function', existingMetadata);
+      
     }
 }

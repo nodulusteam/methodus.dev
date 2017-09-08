@@ -1,5 +1,5 @@
 import { SecondClass } from '../../classes/SecondClass';
-import { ServerType, Server, MethodType, MethodulusConfig } from '../../../index';
+import {  Server,  MethodulusConfig } from '../../../index';
 
 
 let config = new MethodulusConfig();
@@ -14,5 +14,5 @@ if(process.env.servers)
 }
 
 config.use(SecondClass, process.env.METHODTYPE, 'http://127.0.0.1:8092');
-const server = new Server(process.env.PORT).configure(config).start();
+new Server(process.env.PORT).configure(config).start();
 

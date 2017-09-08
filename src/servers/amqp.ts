@@ -1,5 +1,5 @@
 
-import { Container } from '../../container';
+import { Container } from '../container';
 
 
 import { logger, Log, LogClass } from '../log/';

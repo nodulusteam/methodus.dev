@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import * as express from "express";
 import * as bodyParser from "body-parser";
 import * as cookieParser from "cookie-parser";
@@ -13,11 +14,9 @@ import errorHandler = require("errorhandler");
 import compression = require("compression");
 import methodOverride = require("method-override");
 import { logger, Log, LogClass } from '../log/';
-const debug = require('debug')('methodulus');
 
 const request = require('request-promise-native');
 
-import "reflect-metadata";
 
 @LogClass(logger)
 export class Express extends BaseServer {

@@ -1,5 +1,5 @@
 const debug = require('debug')('methodulus');
-import { Container } from '../../container';
+import { Container } from '../container';
 
 import "reflect-metadata";
 import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../response';

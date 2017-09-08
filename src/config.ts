@@ -66,11 +66,20 @@ export class MethodulusConfigurations {
 @LogClass(logger)
 export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
+
+
+
         if (servers)
             this.servers = servers;
 
         if (map)
             this.classes = map;
+
+
+
+
+
+
 
         MethodulusConfigurations.add(this);
     }
@@ -82,6 +91,9 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
     public use(classType: any, methodType: MethodType, resolver?: Function | string) {
         if (methodType === MethodType.Http && !resolver)
             throw (new Error('Http transport requires a resolver, pass in a string or a promise'))
+        if (!this.classes)
+            this.classes = new Map<string, MethodulusClassConfig>();
+
         this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
     }
 
@@ -119,8 +131,7 @@ export enum ServerType {
 }
 
 
-export class ConnectionOptions
-{
+export class ConnectionOptions {
     amqp;
     name;
 }

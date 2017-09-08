@@ -49,7 +49,7 @@ export class SocketIO extends BaseServer {
     }
     async _send(functionArgs, methodulus, paramsMap) {
         return new Promise(async (resolve, reject) => {
-            debug('sending data in socket', functionArgs, methodulus, paramsMap);
+         
 
             var dataObject = {};
             functionArgs.forEach((element, index) => {
@@ -62,11 +62,11 @@ export class SocketIO extends BaseServer {
             let myUri = await methodulus.resolver();
             var socket = require('socket.io-client')(myUri);
             socket.on('connect', () => {
-                debug('socket connection ok');
+            
                 let messageName = methodulus.verb + '_' + methodulus.route;
-                debug('messageName:method:recipient', messageName);
+            
                 socket.emit(messageName, dataObject, (data) => {
-                    debug('recieved result', data);
+                  
                     if (data.error && data.statusCode) {
                         logger.error(data)
                         reject(data);
@@ -96,13 +96,13 @@ export class SocketIORouter implements Methodulus.Router {
 
         Object.keys(methodulus._descriptors).forEach(itemKey => {
             let item = methodulus._descriptors[itemKey];
-            debug('activating controller method', item, methodulus);
+          
             socket.on(item.verb + '_' + item.route, async (data, callback) => {
                 //parse params
-                debug('activating controller method', itemKey, data);
+            
 
                 let paramsMap: any[] = Reflect.getOwnMetadata('params', proto, itemKey) || [];
-                debug('method params', itemKey, paramsMap);
+             
                 let functionArgs: any = [];
 
 
@@ -114,7 +114,7 @@ export class SocketIORouter implements Methodulus.Router {
 
                 try {
                     let result = await proto[itemKey](...functionArgs);
-                    debug('result is:', result)
+                  
                     callback(result);
                 } catch (error) {
                     callback(error);
