@@ -1,17 +1,14 @@
 import { JsonPlaceHolder } from './controllers/json-placeholder';
-import { Server, MethodulusConfig, MethodulusClassConfig, MethodType } from '../index';
-
-let config = new MethodulusConfig();
-config.run(Methodulus.ServerType.Express, {port:process.env.PORT || 8020 });
-config.use(JsonPlaceHolder, MethodType.Http, 'https://jsonplaceholder.typicode.com/')
-//config.classes.set('TestClass', new MethodulusClassConfig('TestClass', MethodType.Http));
-const server = new Server(process.env.PORT || 8020).configure(config).start();
-//server.useClass(Player);
+import { ServerConfig, ClientConfig, ConfiguredServer, MethodType, ServerType } from '../index';
 
 
-setTimeout(() => {
+@ServerConfig(ServerType.Express, { port: process.env.PORT || 8020 })
+@ClientConfig(JsonPlaceHolder, MethodType.Http, 'https://jsonplaceholder.typicode.com/')
+class SetupServer extends ConfiguredServer {
 
-    console.log(`
+}
+new SetupServer();
+console.log(`
 --------------------------------------------------------------------------------------------
 every thing is ready, your server is active at: 
 http://127.0.0.1:${process.env.PORT || 8020}/api/player
@@ -22,4 +19,4 @@ http://127.0.0.1:${process.env.PORT || 8020}/api/player/1
 `)
 
 
-}, 2000)
+

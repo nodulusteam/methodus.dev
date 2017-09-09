@@ -24,7 +24,8 @@ let FirstClass = class FirstClass {
     }
     error() {
         console.log('running error localy');
-        throw (new index_1.MethodError('error returned', 500));
+        //throw (new MethodError('error returned', 500))
+        return new index_1.MethodError('error returned', 500);
     }
     EventHandler(name) {
         console.log(name);

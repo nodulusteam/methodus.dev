@@ -17,7 +17,8 @@ export class FirstClass {
     @Method(Verbs.Get, '/posts/error')
     public error() {
         console.log('running error localy');
-        throw (new MethodError('error returned', 500))
+        //throw (new MethodError('error returned', 500))
+        return new MethodError('error returned', 500);
 
     }
 

@@ -19,7 +19,14 @@ export function Client(controller: any, methodType: MethodType, resolver?: any) 
     var f: any = function (options: { servers: any[], classes: any[] }) {
 
       options.classes.push({ controller: controller, methodType: methodType, resolver: resolver });
-      return new original(options);
+      let instance = new original(options);
+      // Object.keys(this.__proto__).forEach(element => {
+      //   instance[element] = this.__proto__[element];
+
+      // })
+      return instance;
+
+     
     }
 
     // copy prototype so intanceof operator still works

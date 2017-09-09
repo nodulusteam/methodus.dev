@@ -445,7 +445,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "- hello-server",
+            "name": "- hello-proxy",
             "program": "${workspaceRoot}/examples/json-placeholder.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",

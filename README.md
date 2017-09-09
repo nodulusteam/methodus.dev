@@ -32,7 +32,7 @@
 
 ```javascript
 import { Player } from './controllers/player';
-import { ServerConfig, ClientConfig, ConfiguredServer, MethodulusConfig, MethodulusClassConfig, MethodType, ServerType } from 'methodulus';
+import { ServerConfig, ClientConfig, ConfiguredServer, MethodType, ServerType } from 'methodulus';
 
 @ServerConfig(ServerType.Express, { port: process.env.PORT || 8020 })
 @ClientConfig(Player, MethodType.Local)
@@ -197,8 +197,12 @@ Each decorated method in the MethodConfig decorated class will become a function
 @Method(Verb, route, [middlewares])
 ```
 ## Parameter decorators
+a decorated method should use the following parameter decorators to indicate the source of each argument.
+
 ### @Query
+
 ### @Param
+
 ### @Body
 ### @Request
 ### @Response

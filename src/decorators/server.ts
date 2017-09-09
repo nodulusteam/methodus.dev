@@ -10,31 +10,21 @@ import { ServerType } from '../config';
  *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
  */
 export function Server(serverType: ServerType, options: any) {
-
   return function (target: any) {
-
     var original = target;
     // the new constructor behaviour
     var f: any = function (configoptions: { servers: any[], classes: any[] }) {
       if (!configoptions || Object.keys(configoptions).length === 0)
-      configoptions = { servers: [], classes: [] };
-
-
+        configoptions = { servers: [], classes: [] };
       configoptions.servers.push({ serverType: serverType, options: options })
-      // this.run(serverType, options);
-
-      return new original(configoptions);//.apply(this, args)
+      let instance = new original(configoptions);
+      return instance;
     }
 
     // copy prototype so intanceof operator still works
     f.prototype = original.prototype;
     // return new constructor (will override original)
     return f;
-
-
-    //
-    // return target;
-
   }
 }
 
