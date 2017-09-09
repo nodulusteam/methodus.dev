@@ -30,24 +30,22 @@
 > it is configured to run the class code locally via an http server.
  
 
-```
+```javascript
 import { Player } from './controllers/player';
-import { ServerType, Server, MethodulusConfig, MethodulusClassConfig, MethodType } from 'methodulus';
+import { ServerConfig, ClientConfig, ConfiguredServer, MethodulusConfig, MethodulusClassConfig, MethodType, ServerType } from 'methodulus';
 
-async function init(){
-    let config = new MethodulusConfig();
-    config.run(ServerType.express, {port: process.env.PORT });
-    config.use(Player, MethodType.Local, 'http://127.0.0.1:8090')
-    const server = await new Server(process.env.PORT || 8020).configure(config).start();
+@ServerConfig(ServerType.Express, { port: process.env.PORT || 8020 })
+@ClientConfig(Player, MethodType.Local)
+class SetupServer extends ConfiguredServer {
 
 }
 
-init();
+new SetupServer();
 
 ```
 
 #### the Player class
-```
+```javascript
 import { Body, Method, MethodConfig, MethodType, Param, Query, Verbs, MethodError, MethodResult } from 'methodulus';
 import { PlayerModel } from '../models/player';
 
@@ -89,11 +87,23 @@ export class Player {
 
 # Classes & API
 
+## ConfiguredServer
+
+this class is the base class for the server implementation. it uses the Server & Client decorators to apply the desired configuration.
+
+### @Server(ServerType, options)
+syntetic suger for MethodulusConfig.run() function.
+
+
+### @Client(ClassType, MethodType, resolver?)
+syntetic suger for MethodulusConfig.use() function.
+
+
+
 ## MethodulusConfig
 > configuration must complete before the server starts.
 > configure each controller class to its desired state
 
-## MethodulusConfig
 ```javascript
 let config = new MethodulusConfig()
 ```
@@ -122,7 +132,6 @@ run the code in the class, no proxy or transport required.
 * `Http`
 run the code using an http request to a microservice.
 
-
 * `MQ`
 use amqp rpc to execute the class code
 
@@ -142,9 +151,6 @@ resolvers are attached to a class, allowing the application to use different res
 
 
 
-
-
-ServerType.express, {port: process.env.PORT }
 ### Available servers
 an instamce of methodulus can run multiple listeners in different channels. the current list is:
 * `express`
@@ -153,19 +159,17 @@ an instamce of methodulus can run multiple listeners in different channels. the 
 * `redis`
 
 
-
-
-
-
-here is a simple local configuration:
+> here is a simple local configuration:
+> The class `Player` will execute locally.
 ```
 let servers = ['express']; 
 let config = new MethodulusConfig(servers);
 let resolver = 'http://127.0.0.1:8090';
+config.run(ServerType.express, {port: process.env.PORT })
 config.use(TestClass, MethodType.Local,resolver);
 
 ```
-> The class `Player` to run locally.
+
 
 
 ## Server
@@ -181,7 +185,17 @@ const server = await new Server(process.env.PORT).configure(config).start();
 # Decorators
 ## Class decorators
 ### @MethodConfig
+decorating a class with the decorator will turn it into a methodulus end point.
+```javascript
+@MethodulusConfig(applicationname, [middlewares]?)
+```
+
 ### @Method
+Each decorated method in the MethodConfig decorated class will become a function endpoint of the methodulus application.
+
+```
+@Method(Verb, route, [middlewares])
+```
 ## Parameter decorators
 ### @Query
 ### @Param
