@@ -1,6 +1,10 @@
-export abstract class BaseServer implements Methodulus.Server {
-    config?: Methodulus.IMethodulusConfig;
-    classRouters?: Methodulus.Router[];
-    useClass(classType){};
-    _send(functionArgs, methodinformation, paramsMap){};
+// <references path='../interfaces/methodus.ts' />
+import { MethodType } from '../';
+
+
+export abstract class BaseServer { //implements Methodus.Server
+    config: Methodus.IMethodusConfig;
+    classRouters: Methodus.Router[];
+    useClass(classType, methodType: MethodType) { };
+    _send(functionArgs, methodinformation, paramsMap, securityContext) { };
 }

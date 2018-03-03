@@ -10,7 +10,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest caller",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -18,6 +18,7 @@
             "env": {
                 "PORT": "8080",
                 "DEBUG": "none",
+                "NODE_LOG_LEVEL": "debug",
                 "NODE_ENV": "debug",
                 "servers": "express",
                 "MethodType": "Http"
@@ -27,7 +28,25 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest server",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                "servers": "express",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "* Rest server - middlewares",
+            "program": "${workspaceRoot}/src/tests/servers/middlewares.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -44,7 +63,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest - FirstClass server",
-            "program": "${workspaceRoot}/tests/servers/perclass/FirstClass.js",
+            "program": "${workspaceRoot}/src/tests/servers/perclass/FirstClass.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -62,7 +81,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest event",
-            "program": "${workspaceRoot}/tests/servers/eventcaller.js",
+            "program": "${workspaceRoot}/src/tests/servers/eventcaller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -79,7 +98,7 @@
             "type": "node",
             "request": "launch",
             "name": "| MQ caller",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -89,14 +108,17 @@
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "servers": "amqp",
-                "MethodType": "MQ"
+                "MethodType": "MQ",
+                "NODE_LOG_LEVEL": "trace",              
+                "NODE_LOG_IDENTIFIER": "| MQ caller",
+                "test": "false"
             }
         },
         {
             "type": "node",
             "request": "launch",
             "name": "| MQ server",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -107,14 +129,37 @@
                 "NODE_ENV": "debug",
                 "servers": "amqp",
                 "MethodType": "Local",
-                "test": "true"
+                "test": "false",
+                "NODE_LOG_LEVEL": "trace",              
+                "NODE_LOG_IDENTIFIER": "| MQ server"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "| MQ single event",
+            "program": "${workspaceRoot}/src/tests/servers/singleEvent.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                //"NODE_LOG_NAME": "client.log",
+                "NODE_LOG_IDENTIFIER": "MQ reciever",
+                "servers": "amqp",
+                "MethodType": "Local",
+                "test": "false"
             }
         },
         {
             "type": "node",
             "request": "launch",
             "name": "| * MQ + Rest server",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -131,7 +176,7 @@
             "type": "node",
             "request": "launch",
             "name": "^ Kafka caller",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -148,7 +193,7 @@
             "type": "node",
             "request": "launch",
             "name": "^ Kafka server",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -165,7 +210,7 @@
             "type": "node",
             "request": "launch",
             "name": "@ Redis server",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -182,7 +227,7 @@
             "type": "node",
             "request": "launch",
             "name": "@ Redis caller",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -199,7 +244,7 @@
             "type": "node",
             "request": "launch",
             "name": "# Socket caller",
-            "program": "${workspaceRoot}/tests/servers/caller.js",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -216,7 +261,7 @@
             "type": "node",
             "request": "launch",
             "name": "# Socket server",
-            "program": "${workspaceRoot}/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -242,7 +287,7 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "tests/gateway.spec.js"
+                "src/tests/gateway.spec.js"
             ],
             "sourceMaps": true,
             // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
@@ -269,7 +314,7 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "tests/response.spec.js"
+                "src/tests/response.spec.js"
             ],
             "sourceMaps": true,
             // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
@@ -280,7 +325,8 @@
             "env": {
                 "PORT": "8020",
                 "DEBUG": "none",
-                "NODE_ENV": "debug"
+                "NODE_ENV": "debug",
+                "test": "true"
             }
         },
         {
@@ -296,7 +342,7 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "tests/resolvers.spec.js"
+                "src/tests/resolvers.spec.js"
             ],
             "sourceMaps": true,
             // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
@@ -323,7 +369,7 @@
             "stopOnEntry": false,
             // Command line arguments passed to the program.
             "args": [
-                "tests/servers.spec.js"
+                "src/tests/servers.spec.js"
             ],
             "sourceMaps": true,
             // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
@@ -340,12 +386,31 @@
         {
             "request": "launch",
             "console": "internalConsole",
+            "name": "T Run middlewares test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/middlewares.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
             "name": "T Run fp test",
             "type": "node",
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "tests/fp.spec.js"
+                "src/tests/fp.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -364,7 +429,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "tests/events.spec.js"
+                "src/tests/events.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -373,9 +438,49 @@
                 "PORT": "8020",
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
-                "DEBUG_FILE": "${workspaceRoot}/logs/"
+                "DEBUG_FILE": "${workspaceRoot}/logs/",
+                "test": "false"
             }
         },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "T Run singular events test",
+            "program": "${workspaceRoot}/src/tests/debug/singularEvent.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "tmla:*",
+                "NODE_ENV": "debug",
+                "servers": "socketio",
+                "MethodType": "Local",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+        // {
+        //     "request": "launch",
+        //     "console": "internalConsole",
+        //     "name": "T Run singular events test",
+        //     "type": "node",
+        //     "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+        //     "stopOnEntry": false,
+        //     "args": [
+        //         "tests/debug/singularEvent.js"
+        //     ],
+        //     "sourceMaps": true,
+        //     "cwd": "${workspaceRoot}",
+        //     "runtimeExecutable": null,
+        //     "env": {
+        //         "PORT": "8020",
+        //         "DEBUG": "none",
+        //         "NODE_ENV": "debug",
+        //         "DEBUG_FILE": "${workspaceRoot}/logs/",
+        //         "test": "false"
+        //     }
+        // },
         {
             "request": "launch",
             "console": "internalConsole",
@@ -384,7 +489,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "tests/classes.spec.js"
+                "src/tests/classes.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -408,7 +513,7 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8020",
-                "DEBUG": "none",
+                "DEBUG": "tmla",
                 "NODE_ENV": "debug"
             }
         },
@@ -423,7 +528,7 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8020",
-                "DEBUG": "methodulus",
+                "DEBUG": "none",
                 "NODE_ENV": "debug"
             }
         },
@@ -445,7 +550,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "- hello-proxy",
+            "name": "- hello-json-proxy",
             "program": "${workspaceRoot}/examples/json-placeholder.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",

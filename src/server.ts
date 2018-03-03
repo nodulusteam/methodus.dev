@@ -1,17 +1,14 @@
-import { Servers, Express, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
-import { MethodulusConfig, MethodulusConfigFromFile, MethodType, ServerType } from './config';
-import { MethodEvent } from './response';
-import { fp } from './fp';
-import { logger, Log, LogClass } from './log/';
-let metadataKey = 'methodulus';
-
-const debug = require('debug')('methodulus');
+import 'reflect-metadata';
+import { Servers, Express, ExpressRouter, ExpressPartial, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
+import { MethodusConfig, MethodusConfigFromFile, ServerType, MethodType, ServerConfig, MethodusClassConfig } from './config';
+import { MethodEvent } from './response/';
+import { fp } from './fp'
+let metadataKey = 'methodus';
+import { logger, Log, LogClass, LogLevel } from './logger';
 import http = require('http');
 import colors = require('colors');
-// Import events module
-var events = require('events');
-
-
+import { ClassContainer } from './class-container';
+import { PluginLoader } from './plugins';
 
 export interface IApp {
     set(key, value);
@@ -19,48 +16,67 @@ export interface IApp {
 
 const figlet = require('figlet');
 
-
 @LogClass(logger)
 export class Server {
-    // public app: any;//IApp;
-    //private _app: any = {};//IApp;
-    private instanceId: string;
+    public app: any;//IApp;
+    private _app: any = {};//IApp;
+    private httpServer: any;
     private port: number = 0;
-    public config?: MethodulusConfig;
-    private eventEmitter: any;
-    constructor(port?: number) {
-        this.port = port || 0;
-        // Create an eventEmitter object
-        this.eventEmitter = new events.EventEmitter();
-        //this.start(port);
+    private _plugins: any;
+    public config: MethodusConfig;
+    private instanceId: string;
+    public serverKey: string;
 
+
+    constructor(port?: number | string, app?: any, httpServer?: any) {
+        if (port)
+            this.port = +port || 0;
+
+        this.app = app;
+        this.httpServer = httpServer;
+        this.serverKey = this.makeid();
         this.instanceId = Servers.addServer(this);
+
+        //this.start(port);
+    }
+    @Log()
+    makeid() {
+        var text = '';
+        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        for (var i = 0; i < 5; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
     }
 
-    async startFromConfig() {
-        //MethodulusConfig = MethodulusConfigFromFile()
-    }
+
 
     @Log()
-    configure(config: MethodulusConfig) {
+    plugins(plugins: string[]) {
+        this._plugins = plugins;
+        return this;
+    }
+    @Log()
+    configure(config: MethodusConfig) {
         this.config = config
         return this;
     }
-
     @Log()
     async printlogo() {
-        return new Promise(async (resolve, reject) => {
+        return new Promise((resolve, reject) => {
 
-            figlet.text('Methodulus', {
+            figlet.text('methodus', {
                 font: 'Bigfig',//Delta Corps Priest 1
                 horizontalLayout: 'default',
                 verticalLayout: 'default'
-            }, async function (err, data) {
+            }, function (err, data) {
                 if (err) {
-                    resolve(err);
-                    //return;
+
+                    resolve();
+                    return;
                 }
-                logger.info(colors.blue(data));
+                console.log(colors.blue(data));
                 resolve();
             });
 
@@ -68,181 +84,267 @@ export class Server {
         })
     }
 
-
     @Log()
     async start(port?: number) {
-        //global.methodulus = { server: this };
         this.port = this.port || port || 0;
+        await this.printlogo();
+        // add this instance to the global bridge of servers
+        // Bridge.set(this.serverKey, { server: this });
 
-        // await this.printlogo();
-        if (this.config && this.config.servers) {
-            for (let i = 0; i < this.config.servers.length; i++) {
-                let server = this.config.servers[i];
-                let serverType = server.type;
-                switch (server.type) {
-                    case ServerType.Express:
-                        {
+        if (this._plugins) {
+            const loader = new PluginLoader();
+            loader.config(this.config, this._plugins);
+        }
 
-                            logger.info(this, colors.green(`Starting REST server on port`, server.options.port || port));
+        let onStart: Function = null;
 
-                            let app = Servers.set(this.instanceId, server.type, new Express(server.options.port || port));
-                            var httpServer = http.createServer(app._app);//this is the inside express instance
-                            Servers.set(this.instanceId, 'http', httpServer);
-                            //listen on provided ports
-                            httpServer.listen(server.options.port || port);
-                            break;
-                        }
-                    case ServerType.Socket:
-                        {
-                            logger.info(this, colors.green(`Starting SOCKETIO server on port`, server.options.port))
 
-                            let app = await new SocketIO(server.options.port, Servers.get(this.instanceId, 'http'));
-                            Servers.set(this.instanceId, server.type, app);
-                            break;
-                        }
-                    case ServerType.RabbitMQ:
-                        {
-                            logger.info(this, colors.green(`Starting MQ server`))
-                            try {
-                                let app = new MQ(server.options);
-                                Servers.set(this.instanceId, server.type, app);
+        if (this.httpServer) {
+            Servers.set(this.instanceId, 'http', this.httpServer);
+        }
+        if (this.app) {
+            Servers.set(this.instanceId, 'express', this.app);
+        }
 
-                            } catch (error) {
-                                logger.error(error);
+        //we should rearrange the configuration in order to load them in the right order
+        // express / http / socketio
+        let objectForOrder: any = {};
+        this.config.servers.map((server: ServerConfig) => {
+            if (!objectForOrder[server.type]) {
+                objectForOrder[server.type] = [];
+            }
+            objectForOrder[server.type].push(server);
+        })
+
+        const loadOrder = [
+            ServerType.ExpressPartial,
+            ServerType.Express,
+            ServerType.Socket,
+            ServerType.RabbitMQ,
+            ServerType.Redis,
+            ServerType.Kafka];
+
+        loadOrder.map(async (serverFamily: string) => {
+            if (objectForOrder[serverFamily] && objectForOrder[serverFamily].length) {
+                for (let i = 0; i < objectForOrder[serverFamily].length; i++) {
+                    let server = objectForOrder[serverFamily][i];
+                    let serverType = server.type;
+
+                    if (server.options.port) {
+                        port = server.options.port;
+                    }
+
+
+
+
+                    const aServerInstance = Servers.get(this.instanceId, serverType)
+                    switch (serverType) {
+                        case ServerType.Express:
+                            {
+
+
+                                if (!aServerInstance) {// !this.app && !this._app[serverType]) {
+
+
+
+                                    logger.info(this, colors.green(`> Starting REST server on port`, port));
+                                    console.log(colors.green(`> Starting REST server on port`, port));
+                                    this._app[serverType] = new Express(port, onStart);
+                                    let app = Servers.set(this.instanceId, server.type, this._app[serverType]);
+                                    this.app = app._app;
+
+                                    var httpServer = Servers.get(this.instanceId, 'http') || http.createServer(app._app);
+                                    this._app['http'] = httpServer;
+                                    //listen on provided ports
+
+                                    Servers.set(this.instanceId, 'http', httpServer);
+                                }
+                                else {
+                                    //express was allready initiated //this._app[serverType] = 
+                                    const partialExpress = new ExpressPartial(this.app);
+                                    Servers.set(this.instanceId, server.type, partialExpress);
+                                }
+
+                                this.config.servers.map((serverConfiguration) => {
+                                    if (serverConfiguration.type === serverType && serverConfiguration.onStart)
+                                        onStart = serverConfiguration.onStart;
+                                })
+                                break;
+
                             }
-                            break;
-                        }
-                    case ServerType.Kafka:
-                        {
-                            logger.info(this, colors.green(`Starting Kafka server`))
-                            try {
-                                let app = new Kafka(server.options);
-                                Servers.set(this.instanceId, server.type, app);
-                            } catch (error) {
-                                logger.error(error);
-                            }
-                            break;
-                        }
-                    case ServerType.Redis:
-                        {
-                            logger.info(this, colors.green(`Starting REDIS server`))
-                            try {
-                                let app: any = new Redis(server.options);
-                                app.connection = new RedisServer();
-                                Servers.set(this.instanceId, server.type, app);
+                        case ServerType.Socket:
+                            {
+                                logger.info(this, colors.green(`> Starting SOCKETIO server on port`, port));
+                                console.log(colors.green(`> Starting SOCKETIO server on port`, port));
 
-                            } catch (error) {
-                                logger.error(error);
+                                let httpServer = Servers.get(this.instanceId, 'http');
+
+                                // if (!httpServer) {
+                                //     httpServer = this.httpServer;
+                                // }
+
+                                let app = new SocketIO(server.options, httpServer);
+                                Servers.set(this.instanceId, server.type, app);
+                                // if (server.onStart)
+                                //     server.onStart(app);
+                                break;
                             }
-                            break;
-                        }
+                        case ServerType.RabbitMQ:
+                            {
+                                console.log(colors.green(`> Starting MQ server`));
+                                logger.info(this, colors.green(`> Starting MQ server`))
+                                try {
+                                    let app = new MQ(server.options);
+                                    Servers.set(this.instanceId, server.type, app);
+                                } catch (error) {
+                                    logger.error(error);
+                                }
+                                break;
+                            }
+                        case ServerType.Kafka:
+                            {
+                                logger.info(this, colors.green(`> Starting Kafka server`))
+                                try {
+                                    let app = new Kafka(server.options);
+                                    Servers.set(this.instanceId, server.type, app);
+                                } catch (error) {
+                                    logger.error(error);
+                                }
+                                break;
+                            }
+                        case ServerType.Redis:
+                            {
+                                logger.info(this, colors.green(`> Starting REDIS server`))
+                                try {
+                                    let app: any = new Redis(server.options);
+                                    app.connection = new RedisServer();
+                                    Servers.set(this.instanceId, server.type, app);
+                                } catch (error) {
+                                    logger.error(error);
+                                }
+                                break;
+                            }
+                    }
                 }
             }
 
-            let classes = this.config.classes.entries()
-            for (var i = 0; i < this.config.classes.size; i++) {
-                let name, element = classes.next();
-                let _class = element.value[1];
-                //  if (_class.methodType === MethodType.Local) {
-                this.useClass(_class);
-                //  } else {
-                logger.info(this, colors.green(`using class ${_class.classType.name} in ${_class.methodType} mode`));
-                //  }
 
 
 
+        });
 
+
+        if (onStart) {
+            const instance = Servers.get(this.instanceId, ServerType.Express);
+            if (instance && instance._app) {
+                onStart(instance._app);
             }
+
         }
+
+        let httpServerIntance = Servers.get(this.instanceId, 'http');
+        if (httpServerIntance) {
+            httpServerIntance.listen(port);
+        }
+
+
+
+        let classes = this.config.classes.entries()
+        for (var i = 0; i < this.config.classes.size; i++) {
+            let name, element = classes.next();
+            this.useClass(element.value[1]);
+        }
+
+
+
 
 
         return this;
     }
 
+
+
+
+
+
+    @Log()
     public useClass(_class) {
-        if (this.config && this.config.servers) {
-            this.config.servers.forEach((server) => {
-                if (_class.classType) {
-                    let proto = fp.proto(_class.classType);
-                    let metaObject = Reflect.getOwnMetadata(metadataKey, proto);
-                    metaObject.instanceId = this.instanceId;
-                    Reflect.defineMetadata(metadataKey, metaObject, proto);
+        let serverInstance: any = this;
 
-                    logger.info(this, colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
-                    if (_class.methodType === MethodType.Local)
-                        Servers.get(this.instanceId, server.type).useClass(_class.classType);
+
+      
+
+        //this.config.servers
+        Object.keys(Servers.instances).map((serverId) => {
+            const server = Servers.instances[serverId];
+            if (_class.classType) {
+
+                const methodusClass = _class.classType;
+
+                let proto = fp.maybeProto(methodusClass);
+                let metaObject = ClassContainer.get(proto.methodus.name);
+
+                if (server[_class.serverType]) {
+                    metaObject.methodType = _class.methodType;
+                 
+                    //extract metadata for class and method
+                    let configName = methodusClass.name;
+                    if (!configName && methodusClass.constructor)
+                        configName = methodusClass.constructor.name;
+
+
+                    Servers.classes[configName] = _class;
+
+
+                    if (metaObject) {
+                        metaObject.instanceId = serverInstance.instanceId;
+                        ClassContainer.set(proto.methodus.name, metaObject);
+                        logger.info(this, colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+
+                        const activeServers = Servers.get(serverInstance.instanceId, _class.serverType);
+                        if (activeServers) {
+                            activeServers.useClass(_class.classType, metaObject.methodType);
+                        }
+                    } else {
+                        logger.error('could not load metadata for ' + proto.methodus.name);
+                    }
                 }
+            }
 
-            });
-        }
+        })
+
+
+
 
     }
 
-    // public bindEvents(classType) {
-    //     let proto = fp.proto(classType);
-    //     let methodulus = proto.methodulus;
-    //     //let collection = Object.getOwnPropertyNames(proto);
-
-    //     Object.keys(methodulus._events).forEach(itemKey => {
-    //         let item = methodulus._events[itemKey];
-    //         this.eventEmitter.on(item.name, proto[item.propertyKey]);
-    //         //methodulus.name + ':' +
-    //     });
-
-    // }
+    @Log()
     public kill() {
-        ['http', 'socketio'].forEach((server) => {
-            // if (this._app[server]) {
-            //     this._app[server].close();
-            //     delete this._app[server];
-            // }
+        ['http', ServerType.Socket].forEach((server) => {
+            if (this._app[server]) {
+                this._app[server].close();
+                delete this._app[server];
+            }
         });
     }
-
-    async sendEvent(methodEvent: MethodEvent) {
-        if (this.config && this.config.servers) {
-            this.config.servers.forEach((server) => {
-                Servers.get(this.instanceId)._sendEvent(methodEvent);
-            });
-        }
-
-
-    }
-    async _send(channel: ServerType, params, message, parametersMap) {
-        return await Servers.get(this.instanceId)._send(params, message, parametersMap);
+    @Log()
+    async _send(channel, params, message, parametersMap, securityContext) {
+        return await this._app[channel]._send(params, message, parametersMap, securityContext);
     }
 
+    @Log()
     async registerEvent(channel, eventName) {
-        if (Servers.get(this.instanceId).registerEvent)
-            return await Servers.get(this.instanceId).registerEvent(event);
-    }
-}
-
-
-
-
-export class ConfiguredServer extends Server {
-    constructor(options?) {
-        super();
-        this.config = new MethodulusConfig();
-
-
-        options.servers.forEach(element => {
-            if (this.config) {
-                this.config.run(element.serverType, element.options);
-            }
-        });
-        options.classes.forEach(element => {
-            if (this.config) {
-                this.config.use(element.controller, element.methodType, element.resolver);
-            }
-        });
-
-
-
-        this.start();
-
+        if (this._app[channel].registerEvent)
+            return await this._app[channel].registerEvent(eventName);
     }
 
+
+    @Log()
+    async sendEvent(methodEvent: MethodEvent) {
+        this.config.servers.forEach((server) => {
+            this._app[server.type]._sendEvent(methodEvent);
+        });
+
+    }
 
 }

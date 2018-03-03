@@ -1,0 +1,99 @@
+{
+  "_from": "amqplib-mocks",
+  "_id": "amqplib-mocks@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha1-5h+hGCq0Fajr5T5re2avuKmBsPY=",
+  "_location": "/amqplib-mocks",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "amqplib-mocks",
+    "name": "amqplib-mocks",
+    "escapedName": "amqplib-mocks",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/amqplib-mocks/-/amqplib-mocks-1.1.1.tgz",
+  "_shasum": "e61fa1182ab415a8ebe53e6b7b66afb8a981b0f6",
+  "_spec": "amqplib-mocks",
+  "_where": "C:\\Git_work\\methodus",
+  "author": {
+    "name": "LeanKit"
+  },
+  "bugs": {
+    "url": "https://github.com/bunk/amqplib-mocks/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash": "^4.17.2",
+    "shortid": "^2.2.6",
+    "sinon": "^1.14.1"
+  },
+  "deprecated": false,
+  "description": "Simple amqplib mocking library",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-istanbul": "^3.0.0",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-object-rest-spread": "^6.19.0",
+    "babel-preset-node6": "^11.0.0",
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
+    "chai-subset": "^1.3.0",
+    "coveralls": "^2.11.15",
+    "eslint": "^3.6.1",
+    "eslint-config-leankit": "^3.0.0",
+    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-import": "^2.0.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.0.0",
+    "sinon-as-promised": "^4.0.0",
+    "sinon-chai": "^2.8.0"
+  },
+  "homepage": "https://github.com/bunk/amqplib-mocks#readme",
+  "main": "lib/index.js",
+  "name": "amqplib-mocks",
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/**/*.spec.js"
+    ],
+    "require": [
+      "babel-register"
+    ],
+    "all": true,
+    "sourceMap": false,
+    "instrument": false
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bunk/amqplib-mocks.git"
+  },
+  "scripts": {
+    "build": "npm run clean && npm run build:run -- --ignore spec.js",
+    "build:debug": "npm run clean && npm run build:run",
+    "build:run": "babel src -d lib --source-maps inline --copy-files",
+    "clean": "rm -rf ./lib && rm -rf .nyc_output && rm -rf coverage",
+    "cover": "nyc -r text-summary -r html -- npm run test:all",
+    "cover:show": "open \"file://$PWD/coverage/index.html\"",
+    "cover:watch": "nodemon --exec \"npm run cover\" --watch ./src --watch ./test",
+    "coveralls": "nyc npm run test:all && nyc report -r text-lcov | coveralls",
+    "lint": "eslint ./src",
+    "prepublish": "npm run cover && npm run build",
+    "pretest": "npm run lint",
+    "test": "npm run coveralls",
+    "test:all": "npm run test:run -- 'src/**/*.spec.js'",
+    "test:run": "NODE_ENV=test mocha --compilers js:babel-register --timeout 5000 -r ./test/helpers/ -R spec",
+    "test:watch": "npm run test:all -- -w"
+  },
+  "version": "1.1.1"
+}

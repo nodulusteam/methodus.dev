@@ -1,20 +1,46 @@
-import { logger } from './log';
-
 export class fp {
     public static maybe(object: any): any {
+
         if (!object)
             return {};
         return object;
     }
 
-    public static proto(object: any): any {
+
+
+    public static maybeProto(object: any): any {
+        if (object.methodus)
+            return object;
+
         let proto = object.prototype;
+        if (proto && (proto.length === 0 || Object.keys(proto).length === 0) && proto.constructor)
+            proto = proto.constructor;
         if (!proto)
             proto = object.__proto__;
-
         return proto;
     }
 
+    public static maybeMethodus(object: any): any {
+        let proto = object.prototype;
+        if (proto && proto.constructor && proto.constructor.methodus)
+            return proto.constructor.methodus;
+
+        if (!proto && object.__proto__ && object.__proto__.methodus)
+            return object.__proto__.methodus;
+
+        if (object.methodus)
+            return object.methodus;
+
+        return proto.methodus;
+    }
+
+    public static maybeEach(object: any, callback) {
+        if (object.forEach) {
+            object.forEach((item) => {
+                callback(item);
+            })
+        }
+    }
     public static array(object: any): any[] {
 
         let arr: any[] = [];
@@ -29,7 +55,6 @@ export class fp {
         try {
             return JSON.parse(object);
         } catch (error) {
-            logger.error('error parsing JSON', object);
             return {};
         }
     }
@@ -62,5 +87,9 @@ export class fp {
             if (!object[property])
                 object[property] = defaultValue || null;
         }
+
     }
+
+
+
 }

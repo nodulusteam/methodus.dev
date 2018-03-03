@@ -1,21 +1,20 @@
 const yaml = require('js-yaml'),
     fs = require('fs');
-import { logger, Log, LogClass } from './log/';
+
+import { logger, Log, LogClass } from './logger';
+
+const metadataKey = 'methodus';
 
 
-import { Verbs } from './rest';
 
-export interface EventDescriptor extends MethodDescriptor {
-    name: string;
-    value?: any;
+export enum Verbs {
+    Get = 'GET',
+    Post = 'POST',
+    Put = 'PUT',
+    Patch = 'PATCH',
+    Head = 'HEAD',
+    Delete = 'DELETE',
 
-}
-
-export interface MethodDescriptor {
-    verb?: Verbs;
-    route?: string;
-    methodType?: MethodType;
-    propertyKey: string;
 }
 
 export enum MethodType {
@@ -24,34 +23,107 @@ export enum MethodType {
     MQ = 'MQ',
     Redis = 'Redis',
     Socket = 'Socket',
-    Kafka = 'Kafka'
+    Kafka = 'Kafka',
+    Mock = 'Mock'
 }
 
+export interface MethodDescriptor {
+    verb: Verbs;
+    route: string;
+    methodType: MethodType;
+    propertyKey: string;
+    middlewares?: any;
+    params: any[]
+}
+
+export enum ServerType {
+    Express = 'express',
+    ExpressPartial = 'express',
+    RabbitMQ = 'amqp',
+    Redis = 'redis',
+    Socket = 'socketio',
+    Kafka = 'kafka'
+}
+
+export interface EventDescriptor extends MethodDescriptor {
+    name: string;
+    value?: any;
+    exchange?: string;
+
+}
+
+
+
 @LogClass(logger)
-export class MethodulusClassConfig implements Methodulus.IMethodulusClassConfig {
+export class MethodusClassConfig {
     /**
      *
      */
-
-    constructor(classType: any, methodType: MethodType, resolver?: Function | string) {
+    constructor(classType: any, methodType: MethodType, serverType: ServerType, resolver?: Promise<any> | Function | string | any) {
         this.classType = classType;
         this.methodType = methodType;
+        this.serverType = serverType;
         this.resolver = () => {
-            if (typeof resolver === 'string') {
-                return Promise.resolve(resolver);
-            } else {
-                if (resolver)
-                    return resolver(classType.name);
-            }
+            return resolver;
         }
 
     }
-    public methodType: string = MethodType.Local;
+    public methodType: MethodType = MethodType.Local;
+    public serverType: ServerType;
     public classType: any;
-    public resolver: Function | string
+    public serviceName: string;
+    public resolver: Promise<any> | Function | string | any | string
 }
 
-export class MethodulusConfigurations {
+@LogClass(logger)
+export class MethodusConfig {
+    constructor(servers?: ServerConfig[], map?: Map<string, MethodusClassConfig>) {
+        if (servers)
+            this.servers = servers;
+
+        if (map)
+            this.classes = map;
+    }
+    public classes: Map<string, MethodusClassConfig> = new Map<string, MethodusClassConfig>();
+    public servers: ServerConfig[];
+    public port: number;
+    public use(classType: any, methodType: MethodType, serverType: ServerType, resolver?: Promise<any> | Function | string | any) {
+        if (methodType === MethodType.Http && !resolver)
+            throw (new Error('Http transport requires a resolver, pass in a string or a promise'));
+
+        let configEntry = new MethodusClassConfig(classType, methodType, serverType, resolver);
+        this.classes.set(classType.name, configEntry);
+
+        if (classType.methodus) {
+            this.classes.set(classType.methodus.name, configEntry);
+        }
+    }
+    public run(serverType: ServerType, configuration: any) {
+        this.servers = this.servers || [];
+        this.servers.push(new ServerConfig(serverType, configuration))
+
+
+    }
+}
+
+@LogClass(logger)
+export class ServerConfig {
+    constructor(type: ServerType, options?: any) {
+        this.type = type;
+        this.options = options;
+        if (options) {
+            this.onStart = options.onStart;
+        }
+
+    }
+    type: ServerType | any;
+    options: any;
+    onStart?: Function;
+}
+
+
+
+export class MethodusConfigurations {
     static _configurations: any;
     public static add(configurationInstance) {
         this._configurations = configurationInstance;
@@ -62,76 +134,14 @@ export class MethodulusConfigurations {
     }
 }
 
-
-@LogClass(logger)
-export class MethodulusConfig implements Methodulus.IMethodulusConfig {
-    constructor(servers?: ServerConfig[], map?: Map<string, MethodulusClassConfig>) {
-
-
-
-        if (servers)
-            this.servers = servers;
-
-        if (map)
-            this.classes = map;
-
-
-
-
-
-
-
-        MethodulusConfigurations.add(this);
-    }
-    public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
-    public servers?: ServerConfig[];;
-    public port?: number;
-
-    @Log()
-    public use(classType: any, methodType: MethodType, resolver?: Function | string) {
-        if (methodType === MethodType.Http && !resolver)
-            throw (new Error('Http transport requires a resolver, pass in a string or a promise'))
-        if (!this.classes)
-            this.classes = new Map<string, MethodulusClassConfig>();
-
-        this.classes.set(classType.name, new MethodulusClassConfig(classType, methodType, resolver));
-    }
-
-    @Log()
-    public run(serverType: ServerType, configuration: any) {
-        this.servers = this.servers || [];
-        this.servers.push(new ServerConfig(serverType, configuration))
-
-
-    }
-}
-
-
-@LogClass(logger)
-export class ServerConfig {
-    constructor(type: ServerType, options: any) {
-        this.type = type;
-        this.options = options;
-    }
-    type: ServerType;
-    options: any;
-}
-
-export function MethodulusConfigFromFile(configPath) {
-    var doc = yaml.safeLoad(fs.readFileSync(configPath, 'utf8'));
-    return doc;
-}
-
-export enum ServerType {
-    Express = 'express',
-    RabbitMQ = 'amqp',
-    Redis = 'redis',
-    Socket = 'socketio',
-    Kafka = 'kafka'
-}
-
-
 export class ConnectionOptions {
     amqp;
     name;
+    userName;
+    password;
+}
+
+export function MethodusConfigFromFile(configPath) {
+    var doc = yaml.safeLoad(fs.readFileSync(configPath, 'utf8'));
+    return doc;
 }

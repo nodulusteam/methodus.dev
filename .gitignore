@@ -1,11 +1,6 @@
-node_modules/
 *.js
-*.map
-*.d.ts
-!@types/*.d.ts
-examples/data/
+*.js.map
+package-lock.json
+node_modules/
 logs/
-coverage/
-.nyc_output/
-!tests/**/*.js
-
+*.d.ts

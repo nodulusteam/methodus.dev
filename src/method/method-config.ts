@@ -1,27 +1,26 @@
 
 
-const excludedProps = ['constructor'];
-const debug = require('debug')('methodulus');
-import "reflect-metadata";
-import { MethodulusConfig, MethodDescriptor, MethodType, ServerType } from '../config';
-import { MethodResult, MethodError } from '../response';
-import { fp } from '../fp';
-import { RestParser, RestResponse, Verbs } from '../rest';
-import { logger, Log, LogClass } from '../log/';
+import 'reflect-metadata';
+import { logger } from '../logger';
+import { ClassContainer } from '../class-container';
+let metadataKey = 'methodus';
 
-
-let metadataKey = 'methodulus';
-export function MethodConfig(name: string, endpoint?: string) {
-  
+/** the MethodConfig decorator registers the controller as a router
+ *  @param {string} name - the identifier of the controller in the resolver.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+ */
+export function MethodConfig(name: string, middlewares?: any[]) {
     return function (target: any) {
-        let existingMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
-        existingMetadata.endpoint = endpoint
+        let existingMetadata = ClassContainer.get(name) || {};      
         existingMetadata.name = name
-        let proto = fp.proto(target);
-        proto.methodulus.name = name;
-        proto.methodulus.endpoint = endpoint;
+        let proto = target.prototype || target.__proto__;
 
-        Reflect.defineMetadata(metadataKey, existingMetadata, proto);
-      
+        if (target.methodus) //means its a static class , no prototype
+            proto = target;
+        proto.methodus.name = name;
+        proto.methodus.middlewares = middlewares;
+        existingMetadata.middlewares = middlewares;
+        ClassContainer.set(name, existingMetadata);
+
     }
 }

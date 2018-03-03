@@ -1,19 +1,30 @@
 
 const uuidv1 = require('uuid/v1');
-import { MethodEvent } from '../response'
-export class Servers {
-    public static instances: any = {};
-    public static classes: any;
-    public static addServer(server) {
+import { MethodEvent, MethodError } from '../response/'
+
+
+import { Request } from '../servers/express/Request';
+import { ServerType } from '..';
+
+
+export class ServersList {
+    public instances: any = {};
+    public classes: any;
+    constructor() {
+        this.classes = {};
+        this.instances = {};
+
+    }
+    public addServer(server) {
         let id = uuidv1();
         this.instances[id] = server;
         return id;
     }
-    public static set(instanceId, serverType, instance) {
+    public set(instanceId, serverType, instance) {
         this.instances[instanceId][serverType] = instance;
         return instance;
     }
-    public static get(instanceId, serverType?) {
+    public get(instanceId, serverType?) {
         if (serverType)
             return this.instances[instanceId][serverType];
         else
@@ -21,21 +32,51 @@ export class Servers {
     }
 
 
-    public static async  emit(methodEvent: MethodEvent) {
-        let servers = [];
+
+    public async  emit(methodEvent: MethodEvent) {
         for (let instanceKey in this.instances) {
-            if (this.instances[instanceKey]['amqp']) {
-                this.instances[instanceKey]['amqp']._sendEvent(methodEvent);
+            if (this.instances[instanceKey][methodEvent.serverType]) {
+                const result = this.instances[instanceKey][methodEvent.serverType]._sendEvent(methodEvent);
+                return result;
+            }
+        }
+    }
+
+    public send(server, functionArgs, methodus, paramsMap, securityContext?) {
+        if (this.instances && Object.keys(this.instances).length) {
+            for (let instanceKey in this.instances) {
+                if (this.instances[instanceKey][server]) {
+                    const result = this.instances[instanceKey][server]._send(functionArgs, methodus, paramsMap, securityContext);
+                    return result;
+                }
+            }
+        } else {
+            if (server === ServerType.Express || server === ServerType.ExpressPartial) {
+                const request = new Request();
+
+
+                // this.resolver = () => {
+                //     return resolver;
+                // }
+
+                let baseUrl = methodus.resolver();
+                if (baseUrl) {
+                    let myUri = baseUrl + methodus.route;
+                    return request.sendRequest(methodus.verb, baseUrl + methodus.route, functionArgs, paramsMap, securityContext);
+                } else {
+                    return new MethodError('no server found for this method' + methodus.route, 302);
+                }
             }
         }
 
-        // let result = await this.instances[methodulus.instanceId][server]._send(functionArgs, methodulus, paramsMap);
-        // return result;
-    }
-
-    public static async  send(server, functionArgs, methodulus, paramsMap) {
-
-        let result = await this.instances[methodulus.instanceId][server]._send(functionArgs, methodulus, paramsMap);
-        return result;
     }
 }
+
+
+
+if (!(global as any).METHODUS_BRIDGE) {
+
+    (global as any).METHODUS_BRIDGE = new ServersList();
+}
+
+export const Servers = (global as any).METHODUS_BRIDGE;

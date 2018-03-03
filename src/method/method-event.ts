@@ -1,115 +1,37 @@
 
 
 const excludedProps = ['constructor'];
-const debug = require('debug')('methodulus');
-import "reflect-metadata";
-import { MethodulusConfigurations, MethodulusConfig, EventDescriptor, MethodType, ServerType } from '../config';
+const debug = require('debug')('tmla:methodus');
+import 'reflect-metadata';
+import { MethodusConfig, EventDescriptor, MethodType, ServerType } from '../config';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
-import { logger, Log, LogClass } from '../log/';
+import { logger, Log, LogClass } from '../logger';
 import { RestParser, RestResponse, Verbs } from '../rest';
-import {Servers } from '../servers';
+let metadataKey = 'methodus';
 
-let metadataKey = 'methodulus';
-
-
-function mergeMetadata(methodulus) {
-    let config =MethodulusConfigurations.get();
-  
-    let methodinformation = config.classes.get(methodulus.name);
-    return Object.assign({}, methodulus, methodinformation);
-}
-
-
-export function EventName() {
-    return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
-        let existingMetadata: any[] = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || [];
-        existingMetadata.push({ from: 'response', index: parameterIndex });
-        Reflect.defineMetadata(metadataKey, existingMetadata, target, propertyKey);
-    }
-}
-
-export function Event(name: string, verb: Verbs, route: string, methodType?: MethodType) {
+/** the model decorator registers the model with the odm
+ *  @param {Verbs} verb - the HTTP verb for the route.
+ *  @param {string} route - express route string.
+ *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
+ */
+export function Event(name: string, exchange: string) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        target.methodulus = target.methodulus || { _events: {}, _descriptors: {} }
-        let metaObject: EventDescriptor = { name, verb, route, methodType, propertyKey }
+        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
+        let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
-        target.methodulus._events[name] = metaObject as EventDescriptor;
-  
-  
-
-        let paramsMap: any[] = Reflect.getOwnMetadata('params', target, propertyKey) || [];
-        paramsMap.sort((a, b) => {
-            return a.index - b.index;
-        })
-     
-        // save a reference to the original method
-        let originalMethod = descriptor.value;
-        //methodType = methodType || MethodType.Local;
-        var eventHandler = async (...args: any[]) => {
-
-            let proto = fp.proto(target);
-            //extract metadata for class and method
-            let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, target) || {};
-         
-            let methodResult: MethodResult | MethodError | any = null;
-            let methodulus: any = Reflect.getOwnMetadata(metadataKey, target, propertyKey) || {};
-          
-            Object.assign(methodulus, existingClassMetadata);
-
-            //let methodulus = proto.methodulus;
-            //methodulus.route = route;
-            let functionArgs: any[] = args;
-            let ParserResponse = RestParser(args, paramsMap, functionArgs);
-            let methodType;
-            let completeConfiguration = mergeMetadata(methodulus);
-            if (completeConfiguration)
-                methodType = completeConfiguration.methodType || MethodType.Local;
-
-
-
-            // run and store the result
-            try {
-                let server: ServerType | null = null;
-                switch (methodType) {
-                    case MethodType.Local:
-                        await originalMethod(...ParserResponse.args);
-                        break;
-                    case MethodType.Http:
-                        server = ServerType.Express;
-                        break;
-                    case MethodType.Socket:
-                        server = ServerType.Socket;
-                        break;
-                    case MethodType.MQ:
-                        server = ServerType.RabbitMQ;
-                        break;
-                    case MethodType.Redis:
-                        server = ServerType.Redis;
-                        break;
-                }
-
-                if (server)
-                    await send(server, ParserResponse.args, completeConfiguration, paramsMap);
-
-
-            } catch (error) {
-
-            }
-
-        };
-
-
-
-        descriptor.value = eventHandler
+        target.methodus._events[name] = metaObject as EventDescriptor;
         return descriptor;
     }
 }
 
 
-
-async function send(server: ServerType, functionArgs: any, methodulus: any, paramsMap: any[]) {
-    let result = await Servers.send(server, functionArgs, methodulus, paramsMap);
-    return result;
+export function EventSingular(name: string, exchange: string) {
+    return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
+        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
+        let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
+        Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
+        target.methodus._workevents[name] = metaObject as EventDescriptor;
+        return descriptor;
+    }
 }
-

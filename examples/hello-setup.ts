@@ -1,8 +1,8 @@
 import { Player } from './controllers/player';
-import { ServerConfig, ClientConfig, ConfiguredServer, MethodulusConfig, MethodulusClassConfig, MethodType, ServerType } from '../index';
+import { ServerConfiguration, ClientConfiguration, ConfiguredServer, MethodusConfig, MethodusClassConfig, MethodType, ServerType } from '../index';
 
-@ServerConfig(ServerType.Express, { port: process.env.PORT || 8020 })
-@ClientConfig(Player, MethodType.Local)
+@ServerConfiguration(ServerType.Express, { port: process.env.PORT || 8020 })
+@ClientConfiguration(Player, MethodType.Local,ServerType.Express)
 class SetupServer extends ConfiguredServer {
 
 }

@@ -1,20 +1,20 @@
-const debug = require('debug')('methodulus');
-import { Container } from '../container';
-
-import "reflect-metadata";
+ // <references path='../interfaces/methodus.ts' />
+ 
+ const debug = require('debug')('tmla:methodus');
+import 'reflect-metadata';
 import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../response';
-import { MethodulusClassConfig, MethodType, MethodulusConfigurations } from '../config';
+import { MethodusClassConfig, MethodType } from '../config';
 
 import { BaseServer } from './base';
-import { logger, Log, LogClass } from '../log/';
-const redis = Container.get('redis');
+import { LogLevel, logger, Log, LogClass } from '../logger';
+const redis = require('redis');
 import { fp } from '../fp';
 const redis_addr = '//192.168.99.100:32768';
-const metadataKey = 'methodulus';
+const metadataKey = 'methodus';
 
 @LogClass(logger)
 export class Redis extends BaseServer {
-    classRouters?: Methodulus.Router[];
+    classRouters: Methodus.Router[];
     options: any;
     constructor(options) {
         super();
@@ -64,13 +64,8 @@ export class Redis extends BaseServer {
                 }
             });
 
-            var q = methodinformation.name;
-            let methodMessage = new MethodMessage();
-            methodMessage.to = methodinformation.propertyKey;
-            methodMessage.metadata = methodinformation;
-            methodMessage.message = paramsMap;
-            methodMessage.args = functionArgs;
-            methodMessage.correlationId = corr;
+            const q = methodinformation.name;
+            const methodMessage = new MethodMessage(methodinformation.propertyKey, paramsMap, methodinformation, functionArgs, corr);
             await this.publish(pub, methodinformation, methodMessage);
 
         });
@@ -90,49 +85,31 @@ function generateUuid() {
 export class RedisServer {
     connection: any = null;
     constructor() {
-        // amqpConnect().then((connection) => {
-        //     this.connection = connection
-
-
-        // });
     }
-
-
 }
 
 @LogClass(logger)
-export class RedisRouter implements Methodulus.Router {
+export class RedisRouter implements Methodus.Router {
     public router: any;
     constructor(obj: any) {
-        let proto = fp.proto(obj);
-        let methodulus = proto.methodulus;
+        let proto = fp.maybeProto(obj);
+        let methodus = fp.maybeMethodus(proto);
+
         let pub = redis.createClient(redis_addr);
         let sub = redis.createClient(redis_addr);
 
-
-        //amqpConnect().then((conn) => {
-        //  conn.createChannel().then((ch) => {
-        let q = methodulus.name;
+        let q = methodus.name;
         sub.subscribe(q);
-        //extract metadata for class and method
-
-        let config = MethodulusConfigurations.get();
-        let methodinformation: MethodulusClassConfig = config.classes.get(methodulus.name);
 
 
-        // let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, proto) || {};
-        // //if (methodinformation.methodType !== MethodType.Local)
-        // existingClassMetadata.returnMessages = true;
-        // Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
 
-
-        if (proto.methodulus._events && Object.keys(proto.methodulus._events).length > 0) {
+        if (proto.methodus._events && Object.keys(proto.methodus._events).length > 0) {
             let eventsub = redis.createClient(redis_addr);
             eventsub.subscribe('event-bus');
             eventsub.on('message', async (destination, msg) => {
                 let parsedMessage = fp.maybeJson(msg) as MethodEvent;
-                if (proto.methodulus._events[parsedMessage.name]) {
-                    let pkey = proto.methodulus._events[parsedMessage.name].propertyKey;
+                if (proto.methodus._events[parsedMessage.name]) {
+                    let pkey = proto.methodus._events[parsedMessage.name].propertyKey;
                     let result = await proto[pkey](parsedMessage.value);
                     console.log('the result in the router after the call is', result);
 
@@ -146,11 +123,11 @@ export class RedisRouter implements Methodulus.Router {
             let parsedMessage = fp.maybeJson(msg) as MethodMessage;
             logger.debug('running local method', parsedMessage.to);
 
-            if (parsedMessage.to) {
-                let result = await proto[parsedMessage.to](...parsedMessage.args);
-                logger.log('the result in the router after the call is', result);
-                pub.publish(parsedMessage.correlationId, JSON.stringify(result));
-            }
+
+            let result = await proto[parsedMessage.to](...parsedMessage.args);
+            logger.log('the result in the router after the call is', result);
+
+            pub.publish(parsedMessage.correlationId, JSON.stringify(result));
         });
     }
 }

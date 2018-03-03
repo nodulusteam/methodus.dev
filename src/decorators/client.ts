@@ -1,8 +1,7 @@
-
-
 import 'reflect-metadata';
 import { logger } from '../log';
-import { MethodType, MethodulusClassConfig } from '../config';
+import { MethodType } from '../config';
+import { ServerType } from '../'
 
 let metadataKey = 'methodus';
 
@@ -10,30 +9,21 @@ let metadataKey = 'methodus';
  *  @param {string} name - the identifier of the controller in the resolver.
  *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
  */
-export function Client(controller: any, methodType: MethodType, resolver?: any) {
-  return function (target: any) {
+export function ClientConfiguration(controller: any, methodType: MethodType, serverType: ServerType, resolver?: any) {
+    return function (target: any) {
+        var original = target.prototype.constructor;
+        original.prototype.options = original.prototype.options || { servers: [], classes: [] };
 
-    var original = target.prototype.constructor;
+        original.prototype.options.classes.push({ controller: controller, methodType: methodType, serverType: serverType, resolver: resolver });
 
-    // the new constructor behaviour
-    var f: any = function (options: { servers: any[], classes: any[] }) {
-
-      options.classes.push({ controller: controller, methodType: methodType, resolver: resolver });
-      let instance = new original(options);
-      // Object.keys(this.__proto__).forEach(element => {
-      //   instance[element] = this.__proto__[element];
-
-      // })
-      return instance;
-
-     
+        // the new constructor behaviour
+        var f: any = function () {
+            let instance = new original(target.prototype.options);
+            return instance;
+        }
+        // copy prototype so intanceof operator still works
+        f.prototype = original.prototype;
+        // return new constructor (will override original)
+        return f;
     }
-
-    // copy prototype so intanceof operator still works
-    f.prototype = original.prototype;
-
-    // return new constructor (will override original)
-    return f;
-
-  }
 }

@@ -1,0 +1,12 @@
+{
+    "files": [
+        {
+            "name": "Local",
+            "path": "./logs/general.log"
+        },
+        {
+            "name": "seta-client",
+            "path": "C:\\Git_work\\seta-client\\logs\\general.log"
+        }
+    ]
+}

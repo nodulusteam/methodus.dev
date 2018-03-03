@@ -16,19 +16,21 @@ export class _Container {
 }
 
 
-process.env.test = true;
 
 
 export const Container = new _Container();
 
-if (process.env.test) {
-    Container.set('amqplib', require('../tests/amqplib-mocks'))
-    Container.set('kafka-node', require('../tests/kafka-mocks'))
-    Container.set('redis', require('../tests/redis-mocks'))
+
+
+
+if (process.env.test === 'true') {
+    Container.set('amqplib', require('./tests/amqplib-mocks'))
+    Container.set('kafka-node', require('./tests/kafka-mocks'))
+    Container.set('redis', require('./tests/redis-mocks'))
 }
 else {
     Container.set('amqplib', require('amqplib'))
     Container.set('kafka-node', require('kafka-node'))
     Container.set('redis', require('redis'))
-    
+
 }
