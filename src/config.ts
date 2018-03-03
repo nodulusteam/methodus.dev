@@ -84,8 +84,8 @@ export class MethodulusConfig implements Methodulus.IMethodulusConfig {
         MethodulusConfigurations.add(this);
     }
     public classes: Map<string, Methodulus.IMethodulusClassConfig> = new Map<string, Methodulus.IMethodulusClassConfig>();
-    public servers: ServerConfig[];;
-    public port: number;
+    public servers?: ServerConfig[];;
+    public port?: number;
 
     @Log()
     public use(classType: any, methodType: MethodType, resolver?: Function | string) {

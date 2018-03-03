@@ -6,8 +6,8 @@ import { Servers } from '../servers'
 export class MethodResult {
     result: any;
     page: any;
-    total: number;
-    statusCode: number;
+    total?: number;
+    statusCode?: number;
     constructor(result, total?: number, page?: number) {
         this.result = result;
         if (total)

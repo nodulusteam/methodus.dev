@@ -14,7 +14,7 @@ const metadataKey = 'methodulus';
 
 @LogClass(logger)
 export class Redis extends BaseServer {
-    classRouters: Methodulus.Router[];
+    classRouters?: Methodulus.Router[];
     options: any;
     constructor(options) {
         super();
@@ -146,11 +146,11 @@ export class RedisRouter implements Methodulus.Router {
             let parsedMessage = fp.maybeJson(msg) as MethodMessage;
             logger.debug('running local method', parsedMessage.to);
 
-            
-            let result = await proto[parsedMessage.to](...parsedMessage.args);
-            logger.log('the result in the router after the call is', result);
-
-            pub.publish(parsedMessage.correlationId, JSON.stringify(result));
+            if (parsedMessage.to) {
+                let result = await proto[parsedMessage.to](...parsedMessage.args);
+                logger.log('the result in the router after the call is', result);
+                pub.publish(parsedMessage.correlationId, JSON.stringify(result));
+            }
         });
     }
 }

@@ -6,9 +6,9 @@ import { Servers } from '../servers'
  
 @LogClass(logger)
 export class MethodMessage {
-    to: string;
+    to?: string;
     message: any;
     metadata: any;
     args: any;
-    correlationId: string;
+    correlationId?: string;
 }

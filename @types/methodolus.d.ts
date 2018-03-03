@@ -25,15 +25,15 @@ declare module Methodulus {
     interface Server {
         sockets?: any;
         useClass(classType: any);
-        classRouters: Router[];
-        config: IMethodulusConfig;
+        classRouters?: Router[];
+        config?: IMethodulusConfig;
         _send(channel: any, functionArgs: any, message: any, paramsMap?: any): any;
     }
 
     interface IMethodulusConfig {
         classes: Map<string, IMethodulusClassConfig>;
         servers?: IServerConfig[]
-        port: number;
+        port?: number;
         
     }
 

@@ -35,13 +35,18 @@ export class SocketIO extends BaseServer {
         this._app.close();
     }
     useClass(classType) {
-        this.classRouters.push(classType);
+        if (this.classRouters) {
+            this.classRouters.push(classType);
+        }
+
     }
 
     socketHandler(socket) {
-        this.classRouters.forEach((item) => {
-            new SocketIORouter(item, socket);
-        })
+        if (this.classRouters) {
+            this.classRouters.forEach((item) => {
+                new SocketIORouter(item, socket);
+            })
+        }
 
     }
     async _sendEvent(methodEvent: MethodEvent) {
@@ -49,7 +54,7 @@ export class SocketIO extends BaseServer {
     }
     async _send(functionArgs, methodulus, paramsMap) {
         return new Promise(async (resolve, reject) => {
-         
+
 
             var dataObject = {};
             functionArgs.forEach((element, index) => {
@@ -62,11 +67,11 @@ export class SocketIO extends BaseServer {
             let myUri = await methodulus.resolver();
             var socket = require('socket.io-client')(myUri);
             socket.on('connect', () => {
-            
+
                 let messageName = methodulus.verb + '_' + methodulus.route;
-            
+
                 socket.emit(messageName, dataObject, (data) => {
-                  
+
                     if (data.error && data.statusCode) {
                         logger.error(data)
                         reject(data);
@@ -96,13 +101,13 @@ export class SocketIORouter implements Methodulus.Router {
 
         Object.keys(methodulus._descriptors).forEach(itemKey => {
             let item = methodulus._descriptors[itemKey];
-          
+
             socket.on(item.verb + '_' + item.route, async (data, callback) => {
                 //parse params
-            
+
 
                 let paramsMap: any[] = Reflect.getOwnMetadata('params', proto, itemKey) || [];
-             
+
                 let functionArgs: any = [];
 
 
@@ -114,7 +119,7 @@ export class SocketIORouter implements Methodulus.Router {
 
                 try {
                     let result = await proto[itemKey](...functionArgs);
-                  
+
                     callback(result);
                 } catch (error) {
                     callback(error);

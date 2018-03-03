@@ -94,7 +94,7 @@ export class Kafka extends BaseServer {
             producer.on('error', function (err) {
                 console.log(err);
 
-            })        
+            })
         });
     }
 }
@@ -102,8 +102,8 @@ export class Kafka extends BaseServer {
 @LogClass(logger)
 export class KafkaRouter {
     public router: any;
-    options:any;
-    constructor(obj: any,options:any) {
+    options: any;
+    constructor(obj: any, options: any) {
         this.options = options;
 
         let proto = fp.proto(obj);
@@ -139,8 +139,8 @@ export class KafkaRouter {
         return new Promise((resolve, reject) => {
 
 
-             let Consumer = kafka.Consumer,
-                 client = new kafka.Client('192.168.99.100:2181');
+            let Consumer = kafka.Consumer,
+                client = new kafka.Client('192.168.99.100:2181');
 
 
             let Kclient = new kafka.KafkaClient({ 'kafkaHost': '192.168.99.100:9092' });
@@ -164,9 +164,9 @@ export class KafkaRouter {
 
                     consumer.on('message', async (message) => {
                         let parsedMessage = fp.maybeJson(message.value) as MethodMessage;
-                        let result = await proto[parsedMessage.to](...parsedMessage.args);
-
-
+                        if (parsedMessage.to) {
+                            let result = await proto[parsedMessage.to](...parsedMessage.args);
+                        }
                     });
 
 
