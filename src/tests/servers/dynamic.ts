@@ -8,7 +8,7 @@ import { FirstClass } from '../classes/FirstClass';
 import { Server, MethodType, MethodusConfig } from '../../index';
 
 process.env.silent = false;
-process.env.test = true;
+ 
 const redis_addr = '//localhost:5672';
 let config = new MethodusConfig();
 if (process.env.servers) {

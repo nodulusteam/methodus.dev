@@ -5,7 +5,7 @@ import { MethodusConfig, MethodDescriptor, MethodType, ServerType, MethodusConfi
 import { MethodResult, MethodError, MethodEvent } from '../response';
 import { Servers } from '../servers/serversList';
 import { fp } from '../fp';
-import { logger, Log, LogClass } from '../logger';
+import { logger, Log, LogClass } from '../log';
 import { RestParser, RestResponse, Verbs } from '../rest';
 import { ClassContainer } from '../class-container';
 
@@ -192,7 +192,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     }
                 }
                 logger.info(`Method::OK`, '<==', methodType, originalMethod.name);
-                //logger.trace(`Method::OK`, '<==',  methodType, originalMethod.name);
+                //log.trace(`Method::OK`, '<==',  methodType, originalMethod.name);
 
 
                 return methodResult;

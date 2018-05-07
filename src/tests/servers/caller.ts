@@ -2,7 +2,7 @@ import { TestClass } from '../classes/TestClass';
 import { Server, ServerType, MethodType, MethodusConfig } from '../../index';
 const redis_addr = '//192.168.99.100:32771';
 const amqp = 'localhost:5672';
-process.env.test = true;
+ 
 process.env.silent = false;
 async function init() {
     let config = new MethodusConfig();

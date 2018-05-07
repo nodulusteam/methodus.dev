@@ -1,19 +1,18 @@
 
 import { Container } from '../../container';
-import { logger, Log, LogClass, LogLevel } from '../../log/';
 import { MethodError } from '../../response/'
 import { ConnectionOptions } from '../../config';
 
 const amqp = Container.get('amqplib');
 
-@LogClass(logger)
+
 export class AMQP {
     private static _connection;
 
-    @Log()
+
     public static async connect(connectionOptions: ConnectionOptions, forceReconnect?: boolean) {
         if (AMQP._connection && !forceReconnect) {
-            logger.trace(this, 'reusing connection');
+            //logger.log(this, 'reusing connection');
             try {
                 let connection = await AMQP._connection;
                 return connection;

@@ -1,4 +1,4 @@
-process.env.test = false;
+ 
 import { EventsClass } from '../classes/events-single-class';
 
 

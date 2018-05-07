@@ -1,4 +1,4 @@
-process.env.test = 'true';
+ 
 import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from 'alsatian';
 import { fp } from '../fp';
 @TestFixture('Test the FP functions')

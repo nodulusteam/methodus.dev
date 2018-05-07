@@ -1,7 +1,7 @@
 
 
 import 'reflect-metadata';
-import { logger } from '../logger';
+import { logger } from '../log';
 import { ClassContainer } from '../class-container';
 let metadataKey = 'methodus';
 

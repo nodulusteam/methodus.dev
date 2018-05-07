@@ -14,7 +14,7 @@ import { fp } from '../../fp';
 import errorHandler = require('errorhandler');
 import compression = require('compression');
 import methodOverride = require('method-override');
-import { logger, Log, LogClass, LogLevel } from '../../logger';
+import { logger, Log, LogClass, LogLevel } from '../../log';
 import { ExpressRouter, ExpressPartial, ExpressEventBus } from '../express';
 import { Request } from './Request';
 

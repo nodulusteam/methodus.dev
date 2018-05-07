@@ -1,4 +1,4 @@
-process.env.test = 'true';
+ 
 import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from 'alsatian';
 import { MiddleWaresClass,MiddleWaresClass2 } from './classes/MiddleWaresClass';
 import { logger, Server, ServerType, MethodusConfig, MethodType } from '../index';

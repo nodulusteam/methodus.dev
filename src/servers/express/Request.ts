@@ -1,9 +1,10 @@
 
 import 'reflect-metadata';
+import { logger, Log, LogClass, LogLevel } from '../../log';
 import * as fs from 'fs';
 import * as path from 'path';
 import { MethodError, MethodResult, MethodEvent } from '../../response/';
-import { logger, Log, LogClass, LogLevel } from '../../logger';
+
 import * as request from 'request-promise-native';
 import * as stream from 'stream';
 
@@ -94,7 +95,7 @@ export class Request {
         }
 
 
-        console.log(body, uri);
+       
 
         let requestOptions: any = {
             // will be ignored
@@ -104,7 +105,10 @@ export class Request {
         }
 
         let paramPos = 0;
-        logger.trace(this, body, uri);
+
+      
+
+        logger.log(this, body, uri);
         if (Object.keys(body).length > 0) {
             requestOptions.body = body;
             requestOptions.json = true;
@@ -156,7 +160,7 @@ export class Request {
 
         //very important it allows the download of binary files
         requestOptions.encoding = null;
-        logger.trace(this, 'request options are: ', requestOptions);
+        logger.log(this, 'request options are: ', requestOptions);
         try {
             const returnedPipe = this.promiseToTry(requestOptions);
             return returnedPipe;
@@ -180,7 +184,7 @@ export class Request {
     try(requestOptions) {
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error) => {
-           
+
             console.error(error)
         });
         return requestToPipe;

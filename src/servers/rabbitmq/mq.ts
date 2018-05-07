@@ -2,15 +2,16 @@
 const debug = require('debug')('tmla:methodus:mq');
 import 'reflect-metadata';
 import { fp } from '../../fp';
-import { AMQP } from './amqp';
+
 import { MQRouter } from './router';
 
 import { BaseServer } from '../base';
-import { LogLevel, logger, Log, LogClass } from '../../logger';
+import { LogLevel, logger, Log, LogClass } from '../../log';
 import { MethodType, MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
+import { AMQP } from './amqp';
 import * as domain from 'domain';
-import * as _ from 'lodash';
+
 
 
 const metadataKey = 'methodus';
@@ -28,10 +29,12 @@ export class MQ extends BaseServer {
     @Log()
     async _sendEvent(methodEvent: MethodEvent) {
         return new Promise((resolve, reject) => {
+            console.log(AMQP.connect);
+
             AMQP.connect(this.options).then((conn) => {
                 conn.createChannel().then((ch) => {
                     let exchangeArr = methodEvent.exchanges || ['event-bus'];
-                    exchangeArr.map(exchange => {
+                    exchangeArr.forEach(exchange => {
                         ch.publish(exchange, methodEvent.name, new Buffer(JSON.stringify(methodEvent)));
                     });
                 });
@@ -52,7 +55,7 @@ export class MQ extends BaseServer {
             AMQP.connect(this.options).then((conn) => {
 
                 conn.createChannel().then((ch) => {
-                    const q = methodinformation.name;
+
                     const methodMessage = new MethodMessage(methodinformation.propertyKey, paramsMap, methodinformation, functionArgs);
                     const stringMessage = JSON.stringify(methodMessage);
 

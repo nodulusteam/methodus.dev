@@ -2,7 +2,7 @@ import 'reflect-metadata';
 let metadataKey = 'params';
 let methodMetadataKey = 'methodus';
 
-import { logger, Log, LogClass } from './logger';
+import { logger, Log, LogClass } from './log';
 import { fp } from './fp';
 
 function pushParams(target, propertyKey, param) {

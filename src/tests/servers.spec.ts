@@ -1,4 +1,4 @@
-process.env.test = 'true';
+ 
 
 import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from 'alsatian';
 import { TestClass } from './classes/TestClass';

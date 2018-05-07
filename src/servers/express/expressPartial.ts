@@ -3,7 +3,7 @@ import { MethodDescriptor, Verbs } from '../../config';
 import * as path from 'path';
 import { MethodError, MethodResult, MethodEvent } from '../../response/';
 import { fp } from '../../fp';
-import { LogLevel, logger, Log, LogClass } from '../../logger';
+import { LogLevel, logger, Log, LogClass } from '../../log';
 import { BaseServer } from '../base';
 import { Request } from './Request'
 import { MethodType } from '../../';

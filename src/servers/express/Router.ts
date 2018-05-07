@@ -1,9 +1,10 @@
+import { logger, Log, LogClass } from '../../log';
 import * as express from 'express';
 import { MethodDescriptor, Verbs } from '../../config';
 import * as path from 'path';
 import { MethodError, MethodResult, MethodEvent } from '../../response';
 import { fp } from '../../fp';
-import { logger, Log, LogClass } from '../../logger';
+
 import { MethodType } from '../../index';
 
 
@@ -13,7 +14,7 @@ export class ExpressRouter {
     constructor(obj: any, methodType: MethodType, app: any) {
         let methodus = fp.maybeMethodus(obj);
         let proto = fp.maybeProto(obj);
-        
+
 
         const globalMiddlewares = [];
         if (methodus.middlewares) {
@@ -51,10 +52,10 @@ export class ExpressRouter {
                         }
                     });
                 }
-                functionArray.push(proto[item.propertyKey].bind(obj));                
+                functionArray.push(proto[item.propertyKey].bind(obj));
                 autoRouter[verb](route, ...functionArray)
             });
-            app.use('/', autoRouter);          
+            app.use('/', autoRouter);
         });
     }
 }

@@ -1,4 +1,4 @@
-process.env.test = false;
+ 
 import { Gateway } from './classes/Gateway';
 import { FirstClass } from './classes/FirstClass';
 import { SecondClass } from './classes/SecondClass';

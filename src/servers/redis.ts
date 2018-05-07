@@ -6,7 +6,7 @@ import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../respon
 import { MethodusClassConfig, MethodType } from '../config';
 
 import { BaseServer } from './base';
-import { LogLevel, logger, Log, LogClass } from '../logger';
+import { LogLevel, logger, Log, LogClass } from '../log';
 const redis = require('redis');
 import { fp } from '../fp';
 const redis_addr = '//192.168.99.100:32768';

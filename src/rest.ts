@@ -1,5 +1,5 @@
 import { MethodResult, MethodError } from './response';
-import { logger, Log, LogClass } from './logger';
+import { logger, Log, LogClass } from './log';
 
 
 

@@ -4,7 +4,7 @@ import { MethodusConfig, MethodusConfigFromFile, ServerType, MethodType, ServerC
 import { MethodEvent } from './response/';
 import { fp } from './fp'
 let metadataKey = 'methodus';
-import { logger, Log, LogClass, LogLevel } from './logger';
+import { logger, Log, LogClass, LogLevel } from './log';
 import http = require('http');
 import colors = require('colors');
 import { ClassContainer } from './class-container';

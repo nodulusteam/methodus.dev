@@ -1,7 +1,7 @@
 const yaml = require('js-yaml'),
     fs = require('fs');
 
-import { logger, Log, LogClass } from './logger';
+import { logger, Log, LogClass } from './log';
 
 const metadataKey = 'methodus';
 
@@ -75,7 +75,7 @@ export class MethodusClassConfig {
     public resolver: Promise<any> | Function | string | any | string
 }
 
-@LogClass(logger)
+@LogClass(console)
 export class MethodusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodusClassConfig>) {
         if (servers)

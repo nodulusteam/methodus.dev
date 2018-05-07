@@ -6,7 +6,7 @@ import { MethodError, MethodResult, MethodEvent } from '../response';
 import { fp } from '../fp';
 import { BaseServer } from './base';
 let metadataKey = 'methodus';
-import { logger, Log, LogClass } from '../logger';
+import { logger, Log, LogClass } from '../log';
 
 @LogClass(logger)
 export class SocketIO extends BaseServer {

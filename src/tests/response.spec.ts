@@ -1,4 +1,4 @@
-process.env.test = 'true';
+ 
 import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from 'alsatian';
 
 import { TestClass } from './classes/TestClass';
@@ -9,7 +9,7 @@ const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
 var childProcessDebug = require('child-process-debug');
 
-process.env.test = 'true';
+ 
 
 @TestFixture('Test all responses for all servers')
 export class Responses {

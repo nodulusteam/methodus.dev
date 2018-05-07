@@ -4,7 +4,7 @@ import 'reflect-metadata';
 import { fp } from '../fp';
 import { AMQP } from './rabbitmq';
 import { BaseServer } from './base';
-import { LogLevel, logger, Log, LogClass } from '../logger';
+import { LogLevel, logger, Log, LogClass } from '../log';
 import { MethodType, MethodusClassConfig } from '../config';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
 

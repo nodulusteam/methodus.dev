@@ -5,11 +5,11 @@ import 'reflect-metadata';
 import { fp } from '../../fp';
 import { AMQP, registerHandlers, registerWorkers } from './';
 import { BaseServer } from '../base';
-import { LogLevel, logger, Log, LogClass } from '../../logger';
+import { LogLevel, logger, Log, LogClass } from '../../log';
 import { MethodType, MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
 import * as domain from 'domain';
-import * as _ from 'lodash';
+
 const metadataKey = 'methodus';
 
 
@@ -21,7 +21,7 @@ export class MQRouter {
     constructor(classType: any, connectionOptions: ConnectionOptions) {
         this.options = connectionOptions;
         let proto = fp.maybeProto(classType);
-        let methodus = fp.maybeMethodus(proto);
+       
 
         // let methodinformation: MethodusClassConfig = config.classes.get(methodus.name);
         let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, proto) || {};
