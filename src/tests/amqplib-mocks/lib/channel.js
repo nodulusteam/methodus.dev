@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -6,8 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-/* eslint-disable max-lines */
-const _ = require('lodash');
+Object.defineProperty(exports, "__esModule", { value: true });
+const __1 = require("../../..");
 const shortid = require('shortid');
 const sinon = require('sinon');
 function setIfUndefined(object, prop, value) {
@@ -19,8 +20,8 @@ function findHandlers(connection, exchange, routingKey) {
     if (!exchange) {
         return {};
     }
-    const filtered = _.filter(exchange.bindings, binding => binding.regex.test(routingKey));
-    return _.transform(filtered, (result, binding) => {
+    const filtered = exchange.bindings.filter(binding => binding.regex.test(routingKey));
+    return __1.fp.transform(filtered, (result, binding) => {
         if (binding.queueName) {
             const queue = connection.queues[binding.queueName];
             return Object.assign(result, queue.consumers || {});
@@ -35,7 +36,7 @@ function findHandlers(connection, exchange, routingKey) {
 }
 function routeMessages(consumers, message) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield Promise.all(_.map(consumers, (handler) => __awaiter(this, void 0, void 0, function* () {
+        yield Promise.all(consumers.forEach((handler) => __awaiter(this, void 0, void 0, function* () {
             var buf = Buffer.from(JSON.stringify({ result: { 'add': 'added' } }), 'utf8');
             let messageResult = { properties: message.properties, content: buf };
             return handler(messageResult);

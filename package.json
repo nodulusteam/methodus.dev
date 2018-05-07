@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "0.0.10",
+    "version": "0.0.17",
     "description": "dynamic rpc components",
     "main": "index.js",
     "directories": {
@@ -9,7 +9,7 @@
     "scripts": {
         "pretest": "tsc",
         "prepare": "npm test",
-        "prepublishOnly": "npm version patch -message \"[VER] automatic tag commit by npm. Reviewer: npm\"",
+        "prepublishOnly": "npm version patch",
         "test": "set test='true'&alsatian src/tests/*.spec.js ",
         "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
@@ -56,7 +56,6 @@
         "express": "^4.15.3"
     },
     "devDependencies": {
-        "@types/lodash": "4.14.79",
         "@types/node": "^7.0.31",
         "alsatian": "^2.0.0",
         "redis-mock": "^0.19.0"

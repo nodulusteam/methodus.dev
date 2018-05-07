@@ -6,13 +6,15 @@ import { fp } from '../../fp';
 import { AMQP } from './amqp';
 import { BaseServer } from '../base';
 import { LogLevel, logger, Log, LogClass } from '../../log';
-import { MethodType, MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
+import { MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
+import { MethodType, ServerType } from '../../interfaces';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
 import * as domain from 'domain';
  
 
 
-export async function registerHandlers(proto,options) {
+
+export async function registerHandlers(proto, options) {
 
     return new Promise((resolve, reject) => {
         let foundEvents = false;
@@ -21,18 +23,18 @@ export async function registerHandlers(proto,options) {
             var dom = domain.create();
             foundEvents = true;
             dom.on('error', () => {
-                registerHandlers(proto,options)
+                registerHandlers(proto, options)
             });
 
             dom.run(() => {
                 AMQP.connect(options).then((conn) => {
                     conn.createChannel().then((ch) => {
-                        let exchangeArr = _.uniq(Object.keys(proto.methodus._events).map(event => proto.methodus._events[event].exchange));
+                        let exchangeArr = fp.unique(Object.keys(proto.methodus._events).map(event => proto.methodus._events[event].exchange));
                         if (exchangeArr.length === 0) {
                             exchangeArr = ['event-bus'];
                         }
                         logger.log(this, exchangeArr);
-                        exchangeArr.map(exchange => {
+                        exchangeArr.forEach(exchange => {
                             //  let exchange = proto.methodus.exchange || 'event-bus';
 
                             ch.assertQueue('', { exclusive: true, durable: true }).then((q) => {

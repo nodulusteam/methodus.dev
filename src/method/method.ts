@@ -1,10 +1,11 @@
 const excludedProps = ['constructor'];
 
 import 'reflect-metadata';
-import { MethodusConfig, MethodDescriptor, MethodType, ServerType, MethodusConfigurations } from '../config';
+import { MethodusConfig, MethodDescriptor, MethodusConfigurations } from '../config';
 import { MethodResult, MethodError, MethodEvent } from '../response';
 import { Servers } from '../servers/serversList';
 import { fp } from '../fp';
+import { MethodType, ServerType} from '../interfaces';
 import { logger, Log, LogClass } from '../log';
 import { RestParser, RestResponse, Verbs } from '../rest';
 import { ClassContainer } from '../class-container';
@@ -32,9 +33,7 @@ const METHODLOG = 'methodus::Method';
 export function Method(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
         target.methodus = target.methodus || { _events: {}, _descriptors: {} }
-        if (middlewares) {
-            middlewares = middlewares;
-        }
+        
         let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
         if (target.methodus._descriptors[propertyKey]) {
             metaObject = Object.assign(metaObject, { params: target.methodus._descriptors[propertyKey].params });

@@ -1,10 +1,11 @@
- // <references path='../interfaces/methodus.ts' />
- 
- const debug = require('debug')('tmla:methodus');
+// <references path='../interfaces/methodus.ts' />
+
+const debug = require('debug')('tmla:methodus');
 import 'reflect-metadata';
 import { MethodResult, MethodError, MethodEvent, MethodMessage } from '../response';
-import { MethodusClassConfig, MethodType } from '../config';
-
+import { MethodusClassConfig } from '../config';
+import { MethodType, ServerType } from '../interfaces';
+import { Router } from '../interfaces'
 import { BaseServer } from './base';
 import { LogLevel, logger, Log, LogClass } from '../log';
 const redis = require('redis');
@@ -14,7 +15,7 @@ const metadataKey = 'methodus';
 
 @LogClass(logger)
 export class Redis extends BaseServer {
-    classRouters: Methodus.Router[];
+    classRouters: Router[];
     options: any;
     constructor(options) {
         super();
@@ -64,7 +65,7 @@ export class Redis extends BaseServer {
                 }
             });
 
-            const q = methodinformation.name;
+             
             const methodMessage = new MethodMessage(methodinformation.propertyKey, paramsMap, methodinformation, functionArgs, corr);
             await this.publish(pub, methodinformation, methodMessage);
 
@@ -89,7 +90,7 @@ export class RedisServer {
 }
 
 @LogClass(logger)
-export class RedisRouter implements Methodus.Router {
+export class RedisRouter implements Router {
     public router: any;
     constructor(obj: any) {
         let proto = fp.maybeProto(obj);

@@ -2,8 +2,8 @@
 import 'reflect-metadata';
 import { logger } from '../log/';
 let metadataKey = 'methodus';
-import { ServerType } from '../config';
 
+import { MethodType, ServerType } from '../interfaces';
 /** the MethodConfig decorator registers the controller as a router
  *  @param {string} name - the identifier of the controller in the resolver.
  *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
@@ -15,10 +15,10 @@ export function ServerConfiguration(serverType: ServerType, options: any) {
         original.prototype.options.servers.push({ serverType: serverType, options: options })
         // the new constructor behaviour
         var f: any = function (configOptions: { servers: any[], classes: any[] }) {
-            if (!configOptions || Object.keys(configOptions).length === 0)
-                configOptions = { servers: [], classes: [] };
+            // if (!configOptions || Object.keys(configOptions).length === 0)
+            //     configOptions = { servers: [], classes: [] };
 
-          
+
             let instance = new original(original.prototype.options);
             return instance;
         }

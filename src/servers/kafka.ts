@@ -5,7 +5,8 @@ import { fp } from '../fp';
 import { AMQP } from './rabbitmq';
 import { BaseServer } from './base';
 import { LogLevel, logger, Log, LogClass } from '../log';
-import { MethodType, MethodusClassConfig } from '../config';
+import { MethodusClassConfig } from '../config';
+import { MethodType, ServerType } from '../interfaces';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
 
 const metadataKey = 'methodus';
@@ -64,7 +65,7 @@ export class Kafka extends BaseServer {
 
 
 
-            let km = new KeyedMessage('key', 'message'),
+            let
                 payloads = [
                     { topic: methodinformation.name, messages: stringMessage }
                 ];
@@ -152,7 +153,7 @@ export class KafkaRouter {
 
                     consumer.on('message', async (message) => {
                         let parsedMessage = fp.maybeJson(message.value) as MethodMessage;
-                        let result = await proto[parsedMessage.to](...parsedMessage.args);
+                        await proto[parsedMessage.to](...parsedMessage.args);
 
 
                     });

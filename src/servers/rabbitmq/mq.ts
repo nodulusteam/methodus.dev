@@ -7,7 +7,8 @@ import { MQRouter } from './router';
 
 import { BaseServer } from '../base';
 import { LogLevel, logger, Log, LogClass } from '../../log';
-import { MethodType, MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
+import { MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
+import { MethodType, ServerType } from '../../interfaces';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
 import { AMQP } from './amqp';
 import * as domain from 'domain';

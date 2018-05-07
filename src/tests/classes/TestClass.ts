@@ -21,7 +21,7 @@ export class TestClass {
     constructor() { }
 
     @Method(Verbs.Get, '/api/testclass/:id/:name')
-    public action1(@Param('id') id: number, @Param('name') name: string) {
+    public async action1(@Param('id') id: number, @Param('name') name: string) {
         console.log(`action1: ${id} ${name}`);
         return new MethodResult({ id: id, name: name, add: id * id });
     }
@@ -35,7 +35,7 @@ export class TestClass {
 
 
     @Method(Verbs.Post, '/api/testclass/posts')
-    public action2(@Body() item) {
+    public async action2(@Body() item) {
 
         return new MethodResult(item);
 
@@ -45,15 +45,15 @@ export class TestClass {
 
 
     @Method(Verbs.Get, '/api/testclass/action5')
-    public action5(@Query('someObject', Deserializable) someObject: Deserializable, @Query('minDate', Date) minDate: Date, @Query('maxDate', Date) maxDate: Date) {
+    public async action5(@Query('someObject', Deserializable) someObject: Deserializable, @Query('minDate', Date) minDate: Date, @Query('maxDate', Date) maxDate: Date): Promise<any> {
         console.log(someObject, minDate, maxDate);
-        return minDate;
+        return new MethodResult(minDate);
     }
 
 
 
     @Method(Verbs.Delete, '/api/testclass/action3')
-    public action3() {
+    public async action3() {
         console.log('action3');
     }
 }

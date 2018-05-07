@@ -1,7 +1,8 @@
 const excludedProps = ['constructor'];
 
 import 'reflect-metadata';
-import { MethodusConfig, MethodDescriptor, MethodType, ServerType, MethodusConfigurations } from '../config';
+import { MethodusConfig, MethodDescriptor, MethodusConfigurations } from '../config';
+import { MethodType, ServerType } from '../interfaces';
 import { MethodResult, MethodError, MethodEvent } from '../response';
 import { Servers } from '../servers/serversList';
 import { fp } from '../fp';
@@ -33,9 +34,7 @@ const METHODLOG = 'methodus::Method';
 export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
         target.methodus = target.methodus || { _events: {}, _descriptors: {} }
-        if (middlewares) {
-            middlewares = middlewares;
-        }
+        
         let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
         if (target.methodus._descriptors[propertyKey]) {
             metaObject = Object.assign(metaObject, { params: target.methodus._descriptors[propertyKey].params });
@@ -156,12 +155,12 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
 
             }
 
-           
+
 
             if (ParserResponse.isRest) {
                 if (methodResult.toString() === '[object Promise]') {
                     methodResult.then((resolvedPromise: any) => {
-                      
+
                         // methodResult = new MethodResult(StreamFromPromise(methodResult, { objectmode: true }));
                         new RestResponse(args, resolvedPromise, restHeaders);
                     });
@@ -176,7 +175,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
                 return methodResult;
 
             }
- 
+
         };
         return descriptor;
     }

@@ -1,6 +1,7 @@
 import 'reflect-metadata';
 import { Servers, Express, ExpressRouter, ExpressPartial, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
-import { MethodusConfig, MethodusConfigFromFile, ServerType, MethodType, ServerConfig, MethodusClassConfig } from './config';
+import { MethodusConfig, MethodusConfigFromFile, ServerConfig, MethodusClassConfig } from './config';
+import { MethodType, ServerType } from './interfaces';
 import { MethodEvent } from './response/';
 import { fp } from './fp'
 let metadataKey = 'methodus';
@@ -109,7 +110,7 @@ export class Server {
         //we should rearrange the configuration in order to load them in the right order
         // express / http / socketio
         let objectForOrder: any = {};
-        this.config.servers.map((server: ServerConfig) => {
+        this.config.servers.forEach((server: ServerConfig) => {
             if (!objectForOrder[server.type]) {
                 objectForOrder[server.type] = [];
             }
@@ -124,7 +125,7 @@ export class Server {
             ServerType.Redis,
             ServerType.Kafka];
 
-        loadOrder.map(async (serverFamily: string) => {
+        loadOrder.forEach(async (serverFamily: string) => {
             if (objectForOrder[serverFamily] && objectForOrder[serverFamily].length) {
                 for (let i = 0; i < objectForOrder[serverFamily].length; i++) {
                     let server = objectForOrder[serverFamily][i];
@@ -165,7 +166,7 @@ export class Server {
                                     Servers.set(this.instanceId, server.type, partialExpress);
                                 }
 
-                                this.config.servers.map((serverConfiguration) => {
+                                this.config.servers.forEach((serverConfiguration) => {
                                     if (serverConfiguration.type === serverType && serverConfiguration.onStart)
                                         onStart = serverConfiguration.onStart;
                                 })
@@ -272,10 +273,10 @@ export class Server {
         let serverInstance: any = this;
 
 
-      
+
 
         //this.config.servers
-        Object.keys(Servers.instances).map((serverId) => {
+        Object.keys(Servers.instances).forEach((serverId) => {
             const server = Servers.instances[serverId];
             if (_class.classType) {
 
@@ -286,7 +287,7 @@ export class Server {
 
                 if (server[_class.serverType]) {
                     metaObject.methodType = _class.methodType;
-                 
+
                     //extract metadata for class and method
                     let configName = methodusClass.name;
                     if (!configName && methodusClass.constructor)
