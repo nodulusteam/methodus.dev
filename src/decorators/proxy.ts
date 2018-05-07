@@ -8,7 +8,7 @@ import * as path from 'path';
 @LogClass(AutoLogger)
 export class Proxy {
 
-    static ProxyClass(className: string, localClassPath) {
+    public static ProxyClass(className: string, localClassPath) {
         return (target: any) => {
 
             var methodus = fp.maybeMethodus(target);

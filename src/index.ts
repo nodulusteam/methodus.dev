@@ -1,4 +1,5 @@
 export * from './log';
+export * from './interfaces/methodus';
 export * from './fp';
 export * from './method/index';
 export * from './response';

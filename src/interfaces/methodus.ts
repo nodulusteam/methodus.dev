@@ -1,47 +1,51 @@
-declare module Methodus {
-    interface IMethodusClassConfig {
-        methodType: MethodType;
-        classType: any;
-        serverType: ServerType;
-    }
 
-    interface Router {
+export interface IMethodusClassConfig {
+    methodType: MethodType;
+    classType: any;
+    serverType: ServerType;
+}
 
+export interface Router {
 
-    }
-
-    interface Server {
-        sockets?: any;
-        useClass(classType: any, methodType: MethodType): void;
-        classRouters: Router[];
-        config: IMethodusConfig;
-        _send(channel: any, functionArgs: any, message: any, paramsMap?: any): any;
-    }
-
-    interface IMethodusConfig {
-        classes: Map<string, IMethodusClassConfig>;
-        servers?: IServerConfig[]
-        port: number;
-
-    }
-
-    interface IServerConfig {
-        type: Methodus.ServerType;
-        options: any;
-    }
-
-    enum MethodType {
-        Local = 'Local',
-        Http = 'Http',
-        MQ = 'MQ',
-        Socket = 'Socket',
-    }
-
-    enum ServerType {
-        Express = 'express',
-        RabbitMQ = 'amqp',
-        Redis = 'redis',
-        Socket = 'socketio'
-    }
 
 }
+
+export interface IServer {
+    sockets?: any;
+    useClass(classType: any, methodType: MethodType): void;
+    classRouters: Router[];
+    config: IMethodusConfig;
+    _send(channel: any, functionArgs: any, message: any, paramsMap?: any): any;
+}
+
+export interface IMethodusConfig {
+    classes: Map<string, IMethodusClassConfig>;
+    servers?: IServerConfig[]
+    port: number;
+
+}
+
+export interface IServerConfig {
+    type: ServerType;
+    options: any;
+}
+
+export const enum MethodType {
+    Local = 'Local',
+    Http = 'Http',
+    MQ = 'MQ',
+    Redis = 'Redis',
+    Socket = 'Socket',
+    Kafka = 'Kafka',
+    Mock = 'Mock'
+}
+
+export const enum ServerType {
+    Express = 'express',
+    ExpressPartial = 'express',
+    RabbitMQ = 'amqp',
+    Redis = 'redis',
+    Socket = 'socketio',
+    Kafka = 'kafka'
+}
+

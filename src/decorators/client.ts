@@ -1,7 +1,8 @@
 import 'reflect-metadata';
 import { logger } from '../log';
-import { MethodType } from '../config';
-import { ServerType } from '../'
+
+import { MethodType, ServerType } from '../interfaces';
+
 
 let metadataKey = 'methodus';
 

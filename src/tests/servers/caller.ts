@@ -14,7 +14,7 @@ async function init() {
     }
 
 
-    const server = await new Server(process.env.PORT).configure(config)
+     await new Server(process.env.PORT).configure(config)
         .plugins(['@tmla-plugins/describe'])
         .start();
 

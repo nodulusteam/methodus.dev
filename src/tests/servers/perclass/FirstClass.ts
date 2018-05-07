@@ -20,7 +20,7 @@ if (process.env.servers) {
 
 
 async function init() {
-    const server = await new Server(process.env.PORT).configure(config).start();
+     await new Server(process.env.PORT).configure(config).start();
 }
 init();
 

@@ -1,5 +1,5 @@
-/* eslint-disable max-lines */
-const _ = require('lodash');
+import { fp } from "../../..";
+
 const shortid = require('shortid');
 const sinon = require('sinon');
 
@@ -14,8 +14,8 @@ function findHandlers(connection, exchange, routingKey) {
         return {};
     }
 
-    const filtered = _.filter(exchange.bindings, binding => binding.regex.test(routingKey));
-    return _.transform(filtered, (result, binding) => {
+    const filtered = exchange.bindings.filter(binding => binding.regex.test(routingKey));
+    return fp.transform(filtered, (result, binding) => {
         if (binding.queueName) {
             const queue = connection.queues[binding.queueName];
             return Object.assign(result, queue.consumers || {});
@@ -30,7 +30,7 @@ function findHandlers(connection, exchange, routingKey) {
 }
 
 async function routeMessages(consumers, message) {
-    await Promise.all(_.map(consumers, async handler => {
+    await Promise.all(consumers.forEach(async handler => {
         var buf = Buffer.from(JSON.stringify({ result: { 'add': 'added' } }), 'utf8');
         let messageResult = { properties: message.properties, content: buf }
         return handler(messageResult);

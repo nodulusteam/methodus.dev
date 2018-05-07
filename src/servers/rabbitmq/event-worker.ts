@@ -5,7 +5,8 @@ import { fp } from '../../fp';
 import { AMQP } from './amqp';
 import { BaseServer } from '../base';
 import { LogLevel, logger, Log, LogClass } from '../../log';
-import { MethodType, MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
+import { MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
+import { MethodType, ServerType } from '../../interfaces';
 import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
 import * as domain from 'domain';
  
@@ -26,11 +27,11 @@ export async function registerWorkers(proto, options) {
             dom.run(() => {
                 AMQP.connect(options).then((conn) => {
                     conn.createChannel().then((ch) => {
-                        let exchangeArr = _.uniq(Object.keys(proto.methodus._workevents).map(event => proto.methodus._workevents[event].exchange));
+                        let exchangeArr = fp.unique(Object.keys(proto.methodus._workevents).map(event => proto.methodus._workevents[event].exchange));
                         if (exchangeArr.length === 0) {
                             exchangeArr = ['event-bus'];
                         }
-                        exchangeArr.map(exchange => {
+                        exchangeArr.forEach(exchange => {
                             //  let exchange = proto.methodus.exchange || 'event-bus';
 
                             ch.assertQueue(proto.methodus.workQueueName, { exclusive: false, durable: true }).then((q) => {

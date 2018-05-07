@@ -37,7 +37,7 @@ export class Servers {
             config.use(MiddleWaresClass2, MethodType.Local,serverType);
             
 
-            const server = new Server(process.env.PORT).configure(config).start();
+           new Server(process.env.PORT).configure(config).start();
 
 
 

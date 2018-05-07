@@ -1,12 +1,12 @@
 import { TestClass } from '../classes/TestClass';
 import { Server, MethodType, MethodusConfig } from '../../index';
-import {} from './servers'
+
 
 async function test() {
 
-    
-    let server = new Server(process.env.PORT);
-   // server.app.useClass(TestClass);
+
+    new Server(process.env.PORT);
+    // server.app.useClass(TestClass);
 
     let myClass = new TestClass();
     myClass.action1(1, 'roi');

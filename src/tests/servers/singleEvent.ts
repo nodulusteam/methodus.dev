@@ -15,7 +15,7 @@ if (process.env.servers) {
     })
 }
 (async () => {
-    const server = await new Server(process.env.PORT).configure(config).start();
+     await new Server(process.env.PORT).configure(config).start();
 
 })();
 

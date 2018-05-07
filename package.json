@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "0.0.10",
+    "version": "0.0.13",
     "description": "dynamic rpc components",
     "main": "index.js",
     "directories": {
@@ -13,7 +13,12 @@
         "test": "set test='true'&alsatian src/tests/*.spec.js ",
         "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
-        "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
+        "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report",
+        "postpublish": "npm run tag && npm run contract-publish && npm run client-publish",
+        "contract": "node ./node_modules/@methodus/contracts/build.js ./build.json",
+        "client": "node ./node_modules/@methodus/contracts/client.js ./build.json",
+        "contract-publish": "node ./node_modules/@methodus/contracts/build.js ./build.json -p",
+        "client-publish": "node ./node_modules/@methodus/contracts/client.js ./build.json -p"
     },
     "author": "Roi ben-haim",
     "license": "ISC",
@@ -56,7 +61,6 @@
         "express": "^4.15.3"
     },
     "devDependencies": {
-        "@types/lodash": "4.14.79",
         "@types/node": "^7.0.31",
         "alsatian": "^2.0.0",
         "redis-mock": "^0.19.0"

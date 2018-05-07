@@ -3,7 +3,8 @@
 const excludedProps = ['constructor'];
 const debug = require('debug')('tmla:methodus');
 import 'reflect-metadata';
-import { MethodusConfig, EventDescriptor, MethodType, ServerType } from '../config';
+import { MethodusConfig, EventDescriptor } from '../config';
+import { MethodType, ServerType } from '../interfaces';
 import { MethodResult, MethodError } from '../response';
 import { fp } from '../fp';
 import { logger, Log, LogClass } from '../log';
@@ -20,7 +21,7 @@ export function Event(name: string, exchange: string) {
         target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
         let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
-        target.methodus._events[name] = metaObject as EventDescriptor;
+        target.methodus._events[name] = metaObject;
         return descriptor;
     }
 }
@@ -31,7 +32,7 @@ export function EventSingular(name: string, exchange: string) {
         target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
         let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
-        target.methodus._workevents[name] = metaObject as EventDescriptor;
+        target.methodus._workevents[name] = metaObject;
         return descriptor;
     }
 }
