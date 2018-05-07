@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "0.0.11",
+    "version": "0.0.12",
     "description": "dynamic rpc components",
     "main": "index.js",
     "directories": {
