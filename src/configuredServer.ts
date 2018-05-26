@@ -1,6 +1,7 @@
 
 import { Server } from './server';
-import { MethodusConfig, MethodusConfigFromFile, MethodType, ServerType } from './config';
+import { MethodusConfig, MethodusConfigFromFile } from './config';
+import { MethodType, ServerType } from './interfaces';
 import { MethodEvent } from './response';
 import { fp } from './fp';
 import { logger, Log, LogClass } from './log/';
@@ -18,7 +19,7 @@ export class ConfiguredServer extends Server {
             this.config.run(element.serverType, element.options);
         });
         options.classes.forEach(element => {
-            this.config.use(element.controller, element.methodType,element.serverType, element.resolver);
+            this.config.use(element.controller, element.methodType, element.serverType, element.resolver);
         });
 
         (async () => {

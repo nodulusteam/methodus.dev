@@ -56,7 +56,6 @@
         "express": "^4.15.3"
     },
     "devDependencies": {
-        "@types/lodash": "4.14.79",
         "@types/node": "^7.0.31",
         "alsatian": "^2.0.0",
         "redis-mock": "^0.19.0"

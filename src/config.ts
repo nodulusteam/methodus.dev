@@ -4,10 +4,10 @@ const yaml = require('js-yaml'),
 import { logger, Log, LogClass } from './log';
 
 const metadataKey = 'methodus';
+import { MethodType, ServerType} from './interfaces';
 
 
-
-export enum Verbs {
+export const enum Verbs {
     Get = 'GET',
     Post = 'POST',
     Put = 'PUT',
@@ -17,15 +17,7 @@ export enum Verbs {
 
 }
 
-export enum MethodType {
-    Local = 'Local',
-    Http = 'Http',
-    MQ = 'MQ',
-    Redis = 'Redis',
-    Socket = 'Socket',
-    Kafka = 'Kafka',
-    Mock = 'Mock'
-}
+
 
 export interface MethodDescriptor {
     verb: Verbs;
@@ -36,14 +28,7 @@ export interface MethodDescriptor {
     params: any[]
 }
 
-export enum ServerType {
-    Express = 'express',
-    ExpressPartial = 'express',
-    RabbitMQ = 'amqp',
-    Redis = 'redis',
-    Socket = 'socketio',
-    Kafka = 'kafka'
-}
+ 
 
 export interface EventDescriptor extends MethodDescriptor {
     name: string;

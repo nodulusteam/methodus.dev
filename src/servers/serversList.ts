@@ -4,7 +4,7 @@ import { MethodEvent, MethodError } from '../response/'
 
 
 import { Request } from '../servers/express/Request';
-import { ServerType } from '..';
+import { MethodType, ServerType } from '../interfaces';
 
 
 export class ServersList {
@@ -55,13 +55,9 @@ export class ServersList {
                 const request = new Request();
 
 
-                // this.resolver = () => {
-                //     return resolver;
-                // }
 
                 let baseUrl = methodus.resolver();
                 if (baseUrl) {
-                    let myUri = baseUrl + methodus.route;
                     return request.sendRequest(methodus.verb, baseUrl + methodus.route, functionArgs, paramsMap, securityContext);
                 } else {
                     return new MethodError('no server found for this method' + methodus.route, 302);

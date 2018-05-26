@@ -1,7 +1,8 @@
 const excludedProps = ['constructor'];
 
 import 'reflect-metadata';
-import { MethodusConfig, MethodDescriptor, MethodType, ServerType, MethodusConfigurations } from '../config';
+import { MethodusConfig, MethodDescriptor, MethodusConfigurations } from '../config';
+import { MethodType, ServerType} from '../interfaces';
 import { MethodResult, MethodError, MethodEvent } from '../response';
 import { Servers } from '../servers/serversList';
 import { fp } from '../fp';

@@ -3,6 +3,8 @@ const debug = require('debug')('tmla:methodus');
 
 import 'reflect-metadata';
 import { MethodError, MethodResult, MethodEvent } from '../response';
+import { Router,IServer } from '../interfaces';
+
 import { fp } from '../fp';
 import { BaseServer } from './base';
 let metadataKey = 'methodus';
@@ -14,7 +16,7 @@ export class SocketIO extends BaseServer {
     constructor(options, httpServer) {
         super();
         this.classRouters = [];
-        var io: Methodus.Server;
+        var io: IServer;
         if (httpServer)
             this._app = require('socket.io')(httpServer);
         else
@@ -93,7 +95,7 @@ export class SocketIO extends BaseServer {
 }
 
 @LogClass(logger)
-export class SocketIORouter implements Methodus.Router {
+export class SocketIORouter implements Router {
     public router: any;
     constructor(obj: any, socket: any) {
         let proto = fp.maybeProto(obj);

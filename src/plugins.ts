@@ -1,4 +1,6 @@
-import { MethodusConfig, MethodusConfigFromFile, ServerType, MethodType, ServerConfig, MethodusClassConfig } from './config';
+import { MethodusConfig, MethodusConfigFromFile, ServerConfig, MethodusClassConfig } from './config';
+import { MethodType, ServerType } from './interfaces';
+
 import * as path from 'path';
 export class PluginLoader {
     config(serverConfiguration: MethodusConfig, pluginList: string[]) {

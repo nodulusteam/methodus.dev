@@ -21,5 +21,5 @@ if (process.env.servers) {
 }
 
 
-const server = new Server(process.env.PORT).configure(config).start();
+  new Server(process.env.PORT).configure(config).start();
 
