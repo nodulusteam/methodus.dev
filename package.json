@@ -9,7 +9,7 @@
     "scripts": {
         "pretest": "tsc",
         "prepare": "npm test",
-        "prepublishOnly": "npm version patch -message \"[VER] automatic tag commit by npm. Reviewer: npm\"",
+        "prepublishOnly": "npm version patch",
         "test": "set test='true'&alsatian src/tests/*.spec.js ",
         "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
