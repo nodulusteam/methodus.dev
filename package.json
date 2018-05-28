@@ -13,12 +13,7 @@
         "test": "set test='true'&alsatian src/tests/*.spec.js ",
         "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
-        "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report",
-        "postpublish": "npm run contract-publish && npm run client-publish",
-        "contract": "node ./node_modules/@methodus/contracts/build.js ./build.json",
-        "client": "node ./node_modules/@methodus/contracts/client.js ./build.json",
-        "contract-publish": "node ./node_modules/@methodus/contracts/build.js ./build.json -p",
-        "client-publish": "node ./node_modules/@methodus/contracts/client.js ./build.json -p"
+        "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
     },
     "author": "Roi ben-haim",
     "license": "ISC",
