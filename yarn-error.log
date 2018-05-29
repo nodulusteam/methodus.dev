@@ -1,8 +1,8 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+  C:\Program Files\nodejs\node.exe C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js unlink
 
 PATH: 
-  C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\RSA SecurID Token Common;C:\WINDOWS\system32\WindowsPowerShell\v1.0\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\WindowsPowerShell\v1.0\%;S_TOOLS%;C:\Users\rb136m\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Geth;C:\Go\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\rb136m\scoop\apps\gcc\current\bin;C:\Users\rb136m\scoop\shims;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Microsoft VS Code Insiders\bin;C:\phantomjs\bin;C:\Users\rb136m\AppData\Roaming\npm;C:\Users\rb136m\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\wkhtmltopdf\bin;C:\Go\bin
+  C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\RSA SecurID Token Common;C:\WINDOWS\system32\WindowsPowerShell\v1.0\;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\WindowsPowerShell\v1.0\%;S_TOOLS%;C:\Users\rb136m\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Geth;C:\Go\bin;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\windows\_SUPPORT\Tools;C:\Users\rb136m\scoop\apps\gcc\current\bin;C:\Users\rb136m\scoop\shims;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Microsoft VS Code Insiders\bin;C:\phantomjs\bin;C:\Users\rb136m\AppData\Roaming\npm;C:\Users\rb136m\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\wkhtmltopdf\bin;C:\Go\bin
 
 Yarn version: 
   1.5.1
@@ -16,7 +16,7 @@ Platform:
 npm manifest: 
   {
       "name": "@methodus/server",
-      "version": "0.0.10",
+      "version": "0.0.17",
       "description": "dynamic rpc components",
       "main": "index.js",
       "directories": {
@@ -25,7 +25,7 @@ npm manifest:
       "scripts": {
           "pretest": "tsc",
           "prepare": "npm test",
-          "prepublishOnly": "npm version patch -message \"[VER] automatic tag commit by npm. Reviewer: npm\"",
+          "prepublishOnly": "npm version patch",
           "test": "set test='true'&alsatian src/tests/*.spec.js ",
           "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
           "servers": "tsc && alsatian src/tests/servers.spec.js ",
@@ -72,7 +72,6 @@ npm manifest:
           "express": "^4.15.3"
       },
       "devDependencies": {
-          "@types/lodash": "4.14.79",
           "@types/node": "^7.0.31",
           "alsatian": "^2.0.0",
           "redis-mock": "^0.19.0"
@@ -1792,16 +1791,10 @@ Lockfile:
     resolved "https://registry.npmjs.org/yeast/-/yeast-0.1.2.tgz#008e06d8094320c372dbc2f8ed76a0ca6c8ac419"
 
 Trace: 
-  Error: Command failed.
-  Exit code: 1
-  Command: C:\WINDOWS\system32\cmd.exe
-  Arguments: /d /s /c npm test
-  Directory: C:\projects\methodus-server\-methodus-server
-  Output:
-  
-      at ProcessTermError.MessageError (C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
-      at new ProcessTermError (C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:226:113)
-      at ChildProcess.<anonymous> (C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:30281:17)
-      at ChildProcess.emit (events.js:180:13)
-      at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+  Error: No registered module found called "@methodus/server".
+      at new MessageError (C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:186:110)
+      at Object.<anonymous> (C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:87795:15)
+      at Generator.next (<anonymous>)
+      at step (C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:98:30)
+      at C:\Users\rb136m\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:109:13
+      at <anonymous>

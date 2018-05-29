@@ -3,26 +3,25 @@ import { Servers } from '../servers'
 
 
 
-export class MethodResult {
-    private _on: any;
-    result: any;
+export class MethodResult<T= any> {
+    private _on: { [key: string]: Function } = {};
+    result: T;
     stream: any;
-    page: any;
+    page: number;
     total: number;
     statusCode: number;
     headers: any = {};
-    constructor(result, total?: number, page?: number) {
+    constructor(result: T, total?: number, page?: number) {
         this.result = result;
         if (total)
             this.total = total;
         if (page)
             this.page = page;
 
-        this._on = {};
-
     }
     pipe(streamToPipe) {
         this.stream = streamToPipe;
+        return this.stream;
     }
     setHeader(key, value) {
         this.headers[key] = value;
@@ -35,12 +34,13 @@ export class MethodResult {
 
 
 
-export class MethodResultStatus {
-    result: any;
-    page: any;
+
+export class MethodResultStatus<T= any> {
+    result: T;
+    page: number;
     total: number;
     statusCode: number;
-    constructor(result, statusCode: number, total?: number, page?: number) {
+    constructor(result: T, statusCode: number, total?: number, page?: number) {
         this.statusCode = statusCode;
 
         this.result = result;
