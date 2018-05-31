@@ -14,7 +14,7 @@ export function ServerConfiguration(serverType: ServerType, options: any) {
         original.prototype.options = original.prototype.options || { servers: [], classes: [] };
         original.prototype.options.servers.push({ serverType: serverType, options: options })
         // the new constructor behaviour
-        var f: any = function (configOptions: { servers: any[], classes: any[] }) {
+        var f: any = function (configOptions: { servers: any[], classes: any[], plugins: string[] }) {
             // if (!configOptions || Object.keys(configOptions).length === 0)
             //     configOptions = { servers: [], classes: [] };
 

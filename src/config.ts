@@ -4,7 +4,7 @@ const yaml = require('js-yaml'),
 import { logger, Log, LogClass } from './log';
 
 const metadataKey = 'methodus';
-import { MethodType, ServerType} from './interfaces';
+import { MethodType, ServerType } from './interfaces';
 
 
 export const enum Verbs {
@@ -28,7 +28,7 @@ export interface MethodDescriptor {
     params: any[]
 }
 
- 
+
 
 export interface EventDescriptor extends MethodDescriptor {
     name: string;
@@ -71,6 +71,7 @@ export class MethodusConfig {
     }
     public classes: Map<string, MethodusClassConfig> = new Map<string, MethodusClassConfig>();
     public servers: ServerConfig[];
+    public plugins: string[];
     public port: number;
     public use(classType: any, methodType: MethodType, serverType: ServerType, resolver?: Promise<any> | Function | string | any) {
         if (methodType === MethodType.Http && !resolver)

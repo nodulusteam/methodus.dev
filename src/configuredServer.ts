@@ -21,6 +21,9 @@ export class ConfiguredServer extends Server {
         options.classes.forEach(element => {
             this.config.use(element.controller, element.methodType, element.serverType, element.resolver);
         });
+        if (options.plugins) {
+            this.plugins(options.plugins)
+        }
 
         (async () => {
             await this.start();

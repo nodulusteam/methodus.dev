@@ -148,8 +148,8 @@ export class Server {
 
 
 
-                                    logger.info(this, colors.green(`> Starting REST server on port`, port));
-                                    console.log(colors.green(`> Starting REST server on port`, port));
+                                    logger.info(this, colors.green(`> Starting REST server on port ${port}`));
+                                    console.log(colors.green(`> Starting REST server on port ${port}`));
                                     this._app[serverType] = new Express(port, onStart);
                                     let app = Servers.set(this.instanceId, server.type, this._app[serverType]);
                                     this.app = app._app;
@@ -175,8 +175,8 @@ export class Server {
                             }
                         case ServerType.Socket:
                             {
-                                logger.info(this, colors.green(`> Starting SOCKETIO server on port`, port));
-                                console.log(colors.green(`> Starting SOCKETIO server on port`, port));
+                                logger.info(this, colors.green(`> Starting SOCKETIO server on port ${port}`));
+                                console.log(colors.green(`> Starting SOCKETIO server on port ${port}`));
 
                                 let httpServer = Servers.get(this.instanceId, 'http');
 
