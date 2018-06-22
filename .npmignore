@@ -6,7 +6,6 @@
 plugins
 logs
 node_modules
-examples
 config
 .vscode
 yarn.lock

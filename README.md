@@ -1,9 +1,25 @@
 # Methodus
 
-<img src="./logo.png" alt="Drawing" style="max-width: 200px!important;"/>
+### Greetings,
+my fellow adventures developer, I welcome you into Methodus. 
+You did not arrive here by mistake, nor was it an accident, it is your fate.
+Methodus will guide throght the evolution of your application as it grows and gains complexity.
+But first you should ask your self this:
 
-<hr/>
-<img src="./examples/resources/methodus.png" alt="Drawing" style="max-width: 200px!important;"/>
+1. Do you wish to build a nodejs based api monolithic server?
+2. Would you like to be able to break this monolith into micro-services as you scale it out?
+3. How about an automatic testing plugin, allowing you to auto document your apis and test them?
+4. Would you like to concentrate on your logic code only, without the need to wire it to a specific framework?
+5. How about event sourcing would you like some of that?
+6. Are you using typescript?
+7. Do you need a frontend for this server?
+
+Well,  
+
+
+
+
+
 
 
 **Methodus is a micro-service & RPC framework, so let's build a micro-service from scratch using this beautiful framework.**
@@ -89,7 +105,8 @@ public static async getByName( @Param('file_name') file_name, @SecurityContext()
 Methodus methods are automatiaclly loged using the Trace log level.
 you may have noticed the use of static methods for the controller class. this is not mandatory as you may use either static or instance approach,
 as long as you do that for all the methods in the class.
-Server activation
+
+### Server activation
 The controller is ready, let's bind it to a methodus server.
 in our node app we create an entry point in the form of host.ts file.
 this host file starts an express server using the configured port and binds our controller to it.
@@ -108,6 +125,7 @@ let server = await new Server(+configuration.port).configure(config).start();
 ```
 
 the async function is an IIFE  ( Immidiatly Invoked Function Expression) that executes the server code, but you may use any invocation method you see fit.
+
 if all goes well you should see
 ```
 __ _ _|_|_ _ _| _ 
