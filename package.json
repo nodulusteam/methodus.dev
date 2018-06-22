@@ -6,6 +6,17 @@
     "directories": {
         "test": "tests"
     },
+    "keywords": [
+        "microservice",
+        "rpc",
+        "eventsourcing",
+        "agnostic",
+        "independent",
+        "framework",
+        "typescript",
+        "bind",
+        "application"
+    ],
     "repository": {
         "type": "git",
         "url": "https://github.com/nodulusteam/-methodus-server"
