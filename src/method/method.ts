@@ -159,7 +159,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
             }
 
             if (methodResult && ParserResponse.isRest) {
-                new RestResponse(args, methodResult, restHeaders);
+                new RestResponse(args, methodResult, methodResult.headers);
                 return;
             }
             else {

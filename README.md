@@ -3,12 +3,12 @@
 ### Greetings,
 my fellow adventures developer, I welcome you into Methodus. 
 You did not arrive here by mistake, nor was it an accident, it is your fate.
-Methodus will guide throght the evolution of your application as it grows and gains complexity.
-But first you should ask your self this:
+Methodus will guide you through the evolution of your application as it grows and gains complexity.
+But first you should ask yourself this:
 
 1. Do you wish to build a nodejs based api monolithic server?
 2. Would you like to be able to break this monolith into micro-services as you scale it out?
-3. How about an automatic testing plugin, allowing you to auto document your apis and test them?
+3. How about an automatic testing plugin, allowing you to autodocument your apis and test them?
 4. Would you like to concentrate on your logic code only, without the need to wire it to a specific framework?
 5. How about event sourcing would you like some of that?
 6. Are you using typescript?
