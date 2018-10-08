@@ -60,7 +60,7 @@ export class MethodusClassConfig {
     public resolver: Promise<any> | Function | string | any | string
 }
 
-@LogClass(console)
+@LogClass(logger)
 export class MethodusConfig {
     constructor(servers?: ServerConfig[], map?: Map<string, MethodusClassConfig>) {
         if (servers)

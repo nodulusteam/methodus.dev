@@ -24,14 +24,14 @@ export class Servers {
     public async serverTest(serverType, methodType) {
         return new Promise(async (resolve, reject) => {
 
-            console.log('testing', serverType, methodType);
+           
             let ports = PortHelper();
             const staticResolve = 'http://127.0.0.1:' + ports.server;
             ServerHelper(ports.server, serverType, MethodType.Local).then(servers => {
                 Wait(1000 * 10).then(() => {
                     ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve).then(client => {
                         CallHelper().then(methodResult => {
-                            console.log(methodResult);
+                          
                             if (servers)
                                 servers.map(s => s.kill());
 

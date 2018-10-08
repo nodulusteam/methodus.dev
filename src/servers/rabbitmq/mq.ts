@@ -30,7 +30,7 @@ export class MQ extends BaseServer {
     @Log()
     async _sendEvent(methodEvent: MethodEvent) {
         return new Promise((resolve, reject) => {
-            console.log(AMQP.connect);
+         
 
             AMQP.connect(this.options).then((conn) => {
                 conn.createChannel().then((ch) => {

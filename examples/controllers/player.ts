@@ -9,7 +9,7 @@ export class Player {
 
     public async list() {
         let result = await PlayerModel.getAll();//<PlayerModel>.getById() DB.Player.find({ 'Id': playerId });
-        console.log(result);
+      
         return new MethodResult(result)
     }
 
@@ -28,7 +28,7 @@ export class Player {
     @Methodus.Method(Methodus.Verbs.Get, '/api/player/:player_id')
     public async read( @Methodus.Param('player_id') playerId: number) {
         let result = await PlayerModel.getById(playerId);//<PlayerModel>.getById() DB.Player.find({ 'Id': playerId });
-        console.log(result);
+      
         return new MethodResult(result, 100);
     }
 
