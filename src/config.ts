@@ -59,6 +59,10 @@ export class MethodusClassConfig {
     public serviceName: string;
     public resolver: Promise<any> | Function | string | any | string
 }
+export interface PluginEntry {
+    name: string;
+    options: any;
+}
 
 @LogClass(logger)
 export class MethodusConfig {
@@ -71,7 +75,7 @@ export class MethodusConfig {
     }
     public classes: Map<string, MethodusClassConfig> = new Map<string, MethodusClassConfig>();
     public servers: ServerConfig[];
-    public plugins: string[];
+    public plugins: PluginEntry[];
     public port: number;
     public use(classType: any, methodType: MethodType, serverType: ServerType, resolver?: Promise<any> | Function | string | any) {
         if (methodType === MethodType.Http && !resolver)

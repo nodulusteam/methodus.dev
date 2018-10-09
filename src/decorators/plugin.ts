@@ -10,12 +10,12 @@ let metadataKey = 'methodus';
  *  @param {string} name - the identifier of the controller in the resolver.
  *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
  */
-export function PluginConfiguration(name: string) {
+export function PluginConfiguration(name: string, options?: any) {
     return function (target: any) {
         var original = target.prototype.constructor;
         original.prototype.options = original.prototype.options || { servers: [], classes: [], plugins: [] };
 
-        original.prototype.options.plugins.push(name)
+        original.prototype.options.plugins.push({ name, options });
 
 
         // the new constructor behaviour

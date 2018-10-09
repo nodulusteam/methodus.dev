@@ -2,7 +2,7 @@ import { TestClass } from '../classes/TestClass';
 import { Server, ServerType, MethodType, MethodusConfig } from '../../index';
 const redis_addr = '//192.168.99.100:32771';
 const amqp = 'localhost:5672';
- 
+
 process.env.silent = false;
 async function init() {
     let config = new MethodusConfig();
@@ -14,8 +14,8 @@ async function init() {
     }
 
 
-     await new Server(process.env.PORT).configure(config)
-        .plugins(['@tmla-plugins/describe'])
+    await new Server(process.env.PORT).configure(config)
+        .plugins([{ name: '@tmla-plugins/describe', options: {}}])
         .start();
 
     //const server = await new Server(process.env.PORT).configure(config).start();

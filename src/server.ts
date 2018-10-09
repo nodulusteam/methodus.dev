@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Servers, Express, ExpressRouter, ExpressPartial, SocketIO, MQ, Redis, RedisServer, Kafka } from './servers';
-import { MethodusConfig, MethodusConfigFromFile, ServerConfig, MethodusClassConfig } from './config';
+import { MethodusConfig, MethodusConfigFromFile, ServerConfig, MethodusClassConfig, PluginEntry } from './config';
 import { MethodType, ServerType } from './interfaces';
 import { MethodEvent } from './response/';
 import { fp } from './fp'
@@ -23,7 +23,7 @@ export class Server {
     private _app: any = {};//IApp;
     private httpServer: any;
     private port: number = 0;
-    private _plugins: any;
+    private _plugins: PluginEntry[];
     public config: MethodusConfig;
     private instanceId: string;
     public serverKey: string;
@@ -54,7 +54,7 @@ export class Server {
 
 
     @Log()
-    plugins(plugins: string[]) {
+    plugins(plugins: PluginEntry[]) {
         this._plugins = plugins;
         return this;
     }

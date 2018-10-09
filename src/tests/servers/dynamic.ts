@@ -24,7 +24,7 @@ if (process.env.servers) {
 }
 async function init() {
     await new Server(process.env.PORT).configure(config)
-        .plugins(['@tmla-plugins/describe'])
+        .plugins([{ name: '@tmla-plugins/describe', options: {} }])
         .start();
 }
 
