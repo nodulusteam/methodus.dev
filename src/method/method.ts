@@ -5,7 +5,7 @@ import { MethodusConfig, MethodDescriptor, MethodusConfigurations } from '../con
 import { MethodResult, MethodError, MethodEvent } from '../response';
 import { Servers } from '../servers/serversList';
 import { fp } from '../fp';
-import { MethodType, ServerType} from '../interfaces';
+import { MethodType, ServerType } from '../interfaces';
 import { logger, Log, LogClass } from '../log';
 import { RestParser, RestResponse, Verbs } from '../rest';
 import { ClassContainer } from '../class-container';
@@ -33,7 +33,7 @@ const METHODLOG = 'methodus::Method';
 export function Method(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
         target.methodus = target.methodus || { _events: {}, _descriptors: {} }
-        
+
         let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
         if (target.methodus._descriptors[propertyKey]) {
             metaObject = Object.assign(metaObject, { params: target.methodus._descriptors[propertyKey].params });
@@ -116,7 +116,12 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 logger.info(`Method::call`, methodType, originalMethod.name, ...mappedArgs);
                 switch (methodType) {
                     case MethodType.Mock:
-                        methodResult = new MethodResult(methodus._mocks[propertyKey]);
+                        if (typeof methodus._mocks[propertyKey] === 'function') {
+                            methodResult = new MethodResult(methodus._mocks[propertyKey](...ParserResponse.args));
+                        } else {
+                            methodResult = new MethodResult(methodus._mocks[propertyKey]);
+                        }
+
                         break;
                     case MethodType.Local:
                         methodResult = await originalMethod.apply(this, ParserResponse.args);
