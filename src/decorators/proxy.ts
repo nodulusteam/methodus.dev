@@ -1,11 +1,10 @@
-import { ClassContainer, MethodType } from '../';
+import { MethodType } from '../interfaces';
 import { ConfigHelper } from './configuration';
-import { AutoLogger, Log, LogClass, LogLevel } from 'logelas';
 import { fp } from '../fp';
+const debug = require('debug')('tmla:methodus');
 import * as path from 'path';
 
 
-@LogClass(AutoLogger)
 export class Proxy {
 
     public static ProxyClass(className: string, localClassPath) {
@@ -21,9 +20,9 @@ export class Proxy {
             if (methodus) {
                 let configurationKey = methodus.name.replace('@tmla-tiles/', '@tmla-contracts/');
                 classConfig = ConfigHelper.get(configurationKey);
-                if(classConfig){
+                if (classConfig) {
                     classTransport = classConfig.transport;
-                }                    
+                }
             }
 
 
@@ -34,22 +33,22 @@ export class Proxy {
                     startPathForLoad = path.join(process.cwd(), methodus.name);
                 }
                 const localLoadPath = path.join(startPathForLoad, localClassPath)
-                AutoLogger.info(this, `trying to load ${localLoadPath} locally`);
+                debug(this, `trying to load ${localLoadPath} locally`);
                 try {
                     try {
                         let localClass = require(localLoadPath);
-                        AutoLogger.info(this, `succesfully loaded ${localLoadPath} locally`);
+                        debug(this, `succesfully loaded ${localLoadPath} locally`);
                         return localClass[className];
                     } catch (error) {
                         try {
-                            AutoLogger.info(this, `will try other options ${localClassPath} locally`);
+                            debug(this, `will try other options ${localClassPath} locally`);
                             let localClass = require(path.join(process.cwd(), localClassPath));
-                            AutoLogger.info(this, `succesfully loaded ${localClass} locally`);
+                            debug(this, `succesfully loaded ${localClass} locally`);
                             return localClass[className];
                         } catch (error) {
-                            AutoLogger.info(this, `will try last option ${localClassPath} locally`);
+                            debug(this, `will try last option ${localClassPath} locally`);
                             let localClass = require(path.join(process.cwd(), 'node_modules', methodus.name, localClassPath));
-                            AutoLogger.info(this, `succesfully loaded ${localClass} locally`);
+                            debug(this, `succesfully loaded ${localClass} locally`);
                             return localClass[className];
                         }
                     }
@@ -60,7 +59,7 @@ export class Proxy {
                     // return target;
                 }
             }
-            AutoLogger.info(this, 'returned the contract it self for' + className)
+            debug(this, 'returned the contract it self for' + className)
             return target;
         }
     }

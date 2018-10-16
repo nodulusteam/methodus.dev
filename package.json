@@ -22,10 +22,11 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
-        "pretest": "tsc",
+        "build": "tsc",
         "prepare": "npm test",
         "prepublishOnly": "npm version patch",
-        "test": "set test='true'&alsatian src/tests/*.spec.js ",
+        "test": "nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
+        "xtest": "npm run build &&  set test='true'&alsatian src/tests/*.spec.js",
         "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
         "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
@@ -49,30 +50,30 @@
         "method-override": "^2.3.9",
         "mkdirp": "^0.5.1",
         "mock-require": "^2.0.2",
-        "nedb": "^1.8.0",
-        "nedb-promise": "^2.0.1",
-        "redis": "^2.7.1",
-        "reflect-metadata": "^0.1.10",
         "request": "^2.81.0",
         "request-promise-native": "^1.0.4",
         "shortid": "^2.2.8",
-        "sinon": "^4.0.0",
-        "socket.io": "^2.0.3",
         "socket.io-client": "^2.0.3",
         "stream-from-promise": "^1.0.0",
-        "supertest": "^3.0.0",
-        "uuid": "^3.1.0",
-        "whatwg-fetch": "^2.0.3"
+        "uuid": "^3.1.0"
     },
     "optionalDependencies": {
         "body-parser": "^1.17.2",
         "compression": "^1.7.0",
         "cookie-parser": "^1.4.3",
-        "express": "^4.15.3"
+        "express": "^4.15.3",
+        "redis": "^2.7.1",
+        "socket.io": "^2.0.3"
     },
     "devDependencies": {
         "@types/node": "^7.0.31",
         "alsatian": "^2.0.0",
-        "redis-mock": "^0.19.0"
+        "nedb": "^1.8.0",
+        "nedb-promise": "^2.0.1",
+        "nyc": "^13.1.0",
+        "redis-mock": "^0.19.0",
+        "reflect-metadata": "^0.1.10",
+        "sinon": "^7.0.0",
+        "supertest": "^3.0.0"
     }
 }

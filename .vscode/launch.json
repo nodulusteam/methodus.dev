@@ -109,7 +109,7 @@
                 "NODE_ENV": "debug",
                 "servers": "amqp",
                 "MethodType": "MQ",
-                "NODE_LOG_LEVEL": "trace",              
+                "NODE_LOG_LEVEL": "trace",
                 "NODE_LOG_IDENTIFIER": "| MQ caller",
                 "test": "false"
             }
@@ -130,7 +130,7 @@
                 "servers": "amqp",
                 "MethodType": "Local",
                 "test": "false",
-                "NODE_LOG_LEVEL": "trace",              
+                "NODE_LOG_LEVEL": "trace",
                 "NODE_LOG_IDENTIFIER": "| MQ server"
             }
         },
@@ -295,6 +295,25 @@
             // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
             "runtimeExecutable": null,
             // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run decorators test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/decorators.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
             "env": {
                 "PORT": "8020",
                 "DEBUG": "none",
