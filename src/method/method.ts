@@ -126,6 +126,9 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     case MethodType.Local:
                         methodResult = await originalMethod.apply(this, ParserResponse.args);
                         break;
+                    case MethodType.Http2:
+                        server = ServerType.HTTP2;
+                        break;
                     case MethodType.Http:
                         server = ServerType.Express;
                         break;

@@ -42,6 +42,7 @@
         "debug": "^2.6.8",
         "ejs": "^2.5.7",
         "errorhandler": "^1.5.0",
+        "fastify": "^1.12.1",
         "figlet": "^1.2.0",
         "js-yaml": "^3.9.0",
         "kafka-node": "^2.2.0",
@@ -66,7 +67,7 @@
         "socket.io": "^2.0.3"
     },
     "devDependencies": {
-        "@types/node": "^7.0.31",
+        "@types/node": "^10.0.0",
         "alsatian": "^2.0.0",
         "nedb": "^1.8.0",
         "nedb-promise": "^2.0.1",

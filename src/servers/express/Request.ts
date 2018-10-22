@@ -1,4 +1,5 @@
 
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0"
 import 'reflect-metadata';
 import { logger, Log, LogClass, LogLevel } from '../../log';
 import * as fs from 'fs';
@@ -7,7 +8,6 @@ import { MethodError, MethodResult, MethodEvent } from '../../response/';
 
 import * as request from 'request-promise-native';
 import * as stream from 'stream';
-
 @LogClass(logger)
 export class Request {
     constructor() {
@@ -95,18 +95,15 @@ export class Request {
         }
 
 
-       
 
-        let requestOptions: any = {
-            // will be ignored
+
+        let requestOptions: any = {           
             method: verb,
             uri: uri,
             timeout: 1000 * 60 * 5
-        }
+        }      
 
-        let paramPos = 0;
 
-      
 
         logger.log(this, body, uri);
         if (Object.keys(body).length > 0) {
@@ -134,26 +131,26 @@ export class Request {
             let file: any = files[0];
             let formData: any = {
                 custom_file:
-                    {
-                        value: fs.createReadStream(path.resolve(file.path)),
-                        options: {
-                            filename: file.originalname,
-                            contentType: file.mimetype,
-                            size: file.size
-                        }
+                {
+                    value: fs.createReadStream(path.resolve(file.path)),
+                    options: {
+                        filename: file.originalname,
+                        contentType: file.mimetype,
+                        size: file.size
                     }
+                }
             }
             requestOptions.formData = formData;
 
         } else if (files && files.readable) {
             let formData: any = {
                 custom_file:
-                    {
-                        value: files,
-                        options: {
-                            filename: path.basename(files.path)
-                        }
+                {
+                    value: files,
+                    options: {
+                        filename: path.basename(files.path)
                     }
+                }
             }
             requestOptions.formData = formData;
         }

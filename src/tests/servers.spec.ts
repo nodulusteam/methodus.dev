@@ -7,7 +7,7 @@ import { Wait, ServerHelper, ClientHelper, CallHelper, PortHelper } from './help
 
 const { spawn } = require('child_process');
 const fs = require('fs'), path = require('path');
-var childProcessDebug = require('child-process-debug');
+const childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = './tests/config';
 
 @TestFixture('Test all servers RPC')
@@ -16,6 +16,7 @@ export class Servers {
     // use the async/await pattern in your tests as you would in your code
     @AsyncTest('asychronous test')
     @TestCase(ServerType.Express, MethodType.Http)
+    @TestCase(ServerType.HTTP2, MethodType.Http)
     //@TestCase(ServerType.RabbitMQ, MethodType.MQ)
     //@TestCase(ServerType.Socket, MethodType.Socket)
     //@TestCase(ServerType.Redis, MethodType.Redis)

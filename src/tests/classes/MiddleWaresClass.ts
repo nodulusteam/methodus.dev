@@ -45,7 +45,7 @@ export class MiddleWaresClass {
     }
 
 
-    @Method(Verbs.Delete, 'api/acion1', [middleWare1])
+    @Method(Verbs.Delete, '/api/acion1', [middleWare1])
     public action3() {
         console.log('action3');
     }
@@ -80,7 +80,7 @@ export class MiddleWaresClass2 {
     }
 
 
-    @Method(Verbs.Delete, 'api/acion1', [middleWare1])
+    @Method(Verbs.Delete, '/api/acion1', [middleWare1])
     public action3() {
         console.log('action3');
     }

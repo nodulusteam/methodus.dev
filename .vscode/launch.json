@@ -5,6 +5,43 @@
     "version": "0.2.0",
     "configurations": [
         //E2E
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "> HTTP2 server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "externalTerminal",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                "servers": "http2",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "> HTTP2 caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "externalTerminal",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                "servers": "http2",
+                "MethodType": "Http2"
+            }
+        },
+
         //REST
         {
             "type": "node",

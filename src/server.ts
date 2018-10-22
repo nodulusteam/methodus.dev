@@ -10,6 +10,7 @@ import http = require('http');
 import colors = require('colors');
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
+import { Fastify } from './servers/fastify';
 
 export interface IApp {
     set(key, value);
@@ -42,10 +43,10 @@ export class Server {
     }
     @Log()
     makeid() {
-        var text = '';
-        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        let text = '';
+        const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
-        for (var i = 0; i < 5; i++)
+        for (let i = 0; i < 5; i++)
             text += possible.charAt(Math.floor(Math.random() * possible.length));
 
         return text;
@@ -118,6 +119,7 @@ export class Server {
         })
 
         const loadOrder = [
+            ServerType.HTTP2,
             ServerType.ExpressPartial,
             ServerType.Express,
             ServerType.Socket,
@@ -140,24 +142,41 @@ export class Server {
 
                     const aServerInstance = Servers.get(this.instanceId, serverType)
                     switch (serverType) {
-                        case ServerType.Express:
+                        case ServerType.HTTP2:
                             {
-
-
-                                if (!aServerInstance) {// !this.app && !this._app[serverType]) {
-
-
-
-                                    logger.info(this, colors.green(`> Starting REST server on port ${port}`));
-                                    console.log(colors.green(`> Starting REST server on port ${port}`));
-                                    this._app[serverType] = new Express(port, onStart);
+                                if (!aServerInstance) {
+                                    logger.info(this, colors.red(`> Starting HTTP2 server on port ${port}`));
+                                    console.log(colors.red(`> Starting HTTP2 server on port ${port}`));
+                                    this._app[serverType] = new Fastify(port, onStart);
                                     let app = Servers.set(this.instanceId, server.type, this._app[serverType]);
                                     this.app = app._app;
 
-                                    var httpServer = Servers.get(this.instanceId, 'http') || http.createServer(app._app);
+                                    const httpServer = Servers.get(this.instanceId, 'http') || http.createServer(app._app);
                                     this._app['http'] = httpServer;
                                     //listen on provided ports
 
+                                    Servers.set(this.instanceId, 'http', httpServer);
+                                }
+
+
+                                this.config.servers.forEach((serverConfiguration) => {
+                                    if (serverConfiguration.type === serverType && serverConfiguration.onStart)
+                                        onStart = serverConfiguration.onStart;
+                                })
+                                break;
+
+                            }
+                        case ServerType.Express:
+                            {
+                                if (!aServerInstance) {// !this.app && !this._app[serverType]) {
+                                    logger.info(this, colors.green(`> Starting REST server on port ${port}`));
+                                    console.log(colors.green(`> Starting REST server on port ${port}`));
+                                    this._app[serverType] = new Express(port, onStart);
+                                    const app = Servers.set(this.instanceId, server.type, this._app[serverType]);
+                                    this.app = app._app;
+                                    const httpServer = Servers.get(this.instanceId, 'http') || http.createServer(app._app);
+                                    this._app['http'] = httpServer;
+                                    //listen on provided ports
                                     Servers.set(this.instanceId, 'http', httpServer);
                                 }
                                 else {
@@ -251,7 +270,7 @@ export class Server {
 
 
         let classes = this.config.classes.entries()
-        for (var i = 0; i < this.config.classes.size; i++) {
+        for (let i = 0; i < this.config.classes.size; i++) {
             let name, element = classes.next();
             this.useClass(element.value[1]);
         }

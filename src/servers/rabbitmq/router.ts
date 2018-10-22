@@ -4,16 +4,12 @@ const debug = require('debug')('tmla:methodus:mq');
 import 'reflect-metadata';
 import { fp } from '../../fp';
 import { AMQP, registerHandlers, registerWorkers } from './';
-import { BaseServer } from '../base';
-import { LogLevel, logger, Log, LogClass } from '../../log';
-import { MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
-import { MethodType } from '../../interfaces';
-import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
+import { logger, Log, LogClass } from '../../log';
+import { ConnectionOptions } from '../../config';
+import { MethodMessage } from '../../response';
 import * as domain from 'domain';
 
 const metadataKey = 'methodus';
-
-
 
 @LogClass(logger)
 export class MQRouter {
@@ -22,7 +18,6 @@ export class MQRouter {
     constructor(classType: any, connectionOptions: ConnectionOptions) {
         this.options = connectionOptions;
         let proto = fp.maybeProto(classType);
-
 
         // let methodinformation: MethodusClassConfig = config.classes.get(methodus.name);
         let existingClassMetadata: any = Reflect.getOwnMetadata(metadataKey, proto) || {};

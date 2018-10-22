@@ -26,7 +26,7 @@ export class ThirdClass {
     }
 
 
-    @Method(Verbs.Delete, 'api/acion1')
+    @Method(Verbs.Delete, '/api/acion1')
     public action3() {
         console.log('action3');
     }

@@ -9,11 +9,11 @@ let config = new MethodusConfig();
 const redis_addr = '//192.168.99.100:32768';
 
 if (process.env.servers) {
-    process.env.servers.split(',').map(server => {
+    process.env.servers.split(',').map((server:ServerType) => {
         config.run(server, { port: process.env.PORT, client: redis_addr, server: redis_addr, amqp: '127.0.0.1' });
-        config.use(FirstClass, process.env.METHODTYPE,server, 'http://127.0.0.1:8091');
-        config.use(SecondClass, process.env.METHODTYPE,server, 'http://127.0.0.1:8091');
-        config.use(ThirdClass, process.env.METHODTYPE, server,'http://127.0.0.1:8091');
+        config.use(FirstClass, process.env.METHODTYPE as MethodType,server, 'http://127.0.0.1:8091');
+        config.use(SecondClass, process.env.METHODTYPE as MethodType,server, 'http://127.0.0.1:8091');
+        config.use(ThirdClass, process.env.METHODTYPE as MethodType, server,'http://127.0.0.1:8091');
     })
 }
 

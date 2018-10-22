@@ -8,7 +8,7 @@ export class FirstClass {
     constructor() { }
 
 
-    @MethodPipe(Verbs.Get, '/posts/:id/:name')
+    @MethodPipe(Verbs.Get, '/posts/:id/namex/:name')
     public getFile(@Param('id') id: number, @Param('name') name: string) {
 
         const stream = fs.createReadStream('./image.jpg');
@@ -24,7 +24,7 @@ export class FirstClass {
 
 
 
-    @Method(Verbs.Get, '/action2/:id/:name')
+    @Method(Verbs.Get, '/action2/id/:id/name/:name')
     public action2Function(@Param('id') id: number, @Param('name') name: string, @Query('size') size: number) {
         let result = new MethodResult({ value: 'actionQuery', id: id, name: name, add: 'added', size: size });
         return result;
@@ -103,7 +103,7 @@ export class FirstClass {
     }
 
 
-    @Method(Verbs.Delete, 'api/acion1')
+    @Method(Verbs.Delete, '/api/acion1')
     public action3() {
         console.log('action3');
     }

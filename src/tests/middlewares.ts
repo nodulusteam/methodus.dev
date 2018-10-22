@@ -26,8 +26,6 @@ export class Servers {
     public async serverTest(serverType, methodType) {
         return new Promise(async (resolve, reject) => {
 
-
-            process.env.silent = false;
             const redis_addr = '//192.168.99.100:32771';
             let config = new MethodusConfig();
 
