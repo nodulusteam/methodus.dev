@@ -57,7 +57,7 @@ export class MethodusClassConfig {
     public serverType: ServerType;
     public classType: any;
     public serviceName: string;
-    public resolver: Promise<any> | Function | string | any | string
+    public resolver: Promise<any> | Function | string | any
 }
 export interface PluginEntry {
     name: string;

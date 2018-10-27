@@ -1,9 +1,6 @@
-import { MethodResult, MethodError } from './response';
-import { logger, Log, LogClass } from './log';
-import { MethodType, ServerType } from './interfaces';
+import { MethodResult, MethodError } from '../../response';
+import { logger, Log, LogClass } from '../../log';
 
-import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './servers/express/rest';
-import { RestParser as RestFastify, RestResponse as RestResponseFastify } from './servers/fastify/rest';
 
 
 
@@ -89,11 +86,7 @@ export class RestResponse {
             }
             else {
                 res.header('Content-Type', 'application/json');
-                if (methodResult.result) {
-                    res.send(JSON.stringify(methodResult.result), 'utf-8');
-                } else {
-                    res.send(JSON.stringify(methodResult), 'utf-8');
-                }
+                res.send(methodResult.result);
             }
         }
     }
@@ -109,25 +102,90 @@ export class RestResponse {
  *
  */
 export class RestParser {
-    parser: any;
-    response: any;
-    parse(args, paramsMap, functionArgs) {
-        return this.parser.parse(args, paramsMap, functionArgs);
-    }
-    constructor(type: ServerType) {
-        switch (type) {
 
-            case ServerType.HTTP2:
-                this.parser = new RestFastify();
-                this.response = RestResponseFastify;
-                break;
-            case ServerType.Express:
-            default:
-                this.parser = new RestExpress();
-                this.response = RestResponseExpress;
-                break;
+    deserialize(item) {
+        if (item !== undefined && item !== null) {
+            if (item.type && item.type.deserialize) {
+                try {
+                    return item.type.deserialize(item.value);
+                }
+                catch (error) {
+                    logger.warn(this, 'error deserializing argument', item);
+                }
+            }
+            else if (item.type && item.type.prototype && item.type.prototype.constructor) {
+                return new item.type(item.value);
+            } else if (typeof (item.value) === 'string' && item.type === 'object') {
+                try {
+                    return JSON.parse(item.value);
+                }
+                catch (error) {
+                    logger.warn(this, 'error parsing argument', item);
+                }
+
+            } else if (item.value === undefined && typeof (item) === 'object') {
+                return item;
+            }
+        } else {
+            return item;
         }
+
+        return item.value;
     }
+
+    parse(args, paramsMap, functionArgs): ParserResponse {
+        let isRest = false;
+        let context;
+        let securityContext;
+        if (args[0] && args[0].req && args[1] && args[1].res)//this call came from an fastify route
+        {
+            // securityContext = args[0].att || args[0].att_security_context;
+
+            paramsMap.forEach((item: any) => {
+                if (item.name && item.from) {
+                    item.value = args[0][item.from][item.name] || item.defaultValue || null;
+                    item.value = this.deserialize(item);
+                }
+                else if (item.from) {
+                    switch (item.from) {
+                        case 'response':
+                            item.value = args[1];
+                            break;
+                        case 'request':
+                            item.value = args[0];
+                            break;
+                        default:
+                            item.value = this.deserialize(args[0][item.from]);
+                            break;
+                    }
+
+
+
+                } else {
+                    item.value = args[0];
+                }
+
+                //security special case
+                if (item.from === 'att_security_context') {
+                    item.value = args[0].att_security_context || args[0].att;
+                }
+                functionArgs.push(item.value);
+            });
+            isRest = true;
+
+        } else {
+            functionArgs = args;
+            isRest = false;
+        }
+
+        return new ParserResponse(functionArgs, isRest, securityContext);
+    }
+
+
+
+
+
+
 }
 
 @LogClass(logger)

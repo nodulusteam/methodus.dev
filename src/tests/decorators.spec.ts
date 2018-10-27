@@ -15,7 +15,7 @@ const  path = require('path');
 import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from 'alsatian';
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6695 })
-@PluginConfiguration(path.join(__dirname, 'static'), { path: '/client' })
+//@PluginConfiguration(path.join(__dirname, 'static'), { path: '/client' })
 @ClientConfiguration(FirstClass, MethodType.Local, ServerType.Express)
 @ClientConfiguration(SecondClass, MethodType.Local, ServerType.Express)
 class Xserver extends ConfiguredServer {

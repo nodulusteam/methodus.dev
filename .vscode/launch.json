@@ -11,7 +11,7 @@
             "name": "> HTTP2 server",
             "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
             "cwd": "${workspaceRoot}/",
-            "console": "externalTerminal",
+            "console": "integratedTerminal",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
@@ -29,7 +29,7 @@
             "name": "> HTTP2 caller",
             "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
-            "console": "externalTerminal",
+            "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
@@ -41,7 +41,6 @@
                 "MethodType": "Http2"
             }
         },
-
         //REST
         {
             "type": "node",
@@ -309,6 +308,33 @@
                 "NODE_ENV": "debug",
                 "servers": "socketio",
                 "MethodType": "Local"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "T Run current page test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "${fileDirname}/${fileBasenameNoExtension}.js",
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
             }
         },
         {

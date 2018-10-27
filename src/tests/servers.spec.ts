@@ -1,44 +1,40 @@
- 
 
-import { AsyncTest, Expect, Test, TestCase, TestFixture, Timeout } from 'alsatian';
-import { TestClass } from './classes/TestClass';
-import { logger, Server, ServerType, MethodusConfig, MethodType } from '../index';
-import { Wait, ServerHelper, ClientHelper, CallHelper, PortHelper } from './helpers'
 
-const { spawn } = require('child_process');
-const fs = require('fs'), path = require('path');
-const childProcessDebug = require('child-process-debug');
 process.env.CONFIG_PATH = './tests/config';
+import { AsyncTest, Expect, TestCase, TestFixture, Timeout } from 'alsatian';
+import { TestClass } from './classes/TestClass';
+import { ServerType, MethodType } from '../index';
+import { Wait, ServerHelper, ClientHelper, CallHelper, PortHelper } from './helpers'
 
 @TestFixture('Test all servers RPC')
 export class Servers {
 
     // use the async/await pattern in your tests as you would in your code
     @AsyncTest('asychronous test')
-    @TestCase(ServerType.Express, MethodType.Http)
-    @TestCase(ServerType.HTTP2, MethodType.Http)
+    @TestCase(ServerType.Express, MethodType.Http, 'http')
+    @TestCase(ServerType.HTTP2, MethodType.Http2, 'https')
     //@TestCase(ServerType.RabbitMQ, MethodType.MQ)
     //@TestCase(ServerType.Socket, MethodType.Socket)
     //@TestCase(ServerType.Redis, MethodType.Redis)
     // @TestCase(ServerType.Kafka, MethodType.Kafka)
     @Timeout(50000)
-    public async serverTest(serverType, methodType) {
+    public async serverTest(serverType, methodType, protocol) {
         return new Promise(async (resolve, reject) => {
 
-           
+
             let ports = PortHelper();
-            const staticResolve = 'http://127.0.0.1:' + ports.server;
+            const staticResolve = `${protocol}://127.0.0.1:${ports.server}`;
             ServerHelper(ports.server, serverType, MethodType.Local).then(servers => {
                 Wait(1000 * 10).then(() => {
                     ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve).then(client => {
                         CallHelper().then(methodResult => {
-                          
+
                             if (servers)
                                 servers.map(s => s.kill());
 
                             if (client)
                                 client.kill();
-
+                            console.log(methodResult);
                             Expect(methodResult.result.add).toBeDefined();
                             if (servers)
                                 servers.map(s => s.kill());

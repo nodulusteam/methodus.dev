@@ -12,7 +12,7 @@ const staticResolve = 'http://127.0.0.1:8090';
 export class Responses {
     // use the async/await pattern in your tests as you would in your code
     @AsyncTest('Test error response')
-    @TestCase(ServerType.HTTP2, MethodType.Http)
+   // @TestCase(ServerType.HTTP2, MethodType.Http)
     @TestCase(ServerType.Express, MethodType.Http)
     @TestCase(ServerType.RabbitMQ, MethodType.MQ)
     @TestCase(ServerType.Socket, MethodType.Socket)

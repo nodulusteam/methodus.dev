@@ -36,7 +36,7 @@ export class MQ extends BaseServer {
                 conn.createChannel().then((ch) => {
                     let exchangeArr = methodEvent.exchanges || ['event-bus'];
                     exchangeArr.forEach(exchange => {
-                        ch.publish(exchange, methodEvent.name, new Buffer(JSON.stringify(methodEvent)));
+                        ch.publish(exchange, methodEvent.name, Buffer.from(JSON.stringify(methodEvent)));
                     });
                 });
             });

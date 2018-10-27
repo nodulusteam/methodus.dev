@@ -5,6 +5,9 @@ import { logger, Log, LogClass, LogLevel } from '../../log';
 import * as fs from 'fs';
 import * as path from 'path';
 import { MethodError, MethodResult, MethodEvent } from '../../response/';
+const https = require('https');
+
+
 
 import * as request from 'request-promise-native';
 import * as stream from 'stream';
@@ -94,16 +97,39 @@ export class Request {
             }).join('&');
         }
 
+        console.log(uri.split('://')[1].split('/').splice(0, 1).join('/'));
+        const parts = uri.split('://')[1].split('/');
+        parts.splice(0, 1);
+        let requestOptions: any;
 
+        if (uri.indexOf('https://') === 0) {
+            const hostParts = uri.split('://')[1].split('/')[0].split(':');
+            var agent = new https.Agent({
+                host: hostParts[0],
+                port: hostParts[1],
+                path: parts.join('/').split('?')[0],
+                strictSSL: false,
+                rejectUnauthorized: false
+            });
 
+            requestOptions = {
+                method: verb,
+                uri: uri,
+                timeout: 1000 * 60 * 5,
+                rejectUnauthorized: false,
+                strictSSL: false,
+                secureProtocol: 'TLSv1_method',
+                requestCert: false,//add when working with https sites
+                agent: agent,//add when working with https sites
+            }
 
-        let requestOptions: any = {           
-            method: verb,
-            uri: uri,
-            timeout: 1000 * 60 * 5
-        }      
-
-
+        } else {
+            requestOptions = {
+                method: verb,
+                uri: uri,
+                timeout: 1000 * 60 * 5
+            }
+        }
 
         logger.log(this, body, uri);
         if (Object.keys(body).length > 0) {
@@ -179,6 +205,8 @@ export class Request {
     }
 
     try(requestOptions) {
+        console.log(requestOptions.uri);
+
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error) => {
 

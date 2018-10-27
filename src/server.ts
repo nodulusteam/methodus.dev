@@ -10,7 +10,7 @@ import http = require('http');
 import colors = require('colors');
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
-import { Fastify } from './servers/fastify';
+import { Fastify } from './servers/fastify/fastify';
 
 export interface IApp {
     set(key, value);
@@ -317,6 +317,7 @@ export class Server {
 
 
                     if (metaObject) {
+                        metaObject.serverType = _class.serverType;
                         metaObject.instanceId = serverInstance.instanceId;
                         ClassContainer.set(proto.methodus.name, metaObject);
                         logger.info(this, colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));

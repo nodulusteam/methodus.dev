@@ -31,7 +31,7 @@ export class Kafka extends BaseServer {
             AMQP.connect(this.options).then((conn) => {
                 conn.createChannel().then((ch) => {
                     ch.assertExchange('event-bus', 'fanout', { durable: true });
-                    ch.publish('event-bus', '', new Buffer(JSON.stringify(methodEvent)));
+                    ch.publish('event-bus', '', Buffer.from(JSON.stringify(methodEvent)));
 
                     // ch.assertQueue('event-bus', { exclusive: true }).then((q) => {
                     //     ch.sendToQueue('event-bus',

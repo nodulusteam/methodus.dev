@@ -26,31 +26,16 @@ export class TestClass {
         return new MethodResult({ id: id, name: name, add: id * id });
     }
 
-
-    // @Method(Verbs.Get, '/posts/error')
-    // public error() {
-    //     console.log('running error localy');
-    //     throw new MethodError('error returned', 500);
-    // }
-
-
     @Method(Verbs.Post, '/api/testclass/posts')
     public async action2(@Body() item) {
-
         return new MethodResult(item);
-
     }
-
-
-
 
     @Method(Verbs.Get, '/api/testclass/action5')
     public async action5(@Query('someObject', Deserializable) someObject: Deserializable, @Query('minDate', Date) minDate: Date, @Query('maxDate', Date) maxDate: Date): Promise<any> {
         console.log(someObject, minDate, maxDate);
-        return new MethodResult(minDate);
+        return new MethodResult({ someObject, minDate, maxDate });
     }
-
-
 
     @Method(Verbs.Delete, '/api/testclass/action3')
     public async action3() {

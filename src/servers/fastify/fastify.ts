@@ -1,42 +1,30 @@
 import 'reflect-metadata';
-import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
-import * as consolidate from 'consolidate';
-import * as request from 'request-promise-native';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as fastify from 'fastify';
-import { BaseServer } from './base';
-import { MethodDescriptor, Verbs } from './../config';
-import { MethodError, MethodResult, MethodEvent } from './../response/';
-import { fp } from './../fp';
-
-import { logger, Log, LogClass, LogLevel } from './../log';
-import { MethodType } from '../interfaces/methodus';
-import { Request } from './express/Request';
-
-
-
-
+import { BaseServer } from '../base';
+import { MethodError, MethodEvent } from '../../response/';
+import { fp } from '../../fp';
+import { logger, Log, LogClass, LogLevel } from '../../log';
+import { MethodType } from '../../interfaces/methodus';
+import { Request } from '../express/Request';
 
 @LogClass(logger)
 export class Fastify extends BaseServer {
     _app: any;
     constructor(port, onStart) {
         super();
-
         const baseCertPath = path.join(process.cwd(), 'cert');
-
         this._app = fastify(
             {
                 logger: { level: 'info' },
                 http2: true,
                 https: {
+                    allowHTTP1: true,
                     key: fs.readFileSync(path.join(baseCertPath, 'server.key')),
                     cert: fs.readFileSync(path.join(baseCertPath, 'server.cert'))
                 }
-            });
+            } as any);
         this._app.listen(port, (err, address) => {
             if (err) throw err
             this._app.log.error(`server listening on ${address}`)
@@ -63,7 +51,7 @@ export class Fastify extends BaseServer {
     useClass(classType, methodType) {
         new FastifyRouter(classType, methodType, this._app);
         this._app.ready(() => {
-            console.log(this._app.printRoutes())
+            console.log(`fastify is ready.`)
         });
     }
 
@@ -71,7 +59,7 @@ export class Fastify extends BaseServer {
     _send(params, methodus, paramsMap, securityContext) {
         const request = new Request();
         let baseUrl = methodus.resolver();
-        if (baseUrl) {          
+        if (baseUrl) {
             return request.sendRequest(methodus.verb, baseUrl + methodus.route, params, paramsMap, securityContext);
         } else {
             return new MethodError('no server found for this method' + methodus.route, 302);
@@ -135,11 +123,9 @@ export class FastifyRouter {
                 }
                 functionArray.push(proto[item.propertyKey].bind(obj));
                 app[verb](route, { logLevel: 'debug' }, async (request, reply) => {
-                    const result = await functionArray[0](request, reply);
-                    // return result;
-                    reply.send(result.result)
+                    await functionArray[0](request, reply);
                 });
-            });          
+            });
         });
     }
 }

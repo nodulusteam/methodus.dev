@@ -67,7 +67,7 @@ export class MQRouter {
 
                                             if (msg.properties) {
                                                 ch.sendToQueue(msg.properties.replyTo,
-                                                    new Buffer(JSON.stringify(result)),
+                                                    Buffer.from(JSON.stringify(result)),
                                                     { correlationId: msg.properties.correlationId });
 
                                                 ch.ack(msg);

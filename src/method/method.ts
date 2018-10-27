@@ -1,27 +1,15 @@
-const excludedProps = ['constructor'];
-
 import 'reflect-metadata';
-import { MethodusConfig, MethodDescriptor, MethodusConfigurations } from '../config';
-import { MethodResult, MethodError, MethodEvent } from '../response';
+import { MethodDescriptor } from '../config';
+import { MethodResult, MethodError } from '../response';
 import { Servers } from '../servers/serversList';
 import { fp } from '../fp';
 import { MethodType, ServerType } from '../interfaces';
-import { logger, Log, LogClass } from '../log';
-import { RestParser, RestResponse, Verbs } from '../rest';
+import { logger } from '../log';
+import { Verbs, RestParser } from '../rest';
 import { ClassContainer } from '../class-container';
 
 import { ConfigHelper } from '../decorators/configuration';
-const correlator = require('correlation-id');
-
-let methodMetadataKey = 'methodus';
-let metadataKey = 'params';
-
-function mergeMetadata(methodus) {
-    let config = MethodusConfigurations.get();
-    let methodinformation = config.classes.get(methodus.name);
-    return Object.assign({}, methodus, methodinformation);
-}
-
+const methodMetadataKey = 'methodus';
 
 /** the @Method decorator registers the model with the odm
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -42,53 +30,46 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
 
         Reflect.defineMetadata(methodMetadataKey, metaObject, target, propertyKey);
         target.methodus._descriptors[propertyKey] = metaObject as MethodDescriptor;
-        let paramsMap: any[] = metaObject.params;
+        const paramsMap: any[] = metaObject.params;
         paramsMap.sort((a, b) => {
             return a.index - b.index;
         });
         // save a reference to the original method
-        let originalMethod = descriptor.value;
-
-        let classes = {};
-
+        const originalMethod = descriptor.value;
         descriptor.value = async function (...args: any[]) {
             validateServerIsRunning();
             //extract metadata for class and method
             let configName = target.name;
             if (!configName && target.constructor)
                 configName = target.constructor.name;
-
-            let config = Servers.classes[configName];
-
+            const config = Servers.classes[configName];
             //we will return a MethodResult or a MEthodError
             let methodResult: MethodResult | MethodError | any = null;
-            let proto = fp.maybeProto(this);
-
             //try to get the method metadata from the Relection API.
             let methodus: any = target.methodus;
             if (!methodus) {//if the target dont contain the methodus metadaat, try to get it from the Reflection API
                 methodus = Reflect.getOwnMetadata(methodMetadataKey, target, propertyKey) || {};
             }
 
-            let existingClassMetadata: any = ClassContainer.get(methodus.name);
+            const existingClassMetadata: any = ClassContainer.get(methodus.name);
 
             //merge the configuration object
             Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
 
-            let functionArgs: any[] = [];
-            let sendFlag = false;
-
-            //rest paramters should be parsed differntly
-            const parser = new RestParser(args, paramsMap, functionArgs);
-            let ParserResponse = parser.parse();
-
-            //acquire the method information from the config classes map
-            let completeConfiguration = Object.assign({}, methodus, config);
+            const functionArgs: any[] = [];
 
             let methodType = MethodType.Local;//we default to local
 
+            //rest paramters should be parsed differntly
+            const parser = new RestParser(methodus.serverType);
+            const ParserResponse = parser.parse(args, paramsMap, functionArgs);
+
+            //acquire the method information from the config classes map
+            const completeConfiguration = Object.assign({}, methodus, config);
+
+
             if (methodus) {
-                let configurationKey = methodus.name.replace('@tmla-tiles/', '@tmla-contracts/');
+                const configurationKey = methodus.name.replace('@tmla-tiles/', '@tmla-contracts/');
                 let configurationBlock = ConfigHelper.get(configurationKey);
                 if (!configurationBlock) {
                     configurationBlock = ConfigHelper.get(methodus.name);
@@ -102,10 +83,12 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
             }
 
             if (completeConfiguration && completeConfiguration.methodType)//if methodinformation exists we use the mehtod from it.
+            {
                 methodType = completeConfiguration.methodType;
+            }
 
             // run and store the result
-            let restHeaders = null;
+            const restHeaders = null;
             try {
                 let server: ServerType | null = null;
                 let i = 0;
@@ -146,7 +129,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                         break;
                 }
 
-                if (server === ServerType.Express) {
+                if (server === ServerType.Express || server === ServerType.HTTP2) {
                     methodResult = new MethodResult(Servers.send(server, ParserResponse.args, completeConfiguration, paramsMap, ParserResponse.securityContext))
 
                 } else if (server) {
@@ -159,7 +142,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 logger.error(this, error);
 
                 if (ParserResponse.isRest) {
-                    new RestResponse(args, error, restHeaders);
+                    new parser.response(args, error, restHeaders);
                 } else {
                     throw (error);
                 }
@@ -167,15 +150,18 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
             }
 
             if (methodResult && ParserResponse.isRest) {
-                new RestResponse(args, methodResult, methodResult.headers);
+                new parser.response(args, methodResult, methodResult.headers);
                 return;
             }
             else {
                 if (methodResult !== null && methodResult !== undefined && methodResult.result !== null && methodResult.result !== undefined) {
-                    const requestResult = await methodResult.result;
                     try {
+
+
+                        const requestResult = await methodResult.result;
+
                         if (Buffer.isBuffer(requestResult)) {
-                            const bufferedResult = new Buffer(requestResult).toString();
+                            const bufferedResult = Buffer.from(requestResult).toString();
                             if (typeof bufferedResult === 'string') {
                                 try {
                                     methodResult = new MethodResult(JSON.parse(bufferedResult));

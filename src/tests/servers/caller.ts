@@ -30,26 +30,28 @@ async function init() {
         }
 
         let action5 = await myClass.action5(object_to_send, new Date(), new Date());
-        console.log(action5);
 
 
 
 
         let eventCounter = 0;
         let result = await myClass.action1(++eventCounter, `message number ${eventCounter}`);
-        console.log(result);
         setInterval(async () => {
-            let result = await myClass.action1(++eventCounter, `message number ${eventCounter}`);
+            result = await myClass.action1(++eventCounter, `message number ${eventCounter}`);
 
-            console.log(result);
         }, 3 * 1000)
         // console.log(result);
         return result;
     } catch (error) {
-        console.error(error);
-        return Promise.resolve(error);
-    }
+        if (error.error && Buffer.isBuffer(error.error)) {
+            console.error(error);
+            const parsedError = error.error.toString();
+            return Promise.reject(parsedError);
 
+        } else {
+            return Promise.resolve(error);
+        }
+    }
 }
 
 init().then((result) => {

@@ -34,7 +34,7 @@ const METHODLOG = 'methodus::Method';
 export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
         target.methodus = target.methodus || { _events: {}, _descriptors: {} }
-        
+
         let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
         if (target.methodus._descriptors[propertyKey]) {
             metaObject = Object.assign(metaObject, { params: target.methodus._descriptors[propertyKey].params });
@@ -77,16 +77,16 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
             Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
 
             let functionArgs: any[] = [];
-            let sendFlag = false;
-
+           
+            let methodType = MethodType.Local;//we default to local
             //rest paramters should be parsed differntly
-            const parser = new RestParser(args, paramsMap, functionArgs);
-            let ParserResponse = parser.parse();
+            const parser = new RestParser(methodus.serverType);
+            let ParserResponse = parser.parse(args, paramsMap, functionArgs);
 
             //acquire the method information from the config classes map
             let completeConfiguration = Object.assign({}, methodus, config);
 
-            let methodType = MethodType.Local;//we default to local
+           
 
             if (methodus) {
                 let configurationKey = methodus.name.replace('@tmla-tiles/', '@tmla-contracts/');
