@@ -1,29 +1,11 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Connection = require('./connection');
-let connections = {};
+const client_1 = require("./client");
 class Redis {
     createClient() {
-        return new Client();
+        return new client_1.Client();
     }
-    ;
 }
-let callback;
-let globalcorr;
 const redis = new Redis();
-class Client {
-    constructor() {
-    }
-    subscribe(corr) {
-        globalcorr = corr;
-    }
-    on(eventname, cb) {
-        callback = cb;
-    }
-    publish(channel, msg) {
-        callback(globalcorr, msg);
-    }
-}
-exports.Client = Client;
 module.exports = redis;
 //# sourceMappingURL=index.js.map

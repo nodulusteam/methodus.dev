@@ -1,4 +1,4 @@
-import { Log, Logger } from 'logelas'
-export { Log, LogClass, LogLevel } from 'logelas';
+import { Logger } from 'logelas';
+export { LogClass, LogLevel } from 'logelas';
 
 export const logger = new Logger('methodus.log', 'methodus');

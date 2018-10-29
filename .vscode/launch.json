@@ -282,12 +282,12 @@
             "name": "# Socket caller",
             "program": "${workspaceRoot}/src/tests/servers/caller.js",
             "cwd": "${workspaceRoot}/",
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
                 "PORT": "8080",
-                "DEBUG": "none",
+                "DEBUG": "socket.io-client:manager",
                 "NODE_ENV": "debug",
                 "servers": "socketio",
                 "MethodType": "Socket"
@@ -411,33 +411,7 @@
                 "test": "true"
             }
         },
-        {
-            "request": "launch",
-            "console": "internalConsole",
-            // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "T Run resolver test",
-            // Type of configuration. Possible values: "node", "mono".
-            "type": "node",
-            // Workspace relative or absolute path to the program.
-            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
-            // Automatically stop program after launch.
-            "stopOnEntry": false,
-            // Command line arguments passed to the program.
-            "args": [
-                "src/tests/resolvers.spec.js"
-            ],
-            "sourceMaps": true,
-            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
-            "cwd": "${workspaceRoot}",
-            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
-            "runtimeExecutable": null,
-            // Environment variables passed to the program.
-            "env": {
-                "PORT": "8020",
-                "DEBUG": "none",
-                "NODE_ENV": "debug"
-            }
-        },
+       
         {
             "request": "launch",
             "console": "internalConsole",
@@ -462,7 +436,8 @@
             "env": {
                 "PORT": "8020",
                 "DEBUG": "none",
-                "NODE_ENV": "debug"
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
             }
         },
         {
@@ -535,7 +510,7 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8090",
-                "DEBUG": "tmla:*",
+                "DEBUG": "methodus:*",
                 "NODE_ENV": "debug",
                 "servers": "socketio",
                 "MethodType": "Local",
@@ -587,7 +562,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "- hello-server",
+            "name": "E  hello-server",
             "program": "${workspaceRoot}/examples/hello-server.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
@@ -595,7 +570,22 @@
             "sourceMaps": true,
             "env": {
                 "PORT": "8020",
-                "DEBUG": "tmla",
+                "DEBUG": "methodus",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "E  configured",
+            "program": "${workspaceRoot}/examples/configured.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodus",
                 "NODE_ENV": "debug"
             }
         },

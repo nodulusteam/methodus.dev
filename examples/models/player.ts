@@ -1,6 +1,6 @@
 import { Database } from './index';
 import { Repository } from './repository';
-const DB = new Database();
+new Database();
 
 
 export class PlayerModel extends Repository<PlayerModel> {

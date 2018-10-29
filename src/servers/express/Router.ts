@@ -1,10 +1,6 @@
-import { logger, Log, LogClass } from '../../log';
+import { logger,  LogClass } from '../../log';
 import * as express from 'express';
-import { MethodDescriptor, Verbs } from '../../config';
-import * as path from 'path';
-import { MethodError, MethodResult, MethodEvent } from '../../response';
 import { fp } from '../../fp';
-
 import { MethodType } from '../../index';
 
 

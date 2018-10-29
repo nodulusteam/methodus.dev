@@ -20,7 +20,7 @@ function findHandlers(connection, exchange, routingKey) {
     if (!exchange) {
         return {};
     }
-    const filtered = exchange.bindings.filter(binding => binding.regex.test(routingKey));
+    const filtered = exchange.bindings.filter((binding) => binding.regex.test(routingKey));
     return __1.fp.transform(filtered, (result, binding) => {
         if (binding.queueName) {
             const queue = connection.queues[binding.queueName];
@@ -36,12 +36,12 @@ function findHandlers(connection, exchange, routingKey) {
 }
 function routeMessages(consumers, message) {
     return __awaiter(this, void 0, void 0, function* () {
-        yield Promise.all(consumers.forEach((handler) => __awaiter(this, void 0, void 0, function* () {
-            var buf = Buffer.from(JSON.stringify({ result: { 'add': 'added' } }), 'utf8');
-            let messageResult = { properties: message.properties, content: buf };
+        Object.keys(consumers).forEach((key) => __awaiter(this, void 0, void 0, function* () {
+            const handler = consumers[key];
+            const buf = Buffer.from(JSON.stringify({ result: { add: 'added' } }), 'utf8');
+            const messageResult = { properties: message.properties, content: buf };
             return handler(messageResult);
-        })));
-        return true;
+        }));
     });
 }
 function generateBindingRegex(pattern) {
@@ -67,8 +67,9 @@ class Channel {
     }
     assertQueue(queue, opt) {
         return __awaiter(this, void 0, void 0, function* () {
-            if (queue === '')
+            if (queue === '') {
                 queue = shortid.generate();
+            }
             setIfUndefined(this.connection.queues, queue, { messages: [], consumers: {}, options: opt });
             return { queue, messageCount: 0, consumerCount: 0 };
         });
@@ -141,7 +142,6 @@ class Channel {
             return routeMessages(queue.consumers, message);
         });
     }
-    // amqplib sends a null message when it receives a close event from Rabbit
     closeConsumer(queueName) {
         return __awaiter(this, void 0, void 0, function* () {
             const queue = this.connection.queues[queueName];

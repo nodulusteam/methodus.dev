@@ -1,5 +1,5 @@
 import { Player } from './controllers/player';
-import { ServerType, Server, MethodusConfig, MethodusClassConfig, MethodType } from '../index';
+import { ServerType, Server, MethodusConfig, MethodType } from '../index';
 const redis_addr = '//192.168.99.100:32771';
 
 
@@ -7,8 +7,8 @@ let config = new MethodusConfig();
 
 config.run(ServerType.Redis, { client: redis_addr, server: redis_addr });
 
-config.use(Player, MethodType.Local, ServerType.Redis,'http://localhost:8090')
-const server = new Server(8200).configure(config).start();
+config.use(Player, MethodType.Local, ServerType.Redis, 'http://localhost:8090')
+new Server(8200).configure(config).start();
 
 setTimeout(() => {
 

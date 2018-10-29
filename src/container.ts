@@ -1,7 +1,5 @@
+console.log('env', process.env.test);
 export class _Container {
-    /**
-     *
-     */
     constructor() {
         this._deps = new Map<string, any>();
 
@@ -15,12 +13,7 @@ export class _Container {
     }
 }
 
-
-
-
 export const Container = new _Container();
-
-
 
 
 if (process.env.test === 'true') {

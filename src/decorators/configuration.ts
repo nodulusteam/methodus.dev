@@ -1,7 +1,3 @@
-import { MethodType } from "../";
-
-
-
 
 export class ConfigHelper {
     static get(entryName: string) {
@@ -15,4 +11,3 @@ export class ConfigHelper {
         return null;
     }
 }
-

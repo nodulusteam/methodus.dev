@@ -1,19 +1,16 @@
 
-const debug = require('debug')('tmla:methodus');
 import 'reflect-metadata';
 import { fp } from '../fp';
 import { AMQP } from './rabbitmq';
 import { BaseServer } from './base';
-import { LogLevel, logger, Log, LogClass } from '../log';
-import { MethodusClassConfig } from '../config';
-import { MethodType, ServerType } from '../interfaces';
-import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../response';
+import { logger, LogClass } from '../log';
+
+import { MethodEvent, MethodMessage } from '../response';
 
 const metadataKey = 'methodus';
 
 const kafka = require('kafka-node'),
-    Producer = kafka.Producer,
-    KeyedMessage = kafka.KeyedMessage;
+    Producer = kafka.Producer;
 
 
 @LogClass(logger)
@@ -25,7 +22,7 @@ export class Kafka extends BaseServer {
         this.options = options
     }
 
-    @Log()
+
     async _sendEvent(methodEvent: MethodEvent) {
         return new Promise((resolve, reject) => {
             AMQP.connect(this.options).then((conn) => {
@@ -45,13 +42,13 @@ export class Kafka extends BaseServer {
         });
     }
 
-    @Log()
+
     useClass(classType) {
         new KafkaRouter(classType, this.options);
 
     }
 
-    @Log()
+
     async _send(functionArgs, methodinformation, paramsMap) {
 
         return new Promise((resolve, reject) => {
@@ -116,14 +113,14 @@ export class KafkaRouter {
 
     }
 
-    @Log()
+
     async registerEvents(proto) {
         return new Promise((resolve, reject) => {
             resolve();
         })
 
     }
-    @Log()
+
     async registerRoutes(proto, methodus) {
         return new Promise((resolve, reject) => {
 

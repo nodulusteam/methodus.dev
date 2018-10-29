@@ -1,9 +1,7 @@
 
 
 import 'reflect-metadata';
-import { logger } from '../log';
 import { ClassContainer } from '../class-container';
-let metadataKey = 'methodus';
 
 /** the MethodConfig decorator registers the controller as a router
  *  @param {string} name - the identifier of the controller in the resolver.

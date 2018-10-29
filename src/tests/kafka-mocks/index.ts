@@ -1,25 +1,19 @@
-'use strict';
-
-const Connection = require('./connection');
-
-let connections = {};
-
 
 export class Producer {
+	topics: {};
 	constructor() {
 		this.topics = {};
 	}
-	topics: {};
-	on(eventName: string, cb: Function) {
+	on(eventName: string, cb: () => {}) {
 		switch (eventName) {
 			case 'ready':
 				cb();
 		}
 	}
-	send(payloads: any, cb: Function) {
+	send(payloads: any, cb: (err, msg) => {}) {
 		cb(null, payloads[0].messages);
 	}
-	createTopics(topic: string, cb: Function) {
+	createTopics(topic: string, cb: (err, msg) => {}) {
 		this.topics[topic] = cb;
 	}
 }
@@ -29,24 +23,14 @@ export class KeyedMessage {
 }
 
 export class Client {
-	constructor() {
-
-	}
 
 }
 
 export class KafkaClient {
-	constructor() {
-
-	}
-
-	on(eventName: string, cb: Function) {
+	on(eventName: string, cb: () => {}) {
 		switch (eventName) {
 			case 'ready':
 				cb();
 		}
 	}
 }
-
-
-

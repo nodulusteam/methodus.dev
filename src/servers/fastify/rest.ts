@@ -1,9 +1,5 @@
 import { MethodResult, MethodError } from '../../response';
-import { logger, Log, LogClass } from '../../log';
-
-
-
-
+import { logger, LogClass } from '../../log';
 export class Verbs {
     public static Get: string = 'GET';
     public static Post: string = 'POST';
@@ -11,43 +7,39 @@ export class Verbs {
     public static Patch: string = 'PATCH';
     public static Head: string = 'HEAD';
     public static Delete: string = 'DELETE';
-
 }
-
-
 
 export class RestResponse {
     constructor(args, methodResult: MethodResult | MethodError | any, headers: any) {
-        let res = args[1]; //in express this will ontain the response
-
+        const res = args[1]; // in express this will ontain the response
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
-        }
-        else if (!methodResult || methodResult.error) {
+        } else if (!methodResult || methodResult.error) {
             res.status(500);
-        }
-        else {
+        } else {
             res.status(200);
         }
 
         if (methodResult && !methodResult.error) {
-            if (methodResult.total)
+            if (methodResult.total) {
                 res.set('X-Total-Count', methodResult.total);
+            }
 
-            if (methodResult.page)
+            if (methodResult.page) {
                 res.set('X-Page', methodResult.page);
+            }
         }
-        if (methodResult === null)
+        if (methodResult === null) {
             throw (new MethodError('null result from controller function', 500));
-
+        }
 
         if (headers) {
-            Object.keys(headers).map((header) => {
+            Object.keys(headers).forEach((header) => {
                 res.setHeader(header, headers[header]);
-            })
+            });
         }
 
-        //when we pipe the result using node streams we eed to pass inthe original headers for the response
+        // when we pipe the result using node streams we eed to pass inthe original headers for the response
         if (methodResult && methodResult.result && methodResult.result.readable) {
 
             if (methodResult.headers) {
@@ -55,8 +47,6 @@ export class RestResponse {
                     res.setHeader(key, methodResult.headers[key]);
                 });
             }
-
-
 
             methodResult.result.pipe(res).on('error', (err) => {
                 console.error('stream errored', err);
@@ -71,29 +61,21 @@ export class RestResponse {
 
         if (methodResult.error) {
             res.send(methodResult.error);
-        }
-
-        else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
+        } else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
             res.send(methodResult.result);
-        }
-        else {
+        } else {
             if (methodResult.result === 0) {
                 methodResult.result = JSON.stringify(methodResult.result);
             }
 
             if (typeof methodResult.result === 'string') {
                 res.send(methodResult.result, 'utf-8');
-            }
-            else {
+            } else {
                 res.header('Content-Type', 'application/json');
                 res.send(methodResult.result);
             }
         }
     }
-
-
-
-
 }
 
 /** this function parses values from the request object into the function args
@@ -108,18 +90,15 @@ export class RestParser {
             if (item.type && item.type.deserialize) {
                 try {
                     return item.type.deserialize(item.value);
-                }
-                catch (error) {
+                } catch (error) {
                     logger.warn(this, 'error deserializing argument', item);
                 }
-            }
-            else if (item.type && item.type.prototype && item.type.prototype.constructor) {
+            } else if (item.type && item.type.prototype && item.type.prototype.constructor) {
                 return new item.type(item.value);
             } else if (typeof (item.value) === 'string' && item.type === 'object') {
                 try {
                     return JSON.parse(item.value);
-                }
-                catch (error) {
+                } catch (error) {
                     logger.warn(this, 'error parsing argument', item);
                 }
 
@@ -135,18 +114,15 @@ export class RestParser {
 
     parse(args, paramsMap, functionArgs): ParserResponse {
         let isRest = false;
-        let context;
         let securityContext;
-        if (args[0] && args[0].req && args[1] && args[1].res)//this call came from an fastify route
-        {
-            // securityContext = args[0].att || args[0].att_security_context;
+        if (args[0] && args[0].req && args[1] && args[1].res) {
+            securityContext = args[0].att || args[0].att_security_context;
 
             paramsMap.forEach((item: any) => {
                 if (item.name && item.from) {
                     item.value = args[0][item.from][item.name] || item.defaultValue || null;
                     item.value = this.deserialize(item);
-                }
-                else if (item.from) {
+                } else if (item.from) {
                     switch (item.from) {
                         case 'response':
                             item.value = args[1];
@@ -159,13 +135,11 @@ export class RestParser {
                             break;
                     }
 
-
-
                 } else {
                     item.value = args[0];
                 }
 
-                //security special case
+                // security special case
                 if (item.from === 'att_security_context') {
                     item.value = args[0].att_security_context || args[0].att;
                 }
@@ -180,22 +154,16 @@ export class RestParser {
 
         return new ParserResponse(functionArgs, isRest, securityContext);
     }
-
-
-
-
-
-
 }
 
 @LogClass(logger)
 export class ParserResponse {
+    args: any;
+    isRest: boolean;
+    securityContext: any;
     constructor(args: any, isRest: boolean, securityContext: any) {
         this.args = args;
         this.isRest = isRest;
         this.securityContext = securityContext;
     }
-    args: any;
-    isRest: boolean;
-    securityContext: any;
 }

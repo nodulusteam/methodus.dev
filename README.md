@@ -32,7 +32,7 @@ Methodus uses controllers in the same manner the `express` framework does. It bi
 in Methodus it will look like this
  
 ```javascript
-import { Method, MethodConfig, Files, Verbs, MethodType, Body, Response, Request, Param, Query, SecurityContext, MethodError, MethodResult } from '@tmla/methodus';
+import { Method, MethodConfig, Files, Verbs, MethodType, Body, Response, Request, Param, Query, SecurityContext, MethodError, MethodResult } from '@methodus/server';
 
 /*start custom*/
 //in here you can put types and definitions that should be distributed with the contract
@@ -43,7 +43,7 @@ import * as path from 'path';
 
 
 
-@MethodConfig('@tmla-tiles/hellow-world')
+@MethodConfig('@ns/hellow-world')
 export class Hello {
 
 @Method(Verbs.Post, '/api/hello', [upload.any(), autoReap]) //loading route and middlewares
@@ -88,8 +88,9 @@ The arguments passed into these decorated methods will be mapped according to th
      <td>All</td>
      <td>All	same as param in express, a name can be passed to get a specific key within the param object.</td></tr>
  <tr><td>@File()</td><td>Post</td><td>same as files in express + multer , a name can be passed to get a specific key within the body object	 </td></tr>
-  <tr><td>@SecurityContext()</td><td>All</td><td>same as using req.att in our traditional cntrollers.
-  the security context is built using the @tmla/secure middleware, therefor in order to use it the middleware should be used.</td></tr>
+ 
+  
+   
    <tr><td>Special Mappings</td><td></td><td></td></tr>
     <tr><td>@Response()</td><td>All</td><td>same as res in express, the mapping should be used when we need to pipe a stream to the response</td></tr>
      <tr><td>@Request()</td><td>All</td><td>	same as req in express, the mapping should be used when we need to pipe a stream to the request	</td></tr>    
@@ -116,14 +117,14 @@ this host file starts an express server using the configured port and binds our 
  
  
 ```javascript
-import { ServerType, Server, MethodType, MethodusConfig } from '@tmla/methodus';
+import { ServerType, Server, MethodType, MethodusConfig } from '@methodus/server';
 import { Hello } from './controllers/hello-controller';
-const configuration = require('@tmla/config').config;
+
 (async () => {
 let config = new MethodusConfig();
-config.run(ServerType.Express, { port: +configuration.port });
+config.run(ServerType.Express, { port: +process.env.PORT });
 config.use(Hello, MethodType.Local, ServerType.Express);
-let server = await new Server(+configuration.port).configure(config).start();
+let server = await new Server(+process.env.PORT).configure(config).start();
 })()
 ```
 

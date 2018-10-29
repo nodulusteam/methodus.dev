@@ -1,11 +1,7 @@
 import * as express from 'express';
-import { MethodDescriptor, Verbs } from '../../config';
-import * as path from 'path';
-import { MethodError, MethodResult, MethodEvent } from '../../response/';
 import { fp } from '../../fp';
-import { logger, Log, LogClass } from '../../log';
-import { MethodType } from '../../';
-const request = require('request-promise-native');
+import { logger, LogClass } from '../../log';
+import { MethodType,Verbs } from '../../';
 import 'reflect-metadata';
 
 

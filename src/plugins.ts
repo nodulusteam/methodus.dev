@@ -1,7 +1,5 @@
-import { MethodusConfig, MethodusConfigFromFile, ServerConfig, MethodusClassConfig, PluginEntry } from './config';
-import { MethodType, ServerType } from './interfaces';
+import { MethodusConfig, PluginEntry } from './config';
 
-import * as path from 'path';
 export class PluginLoader {
     config(serverConfiguration: MethodusConfig, pluginList: PluginEntry[]) {
         console.log('> Configuring plugins:');
@@ -11,9 +9,8 @@ export class PluginLoader {
                 const pluginModule = require(plugin.name);
                 pluginModule.init(serverConfiguration, plugin.options);
             } catch (error) {
-                console.error(error)
+                console.error(error);
             }
-
         });
     }
 }

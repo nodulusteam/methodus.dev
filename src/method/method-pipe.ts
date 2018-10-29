@@ -1,27 +1,15 @@
-const excludedProps = ['constructor'];
-
 import 'reflect-metadata';
-import { MethodusConfig, MethodDescriptor, MethodusConfigurations } from '../config';
+import { MethodDescriptor } from '../config';
 import { MethodType, ServerType } from '../interfaces';
-import { MethodResult, MethodError, MethodEvent } from '../response';
+import { MethodResult, MethodError } from '../response';
 import { Servers } from '../servers/serversList';
-import { fp } from '../fp';
-import { logger, Log, LogClass } from '../log';
+import { logger } from '../log';
 import { RestParser, RestResponse, Verbs } from '../rest';
 import { ClassContainer } from '../class-container';
-import * as  StreamFromPromise from 'stream-from-promise';
-
 import { ConfigHelper } from '../decorators/configuration';
-const correlator = require('correlation-id');
-
 let methodMetadataKey = 'methodus';
-let metadataKey = 'params';
 
-function mergeMetadata(methodus) {
-    let config = MethodusConfigurations.get();
-    let methodinformation = config.classes.get(methodus.name);
-    return Object.assign({}, methodus, methodinformation);
-}
+
 
 
 /** the @Method decorator registers the model with the odm
@@ -29,7 +17,6 @@ function mergeMetadata(methodus) {
  *  @param {string} route - express route string.
  *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
  */
-const METHODLOG = 'methodus::Method';
 
 export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
@@ -50,7 +37,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
         // save a reference to the original method
         let originalMethod = descriptor.value;
 
-        let classes = {};
+        
         //not async
         descriptor.value = function (...args: any[]) {
             validateServerIsRunning();
@@ -63,7 +50,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
 
             //we will return a MethodResult or a MEthodError
             let methodResult: MethodResult | MethodError | any = null;
-            let proto = fp.maybeProto(this);
+          
 
             //try to get the method metadata from the Relection API.
             let methodus: any = target.methodus;
@@ -77,7 +64,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
             Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
 
             let functionArgs: any[] = [];
-           
+
             let methodType = MethodType.Local;//we default to local
             //rest paramters should be parsed differntly
             const parser = new RestParser(methodus.serverType);
@@ -86,11 +73,11 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
             //acquire the method information from the config classes map
             let completeConfiguration = Object.assign({}, methodus, config);
 
-           
+
 
             if (methodus) {
-                let configurationKey = methodus.name.replace('@tmla-tiles/', '@tmla-contracts/');
-                let configurationBlock = ConfigHelper.get(configurationKey);
+
+                let configurationBlock = ConfigHelper.get(methodus.name);
                 if (!configurationBlock) {
                     configurationBlock = ConfigHelper.get(methodus.name);
                 }
@@ -109,7 +96,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
             let restHeaders = null;
             try {
                 let server: ServerType | null = null;
-                let i = 0;
+
                 const mappedArgs = paramsMap.map((param) => {
                     return { [param.name || param.from]: ParserResponse.args[param.index] }
                 });

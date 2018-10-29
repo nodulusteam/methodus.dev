@@ -1,11 +1,7 @@
-
-const uuidv1 = require('uuid/v1');
-import { MethodEvent, MethodError } from '../response/'
-
-
+import * as uuidv1 from 'uuid/v1';
+import { MethodEvent, MethodError } from '../response/';
 import { Request } from '../servers/express/Request';
-import { MethodType, ServerType } from '../interfaces';
-
+import { ServerType } from '../interfaces';
 
 export class ServersList {
     public instances: any = {};
@@ -13,10 +9,9 @@ export class ServersList {
     constructor() {
         this.classes = {};
         this.instances = {};
-
     }
     public addServer(server) {
-        let id = uuidv1();
+        const id = uuidv1();
         this.instances[id] = server;
         return id;
     }
@@ -25,16 +20,15 @@ export class ServersList {
         return instance;
     }
     public get(instanceId, serverType?) {
-        if (serverType)
+        if (serverType) {
             return this.instances[instanceId][serverType];
-        else
+        } else {
             return this.instances[instanceId];
+        }
     }
 
-
-
     public async  emit(methodEvent: MethodEvent) {
-        for (let instanceKey in this.instances) {
+        for (const instanceKey in this.instances) {
             if (this.instances[instanceKey][methodEvent.serverType]) {
                 const result = this.instances[instanceKey][methodEvent.serverType]._sendEvent(methodEvent);
                 return result;
@@ -44,21 +38,20 @@ export class ServersList {
 
     public send(server, functionArgs, methodus, paramsMap, securityContext?) {
         if (this.instances && Object.keys(this.instances).length) {
-            for (let instanceKey in this.instances) {
+            for (const instanceKey in this.instances) {
                 if (this.instances[instanceKey][server]) {
-                    const result = this.instances[instanceKey][server]._send(functionArgs, methodus, paramsMap, securityContext);
+                    const result = this.instances[instanceKey][server]._send(functionArgs,
+                        methodus, paramsMap, securityContext);
                     return result;
                 }
             }
         } else {
             if (server === ServerType.Express || server === ServerType.ExpressPartial) {
                 const request = new Request();
-
-
-
-                let baseUrl = methodus.resolver();
+                const baseUrl = methodus.resolver();
                 if (baseUrl) {
-                    return request.sendRequest(methodus.verb, baseUrl + methodus.route, functionArgs, paramsMap, securityContext);
+                    return request.sendRequest(methodus.verb, baseUrl + methodus.route, functionArgs,
+                        paramsMap, securityContext);
                 } else {
                     return new MethodError('no server found for this method' + methodus.route, 302);
                 }
@@ -67,8 +60,6 @@ export class ServersList {
 
     }
 }
-
-
 
 if (!(global as any).METHODUS_BRIDGE) {
 

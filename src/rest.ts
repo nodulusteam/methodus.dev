@@ -1,11 +1,8 @@
 import { MethodResult, MethodError } from './response';
-import { logger, Log, LogClass } from './log';
-import { MethodType, ServerType } from './interfaces';
-
+import { logger, LogClass } from './log';
+import { ServerType } from './interfaces';
 import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './servers/express/rest';
 import { RestParser as RestFastify, RestResponse as RestResponseFastify } from './servers/fastify/rest';
-
-
 
 export class Verbs {
     public static Get: string = 'GET';
@@ -14,43 +11,40 @@ export class Verbs {
     public static Patch: string = 'PATCH';
     public static Head: string = 'HEAD';
     public static Delete: string = 'DELETE';
-
 }
-
-
 
 export class RestResponse {
     constructor(args, methodResult: MethodResult | MethodError | any, headers: any) {
-        let res = args[1]; //in express this will ontain the response
+        const res = args[1]; // in express this will ontain the response
 
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
-        }
-        else if (!methodResult || methodResult.error) {
+        } else if (!methodResult || methodResult.error) {
             res.status(500);
-        }
-        else {
+        } else {
             res.status(200);
         }
 
         if (methodResult && !methodResult.error) {
-            if (methodResult.total)
+            if (methodResult.total) {
                 res.set('X-Total-Count', methodResult.total);
+            }
 
-            if (methodResult.page)
+            if (methodResult.page) {
                 res.set('X-Page', methodResult.page);
+            }
         }
-        if (methodResult === null)
+        if (methodResult === null) {
             throw (new MethodError('null result from controller function', 500));
-
+        }
 
         if (headers) {
-            Object.keys(headers).map((header) => {
+            Object.keys(headers).forEach((header) => {
                 res.setHeader(header, headers[header]);
-            })
+            });
         }
 
-        //when we pipe the result using node streams we eed to pass inthe original headers for the response
+        // when we pipe the result using node streams we eed to pass inthe original headers for the response
         if (methodResult && methodResult.result && methodResult.result.readable) {
 
             if (methodResult.headers) {
@@ -59,11 +53,8 @@ export class RestResponse {
                 });
             }
 
-
-
             methodResult.result.pipe(res).on('error', (err) => {
                 console.error('stream errored', err);
-
             }).on('reponse', (response) => {
                 console.error('stream responsed', response);
             }).on('finish', (response) => {
@@ -74,20 +65,16 @@ export class RestResponse {
 
         if (methodResult.error) {
             res.send(methodResult.error);
-        }
-
-        else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
+        } else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
             res.send(methodResult.result);
-        }
-        else {
+        } else {
             if (methodResult.result === 0) {
                 methodResult.result = JSON.stringify(methodResult.result);
             }
 
             if (typeof methodResult.result === 'string') {
                 res.send(methodResult.result, 'utf-8');
-            }
-            else {
+            } else {
                 res.header('Content-Type', 'application/json');
                 if (methodResult.result) {
                     res.send(JSON.stringify(methodResult.result), 'utf-8');
@@ -97,10 +84,6 @@ export class RestResponse {
             }
         }
     }
-
-
-
-
 }
 
 /** this function parses values from the request object into the function args
@@ -111,9 +94,6 @@ export class RestResponse {
 export class RestParser {
     parser: any;
     response: any;
-    parse(args, paramsMap, functionArgs) {
-        return this.parser.parse(args, paramsMap, functionArgs);
-    }
     constructor(type: ServerType) {
         switch (type) {
 
@@ -128,16 +108,19 @@ export class RestParser {
                 break;
         }
     }
+    parse(args, paramsMap, functionArgs) {
+        return this.parser.parse(args, paramsMap, functionArgs);
+    }
 }
 
 @LogClass(logger)
 export class ParserResponse {
+    args: any;
+    isRest: boolean;
+    securityContext: any;
     constructor(args: any, isRest: boolean, securityContext: any) {
         this.args = args;
         this.isRest = isRest;
         this.securityContext = securityContext;
     }
-    args: any;
-    isRest: boolean;
-    securityContext: any;
 }

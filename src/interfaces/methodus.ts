@@ -4,23 +4,21 @@ export interface IMethodusClassConfig {
     classType: any;
     serverType: ServerType;
 }
-
 export interface Router {
-
-
+    prefix: string;
 }
 
 export interface IServer {
+    classRouters: any[];
+    config: IMethodusConfig;
     sockets?: any;
     useClass(classType: any, methodType: MethodType): void;
-    classRouters: Router[];
-    config: IMethodusConfig;
     _send(channel: any, functionArgs: any, message: any, paramsMap?: any): any;
 }
 
 export interface IMethodusConfig {
     classes: Map<string, IMethodusClassConfig>;
-    servers?: IServerConfig[]
+    servers?: IServerConfig[];
     port: number;
 
 }
@@ -38,7 +36,7 @@ export const enum MethodType {
     Redis = 'Redis',
     Socket = 'Socket',
     Kafka = 'Kafka',
-    Mock = 'Mock'
+    Mock = 'Mock',
 }
 
 export const enum ServerType {
@@ -48,7 +46,6 @@ export const enum ServerType {
     Redis = 'redis',
     Socket = 'socketio',
     Kafka = 'kafka',
-    HTTP2 = 'http2'
+    HTTP2 = 'http2',
 
 }
-

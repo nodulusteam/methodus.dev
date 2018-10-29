@@ -1,7 +1,5 @@
-'use strict';
+"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const Connection = require('./connection');
-let connections = {};
 class Producer {
     constructor() {
         this.topics = {};
@@ -24,13 +22,9 @@ class KeyedMessage {
 }
 exports.KeyedMessage = KeyedMessage;
 class Client {
-    constructor() {
-    }
 }
 exports.Client = Client;
 class KafkaClient {
-    constructor() {
-    }
     on(eventName, cb) {
         switch (eventName) {
             case 'ready':

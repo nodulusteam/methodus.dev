@@ -1,14 +1,13 @@
-// <references path='../interfaces/methodus.ts' />
-const debug = require('debug')('tmla:methodus');
-
 import 'reflect-metadata';
-import { MethodError, MethodResult, MethodEvent } from '../response';
-import { Router,IServer } from '../interfaces';
-
+// <references path='../interfaces/methodus.ts' />
+const debug = require('debug')('methodus');
+import * as Methodus from '../interfaces/';
+import { MethodEvent } from '../response';
 import { fp } from '../fp';
 import { BaseServer } from './base';
-let metadataKey = 'methodus';
-import { logger, Log, LogClass } from '../log';
+const metadataKey = 'methodus';
+import { logger, LogClass } from '../log';
+import * as socketIO from 'socket.io';
 
 @LogClass(logger)
 export class SocketIO extends BaseServer {
@@ -16,11 +15,12 @@ export class SocketIO extends BaseServer {
     constructor(options, httpServer) {
         super();
         this.classRouters = [];
-        var io: IServer;
-        if (httpServer)
-            this._app = require('socket.io')(httpServer);
-        else
-            this._app = require('socket.io').listen(options.port);
+
+        if (httpServer) {
+            this._app = socketIO(httpServer);
+        } else {
+            this._app = socketIO.listen(options.port, { transports: ['polling', 'websocket'] });
+        }
 
         (global as any).socketioEngine = this._app;
         let nsp = this._app;
@@ -31,7 +31,6 @@ export class SocketIO extends BaseServer {
         nsp.on('connection', (socket) => {
             this.socketHandler(socket);
         });
-
 
         nsp.use((socket, next) => {
             next();
@@ -48,86 +47,79 @@ export class SocketIO extends BaseServer {
     socketHandler(socket) {
         if (!socket.attached) {
             this.classRouters.forEach((item) => {
-                new SocketIORouter(item, socket);
+                const socketServer = new SocketIORouter(item, socket);
             });
             socket.attached = true;
         }
 
-
     }
     async _sendEvent(methodEvent: MethodEvent) {
-
+        const mymethodEvent = methodEvent;
     }
     async _send(functionArgs, methodus, paramsMap) {
         return new Promise(async (resolve, reject) => {
             debug('sending data in socket', functionArgs, methodus, paramsMap);
 
-            var dataObject = {};
+            const dataObject = {};
             functionArgs.forEach((element, index) => {
                 dataObject[paramsMap.filter((item) => {
                     return item.index === index;
                 })[0].name] = element;
             });
 
-
-            let myUri = await methodus.resolver();
-            var socket = require('socket.io-client')(myUri);
+            const myUri = await methodus.resolver();
+            const socket = require('socket.io-client')(myUri);
             socket.on('connect', () => {
                 debug('socket connection ok');
-                let messageName = methodus.verb + '_' + methodus.route;
+                const messageName = methodus.verb + '_' + methodus.route;
                 debug('messageName:method:recipient', messageName);
                 socket.emit(messageName, dataObject, (data) => {
                     debug('recieved result', data);
                     if (data.error && data.statusCode) {
-                        logger.error(data)
+                        logger.error(data);
                         reject(data);
-                    }
-                    else {
-                        logger.info('return value is', data)
+                    } else {
+                        logger.info('return value is', data);
                         resolve(data);
-
                     }
                 });
             });
         });
     }
-
 }
 
 @LogClass(logger)
-export class SocketIORouter implements Router {
+export class SocketIORouter implements Methodus.Router {
+    prefix: string;
     public router: any;
     constructor(obj: any, socket: any) {
-        let proto = fp.maybeProto(obj);
-        let methodus = fp.maybeMethodus(obj);
+        const proto = fp.maybeProto(obj);
+        const methodus = fp.maybeMethodus(obj);
 
-        let existingClassMetadata = Reflect.getOwnMetadata(metadataKey, proto) || {};
+        const existingClassMetadata = Reflect.getOwnMetadata(metadataKey, proto) || {};
         existingClassMetadata.returnMessages = true;
         Reflect.defineMetadata(metadataKey, existingClassMetadata, proto);
 
-        Object.keys(methodus._descriptors).forEach(itemKey => {
-            let item = methodus._descriptors[itemKey];
+        Object.keys(methodus._descriptors).forEach((itemKey) => {
+            const item = methodus._descriptors[itemKey];
             debug('activating controller method', item, methodus);
             logger.info(this, `registering socket event`, item.verb + '_' + item.route);
 
             socket.on(item.verb + '_' + item.route, async (data, callback) => {
-                //parse params
+                // parse params
                 debug('activating controller method', itemKey, data);
 
-                let paramsMap: any[] = Reflect.getOwnMetadata('params', proto, itemKey) || [];
+                const paramsMap: any[] = Reflect.getOwnMetadata('params', proto, itemKey) || [];
                 debug('method params', itemKey, paramsMap);
-                let functionArgs: any = [];
+                const functionArgs: any = [];
 
-
-                methodus._descriptors[itemKey].params.forEach((item) => {
-                    functionArgs[item.index] = data[item.name];
-                })
-
-
+                methodus._descriptors[itemKey].params.forEach((xitem) => {
+                    functionArgs[xitem.index] = data[xitem.name];
+                });
 
                 try {
-                    let result = await proto[itemKey](...functionArgs, socket, data);
-                    debug('result is:', result)
+                    const result = await proto[itemKey](...functionArgs, socket, data);
+                    debug('result is:', result);
                     callback(result);
                 } catch (error) {
                     callback(error);

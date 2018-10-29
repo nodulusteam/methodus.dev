@@ -1,14 +1,9 @@
 
 
-const excludedProps = ['constructor'];
-const debug = require('debug')('tmla:methodus');
+
 import 'reflect-metadata';
-import { MethodusConfig, EventDescriptor } from '../config';
-import { MethodType, ServerType } from '../interfaces';
-import { MethodResult, MethodError } from '../response';
-import { fp } from '../fp';
-import { logger, Log, LogClass } from '../log';
-import { RestParser, RestResponse, Verbs } from '../rest';
+import { EventDescriptor } from '../config';
+
 let metadataKey = 'methodus';
 
 /** the model decorator registers the model with the odm

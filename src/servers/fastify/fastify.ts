@@ -5,7 +5,7 @@ import * as fastify from 'fastify';
 import { BaseServer } from '../base';
 import { MethodError, MethodEvent } from '../../response/';
 import { fp } from '../../fp';
-import { logger, Log, LogClass, LogLevel } from '../../log';
+import { logger, LogClass } from '../../log';
 import { MethodType } from '../../interfaces/methodus';
 import { Request } from '../express/Request';
 
@@ -15,33 +15,36 @@ export class Fastify extends BaseServer {
     constructor(port, onStart) {
         super();
         const baseCertPath = path.join(process.cwd(), 'cert');
-        this._app = fastify(
-            {
-                logger: { level: 'info' },
-                http2: true,
-                https: {
-                    allowHTTP1: true,
-                    key: fs.readFileSync(path.join(baseCertPath, 'server.key')),
-                    cert: fs.readFileSync(path.join(baseCertPath, 'server.cert'))
-                }
-            } as any);
+        const options: any = {
+            logger: { level: 'info' },
+            http2: true,
+            https: {
+                allowHTTP1: true,
+                key: fs.readFileSync(path.join(baseCertPath, 'server.key')),
+                cert: fs.readFileSync(path.join(baseCertPath, 'server.cert'))
+            },
+        };
+
+        this._app = fastify(options);
         this._app.listen(port, (err, address) => {
-            if (err) throw err
-            this._app.log.error(`server listening on ${address}`)
-        })
+            if (err) {
+                throw err;
+            }
+            this._app.log.error(`server listening on ${address}`);
+        });
 
-        function errorHandler(err, req, res, next) {
-            var errorCode = '500';
-            var errReason = 'Exception';
-            var stack = err.stack;
-            logger.error(`${errorCode}. Error ${new Date()} AppServer ${errReason}   ${500} ${err} ${stack}`);
+        // function errorHandler(err, req, res, next) {
+        //     var errorCode = '500';
+        //     var errReason = 'Exception';
+        //     var stack = err.stack;
+        //     logger.error(`${errorCode}. Error ${new Date()} AppServer ${errReason}   ${500} ${err} ${stack}`);
 
-            res.status(500);
-            res.render('error', {
-                error: err,
-                stack: stack
-            });
-        }
+        //     res.status(500);
+        //     res.render('error', {
+        //         error: err,
+        //         stack: stack
+        //     });
+        // }
     }
     close() {
         this._app.close();
@@ -55,7 +58,7 @@ export class Fastify extends BaseServer {
         });
     }
 
-    @Log()
+
     _send(params, methodus, paramsMap, securityContext) {
         const request = new Request();
         let baseUrl = methodus.resolver();
@@ -69,7 +72,7 @@ export class Fastify extends BaseServer {
 
 
     }
-    @Log()
+
     async _sendEvent(methodEvent: MethodEvent) {
 
     }
@@ -108,14 +111,13 @@ export class FastifyRouter {
             routerDataObject[item.route].push(item);
         });
 
-
         Object.keys(routerDataObject).forEach((route: string) => {
             routerDataObject[route].map((item) => {
-                let verb = item.verb.toLowerCase();
-                let functionArray = [...globalMiddlewares];
+                const verb = item.verb.toLowerCase();
+                const functionArray: any[] = [...globalMiddlewares];
                 if (item.middlewares) {
-                    logger.info(this, `loading middleware for ${item.propertyKey}`)
-                    item.middlewares.forEach(element => {
+                    logger.info(this, `loading middleware for ${item.propertyKey}`);
+                    item.middlewares.forEach((element: any) => {
                         if (element) {
                             functionArray.push(element);
                         }

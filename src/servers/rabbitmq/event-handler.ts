@@ -1,21 +1,13 @@
 
 
-const debug = require('debug')('tmla:methodus:mq');
 import 'reflect-metadata';
 import { fp } from '../../fp';
 import { AMQP } from './amqp';
-import { BaseServer } from '../base';
-import { LogLevel, logger, Log, LogClass } from '../../log';
-import { MethodusClassConfig, ConnectionOptions, MethodusConfigurations } from '../../config';
-import { MethodType, ServerType } from '../../interfaces';
-import { MethodResult, MethodError, MethodEvent, MethodMessage, generateUuid } from '../../response';
+import { logger } from '../../log';
+import { MethodEvent } from '../../response';
 import * as domain from 'domain';
- 
-
-
 
 export async function registerHandlers(proto, options) {
-
     return new Promise((resolve, reject) => {
         let foundEvents = false;
         if (proto.methodus._events && Object.keys(proto.methodus._events).length > 0) {

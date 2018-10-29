@@ -1,5 +1,4 @@
-import { logger, Log, LogClass } from '../log/';
-import { Servers } from '../servers'
+import { logger, LogClass } from '../log/';
 
 @LogClass(logger)
 export class MethodError extends Error {
@@ -8,15 +7,15 @@ export class MethodError extends Error {
     additional: any;
     constructor(error, statusCode?, additional?) {
         let message = error;
-        if (typeof error === 'object')
+        if (typeof error === 'object') {
             message = error.message;
+        }
         super(message);
         this.error = error;
 
         this.statusCode = statusCode || 500;
-        if (additional)
+        if (additional) {
             this.additional = additional;
+        }
     }
-
 }
-

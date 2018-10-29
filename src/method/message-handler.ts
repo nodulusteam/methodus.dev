@@ -1,15 +1,7 @@
-
-
-const excludedProps = ['constructor'];
-const debug = require('debug')('tmla:methodus');
 import 'reflect-metadata';
-import { MethodusConfig, EventDescriptor } from '../config';
-import { MethodType, ServerType } from '../interfaces';
-import { MethodResult, MethodError } from '../response';
-import { fp } from '../fp';
-import { logger, Log, LogClass } from '../log';
-import { RestParser, RestResponse, Verbs } from '../rest';
-let metadataKey = 'methodus';
+import { EventDescriptor } from '../config';
+
+const metadataKey = 'methodus';
 
 /** the model decorator registers the model with the odm
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -18,13 +10,10 @@ let metadataKey = 'methodus';
  */
 export function MessageHandler(name: string, exchange: string) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
-        let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
+        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} };
+        const metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor;
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
         target.methodus._events[name] = metaObject;
         return descriptor;
-    }
+    };
 }
-
-
-

@@ -1,4 +1,4 @@
-import { fp } from "../../..";
+import { fp } from '../../..';
 
 const shortid = require('shortid');
 const sinon = require('sinon');
@@ -14,7 +14,7 @@ function findHandlers(connection, exchange, routingKey) {
         return {};
     }
 
-    const filtered = exchange.bindings.filter(binding => binding.regex.test(routingKey));
+    const filtered = exchange.bindings.filter((binding) => binding.regex.test(routingKey));
     return fp.transform(filtered, (result, binding) => {
         if (binding.queueName) {
             const queue = connection.queues[binding.queueName];
@@ -30,12 +30,12 @@ function findHandlers(connection, exchange, routingKey) {
 }
 
 async function routeMessages(consumers, message) {
-    await Promise.all(consumers.forEach(async handler => {
-        var buf = Buffer.from(JSON.stringify({ result: { 'add': 'added' } }), 'utf8');
-        let messageResult = { properties: message.properties, content: buf }
+    Object.keys(consumers).forEach(async (key) => {
+        const handler = consumers[key];
+        const buf = Buffer.from(JSON.stringify({ result: { add: 'added' } }), 'utf8');
+        const messageResult = { properties: message.properties, content: buf };
         return handler(messageResult);
-    }));
-    return true;
+    });
 }
 
 function generateBindingRegex(pattern) {
@@ -72,8 +72,9 @@ class Channel {
         return true;
     }
     async assertQueue(queue, opt) {
-        if (queue === '')
+        if (queue === '') {
             queue = shortid.generate();
+        }
 
         setIfUndefined(this.connection.queues, queue, { messages: [], consumers: {}, options: opt });
         return { queue, messageCount: 0, consumerCount: 0 };
@@ -134,8 +135,6 @@ class Channel {
         if (!queue) {
             return true;
         }
-
-
 
         const message = { fields: { routingKey: queueName }, content, properties };
         this.trackedMessages.push(message);

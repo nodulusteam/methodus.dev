@@ -1,39 +1,31 @@
-import { logger, Log, LogClass } from '../log/';
-import { Servers } from '../servers'
-
-
-
 export class MethodResult<T= any> {
-    private _on: { [key: string]: Function } = {};
-    result: T;
     stream: any;
     page: number;
     total: number;
+    result: T;
     statusCode: number;
     headers: any = {};
+    private _on: { [key: string]: () => {} } = {};
     constructor(result: T, total?: number, page?: number) {
         this.result = result;
-        if (total)
+        if (total) {
             this.total = total;
-        if (page)
+        }
+        if (page) {
             this.page = page;
-
+        }
     }
-    pipe(streamToPipe) {
+    public pipe(streamToPipe) {
         this.stream = streamToPipe;
         return this.stream;
     }
-    setHeader(key, value) {
+    public setHeader(key, value) {
         this.headers[key] = value;
     }
-    on(key, value) {
+    public on(key, value) {
         this._on[key] = value;
     }
-
 }
-
-
-
 
 export class MethodResultStatus<T= any> {
     result: T;
@@ -44,13 +36,11 @@ export class MethodResultStatus<T= any> {
         this.statusCode = statusCode;
 
         this.result = result;
-        if (total)
+        if (total) {
             this.total = total;
-        if (page)
+        }
+        if (page) {
             this.page = page;
+        }
     }
-
-
 }
-
-
