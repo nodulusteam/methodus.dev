@@ -9,10 +9,9 @@ import { fp } from '../fp';
 
 export function MethodMock(mockedResult: any) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        var methodus = fp.maybeMethodus(target);
-        methodus._mocks = methodus._mocks || {}
-        methodus._mocks[propertyKey] = mockedResult;  
+        const methodus = fp.maybeMethodus(target);
+        methodus._mocks = methodus._mocks || {};
+        methodus._mocks[propertyKey] = mockedResult;
         return descriptor;
-    }
+    };
 }
-

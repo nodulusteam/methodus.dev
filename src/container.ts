@@ -1,10 +1,10 @@
 console.log('env', process.env.test);
 export class _Container {
+    _deps: Map<string, any>;
     constructor() {
         this._deps = new Map<string, any>();
 
     }
-    _deps: Map<string, any>;
     public set<T>(name: string, dep: any) {
         this._deps.set(name, dep);
     }
@@ -15,15 +15,13 @@ export class _Container {
 
 export const Container = new _Container();
 
-
 if (process.env.test === 'true') {
-    Container.set('amqplib', require('./tests/amqplib-mocks'))
-    Container.set('kafka-node', require('./tests/kafka-mocks'))
-    Container.set('redis', require('./tests/redis-mocks'))
-}
-else {
-    Container.set('amqplib', require('amqplib'))
-    Container.set('kafka-node', require('kafka-node'))
-    Container.set('redis', require('redis'))
+    Container.set('amqplib', require('./tests/amqplib-mocks'));
+    Container.set('kafka-node', require('./tests/kafka-mocks'));
+    Container.set('redis', require('./tests/redis-mocks'));
+} else {
+    Container.set('amqplib', require('amqplib'));
+    Container.set('kafka-node', require('kafka-node'));
+    Container.set('redis', require('redis'));
 
 }

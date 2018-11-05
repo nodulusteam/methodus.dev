@@ -31,7 +31,7 @@ export class MethodusClassConfig {
     public serverType: ServerType;
     public classType: any;
     public serviceName: string;
-    public resolver: Promise<any> | Function | string | any;
+    public resolver: Promise<string> | string | any;
     constructor(classType: any, methodType: MethodType,
         serverType: ServerType, resolver?: Promise<any> | any) {
         this.classType = classType;
@@ -66,7 +66,7 @@ export class MethodusConfig {
     }
 
     public use(classType: any, methodType: MethodType,
-        serverType: ServerType, resolver?: Promise<any> | Function | string | any) {
+        serverType: ServerType, resolver?: Promise<any> | string | any) {
         if (methodType === MethodType.Http && !resolver) {
             throw (new Error('Http transport requires a resolver, pass in a string or a promise'));
         }
@@ -108,8 +108,6 @@ export class MethodusConfigurations {
         return this._configurations;
     }
 }
-
-
 
 export function MethodusConfigFromFile(configPath) {
     const doc = yaml.safeLoad(fs.readFileSync(configPath, 'utf8'));

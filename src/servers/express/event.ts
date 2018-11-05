@@ -1,20 +1,19 @@
 import * as express from 'express';
 import { fp } from '../../fp';
 import { logger, LogClass } from '../../log';
-import { MethodType,Verbs } from '../../';
+import { MethodType, Verbs } from '../../';
 import 'reflect-metadata';
-
 
 @LogClass(logger)
 export class ExpressEventBus {
     public router: any;
     constructor(obj: any, methodType: MethodType) {
-        let proto = fp.maybeProto(obj);
-        let methodus = fp.maybeMethodus(obj);
-        //let collection = Object.getOwnPropertyNames(proto);
-        let autoRouter = express.Router();
-        Object.keys(methodus._events).forEach(itemKey => {
-            let item = methodus._events[itemKey];
+        const proto = fp.maybeProto(obj);
+        const methodus = fp.maybeMethodus(obj);
+        // let collection = Object.getOwnPropertyNames(proto);
+        const autoRouter = express.Router();
+        Object.keys(methodus._events).forEach((itemKey) => {
+            const item = methodus._events[itemKey];
             switch (item.verb) {
                 case Verbs.Get:
                     autoRouter.get(item.route, proto[item.propertyKey].bind(obj));
@@ -40,6 +39,4 @@ export class ExpressEventBus {
 
         this.router = autoRouter;
     }
-
-
 }

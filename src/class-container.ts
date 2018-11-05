@@ -2,11 +2,11 @@ export class _ClassContainer {
     /**
      *
      */
+    _deps: Map<string, any>;
     constructor() {
         this._deps = new Map<string, any>();
 
     }
-    _deps: Map<string, any>;
     public set<T>(name: string, dep: any) {
         this._deps.set(name, dep);
     }
@@ -15,9 +15,7 @@ export class _ClassContainer {
     }
 }
 
-
 if (!(global as any).METHODUS_CONTAINER) {
     (global as any).METHODUS_CONTAINER = new _ClassContainer();
 }
-export const ClassContainer = (global as any).METHODUS_CONTAINER;//new _ClassContainer();
-
+export const ClassContainer = (global as any).METHODUS_CONTAINER; // new _ClassContainer();

@@ -21,7 +21,7 @@ export class Fastify extends BaseServer {
             https: {
                 allowHTTP1: true,
                 key: fs.readFileSync(path.join(baseCertPath, 'server.key')),
-                cert: fs.readFileSync(path.join(baseCertPath, 'server.cert'))
+                cert: fs.readFileSync(path.join(baseCertPath, 'server.cert')),
             },
         };
 
@@ -50,63 +50,48 @@ export class Fastify extends BaseServer {
         this._app.close();
     }
 
-
     useClass(classType, methodType) {
-        new FastifyRouter(classType, methodType, this._app);
+        const router = new FastifyRouter(classType, methodType, this._app);
         this._app.ready(() => {
-            console.log(`fastify is ready.`)
+            console.log(`fastify is ready.`);
         });
     }
 
-
     _send(params, methodus, paramsMap, securityContext) {
         const request = new Request();
-        let baseUrl = methodus.resolver();
+        const baseUrl = methodus.resolver();
         if (baseUrl) {
             return request.sendRequest(methodus.verb, baseUrl + methodus.route, params, paramsMap, securityContext);
         } else {
             return new MethodError('no server found for this method' + methodus.route, 302);
         }
-
-
-
-
     }
 
     async _sendEvent(methodEvent: MethodEvent) {
-
+        const meth = methodEvent;
     }
-
-
-
-
-
 }
-
 
 export class FastifyRouter {
     public routers: any = [];
     constructor(obj: any, methodType: MethodType, app: any) {
-        let methodus = fp.maybeMethodus(obj);
-        let proto = fp.maybeProto(obj);
-
-
+        const methodus = fp.maybeMethodus(obj);
+        const proto = fp.maybeProto(obj);
         const globalMiddlewares = [];
         if (methodus.middlewares) {
-            methodus.middlewares.forEach(element => {
+            methodus.middlewares.forEach((element) => {
                 if (element) {
                     globalMiddlewares.push(element);
                 } else {
                     logger.error(this, 'could not load middleware');
                 }
-
             });
         }
 
         const routerDataObject = {};
-        //build routes and verbs object
-        Object.keys(methodus._descriptors).forEach(itemKey => {
-            let item = methodus._descriptors[itemKey];
+        // build routes and verbs object
+        Object.keys(methodus._descriptors).forEach((itemKey) => {
+            const item = methodus._descriptors[itemKey];
             routerDataObject[item.route] = routerDataObject[item.route] || [];
             routerDataObject[item.route].push(item);
         });
@@ -131,7 +116,3 @@ export class FastifyRouter {
         });
     }
 }
-
-
-
-

@@ -1,10 +1,7 @@
-
-
-
 import 'reflect-metadata';
 import { EventDescriptor } from '../config';
 
-let metadataKey = 'methodus';
+const metadataKey = 'methodus';
 
 /** the model decorator registers the model with the odm
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -13,21 +10,20 @@ let metadataKey = 'methodus';
  */
 export function Event(name: string, exchange: string) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
-        let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
+        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} };
+        const metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor;
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
         target.methodus._events[name] = metaObject;
         return descriptor;
-    }
+    };
 }
-
 
 export function EventSingular(name: string, exchange: string) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} }
-        let metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor
+        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} };
+        const metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor;
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
         target.methodus._workevents[name] = metaObject;
         return descriptor;
-    }
+    };
 }

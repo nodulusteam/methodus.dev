@@ -10,12 +10,12 @@
     },
     "jsRules": {},
     "rules": {
-        "one-variable-per-declaration": false,
-        "class-name": true,
+        "one-variable-per-declaration": false,       
         "no-var-requires": false,
         "interface-name": [
             false
         ],
+        "class-name": false,
         "ordered-imports": false,
         "object-literal-sort-keys": false,
         "quotemark": [

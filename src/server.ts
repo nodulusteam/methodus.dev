@@ -232,7 +232,7 @@ export class Server {
         });
 
         onStart.forEach((startEvent) => {
-            const instance = Servers.get(this.instanceId, "express" /* Express */);
+            const instance = Servers.get(this.instanceId, 'express' /* Express */);
             if (instance && instance._app) {
                 startEvent(instance._app);
             }

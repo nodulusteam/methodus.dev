@@ -8,4 +8,3 @@ export function generateUuid() {
         Math.random().toString() +
         Math.random().toString();
 }
-

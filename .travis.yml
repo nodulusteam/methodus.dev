@@ -7,4 +7,4 @@ addons:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 script:
   - sonar-scanner
- 
+ configuration.ts

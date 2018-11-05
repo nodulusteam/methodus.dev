@@ -6,11 +6,7 @@ import { logger } from '../../log';
 import { MethodEvent } from '../../response';
 import * as domain from 'domain';
 
-
-
-
 export async function registerWorkers(proto, options) {
-
     return new Promise((resolve, reject) => {
         let foundEvents = false;
         if (proto.methodus._workevents && Object.keys(proto.methodus._workevents).length > 0) {
@@ -33,7 +29,7 @@ export async function registerWorkers(proto, options) {
                                 { exclusive: false, durable: true }).then((q) => {
                                     Object.keys(proto.methodus._workevents).forEach((event) => {
                                         ch.bindQueue(q.queue, exchange, proto.methodus._workevents[event].name);
-                                    })
+                                    });
                                     ch.prefetch(1);
                                     ch.consume(q.queue, async (msg) => {
                                         if (msg && msg.content) {
@@ -46,28 +42,35 @@ export async function registerWorkers(proto, options) {
                                                     fp.maybeJson(msg.content.toString()) as MethodEvent;
 
                                                 if (proto.methodus._workevents[parsedMessage.name]) {
-                                                    let pkey = proto.methodus._workevents[parsedMessage.name].propertyKey;
+                                                    const pkey = proto.methodus.
+                                                        _workevents[parsedMessage.name].propertyKey;
                                                     if (proto[pkey]) {
-                                                        const taskStatus = await proto[pkey](parsedMessage.value, parsedMessage.name);
+                                                        const taskStatus = await proto[pkey](parsedMessage.value,
+                                                            parsedMessage.name);
                                                         if (taskStatus) {
                                                             ch.ack(msg);
                                                         }
                                                     }
 
                                                 } else {
-                                                    //perform a wild card search
-                                                    Object.keys(proto.methodus._workevents).forEach(async eventName => {
-                                                        let eventNameWithoutStar = eventName.replace(/\*/g, '')
-                                                        if (parsedMessage.name.indexOf(eventNameWithoutStar) === 0) {
-                                                            let pkey = proto.methodus._workevents[eventName].propertyKey;
-                                                            if (proto[pkey]) {
-                                                                const taskStatus = await proto[pkey](parsedMessage.value, parsedMessage.name);
-                                                                if (taskStatus) {
-                                                                    ch.ack(msg);
+                                                    // perform a wild card search
+                                                    Object.keys(proto.methodus._workevents)
+                                                        .forEach(async (eventName) => {
+                                                            const eventNameWithoutStar = eventName.replace(/\*/g, '');
+                                                            if (parsedMessage.name
+                                                                .indexOf(eventNameWithoutStar) === 0) {
+                                                                const pkey = proto.methodus.
+                                                                    _workevents[eventName].propertyKey;
+                                                                if (proto[pkey]) {
+                                                                    const taskStatus =
+                                                                        await proto[pkey](parsedMessage.value,
+                                                                            parsedMessage.name);
+                                                                    if (taskStatus) {
+                                                                        ch.ack(msg);
+                                                                    }
                                                                 }
                                                             }
-                                                        }
-                                                    });
+                                                        });
                                                 }
 
                                             } catch (error) {
@@ -75,31 +78,20 @@ export async function registerWorkers(proto, options) {
                                             }
                                         } else {
                                             logger.error(this, `recieved empty message`);
-                                            this.registerEvents(proto)
+                                            this.registerEvents(proto);
                                         }
                                     }, { noAck: false });
 
                                     resolve();
                                 });
-
-
-                        })
-
-
+                        });
                     });
-
                 });
-
-            })
-
+            });
         }
-
-
         if (!foundEvents) {
             resolve();
         }
-
-
-    })
+    });
 
 }

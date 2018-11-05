@@ -4,18 +4,12 @@ import 'reflect-metadata';
 import { logger, LogClass } from '../../log';
 import * as fs from 'fs';
 import * as path from 'path';
-
-const https = require('https');
-
-
+import * as https from 'https';
 
 import * as request from 'request-promise-native';
 
 @LogClass(logger)
 export class Request {
-    constructor() {
-    }
-
 
     sendRequest(verb, uri, params, paramsMap, securityContext) {
         const body = {};
@@ -54,7 +48,7 @@ export class Request {
                         }
                         break;
                     case 'att_security_context':
-                        securityContext = { uid: item.value.uid, user_id: item.value.user_id }
+                        securityContext = { uid: item.value.uid, user_id: item.value.user_id };
                         break;
                     case 'headers':
                         headers[item.name] = item.value;
@@ -106,7 +100,6 @@ export class Request {
                 host: hostParts[0],
                 port: hostParts[1],
                 path: parts.join('/').split('?')[0],
-                strictSSL: false,
                 rejectUnauthorized: false,
             });
 
@@ -117,8 +110,8 @@ export class Request {
                 rejectUnauthorized: false,
                 strictSSL: false,
                 secureProtocol: 'TLSv1_method',
-                requestCert: false,// add when working with https sites
-                agent,// add when working with https sites
+                requestCert: false, // add when working with https sites
+                agent, // add when working with https sites
             };
 
         } else {
