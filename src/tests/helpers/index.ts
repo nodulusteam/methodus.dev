@@ -110,11 +110,15 @@ export async function ClientHelper(classType, port, servers, methodType: MethodT
 }
 
 export async function CallHelper(): Promise<any> {
+    logger.error('callhelper');
     const myClass = new TestClass();
     try {
+        logger.error('myClass.action1');
         const value = await myClass.action1(1654564654, 'roicccccc');
+        logger.error('myClass.action1 result', value);
         return value;
     } catch (error) {
+        logger.error('call to action1 errored', error);
         console.warn('call to action1 errored', error);
     }
 }

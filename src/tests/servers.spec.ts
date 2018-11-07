@@ -3,7 +3,7 @@ process.env.test = 'true';
 
 import { AsyncTest, Expect, TestCase, TestFixture, Timeout } from 'alsatian';
 import { TestClass } from './classes/TestClass';
-import { ServerType, MethodType } from '../index';
+import { ServerType, MethodType, logger } from '../index';
 import { Wait, ServerHelper, ClientHelper, CallHelper, PortHelper } from './helpers';
 
 @TestFixture('Test all servers RPC')
@@ -20,14 +20,16 @@ export class Servers {
     @Timeout(50000)
     public async serverTest(serverType, methodType, protocol) {
         return new Promise(async (resolve, reject) => {
-
+            logger.info('start server test for', serverType, methodType, protocol);
             const ports = PortHelper();
             const staticResolve = `${protocol}://127.0.0.1:${ports.server}`;
             ServerHelper(ports.server, serverType, MethodType.Local).then((servers) => {
-                Wait(1000 * 2).then(() => {
+                Wait(1000 * 5).then(() => {
+                    logger.info('server ready, calling');
                     ClientHelper(TestClass, ports.client, [serverType], methodType, staticResolve).then((client) => {
+                        logger.info('client is ready:', client);
                         CallHelper().then((methodResult) => {
-
+                            logger.error('method called, result is:', methodResult);
                             if (servers) {
                                 servers.forEach((s) => s.kill());
                             }
@@ -51,13 +53,4 @@ export class Servers {
             });
         });
     }
-
-    // pass arguments into your test functions to keep your test code from being repetative
-    // @TestCase(2, 2, 4)
-    // @TestCase(2, 3, 5)
-    // @TestCase(3, 3, 6)
-    // @Test('addition tests')
-    // public addTest(firstNumber: number, secondNumber: number, expectedSum: number) {
-    //     Expect(firstNumber + secondNumber).toBe(expectedSum);
-    // }
 }

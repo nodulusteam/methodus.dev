@@ -37,7 +37,7 @@ export class RestResponse {
         }
 
         if (headers) {
-            Object.keys(headers).map((header) => {
+            Object.keys(headers).forEach((header) => {
                 res.setHeader(header, headers[header]);
             });
         }

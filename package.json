@@ -28,8 +28,8 @@
         "test:servers": "npm run build &&  set test='true'&alsatian src/tests/servers.spec.js",
         "test:events": "npm run build &&  set test='true'&alsatian src/tests/events.spec.js",
         "test:gateway": "npm run build &&  set test='true'&alsatian src/tests/gateway.spec.js",
-        "xtest": "npm run build &&  set test='true'&alsatian src/tests/*.spec.js",
-        "test:fp": "set test='true' | alsatian src/tests/fp.spec.js //--tap | tap-dot",
+        "xtest": "npm run build && set NODE_LOG_LEVEL=trace  test='true'&alsatian src/tests/servers.spec.js",
+        "test:fp": "npm run build &&  set test='true'&alsatian src/tests/fp.spec.js",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
         "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
     },
