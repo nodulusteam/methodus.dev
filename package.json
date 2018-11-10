@@ -22,6 +22,7 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
+        "install": "npm run build && npm run test",
         "build": "tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
