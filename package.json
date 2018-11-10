@@ -21,11 +21,10 @@
         "type": "git",
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
-    "scripts": {
-        "install": "npm run build && npm run test",
+    "scripts": {       
         "build": "tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
+        "test": "npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
         "test:servers": "npm run build &&  set test='true'&alsatian src/tests/servers.spec.js",
         "test:events": "npm run build &&  set test='true'&alsatian src/tests/events.spec.js",
         "test:gateway": "npm run build &&  set test='true'&alsatian src/tests/gateway.spec.js",

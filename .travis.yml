@@ -6,7 +6,6 @@ addons:
   sonarcloud:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 before_script:
-  - yarn install
-  - npm test    
+  - npm test 
 script:
   - sonar-scanner
