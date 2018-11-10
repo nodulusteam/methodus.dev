@@ -1,5 +1,6 @@
 # Methodus
-
+[https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=alert_status]
+https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage
 ### Greetings,
 my fellow adventures developer, I welcome you into Methodus. 
 You did not arrive here by mistake, nor was it an accident, it is your fate.
