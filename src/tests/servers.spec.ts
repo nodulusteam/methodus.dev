@@ -11,10 +11,10 @@ export class Servers {
 
     // use the async/await pattern in your tests as you would in your code
     @AsyncTest('asychronous test')
-    // @TestCase(ServerType.Express, MethodType.Http, 'http')
-    @TestCase(ServerType.HTTP2, MethodType.Http2, 'https')
+    @TestCase(ServerType.Express, MethodType.Http, 'http')
+    //@TestCase(ServerType.HTTP2, MethodType.Http2, 'https')
     // @TestCase(ServerType.RabbitMQ, MethodType.MQ, 'http')
-    // @TestCase(ServerType.Socket, MethodType.Socket, 'http')
+    @TestCase(ServerType.Socket, MethodType.Socket, 'http')
     // @TestCase(ServerType.Redis, MethodType.Redis)
     // @TestCase(ServerType.Kafka, MethodType.Kafka)
     @Timeout(50000)
