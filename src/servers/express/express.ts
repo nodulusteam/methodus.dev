@@ -19,7 +19,7 @@ export class Express extends BaseServer {
             extended: true,
         }));
 
-        this._app.use(bodyParser.json());
+        this._app.use(bodyParser.json({limit: '10mb'}));
         this._app.use(cookieParser());
 
         this._app.set('showStackError', true);
