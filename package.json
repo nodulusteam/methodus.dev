@@ -21,7 +21,7 @@
         "type": "git",
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
-    "scripts": {       
+    "scripts": {
         "build": "tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
@@ -72,6 +72,8 @@
         "socket.io": "^2.0.3"
     },
     "devDependencies": {
+        "@methodus/data": "^1.0.3",
+        "@methodus/describe": "^1.0.8",
         "@types/node": "^10.0.0",
         "alsatian": "^2.0.0",
         "nedb": "^1.8.0",

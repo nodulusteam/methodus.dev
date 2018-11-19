@@ -1,17 +1,14 @@
 process.env.test = 'true';
-import * as path from 'path';
 
 import {
-    ServerConfiguration, PluginConfiguration,
-    ClientConfiguration, ConfiguredServer, MethodType, ServerType,
+    ServerConfiguration,
+    ClientConfiguration, ConfiguredServer, MethodType, ServerType, PluginConfiguration,
 } from '../';
-import { FirstClass } from '../src/tests/classes/FirstClass';
-import { SecondClass } from '../src/tests/classes/SecondClass';
+import { ScreensDataController } from './controllers/screen.data.controller';
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6695 })
-@PluginConfiguration(path.join(__dirname, 'static'), { path: '/static/' })
-@ClientConfiguration(FirstClass, MethodType.Local, ServerType.Express)
-@ClientConfiguration(SecondClass, MethodType.Local, ServerType.Express)
+@PluginConfiguration('@methodus/describe')
+@ClientConfiguration(ScreensDataController, MethodType.Local, ServerType.Express)
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);
