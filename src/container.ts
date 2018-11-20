@@ -1,9 +1,8 @@
-console.log('env', process.env.test);
+
 export class _Container {
     _deps: Map<string, any>;
     constructor() {
         this._deps = new Map<string, any>();
-
     }
     public set<T>(name: string, dep: any) {
         this._deps.set(name, dep);
