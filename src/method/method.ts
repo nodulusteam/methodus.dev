@@ -94,12 +94,15 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 logger.info(`Method::call`, methodType, originalMethod.name, ...mappedArgs);
                 switch (methodType) {
                     case MethodType.Mock:
-                        if (typeof methodus._mocks[propertyKey] === 'function') {
-                            methodResult = new MethodResult(methodus._mocks[propertyKey](...ParserResponse.args));
+                        if (methodus._mocks && methodus._mocks[propertyKey]) {
+                            if (typeof methodus._mocks[propertyKey] === 'function') {
+                                methodResult = new MethodResult(methodus._mocks[propertyKey](...ParserResponse.args));
+                            } else {
+                                methodResult = new MethodResult(methodus._mocks[propertyKey]);
+                            }
                         } else {
-                            methodResult = new MethodResult(methodus._mocks[propertyKey]);
+                            methodResult = await originalMethod.apply(target, ParserResponse.args);
                         }
-
                         break;
                     case MethodType.Local:
                         methodResult = await originalMethod.apply(target, ParserResponse.args);
