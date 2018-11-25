@@ -19,7 +19,7 @@ export class Xserver extends ConfiguredServer {
     }
 }
 
-@MethodusProxy.ProxyClass('FirstClass', '../src/tests/classes/FirstClass')
+@MethodusProxy.ProxyClass('@methodus/server', 'FirstClass', '../src/tests/classes/FirstClass')
 @MethodConfig('testClass')
 export class XProxyClass {
     @Method(Verbs.Get, '/posts/:id/:name')
