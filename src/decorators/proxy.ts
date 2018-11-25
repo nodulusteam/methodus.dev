@@ -23,10 +23,10 @@ export class Proxy {
             }
 
             if (!classTransport || classTransport === MethodType.Local) {
-                let startPathForLoad = packageName;
-                if (methodus.name.indexOf('@') < 0) {
-                    startPathForLoad = path.join(process.cwd(), methodus.name);
-                }
+                const startPathForLoad = packageName;
+                // if (methodus.name.indexOf('@') < 0) {
+                //     startPathForLoad = path.join(process.cwd(), methodus.name);
+                // }
                 const localLoadPath = path.join(startPathForLoad, localClassPath);
                 debug(this, `trying to load ${localLoadPath} locally`);
                 try {
