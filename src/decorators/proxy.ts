@@ -5,13 +5,13 @@ const debug = require('debug')('methodus');
 import * as path from 'path';
 
 export class Proxy {
-    public static ProxyClass(className: string, localClassPath) {
+    public static ProxyClass(packageName: string, className: string, localClassPath) {
         return (target: any) => {
             const methodus = fp.maybeMethodus(target);
             let classTransport = MethodType.Local;
             let classConfig;
             if (!methodus) {
-                throw (new Error(`error finding configuration ${className},${localClassPath}`));
+                throw (new Error(`error finding configuration ${packageName} ${className},${localClassPath}`));
             }
 
             if (methodus) {
@@ -23,7 +23,7 @@ export class Proxy {
             }
 
             if (!classTransport || classTransport === MethodType.Local) {
-                let startPathForLoad = methodus.name;
+                let startPathForLoad = packageName;
                 if (methodus.name.indexOf('@') < 0) {
                     startPathForLoad = path.join(process.cwd(), methodus.name);
                 }
