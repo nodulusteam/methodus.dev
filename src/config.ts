@@ -2,15 +2,7 @@ import * as yaml from 'js-yaml';
 import * as fs from 'fs';
 import { logger, LogClass } from './log';
 import { MethodType, ServerType } from './interfaces';
-
-export const enum Verbs {
-    Get = 'GET',
-    Post = 'POST',
-    Put = 'PUT',
-    Patch = 'PATCH',
-    Head = 'HEAD',
-    Delete = 'DELETE',
-}
+import { Verbs } from './verbs';
 
 export interface MethodDescriptor {
     verb: Verbs;

@@ -1,3 +1,4 @@
+export * from './verbs';
 export * from './log';
 export * from './interfaces/methodus';
 export * from './fp';
