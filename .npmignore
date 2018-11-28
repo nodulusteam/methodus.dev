@@ -9,3 +9,10 @@ node_modules
 config
 .vscode
 yarn.lock
+coverage
+.nyc_output
+.scannerwork
+examples
+sonar-project.properties
+.travis.yml
+tslint.json
