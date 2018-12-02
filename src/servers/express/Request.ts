@@ -47,7 +47,7 @@ export class Request {
                             Object.assign(query, item.value);
                         }
                         break;
-                    case 'att_security_context':
+                    case 'security_context':
                         securityContext = { uid: item.value.uid, user_id: item.value.user_id };
                         break;
                     case 'headers':

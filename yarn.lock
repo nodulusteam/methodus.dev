@@ -2050,10 +2050,10 @@ logelas@^1.0.20:
     logrotator "^1.1.0"
     mkdirp "^0.5.1"
 
-logelas@^3.0.4:
-  version "3.0.4"
-  resolved "https://registry.npmjs.org/logelas/-/logelas-3.0.4.tgz#0b9b2fda75442b34b025ce97b2d8e6c49f19173a"
-  integrity sha512-GnUUfEJLF2/hfrqfLTEWt6+lFeFvqYP5rbmoENv9vMVFw+tZ541NH8fuvuPjBJw3af0nqUBlqCI3C8GzXvRciw==
+logelas@^3.0.10:
+  version "3.0.10"
+  resolved "https://registry.npmjs.org/logelas/-/logelas-3.0.10.tgz#d3acadbf40ea1b2bfd9fc274476bf14251900fa6"
+  integrity sha512-Nf2s001JO+H26XLBDcD6HcDrhWo7Gj25lKlvOFEkfNdFA1vvI+bW3WuFjzw/w52rbHRF4COxN3qFn2bQm6+Z/Q==
   dependencies:
     debug "^3.0.1"
     lodash "^4.17.11"
@@ -2061,7 +2061,7 @@ logelas@^3.0.4:
     log-symbols "^2.0.0"
     logrotator "^1.1.0"
     mkdirp "^0.5.1"
-    nyc "^13.1.0"
+    reflect-metadata "^0.1.12"
     stack-trace "^0.0.10"
 
 logrotator@^1.1.0:
@@ -2899,7 +2899,7 @@ redis@^2.7.1:
     redis-commands "^1.2.0"
     redis-parser "^2.6.0"
 
-reflect-metadata@^0.1.10, reflect-metadata@^0.1.3:
+reflect-metadata@^0.1.10, reflect-metadata@^0.1.12, reflect-metadata@^0.1.3:
   version "0.1.12"
   resolved "https://registry.npmjs.org/reflect-metadata/-/reflect-metadata-0.1.12.tgz#311bf0c6b63cd782f228a81abe146a2bfa9c56f2"
   integrity sha512-n+IyV+nGz3+0q3/Yf1ra12KpCyi001bi4XFxSjbiWWjfqb52iTTtpGXmCCAOWWIAn9KEuFZKGqBERHmrtScZ3A==

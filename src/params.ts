@@ -50,12 +50,8 @@ export function Query(name?: string, type?: any, defaultValue?: any) {
     return build('query', name, type, defaultValue);
 }
 
-export function Context(name?: string, type?: any) {
-    return build('att', name, type);
-}
-
 export function SecurityContext(name?: string, type?: any) {
-    return build('att_security_context', name, type);
+    return build('security_context', name, type);
 }
 
 export function Response(name?: string) {

@@ -116,7 +116,7 @@ export class RestParser {
         let isRest = false;
         let securityContext;
         if (args[0] && args[0].req && args[1] && args[1].res) {
-            securityContext = args[0].att || args[0].att_security_context;
+            securityContext = args[0].security_context;
 
             paramsMap.forEach((item: any) => {
                 if (item.name && item.from) {
@@ -140,8 +140,8 @@ export class RestParser {
                 }
 
                 // security special case
-                if (item.from === 'att_security_context') {
-                    item.value = args[0].att_security_context || args[0].att;
+                if (item.from === 'security_context') {
+                    item.value = args[0].security_context;
                 }
                 functionArgs.push(item.value);
             });
