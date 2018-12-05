@@ -10,10 +10,13 @@ function pushParams(target, propertyKey, param) {
     if (typeName === undefined) {
         typeName = 'object';
     }
+    target.methodus = target.methodus || {};
+    const name = target.name || target.constructor.name;
+    target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+    const mTarget = target.methodus[name];
 
-    target.methodus = target.methodus || { _events: {}, _descriptors: {} };
-    target.methodus._descriptors[propertyKey] = target.methodus._descriptors[propertyKey] || { params: [] };
-    target.methodus._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName }));
+    mTarget._descriptors[propertyKey] = mTarget._descriptors[propertyKey] || { params: [] };
+    mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName }));
 }
 
 function build(from: string, name?: string, type?: string, defaultValue?: any) {

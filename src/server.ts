@@ -265,23 +265,18 @@ export class Server {
             if (_class.classType) {
 
                 const methodusClass = _class.classType;
-
-                const proto = fp.maybeProto(methodusClass);
-                const metaObject = ClassContainer.get(proto.methodus.name);
-
+                let configName = methodusClass.name;
+                if (!configName && methodusClass.constructor) {
+                    configName = methodusClass.constructor.name;
+                }
+                const metaObject = ClassContainer.get(configName);
                 if (server[_class.serverType]) {
-                    metaObject.methodType = _class.methodType;
-
-                    let configName = methodusClass.name;
-                    if (!configName && methodusClass.constructor) {
-                        configName = methodusClass.constructor.name;
-                    }
-
                     Servers.classes[configName] = _class;
                     if (metaObject) {
+                        metaObject.methodType = _class.methodType;
                         metaObject.serverType = _class.serverType;
                         metaObject.instanceId = serverInstance.instanceId;
-                        ClassContainer.set(proto.methodus.name, metaObject);
+                        ClassContainer.set(configName, metaObject);
                         logger.info(this,
                             colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
 
@@ -290,7 +285,7 @@ export class Server {
                             activeServers.useClass(_class.classType, metaObject.methodType);
                         }
                     } else {
-                        logger.error('could not load metadata for ' + proto.methodus.name);
+                        logger.error('could not load metadata for ' + configName);
                     }
                 }
             }

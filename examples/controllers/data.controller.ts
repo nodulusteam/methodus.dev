@@ -1,6 +1,7 @@
-import { Verbs, MethodConfig, Method, Param, MethodResult } from '../../src/';
+import { Verbs, Method, Param, MethodResult, MethodConfigBase } from '../../src/';
 
-@MethodConfig('Data')
+
+@MethodConfigBase('Data')
 export class DataController {
     public static repository: any;
 

@@ -16,15 +16,20 @@ const methodMetadataKey = 'methodus';
 
 export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        target.methodus = target.methodus || { _events: {}, _descriptors: {} };
+
+        target.methodus = target.methodus || {};
+        const name = target.name || target.constructor.name;
+        target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+
+        const mTarget = target.methodus[name];
 
         let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
-        if (target.methodus._descriptors[propertyKey]) {
-            metaObject = Object.assign(metaObject, { params: target.methodus._descriptors[propertyKey].params });
+        if (mTarget._descriptors[propertyKey]) {
+            metaObject = Object.assign(metaObject, { params: mTarget._descriptors[propertyKey].params });
         }
 
         Reflect.defineMetadata(methodMetadataKey, metaObject, target, propertyKey);
-        target.methodus._descriptors[propertyKey] = metaObject as MethodDescriptor;
+        mTarget._descriptors[propertyKey] = metaObject as MethodDescriptor;
         const paramsMap: any[] = metaObject.params;
         paramsMap.sort((a, b) => {
             return a.index - b.index;
@@ -33,7 +38,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
         const originalMethod = descriptor.value;
 
         // not async
-        descriptor.value = function(...args: any[]) {
+        descriptor.value = function (...args: any[]) {
             validateServerIsRunning();
             // extract metadata for class and method
             let configName = target.name;
@@ -47,7 +52,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
             let methodResult: MethodResult | MethodError | any = null;
 
             // try to get the method metadata from the Relection API.
-            let methodus: any = target.methodus;
+            let methodus: any = mTarget;
             if (!methodus) { // if the target dont contain the methodus metadaat, try to get it from the Reflection API
                 methodus = Reflect.getOwnMetadata(methodMetadataKey, target, propertyKey) || {};
             }

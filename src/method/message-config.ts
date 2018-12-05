@@ -10,7 +10,7 @@ export function MessageConfig(name: string, workQueueName?: string) {
         existingMetadata.name = name;
         let proto = target.prototype || target.__proto__;
 
-        if (target.methodus) {// means its a static class , no prototype
+        if (target.methodus[target.name]) {// means its a static class , no prototype
             proto = target;
         }
         proto.methodus.name = name;

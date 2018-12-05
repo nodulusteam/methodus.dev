@@ -94,7 +94,7 @@ export class SocketIORouter implements Methodus.Router {
     public router: any;
     constructor(obj: any, socket: any) {
         const proto = fp.maybeProto(obj);
-        const methodus = fp.maybeMethodus(obj);
+        const methodus = fp.maybeMethodus(obj)[obj.name];
 
         const existingClassMetadata = Reflect.getOwnMetadata(metadataKey, proto) || {};
         existingClassMetadata.returnMessages = true;

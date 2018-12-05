@@ -15,21 +15,36 @@ export function MethodConfig(name: string, middlewares?: any[], repository?: any
             proto = target;
         }
 
-        if (proto.methodus.name && proto.methodus.name !== name) {
-            // prefix routes
-            const routePrefix = name.toLocaleLowerCase();
-            Object.keys(proto.methodus._descriptors).forEach((desciptorKey) => {
-                const route = proto.methodus._descriptors[desciptorKey].route;
-                proto.methodus._descriptors[desciptorKey].route = '/' + routePrefix + route;
-            });
-            // proto.methodus = { name, _events: {}, _descriptors: {}, base: target.prototype.methodus };
-        }
-        proto.methodus.name = name;
+        // if (target.__proto__ && target.__proto__.methodus_base) { // means its a static class , no prototype
+        //     // prefix routes
+        //     //  proto.methodus[name] = 
+        //     target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+
+        //     const mbase = target.__proto__.methodus_base;
+        //     const routePrefix = name.toLocaleLowerCase();
+        //     Object.keys(mbase._descriptors).forEach((desciptorKey) => {
+        //         const route = mbase._descriptors[desciptorKey].route;
+        //         target.methodus[name]._descriptors[desciptorKey] =
+        //             JSON.parse(JSON.stringify(mbase._descriptors[desciptorKey]));
+
+        //         target.methodus[name]._descriptors[desciptorKey].route = '/' + routePrefix + route;
+        //     });
+        // }
+        // // const name = target.name || target.constructor.name;
+        // // target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        // // const mTarget = target.methodus[name];
+
+        // // if (proto.methodus.name && proto.methodus.name !== name) {
+
+        // //     // proto.methodus = { name, _events: {}, _descriptors: {}, base: target.prototype.methodus };
+        // // }
+
+        proto.methodus[name].name = name;
 
         if (repository) {
-            proto.methodus.repository = repository;
+            proto.methodus[name].repository = repository;
         }
-        proto.methodus.middlewares = middlewares;
+        proto.methodus[name].middlewares = middlewares;
         existingMetadata.middlewares = middlewares;
         ClassContainer.set(name, existingMetadata);
 

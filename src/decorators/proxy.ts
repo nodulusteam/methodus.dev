@@ -7,7 +7,7 @@ import * as path from 'path';
 export class Proxy {
     public static ProxyClass(packageName: string, className: string, localClassPath) {
         return (target: any) => {
-            const methodus = fp.maybeMethodus(target);
+            const methodus = fp.maybeMethodus(target)[className];
             let classTransport = MethodType.Local;
             let classConfig;
             if (!methodus) {
@@ -15,8 +15,7 @@ export class Proxy {
             }
 
             if (methodus) {
-
-                classConfig = ConfigHelper.get(methodus.name);
+                classConfig = ConfigHelper.get(className);
                 if (classConfig) {
                     classTransport = classConfig.transport;
                 }
@@ -28,7 +27,6 @@ export class Proxy {
                 // if (methodus.name.indexOf('@') < 0) {
                 //     startPathForLoad = path.join(process.cwd(), methodus.name);
                 // }
-
                 debug(this, `trying to load ${localLoadPath} locally`);
                 try {
                     try {

@@ -10,10 +10,15 @@ const metadataKey = 'methodus';
  */
 export function MessageHandler(name: string, exchange: string) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        target.methodus = target.methodus || { _workevents: {}, _events: {}, _descriptors: {} };
+        target.methodus = target.methodus || {};
+        const mname = target.name || target.constructor.name;
+        target.methodus[mname] = target.methodus[mname] ||
+            { _workevents: {}, _events: {}, _descriptors: {} };
+        const mTarget = target.methodus[mname];
+
         const metaObject: EventDescriptor = { name, propertyKey, exchange } as EventDescriptor;
         Reflect.defineMetadata(metadataKey, metaObject, target, propertyKey);
-        target.methodus._events[name] = metaObject;
+        mTarget._events[name] = metaObject;
         return descriptor;
     };
 }

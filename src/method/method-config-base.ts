@@ -15,21 +15,22 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
             proto = target;
         }
 
-        if (proto.methodus.name && proto.methodus.name !== name) {
-            // prefix routes
-            const routePrefix = name.toLocaleLowerCase();
-            Object.keys(proto.methodus._descriptors).forEach((desciptorKey) => {
-                const route = proto.methodus._descriptors[desciptorKey].route;
-                proto.methodus._descriptors[desciptorKey].route = '/' + routePrefix + route;
-            });
-            // proto.methodus = { name, _events: {}, _descriptors: {}, base: target.prototype.methodus };
-        }
-        proto.methodus.name = name;
+        // if (proto.methodus.name && proto.methodus.name !== name) {
+        //     // prefix routes
+        //     const routePrefix = name.toLocaleLowerCase();
+        //     Object.keys(proto.methodus._descriptors).forEach((desciptorKey) => {
+        //         const route = proto.methodus._descriptors[desciptorKey].route;
+        //         proto.methodus._descriptors[desciptorKey].route = '/' + routePrefix + route;
+        //     });
+        //     // proto.methodus = { name, _events: {}, _descriptors: {}, base: target.prototype.methodus };
+        // }
+        proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
 
         if (repository) {
-            proto.methodus.repository = repository;
+            proto.methodus_base.repository = repository;
         }
-        proto.methodus.middlewares = middlewares;
+        proto.methodus_base.middlewares = middlewares;
+        target.methodus_base = proto.methodus_base;
         existingMetadata.middlewares = middlewares;
         ClassContainer.set(name, existingMetadata);
 

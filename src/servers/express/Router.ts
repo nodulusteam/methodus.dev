@@ -7,7 +7,8 @@ import { MethodType } from '../../index';
 export class ExpressRouter {
     public routers: any = [];
     constructor(obj: any, methodType: MethodType, app: any) {
-        const methodus = fp.maybeMethodus(obj);
+        const methodus = fp.maybeMethodus(obj)[obj.name];
+
         const proto = fp.maybeProto(obj);
         const globalMiddlewares = [];
         if (methodus.middlewares) {
