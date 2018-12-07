@@ -39,7 +39,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
         const originalMethod = descriptor.value;
         descriptor.value = async (...args: any[]) => {
 
-            if (args[args.length - 1].instruct) {
+            if (args && args[args.length - 1] && args[args.length - 1].instruct) {
                 target = args[args.length - 1].target;
 
                 target.methodus = target.methodus || {};
