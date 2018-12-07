@@ -14,11 +14,12 @@ export function MethodConfig(name: string, middlewares?: any[], repository?: any
         if (target.methodus) { // means its a static class , no prototype
             proto = target;
         }
-
+        target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        
         // if (target.__proto__ && target.__proto__.methodus_base) { // means its a static class , no prototype
         //     // prefix routes
         //     //  proto.methodus[name] = 
-        //     target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+        //     
 
         //     const mbase = target.__proto__.methodus_base;
         //     const routePrefix = name.toLocaleLowerCase();

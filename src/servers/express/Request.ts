@@ -197,7 +197,7 @@ export class Request {
     }
 
     public try(requestOptions) {
-        console.log(requestOptions.uri);
+       
 
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error) => {

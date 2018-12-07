@@ -7,6 +7,7 @@ import { MethodType } from '../../index';
 export class ExpressRouter {
     public routers: any = [];
     constructor(obj: any, methodType: MethodType, app: any) {
+
         const methodus = fp.maybeMethodus(obj)[obj.name];
 
         const proto = fp.maybeProto(obj);
@@ -42,7 +43,20 @@ export class ExpressRouter {
                         }
                     });
                 }
-                functionArray.push(proto[item.propertyKey].bind(obj));
+
+                const repositoryBuilder = (...args) => {
+                    args.push(methodus.repository);
+                    proto[item.propertyKey].apply(methodus, args);
+                };
+
+                if (methodus.repository) {
+                    functionArray.push(repositoryBuilder.bind(methodus));
+                } else {
+                    functionArray.push(proto[item.propertyKey].bind(methodus));
+
+                }
+
+
                 autoRouter[verb](route, ...functionArray);
             });
             app.use('/', autoRouter);

@@ -4,7 +4,7 @@ import { ServerType, Server, MethodusConfig, MethodType } from '../index';
 let config = new MethodusConfig();
 config.run(ServerType.Express, { port: process.env.PORT || 8020 });
 let resolver = (name) => {
-    console.log(name);
+ 
     return Promise.resolve('http://localhost:8090');
 }
 

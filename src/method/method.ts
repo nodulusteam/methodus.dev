@@ -19,10 +19,10 @@ const methodMetadataKey = 'methodus';
 export function Method(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
         target.methodus = target.methodus || {};
-        const name = target.name || target.constructor.name;
+        let name = target.name || target.constructor.name;
         target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
 
-        const mTarget = target.methodus[name];
+        let mTarget = target.methodus[name];
 
         let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
         if (mTarget._descriptors[propertyKey]) {
@@ -31,13 +31,30 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
 
         Reflect.defineMetadata(methodMetadataKey, metaObject, target, propertyKey);
         mTarget._descriptors[propertyKey] = metaObject as MethodDescriptor;
-        const paramsMap: any[] = metaObject.params;
+        let paramsMap: any[] = metaObject.params;
         paramsMap.sort((a, b) => {
             return a.index - b.index;
         });
         // save a reference to the original method
         const originalMethod = descriptor.value;
         descriptor.value = async (...args: any[]) => {
+
+            if (args[args.length - 1].instruct) {
+                target = args[args.length - 1].target;
+
+                target.methodus = target.methodus || {};
+                name = target.name || target.constructor.name;
+                target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+
+                mTarget = target.methodus[name];
+
+                metaObject = mTarget._descriptors[propertyKey];
+                paramsMap = metaObject.params;
+                paramsMap.sort((a, b) => {
+                    return a.index - b.index;
+                });
+            }
+
             validateServerIsRunning();
             // extract metadata for class and method
             let configName = name;

@@ -64,11 +64,12 @@ export class MethodusConfig {
         }
 
         const configEntry = new MethodusClassConfig(classType, methodType, serverType, resolver);
+        
         this.classes.set(classType.name, configEntry);
 
-        if (classType.methodus) {
-            this.classes.set(classType.methodus.name, configEntry);
-        }
+        // if (classType.methodus) {
+        //     this.classes.set(classType.methodus[classType.name], configEntry);
+        // }
     }
     public run(serverType: ServerType, configuration: any) {
         this.servers = this.servers || [];
