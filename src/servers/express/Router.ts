@@ -17,7 +17,7 @@ export class ExpressRouter {
                 if (element) {
                     globalMiddlewares.push(element);
                 } else {
-                    logger.error(this, 'could not load middleware');
+                    logger.error('could not load middleware');
                 }
             });
         }

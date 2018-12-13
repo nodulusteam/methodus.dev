@@ -159,7 +159,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
 
             } catch (error) {
                 error.statusCode = error.statusCode || 500;
-                logger.error(this, error);
+                logger.error(error);
 
                 if (ParserResponse.isRest) {
                     return new parser.response(args, error, restHeaders);
@@ -198,7 +198,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                         }
                     } catch (error) {
                         error.statusCode = error.statusCode || 500;
-                        logger.error(this, error);
+                        logger.error(error);
                         throw (error);
                     }
                 }

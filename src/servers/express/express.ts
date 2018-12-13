@@ -8,18 +8,22 @@ import { MethodError, MethodEvent } from '../../response/';
 import { logger, LogClass } from '../../log';
 import { ExpressRouter } from '../express';
 import { Request } from './Request';
-
+import * as fileUpload from 'express-fileupload';
 @LogClass(logger)
 export class Express extends BaseServer {
     _app: any;
     constructor(port, onStart) {
         super();
         this._app = express();
+        this._app.use(fileUpload({
+            limits: { fileSize: 50 * 1024 * 1024 },
+        }));
+
         this._app.use(bodyParser.urlencoded({
             extended: true,
         }));
 
-        this._app.use(bodyParser.json({limit: '10mb'}));
+        this._app.use(bodyParser.json({ limit: '10mb' }));
         this._app.use(cookieParser());
 
         this._app.set('showStackError', true);

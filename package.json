@@ -44,6 +44,7 @@
         "debug": "^2.6.8",
         "ejs": "^2.5.7",
         "errorhandler": "^1.5.0",
+        "express-fileupload": "^1.0.0",
         "fastify": "^1.12.1",
         "figlet": "^1.2.0",
         "js-yaml": "^3.9.0",

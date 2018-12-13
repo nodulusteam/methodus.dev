@@ -129,7 +129,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
                 }
             } catch (error) {
                 error.statusCode = error.statusCode || 500;
-                logger.error(this, error);
+                logger.error(error);
 
                 if (ParserResponse.isRest) {
                     const router = new RestResponse(args, error, restHeaders);
