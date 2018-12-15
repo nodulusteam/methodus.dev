@@ -1,0 +1,661 @@
+{
+    // Use IntelliSense to learn about possible Node.js debug attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        //E2E
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "> HTTP2 server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "integratedTerminal",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                "servers": "http2",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "> HTTP2 caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                "servers": "http2",
+                "MethodType": "Http2"
+            }
+        },
+        //REST
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "* Rest caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_LOG_LEVEL": "debug",
+                "NODE_ENV": "debug",
+                "servers": "express",
+                "MethodType": "Http"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "* Rest server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                "servers": "express",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "* Rest server - middlewares",
+            "program": "${workspaceRoot}/src/tests/servers/middlewares.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "express",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "* Rest - FirstClass server",
+            "program": "${workspaceRoot}/src/tests/servers/perclass/FirstClass.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8091",
+                "DEBUG": "*",
+                "NODE_ENV": "debug",
+                "DEBUG_FILE": "${workspaceRoot}\\log.txt",
+                "servers": "express",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "* Rest event",
+            "program": "${workspaceRoot}/src/tests/servers/eventcaller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "express",
+                "MethodType": "Http"
+            }
+        },
+        { //MQ
+            "type": "node",
+            "request": "launch",
+            "name": "| MQ caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "amqp",
+                "MethodType": "MQ",
+                "NODE_LOG_LEVEL": "trace",
+                "NODE_LOG_IDENTIFIER": "| MQ caller",
+                "test": "false"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "| MQ server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "amqp",
+                "MethodType": "Local",
+                "test": "false",
+                "NODE_LOG_LEVEL": "trace",
+                "NODE_LOG_IDENTIFIER": "| MQ server"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "| MQ single event",
+            "program": "${workspaceRoot}/src/tests/servers/singleEvent.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace",
+                //"NODE_LOG_NAME": "client.log",
+                "NODE_LOG_IDENTIFIER": "MQ reciever",
+                "servers": "amqp",
+                "MethodType": "Local",
+                "test": "false"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "| * MQ + Rest server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "express,amqp",
+                "MethodType": "Local"
+            }
+        },
+        { //KAFKA
+            "type": "node",
+            "request": "launch",
+            "name": "^ Kafka caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "kafka",
+                "MethodType": "Kafka"
+            }
+        },
+        { //Kafka
+            "type": "node",
+            "request": "launch",
+            "name": "^ Kafka server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "*",
+                "NODE_ENV": "debug",
+                "servers": "kafka",
+                "MethodType": "Local"
+            }
+        },
+        { //Redis
+            "type": "node",
+            "request": "launch",
+            "name": "@ Redis server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "*",
+                "NODE_ENV": "debug",
+                "servers": "redis",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "@ Redis caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "redis",
+                "MethodType": "Redis"
+            }
+        },
+        { //Socket
+            "type": "node",
+            "request": "launch",
+            "name": "# Socket caller",
+            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "integratedTerminal",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8080",
+                "DEBUG": "socket.io-client:manager",
+                "NODE_ENV": "debug",
+                "servers": "socketio",
+                "MethodType": "Socket"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "# Socket server",
+            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "servers": "socketio",
+                "MethodType": "Local"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "T Run current page test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "${fileDirname}/${fileBasenameNoExtension}.js",
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "T Run gateway test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "src/tests/gateway.spec.js"
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run decorators test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/decorators.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "T Run response test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "src/tests/response.spec.js"
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "test": "true"
+            }
+        },
+       
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            // Name of configuration; appears in the launch configuration drop down menu.
+            "name": "T Run servers test",
+            // Type of configuration. Possible values: "node", "mono".
+            "type": "node",
+            // Workspace relative or absolute path to the program.
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            // Automatically stop program after launch.
+            "stopOnEntry": false,
+            // Command line arguments passed to the program.
+            "args": [
+                "src/tests/servers.spec.js"
+            ],
+            "sourceMaps": true,
+            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
+            "cwd": "${workspaceRoot}",
+            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
+            "runtimeExecutable": null,
+            // Environment variables passed to the program.
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run middlewares test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/middlewares.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run fp test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/fp.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run events test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/events.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "DEBUG_FILE": "${workspaceRoot}/logs/",
+                "test": "false"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "T Run singular events test",
+            "program": "${workspaceRoot}/src/tests/debug/singularEvent.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8090",
+                "DEBUG": "methodus:*",
+                "NODE_ENV": "debug",
+                "servers": "socketio",
+                "MethodType": "Local",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+        // {
+        //     "request": "launch",
+        //     "console": "internalConsole",
+        //     "name": "T Run singular events test",
+        //     "type": "node",
+        //     "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+        //     "stopOnEntry": false,
+        //     "args": [
+        //         "tests/debug/singularEvent.js"
+        //     ],
+        //     "sourceMaps": true,
+        //     "cwd": "${workspaceRoot}",
+        //     "runtimeExecutable": null,
+        //     "env": {
+        //         "PORT": "8020",
+        //         "DEBUG": "none",
+        //         "NODE_ENV": "debug",
+        //         "DEBUG_FILE": "${workspaceRoot}/logs/",
+        //         "test": "false"
+        //     }
+        // },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run classes test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "src/tests/classes.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "DEBUG_FILE": "${workspaceRoot}/logs/"
+            }
+        },
+        //Examples
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "E  hello-server",
+            "program": "${workspaceRoot}/examples/hello-server.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodus",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "E  configured",
+            "program": "${workspaceRoot}/examples/configured.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "methodus",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- hello-setup",
+            "program": "${workspaceRoot}/examples/hello-setup.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- hello-redis",
+            "program": "${workspaceRoot}/examples/hello-redis.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- hello-json-proxy",
+            "program": "${workspaceRoot}/examples/json-placeholder.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "- resolver-function",
+            "program": "${workspaceRoot}/examples/resolver-function.js",
+            "cwd": "${workspaceRoot}/",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "Attach to Process",
+            "port": 5858,
+            "outFiles": [],
+            "sourceMaps": true
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+*.js
+*.js.map
+package-lock.json
+node_modules/
+logs/
+*.d.ts
+coverage/
+.nyc_output/
+.scannerwork/

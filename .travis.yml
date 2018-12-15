@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "node"
+  - "10"
+addons:
+  sonarcloud:
+    organization: "nodulusteam-github" # the key of the org you chose at step #3  
+before_script:
+  - npm test 
+script:
+  - sonar-scanner
