@@ -41,6 +41,9 @@ Build binding packages to your server application
 
 Model API data objects and manage DB access (mongodb)
 
+> [/Example](https://github.com/nodulusteam/-methodus-example)
+
+Use this consract to kick-start your very own methodus application
 
 
 
