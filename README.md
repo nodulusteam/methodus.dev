@@ -1,6 +1,9 @@
 # Methodus
-[https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=alert_status]
-https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage
+![rating](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=sqale_rating "rating")
+![reliability](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=reliability_rating "reliability")
+![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage "coverage")
+![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
+
 ### Greetings,
 my fellow adventures developer, I welcome you into Methodus. 
 You did not arrive here by mistake, nor was it an accident, it is your fate.
@@ -15,14 +18,30 @@ But first you should ask yourself this:
 6. Are you using typescript?
 7. Do you need a frontend for this server?
 
-Well,  
+If any of these sounds familiar please step in and carve your path,  
+
+> [/Server](https://github.com/nodulusteam/-methodus-server)
+
+The server components of methodus (nodejs). 
+Use it to build a nodejs server application with support for various transports.
+
+> [/Client](https://github.com/nodulusteam/-methodus-client)
+
+Connect your server to any Javascript client using this client library
+
+> [/Plugin](https://github.com/nodulusteam/-methodus-describe)
+
+Debug and analyse your server application using this plugin
+
+> [/Contracts](https://github.com/nodulusteam/-methodus-contracts)
+
+Build binding packages to your server application
+
+> [/Data](https://github.com/nodulusteam/-methodus-data)
+
+Model API data objects and manage DB access (mongodb)
 
 
-
-https://github.com/nodulusteam/-methodus-client
-https://github.com/nodulusteam/-methodus-server
-https://github.com/nodulusteam/-methodus-describe
-https://github.com/nodulusteam/-methodus-contracts
 
 
 
@@ -141,4 +160,3 @@ Starting REST server on port xxxx
 which means that every thing wen well and you're ready to browser or postman your routes.
  
 Your microservice ready, but if it is to be consumed using the Methodus rpc it need's to generate a contract.
- 
