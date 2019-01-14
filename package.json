@@ -31,7 +31,7 @@
         "test:servers": "npm run build &&  set test='true'&alsatian src/tests/servers.spec.js",
         "test:events": "npm run build &&  set test='true'&alsatian src/tests/events.spec.js",
         "test:gateway": "npm run build &&  set test='true'&alsatian src/tests/gateway.spec.js",
-        "xtest": "set NODE_LOG_LEVEL=trace  test='true'&alsatian src/tests/servers.spec.js src/tests/gateway.spec.js src/tests/events.spec.js src/tests/fp.spec.js",
+        "xtest": "set NODE_LOG_LEVEL=trace  test='true'&alsatian src/tests/servers.spec.js src/tests/gateway.spec.js src/tests/events.spec.js src/tests/decorators.spec.js src/tests/fp.spec.js",
         "test:fp": "npm run build &&  set test='true'&alsatian src/tests/fp.spec.js",
         "servers": "tsc && alsatian src/tests/servers.spec.js ",
         "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"

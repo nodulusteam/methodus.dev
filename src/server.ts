@@ -14,7 +14,6 @@ import * as figlet from 'figlet';
 export interface IApp {
     set(key, value);
 }
-
 @LogClass(logger)
 export class Server {
     public app: any;

@@ -1,4 +1,5 @@
 process.env.test = 'true';
+
 import { Proxy as MethodusProxy } from '../decorators/proxy';
 
 import {
@@ -19,13 +20,13 @@ export class Xserver extends ConfiguredServer {
     }
 }
 
-@MethodusProxy.ProxyClass('@methodus/server', 'FirstClass', '../src/tests/classes/FirstClass')
-@MethodConfig('testClass')
-export class XProxyClass {
-    @Method(Verbs.Get, '/posts/:id/:name')
-    public action1(@Param('id') id: number, @Param('name') name: string) {
-        const result = new MethodResult({ value: 'FirstClass from contract', id, name, add: 'added' });
-        return result;
-    }
+// @MethodusProxy.ProxyClass('@methodus/server', 'FirstClass', '../src/tests/classes/FirstClass')
+// @MethodConfig('testClass')
+// export class XProxyClass {
+//     @Method(Verbs.Get, '/posts/:id/:name')
+//     public action1(@Param('id') id: number, @Param('name') name: string) {
+//         const result = new MethodResult({ value: 'FirstClass from contract', id, name, add: 'added' });
+//         return result;
+//     }
 
-}
+// }

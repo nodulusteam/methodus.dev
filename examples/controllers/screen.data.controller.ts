@@ -3,7 +3,7 @@ import { MethodConfig, Method, Param, MethodResult, Verbs, MethodConfigExtend } 
 import { ScreenModel } from '../models/screen.model';
 
 @MethodConfigExtend(DataController)
-@MethodConfig('Screen', [], ScreenModel)
+@MethodConfig('ScreensDataController', [], ScreenModel)
 export class ScreensDataController extends DataController {
 
     @Method(Verbs.Get, '/special/:id')
