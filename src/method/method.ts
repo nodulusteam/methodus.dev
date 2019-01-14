@@ -39,18 +39,28 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
         const originalMethod = descriptor.value;
         descriptor.value = async (...args: any[]) => {
 
+            // if (args && args[args.length - 1] && args[args.length - 1].instruct) {
+            //     target = args[args.length - 1].target;
+
+            //     target.methodus = target.methodus || {};
+            //     name = target.name || target.constructor.name;
+            //     target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+
+            //     mTarget = target.methodus[name];
+
+            //     metaObject = mTarget._descriptors[propertyKey];
+            //     paramsMap = metaObject.params;
+            //     paramsMap.sort((a, b) => {
+            //         return a.index - b.index;
+            //     });
+            // }
+
             if (args && args[args.length - 1] && args[args.length - 1].instruct) {
-                target = args[args.length - 1].target;
-
-                target.methodus = target.methodus || {};
-                name = target.name || target.constructor.name;
-                target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
-
-                mTarget = target.methodus[name];
+                mTarget = args[args.length - 1].target;
 
                 metaObject = mTarget._descriptors[propertyKey];
-                paramsMap = metaObject.params;
-                paramsMap.sort((a, b) => {
+                paramsMap = metaObject.params as any;
+                paramsMap.sort((a: any, b: any) => {
                     return a.index - b.index;
                 });
             }
