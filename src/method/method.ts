@@ -19,7 +19,7 @@ const methodMetadataKey = 'methodus';
 export function Method(verb: Verbs, route: string, middlewares?: any[]) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
         target.methodus = target.methodus || {};
-        let name = target.name || target.constructor.name;
+        const name = target.name || target.constructor.name;
         target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
 
         let mTarget = target.methodus[name];
@@ -38,22 +38,6 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
         // save a reference to the original method
         const originalMethod = descriptor.value;
         descriptor.value = async (...args: any[]) => {
-
-            // if (args && args[args.length - 1] && args[args.length - 1].instruct) {
-            //     target = args[args.length - 1].target;
-
-            //     target.methodus = target.methodus || {};
-            //     name = target.name || target.constructor.name;
-            //     target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
-
-            //     mTarget = target.methodus[name];
-
-            //     metaObject = mTarget._descriptors[propertyKey];
-            //     paramsMap = metaObject.params;
-            //     paramsMap.sort((a, b) => {
-            //         return a.index - b.index;
-            //     });
-            // }
 
             if (args && args[args.length - 1] && args[args.length - 1].instruct) {
                 mTarget = args[args.length - 1].target;
