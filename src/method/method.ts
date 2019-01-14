@@ -57,6 +57,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
 
             if (args && args[args.length - 1] && args[args.length - 1].instruct) {
                 mTarget = args[args.length - 1].target;
+                target = mTarget;
 
                 metaObject = mTarget._descriptors[propertyKey];
                 paramsMap = metaObject.params as any;
