@@ -21,12 +21,12 @@ export function MethodConfigExtend(extendTarget: any, name?: string) {
             }
         });
 
-        Object.assign(target.prototype.constructor, inheritSettings);
-        const mTarget = target.methodus[trueName];
-        const routePrefix = trueName.toLocaleLowerCase();
-        Object.keys(mTarget._descriptors).forEach((desciptorKey) => {
-            const route = mTarget._descriptors[desciptorKey].route;
-            mTarget._descriptors[desciptorKey].route = '/' + routePrefix + route;
-        });
+        // Object.assign(target.prototype.constructor, inheritSettings);
+        // const mTarget = target.methodus[trueName];
+        // const routePrefix = trueName.toLocaleLowerCase();
+        // Object.keys(mTarget._descriptors).forEach((desciptorKey) => {
+        //     const route = mTarget._descriptors[desciptorKey].route;
+        //     mTarget._descriptors[desciptorKey].route = '/' + routePrefix + route;
+        // });
     };
 }
