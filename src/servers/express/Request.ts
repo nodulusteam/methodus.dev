@@ -16,7 +16,7 @@ export class Request {
         const headers = {};
         const cookies = {};
         const query = {};
-        let files: any = [];
+        const files: any = [];
         try {
             paramsMap.forEach((item) => {
                 item.value = params[item.index];
@@ -51,15 +51,29 @@ export class Request {
                         securityContext = { uid: item.value.uid, user_id: item.value.user_id };
                         break;
                     case 'headers':
-                        headers[item.name] = item.value;
+                        if (item.name) {
+                            headers[item.name] = item.value;
+                        } else {
+                            Object.assign(headers, item.value);
+                        }
+                        break;
 
-                        break;
                     case 'cookies':
-                        cookies[item.name] = item.value;
+                        if (item.name) {
+                            cookies[item.name] = item.value;
+                        } else {
+                            Object.assign(cookies, item.value);
+                        }
                         break;
+
                     case 'files':
-                        files = item.value;
+                        if (item.name) {
+                            files[item.name] = item.value;
+                        } else {
+                            Object.assign(files, item.value);
+                        }
                         break;
+
                 }
             });
         } catch (error) {
@@ -197,7 +211,6 @@ export class Request {
     }
 
     public try(requestOptions) {
-       
 
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error) => {
