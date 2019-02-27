@@ -3,7 +3,7 @@ import { ClassContainer } from '../class-container';
 import { MethodDescriptor } from '../config';
 import { MethodType, ServerType } from '../interfaces';
 import { logger } from '../log';
-import { MethodError, MethodResult } from '../response';
+import { MethodError, MethodResult, MethodResultStatus } from '../response';
 import { RestParser, Verbs } from '../rest';
 import { Servers } from '../servers/serversList';
 
@@ -173,28 +173,41 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     try {
 
                         const requestResult = await methodResult.result;
-
-                        if (Buffer.isBuffer(requestResult)) {
-                            const bufferedResult = Buffer.from(requestResult).toString();
-                            if (typeof bufferedResult === 'string') {
-                                try {
-                                    methodResult = new MethodResult(JSON.parse(bufferedResult));
-                                } catch (error) {
-                                    // not json result
-                                    methodResult = bufferedResult;
-                                }
-                            }
+                        if (!requestResult) {
+                            methodResult = {};
                         } else {
-                            if (requestResult.result === undefined) {
-                                methodResult = new MethodResult(requestResult);
+                            if (Buffer.isBuffer(requestResult)) {
+                                const bufferedResult = Buffer.from(requestResult).toString();
+                                if (typeof bufferedResult === 'string') {
+                                    try {
+                                        methodResult = new MethodResult(JSON.parse(bufferedResult));
+                                    } catch (error) {
+                                        // not json result
+                                        methodResult = bufferedResult;
+                                    }
+                                }
                             } else {
-                                methodResult = requestResult;
+                                if (requestResult.result === undefined) {
+                                    methodResult = new MethodResult(requestResult);
+                                } else {
+                                    methodResult = requestResult;
+                                }
                             }
                         }
                     } catch (error) {
                         error.statusCode = error.statusCode || 500;
+                        if (error.error && Buffer.isBuffer(error.error)) {
+                            error.error = Buffer.from(error.error).toString();
+                        }
+
+                        // throw (error);
+                        delete error.response;
+                        delete error.options;
+                        delete error.message;
+
                         logger.error(error);
-                        throw (error);
+                        throw new MethodResultStatus(error, error.statusCode);
+
                     }
                 }
                 logger.info(`Method::OK`, '<==', methodType, originalMethod.name);

@@ -12,4 +12,13 @@ export class EventsServers {
             resolve(new Xserver());
         });
     }
+
+    // @AsyncTest('testing the event communication system')
+    // @Timeout(50000)
+    // public async proxyTest(serverType, methodType) {
+    //     return new Promise(async (resolve, reject) => {
+    //         resolve(new XProxyClass());
+    //     });
+    // }
+
 }
