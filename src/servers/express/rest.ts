@@ -1,5 +1,6 @@
 import { MethodResult, MethodError } from '../../response';
 import { logger, LogClass } from '../../log';
+import * as etag from 'etag';
 
 export class Verbs {
     public static Get: string = 'GET';
@@ -75,11 +76,9 @@ export class RestResponse {
                 res.end(methodResult.result, 'utf-8');
             } else {
                 res.set('Content-Type', 'application/json');
-                if (methodResult.result) {
-                    res.end(JSON.stringify(methodResult.result), 'utf-8');
-                } else {
-                    res.end(JSON.stringify(methodResult), 'utf-8');
-                }
+                const str = JSON.stringify((methodResult.result) ? methodResult.result : methodResult);
+                res.setHeader('ETag', etag(str));
+                res.send(str);
             }
         }
     }

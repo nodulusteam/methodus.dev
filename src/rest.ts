@@ -3,6 +3,7 @@ import { logger, LogClass } from './log';
 import { ServerType } from './interfaces';
 import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './servers/express/rest';
 import { RestParser as RestFastify, RestResponse as RestResponseFastify } from './servers/fastify/rest';
+import * as etag from 'etag';
 
 export class Verbs {
     public static Get: string = 'GET';
@@ -73,14 +74,16 @@ export class RestResponse {
             }
 
             if (typeof methodResult.result === 'string') {
-                res.send(methodResult.result, 'utf-8');
+                res.send(methodResult.result);
             } else {
                 res.header('Content-Type', 'application/json');
-                if (methodResult.result) {
-                    res.send(JSON.stringify(methodResult.result), 'utf-8');
-                } else {
-                    res.send(JSON.stringify(methodResult), 'utf-8');
-                }
+                // handle ETAG
+
+                res.set('Content-Type', 'application/json');
+                const str = JSON.stringify((methodResult.result) ? methodResult.result : methodResult);
+                res.setHeader('ETag', etag(str));
+                res.send(str);
+
             }
         }
     }
