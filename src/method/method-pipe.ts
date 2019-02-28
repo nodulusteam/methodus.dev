@@ -38,7 +38,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
         const originalMethod = descriptor.value;
 
         // not async
-        descriptor.value = function (...args: any[]) {
+        descriptor.value = function(...args: any[]) {
             validateServerIsRunning();
             // extract metadata for class and method
             let configName = target.name;
@@ -143,7 +143,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
                 if (methodResult.toString() === '[object Promise]') {
                     methodResult.then((resolvedPromise: any) => {
                         // methodResult = new MethodResult(StreamFromPromise(methodResult, { objectmode: true }));
-                        const response = new RestResponse(args, resolvedPromise, restHeaders);
+                       new RestResponse(args, resolvedPromise, restHeaders);
                     });
 
                 } else {
