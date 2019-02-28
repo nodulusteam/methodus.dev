@@ -1,17 +1,19 @@
 process.env.test = 'true';
 
 import { Proxy as MethodusProxy } from '../decorators/proxy';
+import * as path from 'path';
 
 import {
     MethodConfig,
     ServerConfiguration,
     ClientConfiguration, ConfiguredServer, MethodType, ServerType, Param, MethodResult, Method, Verbs,
+    PluginConfiguration,
 } from '../';
 import { FirstClass } from './classes/FirstClass';
 import { SecondClass } from './classes/SecondClass';
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6695 })
-// @PluginConfiguration(path.join(__dirname, 'static'), { path: '/client' })
+@PluginConfiguration(path.join(__dirname, 'static'), { path: '/client' })
 @ClientConfiguration(FirstClass, MethodType.Local, ServerType.Express)
 @ClientConfiguration(SecondClass, MethodType.Local, ServerType.Express)
 export class Xserver extends ConfiguredServer {
@@ -20,7 +22,7 @@ export class Xserver extends ConfiguredServer {
     }
 }
 
-// @MethodusProxy.ProxyClass('@methodus/server', 'FirstClass', '../src/tests/classes/FirstClass')
+// @MethodusProxy.ProxyClass('@methodus/server', 'XProxyClass', '../src/tests/classes/FirstClass')
 // @MethodConfig('testClass')
 // export class XProxyClass {
 //     @Method(Verbs.Get, '/posts/:id/:name')
