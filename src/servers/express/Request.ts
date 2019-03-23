@@ -103,7 +103,6 @@ export class Request {
             }).join('&');
         }
 
-        console.log(uri.split('://')[1].split('/').splice(0, 1).join('/'));
         const parts = uri.split('://')[1].split('/');
         parts.splice(0, 1);
         let requestOptions: any;
@@ -112,8 +111,8 @@ export class Request {
             const hostParts = uri.split('://')[1].split('/')[0].split(':');
             const agent = new https.Agent({
                 host: hostParts[0],
-                port: hostParts[1],
-                path: parts.join('/').split('?')[0],
+                port: hostParts[1] || 443,
+                path: parts.join('/').split('?')[0] || '',
                 rejectUnauthorized: false,
             });
 
