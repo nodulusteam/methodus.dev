@@ -134,6 +134,9 @@ export class Request {
                 timeout: 1000 * 60 * 5,
             };
         }
+        if (process.env.PROXY) {
+            Object.assign(requestOptions, { proxy: process.env.PROXY });
+        }
 
         logger.log(this, body, uri);
         if (Object.keys(body).length > 0) {
