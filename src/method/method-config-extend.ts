@@ -1,5 +1,6 @@
 import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
+import { MethodType, ServerType } from '../interfaces';
 
 /** the MethodConfig decorator registers the controller as a router
  *  @param {string} name - the identifier of the controller in the resolver.
@@ -11,6 +12,13 @@ export function MethodConfigExtend(extendTarget: any, name?: string) {
         const filterKeys = ['length', 'prototype', 'name', 'methodus', 'methodus_base'];
         target.methodus[trueName] = JSON.parse(JSON.stringify(extendTarget.methodus_base));
         const inheritSettings: any = {};
+
+        target.prototype.options.classes.push({
+            controller: extendTarget,
+            methodType: MethodType.Local,
+            serverType: ServerType.Express,
+        });
+
         Object.getOwnPropertyNames(extendTarget.prototype.constructor).forEach((key) => {
             if (filterKeys.indexOf(key) === -1) {
                 const func = async (...args: any[]) => {

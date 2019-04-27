@@ -3,13 +3,11 @@ import { Servers } from './servers';
 import { MethodusConfig, ServerConfig, PluginEntry } from './config';
 import { ServerType } from './interfaces';
 import { MethodEvent } from './response/';
-import { fp } from './fp';
 import { logger, LogClass } from './log';
 import http = require('http');
 import colors = require('colors');
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
-import { Fastify } from './servers/fastify/fastify';
 import * as figlet from 'figlet';
 import { ServerContainer } from './server-container';
 import { ClientContainer } from './client-container';
@@ -60,22 +58,13 @@ export class Server {
     }
 
     async printlogo() {
-        return new Promise((resolve, reject) => {
 
-            figlet.text('methodus', {
-                font: 'Bigfig',
-                horizontalLayout: 'default',
-                verticalLayout: 'default',
-            }, (err: any, data: any) => {
-                if (err) {
-
-                    resolve();
-                    return;
-                }
-                console.log(colors.blue(data));
-                resolve();
-            });
-        });
+        const options: any = {
+            font: 'Bigfig',
+            horizontalLayout: 'default',
+            verticalLayout: 'default',
+        };
+        console.log(figlet.textSync('methodus', options));
     }
 
     public useClient(_class: any) {
@@ -98,10 +87,6 @@ export class Server {
                 logger.info(this,
                     colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
 
-                // const activeServers = Servers.get(serverInstance.instanceId, _class.serverType);
-                // if (activeServers) {
-                //     activeServers.useClass(_class.classType, metaObject.methodType);
-                // }
             } else {
                 logger.error('could not load metadata for ' + configName);
             }
@@ -118,8 +103,7 @@ export class Server {
             const loader = new PluginLoader();
             loader.config(this.config, this._plugins);
         }
-        const onStart: any = []; // [(app) => {}]
-
+        const onStart: any = [];
         if (this.httpServer) {
             Servers.set(this.instanceId, 'http', this.httpServer);
         }
@@ -127,29 +111,9 @@ export class Server {
             Servers.set(this.instanceId, 'express', this.app);
         }
 
-        // we should rearrange the configuration in order to load them in the right order
-        // express / http / socketio
-        // const objectForOrder: any = {};
-        // this.config.servers.forEach((server: ServerConfig) => {
-        //     if (!objectForOrder[server.type]) {
-        //         objectForOrder[server.type] = [];
-        //     }
-        //     objectForOrder[server.type].push(server);
-        // });
-
-        // const loadOrder = [
-        //     ServerType.HTTP2,
-        //     ServerType.Express,
-        //     ServerType.Socket,
-        //     ServerType.RabbitMQ,
-        //     ServerType.Redis,
-        //     ServerType.Kafka];
         if (this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
 
-                // loadOrder.forEach(async (serverFamily: string) => {
-                //     if (objectForOrder[serverFamily] && objectForOrder[serverFamily].length) {
-                //         for (const server of objectForOrder[serverFamily]) {
                 const serverType = server.type;
                 if (server.options.port) {
                     port = server.options.port;
@@ -165,105 +129,6 @@ export class Server {
 
                 }
                 return;
-                // switch (serverType) {
-                //     case ServerType.HTTP2: {
-                //         if (!aServerInstance) {
-                //             logger.info(this, colors.red(`> Starting HTTP2 server on port ${port}`));
-                //             console.log(colors.red(`> Starting HTTP2 server on port ${port}`));
-                //             this._app[serverType] = new Fastify(port, onStart);
-                //             const app = Servers.set(this.instanceId, server.type, this._app[serverType]);
-                //             this.app = app._app;
-
-                //             const httpServer = Servers.get(this.instanceId, 'http')
-                //                 || http.createServer(app._app);
-                //             this._app.http = httpServer;
-                //             Servers.set(this.instanceId, 'http', httpServer);
-                //         }
-
-                //         this.config.servers.forEach((serverConfiguration) => {
-                //             if (serverConfiguration.type === serverType && serverConfiguration.onStart) {
-                //                 onStart.push(serverConfiguration.onStart);
-                //             }
-                //         });
-                //         break;
-
-                //     }
-                //     case ServerType.Express: {
-                //         if (!aServerInstance) {// !this.app && !this._app[serverType]) {
-                //             logger.info(this, colors.green(`> Starting REST server on port ${port}`));
-                //             console.log(colors.green(`> Starting REST server on port ${port}`));
-                //             this._app[serverType] = new Express(port, onStart);
-                //             const app = Servers.set(this.instanceId, server.type, this._app[serverType]);
-                //             this.app = app._app;
-                //             const httpServer = Servers.get(this.instanceId, 'http')
-                //                 || http.createServer(app._app);
-                //             this._app.http = httpServer;
-                //             Servers.set(this.instanceId, 'http', httpServer);
-                //         } else {
-                //             // express was allready initiated //this._app[serverType] =
-                //             const partialExpress = new ExpressPartial(this.app);
-                //             Servers.set(this.instanceId, server.type, partialExpress);
-                //         }
-
-                //         this.config.servers.forEach((serverConfiguration) => {
-                //             if (serverConfiguration.type === serverType && serverConfiguration.onStart) {
-                //                 onStart.push(serverConfiguration.onStart);
-                //             }
-                //         });
-                //         break;
-
-                //     }
-                //     case ServerType.Socket: {
-                //         logger.info(this, colors.green(`> Starting SOCKETIO server on port ${port}`));
-                //         console.log(colors.green(`> Starting SOCKETIO server on port ${port}`));
-
-                //         const httpServer = Servers.get(this.instanceId, 'http');
-
-                //         // if (!httpServer) {
-                //         //     httpServer = this.httpServer;
-                //         // }
-
-                //         const app = new SocketIO(server.options, httpServer);
-                //         Servers.set(this.instanceId, server.type, app);
-                //         // if (server.onStart)
-                //         //     server.onStart(app);
-                //         break;
-                //     }
-                //     case ServerType.RabbitMQ: {
-                //         console.log(colors.green(`> Starting MQ server`));
-                //         logger.info(this, colors.green(`> Starting MQ server`));
-                //         try {
-                //             const app = new MQ(server.options);
-                //             Servers.set(this.instanceId, server.type, app);
-                //         } catch (error) {
-                //             logger.error(error);
-                //         }
-                //         break;
-                //     }
-                //     case ServerType.Kafka: {
-                //         logger.info(this, colors.green(`> Starting Kafka server`));
-                //         try {
-                //             const app = new Kafka(server.options);
-                //             Servers.set(this.instanceId, server.type, app);
-                //         } catch (error) {
-                //             logger.error(error);
-                //         }
-                //         break;
-                //     }
-                //     case ServerType.Redis: {
-                //         logger.info(this, colors.green(`> Starting REDIS server`));
-                //         try {
-                //             const app: any = new Redis(server.options);
-                //             app.connection = new RedisServer();
-                //             Servers.set(this.instanceId, server.type, app);
-                //         } catch (error) {
-                //             logger.error(error);
-                //         }
-                //         break;
-                //     }
-                // }
-                // }
-                //  }
             });
 
             onStart.forEach((startEvent: any) => {

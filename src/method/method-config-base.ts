@@ -1,5 +1,7 @@
 import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
+import { MethodType, ServerType } from '../interfaces';
+import { Servers } from '../servers/serversList';
 
 /** the MethodConfig decorator registers the controller as a router
  *  @param {string} name - the identifier of the controller in the resolver.
@@ -9,23 +11,24 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
     return (target: any) => {
         const existingMetadata = ClassContainer.get(name) || {};
         existingMetadata.name = name;
+        const original = target.prototype.constructor;
+        original.prototype.options = original.prototype.options ||
+            { servers: [], classes: [], clients: [], plugins: [] };
+
         let proto = target.prototype || target.__proto__;
 
         if (target.methodus) { // means its a static class , no prototype
             proto = target;
         }
 
-        // if (proto.methodus.name && proto.methodus.name !== name) {
-        //     // prefix routes
-        //     const routePrefix = name.toLocaleLowerCase();
-        //     Object.keys(proto.methodus._descriptors).forEach((desciptorKey) => {
-        //         const route = proto.methodus._descriptors[desciptorKey].route;
-        //         proto.methodus._descriptors[desciptorKey].route = '/' + routePrefix + route;
-        //     });
-        //     // proto.methodus = { name, _events: {}, _descriptors: {}, base: target.prototype.methodus };
-        // }
         proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
+        console.log(Servers);
 
+        Servers.classes[target.name] = {
+            controller: target, methodType: MethodType.Local,
+            serverType: ServerType.Express,
+        };
+        console.log(Servers);
         const methods = Object.getOwnPropertyNames(target.prototype);
 
         methods.forEach((methodName: string): void => {
@@ -34,11 +37,8 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
 
         if (target.prototype.constructor) {
             const staticMethods = Object.getOwnPropertyNames(target.prototype.constructor);
-
             staticMethods.forEach((methodName: string): void => {
-                // console.log(target.prototype[methodName]);
-                const stud = target.prototype.constructor[methodName];
-                console.log(stud, target.prototype.constructor[methodName]);
+                return target.prototype.constructor[methodName];
             });
         }
 
@@ -49,6 +49,5 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
         target.methodus_base = proto.methodus_base;
         existingMetadata.middlewares = middlewares;
         ClassContainer.set(name, existingMetadata);
-
     };
 }

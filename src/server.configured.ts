@@ -2,6 +2,7 @@
 import { MethodusConfig } from './config';
 import { LogClass, logger } from './log/';
 import { Server } from './server';
+import { ServersList } from './servers/serversList';
 
 @LogClass(logger)
 export class ConfiguredServer {
@@ -16,8 +17,9 @@ export class ConfiguredServer {
             server.config.run(element.serverType, element.options);
         });
         options.classes.forEach((element: any) => {
-            server.config.use(element.controller, element.methodType, element.serverType, element.resolver);
+             server.config.use(element.controller, element.methodType, element.serverType);
         });
+
         options.clients.forEach((element: any) => {
             server.config.useClient(element.controller, element.transportType, element.resolver);
         });
