@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import { MethodDescriptor } from '../config';
 import { MethodType, ServerType } from '../interfaces';
 import { MethodResult, MethodError } from '../response';
 import { Servers } from '../servers/serversList';
@@ -28,7 +27,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
         }
 
         Reflect.defineMetadata(methodMetadataKey, metaObject, target, propertyKey);
-        mTarget._descriptors[propertyKey] = metaObject as MethodDescriptor;
+        mTarget._descriptors[propertyKey] = metaObject;
         const paramsMap: any[] = metaObject.params;
         paramsMap.sort((a, b) => {
             return a.index - b.index;

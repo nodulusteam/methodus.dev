@@ -36,6 +36,7 @@ export class MQ extends BaseServer {
         if (methodType === MethodType.Local) {
             return new MQRouter(classType, this.options);
         }
+        return null;
     }
 
     async _send(functionArgs: any, methodinformation: any, paramsMap: any) {

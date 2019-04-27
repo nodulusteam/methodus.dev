@@ -5,7 +5,7 @@ import {   TransportType } from '../interfaces';
 export class MethodusClientConfig {
     public transportType: any;
     public classType: any;
-    public serviceName: string;
+    public serviceName?: string;
     public resolver: Promise<string> | string | any;
     constructor(classType: any, transportType: TransportType,
         resolver?: Promise<any> | any) {

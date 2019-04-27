@@ -16,13 +16,13 @@ export interface IApp {
 @LogClass(logger)
 export class Server {
     public app: any;
-    public config: MethodusConfig;
+    public config?: MethodusConfig;
     public serverKey: string;
 
     private _app: any = {};
     private httpServer: any;
     private port: number = 0;
-    private _plugins: PluginEntry[];
+    private _plugins: PluginEntry[] = [];
     private instanceId: string;
 
     constructor(port?: number | string, app?: any, httpServer?: any) {
@@ -98,7 +98,7 @@ export class Server {
         // add this instance to the global bridge of servers
         // Bridge.set(this.serverKey, { server: this });
 
-        if (this._plugins && this._plugins.length > 0) {
+        if (this.config && this._plugins && this._plugins.length > 0) {
             const loader = new PluginLoader();
             loader.config(this.config, this._plugins);
         }
@@ -110,7 +110,7 @@ export class Server {
             Servers.set(this.instanceId, 'express', this.app);
         }
 
-        if (this.config.servers) {
+        if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
 
                 const serverType = server.type;
@@ -142,19 +142,22 @@ export class Server {
                 httpServerIntance.listen(port);
             }
 
-            const classes = this.config.classes.entries();
-            for (let i = 0; i < this.config.classes.size; i++) {
-                const element = classes.next();
-                this.useClass(element.value[1]);
+            if (this.config) {
+                const classes = this.config.classes.entries();
+                for (let i = 0; i < this.config.classes.size; i++) {
+                    const element = classes.next();
+                    this.useClass(element.value[1]);
+                }
+            }
+
+        }
+        if (this.config) {
+            const clients = this.config.clients.entries();
+            for (let i = 0; i < this.config.clients.size; i++) {
+                const element = clients.next();
+                this.useClient(element.value[1]);
             }
         }
-
-        const clients = this.config.clients.entries();
-        for (let i = 0; i < this.config.clients.size; i++) {
-            const element = clients.next();
-            this.useClient(element.value[1]);
-        }
-
         return this;
     }
 
@@ -212,8 +215,11 @@ export class Server {
     }
 
     async sendEvent(methodEvent: MethodEvent) {
-        this.config.servers.forEach((server: any) => {
-            this._app[server.type]._sendEvent(methodEvent);
-        });
+        if (this.config && this.config.servers) {
+            this.config.servers.forEach((server: any) => {
+                this._app[server.type]._sendEvent(methodEvent);
+            });
+        }
+
     }
 }

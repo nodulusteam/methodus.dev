@@ -41,19 +41,21 @@ export class Servers {
 
     @AsyncTest('create')
     @Timeout(1000 * 1000)
-    public async create() {
+    public async create(): Promise<null> {
         const response = await TestTarget.create('cookie-value', {}, 'my user name');
         Expect(response.result.name).toBe('my user name');
+        return null;
     }
 
     @AsyncTest('read')
     @Timeout(1000 * 1000)
-    public async read() {
+    public async read(): Promise<any> {
         try {
             const response = await TestTarget.read(511798);
             return response;
         } catch (ex) {
             Expect(ex.error).toBe('intended error');
+            return null;
         }
 
     }

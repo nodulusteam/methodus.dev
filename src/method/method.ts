@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
-import { MethodDescriptor } from '../config';
 import { MethodType, ServerType } from '../interfaces';
 import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus } from '../response';
@@ -28,7 +27,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
         }
 
         Reflect.defineMetadata(methodMetadataKey, metaObject, target, propertyKey);
-        mTarget._descriptors[propertyKey] = metaObject as MethodDescriptor;
+        mTarget._descriptors[propertyKey] = metaObject as any;
         let paramsMap: any[] = metaObject.params;
         paramsMap.sort((a, b) => {
             return a.index - b.index;

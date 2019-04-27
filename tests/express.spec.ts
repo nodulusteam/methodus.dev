@@ -46,7 +46,7 @@ export class Servers {
 
     @AsyncTest('read')
     @Timeout(1000 * 1000)
-    public async read() {
+    public async read(): Promise<any> {
         try {
             const response = await TestTarget.read(511798);
             return response;

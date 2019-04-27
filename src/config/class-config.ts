@@ -7,7 +7,7 @@ export class MethodusClassConfig {
     public methodType: MethodType = MethodType.Local;
     public serverType: ServerType;
     public classType: any;
-    public serviceName: string;
+    public serviceName?: string;
     public resolver: Promise<string> | string | any;
     constructor(classType: any, methodType: MethodType,
         serverType: ServerType, resolver?: Promise<any> | any) {

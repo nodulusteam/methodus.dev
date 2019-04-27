@@ -70,7 +70,7 @@ export class RedisServer {
 
 @LogClass(logger)
 export class RedisRouter implements Methodus.Router {
-    prefix: string;
+    prefix: string = '';
     public router: any;
     constructor(obj: any) {
         const proto = fp.maybeProto(obj);

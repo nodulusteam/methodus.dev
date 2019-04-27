@@ -14,10 +14,10 @@ export interface PluginEntry {
 export class MethodusConfig {
 
     public classes: Map<string, MethodusClassConfig> = new Map<string, MethodusClassConfig>();
-    public servers: ServerConfig[];
+    public servers?: ServerConfig[];
     public clients: Map<string, MethodusClientConfig> = new Map<string, MethodusClientConfig>();
-    public plugins: PluginEntry[];
-    public port: number;
+    public plugins?: PluginEntry[];
+    public port: number = 0;
 
     constructor(servers?: ServerConfig[], map?: Map<string, MethodusClassConfig>) {
         if (servers) {

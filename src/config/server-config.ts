@@ -4,7 +4,7 @@ import {  ServerType } from '../interfaces';
 
 @LogClass(logger)
 export class ServerConfig {
-    instanceId: string;
+    instanceId?: string;
     type: ServerType | any;
     options: any;
     onStart?: () => {};

@@ -8,8 +8,8 @@ export class PlayerModel extends Repository<PlayerModel> {
     username: string;
     email: string;
     address: any;
-    phone: string;
-    website: string;
+    phone?: string;
+    website?: string;
     company: any;
 
     constructor(id: any, name: any, username?: any, email?: any) {

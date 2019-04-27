@@ -92,8 +92,8 @@ export class SocketIO extends BaseServer {
 
 @LogClass(logger)
 export class SocketIORouter implements Methodus.Router {
-    prefix: string;
-    public router: any;
+    prefix: string = '';
+    public router: any = null;
     constructor(obj: any, socket: any) {
         const proto = fp.maybeProto(obj);
         const methodus = fp.maybeMethodus(obj)[obj.name];

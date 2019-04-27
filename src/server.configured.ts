@@ -12,15 +12,22 @@ export class ConfiguredServer {
         const server = new Server();
         this.server = server;
         server.config = new MethodusConfig();
+
         options.servers.forEach((element: any) => {
-            server.config.run(element.serverType, element.options);
+            if (server.config) {
+                server.config.run(element.serverType, element.options);
+            }
         });
         options.classes.forEach((element: any) => {
-             server.config.use(element.controller, element.methodType, element.serverType);
+            if (server.config) {
+                server.config.use(element.controller, element.methodType, element.serverType);
+            }
         });
 
         options.clients.forEach((element: any) => {
-            server.config.useClient(element.controller, element.transportType, element.resolver);
+            if (server.config) {
+                server.config.useClient(element.controller, element.transportType, element.resolver);
+            }
         });
 
         if (options.plugins) {

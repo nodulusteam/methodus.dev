@@ -11,8 +11,8 @@ export class MethodEvent {
 
     name: string;
     value: any;
-    exchange: string;
-    exchanges: string[];
+    exchange: string = '';
+    exchanges: any;
     serverType: ServerType = ServerType.RabbitMQ;
 
     constructor(name: string, value: any, serverType?: ServerType, exchangeName?: string | string[]) {
