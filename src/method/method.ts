@@ -87,6 +87,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                         }
                     }
                 } else {
+
                     const result = await originalMethod.apply(this, args);
                     methodResult = new MethodResult(result);
                     return handleResult(methodResult);
@@ -130,11 +131,11 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                                     methodResult = new MethodResult(methodus._mocks[propertyKey]);
                                 }
                             } else {
-                                methodResult = await originalMethod.apply(target, ParserResponse.args);
+                                methodResult = await originalMethod.apply(target as any, ParserResponse.args);
                             }
                             break;
                         case MethodType.Local:
-                            methodResult = await originalMethod.apply(this, ParserResponse.args);
+                            methodResult = await originalMethod.apply(this as any, ParserResponse.args as any);
                             break;
                         case MethodType.Http2:
                             server = ServerType.HTTP2;
@@ -196,7 +197,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 enumerable: descriptor.enumerable,
                 configurable: descriptor.configurable,
                 value() {
-                    return value.apply(this, arguments);
+                    return value.apply(this, arguments as any);
                 },
             });
         };
