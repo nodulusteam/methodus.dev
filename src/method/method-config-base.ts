@@ -22,13 +22,12 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
         }
 
         proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
-        console.log(Servers);
 
         Servers.classes[target.name] = {
             controller: target, methodType: MethodType.Local,
             serverType: ServerType.Express,
         };
-        console.log(Servers);
+
         const methods = Object.getOwnPropertyNames(target.prototype);
 
         methods.forEach((methodName: string): void => {
