@@ -11,9 +11,9 @@ export class ExpressRouter {
         const methodus = fp.maybeMethodus(obj)[obj.name];
 
         const proto = fp.maybeProto(obj);
-        const globalMiddlewares = [];
+        const globalMiddlewares: any[] = [];
         if (methodus.middlewares) {
-            methodus.middlewares.forEach((element) => {
+            methodus.middlewares.forEach((element: any) => {
                 if (element) {
                     globalMiddlewares.push(element);
                 } else {
@@ -22,7 +22,7 @@ export class ExpressRouter {
             });
         }
 
-        const routerDataObject = {};
+        const routerDataObject: any = {};
         // build routes and verbs object
         Object.keys(methodus._descriptors).forEach((itemKey) => {
             const item = methodus._descriptors[itemKey];
@@ -31,20 +31,20 @@ export class ExpressRouter {
         });
 
         Object.keys(routerDataObject).forEach((route: string) => {
-            const autoRouter = express.Router();
-            routerDataObject[route].map((item) => {
+            const autoRouter: any = express.Router();
+            routerDataObject[route].map((item: any) => {
                 const verb = item.verb.toLowerCase();
                 const functionArray = [...globalMiddlewares];
                 if (item.middlewares) {
                     logger.info(this, `loading middleware for ${item.propertyKey}`);
-                    item.middlewares.forEach((element) => {
+                    item.middlewares.forEach((element: any) => {
                         if (element) {
                             functionArray.push(element);
                         }
                     });
                 }
 
-                const repositoryBuilder = (...args) => {
+                const repositoryBuilder = (...args: any[]) => {
                     args.push(methodus.repository);
                     proto[item.propertyKey].apply(methodus, args);
                 };
@@ -55,7 +55,6 @@ export class ExpressRouter {
                     functionArray.push(proto[item.propertyKey].bind(methodus));
 
                 }
-
 
                 autoRouter[verb](route, ...functionArray);
             });

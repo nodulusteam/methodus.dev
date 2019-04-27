@@ -7,7 +7,8 @@ import 'reflect-metadata';
 export function PluginConfiguration(name: string, options?: any) {
     return (target: any) => {
         const original = target.prototype.constructor;
-        original.prototype.options = original.prototype.options || { servers: [], classes: [], plugins: [] };
+        original.prototype.options = original.prototype.options ||
+          { servers: [], classes: [], clients: [], plugins: [] };
         original.prototype.options.plugins.push({ name, options });
         // // the new constructor behaviour
         // const f: any = () => {

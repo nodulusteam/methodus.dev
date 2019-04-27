@@ -9,7 +9,7 @@ export class ExpressEventBus {
     public router: any;
     constructor(obj: any, methodType: MethodType) {
         const proto = fp.maybeProto(obj);
-        const methodus = fp.maybeMethodus(obj);
+        const methodus = fp.maybeMethodus(obj)[obj.name];
         // let collection = Object.getOwnPropertyNames(proto);
         const autoRouter = express.Router();
         Object.keys(methodus._events).forEach((itemKey) => {

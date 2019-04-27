@@ -16,3 +16,5 @@ examples
 sonar-project.properties
 .travis.yml
 tslint.json
+tests
+modules

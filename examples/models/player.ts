@@ -2,7 +2,6 @@ import { Database } from './index';
 import { Repository } from './repository';
 new Database();
 
-
 export class PlayerModel extends Repository<PlayerModel> {
     id: string;
     name: string;
@@ -13,8 +12,7 @@ export class PlayerModel extends Repository<PlayerModel> {
     website: string;
     company: any;
 
-
-    constructor(id, name, username?, email?) {
+    constructor(id: any, name: any, username?: any, email?: any) {
         super('Player');
         this.id = id;
         this.name = name;
@@ -22,6 +20,4 @@ export class PlayerModel extends Repository<PlayerModel> {
         this.email = email;
     }
 
-
 }
-

@@ -26,6 +26,22 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
         // }
         proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
 
+        const methods = Object.getOwnPropertyNames(target.prototype);
+
+        methods.forEach((methodName: string): void => {
+            return target.prototype[methodName];
+        });
+
+        if (target.prototype.constructor) {
+            const staticMethods = Object.getOwnPropertyNames(target.prototype.constructor);
+
+            staticMethods.forEach((methodName: string): void => {
+                // console.log(target.prototype[methodName]);
+                const stud = target.prototype.constructor[methodName];
+                console.log(stud, target.prototype.constructor[methodName]);
+            });
+        }
+
         if (repository) {
             proto.methodus_base.repository = repository;
         }

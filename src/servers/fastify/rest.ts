@@ -10,7 +10,7 @@ export class Verbs {
 }
 
 export class RestResponse {
-    constructor(args, methodResult: MethodResult | MethodError | any, headers: any) {
+    constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
         const res = args[1]; // in express this will ontain the response
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
@@ -34,7 +34,7 @@ export class RestResponse {
         }
 
         if (headers) {
-            Object.keys(headers).forEach((header) => {
+            Object.keys(headers).forEach((header: any) => {
                 res.setHeader(header, headers[header]);
             });
         }
@@ -43,17 +43,17 @@ export class RestResponse {
         if (methodResult && methodResult.result && methodResult.result.readable) {
 
             if (methodResult.headers) {
-                Object.keys(methodResult.headers).forEach((key) => {
+                Object.keys(methodResult.headers).forEach((key: any) => {
                     res.setHeader(key, methodResult.headers[key]);
                 });
             }
 
-            methodResult.result.pipe(res).on('error', (err) => {
+            methodResult.result.pipe(res).on('error', (err: any) => {
                 console.error('stream errored', err);
 
-            }).on('reponse', (response) => {
+            }).on('reponse', (response: any) => {
                 console.error('stream responsed', response);
-            }).on('finish', (response) => {
+            }).on('finish', (response: any) => {
                 console.error('stream finished');
             });
             return;
@@ -85,7 +85,7 @@ export class RestResponse {
  */
 export class RestParser {
 
-    deserialize(item) {
+    deserialize(item: any) {
         if (item !== undefined && item !== null) {
             if (item.type && item.type.deserialize) {
                 try {
@@ -112,7 +112,7 @@ export class RestParser {
         return item.value;
     }
 
-    parse(args, paramsMap, functionArgs): ParserResponse {
+    parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
         let isRest = false;
         let securityContext;
         if (args[0] && args[0].req && args[1] && args[1].res) {
@@ -120,7 +120,9 @@ export class RestParser {
 
             paramsMap.forEach((item: any) => {
                 if (item.name && item.from) {
-                    item.value = args[0][item.from][item.name] || item.defaultValue || null;
+                    if (args[0][item.from]) {
+                        item.value = args[0][item.from][item.name] || item.defaultValue || null;
+                    }
                     item.value = this.deserialize(item);
                 } else if (item.from) {
                     switch (item.from) {

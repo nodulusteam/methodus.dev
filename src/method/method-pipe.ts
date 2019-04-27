@@ -6,7 +6,6 @@ import { Servers } from '../servers/serversList';
 import { logger } from '../log';
 import { RestParser, RestResponse, Verbs } from '../rest';
 import { ClassContainer } from '../class-container';
-import { ConfigHelper } from '../decorators/configuration';
 const methodMetadataKey = 'methodus';
 /** the @Method decorator registers the model with the odm
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -71,24 +70,13 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
 
             // acquire the method information from the config classes map
             const completeConfiguration = Object.assign({}, methodus, config);
-            if (methodus) {
-                let configurationBlock = ConfigHelper.get(methodus.name);
-                if (!configurationBlock) {
-                    configurationBlock = ConfigHelper.get(methodus.name);
-                }
-                if (configurationBlock) {
-                    Object.assign(completeConfiguration, {
-                        methodType: configurationBlock.transport,
-                        resolver: () => configurationBlock.resolver,
-                    });
-                }
-            }
+
             if (completeConfiguration && completeConfiguration.methodType) {
                 // if methodinformation exists we use the mehtod from it.
                 methodType = completeConfiguration.methodType;
             }
             // run and store the result
-            const restHeaders = null;
+            const restHeaders: any = null;
             try {
                 let server: ServerType | null = null;
 

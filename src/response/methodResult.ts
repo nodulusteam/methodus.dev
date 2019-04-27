@@ -15,14 +15,14 @@ export class MethodResult<T= any> {
             this.page = page;
         }
     }
-    public pipe(streamToPipe) {
+    public pipe(streamToPipe: any) {
         this.stream = streamToPipe;
         return this.stream;
     }
-    public setHeader(key, value) {
+    public setHeader(key: any, value: any) {
         this.headers[key] = value;
     }
-    public on(key, value) {
+    public on(key: any, value: any) {
         this._on[key] = value;
     }
 }

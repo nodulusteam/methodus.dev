@@ -7,12 +7,12 @@ import { BaseServer } from '../base';
 import { MethodError, MethodEvent } from '../../response/';
 import { logger, LogClass } from '../../log';
 import { ExpressRouter } from '../express';
-import { Request } from './Request';
+
 import * as fileUpload from 'express-fileupload';
 @LogClass(logger)
 export class Express extends BaseServer {
     _app: any;
-    constructor(port, onStart) {
+    constructor(port: any, onStart?: any) {
         super();
         this._app = express();
         this._app.use(fileUpload({
@@ -31,7 +31,7 @@ export class Express extends BaseServer {
         const viewPath = path.join(__dirname, '..', '..', '..', 'views');
         this._app.set('views', viewPath);
         // Add headers
-        this._app.use((req, res, next) => {
+        this._app.use((req: any, res: any, next: any) => {
             // Website you wish to allow to connect
             if (req.headers.origin) {
                 res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
@@ -39,8 +39,8 @@ export class Express extends BaseServer {
 
             // Request methods you wish to allow
             res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-            let headersX = Object.keys(req.headers).map((headerName) => {
-                return headerName.split('-').map((word) => {
+            let headersX = Object.keys(req.headers).map((headerName: any) => {
+                return headerName.split('-').map((word: any) => {
                     return headerName.charAt(0).toUpperCase() + headerName.substr(1);
                 }).join('-');
             }).join(',');
@@ -56,7 +56,7 @@ export class Express extends BaseServer {
         });
 
         if (onStart) {
-            onStart.forEach((eventStart) => {
+            onStart.forEach((eventStart: any) => {
                 eventStart(this._app);
             });
         }
@@ -65,21 +65,21 @@ export class Express extends BaseServer {
         this._app.close();
     }
 
-    useClass(classType, methodType) {
-        const router = new ExpressRouter(classType, methodType, this._app);
+    useClass(classType: any, methodType: any) {
+       return new ExpressRouter(classType, methodType, this._app);
     }
 
-    _send(params, methodus, paramsMap, securityContext) {
-        const request = new Request();
-        const baseUrl = methodus.resolver();
-        if (baseUrl) {
-            const myUri = baseUrl + methodus.route;
-            return request.sendRequest(methodus.verb, myUri, params, paramsMap, securityContext);
-        } else {
-            return new MethodError('no server found for this method' + methodus.route, 302);
-        }
+    _send(params: any, methodus: any, paramsMap: any, securityContext: any) {
+        // const request = new Request();
+        // const baseUrl = methodus.resolver();
+        // if (baseUrl) {
+        //     const myUri = baseUrl + methodus.route;
+        //     return request.sendRequest(methodus.verb, myUri, params, paramsMap, securityContext);
+        // } else {
+        //     return new MethodError('no server found for this method' + methodus.route, 302);
+        // }
     }
     async _sendEvent(methodEvent: MethodEvent) {
-        const myMethodEvent = methodEvent;
+       return  methodEvent;
     }
 }
