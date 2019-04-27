@@ -51,6 +51,7 @@ export class Servers {
     public async read() {
         try {
             const response = await TestTarget.read(511798);
+            return response;
         } catch (ex) {
             Expect(ex.error).toBe('intended error');
         }

@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as fastify from 'fastify';
 import { BaseServer } from '../base';
-import { MethodError, MethodEvent } from '../../response/';
+import { MethodEvent } from '../../response/';
 import { fp } from '../../fp';
 import { logger, LogClass } from '../../log';
 import { MethodType } from '../../interfaces/methodus';

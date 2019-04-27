@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 import { BaseServer } from '../base';
-import { MethodError, MethodEvent } from '../../response/';
+import {  MethodEvent } from '../../response/';
 import { logger, LogClass } from '../../log';
 import { ExpressRouter } from '../express';
 

@@ -15,7 +15,7 @@ export class Redis extends BaseServer {
         this.options = options;
     }
     useClass(classType: any) {
-        const router = new RedisRouter(classType);
+        return new RedisRouter(classType);
     }
 
     async _sendEvent(methodEvent: MethodEvent) {

@@ -3,7 +3,7 @@ import * as path from 'path';
 
 import {
     ServerConfiguration, RouterConfiguration,
-    ClientConfiguration, ConfiguredServer, MethodType, ServerType, PluginConfiguration, TransportType,
+    ClientConfiguration, ConfiguredServer, ServerType,
 } from '../';
 import { ScreensDataController } from './controllers/screen.data.controller';
 import { BuiltInServers, BuiltInTransports } from '../src';

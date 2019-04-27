@@ -1,6 +1,6 @@
 import {
     MethodResult, Response, Request, Verbs, Method,
-    Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies, MethodError,
+    Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies,
 } from '../src/index';
 
 @MethodConfig('TestTarget')

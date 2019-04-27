@@ -8,7 +8,6 @@ import { BaseServer } from '../base';
 const metadataKey = 'methodus';
 import { logger, LogClass } from '../../log';
 import * as socketIO from 'socket.io';
-import * as http from 'http';
 import * as colors from 'colors';
 import { Servers } from '../';
 

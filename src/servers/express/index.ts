@@ -7,7 +7,7 @@ import * as colors from 'colors';
 
 import 'reflect-metadata';
 import { Servers } from '../serversList';
-import { logger, LogClass } from '../../log';
+import { logger } from '../../log';
 import { Express } from './express';
 
 export function register(server: any, parentServer: any) {

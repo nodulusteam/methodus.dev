@@ -4,7 +4,6 @@ import { MethodusConfig, ServerConfig, PluginEntry } from './config';
 import { ServerType } from './interfaces';
 import { MethodEvent } from './response/';
 import { logger, LogClass } from './log';
-import http = require('http');
 import colors = require('colors');
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
@@ -126,9 +125,9 @@ export class Server {
                 if (!aServerInstance) {
                     server.instanceId = this.instanceId;
                     return new ServerContainer(server, this);
-
+                } else {
+                    return aServerInstance;
                 }
-                return;
             });
 
             onStart.forEach((startEvent: any) => {

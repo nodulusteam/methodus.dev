@@ -23,7 +23,8 @@ export class Kafka extends BaseServer {
     }
 
     useClass(classType: any) {
-        const router = new KafkaRouter(classType, this.options);
+        return new KafkaRouter(classType, this.options);
+
     }
 
     async _send(functionArgs: any, methodinformation: any, paramsMap: any) {

@@ -1,10 +1,6 @@
-process.env.CONFIG_PATH = './tests/config';
 process.env.test = 'true';
-
-import { AsyncTest, Expect, TestCase, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
-import { ServerType, MethodType, logger } from '../index';
+import { AsyncTest, Expect,  TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { Xserver } from './servers/express.server';
-import { TestController } from './controller.test';
 import { TestTarget } from './target.test';
 
 @TestFixture('Test Xserver configuration')
@@ -53,6 +49,7 @@ export class Servers {
     public async read() {
         try {
             const response = await TestTarget.read(511798);
+            return response;
         } catch (ex) {
             Expect(ex.error).toBe('intended error');
         }

@@ -1,9 +1,8 @@
 process.env.test = 'true';
-import * as path from 'path';
 
 import {
     ServerConfiguration, RouterConfiguration,
-    ClientConfiguration, ConfiguredServer, MethodType, ServerType, PluginConfiguration, TransportType,
+    ClientConfiguration, ConfiguredServer, ServerType,
 } from '../../';
 import { BuiltInServers, BuiltInTransports } from '../../src';
 import { TestController } from '../controller.test';

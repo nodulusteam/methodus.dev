@@ -1,6 +1,6 @@
 
 import { logger, LogClass } from '../log';
-import { MethodType, ServerType, TransportType } from '../interfaces';
+import { MethodType, ServerType } from '../interfaces';
 
 @LogClass(logger)
 export class MethodusClassConfig {

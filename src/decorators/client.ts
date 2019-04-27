@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import { TransportType, ServerType } from '../interfaces';
 
 /** the MethodConfig decorator registers the controller as a router
  *  @param {string} name - the identifier of the controller in the resolver.

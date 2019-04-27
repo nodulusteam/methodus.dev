@@ -73,19 +73,24 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 const client = Servers.clients[configName];
                 // this is a local call
                 const existingClassMetadata: any = ClassContainer.get(configName);
-
-                // merge the configuration object
-                Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
-                methodus.resolver = client.resolver;
-                try {
-                    const result = await client.transportType.send(methodus, args, paramsMap, []);
+                if (client) {
+                    // merge the configuration object
+                    Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
+                    methodus.resolver = client.resolver;
+                    try {
+                        const result = await client.transportType.send(methodus, args, paramsMap, []);
+                        methodResult = new MethodResult(result);
+                        return handleResult(methodResult);
+                    } catch (ex) {
+                        if (Buffer.isBuffer(ex.error)) {
+                            ex.error = ex.error.toString();
+                            throw (ex);
+                        }
+                    }
+                } else {
+                    const result = await originalMethod.apply(this, args);
                     methodResult = new MethodResult(result);
                     return handleResult(methodResult);
-                } catch (ex) {
-                    if (Buffer.isBuffer(ex.error)) {
-                        ex.error = ex.error.toString();
-                        throw (ex);
-                    }
                 }
 
             } else {

@@ -1,7 +1,5 @@
 import * as uuidv1 from 'uuid/v1';
-import { MethodEvent, MethodError } from '../response/';
-
-import { ServerType } from '../interfaces';
+import { MethodEvent } from '../response/';
 
 export class ServersList {
     public instances: any = {};

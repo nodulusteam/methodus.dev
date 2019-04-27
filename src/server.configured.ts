@@ -2,7 +2,6 @@
 import { MethodusConfig } from './config';
 import { LogClass, logger } from './log/';
 import { Server } from './server';
-import { ServersList } from './servers/serversList';
 
 @LogClass(logger)
 export class ConfiguredServer {

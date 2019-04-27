@@ -1,5 +1,5 @@
 import { Player } from './controllers/player';
-import { RouterConfiguration, ServerConfiguration, ClientConfiguration, ConfiguredServer, MethodType, ServerType } from '../index';
+import { RouterConfiguration, ServerConfiguration, ConfiguredServer, ServerType } from '../index';
 
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 8020 })
 @RouterConfiguration(Player, ServerType.Express)

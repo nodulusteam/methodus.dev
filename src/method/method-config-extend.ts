@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import { ClassContainer } from '../class-container';
 import { MethodType, ServerType } from '../interfaces';
 
 /** the MethodConfig decorator registers the controller as a router

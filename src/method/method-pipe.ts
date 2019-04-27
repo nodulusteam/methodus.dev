@@ -121,6 +121,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
 
                 if (ParserResponse.isRest) {
                     const router = new RestResponse(args, error, restHeaders);
+                    logger.trace(router);
                 } else {
                     throw (error);
                 }
@@ -131,11 +132,13 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
                 if (methodResult.toString() === '[object Promise]') {
                     methodResult.then((resolvedPromise: any) => {
                         // methodResult = new MethodResult(StreamFromPromise(methodResult, { objectmode: true }));
-                       new RestResponse(args, resolvedPromise, restHeaders);
+                        const response = new RestResponse(args, resolvedPromise, restHeaders);
+                        logger.trace(response);
                     });
 
                 } else {
                     const response = new RestResponse(args, methodResult, restHeaders);
+                    logger.trace(response);
                 }
 
             } else {
