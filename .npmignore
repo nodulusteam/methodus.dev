@@ -6,7 +6,6 @@
 plugins
 logs
 node_modules
-config
 .vscode
 yarn.lock
 coverage
