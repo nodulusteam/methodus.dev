@@ -4,7 +4,7 @@ import { MethodusConfig, ServerConfig, PluginEntry } from './config';
 import { ServerType } from './interfaces';
 import { MethodEvent } from './response/';
 import { logger, LogClass } from './log';
-import colors = require('colors');
+import * as colors from 'colors';
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
 import * as figlet from 'figlet';
