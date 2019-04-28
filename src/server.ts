@@ -113,7 +113,6 @@ export class Server {
         if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
 
-                const serverType = server.type;
                 if (server.options.port) {
                     port = server.options.port;
                 }
@@ -121,7 +120,7 @@ export class Server {
                     onStart.push(server.onStart);
                 }
 
-                const aServerInstance = Servers.get(this.instanceId, serverType.name);
+                const aServerInstance = Servers.get(this.instanceId, server.type.name);
                 if (!aServerInstance) {
                     server.instanceId = this.instanceId;
                     return new ServerContainer(server, this);

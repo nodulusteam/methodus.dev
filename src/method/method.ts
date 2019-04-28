@@ -70,7 +70,6 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
             const config = Servers.classes[configName];
             if (!config) {
                 const client = Servers.clients[configName];
-                // this is a local call
                 const existingClassMetadata: any = ClassContainer.get(configName);
                 if (client) {
                     // merge the configuration object
@@ -245,6 +244,7 @@ async function handleResult(methodResult: any) {
             logger.error(error);
             throw new MethodResultStatus(error, error.statusCode);
         }
+
         return methodResult;
     }
 }

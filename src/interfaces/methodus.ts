@@ -54,7 +54,7 @@ export const enum ServerType {
 
     RabbitMQ = 'amqp',
     Redis = 'redis',
-    Socket = 'socketio',
+    Socket = 'Socket',
     Kafka = 'kafka',
     HTTP2 = 'Http2',
     Custom = 'Custom',

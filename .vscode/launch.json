@@ -515,7 +515,7 @@
                 "PORT": "8090",
                 "DEBUG": "methodus:*",
                 "NODE_ENV": "debug",
-                "servers": "socketio",
+                "servers": "Socket",
                 "MethodType": "Local",
                 "NODE_LOG_LEVEL": "trace"
             }
