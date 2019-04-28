@@ -6,10 +6,15 @@ import { MethodType, ServerType } from '../interfaces';
  *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
  */
 export function RouterConfiguration(controller: any, serverType: ServerType) {
-    return (target: any) => {
-        const original = target.prototype.constructor;
-        original.prototype.options = original.prototype.options ||
-          { servers: [], classes: [], clients: [], plugins: [] };
-        original.prototype.options.classes.push({ controller, methodType: MethodType.Local, serverType });
-    };
+  return (target: any) => {
+    const original = target.prototype.constructor;
+    original.prototype.options = original.prototype.options ||
+      { servers: [], classes: [], clients: [], plugins: [] };
+    original.prototype.options.classes.push({
+      classType: controller,
+      controller,
+      methodType: MethodType.Local,
+      serverType,
+    });
+  };
 }

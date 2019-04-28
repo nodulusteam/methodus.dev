@@ -9,6 +9,11 @@ export function ClientConfiguration(controller: any, transportType: any, resolve
         const original = target.prototype.constructor;
         original.prototype.options = original.prototype.options ||
             { servers: [], classes: [], clients: [], plugins: [] };
-        original.prototype.options.clients.push({ controller, transportType, resolver });
+        original.prototype.options.clients.push({
+            classType: controller,
+            controller,
+            transportType,
+            resolver,
+        });
     };
 }

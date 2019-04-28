@@ -24,6 +24,7 @@ export function MethodConfigBase(name: string, middlewares?: any[], repository?:
         proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
 
         Servers.classes[target.name] = {
+            classType: target,
             controller: target, methodType: MethodType.Local,
             serverType: ServerType.Express,
         };
