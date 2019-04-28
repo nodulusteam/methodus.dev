@@ -4,22 +4,85 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run fastify test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "tests/fastify.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run express test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "tests/express.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run emitter test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "tests/emitter.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+
         //E2E
         {
             "type": "node",
             "request": "launch",
             "name": "> HTTP2 server",
-            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/tests/servers/fastify.server.js",
             "cwd": "${workspaceRoot}/",
-            "console": "integratedTerminal",
+            "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
+                "TESTMODE":"run",
                 "PORT": "8090",
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "trace",
-                "servers": "http2",
+                "servers": "HTTP2",
                 "MethodType": "Local"
             }
         },
@@ -27,12 +90,13 @@
             "type": "node",
             "request": "launch",
             "name": "> HTTP2 caller",
-            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "program": "${workspaceRoot}/tests/callers/fastify.caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
+                "TESTMODE":"run",
                 "PORT": "8080",
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
@@ -46,35 +110,36 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest caller",
-            "program": "${workspaceRoot}/src/tests/servers/caller.js",
+            "program": "${workspaceRoot}/tests/callers/express.caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
+                "TESTMODE":"run",
                 "PORT": "8080",
                 "DEBUG": "none",
                 "NODE_LOG_LEVEL": "debug",
-                "NODE_ENV": "debug",
-                "servers": "express",
-                "MethodType": "Http"
+                "NODE_ENV": "debug",               
+                "TransportType": "Http"
             }
         },
         {
             "type": "node",
             "request": "launch",
             "name": "* Rest server",
-            "program": "${workspaceRoot}/src/tests/servers/dynamic.js",
+            "program": "${workspaceRoot}/tests/servers/express.server.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
             "env": {
+                "TESTMODE":"run",
                 "PORT": "8090",
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "trace",
-                "servers": "express",
+                "servers": "Express",
                 "MethodType": "Local"
             }
         },
@@ -289,7 +354,7 @@
                 "PORT": "8080",
                 "DEBUG": "socket.io-client:manager",
                 "NODE_ENV": "debug",
-                "servers": "socketio",
+                "servers": "asdasdasd",
                 "MethodType": "Socket"
             }
         },
@@ -306,7 +371,7 @@
                 "PORT": "8090",
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
-                "servers": "socketio",
+                "servers": "Socket",
                 "MethodType": "Local"
             }
         },
@@ -412,34 +477,7 @@
             }
         },
        
-        {
-            "request": "launch",
-            "console": "internalConsole",
-            // Name of configuration; appears in the launch configuration drop down menu.
-            "name": "T Run servers test",
-            // Type of configuration. Possible values: "node", "mono".
-            "type": "node",
-            // Workspace relative or absolute path to the program.
-            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
-            // Automatically stop program after launch.
-            "stopOnEntry": false,
-            // Command line arguments passed to the program.
-            "args": [
-                "src/tests/servers.spec.js"
-            ],
-            "sourceMaps": true,
-            // Workspace relative or absolute path to the working directory of the program being debugged. Default is the current workspace.
-            "cwd": "${workspaceRoot}",
-            // Workspace relative or absolute path to the runtime executable to be used. Default is the runtime executable on the PATH.
-            "runtimeExecutable": null,
-            // Environment variables passed to the program.
-            "env": {
-                "PORT": "8020",
-                "DEBUG": "none",
-                "NODE_ENV": "debug",
-                "NODE_LOG_LEVEL": "trace"
-            }
-        },
+      
         {
             "request": "launch",
             "console": "internalConsole",
@@ -512,7 +550,7 @@
                 "PORT": "8090",
                 "DEBUG": "methodus:*",
                 "NODE_ENV": "debug",
-                "servers": "socketio",
+                "servers": "Socket",
                 "MethodType": "Local",
                 "NODE_LOG_LEVEL": "trace"
             }

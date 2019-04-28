@@ -3,15 +3,15 @@ import { Repo, Model, Field } from '@methodus/data';
 @Model('Screen')
 export class ScreenModel extends Repo<ScreenModel> {
     @Field()
-    public Name: string;
+    public Name?: string;
 
     @Field()
-    public Type: string;
+    public Type?: string;
 
     @Field()
-    public Date: Date;
+    public Date?: Date;
 
     constructor() {
-        super(null, ScreenModel);
+        super(null as any, ScreenModel);
     }
 }

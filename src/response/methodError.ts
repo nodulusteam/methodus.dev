@@ -5,7 +5,7 @@ export class MethodError extends Error {
     error: string;
     statusCode: number;
     additional: any;
-    constructor(error, statusCode?, additional?) {
+    constructor(error: any, statusCode?: any, additional?: any) {
         let message = error;
         if (typeof error === 'object') {
             message = error.message;

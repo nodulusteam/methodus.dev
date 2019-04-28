@@ -1,24 +1,16 @@
 import { MethodType } from '../interfaces';
-import { ConfigHelper } from './configuration';
 import { fp } from '../fp';
 const debug = require('debug')('methodus');
 import * as path from 'path';
 
 export class Proxy {
-    public static ProxyClass(packageName: string, className: string, localClassPath) {
+    public static ProxyClass(packageName: string, className: string, localClassPath: any) {
         return (target: any) => {
             const methodus = fp.maybeMethodus(target)[className];
-            let classTransport = MethodType.Local;
-            let classConfig;
+            const classTransport = MethodType.Local;
+
             if (!methodus) {
                 throw (new Error(`error finding configuration ${packageName} ${className},${localClassPath}`));
-            }
-
-            if (methodus) {
-                classConfig = ConfigHelper.get(className);
-                if (classConfig) {
-                    classTransport = classConfig.transport;
-                }
             }
 
             if (!classTransport || classTransport === MethodType.Local) {

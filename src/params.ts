@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-function pushParams(target, propertyKey, param) {
+function pushParams(target: any, propertyKey: any, param: any) {
     const designType = Reflect.getMetadata('design:paramtypes', target, propertyKey);
     let typeName = (designType[param.index] !== undefined && designType[param.index].name) ?
         designType[param.index].name.toLowerCase() : 'any';

@@ -15,7 +15,7 @@ export class Verbs {
 }
 
 export class RestResponse {
-    constructor(args, methodResult: MethodResult | MethodError | any, headers: any) {
+    constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
         const res = args[1]; // in express this will ontain the response
 
         if (methodResult && methodResult.statusCode) {
@@ -49,16 +49,16 @@ export class RestResponse {
         if (methodResult && methodResult.result && methodResult.result.readable) {
 
             if (methodResult.headers) {
-                Object.keys(methodResult.headers).forEach((key) => {
+                Object.keys(methodResult.headers).forEach((key: any) => {
                     res.setHeader(key, methodResult.headers[key]);
                 });
             }
 
-            methodResult.result.pipe(res).on('error', (err) => {
+            methodResult.result.pipe(res).on('error', (err: any) => {
                 console.error('stream errored', err);
-            }).on('reponse', (response) => {
+            }).on('reponse', (response: any) => {
                 console.error('stream responsed', response);
-            }).on('finish', (response) => {
+            }).on('finish', (response: any) => {
                 console.error('stream finished');
             });
             return;
@@ -111,7 +111,7 @@ export class RestParser {
                 break;
         }
     }
-    parse(args, paramsMap, functionArgs) {
+    parse(args: any, paramsMap: any, functionArgs: any) {
         return this.parser.parse(args, paramsMap, functionArgs);
     }
 }

@@ -10,3 +10,4 @@ export * from './config';
 export * from './class-container';
 export * from './server';
 export * from './server.configured';
+export * from './builtin';

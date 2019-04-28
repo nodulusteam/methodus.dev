@@ -82,7 +82,7 @@ return new MethodResult(result);
 };
 
 @Method(Verbs.Get, '/api/hello/name/:file_name/')
-public static async getByName( @Param('file_name') file_name, @SecurityContext() att) {
+public static async getByName( @Param('file_name') file_name, @SecurityContext() securityContext) {
 return new MethodResult(result);
 
 };
@@ -90,7 +90,7 @@ return new MethodResult(result);
 
 
 @Method(Verbs.Delete, '/api/hello/id/:file_id')
-public static async delete( @Param('file_id') file_id, @SecurityContext() att) {
+public static async delete( @Param('file_id') file_id, @SecurityContext() securityContext) {
 return new MethodResult(deleteResult);
 };
 }
@@ -124,7 +124,7 @@ A Methodus method should return an object of type MethodResult. this object can 
 
 ```javascript
 @Method(Verbs.Get, '/api/hello/name/:file_name/')
-public static async getByName( @Param('file_name') file_name, @SecurityContext() att) {
+public static async getByName( @Param('file_name') file_name, @SecurityContext() securityContext) {
     return new MethodResult(result);
 };
 ```

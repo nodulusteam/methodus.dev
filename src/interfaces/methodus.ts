@@ -28,6 +28,16 @@ export interface IServerConfig {
     options: any;
 }
 
+export const enum TransportType {
+    Http = 'Http',
+    MQ = 'MQ',
+    Redis = 'Redis',
+    Socket = 'Socket',
+    Kafka = 'Kafka',
+    Mock = 'Mock',
+    Custom = 'Custom',
+}
+
 export const enum MethodType {
     Local = 'Local',
     Http = 'Http',
@@ -41,11 +51,12 @@ export const enum MethodType {
 
 export const enum ServerType {
     Express = 'express',
-    ExpressPartial = 'express',
+
     RabbitMQ = 'amqp',
     Redis = 'redis',
-    Socket = 'socketio',
+    Socket = 'Socket',
     Kafka = 'kafka',
-    HTTP2 = 'http2',
+    HTTP2 = 'Http2',
+    Custom = 'Custom',
 
 }
