@@ -11,6 +11,7 @@ export class Verbs {
 
 export class RestResponse {
     constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
+
         const res = args[1]; // in express this will ontain the response
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
@@ -22,11 +23,11 @@ export class RestResponse {
 
         if (methodResult && !methodResult.error) {
             if (methodResult.total) {
-                res.set('X-Total-Count', methodResult.total);
+                res.header('X-Total-Count', methodResult.total);
             }
 
             if (methodResult.page) {
-                res.set('X-Page', methodResult.page);
+                res.header('X-Page', methodResult.page);
             }
         }
         if (methodResult === null) {
@@ -35,7 +36,7 @@ export class RestResponse {
 
         if (headers) {
             Object.keys(headers).forEach((header: any) => {
-                res.setHeader(header, headers[header]);
+                res.header(header, headers[header]);
             });
         }
 
@@ -44,7 +45,7 @@ export class RestResponse {
 
             if (methodResult.headers) {
                 Object.keys(methodResult.headers).forEach((key: any) => {
-                    res.setHeader(key, methodResult.headers[key]);
+                    res.header(key, methodResult.headers[key]);
                 });
             }
 

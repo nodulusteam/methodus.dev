@@ -3,6 +3,7 @@
 /**/*.ts
 !/**/*.d.ts
 .git
+.npmrc
 plugins
 logs
 node_modules

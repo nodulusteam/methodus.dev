@@ -1,0 +1,22 @@
+process.env.test = 'true';
+import {
+    ServerConfiguration, RouterConfiguration,
+    ClientConfiguration, ConfiguredServer, ServerType,
+} from '../../';
+import { BuiltInServers, BuiltInTransports } from '../../src';
+import { TestController } from '../controller.test';
+import { TestTarget } from '../target.test';
+
+@ServerConfiguration(BuiltInServers.Socket, { port: process.env.PORT || 8020 })
+// @PluginConfiguration('@methodus/describe')
+@RouterConfiguration(TestController, ServerType.Socket)
+@ClientConfiguration(TestTarget, BuiltInTransports.Socket, 'http://localhost:8020')
+export class Xserver extends ConfiguredServer {
+    constructor() {
+        super(Xserver);
+    }
+}
+
+if (process.env.TESTMODE === 'run') {
+    new Xserver();
+}

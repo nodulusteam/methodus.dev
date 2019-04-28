@@ -7,3 +7,4 @@ logs/
 coverage/
 .nyc_output/
 .scannerwork/
+.npmrc

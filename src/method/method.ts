@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
-import { MethodType, ServerType } from '../interfaces';
+import { MethodType } from '../interfaces';
 import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus } from '../response';
 import { RestParser, Verbs } from '../rest';
@@ -76,6 +76,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
                     methodus.resolver = client.resolver;
                     try {
+
                         const result = await client.transportType.send(methodus, args, paramsMap, []);
                         methodResult = new MethodResult(result);
                         return handleResult(methodResult);
@@ -114,7 +115,6 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 // run and store the result
                 const restHeaders: any = null;
                 try {
-                    let server: ServerType | null = null;
 
                     const mappedArgs = paramsMap.map((param) => {
                         return { [param.name || param.from]: ParserResponse.args[param.index] };
@@ -136,34 +136,17 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                         case MethodType.Local:
                             methodResult = await originalMethod.apply(this as any, ParserResponse.args as any);
                             break;
-                        case MethodType.Http2:
-                            server = ServerType.HTTP2;
-                            break;
-                        case MethodType.Http:
-                            server = ServerType.Express;
-                            break;
-                        case MethodType.Socket:
-                            server = ServerType.Socket;
-                            break;
-                        case MethodType.MQ:
-                            server = ServerType.RabbitMQ;
-                            break;
-                        case MethodType.Redis:
-                            server = ServerType.Redis;
-                            break;
-                        case MethodType.Kafka:
-                            server = ServerType.Kafka;
-                            break;
+
                     }
 
-                    if (server === ServerType.Express || server === ServerType.HTTP2) {
-                        methodResult = new MethodResult(Servers.send(server, ParserResponse.args,
-                            completeConfiguration, paramsMap, ParserResponse.securityContext));
+                    // if (server === ServerType.Express || server === ServerType.HTTP2) {
+                    //     methodResult = new MethodResult(Servers.send(server, ParserResponse.args,
+                    //         completeConfiguration, paramsMap, ParserResponse.securityContext));
 
-                    } else if (server) {
-                        methodResult = await Servers.send(server, ParserResponse.args,
-                            completeConfiguration, paramsMap, ParserResponse.securityContext);
-                    }
+                    // } else if (server) {
+                    //     methodResult = await Servers.send(server, ParserResponse.args,
+                    //         completeConfiguration, paramsMap, ParserResponse.securityContext);
+                    // }
 
                 } catch (error) {
                     error.statusCode = error.statusCode || 500;
