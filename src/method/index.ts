@@ -1,6 +1,3 @@
-export * from './message-config';
-export * from './message-handler';
-export * from './message-worker';
 export * from './method-config-base';
 export * from './method-config-extend';
 export * from './method-config';

@@ -2,7 +2,6 @@ import 'reflect-metadata';
 import { Servers } from './servers';
 import { MethodusConfig, ServerConfig, PluginEntry } from './config';
 import { ServerType } from './interfaces';
-import { MethodEvent } from './response/';
 import { logger, LogClass } from './log';
 import * as colors from 'colors';
 import { ClassContainer } from './class-container';
@@ -207,18 +206,4 @@ export class Server {
         return await this._app[channel]._send(params, message, parametersMap, securityContext);
     }
 
-    async registerEvent(channel: any, eventName: any) {
-        if (this._app[channel].registerEvent) {
-            return await this._app[channel].registerEvent(eventName);
-        }
-    }
-
-    async sendEvent(methodEvent: MethodEvent) {
-        if (this.config && this.config.servers) {
-            this.config.servers.forEach((server: any) => {
-                this._app[server.type]._sendEvent(methodEvent);
-            });
-        }
-
-    }
 }

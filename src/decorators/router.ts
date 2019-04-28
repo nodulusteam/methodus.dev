@@ -5,7 +5,7 @@ import { MethodType, ServerType } from '../interfaces';
  *  @param {string} name - the identifier of the controller in the resolver.
  *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
  */
-export function RouterConfiguration(controller: any, serverType: ServerType) {
+export function RouterConfiguration(controller: any, serverType: ServerType | string) {
   return (target: any) => {
     const original = target.prototype.constructor;
     original.prototype.options = original.prototype.options ||

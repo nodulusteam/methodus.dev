@@ -1,17 +1,21 @@
 process.env.test = 'true';
+import * as path from 'path';
 
 import {
     ServerConfiguration, RouterConfiguration,
-    ClientConfiguration, ConfiguredServer, ServerType,
+    ClientConfiguration, ConfiguredServer,
 } from '../../';
-import { BuiltInServers, BuiltInTransports } from '../../src';
 import { TestController } from '../controllers/controller.test';
 import { TestTarget } from '../controllers/target.test';
 
-@ServerConfiguration(BuiltInServers.HTTP2, { port: 8021 })
-// @PluginConfiguration('@methodus/describe')
-@RouterConfiguration(TestController, ServerType.HTTP2)
-@ClientConfiguration(TestTarget, BuiltInTransports.Http2, 'https://localhost:8021')
+class ServerPlugin {
+    static serverName = 'custom';
+    static path = path.join(process.cwd(), 'tests', 'servers', 'emitter.plugin');
+}
+
+@ServerConfiguration(ServerPlugin, {})
+@RouterConfiguration(TestController, 'ServerPlugin')
+@ClientConfiguration(TestTarget, ServerPlugin)
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);
@@ -20,5 +24,4 @@ export class Xserver extends ConfiguredServer {
 
 if (process.env.TESTMODE === 'run') {
     new Xserver();
-
 }

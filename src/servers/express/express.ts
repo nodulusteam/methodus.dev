@@ -4,7 +4,6 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 import { BaseServer } from '../base';
-import {  MethodEvent } from '../../response/';
 import { logger, LogClass } from '../../log';
 import { ExpressRouter } from '../express';
 
@@ -66,20 +65,6 @@ export class Express extends BaseServer {
     }
 
     useClass(classType: any, methodType: any) {
-       return new ExpressRouter(classType, methodType, this._app);
-    }
-
-    _send(params: any, methodus: any, paramsMap: any, securityContext: any) {
-        // const request = new Request();
-        // const baseUrl = methodus.resolver();
-        // if (baseUrl) {
-        //     const myUri = baseUrl + methodus.route;
-        //     return request.sendRequest(methodus.verb, myUri, params, paramsMap, securityContext);
-        // } else {
-        //     return new MethodError('no server found for this method' + methodus.route, 302);
-        // }
-    }
-    async _sendEvent(methodEvent: MethodEvent) {
-       return  methodEvent;
+        return new ExpressRouter(classType, methodType, this._app);
     }
 }

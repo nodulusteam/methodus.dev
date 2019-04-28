@@ -1,7 +1,7 @@
 import {
     MethodResult, Response, Request, Verbs, Method,
-    Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies,
-} from '../src/index';
+    Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies, MethodPipe,
+} from '../../src/index';
 
 @MethodConfig('TestTarget')
 export class TestTarget {
@@ -25,7 +25,7 @@ export class TestTarget {
         return new MethodResult({});
     }
 
-    @Method(Verbs.Post, '/api/player')
+    @MethodPipe(Verbs.Post, '/api/player')
     public static async create(@Files('files') files: any,
     @Cookies('cookies') cookies: any, @Body('name') name: string): Promise<MethodResult> {
         return new MethodResult({});

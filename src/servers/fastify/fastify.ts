@@ -3,7 +3,6 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as fastify from 'fastify';
 import { BaseServer } from '../base';
-import { MethodEvent } from '../../response/';
 import { fp } from '../../fp';
 import { logger, LogClass } from '../../log';
 import { MethodType } from '../../interfaces/methodus';
@@ -60,19 +59,6 @@ export class Fastify extends BaseServer {
         return new FastifyRouter(classType, methodType, this._app);
     }
 
-    _send(params: any, methodus: any, paramsMap: any, securityContext: any) {
-        // const request = new Request();
-        // const baseUrl = methodus.resolver();
-        // if (baseUrl) {
-        //     return request.sendRequest(methodus.verb, baseUrl + methodus.route, params, paramsMap, securityContext);
-        // } else {
-        //     return new MethodError('no server found for this method' + methodus.route, 302);
-        // }
-    }
-
-    async _sendEvent(methodEvent: MethodEvent) {
-        return methodEvent;
-    }
 }
 
 export class FastifyRouter {

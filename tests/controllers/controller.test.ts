@@ -1,4 +1,4 @@
-import { MethodResult, Response, Request, SecurityContext, Verbs, Headers, Method, Query, Param, MethodMock, MethodConfig, Body, MethodError, Files, Cookies } from '../src/index';
+import { MethodResult, Response, Request, SecurityContext, Verbs, Headers, Method, Query, Param, MethodMock, MethodConfig, Body, MethodError, Files, Cookies, MethodPipe } from '../../src/index';
 
 @MethodConfig('TestController')
 export class TestController {
@@ -22,7 +22,7 @@ export class TestController {
         return new MethodResult([1, 2, 3, 4, 5]);
     }
 
-    @Method(Verbs.Post, '/api/player')
+    @MethodPipe(Verbs.Post, '/api/player')
     public static async create(@Files('files') files: any,
         @Cookies('cookies') cookies: any, @Body('name') name: string) {
         return new MethodResult({ name });
@@ -34,13 +34,11 @@ export class TestController {
     }
 
     @Method(Verbs.Get, '/api/player/:field/:value')
-
     public static async getByField(@Param('field') field: any, @Param('value') value: number) {
         return new MethodResult({});
     }
 
     @Method(Verbs.Put, '/api/player')
-
     public static async update() {
         return new MethodResult({});
     }

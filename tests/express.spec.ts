@@ -1,7 +1,7 @@
 process.env.test = 'true';
 import { AsyncTest, Expect,  TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { Xserver } from './servers/express.server';
-import { TestTarget } from './target.test';
+import { TestTarget } from './controllers/target.test';
 
 @TestFixture('Test Xserver configuration')
 export class Servers {

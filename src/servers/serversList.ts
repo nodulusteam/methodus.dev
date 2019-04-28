@@ -1,5 +1,4 @@
 import * as uuidv1 from 'uuid/v1';
-import { MethodEvent } from '../response/';
 
 export class ServersList {
     public instances: any = {};
@@ -27,14 +26,14 @@ export class ServersList {
         }
     }
 
-    public async  emit(methodEvent: MethodEvent) {
-        for (const instanceKey in this.instances) {
-            if (this.instances[instanceKey][methodEvent.serverType]) {
-                const result = this.instances[instanceKey][methodEvent.serverType]._sendEvent(methodEvent);
-                return result;
-            }
-        }
-    }
+    // public async  emit(methodEvent: MethodEvent) {
+    //     for (const instanceKey in this.instances) {
+    //         if (this.instances[instanceKey][methodEvent.serverType]) {
+    //             const result = this.instances[instanceKey][methodEvent.serverType]._sendEvent(methodEvent);
+    //             return result;
+    //         }
+    //     }
+    // }
 
     public send(server: any, functionArgs: any, methodus: any, paramsMap: any, securityContext: any) {
         // if (this.instances && Object.keys(this.instances).length) {

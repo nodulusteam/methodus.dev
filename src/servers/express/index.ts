@@ -1,4 +1,3 @@
-export * from './event';
 export * from './express';
 export * from './Router';
 

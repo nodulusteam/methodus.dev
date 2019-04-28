@@ -3,7 +3,7 @@ import {
     ClientConfiguration, ConfiguredServer,
 } from '../../';
 import { BuiltInTransports } from '../../src';
-import { TestTarget } from '../target.test';
+import { TestTarget } from '../controllers/target.test';
 
 @ClientConfiguration(TestTarget, BuiltInTransports.Http2, 'https://localhost:8021')
 export class Xserver extends ConfiguredServer {

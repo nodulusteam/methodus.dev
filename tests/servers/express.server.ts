@@ -4,8 +4,8 @@ import {
     ClientConfiguration, ConfiguredServer, ServerType,
 } from '../../';
 import { BuiltInServers, BuiltInTransports } from '../../src';
-import { TestController } from '../controller.test';
-import { TestTarget } from '../target.test';
+import { TestController } from '../controllers/controller.test';
+import { TestTarget } from '../controllers/target.test';
 
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')

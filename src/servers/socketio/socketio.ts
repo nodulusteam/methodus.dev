@@ -2,7 +2,6 @@ import 'reflect-metadata';
 // <references path='../interfaces/methodus.ts' />
 const debug = require('debug')('methodus');
 import * as Methodus from '../../interfaces/';
-import { MethodEvent } from '../../response';
 import { fp } from '../../fp';
 import { BaseServer } from '../base';
 const metadataKey = 'methodus';
@@ -55,9 +54,7 @@ export class SocketIO extends BaseServer {
         }
 
     }
-    async _sendEvent(methodEvent: MethodEvent) {
-        return  methodEvent;
-    }
+
     async _send(functionArgs: any, methodus: any, paramsMap: any) {
         return new Promise(async (resolve, reject) => {
             debug('sending data in socket', functionArgs, methodus, paramsMap);
