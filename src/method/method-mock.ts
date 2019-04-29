@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import { fp } from '../fp';
 
 /** the @MethodMock decorator registers the model with the odm
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -9,10 +8,16 @@ import { fp } from '../fp';
 
 export function MethodMock(mockedResult: any) {
     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-        const methodus = fp.maybeMethodus(target)[target.name];
-
+        const name = target.name || target.constructor.name;
+        const methodus = target.methodus[name];
         methodus._mocks = methodus._mocks || {};
-        methodus._mocks[propertyKey] = mockedResult;
+
+        if (typeof mockedResult === 'function') {
+            methodus._mocks[propertyKey] = mockedResult;
+        } else {
+            methodus._mocks[propertyKey] = () => mockedResult;
+        }
+
         return descriptor;
     };
 }

@@ -1,28 +1,18 @@
-import { Player } from './controllers/player';
-import { Server, MethodusConfig, MethodType, ServerType } from '../index';
+import {
+    ServerConfiguration, RouterConfiguration, PluginConfiguration,
+    ClientConfiguration, ConfiguredServer,
+} from '../';
 
-async function init() {
-    let config = new MethodusConfig();
-    config.run(ServerType.Express, { port: process.env.PORT || 8020 });
-    config.use(Player, MethodType.Local, ServerType.Express)
-    //config.use(Player, MethodType.MQ)
-    //config.classes.set('TestClass', new MethodusClassConfig('TestClass', MethodType.Http));
-    await new Server(process.env.PORT || 8020).configure(config).start();
-    //server.useClass(Player);
-    setTimeout(() => {
-
-        console.log(`
---------------------------------------------------------------------------------------------
-every thing is ready, your server is active at:
-http://localhost:${process.env.PORT || 8020}/api/player
-
-
-try browsing to
-http://localhost:${process.env.PORT || 8020}/api/player/1
-`)
-
-
-    }, 2000)
+import { ScreensDataController } from './controllers/screen.data.controller';
+import { BuiltInServers, BuiltInTransports } from '../src';
+@ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 6695 })
+@PluginConfiguration('@methodus/describe')
+@RouterConfiguration(ScreensDataController, BuiltInServers.Express)
+@ClientConfiguration(ScreensDataController, BuiltInTransports.Http, 'http://localhost:6695')
+export class Xserver extends ConfiguredServer {
+    constructor() {
+        super(Xserver);
+    }
 }
 
-init();
+new Xserver();
