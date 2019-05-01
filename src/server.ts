@@ -78,12 +78,10 @@ export class Server {
             Servers.clients[configName] = _class;
 
             if (metaObject) {
-                metaObject.methodType = _class.methodType;
-                metaObject.serverType = _class.serverType;
-
+                metaObject.methodType = _class.transportType.name;
                 ClassContainer.set(configName, metaObject);
                 logger.info(this,
-                    colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+                    colors.blue(`using class ${_class.classType.name} in ${_class.transportType.name} mode`));
 
             } else {
                 logger.error('could not load metadata for ' + configName);
@@ -99,7 +97,7 @@ export class Server {
 
         if (this.config && this._plugins && this._plugins.length > 0) {
             const loader = new PluginLoader();
-            loader.config(this.config, this._plugins);
+            await loader.config(this.config, this._plugins);
         }
         const onStart: any = [];
         if (this.httpServer) {
@@ -140,16 +138,15 @@ export class Server {
                 httpServerIntance.listen(port);
             }
 
-            if (this.config) {
-                const classes = this.config.classes.entries();
-                for (let i = 0; i < this.config.classes.size; i++) {
-                    const element = classes.next();
-                    this.useClass(element.value[1]);
-                }
-            }
-
         }
         if (this.config) {
+
+            const classes = this.config.classes.entries();
+            for (let i = 0; i < this.config.classes.size; i++) {
+                const element = classes.next();
+                this.useClass(element.value[1]);
+            }
+
             const clients = this.config.clients.entries();
             for (let i = 0; i < this.config.clients.size; i++) {
                 const element = clients.next();
@@ -171,6 +168,7 @@ export class Server {
                     configName = methodusClass.constructor.name;
                 }
                 const metaObject = ClassContainer.get(configName);
+
                 if (server[_class.serverType]) {
                     Servers.classes[configName] = _class;
                     if (metaObject) {
@@ -202,8 +200,8 @@ export class Server {
         });
     }
 
-    async _send(channel: any, params: any, message: any, parametersMap: any, securityContext: any) {
-        return await this._app[channel]._send(params, message, parametersMap, securityContext);
-    }
+    // async _send(channel: any, params: any, message: any, parametersMap: any, securityContext: any) {
+    //     return await this._app[channel]._send(params, message, parametersMap, securityContext);
+    // }
 
 }
