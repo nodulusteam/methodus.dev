@@ -9,5 +9,6 @@ export * from './params';
 export * from './config';
 export * from './class-container';
 export * from './server';
+export * from './servers';
 export * from './server.configured';
 export * from './builtin';
