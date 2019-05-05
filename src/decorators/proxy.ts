@@ -2,6 +2,7 @@ import { MethodType } from '../interfaces';
 import { fp } from '../fp';
 const debug = require('debug')('methodus');
 import * as path from 'path';
+import { logger } from '../log';
 
 export class Proxy {
     public static ProxyClass(packageName: string, className: string, localClassPath: any) {
@@ -41,7 +42,7 @@ export class Proxy {
                         }
                     }
                 } catch (ex) {
-                    console.error(ex);
+                    logger.error(ex);
                     throw (ex);
                 }
             }

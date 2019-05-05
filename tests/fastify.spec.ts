@@ -3,7 +3,7 @@ process.env.test = 'true';
 
 import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { FastifyTestServer } from './servers/';
-import { TestTarget } from './controllers/target.test';
+import { TestTarget } from './controllers/';
 
 @TestFixture('Test Xserver configuration')
 export class Servers {

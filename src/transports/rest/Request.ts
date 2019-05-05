@@ -145,7 +145,7 @@ export class Request {
         }
         if (securityContext) {
             requestOptions.headers = {
-                'hub-ess-cookie': JSON.stringify(securityContext),
+                security_context: JSON.stringify(securityContext),
             };
         }
 
@@ -203,21 +203,17 @@ export class Request {
     public promiseToTry(requestOptions: any) {
         requestOptions.retryCount = requestOptions.retryCount || 0;
         try {
-            // let result = await
             return this.try(requestOptions);
-            // return result;
         } catch (error) {
             throw (error);
-            // return reject(error);
+
         }
     }
 
     public try(requestOptions: any) {
-
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error: any) => {
-
-            console.error(error);
+            logger.error(error);
         });
         return requestToPipe;
     }

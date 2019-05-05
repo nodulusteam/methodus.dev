@@ -48,7 +48,7 @@ export class SocketIO extends BaseServer {
     socketHandler(socket: any) {
         if (!socket.attached) {
             this.classRouters.forEach((item: any) => {
-             return new SocketIORouter(item, socket);
+                return new SocketIORouter(item, socket);
             });
             socket.attached = true;
         }

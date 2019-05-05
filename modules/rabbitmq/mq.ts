@@ -59,13 +59,13 @@ export class MQ extends BaseServer {
                             { correlationId: corr, replyTo: q.queue });
 
                     }).catch((error: any) => {
-                        console.error(error);
+                        logger.error(error);
                     });
                 }).catch((error: any) => {
-                    console.error(error);
+                    logger.error(error);
                 });
             }).catch((error: any) => {
-                console.error(error);
+                logger.error(error);
             });
         });
     }

@@ -5,8 +5,8 @@ import {
     ServerConfiguration, RouterConfiguration,
     ClientConfiguration, ConfiguredServer,
 } from '../../';
-import { TestController } from '../controllers/controller.test';
-import { TestTarget } from '../controllers/target.test';
+import { TestController } from '../controllers/';
+import { TestTarget } from '../controllers/';
 
 class ServerPlugin {
     static serverName = 'custom';

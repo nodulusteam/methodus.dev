@@ -2,7 +2,7 @@ process.env.test = 'true';
 import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { EmitterTestServer } from './servers/';
 import { resultEmitter } from './servers/emitter.plugin';
-import { TestTarget } from './controllers/target.test';
+import { TestTarget } from './controllers/';
 
 @TestFixture('Test Emitter configuration')
 export class Servers {

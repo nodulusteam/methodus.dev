@@ -50,12 +50,11 @@ export class RestResponse {
             }
 
             methodResult.result.pipe(res).on('error', (err: any) => {
-                console.error('stream errored', err);
-
+                logger.error('stream errored', err);
             }).on('reponse', (response: any) => {
-                console.error('stream responsed', response);
+                logger.trace('stream responsed', response);
             }).on('finish', (response: any) => {
-                console.error('stream finished');
+                logger.info('stream finished');
             });
             return;
         }

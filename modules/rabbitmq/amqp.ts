@@ -2,15 +2,15 @@
 import { MethodError } from '../../src/response/';
 import { ConnectionOptions } from './connection-options';
 const amqp = require('amqplib');
+import { logger } from '../../src/log';
 export class AMQP {
     public static async connect(connectionOptions: ConnectionOptions, forceReconnect?: boolean) {
         if (AMQP._connection && !forceReconnect) {
-            // logger.log(this, 'reusing connection');
             try {
                 const connection = await AMQP._connection;
                 return connection;
             } catch (ex) {
-                console.error(ex);
+                logger.error(ex);
             }
 
         }

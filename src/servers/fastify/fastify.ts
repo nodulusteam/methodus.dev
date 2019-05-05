@@ -7,7 +7,7 @@ import { fp } from '../../fp';
 import { logger, LogClass } from '../../log';
 import { MethodType } from '../../interfaces/methodus';
 
-import * as http from 'http';
+// import * as http from 'http';
 import * as colors from 'colors';
 import { Servers } from '..';
 
@@ -30,6 +30,7 @@ export class Fastify extends BaseServer {
         this._app = fastify(options);
         this._app.listen(port, (err: any, address: any) => {
             if (err) {
+                logger.error(err);
                 throw err;
             }
             this._app.log.error(`server listening on ${address}`);
@@ -116,9 +117,9 @@ export function register(server: any, parentServer: any) {
     const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
     parentServer.app = app._app;
 
-    const httpServer = Servers.get(server.instanceId, 'http')
-        || http.createServer(app._app);
-        parentServer._app.http = httpServer;
-    Servers.set(server.instanceId, 'http', httpServer);
+    // const httpServer = Servers.get(server.instanceId, 'http')
+    //     || http.createServer(app._app);
+    // parentServer._app.http = httpServer;
+    // Servers.set(server.instanceId, 'http', httpServer);
 
 }

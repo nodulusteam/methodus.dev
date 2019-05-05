@@ -1,3 +1,4 @@
+import { logger } from '../../log';
 
 export function send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any) {
     return new Promise(async (resolve, reject) => {
@@ -14,7 +15,7 @@ export function send(methodus: any, functionArgs: any, paramsMap: any, securityC
             const messageName = methodus.verb + '_' + methodus.route;
             socket.emit(messageName, dataObject, (data: any) => {
                 if (data.error && data.statusCode) {
-                    console.error(data);
+                    logger.error(data);
                     reject(data);
                 } else {
                     resolve(data);

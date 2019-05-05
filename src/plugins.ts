@@ -1,5 +1,5 @@
 import { MethodusConfig, PluginEntry } from './config';
-
+import { logger } from './log';
 export class PluginLoader {
     async config(serverConfiguration: MethodusConfig, pluginList: PluginEntry[]) {
         console.log('> Configuring plugins:');
@@ -9,7 +9,7 @@ export class PluginLoader {
                 const pluginModule = require(plugin.name);
                 await pluginModule.init(serverConfiguration, plugin.options);
             } catch (error) {
-                console.error(error);
+                logger.error(error);
             }
         }
     }

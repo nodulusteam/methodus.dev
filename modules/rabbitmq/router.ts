@@ -63,7 +63,7 @@ export class MQRouter {
                                             logger.error(this, `method ${parsedMessage.to} not found in ${proto}`);
                                         }
                                     } catch (error) {
-                                        console.error(error);
+                                        logger.error(error);
                                     }
                                 } else {
                                     logger.error(this, `recieved empty message`);
