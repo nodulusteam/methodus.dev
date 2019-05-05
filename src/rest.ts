@@ -2,7 +2,6 @@ import { MethodResult, MethodError } from './response';
 import { logger, LogClass } from './log';
 import { ServerType } from './interfaces';
 import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './servers/express/rest';
-import { RestParser as RestFastify, RestResponse as RestResponseFastify } from './servers/fastify/rest';
 import * as etag from 'etag';
 
 export class Verbs {
@@ -98,18 +97,8 @@ export class RestParser {
     parser: any;
     response: any;
     constructor(type: ServerType) {
-        switch (type) {
-
-            case ServerType.HTTP2:
-                this.parser = new RestFastify();
-                this.response = RestResponseFastify;
-                break;
-            case ServerType.Express:
-            default:
-                this.parser = new RestExpress();
-                this.response = RestResponseExpress;
-                break;
-        }
+        this.parser = new RestExpress();
+        this.response = RestResponseExpress;
     }
     parse(args: any, paramsMap: any, functionArgs: any) {
         return this.parser.parse(args, paramsMap, functionArgs);
