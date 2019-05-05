@@ -1,7 +1,7 @@
 process.env.test = 'true';
-import { AsyncTest, Expect,  TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
-import { Xserver } from './servers/socket.server';
-import { TestTarget } from './controllers/target.test';
+import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
+import { SocketTestServer } from './servers/';
+import { TestTarget } from './controllers/';
 
 @TestFixture('Test Xserver configuration')
 export class Servers {
@@ -9,7 +9,7 @@ export class Servers {
     @AsyncSetupFixture
     public async serverSetup() {
         return new Promise(async (resolve, reject) => {
-            this.server = new Xserver();
+            this.server = new SocketTestServer();
             setTimeout(async () => {
                 resolve();
             }, 1000 * 2);

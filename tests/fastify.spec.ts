@@ -2,8 +2,8 @@ process.env.CONFIG_PATH = './tests/config';
 process.env.test = 'true';
 
 import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
-import { Xserver } from './servers/fastify.server';
-import { TestTarget } from './controllers//target.test';
+import { FastifyTestServer } from './servers/';
+import { TestTarget } from './controllers/target.test';
 
 @TestFixture('Test Xserver configuration')
 export class Servers {
@@ -11,7 +11,7 @@ export class Servers {
     @AsyncSetupFixture
     public async serverSetup() {
         return new Promise(async (resolve, reject) => {
-            this.server = new Xserver();
+            this.server = new FastifyTestServer();
             setTimeout(async () => {
                 resolve();
             }, 1000 * 2);

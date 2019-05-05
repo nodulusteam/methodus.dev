@@ -5,7 +5,7 @@ import {
 import { BuiltInTransports } from '../../src';
 import { TestTarget } from '../controllers/target.test';
 
-@ClientConfiguration(TestTarget, BuiltInTransports.Http2, 'https://localhost:8021')
+@ClientConfiguration(TestTarget, BuiltInTransports.Http2, 'https://localhost:8030')
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);

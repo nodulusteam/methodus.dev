@@ -16,12 +16,8 @@ class ServerPlugin {
 @ServerConfiguration(ServerPlugin, {})
 @RouterConfiguration(TestController, 'ServerPlugin')
 @ClientConfiguration(TestTarget, ServerPlugin)
-export class Xserver extends ConfiguredServer {
+export class EmitterTestServer extends ConfiguredServer {
     constructor() {
-        super(Xserver);
+        super(EmitterTestServer);
     }
-}
-
-if (process.env.TESTMODE === 'run') {
-    new Xserver();
 }

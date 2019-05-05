@@ -4,19 +4,14 @@ import {
     ClientConfiguration, ConfiguredServer, ServerType,
 } from '../../';
 import { BuiltInServers, BuiltInTransports } from '../../src';
-import { TestController } from '../controllers/controller.test';
-import { TestTarget } from '../controllers/target.test';
+import { TestController, TestTarget } from '../controllers/';
 
 @ServerConfiguration(BuiltInServers.Socket, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')
 @RouterConfiguration(TestController, ServerType.Socket)
 @ClientConfiguration(TestTarget, BuiltInTransports.Socket, 'http://localhost:8020')
-export class Xserver extends ConfiguredServer {
+export class SocketTestServer extends ConfiguredServer {
     constructor() {
-        super(Xserver);
+        super(SocketTestServer);
     }
-}
-
-if (process.env.TESTMODE === 'run') {
-    new Xserver();
 }

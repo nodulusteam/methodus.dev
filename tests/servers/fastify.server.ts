@@ -5,20 +5,14 @@ import {
     ClientConfiguration, ConfiguredServer, ServerType,
 } from '../../';
 import { BuiltInServers, BuiltInTransports } from '../../src';
-import { TestController } from '../controllers/controller.test';
-import { TestTarget } from '../controllers/target.test';
+import { TestController, TestTarget } from '../controllers/';
 
-@ServerConfiguration(BuiltInServers.HTTP2, { port: 8021 })
+@ServerConfiguration(BuiltInServers.HTTP2, { port: 8030 })
 // @PluginConfiguration('@methodus/describe')
 @RouterConfiguration(TestController, ServerType.HTTP2)
-@ClientConfiguration(TestTarget, BuiltInTransports.Http2, 'https://localhost:8021')
-export class Xserver extends ConfiguredServer {
+@ClientConfiguration(TestTarget, BuiltInTransports.Http2, 'https://localhost:8030')
+export class FastifyTestServer extends ConfiguredServer {
     constructor() {
-        super(Xserver);
+        super(FastifyTestServer);
     }
-}
-
-if (process.env.TESTMODE === 'run') {
-    new Xserver();
-
 }
