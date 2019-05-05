@@ -125,6 +125,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                         case MethodType.Mock:
                             if (methodus._mocks && methodus._mocks[propertyKey]) {
                                 if (typeof methodus._mocks[propertyKey] === 'function') {
+                                    // tslint:disable-next-line:max-line-length
                                     methodResult = new MethodResult(methodus._mocks[propertyKey](...ParserResponse.args));
                                 } else {
                                     methodResult = new MethodResult(methodus._mocks[propertyKey]);
@@ -138,16 +139,6 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                             break;
 
                     }
-
-                    // if (server === ServerType.Express || server === ServerType.HTTP2) {
-                    //     methodResult = new MethodResult(Servers.send(server, ParserResponse.args,
-                    //         completeConfiguration, paramsMap, ParserResponse.securityContext));
-
-                    // } else if (server) {
-                    //     methodResult = await Servers.send(server, ParserResponse.args,
-                    //         completeConfiguration, paramsMap, ParserResponse.securityContext);
-                    // }
-
                 } catch (error) {
                     error.statusCode = error.statusCode || 500;
                     logger.error(error);
@@ -165,7 +156,6 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     return handleResult(methodResult);
                 }
             }
-
         };
 
         delete descriptor.value;
@@ -192,7 +182,6 @@ async function handleResult(methodResult: any) {
     if (methodResult !== null && methodResult !== undefined &&
         methodResult.result !== null && methodResult.result !== undefined) {
         try {
-
             const requestResult = await methodResult.result;
             if (!requestResult) {
                 methodResult = {};
