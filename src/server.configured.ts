@@ -2,12 +2,22 @@
 import { MethodusConfig } from './config';
 import { LogClass, logger } from './log/';
 import { Server } from './server';
+import { EventEmitter } from 'events';
 
 @LogClass(logger)
-export class ConfiguredServer {
-    server: Server;
+export class ConfiguredServer extends EventEmitter {
+    server?: Server;
+    target: any;
     constructor(target?: any) {
-        const options = target.prototype.options;
+
+        super();
+        if (target) {
+            this.target = target;
+        }
+        this.init();
+    }
+    public async init() {
+        const options = this.target.prototype.options;
 
         const server = new Server();
         this.server = server;
@@ -33,13 +43,16 @@ export class ConfiguredServer {
         if (options.plugins) {
             server.plugins(options.plugins);
         }
-        (async () => {
-            await server.start();
-        })();
+
+        await server.start();
+        this.emit('ready');
+
     }
 
     public kill() {
-        this.server.kill();
+        if (this.server) {
+            this.server.kill();
+        }
     }
 
 }

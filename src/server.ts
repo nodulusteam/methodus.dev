@@ -89,8 +89,8 @@ export class Server {
         }
     }
 
-    async start(port?: number) {
-        this.port = this.port || port || 0;
+    async start() {
+        this.port = 0;
         await this.printlogo();
         // add this instance to the global bridge of servers
         // Bridge.set(this.serverKey, { server: this });
@@ -111,7 +111,7 @@ export class Server {
             this.config.servers.forEach((server: ServerConfig) => {
 
                 if (server.options.port) {
-                    port = server.options.port;
+                    this.port = server.options.port;
                 }
                 if (server.onStart) {
                     onStart.push(server.onStart);
@@ -135,7 +135,7 @@ export class Server {
 
             const httpServerIntance = Servers.get(this.instanceId, 'http');
             if (httpServerIntance) {
-                httpServerIntance.listen(port);
+                httpServerIntance.listen(this.port);
             }
 
         }

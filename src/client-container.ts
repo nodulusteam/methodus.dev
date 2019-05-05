@@ -1,7 +1,11 @@
 export class ClientContainer {
     client: any;
     constructor(clientInformation: any) {
-        this.client = require(clientInformation.path);
+        if (clientInformation.path) {
+            this.client = require(clientInformation.path);
+        } else {
+            this.client = clientInformation;
+        }
         return this.client;
     }
 }
