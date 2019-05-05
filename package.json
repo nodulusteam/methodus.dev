@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "3.0.15",
+    "version": "3.0.16",
     "description": "Server components for @methodus workflow",
     "main": "index.js",
     "directories": {
@@ -51,14 +51,12 @@
         "etag": "^1.8.1",
         "express": "^4.15.3",
         "express-fileupload": "^1.0.0",
-        "fastify": "^2.3.0",
         "figlet": "^1.2.0",
         "js-yaml": "^3.9.0",
         "kill-port": "^1.3.2",
         "logelas": "^4.0.0",
         "method-override": "^2.3.9",
         "mkdirp": "^0.5.1",
-        "mock-require": "^2.0.2",
         "request": "^2.81.0",
         "request-promise-native": "^1.0.4",
         "shortid": "^2.2.8",
@@ -87,7 +85,6 @@
         "nedb": "^1.8.0",
         "nedb-promise": "^2.0.1",
         "nyc": "^13.0.0",
-        "redis-mock": "^0.19.0",
         "reflect-metadata": "^0.1.10",
         "tslint": "^5.11.0",
         "typescript": "^3.4.0"
