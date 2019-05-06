@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
-import { MethodType } from '../interfaces';
+import { MethodType, TransportType } from '../interfaces';
 import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus } from '../response';
 import { RestParser, Verbs } from '../rest';
@@ -77,8 +77,23 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     methodus.resolver = client.resolver;
                     try {
 
-                        const result = await client.transportType.send(methodus, args, paramsMap, []);
-                        methodResult = new MethodResult(result);
+                        if (client.transportType === TransportType.Mock) {
+                            // looking for mock mappings
+                            if (methodus._mocks && methodus._mocks[propertyKey]) {
+                                // mock may be a function or a value
+                                if (typeof methodus._mocks[propertyKey] === 'function') {
+                                    methodResult = await methodus._mocks[propertyKey].apply(target, args);
+                                } else {
+                                    methodResult = methodus._mocks[propertyKey];
+                                }
+                            } else {
+                                methodResult = await originalMethod.apply(target, args);
+                            }
+                        } else {
+                            const result = await client.transportType.send(methodus, args, paramsMap, []);
+                            methodResult = new MethodResult(result);
+                        }
+
                         return handleResult(methodResult);
                     } catch (ex) {
                         if (Buffer.isBuffer(ex.error)) {

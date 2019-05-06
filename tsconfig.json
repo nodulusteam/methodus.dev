@@ -6,6 +6,7 @@
     "compilerOptions": {
         "target": "es2015", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
         "module": "commonjs",
+        "outDir": "build/",
         "declaration": true, /* Generates corresponding '.d.ts' file. */
         "sourceMap": true, /* Generates corresponding '.map' file. */
         "removeComments": true, /* Do not emit comments to output. */
