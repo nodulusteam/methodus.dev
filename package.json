@@ -27,7 +27,7 @@
     "scripts": {
         "build": "tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
+        "test": "trash build && npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
         "test:servers": "npm run build &&  set test='true'&alsatian build/tests/servers.spec.js",
         "test:events": "npm run build &&  set test='true'&alsatian build/tests/events.spec.js",
         "test:gateway": "npm run build &&  set test='true'&alsatian build/tests/gateway.spec.js",
@@ -70,6 +70,7 @@
         "cookie-parser": "^1.4.3"
     },
     "devDependencies": {
+        "trash-cli": "^1.4.0",
         "@methodus/data": "^1.0.3",
         "@types/cookie-parser": "^1.4.1",
         "@types/etag": "^1.8.0",
@@ -81,6 +82,7 @@
         "@types/socket.io": "^2.1.2",
         "@types/uuid": "^3.4.4",
         "alsatian": "^2.0.0",
+        "npm-run-all": "^4.1.5",
         "child-process-debug": "0.0.7",
         "nedb": "^1.8.0",
         "nedb-promise": "^2.0.1",

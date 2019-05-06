@@ -3,16 +3,18 @@ import {
     ClientConfiguration, ConfiguredServer,
 } from '../';
 
-import { ScreensDataController } from './controllers/screen.data.controller';
+import { DataController, RemoteController } from './controllers';
 import { BuiltInServers, BuiltInTransports } from '../src';
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 6695 })
 @PluginConfiguration('@methodus/describe')
-@RouterConfiguration(ScreensDataController, BuiltInServers.Express)
-@ClientConfiguration(ScreensDataController, BuiltInTransports.Http, 'http://localhost:6695')
+@RouterConfiguration(DataController, BuiltInServers.Express)
+@ClientConfiguration(RemoteController, BuiltInTransports.Http, 'http://localhost:6695')
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);
     }
 }
 
-new Xserver();
+(() => {
+    return new Xserver();
+})();

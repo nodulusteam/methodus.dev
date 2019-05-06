@@ -1,7 +1,7 @@
 import { Verbs, Method, Param, Body, MethodResult, MethodConfig } from '../../src/';
 
-@MethodConfig('DataController')
-export class DataController {
+@MethodConfig('RemoteController')
+export class RemoteController {
 
     @Method(Verbs.Get, '/items/:id')
     public static async list(@Param('id') id: string): Promise<MethodResult> {
