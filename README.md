@@ -4,6 +4,60 @@
 ![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage "coverage")
 ![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
 
+
+
+# why shoud you engage methodus
+
+
+
+### step 1 - create a controller
+
+```
+
+@MethodConfig('DataController')
+export class DataController {
+
+    @Method(Verbs.Get, '/items/:id')
+    public static async list(@Param('id') id: string): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+
+    @Method(Verbs.Get, '/items/:id')
+    public static async get(@Param('id') id: string): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+
+    @Method(Verbs.Post, '/id/')
+    public static async create(@Body('item') item: any): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+
+    @Method(Verbs.Put, '/id/:id')
+    public static async update(@Param('id') id: string): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+    @Method(Verbs.Delete, '/id/:id')
+    public static async remove(@Param('id') id: string): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+}
+```
+
+### step 1 - create a server
+
+```
+
+
+
+```
+
+
+
+
+
+
+
+
 ### Greetings,
 my fellow adventures developer, I welcome you into Methodus. 
 You did not arrive here by mistake, nor was it an accident, it is your fate.

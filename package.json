@@ -1,8 +1,8 @@
 {
     "name": "@methodus/server",
-    "version": "3.0.16",
+    "version": "3.0.17",
     "description": "Server components for @methodus workflow",
-    "main": "index.js",
+    "main": "build/index.js",
     "directories": {
         "test": "tests",
         "examples": "examples"
@@ -27,14 +27,14 @@
     "scripts": {
         "build": "tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
-        "test:servers": "npm run build &&  set test='true'&alsatian src/tests/servers.spec.js",
-        "test:events": "npm run build &&  set test='true'&alsatian src/tests/events.spec.js",
-        "test:gateway": "npm run build &&  set test='true'&alsatian src/tests/gateway.spec.js",
-        "xtest": "set NODE_LOG_LEVEL=trace  test='true'&alsatian tests/*.spec.js",
-        "temp": "src/tests/gateway.spec.js src/tests/events.spec.js src/tests/decorators.spec.js src/tests/fp.spec.js",
-        "test:fp": "npm run build &&  set test='true'&alsatian src/tests/fp.spec.js",
-        "servers": "tsc && alsatian src/tests/servers.spec.js ",
+        "test": "trash build && npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
+        "test:servers": "npm run build &&  set test='true'&alsatian build/tests/servers.spec.js",
+        "test:events": "npm run build &&  set test='true'&alsatian build/tests/events.spec.js",
+        "test:gateway": "npm run build &&  set test='true'&alsatian build/tests/gateway.spec.js",
+        "xtest": "set NODE_LOG_LEVEL=trace  test='true'&alsatian build/tests/*.spec.js",
+        "temp": "build/tests/gateway.spec.js build/tests/events.spec.js build/tests/decorators.spec.js src/tests/fp.spec.js",
+        "test:fp": "npm run build &&  set test='true'&alsatian build/tests/fp.spec.js",
+        "servers": "tsc && alsatian build/tests/servers.spec.js ",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
     },
@@ -70,6 +70,7 @@
         "cookie-parser": "^1.4.3"
     },
     "devDependencies": {
+        "trash-cli": "^1.4.0",
         "@methodus/data": "^1.0.3",
         "@types/cookie-parser": "^1.4.1",
         "@types/etag": "^1.8.0",
@@ -81,6 +82,7 @@
         "@types/socket.io": "^2.1.2",
         "@types/uuid": "^3.4.4",
         "alsatian": "^2.0.0",
+        "npm-run-all": "^4.1.5",
         "child-process-debug": "0.0.7",
         "nedb": "^1.8.0",
         "nedb-promise": "^2.0.1",
