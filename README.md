@@ -6,19 +6,27 @@
 
 
 
-# why shoud you engage methodus
 
 
+## Why shoud you engage methodus
+The root functionality of methodus is the abbility to control the program flow by injecting logic to the gap between the caller and the callee of a function.
+This ability is very usefull when developing distribued / dynamic applications,  allowing developers to use an agile, contained approach in our code.
 
-### step 1 - create a controller
 
-```
+### Install
+`npm i @methodus/server`
 
-@MethodConfig('DataController')
+### step 1 - create a controller : DataController
+Methodus controllers are transport agnostic; parameters are passed via arguments to a function , which returns a value or raise an error, pretty straightforward but extermely powerful.
+
+```Typescript
+const items = {'item1': 'item 1 value','item2': 'item 2 value','item3': 'item 3 value', }
+@MethodConfig('DataController')// anotate using the class Name - exact!
 export class DataController {
 
-    @Method(Verbs.Get, '/items/:id')
-    public static async list(@Param('id') id: string): Promise<MethodResult> {
+    // 
+    @Method(Verbs.Get, '/items/')
+    public static async list(): Promise<MethodResult> {
         return new MethodResult({});
     }
 
@@ -44,16 +52,24 @@ export class DataController {
 ```
 
 ### step 1 - create a server
-
+Create an "Express" server using the built in implementation
+```Typescript
+import { ServerConfiguration, RouterConfiguration, ConfiguredServer,BuiltInServers, BuiltInTransports} from '@methodus/server';
+import { DataController } from './controllers';
+@ServerConfiguration(BuiltInServers.Express, { port: 6695 }) // instantiate express on given port
+@RouterConfiguration(DataController, BuiltInServers.Express) // attach the DataController class to the Express instance 
+export class Xserver extends ConfiguredServer {
+    constructor() {
+        super(Xserver);
+    }
+}
+(() => {
+    return new Xserver();
+})();
 ```
 
-
-
-```
-
-
-
-
+### Run
+After running your server you should be able to browse to http://localhost:6695/
 
 
 

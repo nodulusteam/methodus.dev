@@ -104,8 +104,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                 } else {
 
                     const result = await originalMethod.apply(this, args);
-                    methodResult = new MethodResult(result);
-                    return handleResult(methodResult);
+                    return handleResult(result);
                 }
 
             } else {
@@ -231,9 +230,8 @@ async function handleResult(methodResult: any) {
             logger.error(error);
             throw new MethodResultStatus(error, error.statusCode);
         }
-
-        return methodResult;
     }
+    return methodResult;
 }
 function validateServerIsRunning() {
     if (!Servers) {

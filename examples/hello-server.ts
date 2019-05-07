@@ -16,5 +16,5 @@ export class Xserver extends ConfiguredServer {
 }
 
 (() => {
-    return new Xserver();
+    return new Xserver(); // start the server
 })();
