@@ -12,7 +12,7 @@ export class fp {
     }
 
     public static maybeProto(object: any): any {
-        if (object.methodus) {
+        if (!object || object.methodus) {
             return object;
         }
 
@@ -27,6 +27,13 @@ export class fp {
     }
 
     public static maybeMethodus(object: any): any {
+        if (!object) {
+            return null;
+        }
+        if (object.methodus) {
+            return object.methodus;
+        }
+
         const proto = object.prototype;
         if (proto && proto.constructor && proto.constructor.methodus) {
             return proto.constructor.methodus;
@@ -34,9 +41,7 @@ export class fp {
         if (!proto && object.__proto__ && object.__proto__.methodus) {
             return object.__proto__.methodus;
         }
-        if (object.methodus) {
-            return object.methodus;
-        }
+
         return proto.methodus;
     }
 

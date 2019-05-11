@@ -118,6 +118,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
 
                 // rest paramters should be parsed differntly
                 parser = new RestParser(methodus.serverType);
+
                 ParserResponse = parser.parse(args, paramsMap, functionArgs);
 
                 // acquire the method information from the config classes map

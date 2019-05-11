@@ -8,6 +8,13 @@ export interface Router {
     prefix: string;
 }
 
+export interface ITransport {
+    name: string;
+    register(server: any, parentServer: any): void;
+    send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any): Promise<any>;
+
+}
+
 export interface IServer {
     classRouters: any[];
     config: IMethodusConfig;

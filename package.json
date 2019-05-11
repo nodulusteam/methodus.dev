@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "3.0.18",
+    "version": "3.0.19",
     "description": "Server components for @methodus workflow",
     "main": "build/index.js",
     "directories": {
@@ -25,9 +25,9 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
-        "build": "tsc",
+        "build": "trash build && tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "trash build && npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
+        "test": "trash coverage .nyc_output && npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
         "test:servers": "npm run build &&  set test='true'&alsatian build/tests/servers.spec.js",
         "test:events": "npm run build &&  set test='true'&alsatian build/tests/events.spec.js",
         "test:gateway": "npm run build &&  set test='true'&alsatian build/tests/gateway.spec.js",

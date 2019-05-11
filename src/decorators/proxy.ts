@@ -1,6 +1,5 @@
 import { MethodType } from '../interfaces';
 import { fp } from '../fp';
-const debug = require('debug')('methodus');
 import * as path from 'path';
 import { logger } from '../log';
 
@@ -17,27 +16,25 @@ export class Proxy {
             if (!classTransport || classTransport === MethodType.Local) {
                 const startPathForLoad = packageName;
                 const localLoadPath = path.join(startPathForLoad, localClassPath).replace(/\\/g, '/');
-                // if (methodus.name.indexOf('@') < 0) {
-                //     startPathForLoad = path.join(process.cwd(), methodus.name);
-                // }
-                debug(this, `trying to load ${localLoadPath} locally`);
+
+                logger.info(this, `trying to load ${localLoadPath} locally`);
                 try {
                     try {
                         const localClass = require(localLoadPath);
-                        debug(this, `succesfully loaded ${localLoadPath} locally`);
+                        logger.info(this, `succesfully loaded ${localLoadPath} locally`);
                         return localClass[className];
                     } catch (error) {
                         try {
-                            debug(this, `will try other options ${localClassPath} locally`);
+                            logger.info(this, `will try other options ${localClassPath} locally`);
                             const localClass = require(path.join(process.cwd(), startPathForLoad, localClassPath));
-                            debug(this, `succesfully loaded ${localClass} locally`);
+                            logger.info(this, `succesfully loaded ${localClass} locally`);
                             return localClass[className];
                         } catch (error) {
-                            debug(this, `will try last option ${localClassPath} locally`);
+                            logger.info(this, `will try last option ${localClassPath} locally`);
                             const localClass = require(path.join(process.cwd(),
                                 'node_modules',
                                 startPathForLoad, localClassPath));
-                            debug(this, `succesfully loaded ${localClass} locally`);
+                            logger.info(this, `succesfully loaded ${localClass} locally`);
                             return localClass[className];
                         }
                     }
@@ -46,7 +43,7 @@ export class Proxy {
                     throw (ex);
                 }
             }
-            debug(this, 'returned the contract it self for' + className);
+            logger.info(this, 'returned the contract it self for' + className);
             return target;
         };
     }

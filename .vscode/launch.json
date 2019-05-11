@@ -12,7 +12,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "tests/express.spec.js"
+                "build/tests/express.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -32,7 +32,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "tests/emitter.spec.js"
+                "build/tests/emitter.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
