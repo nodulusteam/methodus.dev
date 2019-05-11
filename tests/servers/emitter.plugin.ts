@@ -4,7 +4,7 @@ import * as colors from 'colors';
 import { Servers } from '../../src/servers/serversList';
 import { logger, LogClass } from '../../src/log';
 import { EventEmitter } from 'events';
-import { fp } from '../../src';
+import { fp, ITransport } from '../../src';
 const metadataKey = 'methodus';
 
 export const sharedEmitter: EventEmitter = new EventEmitter();
@@ -48,14 +48,20 @@ export class CustomMessageServer {
         sharedEmitter.emit(`${verb}_${route}`, { params, securityContext });
     }
 }
-export function register(server: any, parentServer: any) {
-    logger.info(this, colors.green(`> Starting Custom server`));
-    console.log(colors.green(`> Starting Custom ${server.type.name} server`));
-    const app = new CustomMessageServer();
-    Servers.set(server.instanceId, server.type.name, app);
+
+export class EmitterPlugin implements ITransport {
+    name: string = 'Plugin';
+
+    public register(server: any, parentServer: any): void {
+        logger.info(this, colors.green(`> Starting Custom server`));
+        console.log(colors.green(`> Starting Custom ${server.type.name} server`));
+        const app = new CustomMessageServer();
+        Servers.set(server.instanceId, server.type.name, app);
+    }
+    public async send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any): Promise<any> {
+        return messageServer.sendMessage(methodus.verb, methodus.route, functionArgs,
+            paramsMap, securityContext);
+    }
 }
+
 const messageServer: CustomMessageServer = new CustomMessageServer();
-export async function send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any) {
-    return await messageServer.sendMessage(methodus.verb, methodus.route, functionArgs,
-        paramsMap, securityContext);
-}

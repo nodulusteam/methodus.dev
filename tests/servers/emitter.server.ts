@@ -7,14 +7,13 @@ import {
 } from '../../';
 import { TestController } from '../controllers/';
 import { TestTarget } from '../controllers/';
+import { EmitterPlugin } from './emitter.plugin';
+import { PluginConfiguration } from '../../src';
 
-class ServerPlugin {
-    static serverName = 'custom';
-    static path = path.join(process.cwd(), 'tests', 'servers', 'emitter.plugin');
-}
-
+const ServerPlugin = new EmitterPlugin();
+@PluginConfiguration(path.join(__dirname, 'simple.plugin'))
 @ServerConfiguration(ServerPlugin, {})
-@RouterConfiguration(TestController, 'ServerPlugin')
+@RouterConfiguration(TestController, ServerPlugin.name)
 @ClientConfiguration(TestTarget, ServerPlugin)
 export class EmitterTestServer extends ConfiguredServer {
     constructor() {

@@ -5,10 +5,13 @@ import {
 } from '../../';
 import { BuiltInServers, BuiltInTransports } from '../../src';
 import { TestController, TestTarget, ScreensDataController } from '../controllers/';
+import { ProxiedController } from '../controllers/proxy.controller';
+
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')
 @RouterConfiguration(TestController, ServerType.Express)
 @RouterConfiguration(ScreensDataController, ServerType.Express)
+@RouterConfiguration(ProxiedController, ServerType.Express)
 @ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8020')
 export class ExpressTestServer extends ConfiguredServer {
     constructor() {

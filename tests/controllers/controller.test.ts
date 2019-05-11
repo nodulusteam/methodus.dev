@@ -1,11 +1,21 @@
-import { MethodResult, Response, Request, SecurityContext, Verbs, Headers, Method, Query, Param, MethodMock, MethodConfig, Body, MethodError, Files, Cookies, MethodPipe } from '../../src/index';
+import {
+    MethodResult, Response, Request, SecurityContext, Verbs, Headers,
+    Method, Query, Param, MethodMock, MethodConfig, Body, MethodError,
+    Files, Cookies, MethodPipe, MethodResultStatus, generateUuid,
+} from '../../src/index';
 
 @MethodConfig('TestController')
 export class TestController {
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
     public static async list(@Headers('auth') auth: string, @Query('order_by') orderBy: any): Promise<any> {
-        return new MethodResult([1, 2, 3, 4, 5]);
+        const result = new MethodResult([1, 2, 3, 4, 5], 5, 2);
+        result.pipe({});
+        result.on('finish', (data: any) => {
+            return data;
+        });
+        result.setHeader('good-header', generateUuid());
+        return result;
     }
 
     @Method(Verbs.Get, '/api/player/desfaults')
@@ -19,7 +29,7 @@ export class TestController {
         @Request() req: any,
         @SecurityContext() securityContext: any,
     ): Promise<any> {
-        return new MethodResult([1, 2, 3, 4, 5]);
+        return new MethodResultStatus([1, 2, 3, 4, 5], 203, 5, 1);
     }
 
     @MethodPipe(Verbs.Post, '/api/player')
