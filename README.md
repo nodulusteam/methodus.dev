@@ -72,60 +72,8 @@ Model API data objects and manage DB access (mongodb)
 
 > [/Example](https://github.com/nodulusteam/-methodus-example)
 
-Use this consract to kick-start your very own methodus application
-
-
-
-
-**Methodus is a micro-service & RPC framework, so let's build a micro-service from scratch using this beautiful framework.**
-
-### The controller
-Methodus uses controllers in the same manner the `express` framework does. It binds functions or class methods to a route. and then routes the requests to these functions.
-in Methodus it will look like this
+Use this constract to kick-start your very own methodus application
  
-```javascript
-import { Method, MethodConfig, Files, Verbs, MethodType, Body, Response, Request, Param, Query, SecurityContext, MethodError, MethodResult } from '@methodus/server';
-
-/*start custom*/
-//in here you can put types and definitions that should be distributed with the contract
-/*end custom*/
-
-import * as fs from 'fs';
-import * as path from 'path';
-
-
-
-@MethodConfig('@ns/hellow-world')
-export class Hello {
-
-@Method(Verbs.Post, '/api/hello', [upload.any(), autoReap]) //loading route and middlewares
-public static async upload( @Files('0') file: any, @Query('originalname') originalname: string, @Query('keep_original') keepOriginalName: boolean = true) {
-return new MethodResult(result);//return the result
-};
-
-
-@Method(Verbs.Get, '/api/hello/:file_id')
-public static async getById( @Param('file_id') file_id) {
-return new MethodResult(result);
-
-};
-
-@Method(Verbs.Get, '/api/hello/name/:file_name/')
-public static async getByName( @Param('file_name') file_name, @SecurityContext() securityContext) {
-return new MethodResult(result);
-
-};
-
-
-
-@Method(Verbs.Delete, '/api/hello/id/:file_id')
-public static async delete( @Param('file_id') file_id, @SecurityContext() securityContext) {
-return new MethodResult(deleteResult);
-};
-}
-
- ```
-
        
 The controller class is decorated with a @MethodConfig decorator stating the name of the npm package the controller refers to.
 Each method is then decorated with a @Method decorator and the route parameters (Http verb, path, middlewares).
@@ -161,34 +109,3 @@ public static async getByName( @Param('file_name') file_name, @SecurityContext()
 Methodus methods are automatiaclly loged using the Trace log level.
 you may have noticed the use of static methods for the controller class. this is not mandatory as you may use either static or instance approach,
 as long as you do that for all the methods in the class.
-
-### Server activation
-The controller is ready, let's bind it to a methodus server.
-in our node app we create an entry point in the form of host.ts file.
-this host file starts an express server using the configured port and binds our controller to it.
- 
- 
-```javascript
-import { ServerType, Server, MethodType, MethodusConfig } from '@methodus/server';
-import { Hello } from './controllers/hello-controller';
-
-(async () => {
-let config = new MethodusConfig();
-config.run(ServerType.Express, { port: +process.env.PORT });
-config.use(Hello, MethodType.Local, ServerType.Express);
-let server = await new Server(+process.env.PORT).configure(config).start();
-})()
-```
-
-the async function is an IIFE  ( Immidiatly Invoked Function Expression) that executes the server code, but you may use any invocation method you see fit.
-
-if all goes well you should see
-```
-__ _ _|_|_ _ _| _ 
-|||(/_ |_| |(_)(_||_|_> 
-Starting REST server on port xxxx
-``` 
- 
-which means that every thing wen well and you're ready to browser or postman your routes.
- 
-Your microservice ready, but if it is to be consumed using the Methodus rpc it need's to generate a contract.
