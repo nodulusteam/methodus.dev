@@ -168,18 +168,18 @@ export class Server {
                     configName = methodusClass.constructor.name;
                 }
                 const metaObject = ClassContainer.get(configName);
-
-                if (server[_class.serverType]) {
+                const serverTypeName = _class.serverType.name || _class.serverType;
+                if (server[serverTypeName]) {
                     Servers.classes[configName] = _class;
                     if (metaObject) {
                         metaObject.methodType = _class.methodType;
-                        metaObject.serverType = _class.serverType;
+                        metaObject.serverType = serverTypeName;
                         metaObject.instanceId = serverInstance.instanceId;
                         ClassContainer.set(configName, metaObject);
                         logger.info(this,
                             colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
 
-                        const activeServers = Servers.get(serverInstance.instanceId, _class.serverType);
+                        const activeServers = Servers.get(serverInstance.instanceId, serverTypeName);
                         if (activeServers) {
                             activeServers.useClass(_class.classType, metaObject.methodType);
                         }
