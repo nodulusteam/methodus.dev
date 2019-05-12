@@ -16,7 +16,7 @@ This ability is very usefull when developing distribued / dynamic applications, 
 
 
 
-[Download the code for the simple-express-server](examples/packed/simple-express-server.zip "Simple express server")
+[Download the code for the simple-express-server](./examples/packed/simple-express-server.zip "Simple express server")
 
 
 ### step 1 - create a controller : DataController
