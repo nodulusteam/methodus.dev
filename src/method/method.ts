@@ -127,6 +127,10 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                     methodType = completeConfiguration.methodType;
                 }
 
+                if (completeConfiguration && completeConfiguration.transportType) {
+                    methodType = completeConfiguration.transportType;
+                }
+
                 // run and store the result
                 const restHeaders: any = null;
                 try {

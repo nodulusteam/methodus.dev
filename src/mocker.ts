@@ -10,4 +10,14 @@ export class Mocker {
         bridge.clients[target.name] = configEntry;
         return bridge;
     }
+
+    public static mockServer(target: any) {
+        // get the bridge
+
+        const bridge = (global as any).METHODUS_BRIDGE;
+        const configEntry = new MethodusClientConfig(target, TransportType.Mock);
+        bridge.classes[target.name] = configEntry;
+        return bridge;
+    }
+
 }
