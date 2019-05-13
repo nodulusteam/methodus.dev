@@ -8,11 +8,11 @@ export class Servers {
     server: any;
     @AsyncSetupFixture
     public async serverSetup() {
-        return new Promise(async (resolve, reject) => {
+        return new Promise(async (resolve) => {
             this.server = new SocketTestServer();
-            setTimeout(async () => {
+            this.server.on('ready', () => {
                 resolve();
-            }, 1000 * 2);
+            });
         });
     }
 
@@ -36,13 +36,6 @@ export class Servers {
         Expect(response.result.length).toBe(5);
 
     }
-
-    // @AsyncTest('create')
-    // @Timeout(1000 * 1000)
-    // public async create() {
-    //     const response = await TestTarget.create('cookie-value', {}, 'my user name');
-    //     Expect(response.result.name).toBe('my user name');
-    // }
 
     @AsyncTest('read')
     @Timeout(1000 * 1000)

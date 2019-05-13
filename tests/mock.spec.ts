@@ -14,4 +14,12 @@ export class Units {
         Expect(mockResult).toBeDefined();
     }
 
+    @AsyncTest('TestController mock for server')
+    @Timeout(1000 * 1000)
+    public async mockTestControllerForServer() {
+        Mocker.mockServer(TestController);
+        const mockResult = await TestController.list('', '');
+        Expect(mockResult).toBeDefined();
+    }
+
 }

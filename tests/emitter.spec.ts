@@ -12,9 +12,9 @@ export class Servers {
     public async serverSetup() {
         return new Promise(async (resolve, reject) => {
             this.server = new EmitterTestServer();
-            setTimeout(async () => {
+            this.server.on('ready', () => {
                 resolve();
-            }, 1000 * 2);
+            });
         });
     }
 
