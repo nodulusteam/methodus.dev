@@ -90,7 +90,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                                 methodResult = await originalMethod.apply(target, args);
                             }
                         } else {
-                            const result = await client.transportType.send(methodus, args, paramsMap, []);
+                            const result = await client.transportType.send.apply(this, [methodus, args, paramsMap]);
                             methodResult = new MethodResult(result);
                         }
 

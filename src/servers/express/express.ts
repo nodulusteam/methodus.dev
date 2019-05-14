@@ -61,7 +61,8 @@ export class Express extends BaseServer {
         }
     }
     close() {
-        this._app.close();
+        return true;
+        // this._app.close();
     }
 
     useClass(classType: any, methodType: any) {

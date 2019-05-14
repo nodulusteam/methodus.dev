@@ -4,10 +4,13 @@ export class ServersList {
     public instances: any = {};
     public classes: any;
     public clients: any;
+    public _app: any;
+    public serversArray: any [];
     constructor() {
         this.classes = {};
         this.instances = {};
         this.clients = {};
+        this.serversArray = [];
     }
     public addServer(server: any) {
         const id = uuidv1();
@@ -16,6 +19,7 @@ export class ServersList {
     }
     public set(instanceId: any, serverType: any, instance: any) {
         this.instances[instanceId][serverType] = instance;
+        this.serversArray.push(instance);
         return instance;
     }
     public get(instanceId: any, serverType?: any) {
@@ -26,38 +30,6 @@ export class ServersList {
         }
     }
 
-    // public async  emit(methodEvent: MethodEvent) {
-    //     for (const instanceKey in this.instances) {
-    //         if (this.instances[instanceKey][methodEvent.serverType]) {
-    //             const result = this.instances[instanceKey][methodEvent.serverType]._sendEvent(methodEvent);
-    //             return result;
-    //         }
-    //     }
-    // }
-
-    public send(server: any, functionArgs: any, methodus: any, paramsMap: any, securityContext: any) {
-        // if (this.instances && Object.keys(this.instances).length) {
-        //     for (const instanceKey in this.instances) {
-        //         if (this.instances[instanceKey][server]) {
-        //             const result = this.instances[instanceKey][server]._send(functionArgs,
-        //                 methodus, paramsMap, securityContext);
-        //             return result;
-        //         }
-        //     }
-        // } else {
-        //     if (server === ServerType.Express ) {
-        //         const request = new Request();
-        //         const baseUrl = methodus.resolver();
-        //         if (baseUrl) {
-        //             return request.sendRequest(methodus.verb, baseUrl + methodus.route, functionArgs,
-        //                 paramsMap, securityContext);
-        //         } else {
-        //             return new MethodError('no server found for this method' + methodus.route, 302);
-        //         }
-        //     }
-        // }
-
-    }
 }
 
 if (!(global as any).METHODUS_BRIDGE) {

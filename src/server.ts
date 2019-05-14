@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 import { Servers } from './servers';
 import { MethodusConfig, ServerConfig, PluginEntry } from './config';
-import { ServerType } from './interfaces';
 import { logger, LogClass } from './log';
 import * as colors from 'colors';
 import { ClassContainer } from './class-container';
@@ -18,7 +17,7 @@ export class Server {
     public config?: MethodusConfig;
     public serverKey: string;
 
-    private _app: any = {};
+    public _app: any = {};
     private httpServer: any;
     private port: number = 0;
     private _plugins: PluginEntry[] = [];
@@ -192,16 +191,15 @@ export class Server {
     }
 
     public kill() {
-        ['http', ServerType.Socket].forEach((server: any) => {
-            if (this._app[server]) {
-                this._app[server].close();
-                delete this._app[server];
+        Servers.serversArray.forEach((server: any) => {
+            if (server.close) {
+                server.close();
             }
+            // if (this._app[server]) {
+            //     this._app[server].close();
+            //     delete this._app[server];
+            // }
         });
     }
-
-    // async _send(channel: any, params: any, message: any, parametersMap: any, securityContext: any) {
-    //     return await this._app[channel]._send(params, message, parametersMap, securityContext);
-    // }
 
 }
