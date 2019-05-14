@@ -192,7 +192,7 @@ export class Server {
 
     public kill() {
         Servers.serversArray.forEach((server: any) => {
-            if (server.close) {
+            if (server && server.close) {
                 server.close();
             }
             // if (this._app[server]) {
