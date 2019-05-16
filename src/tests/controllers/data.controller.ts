@@ -1,4 +1,4 @@
-import { Verbs, Method, Param, MethodResult, MethodConfigBase } from '../../src/';
+import { Verbs, Method, Param, MethodResult, MethodConfigBase } from '../../shim';
 
 @MethodConfigBase('DataController')
 export class DataController {

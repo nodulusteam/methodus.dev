@@ -1,9 +1,9 @@
 
 import 'reflect-metadata';
-import { fp } from '../../src/fp';
+import { fp } from '../../fp';
 import { AMQP } from './amqp';
-import { logger } from '../../src/log';
-import { MethodEvent } from '../../src/response';
+import { logger } from '../../log';
+import { MethodEvent } from '../../response';
 import * as domain from 'domain';
 
 export async function registerWorkers(proto: any, options: any) {

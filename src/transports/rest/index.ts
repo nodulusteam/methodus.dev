@@ -1,6 +1,6 @@
 
 import { Request } from './Request';
-import { MethodError } from '../..';
+import { MethodError } from '../../response';
 export function send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any) {
     const request = new Request();
     const baseUrl = methodus.resolver();

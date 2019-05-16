@@ -1,9 +1,8 @@
 process.env.test = 'true';
 import {
-    ServerConfiguration, RouterConfiguration,
+    ServerConfiguration, RouterConfiguration, BuiltInServers, BuiltInTransports,
     ClientConfiguration, ConfiguredServer, ServerType,
-} from '../../';
-import { BuiltInServers, BuiltInTransports } from '../../src';
+} from '../../shim';
 import { TestController, TestTarget } from '../controllers/';
 
 @ServerConfiguration(BuiltInServers.Socket, { port: process.env.PORT || 8020 })

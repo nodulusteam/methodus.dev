@@ -1,4 +1,4 @@
-import { Proxy, Method, MethodResult, MethodConfig, Verbs, Param } from '../..';
+import { Proxy, Method, MethodResult, MethodConfig, Verbs, Param } from '../../shim';
 
 @Proxy.ProxyClass(__dirname, 'ProxiedController', `./controller.test`)
 @MethodConfig('ProxiedController')

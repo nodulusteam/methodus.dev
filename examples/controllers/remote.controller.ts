@@ -1,4 +1,4 @@
-import { Verbs, Method, Param, Body, MethodResult, MethodConfig } from '../../src/';
+import { Verbs, Method, Param, Body, MethodResult, MethodConfig } from '../../';
 
 @MethodConfig('RemoteController')
 export class RemoteController {

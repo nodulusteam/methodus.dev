@@ -1,7 +1,7 @@
 import { logger, LogClass } from '../../log';
 import * as express from 'express';
 import { fp } from '../../fp';
-import { MethodType } from '../../index';
+import { MethodType } from '../../shim';
 
 @LogClass(logger)
 export class ExpressRouter {

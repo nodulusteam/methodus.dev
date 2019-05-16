@@ -2,7 +2,7 @@
 import 'reflect-metadata';
 import { fp } from '../../src/fp';
 import { MQRouter } from './router';
-import { BaseServer } from '../../src/servers/base';
+import { BaseServer } from '../servers/base';
 import { logger, LogClass } from '../../src/log';
 import { MethodType } from '../../src/interfaces';
 import { MethodEvent, MethodMessage, generateUuid } from '../../src/response';

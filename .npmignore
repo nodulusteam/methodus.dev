@@ -1,7 +1,4 @@
-*.ts
-!*.d.ts
-/**/*.ts
-!/**/*.d.ts
+src
 .git
 .npmrc
 plugins
@@ -16,5 +13,5 @@ examples
 sonar-project.properties
 .travis.yml
 tslint.json
-tests
+build/tests
 modules

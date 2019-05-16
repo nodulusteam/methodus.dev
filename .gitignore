@@ -1,11 +1,7 @@
-*.js
-*.js.map
-package-lock.json
+build
 node_modules/
 logs/
-*.d.ts
 coverage/
 .nyc_output/
 .scannerwork/
 .npmrc
-yarn.lock

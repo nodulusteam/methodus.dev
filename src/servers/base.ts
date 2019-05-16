@@ -1,5 +1,5 @@
 // <references path='../interfaces/methodus.ts' />
-import { MethodType, IMethodusConfig } from '../';
+import { MethodType, IMethodusConfig } from '../shim';
 
 export abstract class BaseServer { // implements Methodus.Server
     config?: IMethodusConfig;

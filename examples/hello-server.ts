@@ -4,7 +4,7 @@ import {
 } from '../';
 
 import { DataController, RemoteController } from './controllers';
-import { BuiltInServers, BuiltInTransports } from '../src';
+import { BuiltInServers, BuiltInTransports } from '..';
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 6695 })
 @PluginConfiguration('@methodus/describe')
 @RouterConfiguration(DataController, BuiltInServers.Express)

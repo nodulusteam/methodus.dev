@@ -1,10 +1,10 @@
 
 import 'reflect-metadata';
-import { fp } from '../../src/fp';
+import { fp } from '../../fp';
 // import { AMQP } from './rabbitmq';
-import { BaseServer } from '../../src/servers/base';
-import { logger, LogClass } from '../../src/log';
-import { MethodEvent, MethodMessage } from '../../src/response';
+import { BaseServer } from '../../servers/base';
+import { logger, LogClass } from '../../log';
+import { MethodEvent, MethodMessage } from '../../response';
 const metadataKey = 'methodus';
 const kafka = require('kafka-node'),
     Producer = kafka.Producer;

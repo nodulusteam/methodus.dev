@@ -1,8 +1,8 @@
 
-import { MethodError } from '../../src/response/';
+import { MethodError } from '../../response/';
 import { ConnectionOptions } from './connection-options';
 const amqp = require('amqplib');
-import { logger } from '../../src/log';
+import { logger } from '../../log';
 export class AMQP {
     public static async connect(connectionOptions: ConnectionOptions, forceReconnect?: boolean) {
         if (AMQP._connection && !forceReconnect) {

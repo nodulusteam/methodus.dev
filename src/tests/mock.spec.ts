@@ -1,6 +1,6 @@
 process.env.test = 'true';
 import { AsyncTest, Expect, TestFixture, Timeout } from 'alsatian';
-import { Mocker } from '../src/mocker';
+import { Mocker } from '../mocker';
 import { TestController } from './controllers';
 
 @TestFixture('Test additional method classes')

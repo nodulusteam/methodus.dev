@@ -2,8 +2,8 @@ process.env.test = 'true';
 import {
     ServerConfiguration, RouterConfiguration,
     ClientConfiguration, ConfiguredServer, ServerType,
-} from '../../';
-import { BuiltInServers, BuiltInTransports } from '../../src';
+} from '../../shim';
+import { BuiltInServers, BuiltInTransports } from '../../shim';
 import { TestController, TestTarget, ScreensDataController } from '../controllers/';
 import { ProxiedController } from '../controllers/proxy.controller';
 

@@ -1,7 +1,7 @@
 import {
     MethodResult, Response, Request, Verbs, Method,
     Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies, MethodPipe,
-} from '../../src/index';
+} from '../../shim';
 
 @MethodConfig('TestTarget')
 export class TestTarget {

@@ -1,8 +1,7 @@
 
-import {
+import {BuiltInTransports,
     ClientConfiguration, ConfiguredServer,
-} from '../../';
-import { BuiltInTransports } from '../../src';
+} from '../../shim';
 import { TestTarget } from '../controllers/';
 
 @ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8090')

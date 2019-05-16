@@ -1,10 +1,8 @@
 
 import 'reflect-metadata';
 import * as colors from 'colors';
-import { Servers } from '../../src/servers/serversList';
-import { logger, LogClass } from '../../src/log';
+import { Servers, logger, LogClass, fp, ITransport } from '../../shim';
 import { EventEmitter } from 'events';
-import { fp, ITransport } from '../../src';
 const metadataKey = 'methodus';
 
 export const sharedEmitter: EventEmitter = new EventEmitter();

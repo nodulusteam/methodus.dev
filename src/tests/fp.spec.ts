@@ -1,6 +1,6 @@
 
 import { Expect, Test, TestCase, TestFixture } from 'alsatian';
-import { fp } from '../src/fp';
+import { fp } from '../fp';
 import { TestController } from './controllers';
 
 @TestFixture('Test the FP functions')
