@@ -11,11 +11,19 @@ export class MethodError extends Error {
             message = error.message;
         }
         super(message);
-        this.error = error;
+
+        if (error.error && error.statusCode) {
+            this.error = error.error;
+            this.statusCode = error.statusCode;
+            this.stack = error.stack;
+        } else {
+            this.error = error;
+        }
 
         this.statusCode = statusCode || 500;
         if (additional) {
             this.additional = additional;
         }
+
     }
 }
