@@ -5,7 +5,7 @@ export class ServersList {
     public classes: any;
     public clients: any;
     public _app: any;
-    public serversArray: any [];
+    public serversArray: any[];
     constructor() {
         this.classes = {};
         this.instances = {};
@@ -29,11 +29,16 @@ export class ServersList {
             return this.instances[instanceId];
         }
     }
+    public reset() {
+        this.instances = {};
+        this.serversArray = [];
+        (global as any).METHODUS_BRIDGE = new ServersList();
+
+    }
 
 }
 
 if (!(global as any).METHODUS_BRIDGE) {
-
     (global as any).METHODUS_BRIDGE = new ServersList();
 }
 

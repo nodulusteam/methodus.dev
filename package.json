@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "3.0.24",
+    "version": "3.0.25",
     "description": "Server components for @methodus workflow",
     "main": "build/index.js",
     "types": "build/index.d.ts",
@@ -32,7 +32,7 @@
         "test:servers": "npm run build &&  set test='true'&alsatian build/tests/servers.spec.js",
         "test:events": "npm run build &&  set test='true'&alsatian build/tests/events.spec.js",
         "test:gateway": "npm run build &&  set test='true'&alsatian build/tests/gateway.spec.js",
-        "xtest": "set NODE_LOG_LEVEL=trace  test='true'&alsatian build/tests/*.spec.js",
+        "xtest": "set NODE_LOG_LEVEL=trace  test='true' NODE_LOG_CONSOLE=true &alsatian build/tests/*.spec.js",
         "temp": "build/tests/gateway.spec.js build/tests/events.spec.js build/tests/decorators.spec.js src/tests/fp.spec.js",
         "test:fp": "npm run build &&  set test='true'&alsatian build/tests/fp.spec.js",
         "servers": "tsc && alsatian build/tests/servers.spec.js ",

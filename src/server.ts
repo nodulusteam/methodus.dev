@@ -200,6 +200,7 @@ export class Server {
             //     delete this._app[server];
             // }
         });
+        Servers.reset();
     }
 
 }

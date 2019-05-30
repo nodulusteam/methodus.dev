@@ -1,9 +1,9 @@
 process.env.test = 'true';
-import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
+import { AsyncTest, Expect,  TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { SocketTestServer } from './servers/';
 import { TestTarget } from './controllers/';
 
-@TestFixture('Test Xserver configuration')
+@TestFixture('Test SocketIO configuration')
 export class Servers {
     server: any;
     @AsyncSetupFixture
@@ -21,6 +21,7 @@ export class Servers {
         this.server.kill();
     }
 
+    
     @AsyncTest('list')
     @Timeout(1000 * 1000)
     public async list() {
@@ -28,7 +29,7 @@ export class Servers {
         Expect(response.result.length).toBe(5);
 
     }
-
+    
     @AsyncTest('list')
     @Timeout(1000 * 1000)
     public async listDefaults() {
@@ -36,7 +37,7 @@ export class Servers {
         Expect(response.result.length).toBe(5);
 
     }
-
+    
     @AsyncTest('read')
     @Timeout(1000 * 1000)
     public async read(): Promise<any> {

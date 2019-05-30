@@ -3,7 +3,7 @@ import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardo
 import { ExpressTestServer } from './servers/';
 import { TestTarget } from './controllers';
 
-@TestFixture('Test Xserver configuration')
+@TestFixture('Test Express configuration')
 export class Servers {
     server: any;
     @AsyncSetupFixture

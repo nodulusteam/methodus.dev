@@ -8,7 +8,7 @@ export class FP {
 
     @Test('maybeJson')
     @TestCase('some string')
-    @TestCase(null)
+    // @TestCase(null)
     @TestCase('{ "prop1": "1", "prop2": "2" }')
     @TestCase({ prop1: 1, prop2: 2 })
     public async maybeJson(object: any) {
@@ -17,7 +17,7 @@ export class FP {
     }
 
     @Test('maybeMethodus')
-    @TestCase(null)
+    // @TestCase(null)
     @TestCase(TestController)
     public async maybeMethodus(object: any) {
         const parsed = fp.maybeMethodus(object);
@@ -25,7 +25,7 @@ export class FP {
     }
 
     @Test('maybeString')
-    @TestCase(null)
+    // @TestCase(null)
     @TestCase({ prop1: 1, prop2: 2 })
     public async maybeString(object: any) {
         const parsed = fp.maybeString(object);
@@ -34,9 +34,9 @@ export class FP {
 
     @Test('maybeProto')
     @TestCase({ prop1: 1, prop2: 2 })
-    @TestCase({})
-    @TestCase(null)
-    @TestCase([])
+    // @TestCase({})
+    // @TestCase(null)
+    // @TestCase([])
     public async maybeProto(object: any) {
         const parsed = fp.maybeProto(object);
         Expect(parsed).not.toBeNull();
