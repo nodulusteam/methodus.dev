@@ -1,5 +1,7 @@
 import { Verbs, Method, Param, MethodResult, MethodConfigBase } from '../../shim';
-
+/**
+ * @ignore
+ */
 @MethodConfigBase('DataController')
 export class DataController {
     public static repository: any;

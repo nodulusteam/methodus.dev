@@ -4,6 +4,9 @@ import {
     Files, Cookies, MethodPipe, MethodResultStatus, generateUuid,
 } from '../../shim';
 
+/**
+ * @ignore
+ */
 @MethodConfig('TestController')
 export class TestController {
     @MethodMock({})

@@ -1,5 +1,8 @@
 import { Proxy, Method, MethodResult, MethodConfig, Verbs, Param } from '../../shim';
 
+/**
+ * @ignore
+ */
 @Proxy.ProxyClass(__dirname, 'ProxiedController', `./controller.test`)
 @MethodConfig('ProxiedController')
 export class ProxiedController {

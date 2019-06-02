@@ -28,16 +28,13 @@
     "scripts": {
         "build": "trash build && tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "trash coverage .nyc_output && npm run build && nyc --reporter=lcov --reporter=html npm run xtest && nyc report",
-        "test:servers": "npm run build &&  set test='true'&alsatian build/tests/servers.spec.js",
-        "test:events": "npm run build &&  set test='true'&alsatian build/tests/events.spec.js",
-        "test:gateway": "npm run build &&  set test='true'&alsatian build/tests/gateway.spec.js",
-        "xtest": "set NODE_LOG_LEVEL=trace  test='true' NODE_LOG_CONSOLE=true &alsatian build/tests/*.spec.js",
-        "temp": "build/tests/gateway.spec.js build/tests/events.spec.js build/tests/decorators.spec.js src/tests/fp.spec.js",
-        "test:fp": "npm run build &&  set test='true'&alsatian build/tests/fp.spec.js",
-        "servers": "tsc && alsatian build/tests/servers.spec.js ",
+        "test": "trash coverage && npm run build && npm run test:full",
+        "test:full": "alsatian build/tests/*.spec.js",
+        "report": "nyc report",
+        "doc": "run-s doc:html && opn build/docs/index.html",
+        "doc:html": "typedoc src/",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
-        "check-coverage": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
+        "cov": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
     },
     "author": "Roi ben-haim",
     "license": "ISC",
@@ -83,6 +80,8 @@
         "@types/socket.io": "^2.1.2",
         "@types/uuid": "^3.4.4",
         "alsatian": "^2.0.0",
+        "typedoc": "^0.13.0",
+        "typedoc-plugin-markdown": "^1.2.0",
         "child-process-debug": "0.0.7",
         "nedb": "^1.8.0",
         "nedb-promise": "^2.0.1",
@@ -91,6 +90,14 @@
         "reflect-metadata": "^0.1.10",
         "trash-cli": "^1.4.0",
         "tslint": "^5.11.0",
-        "typescript": "^3.4.0"
+        "typescript": "^3.4.0",
+        "opn-cli": "^4.0.0",
+        "standard-version": "^4.4.0"
+    },
+    "nyc": {
+        "exclude": [
+            "**/*.spec.js"
+        ],
+        "report-dir": "./output/coverage"
     }
 }

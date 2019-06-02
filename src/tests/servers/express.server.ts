@@ -7,6 +7,9 @@ import { BuiltInServers, BuiltInTransports } from '../../shim';
 import { TestController, TestTarget, ScreensDataController } from '../controllers/';
 import { ProxiedController } from '../controllers/proxy.controller';
 
+/**
+ * @ignore
+ */
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')
 @RouterConfiguration(TestController, ServerType.Express)

@@ -4,7 +4,9 @@ import {
     ClientConfiguration, ConfiguredServer, ServerType,
 } from '../../shim';
 import { TestController, TestTarget } from '../controllers/';
-
+/**
+ * @ignore
+ */
 @ServerConfiguration(BuiltInServers.Socket, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')
 @RouterConfiguration(TestController, ServerType.Socket)

@@ -1,7 +1,9 @@
 process.env.test = 'true';
 import { AsyncTest, Expect, TestFixture, Timeout } from 'alsatian';
 import { MethodusConfig, MethodusClassConfig } from '../config';
-
+/**
+ * @ignore
+ */
 @TestFixture('Test additional method classes')
 export class Units {
 

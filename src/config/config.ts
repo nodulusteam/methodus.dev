@@ -55,7 +55,9 @@ export class MethodusConfig {
         this.servers.push(new ServerConfig(serverType, configuration));
     }
 }
-
+/**
+ * @ignore
+ */
 export class MethodusConfigurations {
     static _configurations: any;
     public static add(configurationInstance: any) {

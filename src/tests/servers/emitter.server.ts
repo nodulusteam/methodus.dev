@@ -11,6 +11,9 @@ import { EmitterPlugin } from './emitter.plugin';
 import { PluginConfiguration } from '../../shim';
 
 const ServerPlugin = new EmitterPlugin();
+/**
+ * @ignore
+ */
 @PluginConfiguration(path.join(__dirname, 'simple.plugin'))
 @ServerConfiguration(ServerPlugin, {})
 @RouterConfiguration(TestController, ServerPlugin.name)

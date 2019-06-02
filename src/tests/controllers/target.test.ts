@@ -3,6 +3,9 @@ import {
     Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies, MethodPipe,
 } from '../../shim';
 
+/**
+ * @ignore
+ */
 @MethodConfig('TestTarget')
 export class TestTarget {
     @MethodMock({})

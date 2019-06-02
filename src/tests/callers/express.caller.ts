@@ -4,6 +4,9 @@ import {BuiltInTransports,
 } from '../../shim';
 import { TestTarget } from '../controllers/';
 
+/**
+ * @ignore
+ */
 @ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8090')
 export class Xserver extends ConfiguredServer {
     constructor() {

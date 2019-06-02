@@ -1,9 +1,9 @@
 import 'reflect-metadata';
 import { MethodType, ServerType } from '../interfaces';
 
-/** the MethodConfig decorator registers the controller as a router
- *  @param {string} name - the identifier of the controller in the resolver.
- *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+/** the RouterConfiguration decorator registers the controller as a router
+ *  @param {type} controller - a controller class using the @MethodConfig decorator.
+ *  @param {string} serverType - the name of the server
  */
 export function RouterConfiguration(controller: any, serverType: ServerType | string) {
   return (target: any) => {
