@@ -11,7 +11,7 @@ import { Express } from './express';
 
 export function register(server: any, parentServer: any) {
         const serverType = server.type.name;
-        logger.info(this, colors.green(`> Starting REST server on port ${server.options.port}`));
+        logger.info( colors.green(`> Starting REST server on port ${server.options.port}`));
         console.log(colors.green(`> Starting REST server on port ${server.options.port}`));
 
         parentServer._app[serverType] = new Express(server.options.port, server.options.onStart);

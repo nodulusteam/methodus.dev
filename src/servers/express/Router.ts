@@ -36,7 +36,7 @@ export class ExpressRouter {
                 const verb = item.verb.toLowerCase();
                 const functionArray = [...globalMiddlewares];
                 if (item.middlewares) {
-                    logger.info(this, `loading middleware for ${item.propertyKey}`);
+                    logger.info( `loading middleware for ${item.propertyKey}`);
                     item.middlewares.forEach((element: any) => {
                         if (element) {
                             functionArray.push(element);

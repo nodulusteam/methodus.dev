@@ -107,7 +107,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
                         return { [param.name || param.from]: ParserResponse.args[param.index] };
                     });
 
-                    logger.info(`Method::call`, methodType, originalMethod.name, ...mappedArgs);
+                    logger.info(`@Method::call`, methodType, originalMethod.name, ...mappedArgs);
                     switch (methodType) {
                         case MethodType.Mock:
                             methodResult = new MethodResult(methodus._mocks[propertyKey]);
@@ -143,7 +143,7 @@ export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
 
                 } else {
 
-                    logger.info(`Method::OK`, '<==', methodType, originalMethod.name);
+                    logger.info(`@Method::OK`, methodType, originalMethod.name);
                     return methodResult;
 
                 }

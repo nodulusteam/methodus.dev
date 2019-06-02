@@ -3,7 +3,7 @@ import 'reflect-metadata';
 
 /** the ServerConfiguration decorator registers a server
  *  @param {string} serverType - the type for the server.
- *  @param {object} options - any options that needs to be passed to the server object 
+ *  @param {object} options - any options that needs to be passed to the server object
  */
 export function ServerConfiguration(serverType: any, options?: any) {
     return (target: any) => {

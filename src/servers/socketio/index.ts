@@ -6,7 +6,7 @@ import { Servers } from '../serversList';
 import { logger } from '../../log';
 
 export function register(server: any, parentServer: any) {
-    logger.info(this, colors.green(`> Starting SOCKETIO server`));
+    logger.info( colors.green(`> Starting SOCKETIO server`));
     console.log(colors.green(`> Starting SOCKETIO server`));
 
     const httpServer = Servers.get(server.instanceId, 'http')

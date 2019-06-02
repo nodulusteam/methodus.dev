@@ -92,7 +92,7 @@ export class FastifyRouter {
                 const verb = item.verb.toLowerCase();
                 const functionArray: any[] = [...globalMiddlewares];
                 if (item.middlewares) {
-                    logger.info(this, `loading middleware for ${item.propertyKey}`);
+                    logger.info(`loading middleware for ${item.propertyKey}`);
                     item.middlewares.forEach((element: any) => {
                         if (element) {
                             functionArray.push(element);
@@ -111,7 +111,7 @@ export class FastifyRouter {
 export function register(server: any, parentServer: any) {
     const serverType = server.type.name;
 
-    logger.info(this, colors.red(`> Starting HTTP2 server on port ${server.options.port}`));
+    logger.info(colors.red(`> Starting HTTP2 server on port ${server.options.port}`));
     console.log(colors.red(`> Starting HTTP2 server on port ${server.options.port}`));
     parentServer._app[serverType] = new Fastify(server.options.port, server.options.onStart);
     const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);

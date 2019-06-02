@@ -139,7 +139,7 @@ export function Method(verb: Verbs, route: string, middlewares?: any[]) {
                         return { [param.name || param.from]: ParserResponse.args[param.index] };
                     });
 
-                    logger.info(`Method::call`, methodType, originalMethod.name, ...mappedArgs);
+                    logger.info('@Method::call', methodType, originalMethod.name, ...mappedArgs);
                     switch (methodType) {
                         case MethodType.Mock:
                             if (methodus._mocks && methodus._mocks[propertyKey]) {

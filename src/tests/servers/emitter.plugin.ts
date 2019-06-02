@@ -60,7 +60,7 @@ export class EmitterPlugin implements ITransport {
     name: string = 'Plugin';
 
     public register(server: any, parentServer: any): void {
-        logger.info(this, colors.green(`> Starting Custom server`));
+        logger.info(colors.green(`> Starting Custom server`));
         console.log(colors.green(`> Starting Custom ${server.type.name} server`));
         const app = new CustomMessageServer();
         Servers.set(server.instanceId, server.type.name, app);

@@ -102,7 +102,7 @@ export class SocketIORouter implements Methodus.Router {
         Object.keys(methodus._descriptors).forEach((itemKey) => {
             const item = methodus._descriptors[itemKey];
             debug('activating controller method', item, methodus);
-            logger.info(this, `registering socket event`, item.verb + '_' + item.route);
+            logger.info(`registering socket event`, item.verb + '_' + item.route);
 
             socket.on(item.verb + '_' + item.route, async (data: any, callback: any) => {
                 // parse params

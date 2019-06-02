@@ -79,7 +79,7 @@ export class Server {
             if (metaObject) {
                 metaObject.methodType = _class.transportType.name;
                 ClassContainer.set(configName, metaObject);
-                logger.info(this,
+                logger.info(
                     colors.blue(`using class ${_class.classType.name} in ${_class.transportType.name} mode`));
 
             } else {
@@ -175,7 +175,7 @@ export class Server {
                         metaObject.serverType = serverTypeName;
                         metaObject.instanceId = serverInstance.instanceId;
                         ClassContainer.set(configName, metaObject);
-                        logger.info(this,
+                        logger.info(
                             colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
 
                         const activeServers = Servers.get(serverInstance.instanceId, serverTypeName);
