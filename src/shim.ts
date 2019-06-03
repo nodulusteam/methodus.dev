@@ -12,3 +12,4 @@ export * from './servers';
 export * from './server.configured';
 export * from './builtin';
 export * from './mocker';
+export * from './fp';
