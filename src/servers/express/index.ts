@@ -10,8 +10,9 @@ import { logger } from '../../log';
 import { Express } from './express';
 
 export function register(server: any, parentServer: any) {
+    if (server.options) {
         const serverType = server.type.name;
-        logger.info( colors.green(`> Starting REST server on port ${server.options.port}`));
+        logger.info(colors.green(`> Starting REST server on port ${server.options.port}`));
         console.log(colors.green(`> Starting REST server on port ${server.options.port}`));
 
         parentServer._app[serverType] = new Express(server.options.port, server.options.onStart);
@@ -19,7 +20,11 @@ export function register(server: any, parentServer: any) {
         parentServer.app = app._app;
         const httpServer = Servers.get(server.instanceId, 'http')
             || http.createServer(app._app);
-            parentServer._app.http = httpServer;
+        parentServer._app.http = httpServer;
 
         Servers.set(server.instanceId, 'http', httpServer);
+    } else {
+        throw new Error('Missing configuration options for Express');
+    }
+
 }

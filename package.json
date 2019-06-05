@@ -39,7 +39,7 @@
     "author": "Roi ben-haim",
     "license": "ISC",
     "dependencies": {
-        "@types/mongodb": "^3.1.27",
+        
         "body-parser": "^1.17.2",
         "colors": "^1.1.2",
         "consolidate": "^0.15.0",
@@ -69,6 +69,7 @@
         "cookie-parser": "^1.4.3"
     },
     "devDependencies": {
+        "@types/mongodb": "^3.1.27",
         "@methodus/data": "^2.0.0",
         "@types/cookie-parser": "^1.4.1",
         "@types/etag": "^1.8.0",

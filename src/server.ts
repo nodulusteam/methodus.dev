@@ -109,7 +109,7 @@ export class Server {
         if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
 
-                if (server.options.port) {
+                if (server.options && server.options.port) {
                     this.port = server.options.port;
                 }
                 if (server.onStart) {
