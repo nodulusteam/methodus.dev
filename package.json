@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "3.0.30",
+    "version": "3.0.31",
     "description": "Server components for @methodus workflow",
     "main": "build/index.js",
     "types": "build/index.d.ts",
@@ -39,7 +39,6 @@
     "author": "Roi ben-haim",
     "license": "ISC",
     "dependencies": {
-        
         "body-parser": "^1.17.2",
         "colors": "^1.1.2",
         "consolidate": "^0.15.0",
