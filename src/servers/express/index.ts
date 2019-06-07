@@ -13,7 +13,6 @@ export function register(server: any, parentServer: any) {
     if (server.options) {
         const serverType = server.type.name;
         logger.info(colors.green(`> Starting REST server on port ${server.options.port}`));
-        console.log(colors.green(`> Starting REST server on port ${server.options.port}`));
 
         parentServer._app[serverType] = new Express(server.options.port, server.options.onStart);
         const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);

@@ -1,5 +1,5 @@
 import { DataController } from './data.controller';
-import { MethodConfig, Method, Param, MethodResult, Verbs, MethodConfigExtend } from '../../shim';
+import { MethodConfig, Method, Param, MethodResult, Verbs, MethodConfigExtend } from '../shim';
 import { ScreenModel } from '../models/screen.model';
 
 /**

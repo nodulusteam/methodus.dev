@@ -1,7 +1,7 @@
 
 import {BuiltInTransports,
     ClientConfiguration, ConfiguredServer,
-} from '../../shim';
+} from '../shim';
 import { TestTarget } from '../controllers/';
 
 /**

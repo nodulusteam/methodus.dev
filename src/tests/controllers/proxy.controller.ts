@@ -1,4 +1,4 @@
-import { Proxy, Method, MethodResult, MethodConfig, Verbs, Param } from '../../shim';
+import { Proxy, Method, MethodResult, MethodConfig, Verbs, Param } from '../shim';
 
 /**
  * @ignore

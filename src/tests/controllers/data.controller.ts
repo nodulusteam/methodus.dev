@@ -1,4 +1,4 @@
-import { Verbs, Method, Param, MethodResult, MethodConfigBase } from '../../shim';
+import { Verbs, Method, Param, MethodResult, MethodConfigBase } from '../shim';
 /**
  * @ignore
  */
