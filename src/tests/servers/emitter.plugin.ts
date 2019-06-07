@@ -1,7 +1,7 @@
 
 import 'reflect-metadata';
 import * as colors from 'colors';
-import { Servers, logger, LogClass, ITransport } from '../../shim';
+import { Servers, logger, LogClass, ITransport } from '../shim';
 import { EventEmitter } from 'events';
 import { fp } from '../../fp';
 const metadataKey = 'methodus';
@@ -60,8 +60,8 @@ export class EmitterPlugin implements ITransport {
     name: string = 'Plugin';
 
     public register(server: any, parentServer: any): void {
-        logger.info(colors.green(`> Starting Custom server`));
-        console.log(colors.green(`> Starting Custom ${server.type.name} server`));
+        logger.info(colors.green(`> Starting Custom ${server.type.name} server`));
+
         const app = new CustomMessageServer();
         Servers.set(server.instanceId, server.type.name, app);
     }

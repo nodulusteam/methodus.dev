@@ -133,7 +133,6 @@ export function register(server: any, parentServer: any) {
     const serverType = server.type.name;
 
     logger.info(this, colors.green(`> Starting SOCKETIO server on port ${server.options.port}`));
-    console.log(colors.green(`> Starting SOCKETIO server on port ${server.options.port}`));
 
     const httpServer = Servers.get(server.instanceId, 'http');
 
