@@ -2,7 +2,7 @@ process.env.test = 'true';
 import {
     ServerConfiguration, RouterConfiguration, BuiltInServers, BuiltInTransports,
     ClientConfiguration, ConfiguredServer, ServerType,
-} from '../../shim';
+} from '../shim';
 import { TestController, TestTarget } from '../controllers/';
 /**
  * @ignore

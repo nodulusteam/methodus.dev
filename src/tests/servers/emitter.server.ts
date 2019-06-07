@@ -4,11 +4,11 @@ import * as path from 'path';
 import {
     ServerConfiguration, RouterConfiguration,
     ClientConfiguration, ConfiguredServer,
-} from '../../shim';
+} from '../shim';
 import { TestController } from '../controllers/';
 import { TestTarget } from '../controllers/';
 import { EmitterPlugin } from './emitter.plugin';
-import { PluginConfiguration } from '../../shim';
+import { PluginConfiguration } from '../shim';
 
 const ServerPlugin = new EmitterPlugin();
 /**

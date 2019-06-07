@@ -2,7 +2,7 @@ import {
     MethodResult, Response, Request, SecurityContext, Verbs, Headers,
     Method, Query, Param, MethodMock, MethodConfig, Body, MethodError,
     Files, Cookies, MethodPipe, MethodResultStatus, generateUuid,
-} from '../../shim';
+} from '../shim';
 
 /**
  * @ignore
