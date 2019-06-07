@@ -26,13 +26,6 @@ This ability is very usefull when developing distribued / dynamic applications, 
 
 
 
-
-
-
-
-
-
-
 ### Greetings,
 my fellow adventures developer, I welcome you into Methodus. 
 You did not arrive here by mistake, nor was it an accident, it is your fate.
