@@ -5,4 +5,6 @@
 
 [SocketIO server](./packed/socketio.md)
 
+[Frontend backed with an API](./packed/frontend-apis.md)
+
 [Custom transports/servers](./packed/custom.md)
