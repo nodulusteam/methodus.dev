@@ -1,7 +1,7 @@
 
 
 [Download the code for the consuming-rest-services](./consuming-rest-services.zip "Consuming Rest Services")
-### step 1 - create a controller : LocalController
+### step 1 - create a controller : DataController
 Methodus controllers are transport agnostic; parameters are passed via arguments to a function , which returns a value or raise an error, pretty straightforward but extermely powerful.
 This simple controller is not doing any thing.
 

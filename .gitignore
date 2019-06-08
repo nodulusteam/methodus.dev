@@ -6,3 +6,4 @@ coverage/
 .scannerwork/
 .npmrc
 yarn.lock
+examples/packed/**/*.js

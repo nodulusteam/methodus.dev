@@ -1,0 +1,19 @@
+{
+  "name": "simple-express-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "open": "call start http://localhost:6695",
+    "start": "tsc && npm run open &&  node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@methodus/server": "^3.0.18",
+    "@types/node": "^12.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^3.4.0"
+  }
+}
