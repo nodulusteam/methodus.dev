@@ -1,9 +1,6 @@
 
 
-[Download the code for the consuming-rest-services](./consuming-rest-services.zip "Consuming Rest Services")
-### step 1 - create a controller : DataController
-Methodus controllers are transport agnostic; parameters are passed via arguments to a function , which returns a value or raise an error, pretty straightforward but extermely powerful.
-This simple controller is not doing any thing.
+### Step 1 - create a controller : LocalController
 
 - src/local.controller.ts
 ```typescript
@@ -37,7 +34,7 @@ export class LocalController {
 ```
 
 - src/remote.service.ts
-## step 2 - create the remote contract controller
+## Step 2 - create the remote contract controller
 This controller is a virtual controller to a remote endpoint. The transport configuration determines its role in the server file.
 
 ```typescript
@@ -70,7 +67,7 @@ export class RemoteService {
 
 
 ```
-### step 3 - create the server
+### Step 3 - create the server
 We want to "bind" our controller as a REST endpoint, for that we will need a server.
 
 Create an "Express" server using the built in implementation.
