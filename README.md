@@ -102,3 +102,8 @@ public static async getByName( @Param('file_name') file_name, @SecurityContext()
 Methodus methods are automatiaclly loged using the Trace log level.
 you may have noticed the use of static methods for the controller class. this is not mandatory as you may use either static or instance approach,
 as long as you do that for all the methods in the class.
+
+
+
+
+Look at the awesome logo I made at: <a href='https://onlinelogomaker.com' title='Online Logo Maker'>onlinelogomaker.com</a>
