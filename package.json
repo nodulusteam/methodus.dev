@@ -101,21 +101,22 @@
             "html",
             "lcov"
         ],
-        "temp-directory": "./.nyc_output",
+        "temp-directory": "./output/.nyc_output",
         "all": true,
         "exclude": [
-            "build/tests/callers",
+            "src/tests/callers",
             "**/tests/*.js",
             "**/*.d.ts",
             "**/*.spec.*"
         ],
         "extension": [
+            "*.js",
             ".ts"
         ],
         "sourceMap": true,
         "instrument": true,
         "include": [
-            "build"
+            "src"
         ],
         "report-dir": "./output/coverage"
     }

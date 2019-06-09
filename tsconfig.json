@@ -10,12 +10,12 @@
         "excludeNotExported": "true",
         "target": "ES6",
         "mode": "file",
-        "out": "build/docs",
+        "out": "docs",
         "exclude": "tests"
     },
     "compilerOptions": {
         "importHelpers": true,
-        "target": "es2017", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
+        "target": "ES6", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
         "module": "commonjs",
         "outDir": "build/",
         "rootDir": "src",
@@ -52,9 +52,9 @@
         ], /* Type declaration files to be included in compilation. */
         // "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
         /* Source Map Options */
-        "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
+        //  "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
         // "mapRoot": "./",                       /* Specify the location where debugger should locate map files instead of generated locations. */
-        "inlineSourceMap": true, /* Emit a single file with source maps instead of having a separate file. */
+        "inlineSourceMap": false, /* Emit a single file with source maps instead of having a separate file. */
         // "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
         /* Experimental Options */
         "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
