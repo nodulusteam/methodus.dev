@@ -1,5 +1,4 @@
 
-import * as MethodusImport from './shim';
 export * from './verbs';
 export * from './log';
 export * from './interfaces/methodus';
@@ -12,8 +11,7 @@ export * from './class-container';
 export * from './server';
 export * from './servers';
 export * from './server.configured';
-export * from './builtin';
+export * from './built-in-servers';
+export * from './built-in-transports';
 export * from './mocker';
 export * from './fp';
-
-export const Methodus = MethodusImport;

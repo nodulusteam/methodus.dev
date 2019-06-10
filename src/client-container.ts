@@ -1,4 +1,8 @@
-export class ClientContainer {
+    /**
+     * Client transport container
+     * @public
+     */
+    export class ClientContainer {
     client: any;
     constructor(clientInformation: any) {
         if (clientInformation.path) {
