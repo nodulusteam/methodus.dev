@@ -32,7 +32,7 @@
         "test:full": "nyc alsatian build/tests/*.spec.js",
         "report": "nyc report --html --clover",
         "doc": "run-s doc:html && opn docs/index.html",
-        "doc:html": "typedoc src/",
+        "doc:html": "typedoc --mdDocusaurus src/",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
     },
@@ -96,27 +96,15 @@
         "typescript": "^3.4.0"
     },
     "nyc": {
-        "reporter": [
-            "text",
-            "html",
-            "lcov"
-        ],
-        "temp-directory": "./output/.nyc_output",
-        "all": true,
+        "branches": 80,
+        "lines": 80,
+        "functions": 80,
+        "statements": 80,
+        "temp-dir": "./output/.nyc_output",
         "exclude": [
-            "src/tests/callers",
-            "**/tests/*.js",
-            "**/*.d.ts",
-            "**/*.spec.*"
-        ],
-        "extension": [
-            "*.js",
-            ".ts"
-        ],
-        "sourceMap": true,
-        "instrument": true,
-        "include": [
-            "src"
+            "**/tests",
+            "**/*.spec.js",
+            "**/mock.*"
         ],
         "report-dir": "./output/coverage"
     }

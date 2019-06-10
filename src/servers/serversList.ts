@@ -5,7 +5,7 @@ export class ServersList {
     public classes: any;
     public clients: any;
     public _app: any;
-    public serversArray: any[];
+public serversArray: any[];
     constructor() {
         this.classes = {};
         this.instances = {};

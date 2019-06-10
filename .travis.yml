@@ -13,6 +13,6 @@ addons:
   sonarcloud:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 before_script:
-  - npm test 
+  - npm run cov 
 script:
   - sonar-scanner

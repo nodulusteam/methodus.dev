@@ -5,25 +5,29 @@
         "examples"
     ],
     "typedocOptions": {
-        "theme": "minimal",
+        "theme": "markdown",
+        "mdDocusaurus": "false",
+        "mdEngine": "gitbook",
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "ES6",
         "mode": "file",
-        "out": "docs",
+        "readme": "none",
+        "out": "docs/reference",
         "exclude": "tests"
     },
     "compilerOptions": {
         "importHelpers": true,
-        "target": "ES6", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
+        "target": "ES2017", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
         "module": "commonjs",
         "outDir": "build/",
         "rootDir": "src",
         "lib": [
+            "es2016",
             "es2015"
         ],
         "declaration": true, /* Generates corresponding '.d.ts' file. */
-        // "sourceMap": true, /* Generates corresponding '.map' file. */
+        "sourceMap": true, /* Generates corresponding '.map' file. */
         "removeComments": true, /* Do not emit comments to output. */
         // "noEmit": true,                        /* Do not emit outputs. */
         // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */
@@ -54,8 +58,8 @@
         /* Source Map Options */
         //  "sourceRoot": "./", /* Specify the location where debugger should locate TypeScript files instead of source locations. */
         // "mapRoot": "./",                       /* Specify the location where debugger should locate map files instead of generated locations. */
-        "inlineSourceMap": false, /* Emit a single file with source maps instead of having a separate file. */
-        // "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+        "inlineSourceMap": false,
+        "inlineSources": false, /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
         /* Experimental Options */
         "experimentalDecorators": true, /* Enables experimental support for ES7 decorators. */
         "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */

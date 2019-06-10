@@ -10,6 +10,7 @@ export * from './class-container';
 export * from './server';
 export * from './servers';
 export * from './server.configured';
-export * from './builtin';
+export * from './built-in-servers';
+export * from './built-in-transports';
 export * from './mocker';
 export * from './fp';
