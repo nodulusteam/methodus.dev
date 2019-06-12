@@ -31,8 +31,7 @@
         "test": "trash coverage && npm run build && npm run test:full ",
         "test:full": "nyc alsatian build/**/*.spec.js",
         "report": "nyc report --html --clover",
-        "doc": "run-s doc:html && opn docs/index.html",
-        "doc:html": "typedoc --mdDocusaurus src/",
+        "doc": "docsify serve docs",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "nyc --reporter=lcov --reporter=html npm run test && nyc report"
     },

@@ -1,5 +1,5 @@
 <!-- docs/_sidebar.md -->
 
-* [Home](/)
+* [Home](/main.md)
 * [Reference](reference/api-readme.md)
 * [Examples](examples/index.md)

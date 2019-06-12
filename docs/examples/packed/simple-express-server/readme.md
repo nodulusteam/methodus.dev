@@ -1,6 +1,38 @@
 
 ## A simple "Express" application (Hello World);
 
+
+
+
+
+
+### Step 1 - create a local controller => controller.ts
+> Methodus controllers are transport agnostic; parameters are passed via arguments to a function , which returns a value or raise an error, pretty straightforward but extermely powerful.
+
+This simple controller just returns items from the items object
+
+
+
+### Step 2 - Create a server
+We want to "bind" our controller as a REST endpoint, for that we will need a REST server.
+
+Create an "Express" server using the built in implementation.
+> The `@ServerConfiguration` decorator represents an instance of a server,
+> while the `@RouterConfiguration` is used to bind our controller to the type of server we wish to use.
+
+
+
+### Run
+After running your server you should be able to browse to http://localhost:6695/
+
+
+
+
+
+<!-- tabs:start -->
+
+#### **package.json**
+
 > Start a new NodeJS Typescript project (npm i/yarn)
 ```Json
 {
@@ -24,12 +56,8 @@
 }
 ```
 
-### Step 1 - create a local controller => controller.ts
-> Methodus controllers are transport agnostic; parameters are passed via arguments to a function , which returns a value or raise an error, pretty straightforward but extermely powerful.
+#### **controller.ts**
 
-This simple controller is not doing any thing.
-
-> controller.ts
 ```typescript
 import { MethodConfig, Method, Verbs, Body, Param,
 MethodResult, MethodError } from '@methodus/server';
@@ -46,25 +74,22 @@ export class LocalController {
     public static async get(@Param('id') id: string): Promise<MethodResult> {
         return new MethodResult(items[id]);
     }
-    @Method(Verbs.Get, '/api/error/')
+    @Method(Verbs.Post, '/api/error/')
     public static async error(@Body('item') item: any): Promise<MethodResult> {
         throw new MethodError('some error happend', 503);
     }
 }
 ```
 
-### step 1 - create a server
-We want to "bind" our controller as a REST endpoint, for that we will need a server.
-
-Create an "Express" server using the built in implementation.
-> The `@ServerConfiguration` decorator represents an instance of a server,
-> while the `@RouterConfiguration` is used to bind our controller to the type of server we wish to use.
+#### **index.ts**
 
 ```typescript
 import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
 import { LocalController } from './controller';
-@ServerConfiguration(BuiltInServers.Express, { port: 6695 }) // instantiate express on given port
-@RouterConfiguration(LocalController, BuiltInServers.Express) // attach the DataController class to the Express instance 
+// instantiate express on given port
+@ServerConfiguration(BuiltInServers.Express, { port: 6695 }) 
+// attach the DataController class to the Express instance 
+@RouterConfiguration(LocalController, BuiltInServers.Express) 
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);
@@ -77,9 +102,8 @@ export class Xserver extends ConfiguredServer {
 })();
 ```
 
-### Run
-After running your server you should be able to browse to http://localhost:6695/
+<!-- tabs:end -->
 
 
-
+<iframe src="https://codesandbox.io/embed/methodus-simple-express-server-l9zu1?fontsize=14" title="Methodus - Simple Express Server" allow="geolocation; microphone; camera; midi; vr; accelerometer; gyroscope; payment; ambient-light-sensor; encrypted-media" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
 
