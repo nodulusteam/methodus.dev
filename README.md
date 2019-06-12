@@ -5,9 +5,9 @@
 ![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
 
 
-## Why shoud you engage methodus
-The root functionality of methodus is the abbility to control the program flow by injecting logic to the gap between the caller and the callee of a function.
-This ability is very usefull when developing distribued / dynamic applications,  allowing developers to use an agile, contained approach in the code.
+## What for?
+The root functionality of methodus is the ability to control the program flow by injecting logic to the gap between a caller and a callee of a function.
+This ability is very useful when developing distributed / dynamic applications,  allowing developers to use an agile, contained approach in their code logic.
 
 
 ### Install server components
@@ -16,11 +16,6 @@ This ability is very usefull when developing distribued / dynamic applications, 
 
 
 [Examples](./examples/index.md)
-
-
-
-
-
 
 
 

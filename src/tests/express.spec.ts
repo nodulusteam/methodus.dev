@@ -1,6 +1,6 @@
 process.env.test = 'true';
 import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
-import { ExpressTestServer } from './servers/';
+import { ExpressTestServer } from './servers/express.server';
 
 import { TestTarget } from './controllers';
 

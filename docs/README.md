@@ -5,9 +5,9 @@
 ![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
 
 
-## Why shoud you engage methodus
-The root functionality of methodus is the abbility to control the program flow by injecting logic to the gap between the caller and the callee of a function.
-This ability is very usefull when developing distribued / dynamic applications,  allowing developers to use an agile, contained approach in the code.
+## What for?
+The root functionality of methodus is the ability to control the program flow by injecting logic to the gap between a caller and a callee of a function.
+This ability is very useful when developing distributed / dynamic applications,  allowing developers to use an agile, contained approach in their code logic.
 
 
 ### Install server components
@@ -25,13 +25,11 @@ This ability is very usefull when developing distribued / dynamic applications, 
 
 
 
-
-### Greetings,
-my fellow adventures developer, I welcome you into Methodus. 
+>#### From the dungeon master,
+My fellow adventures developer, I welcome you into Methodus. 
 You did not arrive here by mistake, nor was it an accident, it is your fate.
 Methodus will guide you through the evolution of your application as it grows and gains complexity.
 But first you should ask yourself this:
-
 1. Do you wish to build a nodejs based api monolithic server?
 2. Would you like to be able to break this monolith into micro-services as you scale it out?
 3. How about an automatic testing plugin, allowing you to autodocument your apis and test them?
@@ -39,6 +37,22 @@ But first you should ask yourself this:
 5. How about event sourcing would you like some of that?
 6. Are you using typescript?
 7. Do you need a frontend for this server?
+
+
+***
+#### The basics, an Express application using Methodus.
+[Simple Express Server](examples/packed/simple-express-server/readme.md)
+> The examples are incremental so besure to go through them all - or just to the finish line
+***
+####  What goes up must come down, so inbound must have some outbound.
+[Using methodus for outbound calls](examples/packed/consuming-rest-services/readme.md)
+> Consuming Rest services using annotated classes is pure restful joy.
+***
+#### Using contracts in a client application
+[Frontend backed with an API](examples/packed/frontend-apis/readme.md)
+> Contracts are a great way to bind server apis to client code. by using jevasript on both server & client, this can be a real advantage to an application stabillity and development cycles.
+
+
 
 If any of these sounds familiar please step in and carve your path,  
 
