@@ -44,7 +44,26 @@
                 "NODE_LOG_LEVEL": "trace"
             }
         },
-
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run module test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "build/decorators/module/module.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
         {
             "request": "launch",
             "console": "internalConsole",
@@ -89,7 +108,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest server",
-            "program": "${workspaceRoot}/tests/servers/express.server.js",
+            "program": "${workspaceRoot}/build/tests/servers/express.server.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -100,6 +119,7 @@
                 "DEBUG": "none",
                 "NODE_ENV": "debug",
                 "NODE_LOG_LEVEL": "trace",
+                "NODE_LOG_CONSOLE": "true",
                 "servers": "Express",
                 "MethodType": "Local"
             }
