@@ -1,8 +1,4 @@
----
-id: api-readme
-title: @methodus/server
-sidebar_label: @methodus/server
----
+
 
 ### Enumerations
 

@@ -8,4 +8,4 @@
 
 
 
-> Refresh to change colors.
+`Refresh to change colors.`

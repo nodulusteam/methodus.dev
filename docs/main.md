@@ -26,4 +26,7 @@ But first you should ask yourself this:
 6. Are you using typescript?
 7. Do you need a frontend for this server?
 
+
+> [!NOTE]
+> An alert of type 'note' using global style 'callout'.
  
