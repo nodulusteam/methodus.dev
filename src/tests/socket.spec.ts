@@ -1,6 +1,6 @@
 process.env.test = 'true';
 import { AsyncTest, Expect,  TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
-import { SocketTestServer } from './servers/';
+import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
 
 @TestFixture('Test SocketIO configuration')

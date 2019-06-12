@@ -29,7 +29,7 @@
         "build": "trash build && tsc",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "trash coverage && npm run build && npm run test:full ",
-        "test:full": "nyc alsatian build/tests/*.spec.js",
+        "test:full": "nyc alsatian build/**/*.spec.js",
         "report": "nyc report --html --clover",
         "doc": "run-s doc:html && opn docs/index.html",
         "doc:html": "typedoc --mdDocusaurus src/",
