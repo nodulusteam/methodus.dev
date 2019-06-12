@@ -11,44 +11,11 @@
 
   
   <!-- Theme: Simple (latest v0.x.x) -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
-
-
-
- <style> 
-
-    :root {
-    /* Reduce the font size */
-    --base-font-size: 16px;
-
-   
- 
- 
-}
-
-
- 
-</style>
-
- 
- 
-   
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.min.css" />
-
- 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
 </head>
-<body class="eval" data-toolbar-order="select-code,copy-to-clipboard">
-
+<body>
   <div id="app"></div> 
-  <pre data-src="plugins/toolbar/prism-toolbar.js" data-label="Hello World!"></pre>
-
-
-  <strong>Roi</strong>
-
-
-
   <script>
-
   function selectColor(colorNum, colors){
     if (colors < 1) {
 		colors = 1;
@@ -56,13 +23,9 @@
     return 'hsl(' + (colorNum * (360 / colors) % 360) + ',100%,50%)';
 }
 
-var color = selectColor(Math.floor(Math.random() * 10), 10);
-
-
+const color = selectColor(Math.floor(Math.random() * 10), 10);
     window.$docsify = {
-      name: 'Methodus',
-	
-	
+      name: 'Methodus',	
 	  themeColor: color,
       repo: 'https://github.com/nodulusteam/methodus.dev.git',
 	  coverpage: true,
@@ -75,7 +38,9 @@ var color = selectColor(Math.floor(Math.random() * 10), 10);
       },
   	  autoHeader: true,
       loadSidebar: true,
-
+'flexible-alerts': {
+      style: 'flat'
+    },
 	search: {
 		maxAge: 86400000, // Expiration time, the default one day
 		paths: 'auto', // or 'auto'
@@ -93,6 +58,11 @@ var color = selectColor(Math.floor(Math.random() * 10), 10);
 		// between multiple websites under the same domain
 		namespace: 'website-1',
 	},
+	copyCode: {
+    buttonText : 'Copy to clipboard',
+    errorText  : 'Error',
+    successText: 'Copied'
+  },
 		ga: 'UA-141983194-1',
 			tabs: {
 			persist    : true,      // default
@@ -106,15 +76,13 @@ var color = selectColor(Math.floor(Math.random() * 10), 10);
 		}
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/prism.min.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
 <!-- docsify-themeable (latest v0.x.x) -->
-<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
+<script src="//cdn.jsdelivr.net/npm/docsify-themeable@0"></script>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.16.0/plugins/toolbar/prism-toolbar.js"></script>
-  <script src="//unpkg.com/prismjs/components/prism-typescript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
 
 <script>
 
@@ -122,117 +90,16 @@ var color = selectColor(Math.floor(Math.random() * 10), 10);
    
 	if (typeof self === 'undefined' || !self.Prism || !self.document) {
 		return;
-	}
-
-	if (!Prism.plugins.toolbar) {
-		console.warn('Copy to Clipboard plugin loaded before Toolbar plugin.');
-		return;
-	}
-Prism.plugins.toolbar.registerButton('hello-world', {
-	text: 'Hello World!', // required
-	onClick: function (env) { // optional
-		alert('This code snippet is written in ' + env.language + '.');
-	}
-});
-
-Prism.plugins.toolbar.registerButton('select-code', function(env) {
-	var button = document.createElement('button');
-	button.innerHTML = 'Select Code';
-
-	button.addEventListener('click', function () {
-		// Source: http://stackoverflow.com/a/11128179/2757940
-		if (document.body.createTextRange) { // ms
-			var range = document.body.createTextRange();
-			range.moveToElementText(env.element);
-			range.select();
-		} else if (window.getSelection) { // moz, opera, webkit
-			var selection = window.getSelection();
-			var range = document.createRange();
-			range.selectNodeContents(env.element);
-			selection.removeAllRanges();
-			selection.addRange(range);
-		}
-	});
-
-	return button;
-});
-
-	Prism.plugins.toolbar.registerButton('copy-to-clipboard', function (env) {
-		var linkCopy = document.createElement('button');
-		linkCopy.textContent = 'Copy';
-
-		if (!ClipboardJS) {
-			callbacks.push(registerClipboard);
-		} else {
-			registerClipboard();
-		}
-
-		return linkCopy;
-
-		function registerClipboard() {
-			var clip = new ClipboardJS(linkCopy, {
-				'text': function () {
-					return env.code;
-				}
-			});
-
-			clip.on('success', function() {
-				linkCopy.textContent = 'Copied!';
-
-				resetText();
-			});
-			clip.on('error', function () {
-				linkCopy.textContent = 'Press Ctrl+C to copy';
-
-				resetText();
-			});
-		}
-
-		function resetText() {
-			setTimeout(function () {
-				linkCopy.textContent = 'Copy';
-			}, 5000);
-		}
-	});
-
-
-
-  
-	var ClipboardJS = window.ClipboardJS || undefined;
-
-	if (!ClipboardJS && typeof require === 'function') {
-		ClipboardJS = require('clipboard');
-	}
-
-	var callbacks = [];
-
-	if (!ClipboardJS) {
-		var script = document.createElement('script');
-		var head = document.querySelector('head');
-
-		script.onload = function() {
-			ClipboardJS = window.ClipboardJS;
-
-			if (ClipboardJS) {
-				while (callbacks.length) {
-					callbacks.pop()();
-				}
-			}
-		};
-
-		script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js';
-		head.appendChild(script);
-	}
-
-  
+	} 
+ 
 })();
 
 </script>
 
 <script src="//unpkg.com/docsify/lib/plugins/ga.min.js"></script>
 <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
-
-
+<script src="//unpkg.com/docsify-copy-code"></script>
+<script src="//unpkg.com/docsify-plugin-flexible-alerts"></script>
 
 
 </body>
