@@ -6,9 +6,9 @@
 
 > NodeJS application framework
 
-- Modern unintrusive transport agnostic framework.
-- Harnes the ubiquity of JavaScript.
-- TypeScript first. 
+- Modern **unintrusive** transport **agnostic** framework.
+- Harnes the **ubiquity** of JavaScript.
+- **TypeScript** first. 
 
 [GitHub](https://github.com/nodulusteam/methodus.dev)
 [Get Started](main.md)
