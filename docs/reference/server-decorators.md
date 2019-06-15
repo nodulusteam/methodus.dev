@@ -36,7 +36,7 @@ import { DataController } from './controller';
 ### @PluginConfiguration
 > Additional applications can be added to the initiated server instance and serve as plugins
 ```typescript
-@PluginConfiguration('@methodus/describe)
+@PluginConfiguration('@methodus/describe')
 ```
 
 ### RouterConfiguration
