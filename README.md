@@ -22,6 +22,36 @@ So, by abstracting the framework code from our logic code, we get a generic appl
 
 
 
+>#### From the dungeon master,
+> My fellow adventures developer, I welcome you into Methodus. 
+You did not arrive here by mistake, nor was it an accident, it is your fate.
+Like all adventures yours will begin with a simple implementation and evolve and gain complexity, by then  
+Methodus will guide you through the evolution of your application as it grows and gains complexity.
+
+But first you should ask yourself this:
+1. Do you wish to build a NodeJS based monolithic server?
+
+    *Monolits are easy to develop and reason about.*
+
+2. Would you like to be able to break this monolith into micro-services as you scale it out?
+
+    *Micro-services are much more performant but complexity rises too.*
+
+3. How about an automatic testing plugin, allowing you to autodocument your apis and test them?
+
+    *Annotated API's are easy to integrate and discover*
+
+4. Would you like to concentrate on your logic code only, without the need to wire it to a specific framework?
+
+    *Code first, wire later, almost too good to be through*
+
+7. Are you going to consume this service using another application or a frontend application?
+
+    *With methodus / methodus-client services can be consumed using code contracts*
+
+
+    
+
 > [/Server](https://methodus.dev)
 
 The server components of methodus (nodejs). 
