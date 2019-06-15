@@ -39,17 +39,31 @@ Like all adventures yours will begin with a simple implementation and evolve and
 Methodus will guide you through the evolution of your application as it grows and gains complexity.
 
 But first you should ask yourself this:
-1. Do you wish to build a nodejs based api monolithic server?
+1. Do you wish to build a NodeJS based monolithic server?
 
-> Monolits are easy to develop and understand
+    *Monolits are easy to develop and reason about.*
+
 2. Would you like to be able to break this monolith into micro-services as you scale it out?
+
+    *Micro-services are much more performant but complexity rises too.*
+
 3. How about an automatic testing plugin, allowing you to autodocument your apis and test them?
+
+    *Annotated API's are easy to integrate and discover*
+
 4. Would you like to concentrate on your logic code only, without the need to wire it to a specific framework?
-5. How about event sourcing would you like some of that?
-6. Are you using typescript?
-7. Do you need a frontend for this server?
+
+    *Code first, wire later, almost too good to be through*
+
+7. Are you going to consume this service using another application or a frontend application?
+
+    *With methodus / methodus-client services can be consumed using code contracts*
+
+
+<small> Logo by: Designer: Alpár-Etele Méder (https://www.iconfinder.com/pocike)</small>
+<small>License: Creative Commons (Attribution 3.0 Unported) (http://creativecommons.org/licenses/by/3.0/)</small>
 
 
 > [!NOTE]
-> An alert of type 'note' using global style 'callout'.
+> Code first, wire later.
  
