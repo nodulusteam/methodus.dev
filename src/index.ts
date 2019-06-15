@@ -15,3 +15,41 @@ export * from './built-in-servers';
 export * from './built-in-transports';
 export * from './mocker';
 export * from './fp';
+import { Mapping } from './params';
+/**
+ * @hidden
+ */
+export const Body = Mapping.Body;
+/**
+ * @hidden
+ */
+export const Param = Mapping.Param;
+/**
+ * @hidden
+ */
+export const Query = Mapping.Query;
+/**
+ * @hidden
+ */
+export const Headers = Mapping.Headers;
+/**
+ * @hidden
+ */
+export const Files = Mapping.Files;
+/**
+ * @hidden
+ */
+export const Cookies = Mapping.Cookies;
+/**
+ * @hidden
+ */
+export const Response = Mapping.Response;
+/**
+ * @hidden
+ */
+export const Request = Mapping.Request;
+/**
+ * @hidden
+ */
+export const SecurityContext = Mapping.SecurityContext;
+

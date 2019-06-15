@@ -1,7 +1,7 @@
 import { Repo, Model, Field } from '@methodus/data';
 
 /**
- * @ignore
+ * @hidden
  */
 @Model('Screen')
 export class ScreenModel extends Repo<ScreenModel> {

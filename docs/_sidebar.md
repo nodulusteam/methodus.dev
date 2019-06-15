@@ -2,7 +2,7 @@
 
 
 * [Home](/main.md)
-* [Reference](reference/api-readme.md)
+* [Reference](documentation/)
 * [Examples](examples/index.md)
 
 

@@ -8,7 +8,9 @@ import 'reflect-metadata';
 import { Servers } from '../serversList';
 import { logger } from '../../log';
 import { Express } from './express';
-
+/**
+ * @hidden
+ */
 export function register(server: any, parentServer: any) {
     if (server.options) {
         const serverType = server.type.name;

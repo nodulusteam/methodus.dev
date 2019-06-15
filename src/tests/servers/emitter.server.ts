@@ -12,7 +12,7 @@ import { PluginConfiguration } from '../shim';
 
 const ServerPlugin = new EmitterPlugin();
 /**
- * @ignore
+ * @hidden
  */
 @PluginConfiguration(path.join(__dirname, 'simple.plugin'))
 @ServerConfiguration(ServerPlugin, {})

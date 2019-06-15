@@ -5,7 +5,7 @@ import {
 } from '../shim';
 import { TestController, TestTarget } from '../controllers/';
 /**
- * @ignore
+ * @hidden
  */
 @ServerConfiguration(BuiltInServers.Socket, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')

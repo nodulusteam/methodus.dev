@@ -1,7 +1,13 @@
 
 import { Request } from './Request';
 import { MethodError } from '../../response';
+/**
+ * @hidden
+ */
 export const name: string = 'Http/Rest';
+/**
+ * @hidden
+ */
 export function send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any): Promise<any> {
     const request = new Request();
     const baseUrl = methodus.resolver();

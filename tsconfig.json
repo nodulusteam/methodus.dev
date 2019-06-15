@@ -3,15 +3,13 @@
         "docs"
     ],
     "typedocOptions": {
-        "theme": "markdown",
-        "mdDocusaurus": "false",
-        "mdEngine": "gitbook",
+        "theme": "markdown",         
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "ES6",
         "mode": "file",
         "readme": "none",
-        "out": "docs/reference",
+        "out": "docs/documentation",
         "exclude": "tests"
     },
     "compilerOptions": {

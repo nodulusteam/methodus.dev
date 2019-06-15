@@ -1,7 +1,7 @@
+/**
+ * @hidden
+ */
 export class _ClassContainer {
-    /**
-     *
-     */
     _deps: Map<string, any>;
     constructor() {
         this._deps = new Map<string, any>();
@@ -18,4 +18,7 @@ export class _ClassContainer {
 if (!(global as any).METHODUS_CONTAINER) {
     (global as any).METHODUS_CONTAINER = new _ClassContainer();
 }
+/**
+ * @hidden
+ */
 export const ClassContainer = (global as any).METHODUS_CONTAINER; // new _ClassContainer();

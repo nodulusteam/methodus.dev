@@ -56,7 +56,7 @@ export class MethodusConfig {
     }
 }
 /**
- * @ignore
+ * @hidden
  */
 export class MethodusConfigurations {
     static _configurations: any;

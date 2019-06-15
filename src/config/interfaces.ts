@@ -1,6 +1,9 @@
 import { Verbs } from '../verbs';
 import { MethodType } from '../interfaces';
 
+/**
+ * @hidden
+ */
 export interface MethodDescriptor {
     verb: Verbs;
     route: string;
@@ -9,6 +12,10 @@ export interface MethodDescriptor {
     middlewares?: any;
     params: any[];
 }
+
+/**
+ * @hidden
+ */
 export interface EventDescriptor extends MethodDescriptor {
     name: string;
     value?: any;

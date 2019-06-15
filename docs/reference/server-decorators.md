@@ -3,10 +3,9 @@
 
 ### ConfiguredServer
 
-This should be the base class for any methodus server instance.
+With Methodus, you'll be decorating this class to create any server instance.
 
-> [!NOTE]
-> An alert of type 'note' using global style 'callout'.
+
 
 ```typescript
 import { ConfiguredServer } from '@methodus/server';
@@ -16,6 +15,9 @@ export class Xserver extends ConfiguredServer {
     }
 }
 ```
+> [!NOTE]
+> This code doesn't do any thing yet, we need to decorate the class.
+
 
 > ConfiguredServer can be decorated using 
 * [@ServerConfiguration](#serverconfiguration)
@@ -26,7 +28,7 @@ export class Xserver extends ConfiguredServer {
 
 
 ### @ServerConfiguration 
-> Used to bind a server instance to the process. The server behaviour is all up to it.
+> Used to bind a server instance to a framework. This example use the builtin `Express` server.
 ```typescript
 import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
 import { DataController } from './controller';

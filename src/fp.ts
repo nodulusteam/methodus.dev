@@ -1,10 +1,7 @@
 /**
- * @ignore
+ * @hidden
  */
 export class fp {
-    /**
-     * @hidden
-     */
     public static maybe(object: any): any {
         if (!object) {
             return {};
