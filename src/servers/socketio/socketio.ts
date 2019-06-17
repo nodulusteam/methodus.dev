@@ -10,6 +10,9 @@ import * as socketIO from 'socket.io';
 import * as colors from 'colors';
 import { Servers } from '../';
 
+/**
+ * @hidden
+ */
 @LogClass(logger)
 export class SocketIO extends BaseServer {
     _app: any;
@@ -87,6 +90,9 @@ export class SocketIO extends BaseServer {
     }
 }
 
+/**
+ * @hidden
+ */
 @LogClass(logger)
 export class SocketIORouter implements Methodus.Router {
     prefix: string = '';
@@ -129,6 +135,9 @@ export class SocketIORouter implements Methodus.Router {
     }
 }
 
+/**
+ * @hidden
+ */
 export function register(server: any, parentServer: any) {
     const serverType = server.type.name;
 

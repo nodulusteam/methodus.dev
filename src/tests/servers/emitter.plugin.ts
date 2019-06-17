@@ -6,12 +6,12 @@ import { EventEmitter } from 'events';
 import { fp } from '../../fp';
 const metadataKey = 'methodus';
 /**
- * @ignore
+ * @hidden
  */
 export const sharedEmitter: EventEmitter = new EventEmitter();
 export const resultEmitter: EventEmitter = new EventEmitter();
 /**
- * @ignore
+ * @hidden
  */
 @LogClass(logger)
 export class CustomMessageRouter {
@@ -45,7 +45,7 @@ export class CustomMessageRouter {
 }
 
 /**
- * @ignore
+ * @hidden
  */
 export class CustomMessageServer {
     useClass(classType: any, methodType: any) {

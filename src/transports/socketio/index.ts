@@ -1,5 +1,7 @@
 import { logger } from '../../log';
-
+/**
+ * @hidden
+ */
 export function send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any) {
     return new Promise(async (resolve, reject) => {
         const dataObject: any = {};

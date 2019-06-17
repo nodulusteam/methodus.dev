@@ -1,17 +1,18 @@
 import {
-    MethodResult, Response, Request, SecurityContext, Verbs, Headers,
-    Method, Query, Param, MethodMock, MethodConfig, Body, MethodError,
-    Files, Cookies, MethodPipe, MethodResultStatus, generateUuid,
+    MethodResult, Verbs, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, generateUuid,
+    Mapping,
 } from '../shim';
 
 /**
- * @ignore
+ * @hidden
  */
 @MethodConfig('TestController')
 export class TestController {
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
-    public static async list(@Headers('auth') auth: string, @Query('order_by') orderBy: any): Promise<any> {
+    public static async list(
+        @Mapping.Headers('auth') auth: string,
+        @Mapping.Query('order_by') orderBy: any): Promise<any> {
         const result = new MethodResult([1, 2, 3, 4, 5], 5, 2);
         result.pipe({});
         result.on('finish', (data: any) => {
@@ -22,32 +23,32 @@ export class TestController {
     }
 
     @Method(Verbs.Get, '/api/player/desfaults')
-    public static async listdefaults(@Param() params: any,
-        @Body() body: any,
-        @Headers() headers: any,
-        @Files() files: any,
-        @Cookies() cookies: any,
-        @Query() query: any,
-        @Response() res: any,
-        @Request() req: any,
-        @SecurityContext() securityContext: any,
+    public static async listdefaults(@Mapping.Param() params: any,
+        @Mapping.Body() body: any,
+        @Mapping.Headers() headers: any,
+        @Mapping.Files() files: any,
+        @Mapping.Cookies() cookies: any,
+        @Mapping.Query() query: any,
+        @Mapping.Response() res: any,
+        @Mapping.Request() req: any,
+        @Mapping.SecurityContext() securityContext: any,
     ): Promise<any> {
         return new MethodResultStatus([1, 2, 3, 4, 5], 203, 5, 1);
     }
 
     @MethodPipe(Verbs.Post, '/api/player')
-    public static async create(@Files('files') files: any,
-        @Cookies('cookies') cookies: any, @Body('name') name: string) {
+    public static async create(@Mapping.Files('files') files: any,
+        @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string) {
         return new MethodResult({ name });
     }
 
     @Method(Verbs.Get, '/api/player/:player_id')
-    public static async read(@Param('player_id') playerId: number) {
+    public static async read(@Mapping.Param('player_id') playerId: number) {
         throw new MethodError('intended error', 500, 'some more data');
     }
 
     @Method(Verbs.Get, '/api/player/:field/:value')
-    public static async getByField(@Param('field') field: any, @Param('value') value: number) {
+    public static async getByField(@Mapping.Param('field') field: any, @Mapping.Param('value') value: number) {
         return new MethodResult({});
     }
 

@@ -1,46 +1,47 @@
 import {
-    MethodResult, Response, Request, Verbs, Method,
-    Param, MethodMock, MethodConfig, Body, Query, Headers, Files, SecurityContext, Cookies, MethodPipe,
+    MethodResult, Mapping, Verbs, Method, MethodMock, MethodConfig, MethodPipe,
 } from '../shim';
 
 /**
- * @ignore
+ * @hidden
  */
 @MethodConfig('TestTarget')
 export class TestTarget {
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
-    public static async list(@Headers('auth') auth: string, @Query('order_by') orderBy: string): Promise<MethodResult> {
+    public static async list(@Mapping.Headers('auth') auth: string,
+        @Mapping.Query('order_by') orderBy: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/api/player/desfaults')
-    public static async listdefaults(@Param() params: any,
-        @Body() body: any,
-        @Headers() headers: any,
-        @Files() files: any,
-        @Cookies() cookies: any,
-        @Query() query: any,
-        @Response() res: any,
-        @Request() req: any,
-        @SecurityContext() securityContext: any,
+    public static async listdefaults(@Mapping.Param() params: any,
+        @Mapping.Body() body: any,
+        @Mapping.Headers() headers: any,
+        @Mapping.Files() files: any,
+        @Mapping.Cookies() cookies: any,
+        @Mapping.Query() query: any,
+        @Mapping.Response() res: any,
+        @Mapping.Request() req: any,
+        @Mapping.SecurityContext() securityContext: any,
     ): Promise<any> {
         return new MethodResult({});
     }
 
     @MethodPipe(Verbs.Post, '/api/player')
-    public static async create(@Files('files') files: any,
-    @Cookies('cookies') cookies: any, @Body('name') name: string): Promise<MethodResult> {
+    public static async create(@Mapping.Files('files') files: any,
+        @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/api/player/:player_id')
-    public static async read(@Param('player_id') playerId: number): Promise<MethodResult> {
+    public static async read(@Mapping.Param('player_id') playerId: number): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/api/player/:field/:value')
-    public static async getByField(@Param('field') field: string, @Param('value') value: number): Promise<MethodResult> {
+    public static async getByField(@Mapping.Param('field') field: string,
+        @Mapping.Param('value') value: number): Promise<MethodResult> {
         return new MethodResult({});
     }
 

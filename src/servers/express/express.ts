@@ -8,6 +8,9 @@ import { logger, LogClass } from '../../log';
 import { ExpressRouter } from '../express';
 
 import * as fileUpload from 'express-fileupload';
+/**
+ * @hidden
+ */
 @LogClass(logger)
 export class Express extends BaseServer {
     _app: any;

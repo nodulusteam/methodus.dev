@@ -5,7 +5,7 @@ import {BuiltInTransports,
 import { TestTarget } from '../controllers/';
 
 /**
- * @ignore
+ * @hidden
  */
 @ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8090')
 export class Xserver extends ConfiguredServer {

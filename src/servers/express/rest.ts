@@ -11,7 +11,9 @@ export class Verbs {
     public static Delete: string = 'DELETE';
 
 }
-
+/**
+ * @hidden
+ */
 export class RestResponse {
     constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
         const res = args[1]; // in express this will ontain the response
@@ -84,13 +86,15 @@ export class RestResponse {
 
 }
 
-/** this function parses values from the request object into the function args
- *  @param {any} args - the arguments sent to the original function.
- *  @param {[string]} paramsMap - express route string.
- *
+/**
+ * @hidden
  */
 export class RestParser {
-
+    /** this function parses values from the request object into the function args
+     *  @param {any} args - the arguments sent to the original function.
+     *  @param {[string]} paramsMap - express route string.
+     *
+     */
     deserialize(item: any) {
         if (item !== undefined && item !== null) {
             if (item.type && item.type.deserialize) {
@@ -168,6 +172,9 @@ export class RestParser {
 
 }
 
+/**
+ * @hidden
+ */
 @LogClass(logger)
 export class ParserResponse {
     args: any;

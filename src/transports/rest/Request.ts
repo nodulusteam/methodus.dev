@@ -7,7 +7,9 @@ import * as path from 'path';
 import * as https from 'https';
 
 import * as request from 'request-promise-native';
-
+/**
+ * @hidden
+ */
 @LogClass(logger)
 export class Request {
 

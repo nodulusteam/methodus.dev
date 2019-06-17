@@ -2,6 +2,9 @@
 import { logger, LogClass } from '../log';
 import {  ServerType } from '../interfaces';
 
+/**
+ * @hidden
+ */
 @LogClass(logger)
 export class ServerConfig {
     instanceId?: string;

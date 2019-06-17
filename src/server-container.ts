@@ -1,3 +1,6 @@
+/**
+ * @hidden
+ */
 export class ServerContainer {
     server: any;
     constructor(serverInformation: any, parentServer: any) {

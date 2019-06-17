@@ -8,7 +8,7 @@ import { ModuleConfiguration } from '../../decorators';
 import { ExtressTestModule } from './express.module';
 
 /**
- * @ignore
+ * @hidden
  */
 @ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8020 })
 // @PluginConfiguration('@methodus/describe')

@@ -1,6 +1,5 @@
     /**
-     * Client transport container
-     * @public
+     * @hidden
      */
     export class ClientContainer {
     client: any;
