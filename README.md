@@ -3,6 +3,7 @@
 ![reliability](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=reliability_rating "reliability")
 ![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage "coverage")
 ![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_shield)
 
 
 ## Introduction
@@ -74,3 +75,6 @@ Build binding packages to your server application
 Model API data objects and manage DB access (mongodb)
  
  
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_large)
