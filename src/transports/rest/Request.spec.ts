@@ -12,7 +12,7 @@ export class ProxyTest {
 
         try {
             const request = new Request();
-            const result = await request.sendRequest(Verbs.Get, 'https://jsonplaceholder.typicode.com/posts', [], []);
+            const result = request.sendRequest(Verbs.Get, 'https://jsonplaceholder.typicode.com/posts', [], []);
             Expect(result).not.toBeNull();
         } catch (error) {
 

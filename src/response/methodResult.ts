@@ -16,6 +16,9 @@ export class MethodResult<T = any> {
             this.page = page;
         }
     }
+    public getLinks() {
+        return this.links;
+    }
     public pipe(streamToPipe: any) {
         this.stream = streamToPipe;
         return this.stream;
