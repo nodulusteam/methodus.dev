@@ -2,6 +2,7 @@
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 import 'reflect-metadata';
 import { logger, LogClass } from '../../log';
+import { Verbs } from '../../rest';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
@@ -13,74 +14,71 @@ import * as request from 'request-promise-native';
 @LogClass(logger)
 export class Request {
 
-    sendRequest(verb: any, uri: any, params: any, paramsMap: any, securityContext: any) {
+    sendRequest(verb: Verbs, uri: string, params: any[], paramsMap: any[], securityContext?: any) {
         const body: any = {};
         const headers: any = {};
         const cookies: any = {};
         const query: any = {};
         const files: any = [];
-        try {
-            paramsMap.forEach((item: any) => {
-                item.value = params[item.index];
-                switch (item.from) {
-                    case 'params':
-                        if (item.name) {
-                            uri = uri.replace(':' + item.name, item.value);
-                        } else {
-                            Object.keys(item.value).forEach((element) => {
-                                uri = uri.replace(':' + element, item.value[element]);
-                            });
 
-                        }
-                        break;
+        paramsMap.forEach((item: any) => {
+            item.value = params[item.index];
+            switch (item.from) {
+                case 'params':
+                    if (item.name) {
+                        uri = uri.replace(':' + item.name, item.value);
+                    } else {
+                        Object.keys(item.value).forEach((element) => {
+                            uri = uri.replace(':' + element, item.value[element]);
+                        });
 
-                    case 'body':
-                        if (item.name) {
-                            body[item.name] = item.value;
-                        } else {
-                            Object.assign(body, item.value);
-                        }
+                    }
+                    break;
 
-                        break;
-                    case 'query':
-                        if (item.name) {
-                            query[item.name] = item.value;
-                        } else {
-                            Object.assign(query, item.value);
-                        }
-                        break;
-                    case 'security_context':
-                        securityContext = { uid: item.value.uid, user_id: item.value.user_id };
-                        break;
-                    case 'headers':
-                        if (item.name) {
-                            headers[item.name] = item.value;
-                        } else {
-                            Object.assign(headers, item.value);
-                        }
-                        break;
+                case 'body':
+                    if (item.name) {
+                        body[item.name] = item.value;
+                    } else {
+                        Object.assign(body, item.value);
+                    }
 
-                    case 'cookies':
-                        if (item.name) {
-                            cookies[item.name] = item.value;
-                        } else {
-                            Object.assign(cookies, item.value);
-                        }
-                        break;
+                    break;
+                case 'query':
+                    if (item.name) {
+                        query[item.name] = item.value;
+                    } else {
+                        Object.assign(query, item.value);
+                    }
+                    break;
+                case 'security_context':
+                    securityContext = { uid: item.value.uid, user_id: item.value.user_id };
+                    break;
+                case 'headers':
+                    if (item.name) {
+                        headers[item.name] = item.value;
+                    } else {
+                        Object.assign(headers, item.value);
+                    }
+                    break;
 
-                    case 'files':
-                        if (item.name) {
-                            files[item.name] = item.value;
-                        } else {
-                            Object.assign(files, item.value);
-                        }
-                        break;
+                case 'cookies':
+                    if (item.name) {
+                        cookies[item.name] = item.value;
+                    } else {
+                        Object.assign(cookies, item.value);
+                    }
+                    break;
 
-                }
-            });
-        } catch (error) {
-            logger.error(error);
-        }
+                case 'files':
+                    if (item.name) {
+                        files[item.name] = item.value;
+                    } else {
+                        Object.assign(files, item.value);
+                    }
+                    break;
+
+            }
+        });
 
         if (Object.keys(query).length > 0) {
             uri += '?' + Object.keys(query).map((element: any) => {
@@ -111,9 +109,11 @@ export class Request {
 
         if (uri.indexOf('https://') === 0) {
             const hostParts = uri.split('://')[1].split('/')[0].split(':');
+            const sslPort = hostParts[1] ? Number(hostParts[1]) : 443;
+
             const agent = new https.Agent({
                 host: hostParts[0],
-                port: hostParts[1] || 443,
+                port: sslPort,
                 path: parts.join('/').split('?')[0] || '',
                 rejectUnauthorized: false,
             });
@@ -194,29 +194,18 @@ export class Request {
         // very important it allows the download of binary files
         requestOptions.encoding = null;
         logger.log(this, 'request options are: ', requestOptions);
-        try {
-            const returnedPipe = this.promiseToTry(requestOptions);
-            return returnedPipe;
-        } catch (error) {
-            throw (error);
-        }
+
+        const returnedPipe = this.promiseToTry(requestOptions);
+        return returnedPipe;
+
     }
 
     public promiseToTry(requestOptions: any) {
-        requestOptions.retryCount = requestOptions.retryCount || 0;
-        try {
-            return this.try(requestOptions);
-        } catch (error) {
-            throw (error);
-
-        }
-    }
-
-    public try(requestOptions: any) {
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error: any) => {
             logger.error(error);
         });
         return requestToPipe;
     }
+
 }

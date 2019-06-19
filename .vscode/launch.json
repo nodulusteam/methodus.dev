@@ -67,6 +67,27 @@
         {
             "request": "launch",
             "console": "internalConsole",
+            "name": "T Run request test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "build/transports/rest/Request.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8020",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+
+        {
+            "request": "launch",
+            "console": "internalConsole",
             "name": "T Run SocketIO test",
             "type": "node",
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",

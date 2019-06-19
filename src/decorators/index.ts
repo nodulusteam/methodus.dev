@@ -1,5 +1,5 @@
 export * from './module';
-export * from './proxy';
+export * from './proxy/proxy';
 export * from './client';
 export * from './server';
 export * from './plugin';
