@@ -102,8 +102,8 @@ export namespace Methods {
                         } catch (ex) {
                             if (Buffer.isBuffer(ex.error)) {
                                 ex.error = ex.error.toString();
-                                throw (ex);
                             }
+                            throw (ex);
                         }
                     } else {
 
