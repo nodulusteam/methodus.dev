@@ -124,7 +124,7 @@ export class Request {
                 timeout: 1000 * 60 * 5,
                 rejectUnauthorized: false,
                 strictSSL: false,
-                secureProtocol: 'TLSv1_method',
+                secureProtocol: 'TLSv1_2_method',
                 requestCert: false, // add when working with https sites
                 agent, // add when working with https sites
             };
