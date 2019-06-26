@@ -11,8 +11,8 @@ export class TestController {
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
     public static async list(
-        @Headers('auth') auth: string,
-        @Query('order_by') orderBy: any): Promise<any> {
+        @Headers('auth') auth: string= 'kkk',
+        @Query('order_by') orderBy: string = 'asc'): Promise<any> {
         const result = new MethodResult([1, 2, 3, 4, 5], 5, 2);
         result.pipe({});
         result.on('finish', (data: any) => {
