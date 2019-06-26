@@ -3,7 +3,7 @@ import 'reflect-metadata';
 export namespace Mapping {
     function pushParams(target: any, propertyKey: any, param: any) {
         const designType = Reflect.getMetadata('design:paramtypes', target, propertyKey);
-        let typeName = (designType[param.index] !== undefined && designType[param.index].name) ?
+        let typeName = (designType && designType[param.index] !== undefined && designType[param.index].name) ?
             designType[param.index].name.toLowerCase() : 'any';
         if (param.type) {
             typeName = param.type;
@@ -67,4 +67,3 @@ export namespace Mapping {
         return build('request', name);
     }
 }
-
