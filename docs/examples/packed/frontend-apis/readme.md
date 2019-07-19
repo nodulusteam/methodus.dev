@@ -1,6 +1,6 @@
 
 
-[Download the code for the frontend-apis](./frontend-apis.zip "Frontend APIs")
+[Download the code for the frontend-apis](https://github.com/nodulusteam/methodus.dev/raw/docs/docs/examples/packed/frontend-apis/frontend-apis.zip "Frontend APIs")
 ### Step 1 - install the server 
 We will be using the server example from the previous chapters.
 so 
