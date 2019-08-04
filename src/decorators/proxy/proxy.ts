@@ -44,7 +44,7 @@ export class Proxy {
                 }
 
             }
-            logger.info('returned the contract it self for' + className);
+            logger.info(`using the contract class for ${className}`);
             return target;
         };
     }
