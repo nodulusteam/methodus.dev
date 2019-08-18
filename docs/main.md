@@ -6,9 +6,23 @@
 
 
 ## Introduction
-Methodus is a framework for building efficient, developer friendly, scalable Node.js server/server/client applications. It uses Typescript Decorators to annotate and define the application, allowing developers to focus on the actual functionality the application needs. Its "Build now, Decide later" design patterns and architecture is what makes Methodus so versatile and powerfull.
+Methodus is a framework for building efficient, developer friendly, scalable Node.js server/server/client applications. It uses Typescript Decorators to annotate and define the application, allowing developers to focus on the actual functionality the application features. Its "Build now, Decide later" design patterns and architecture is what makes Methodus so versatile and powerfull.
+
+Transports are actually the decisions that bind our code to a specific framework or architecture. These decisions will not easily change unless we abstract the effects of the choices we make somehow. 
+
+## Evolving applications
+A classic life-cycle for an application today would start with a small monolith which grows and then replaced with a microservices based distributed application and eventually becomes a cloud based complexed application. Such changes 
+
+
+## Sweet Syntetic Sugar
+Methodus decorators converts any method into an RPC(Remote Procedure Call). Optionaly invokable using a configured transport.
+
 
 Using transport abstractions, Methodus application code can connect to any NodeJS framework, with builtin support for the HTTP/HTTP2 protocols and builtin routers for express/fastify. 
+
+
+
+
 
 
 ## Philosophy
