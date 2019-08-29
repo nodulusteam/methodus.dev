@@ -95,7 +95,7 @@ export class RestParser {
      *  @param {[string]} paramsMap - express route string.
      *
      */
-    deserialize(item: any) {
+    deserialize(item: { type: any, value: string }) {
         if (item !== undefined && item !== null) {
             if (item.type && item.type.deserialize) {
                 try {
@@ -131,34 +131,35 @@ export class RestParser {
             securityContext = args[0].security_context;
             functionArgs = functionArgs || [];
             paramsMap.forEach((item: any) => {
+                let value = null;
                 if (item.name && item.from) {
                     if (args[0][item.from]) {
-                        item.value = args[0][item.from][item.name] || item.defaultValue || null;
+                        value = args[0][item.from][item.name] || item.defaultValue || null;
                     }
-                    item.value = this.deserialize(item);
+                    value = this.deserialize({ value, type: item.type });
                 } else if (item.from) {
 
                     switch (item.from) {
                         case 'response':
-                            item.value = args[1];
+                            value = args[1];
                             break;
                         case 'request':
-                            item.value = args[0];
+                            value = args[0];
                             break;
                         default:
-                            item.value = this.deserialize(args[0][item.from]);
+                            value = this.deserialize({ type: item.type, value: args[0][item.from] });
                             break;
                     }
 
                 } else {
-                    item.value = args[0];
+                    value = args[0];
                 }
 
                 // security special case
                 if (item.from === 'security_context') {
-                    item.value = args[0].security_context;
+                    value = args[0].security_context;
                 }
-                functionArgs.push(item.value);
+                functionArgs.push(value);
             });
             isRest = true;
 
