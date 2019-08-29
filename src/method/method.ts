@@ -102,6 +102,7 @@ export namespace Methods {
                         } catch (ex) {
                             if (Buffer.isBuffer(ex.error)) {
                                 ex.error = ex.error.toString();
+                                ex.message = ex.error; // the message property is what we display
                             }
                             throw (ex);
                         }
