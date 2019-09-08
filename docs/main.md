@@ -14,7 +14,7 @@ Transports are actually the decisions that bind our code to a specific framework
 A classic life-cycle for an application today would start with a small monolith which grows and then replaced with a microservices based distributed application and eventually becomes a cloud based complexed application. Such changes 
 
 
-## Sweet Syntetic Sugar
+## Sweet Synthetic Sugar
 Methodus decorators converts any method into an RPC(Remote Procedure Call). Optionaly invokable using a configured transport.
 
 

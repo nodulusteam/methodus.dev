@@ -1,5 +1,4 @@
 
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 import 'reflect-metadata';
 import { logger, LogClass } from '../../log';
 import { Verbs } from '../../rest';
@@ -8,11 +7,16 @@ import * as path from 'path';
 import * as https from 'https';
 
 import * as request from 'request-promise-native';
+import { AuthType } from '../../decorators';
 /**
  * @hidden
  */
 @LogClass(logger)
 export class Request {
+
+    constructor(public auth: AuthType = AuthType.None, public authOptions: any = {}) {
+
+    }
 
     sendRequest(verb: Verbs, uri: string, params: any[], paramsMap: any[], securityContext?: any) {
         const body: any = {};
@@ -136,6 +140,11 @@ export class Request {
                 timeout: 1000 * 60 * 5,
             };
         }
+
+        if (this.auth) {
+            requestOptions.auth = this.authOptions;
+        }
+
         if (process.env.PROXY) {
             Object.assign(requestOptions, { proxy: process.env.PROXY });
         }
