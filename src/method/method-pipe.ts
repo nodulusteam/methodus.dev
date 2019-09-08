@@ -24,7 +24,7 @@ export namespace Methods {
             let methodResult: MethodResult | MethodError | any = null;
             target.methodus = target.methodus || {};
             const name = target.name || target.constructor.name;
-            target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+            target.methodus[name] = target.methodus[name] || { _auth: {},_events: {}, _descriptors: {} };
 
             const mTarget = target.methodus[name];
 

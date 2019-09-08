@@ -6,6 +6,10 @@ import { MethodError, MethodResult, MethodResultStatus } from '../response';
 import { RestParser, Verbs } from '../rest';
 import { Servers } from '../servers/serversList';
 
+
+const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
+
+
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
 
@@ -19,9 +23,10 @@ export namespace Methods {
 
     export function Method(verb: Verbs, route: string, middlewares?: any[]) {
         return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
+
             target.methodus = target.methodus || {};
             const name = target.name || target.constructor.name;
-            target.methodus[name] = target.methodus[name] || { _events: {}, _descriptors: {} };
+            target.methodus[name] = target.methodus[name] || { _auth: {}, _events: {}, _descriptors: {} };
 
             let mTarget = target.methodus[name];
 
@@ -73,9 +78,16 @@ export namespace Methods {
 
                 const config = Servers.classes[configName];
                 if (!config) {
-                    const client = Servers.clients[configName];
+                    let client = Servers.clients[configName];
+
+
+
                     const existingClassMetadata: any = ClassContainer.get(configName);
                     if (client) {
+                        if (getClassOf(target) === '[object Object]') {
+                            Object.assign(client, this);
+                        }
+
                         // merge the configuration object
                         Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
                         methodus.resolver = client.resolver;
