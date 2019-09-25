@@ -1,6 +1,6 @@
 
 import { Expect, Test, TestCase, TestFixture } from 'alsatian';
-import { Request } from './Request';
+import { WebRequest } from './web-request';
 import { Verbs } from '../../verbs';
 
 @TestFixture('Test Proxy decorator')
@@ -11,7 +11,7 @@ export class ProxyTest {
     public async createNew(object: any) {
 
         try {
-            const request = new Request();
+            const request = new WebRequest();
             const result = request.sendRequest(Verbs.Get, 'https://jsonplaceholder.typicode.com/posts', [], []);
             Expect(result).not.toBeNull();
         } catch (error) {

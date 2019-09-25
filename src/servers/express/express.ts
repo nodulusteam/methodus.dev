@@ -4,14 +4,12 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 import { BaseServer } from '../base';
-import { logger, LogClass } from '../../log';
 import { ExpressRouter } from '../express';
 
 import * as fileUpload from 'express-fileupload';
 /**
  * @hidden
  */
-@LogClass(logger)
 export class Express extends BaseServer {
     _app: any;
     constructor(port: any, onStart?: any) {

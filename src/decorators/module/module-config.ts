@@ -5,7 +5,7 @@ import 'reflect-metadata';
  */
 export function ModuleConfiguration(moduleClass: any) {
   return (target: any) => {
-    const moduleClassInfo = moduleClass.prototype.constructor;
+    const moduleClassInfo = moduleClass.prototype!.constructor ;
     if (!moduleClassInfo.prototype.options) {
       throw new Error('Empty module.');
     }

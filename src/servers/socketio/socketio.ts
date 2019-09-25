@@ -5,15 +5,12 @@ import * as Methodus from '../../interfaces/';
 import { fp } from '../../fp';
 import { BaseServer } from '../base';
 const metadataKey = 'methodus';
-import { logger, LogClass } from '../../log';
 import * as socketIO from 'socket.io';
-import * as colors from 'colors';
 import { Servers } from '../';
 
 /**
  * @hidden
  */
-@LogClass(logger)
 export class SocketIO extends BaseServer {
     _app: any;
     constructor(options: any, httpServer: any) {
@@ -78,10 +75,10 @@ export class SocketIO extends BaseServer {
                 socket.emit(messageName, dataObject, (data: any) => {
                     debug('recieved result', data);
                     if (data.error && data.statusCode) {
-                        logger.error(data);
+                        //logger.error(data);
                         reject(data);
                     } else {
-                        logger.info('return value is', data);
+                        //logger.info('return value is', data);
                         resolve(data);
                     }
                 });
@@ -93,7 +90,6 @@ export class SocketIO extends BaseServer {
 /**
  * @hidden
  */
-@LogClass(logger)
 export class SocketIORouter implements Methodus.Router {
     prefix: string = '';
     public router: any = null;
@@ -108,7 +104,7 @@ export class SocketIORouter implements Methodus.Router {
         Object.keys(methodus._descriptors).forEach((itemKey) => {
             const item = methodus._descriptors[itemKey];
             debug('activating controller method', item, methodus);
-            logger.info(`registering socket event`, item.verb + '_' + item.route);
+            //logger.info(`registering socket event`, item.verb + '_' + item.route);
 
             socket.on(item.verb + '_' + item.route, async (data: any, callback: any) => {
                 // parse params
@@ -141,7 +137,7 @@ export class SocketIORouter implements Methodus.Router {
 export function register(server: any, parentServer: any) {
     const serverType = server.type.name;
 
-    logger.info(this, colors.green(`> Starting SOCKETIO server on port ${server.options.port}`));
+    //logger.info(this, colors.green(`> Starting SOCKETIO server on port ${server.options.port}`));
 
     const httpServer = Servers.get(server.instanceId, 'http');
 

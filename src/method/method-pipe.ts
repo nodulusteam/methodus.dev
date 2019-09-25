@@ -5,7 +5,7 @@ import { MethodType } from '../interfaces';
 import { MethodResult, MethodError } from '../response';
 import { Servers } from '../servers/serversList';
 import { logger } from '../log';
-import { RestParser, Verbs } from '../rest';
+import { ResponseParser, Verbs } from '../rest';
 import { ClassContainer } from '../class-container';
 
 
@@ -95,7 +95,7 @@ export namespace Methods {
 
                     let methodType = MethodType.Local; // we default to local
                     // rest paramters should be parsed differntly
-                    const parser = new RestParser(methodus.serverType);
+                    const parser = new ResponseParser(methodus.serverType);
                     const ParserResponse = parser.parse(args, paramsMap, functionArgs);
 
                     // acquire the method information from the config classes map

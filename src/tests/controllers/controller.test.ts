@@ -2,16 +2,20 @@ import {
     MethodResult, Verbs, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, generateUuid,
     Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext,
 } from '../shim';
+import { Auth, AuthType } from '../../decorators';
+import { Injectable } from '../../di';
 
 /**
  * @hidden
  */
+@Injectable()
+@Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestController')
 export class TestController {
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
-    public static async list(
-        @Headers('auth') auth: string= 'kkk',
+    public async list(
+        @Headers('auth') auth: string = 'kkk',
         @Query('order_by') orderBy: string = 'asc'): Promise<any> {
         const result = new MethodResult([1, 2, 3, 4, 5], 5, 2);
         result.pipe({});
@@ -23,7 +27,7 @@ export class TestController {
     }
 
     @Method(Verbs.Get, '/api/player/desfaults')
-    public static async listdefaults(@Param() params: any,
+    public async listdefaults(@Param() params: any,
         @Body() body: any,
         @Headers() headers: any,
         @Files() files: any,
@@ -37,28 +41,28 @@ export class TestController {
     }
 
     @MethodPipe(Verbs.Post, '/api/player')
-    public static async create(@Files('files') files: any,
+    public async create(@Files('files') files: any,
         @Cookies('cookies') cookies: any, @Body('name') name: string) {
         return new MethodResult({ name });
     }
 
     @Method(Verbs.Get, '/api/player/:player_id')
-    public static async read(@Param('player_id') playerId: number) {
+    public async read(@Param('player_id') playerId: number) {
         throw new MethodError('intended error', 500, 'some more data');
     }
 
     @Method(Verbs.Get, '/api/player/:field/:value')
-    public static async getByField(@Param('field') field: any, @Param('value') value: number) {
+    public async getByField(@Param('field') field: any, @Param('value') value: number) {
         return new MethodResult({});
     }
 
     @Method(Verbs.Put, '/api/player')
-    public static async update() {
+    public async update() {
         return new MethodResult({});
     }
 
     @Method(Verbs.Delete, '/api/player')
-    public static delete() {
+    public delete() {
         return new MethodResult({});
     }
 

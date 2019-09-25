@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 import { Servers } from './servers';
 import { MethodusConfig, ServerConfig, PluginEntry } from './config';
-import { logger, LogClass } from './log';
+import { logger } from './log';
 import * as colors from 'colors';
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
@@ -11,7 +11,6 @@ import { ClientContainer } from './client-container';
 export interface IApp {
     set(key: string, value: any): void;
 }
-@LogClass(logger)
 export class Server {
     public app: any;
     public config?: MethodusConfig;

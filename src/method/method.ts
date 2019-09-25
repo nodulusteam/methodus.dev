@@ -3,8 +3,9 @@ import { ClassContainer } from '../class-container';
 import { MethodType, TransportType } from '../interfaces';
 import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus } from '../response';
-import { RestParser, Verbs } from '../rest';
+import { ResponseParser, Verbs } from '../rest';
 import { Servers } from '../servers/serversList';
+import { Injector } from '../di';
 
 
 const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
@@ -84,12 +85,17 @@ export namespace Methods {
 
                     const existingClassMetadata: any = ClassContainer.get(configName);
                     if (client) {
-                        if (getClassOf(target) === '[object Object]') {
-                            Object.assign(client, this);
-                        }
+
 
                         // merge the configuration object
                         Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
+                        if (getClassOf(target) === '[object Object]') {// the target is an instance not a class
+                            Object.assign(client, this);
+                            if (this.credentials) {
+                                methodus._auth!.options = this.credentials;
+                            }
+                        }
+
                         methodus.resolver = client.resolver;
                         try {
 
@@ -120,7 +126,7 @@ export namespace Methods {
                         }
                     } else {
 
-                        const result = await originalMethod.apply(this, args);
+                        const result = await originalMethod.apply(target, args);
                         return handleResult(result);
                     }
 
@@ -134,7 +140,7 @@ export namespace Methods {
                     const functionArgs: any[] = [];
 
                     // rest paramters should be parsed differntly
-                    parser = new RestParser(methodus.serverType);
+                    parser = new ResponseParser(methodus.serverType);
 
                     ParserResponse = parser.parse(args, paramsMap, functionArgs);
 
@@ -171,7 +177,9 @@ export namespace Methods {
                                 }
                                 break;
                             case MethodType.Local:
-                                methodResult = await originalMethod.apply(this, ParserResponse.args);
+                                let instanceFromDI = Injector.get(configName) || this;
+
+                                methodResult = await originalMethod.apply(instanceFromDI, ParserResponse.args);
                                 break;
 
                         }
@@ -194,21 +202,21 @@ export namespace Methods {
                 }
             };
 
-            delete descriptor.value;
-            delete descriptor.writable;
-
-            descriptor.get = function () {
-                // Create an instance of the bound function for the instance.
-                // And set an instance property to override the property
-                // from the object prototype.
-                Object.defineProperty(this, propertyKey, {
-                    enumerable: descriptor.enumerable,
-                    configurable: descriptor.configurable,
-                    value() {
-                        return value.apply(this, arguments as any);
-                    },
-                });
-            };
+            // delete descriptor.value;
+            // delete descriptor.writable;
+            descriptor.value = value;
+            // descriptor.get = function () {
+            //     // Create an instance of the bound function for the instance.
+            //     // And set an instance property to override the property
+            //     // from the object prototype.
+            //     Object.defineProperty(this, propertyKey, {
+            //         enumerable: descriptor.enumerable,
+            //         configurable: descriptor.configurable,
+            //         value() {
+            //             return value.apply(this, arguments as any);
+            //         },
+            //     });
+            // };
             return descriptor;
         };
 

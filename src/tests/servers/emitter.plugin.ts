@@ -1,7 +1,7 @@
 
 import 'reflect-metadata';
 import * as colors from 'colors';
-import { Servers, logger, LogClass, ITransport } from '../shim';
+import { Servers, logger, ITransport } from '../shim';
 import { EventEmitter } from 'events';
 import { fp } from '../../fp';
 const metadataKey = 'methodus';
@@ -13,7 +13,6 @@ export const resultEmitter: EventEmitter = new EventEmitter();
 /**
  * @hidden
  */
-@LogClass(logger)
 export class CustomMessageRouter {
     prefix: string = '';
 

@@ -4,26 +4,26 @@ import { Verbs, Method, Param, Body, MethodResult, MethodConfig } from '../../';
 export class RemoteController {
 
     @Method(Verbs.Get, '/items/:id')
-    public static async list(@Param('id') id: string): Promise<MethodResult> {
+    public async list(@Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/items/:id')
-    public static async get(@Param('id') id: string): Promise<MethodResult> {
+    public async get(@Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Post, '/id/')
-    public static async create(@Body('item') item: any): Promise<MethodResult> {
+    public async create(@Body('item') item: any): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Put, '/id/:id')
-    public static async update(@Param('id') id: string): Promise<MethodResult> {
+    public async update(@Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
     @Method(Verbs.Delete, '/id/:id')
-    public static async remove(@Param('id') id: string): Promise<MethodResult> {
+    public async remove(@Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 }

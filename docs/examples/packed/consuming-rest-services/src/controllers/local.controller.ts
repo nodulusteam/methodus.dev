@@ -5,22 +5,22 @@ import { RemoteService } from './remote.service';
 export class LocalController {
 
     @Method(Verbs.Get, '/todos')
-    public static async list(): Promise<MethodResult> {
+    public async list(): Promise<MethodResult> {
         return await RemoteService.list(); // calling the remote service
     }
 
     @Method(Verbs.Get, '/todos/:id')
-    public static async get(@Param('id') id: number): Promise<MethodResult> {
+    public async get(@Param('id') id: number): Promise<MethodResult> {
         return await RemoteService.get(id);
     }
 
     @Method(Verbs.Post, '/todos')
-    public static async create(@Body('data') data: any): Promise<MethodResult> {
+    public async create(@Body('data') data: any): Promise<MethodResult> {
         return await RemoteService.create(data);
     }
 
     @Method(Verbs.Put, '/todos/:id')
-    public static async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
+    public async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
         return await RemoteService.update(id, data);
     }
 }

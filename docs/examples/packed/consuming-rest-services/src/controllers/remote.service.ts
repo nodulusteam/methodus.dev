@@ -4,22 +4,22 @@ import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } f
 export class RemoteService {
 
     @Method(Verbs.Get, '/todos')
-    public static async list(): Promise<MethodResult<string[]>> {
+    public async list(): Promise<MethodResult<string[]>> {
         return new MethodResult([]);
     }
 
     @Method(Verbs.Get, '/todos/:id')
-    public static async get(@Param('id') id: number): Promise<MethodResult<any>> {
+    public async get(@Param('id') id: number): Promise<MethodResult<any>> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Post, '/todos')
-    public static async create(@Body('data') data: any): Promise<MethodResult> {
+    public async create(@Body('data') data: any): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Put, '/todos/:id')
-    public static async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
+    public async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
         return new MethodResult({});
     }
 

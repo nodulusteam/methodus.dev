@@ -1,10 +1,8 @@
-import { logger, LogClass } from '../log';
 import {   TransportType } from '../interfaces';
 
 /**
  * @hidden
  */
-@LogClass(logger)
 export class MethodusClientConfig {
     public transportType: any;
     public classType: any;

@@ -15,6 +15,9 @@ export * from './built-in-servers';
 export * from './built-in-transports';
 export * from './mocker';
 export * from './fp';
+export * from './di';
+export * from './transports';
+
 import { Mapping } from './params';
 /**
  * @hidden
