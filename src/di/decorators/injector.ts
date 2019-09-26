@@ -6,9 +6,6 @@ export class Injector {
     private static singletons: any = {};
     static resolveAndCreate(tokens: Array<any>) {
         tokens.forEach((token: any) => {
-            // const annotations = token.hasOwnProperty(ANNOTATIONS);
-
-
             Injector.records.push({
                 token,
                 deps: Reflect.getOwnMetadata('design:paramtypes', token) || []
