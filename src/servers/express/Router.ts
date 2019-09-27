@@ -1,15 +1,15 @@
-import { logger, LogClass } from '../../log';
 import * as express from 'express';
 import { fp } from '../../fp';
 import { MethodType } from '../../shim';
 
-@LogClass(logger)
 export class ExpressRouter {
     public routers: any = [];
     constructor(obj: any, methodType: MethodType, app: any) {
-
-        const methodus = fp.maybeMethodus(obj)[obj.name];
-
+        let keyName = obj.name;
+        if (!keyName) {
+            keyName = obj.constructor.name;
+        }
+        const methodus = fp.maybeMethodus(obj)[keyName];
         const proto = fp.maybeProto(obj);
         const globalMiddlewares: any[] = [];
         if (methodus.middlewares) {
@@ -17,7 +17,7 @@ export class ExpressRouter {
                 if (element) {
                     globalMiddlewares.push(element);
                 } else {
-                    logger.error('could not load middleware');
+                   // logger.error('could not load middleware');
                 }
             });
         }
@@ -36,7 +36,7 @@ export class ExpressRouter {
                 const verb = item.verb.toLowerCase();
                 const functionArray = [...globalMiddlewares];
                 if (item.middlewares) {
-                    logger.info( `loading middleware for ${item.propertyKey}`);
+                    //logger.info(`loading middleware for ${item.propertyKey}`);
                     item.middlewares.forEach((element: any) => {
                         if (element) {
                             functionArray.push(element);

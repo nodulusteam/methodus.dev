@@ -1,5 +1,4 @@
 
-import { logger, LogClass } from '../log';
 import { MethodType, ServerType, TransportType } from '../interfaces';
 import { MethodusClassConfig } from './class-config';
 import { MethodusClientConfig } from './client-config';
@@ -10,7 +9,6 @@ export interface PluginEntry {
     options: any;
 }
 
-@LogClass(logger)
 export class MethodusConfig {
 
     public classes: Map<string, MethodusClassConfig> = new Map<string, MethodusClassConfig>();

@@ -8,7 +8,7 @@ export class Proxy {
         return (target: any) => {
             const methodus = fp.maybeMethodus(target)[className];
             let classTransport = MethodType.Http;
-            const bridge = (global as any).METHODUS_BRIDGE;
+            const bridge = (global as any).METHODUS_BRIDGE.classes;
             if (bridge[className]) {
                 classTransport = MethodType.Local;
             }

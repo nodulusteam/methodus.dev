@@ -1,21 +1,25 @@
 import {
     MethodResult, Mapping, Verbs, Method, MethodMock, MethodConfig, MethodPipe,
 } from '../shim';
+import { Auth, AuthType } from '../../decorators';
+import { Injectable } from '../../di';
 
 /**
  * @hidden
  */
+@Injectable()
+@Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestTarget')
 export class TestTarget {
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
-    public static async list(@Mapping.Headers('auth') auth: string,
+    public async list(@Mapping.Headers('auth') auth: string,
         @Mapping.Query('order_by') orderBy: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/api/player/desfaults')
-    public static async listdefaults(@Mapping.Param() params: any,
+    public async listdefaults(@Mapping.Param() params: any,
         @Mapping.Body() body: any,
         @Mapping.Headers() headers: any,
         @Mapping.Files() files: any,
@@ -29,29 +33,29 @@ export class TestTarget {
     }
 
     @MethodPipe(Verbs.Post, '/api/player')
-    public static async create(@Mapping.Files('files') files: any,
+    public async create(@Mapping.Files('files') files: any,
         @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/api/player/:player_id')
-    public static async read(@Mapping.Param('player_id') playerId: number): Promise<MethodResult> {
+    public async read(@Mapping.Param('player_id') playerId: number): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/api/player/:field/:value')
-    public static async getByField(@Mapping.Param('field') field: string,
+    public async getByField(@Mapping.Param('field') field: string,
         @Mapping.Param('value') value: number): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Put, '/api/player')
-    public static async update(): Promise<MethodResult> {
+    public async update(): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Delete, '/api/player')
-    public static async delete(): Promise<MethodResult> {
+    public async delete(): Promise<MethodResult> {
         return new MethodResult({});
     }
 

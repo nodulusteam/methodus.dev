@@ -1,18 +1,16 @@
 
 import 'reflect-metadata';
-import { logger, LogClass } from '../../log';
 import { Verbs } from '../../rest';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
-
+const logger = require('debug')('methodus:transports:http');
 import * as request from 'request-promise-native';
 import { AuthType } from '../../decorators';
 /**
  * @hidden
  */
-@LogClass(logger)
-export class Request {
+export class WebRequest {
 
     constructor(public auth: AuthType = AuthType.None, public authOptions: any = {}) {
 
@@ -141,15 +139,20 @@ export class Request {
             };
         }
 
+        switch (this.auth) {
+            case AuthType.Basic:
+                requestOptions.auth = { user: this.authOptions.user, pass: this.authOptions.password };
+                break;
+        }
         if (this.auth) {
-            requestOptions.auth = this.authOptions;
+            logger('Auth is', requestOptions.auth);
         }
 
         if (process.env.PROXY) {
             Object.assign(requestOptions, { proxy: process.env.PROXY });
         }
 
-        logger.log(this, body, uri);
+        logger(this, body, uri);
         if (Object.keys(body).length > 0) {
             requestOptions.body = body;
             requestOptions.json = true;
@@ -202,7 +205,7 @@ export class Request {
 
         // very important it allows the download of binary files
         requestOptions.encoding = null;
-        logger.log(this, 'request options are: ', requestOptions);
+        logger(this, 'request options are: ', requestOptions);
 
         const returnedPipe = this.promiseToTry(requestOptions);
         return returnedPipe;
@@ -212,7 +215,7 @@ export class Request {
     public promiseToTry(requestOptions: any) {
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error: any) => {
-            logger.error(error);
+            logger(error);
         });
         return requestToPipe;
     }

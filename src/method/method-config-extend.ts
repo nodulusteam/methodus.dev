@@ -12,8 +12,9 @@ export namespace Methods {
     export function MethodConfigExtend(extendTarget: any, name?: string) {
         return (target: any) => {
             const trueName = name || target.name;
+            const methodus = target.methodus || target.prototype.methodus;
             const filterKeys = ['length', 'prototype', 'name', 'methodus', 'methodus_base'];
-            target.methodus[trueName] = JSON.parse(JSON.stringify(extendTarget.methodus_base));
+            methodus[trueName] = JSON.parse(JSON.stringify(extendTarget.methodus_base));
             const inheritSettings: any = {};
 
             target.prototype.options.classes.push({

@@ -1,6 +1,4 @@
-import { logger, LogClass } from '../log/';
 
-@LogClass(logger)
 export class MethodError extends Error {
     error: string;
     statusCode: number;

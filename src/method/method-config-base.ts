@@ -25,7 +25,7 @@ export namespace Methods {
                 proto = target;
             }
 
-            proto.methodus_base = JSON.parse(JSON.stringify(target.methodus[name]));
+            proto.methodus_base = JSON.parse(JSON.stringify(proto.methodus[name]));
 
             Servers.classes[target.name] = {
                 classType: target,

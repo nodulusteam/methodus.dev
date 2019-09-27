@@ -84,6 +84,28 @@
                 "NODE_LOG_LEVEL": "trace"
             }
         },
+
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T Run DI test",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "stopOnEntry": false,
+            "args": [
+                "build/di/di.spec.js"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "PORT": "8040",
+                "DEBUG": "none",
+                "NODE_ENV": "debug",
+                "NODE_LOG_LEVEL": "trace"
+            }
+        },
+
         {
             "request": "launch",
             "console": "internalConsole",

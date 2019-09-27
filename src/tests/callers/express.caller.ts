@@ -1,8 +1,10 @@
 
-import {BuiltInTransports,
+import {
+    BuiltInTransports,
     ClientConfiguration, ConfiguredServer,
 } from '../shim';
 import { TestTarget } from '../controllers/';
+import { Injector } from '../../di';
 
 /**
  * @hidden
@@ -17,7 +19,7 @@ export class Xserver extends ConfiguredServer {
 if (process.env.TESTMODE === 'run') {
     new Xserver();
     setTimeout(async () => {
-        const result = await TestTarget.list('aaaa', 'aaaa');
+        const result = await Injector.get(TestTarget).list('aaaa', 'aaaa');
         console.log(result);
     }, 4000);
 }

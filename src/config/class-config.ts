@@ -1,11 +1,9 @@
 
-import { logger, LogClass } from '../log';
 import { MethodType, ServerType } from '../interfaces';
 
 /**
  * @hidden
  */
-@LogClass(logger)
 export class MethodusClassConfig {
     public methodType: MethodType = MethodType.Local;
     public serverType: ServerType;

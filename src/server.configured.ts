@@ -1,10 +1,8 @@
 
 import { MethodusConfig } from './config';
-import { LogClass, logger } from './log/';
 import { Server } from './server';
 import { EventEmitter } from 'events';
 
-@LogClass(logger)
 export class ConfiguredServer extends EventEmitter {
     server?: Server;
     target: any;
@@ -17,7 +15,13 @@ export class ConfiguredServer extends EventEmitter {
         this.init();
     }
     public async init() {
-        const options = this.target.prototype.options;
+        let options: any = {};
+        if (this.target) {
+            options = this.target.prototype.options;
+
+        } else {
+            options = (this as any).__proto__.options;
+        }
 
         const server = new Server();
         this.server = server;
