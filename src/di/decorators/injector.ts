@@ -13,7 +13,7 @@ export class Injector {
         })
         return this
     }
-    static register(token: any, deps: any = [], alias: string) {
+    static register(token: any, deps: any = [], alias?: string) {
 
         Injector.records.push({
             token,
