@@ -4,6 +4,7 @@ import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
 import { MethodType, ServerType } from '../interfaces';
 import { Servers } from '../servers/serversList';
+import { Injector } from '../di';
 
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
@@ -13,6 +14,9 @@ export namespace Methods {
      */
     export function MethodConfigBase(name: string, middlewares?: any[], repository?: any) {
         return (target: any) => {
+            //use the injectable logic here
+            Injector.inject(target,name);
+            
             const existingMetadata = ClassContainer.get(name) || {};
             existingMetadata.name = name;
             const original = target.prototype.constructor;

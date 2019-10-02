@@ -4,6 +4,18 @@ const ANNOTATIONS = '__annotations__';
 export class Injector {
     private static records: { token: any, deps: any }[] = [];
     private static singletons: any = {};
+    static inject(target: any, name?: string) {
+        //use the injectable logic here
+        const annotations = target.hasOwnProperty(ANNOTATIONS) ?
+            (target as any)[ANNOTATIONS] :
+            Object.defineProperty(target, ANNOTATIONS, { value: [] })[ANNOTATIONS];
+
+        const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
+        Injector.register(target, constructorArgs, name);
+        annotations.push('injectable');
+    }
+
+
     static resolveAndCreate(tokens: Array<any>) {
         tokens.forEach((token: any) => {
             Injector.records.push({
