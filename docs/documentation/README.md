@@ -5,49 +5,49 @@
 
 ### Modules
 
-* [Mapping](modules/mapping.md)
-* [Methods](modules/methods.md)
+* [Mapping](documentation/modules/mapping.md)
+* [Methods](documentation/modules/methods.md)
 
 ### Enumerations
 
-* [MethodType](enums/methodtype.md)
-* [ServerType](enums/servertype.md)
-* [TransportType](enums/transporttype.md)
+* [MethodType](documentation/enums/methodtype.md)
+* [ServerType](documentation/enums/servertype.md)
+* [TransportType](documentation/enums/transporttype.md)
 
 ### Classes
 
-* [BaseServer](classes/baseserver.md)
-* [BuiltInServers](classes/builtinservers.md)
-* [BuiltInTransports](classes/builtintransports.md)
-* [ConfiguredServer](classes/configuredserver.md)
-* [EmitterPlugin](classes/emitterplugin.md)
-* [ExpressRouter](classes/expressrouter.md)
-* [ExtressTestModule](classes/extresstestmodule.md)
-* [FP](classes/fp.md)
-* [MethodError](classes/methoderror.md)
-* [MethodResult](classes/methodresult.md)
-* [MethodResultStatus](classes/methodresultstatus.md)
-* [MethodusConfig](classes/methodusconfig.md)
-* [Mocker](classes/mocker.md)
-* [ModuleClass](classes/moduleclass.md)
-* [ModulesTest](classes/modulestest.md)
-* [PluginLoader](classes/pluginloader.md)
-* [Proxy](classes/proxy.md)
-* [Server](classes/server.md)
-* [Servers](classes/servers.md)
-* [ServersList](classes/serverslist.md)
-* [Verbs](classes/verbs.md)
+* [BaseServer](documentation/classes/baseserver.md)
+* [BuiltInServers](documentation/classes/builtinservers.md)
+* [BuiltInTransports](documentation/classes/builtintransports.md)
+* [ConfiguredServer](documentation/classes/configuredserver.md)
+* [EmitterPlugin](documentation/classes/emitterplugin.md)
+* [ExpressRouter](documentation/classes/expressrouter.md)
+* [ExtressTestModule](documentation/classes/extresstestmodule.md)
+* [FP](documentation/classes/fp.md)
+* [MethodError](documentation/classes/methoderror.md)
+* [MethodResult](documentation/classes/methodresult.md)
+* [MethodResultStatus](documentation/classes/methodresultstatus.md)
+* [MethodusConfig](documentation/classes/methodusconfig.md)
+* [Mocker](documentation/classes/mocker.md)
+* [ModuleClass](documentation/classes/moduleclass.md)
+* [ModulesTest](documentation/classes/modulestest.md)
+* [PluginLoader](documentation/classes/pluginloader.md)
+* [Proxy](documentation/classes/proxy.md)
+* [Server](documentation/classes/server.md)
+* [Servers](documentation/classes/servers.md)
+* [ServersList](documentation/classes/serverslist.md)
+* [Verbs](documentation/classes/verbs.md)
 
 ### Interfaces
 
 * [IApp](interfaces/iapp.md)
-* [IMethodusClassConfig](interfaces/imethodusclassconfig.md)
-* [IMethodusConfig](interfaces/imethodusconfig.md)
-* [IServer](interfaces/iserver.md)
-* [IServerConfig](interfaces/iserverconfig.md)
-* [ITransport](interfaces/itransport.md)
-* [PluginEntry](interfaces/pluginentry.md)
-* [Router](interfaces/router.md)
+* [IMethodusClassConfig](documentation/interfaces/imethodusclassconfig.md)
+* [IMethodusConfig](documentation/interfaces/imethodusconfig.md)
+* [IServer](documentation/interfaces/iserver.md)
+* [IServerConfig](documentation/interfaces/iserverconfig.md)
+* [ITransport](documentation/interfaces/itransport.md)
+* [PluginEntry](documentation/interfaces/pluginentry.md)
+* [Router](documentation/interfaces/router.md)
 
 ### Variables
 
