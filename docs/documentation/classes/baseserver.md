@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [BaseServer](../classes/baseserver.md)
+[A Methodus guide](../README.md) > [BaseServer](../classes/baseserver.md)
 
 # Class: BaseServer
 
@@ -28,7 +28,8 @@
 
 **● classRouters**: *`any`[]* =  []
 
-*Defined in [servers/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/base.ts#L6)*
+*Defined in build/servers/base.d.ts:4*
+*Defined in [src/servers/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/base.ts#L6)*
 
 ___
 <a id="config"></a>
@@ -37,7 +38,8 @@ ___
 
 **● config**: *[IMethodusConfig](../interfaces/imethodusconfig.md)*
 
-*Defined in [servers/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/base.ts#L5)*
+*Defined in build/servers/base.d.ts:3*
+*Defined in [src/servers/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/base.ts#L5)*
 
 ___
 
@@ -49,7 +51,7 @@ ___
 
 ▸ **_send**(functionArgs: *`any`*, methodinformation: *`any`*, paramsMap: *`any`*, securityContext: *`any`*): `any`
 
-*Defined in [servers/base.ts:8](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/base.ts#L8)*
+*Defined in build/servers/base.d.ts:6*
 
 **Parameters:**
 
@@ -69,7 +71,7 @@ ___
 
 ▸ **useClass**(classType: *`any`*, methodType: *[MethodType](../enums/methodtype.md)*): `any`
 
-*Defined in [servers/base.ts:7](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/base.ts#L7)*
+*Defined in build/servers/base.d.ts:5*
 
 **Parameters:**
 

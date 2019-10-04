@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [FP](../classes/fp.md)
+[A Methodus guide](../README.md) > [FP](../classes/fp.md)
 
 # Class: FP
 
@@ -28,7 +28,7 @@
 
 ▸ **maybe**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:48](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L48)*
+*Defined in build/tests/fp.spec.d.ts:6*
 
 **Parameters:**
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **maybeEach**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:64](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L64)*
+*Defined in build/tests/fp.spec.d.ts:8*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **maybeJson**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:14](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L14)*
+*Defined in build/tests/fp.spec.d.ts:2*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **maybeMethodus**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:22](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L22)*
+*Defined in build/tests/fp.spec.d.ts:3*
 
 **Parameters:**
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **maybeProto**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:40](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L40)*
+*Defined in build/tests/fp.spec.d.ts:5*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **maybeString**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:30](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L30)*
+*Defined in build/tests/fp.spec.d.ts:4*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **unique**(object: *`any`*): `Promise`<`void`>
 
-*Defined in [tests/fp.spec.ts:56](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/fp.spec.ts#L56)*
+*Defined in build/tests/fp.spec.d.ts:7*
 
 **Parameters:**
 

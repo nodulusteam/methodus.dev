@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [ITransport](../interfaces/itransport.md)
+[A Methodus guide](../README.md) > [ITransport](../interfaces/itransport.md)
 
 # Interface: ITransport
 
@@ -31,7 +31,8 @@
 
 **● name**: *`string`*
 
-*Defined in [interfaces/methodus.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L12)*
+*Defined in build/interfaces/methodus.d.ts:10*
+*Defined in [src/interfaces/methodus.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L12)*
 
 ___
 
@@ -43,7 +44,20 @@ ___
 
 ▸ **register**(server: *`any`*, parentServer: *`any`*): `void`
 
-*Defined in [interfaces/methodus.ts:13](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L13)*
+▸ **register**(server: *`any`*, parentServer: *`any`*): `void`
+
+*Defined in build/interfaces/methodus.d.ts:11*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| server | `any` |
+| parentServer | `any` |
+
+**Returns:** `void`
+
+*Defined in [src/interfaces/methodus.ts:13](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L13)*
 
 **Parameters:**
 
@@ -61,7 +75,22 @@ ___
 
 ▸ **send**(methodus: *`any`*, functionArgs: *`any`*, paramsMap: *`any`*, securityContext: *`any`*): `Promise`<`any`>
 
-*Defined in [interfaces/methodus.ts:14](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L14)*
+▸ **send**(methodus: *`any`*, functionArgs: *`any`*, paramsMap: *`any`*, securityContext: *`any`*): `Promise`<`any`>
+
+*Defined in build/interfaces/methodus.d.ts:12*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| methodus | `any` |
+| functionArgs | `any` |
+| paramsMap | `any` |
+| securityContext | `any` |
+
+**Returns:** `Promise`<`any`>
+
+*Defined in [src/interfaces/methodus.ts:14](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L14)*
 
 **Parameters:**
 

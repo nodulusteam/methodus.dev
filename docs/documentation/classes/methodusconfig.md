@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [MethodusConfig](../classes/methodusconfig.md)
+[A Methodus guide](../README.md) > [MethodusConfig](../classes/methodusconfig.md)
 
 # Class: MethodusConfig
 
@@ -36,7 +36,7 @@
 
 ⊕ **new MethodusConfig**(servers?: *`ServerConfig`[]*, map?: *`Map`<`string`, `MethodusClassConfig`>*): [MethodusConfig](methodusconfig.md)
 
-*Defined in [config/config.ts:20](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L20)*
+*Defined in build/config/config.d.ts:14*
 
 **Parameters:**
 
@@ -57,7 +57,8 @@ ___
 
 **● classes**: *`Map`<`string`, `MethodusClassConfig`>* =  new Map<string, MethodusClassConfig>()
 
-*Defined in [config/config.ts:16](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L16)*
+*Defined in build/config/config.d.ts:10*
+*Defined in [src/config/config.ts:16](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L16)*
 
 ___
 <a id="clients"></a>
@@ -66,16 +67,18 @@ ___
 
 **● clients**: *`Map`<`string`, `MethodusClientConfig`>* =  new Map<string, MethodusClientConfig>()
 
-*Defined in [config/config.ts:18](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L18)*
+*Defined in build/config/config.d.ts:12*
+*Defined in [src/config/config.ts:18](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L18)*
 
 ___
 <a id="plugins"></a>
 
 ### `<Optional>` plugins
 
-**● plugins**: *[PluginEntry](../interfaces/pluginentry.md)[]*
+**● plugins**: *`PluginEntry`[]*
 
-*Defined in [config/config.ts:19](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L19)*
+*Defined in build/config/config.d.ts:13*
+*Defined in [src/config/config.ts:19](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L19)*
 
 ___
 <a id="port"></a>
@@ -84,7 +87,8 @@ ___
 
 **● port**: *`number`* = 0
 
-*Defined in [config/config.ts:20](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L20)*
+*Defined in build/config/config.d.ts:14*
+*Defined in [src/config/config.ts:20](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L20)*
 
 ___
 <a id="servers"></a>
@@ -93,7 +97,8 @@ ___
 
 **● servers**: *`ServerConfig`[]*
 
-*Defined in [config/config.ts:17](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L17)*
+*Defined in build/config/config.d.ts:11*
+*Defined in [src/config/config.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L17)*
 
 ___
 
@@ -105,7 +110,7 @@ ___
 
 ▸ **run**(serverType: *[ServerType](../enums/servertype.md)*, configuration: *`any`*): `void`
 
-*Defined in [config/config.ts:53](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L53)*
+*Defined in build/config/config.d.ts:18*
 
 **Parameters:**
 
@@ -123,7 +128,7 @@ ___
 
 ▸ **use**(classType: *`any`*, methodType: *[MethodType](../enums/methodtype.md)*, serverType: *[ServerType](../enums/servertype.md)*, resolver?: *`Promise`<`any`> \| `string` \| `any`*): `void`
 
-*Defined in [config/config.ts:43](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L43)*
+*Defined in build/config/config.d.ts:17*
 
 **Parameters:**
 
@@ -143,7 +148,7 @@ ___
 
 ▸ **useClient**(classType: *`any`*, transportType: *[TransportType](../enums/transporttype.md)*, resolver?: *`Promise`<`any`> \| `string` \| `any`*): `void`
 
-*Defined in [config/config.ts:32](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L32)*
+*Defined in build/config/config.d.ts:16*
 
 **Parameters:**
 

@@ -1,8 +1,10 @@
-[@methodus/server](../README.md) > [ConfiguredServer](../classes/configuredserver.md)
+[A Methodus guide](../README.md) > [ConfiguredServer](../classes/configuredserver.md)
 
 # Class: ConfiguredServer
 
 ## Hierarchy
+
+ `EventEmitter`
 
  `EventEmitter`
 
@@ -51,7 +53,7 @@
 
 ⊕ **new ConfiguredServer**(target?: *`any`*): [ConfiguredServer](configuredserver.md)
 
-*Defined in [server.configured.ts:10](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/server.configured.ts#L10)*
+*Defined in build/server.configured.d.ts:6*
 
 **Parameters:**
 
@@ -71,7 +73,8 @@ ___
 
 **● server**: *[Server](server.md)*
 
-*Defined in [server.configured.ts:9](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/server.configured.ts#L9)*
+*Defined in build/server.configured.d.ts:5*
+*Defined in [src/server.configured.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.configured.ts#L9)*
 
 ___
 <a id="target"></a>
@@ -80,7 +83,8 @@ ___
 
 **● target**: *`any`*
 
-*Defined in [server.configured.ts:10](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/server.configured.ts#L10)*
+*Defined in build/server.configured.d.ts:6*
+*Defined in [src/server.configured.ts:10](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.configured.ts#L10)*
 
 ___
 <a id="defaultmaxlisteners"></a>
@@ -91,7 +95,9 @@ ___
 
 *Inherited from EventEmitter.defaultMaxListeners*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:8*
+*Overrides EventEmitter.defaultMaxListeners*
+
+*Defined in node_modules/@types/node/events.d.ts:8*
 
 ___
 
@@ -107,7 +113,7 @@ ___
 
 *Overrides EventEmitter.addListener*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:10*
+*Defined in node_modules/@types/node/events.d.ts:10*
 
 **Parameters:**
 
@@ -129,7 +135,7 @@ ___
 
 *Overrides EventEmitter.emit*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:22*
+*Defined in node_modules/@types/node/events.d.ts:22*
 
 **Parameters:**
 
@@ -151,7 +157,7 @@ ___
 
 *Overrides EventEmitter.eventNames*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:23*
+*Defined in node_modules/@types/node/events.d.ts:23*
 
 **Returns:** `Array`<`string` \| `symbol`>
 
@@ -166,7 +172,7 @@ ___
 
 *Overrides EventEmitter.getMaxListeners*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:19*
+*Defined in node_modules/@types/node/events.d.ts:19*
 
 **Returns:** `number`
 
@@ -177,7 +183,7 @@ ___
 
 ▸ **init**(): `Promise`<`void`>
 
-*Defined in [server.configured.ts:19](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/server.configured.ts#L19)*
+*Defined in build/server.configured.d.ts:8*
 
 **Returns:** `Promise`<`void`>
 
@@ -188,7 +194,7 @@ ___
 
 ▸ **kill**(): `void`
 
-*Defined in [server.configured.ts:52](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/server.configured.ts#L52)*
+*Defined in build/server.configured.d.ts:9*
 
 **Returns:** `void`
 
@@ -203,7 +209,7 @@ ___
 
 *Overrides EventEmitter.listenerCount*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:24*
+*Defined in node_modules/@types/node/events.d.ts:24*
 
 **Parameters:**
 
@@ -224,7 +230,7 @@ ___
 
 *Overrides EventEmitter.listeners*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:20*
+*Defined in node_modules/@types/node/events.d.ts:20*
 
 **Parameters:**
 
@@ -245,7 +251,7 @@ ___
 
 *Overrides EventEmitter.off*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:16*
+*Defined in node_modules/@types/node/events.d.ts:16*
 
 **Parameters:**
 
@@ -267,7 +273,7 @@ ___
 
 *Overrides EventEmitter.on*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:11*
+*Defined in node_modules/@types/node/events.d.ts:11*
 
 **Parameters:**
 
@@ -289,7 +295,7 @@ ___
 
 *Overrides EventEmitter.once*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:12*
+*Defined in node_modules/@types/node/events.d.ts:12*
 
 **Parameters:**
 
@@ -311,7 +317,7 @@ ___
 
 *Overrides EventEmitter.prependListener*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:13*
+*Defined in node_modules/@types/node/events.d.ts:13*
 
 **Parameters:**
 
@@ -333,7 +339,7 @@ ___
 
 *Overrides EventEmitter.prependOnceListener*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:14*
+*Defined in node_modules/@types/node/events.d.ts:14*
 
 **Parameters:**
 
@@ -355,7 +361,7 @@ ___
 
 *Overrides EventEmitter.rawListeners*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:21*
+*Defined in node_modules/@types/node/events.d.ts:21*
 
 **Parameters:**
 
@@ -376,7 +382,7 @@ ___
 
 *Overrides EventEmitter.removeAllListeners*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:17*
+*Defined in node_modules/@types/node/events.d.ts:17*
 
 **Parameters:**
 
@@ -397,7 +403,7 @@ ___
 
 *Overrides EventEmitter.removeListener*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:15*
+*Defined in node_modules/@types/node/events.d.ts:15*
 
 **Parameters:**
 
@@ -419,7 +425,7 @@ ___
 
 *Overrides EventEmitter.setMaxListeners*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:18*
+*Defined in node_modules/@types/node/events.d.ts:18*
 
 **Parameters:**
 
@@ -438,7 +444,9 @@ ___
 
 *Inherited from EventEmitter.listenerCount*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/@types/node/events.d.ts:7*
+*Overrides EventEmitter.listenerCount*
+
+*Defined in node_modules/@types/node/events.d.ts:7*
 
 *__deprecated__*: since v4.0.0
 

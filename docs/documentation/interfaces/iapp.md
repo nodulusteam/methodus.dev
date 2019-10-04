@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [IApp](../interfaces/iapp.md)
+[A Methodus guide](../README.md) > [IApp](../interfaces/iapp.md)
 
 # Interface: IApp
 
@@ -22,7 +22,20 @@
 
 ▸ **set**(key: *`string`*, value: *`any`*): `void`
 
-*Defined in [server.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/server.ts#L12)*
+▸ **set**(key: *`string`*, value: *`any`*): `void`
+
+*Defined in build/server.d.ts:4*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| key | `string` |
+| value | `any` |
+
+**Returns:** `void`
+
+*Defined in [src/server.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L12)*
 
 **Parameters:**
 

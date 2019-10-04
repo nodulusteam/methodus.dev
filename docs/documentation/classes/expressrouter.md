@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [ExpressRouter](../classes/expressrouter.md)
+[A Methodus guide](../README.md) > [ExpressRouter](../classes/expressrouter.md)
 
 # Class: ExpressRouter
 
@@ -26,7 +26,7 @@
 
 ⊕ **new ExpressRouter**(obj: *`any`*, methodType: *[MethodType](../enums/methodtype.md)*, app: *`any`*): [ExpressRouter](expressrouter.md)
 
-*Defined in [servers/express/Router.ts:8](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/express/Router.ts#L8)*
+*Defined in build/servers/express/Router.d.ts:3*
 
 **Parameters:**
 
@@ -48,7 +48,8 @@ ___
 
 **● routers**: *`any`* =  []
 
-*Defined in [servers/express/Router.ts:8](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/express/Router.ts#L8)*
+*Defined in build/servers/express/Router.d.ts:3*
+*Defined in [src/servers/express/Router.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/express/Router.ts#L8)*
 
 ___
 

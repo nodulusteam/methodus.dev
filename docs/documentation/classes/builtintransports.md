@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [BuiltInTransports](../classes/builtintransports.md)
+[A Methodus guide](../README.md) > [BuiltInTransports](../classes/builtintransports.md)
 
 # Class: BuiltInTransports
 
@@ -24,7 +24,8 @@
 
 **Http**: *`object`*
 
-*Defined in [built-in-transports.ts:3](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L3)*
+*Defined in build/built-in-transports.d.ts:2*
+*Defined in [src/built-in-transports.ts:3](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L3)*
 
 <a id="http.name"></a>
 
@@ -32,7 +33,7 @@
 
 **● name**: *`string`* = "Http"
 
-*Defined in [built-in-transports.ts:3](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L3)*
+*Defined in [src/built-in-transports.ts:3](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L3)*
 
 ___
 <a id="http.path"></a>
@@ -41,7 +42,7 @@ ___
 
 **● path**: *`string`* = "./transports/rest"
 
-*Defined in [built-in-transports.ts:3](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L3)*
+*Defined in [src/built-in-transports.ts:3](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L3)*
 
 ___
 
@@ -52,7 +53,8 @@ ___
 
 **Http2**: *`object`*
 
-*Defined in [built-in-transports.ts:4](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L4)*
+*Defined in build/built-in-transports.d.ts:6*
+*Defined in [src/built-in-transports.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L4)*
 
 <a id="http2.name-1"></a>
 
@@ -60,7 +62,7 @@ ___
 
 **● name**: *`string`* = "Http2"
 
-*Defined in [built-in-transports.ts:4](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L4)*
+*Defined in [src/built-in-transports.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L4)*
 
 ___
 <a id="http2.path-1"></a>
@@ -69,7 +71,7 @@ ___
 
 **● path**: *`string`* = "./transports/rest"
 
-*Defined in [built-in-transports.ts:4](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L4)*
+*Defined in [src/built-in-transports.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L4)*
 
 ___
 
@@ -80,7 +82,8 @@ ___
 
 **Socket**: *`object`*
 
-*Defined in [built-in-transports.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L5)*
+*Defined in build/built-in-transports.d.ts:10*
+*Defined in [src/built-in-transports.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L5)*
 
 <a id="socket.name-2"></a>
 
@@ -88,7 +91,7 @@ ___
 
 **● name**: *`string`* = "Socket"
 
-*Defined in [built-in-transports.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L5)*
+*Defined in [src/built-in-transports.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L5)*
 
 ___
 <a id="socket.path-2"></a>
@@ -97,7 +100,7 @@ ___
 
 **● path**: *`string`* = "./transports/socketio"
 
-*Defined in [built-in-transports.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-transports.ts#L5)*
+*Defined in [src/built-in-transports.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-transports.ts#L5)*
 
 ___
 

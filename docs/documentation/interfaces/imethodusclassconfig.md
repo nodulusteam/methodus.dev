@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [IMethodusClassConfig](../interfaces/imethodusclassconfig.md)
+[A Methodus guide](../README.md) > [IMethodusClassConfig](../interfaces/imethodusclassconfig.md)
 
 # Interface: IMethodusClassConfig
 
@@ -24,25 +24,28 @@
 
 **● classType**: *`any`*
 
-*Defined in [interfaces/methodus.ts:4](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L4)*
+*Defined in build/interfaces/methodus.d.ts:3*
+*Defined in [src/interfaces/methodus.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L4)*
 
 ___
 <a id="methodtype"></a>
 
 ###  methodType
 
-**● methodType**: *[MethodType](../enums/methodtype.md)*
+**● methodType**: *`MethodType`*
 
-*Defined in [interfaces/methodus.ts:3](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L3)*
+*Defined in build/interfaces/methodus.d.ts:2*
+*Defined in [src/interfaces/methodus.ts:3](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L3)*
 
 ___
 <a id="servertype"></a>
 
 ###  serverType
 
-**● serverType**: *[ServerType](../enums/servertype.md)*
+**● serverType**: *`ServerType`*
 
-*Defined in [interfaces/methodus.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L5)*
+*Defined in build/interfaces/methodus.d.ts:4*
+*Defined in [src/interfaces/methodus.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L5)*
 
 ___
 

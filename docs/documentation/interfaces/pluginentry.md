@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [PluginEntry](../interfaces/pluginentry.md)
+[A Methodus guide](../README.md) > [PluginEntry](../interfaces/pluginentry.md)
 
 # Interface: PluginEntry
 
@@ -23,7 +23,8 @@
 
 **● name**: *`string`*
 
-*Defined in [config/config.ts:9](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L9)*
+*Defined in build/config/config.d.ts:6*
+*Defined in [src/config/config.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L9)*
 
 ___
 <a id="options"></a>
@@ -32,7 +33,8 @@ ___
 
 **● options**: *`any`*
 
-*Defined in [config/config.ts:10](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/config/config.ts#L10)*
+*Defined in build/config/config.d.ts:7*
+*Defined in [src/config/config.ts:10](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L10)*
 
 ___
 

@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [IServer](../interfaces/iserver.md)
+[A Methodus guide](../README.md) > [IServer](../interfaces/iserver.md)
 
 # Interface: IServer
 
@@ -29,16 +29,18 @@
 
 **● classRouters**: *`any`[]*
 
-*Defined in [interfaces/methodus.ts:19](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L19)*
+*Defined in build/interfaces/methodus.d.ts:15*
+*Defined in [src/interfaces/methodus.ts:19](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L19)*
 
 ___
 <a id="config"></a>
 
 ###  config
 
-**● config**: *[IMethodusConfig](imethodusconfig.md)*
+**● config**: *`IMethodusConfig`*
 
-*Defined in [interfaces/methodus.ts:20](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L20)*
+*Defined in build/interfaces/methodus.d.ts:16*
+*Defined in [src/interfaces/methodus.ts:20](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L20)*
 
 ___
 <a id="sockets"></a>
@@ -47,7 +49,8 @@ ___
 
 **● sockets**: *`any`*
 
-*Defined in [interfaces/methodus.ts:21](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L21)*
+*Defined in build/interfaces/methodus.d.ts:17*
+*Defined in [src/interfaces/methodus.ts:21](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L21)*
 
 ___
 
@@ -59,7 +62,22 @@ ___
 
 ▸ **_send**(channel: *`any`*, functionArgs: *`any`*, message: *`any`*, paramsMap?: *`any`*): `any`
 
-*Defined in [interfaces/methodus.ts:23](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L23)*
+▸ **_send**(channel: *`any`*, functionArgs: *`any`*, message: *`any`*, paramsMap?: *`any`*): `any`
+
+*Defined in build/interfaces/methodus.d.ts:19*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| channel | `any` |
+| functionArgs | `any` |
+| message | `any` |
+| `Optional` paramsMap | `any` |
+
+**Returns:** `any`
+
+*Defined in [src/interfaces/methodus.ts:23](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L23)*
 
 **Parameters:**
 
@@ -79,7 +97,9 @@ ___
 
 ▸ **useClass**(classType: *`any`*, methodType: *[MethodType](../enums/methodtype.md)*): `void`
 
-*Defined in [interfaces/methodus.ts:22](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L22)*
+▸ **useClass**(classType: *`any`*, methodType: *`MethodType`*): `void`
+
+*Defined in build/interfaces/methodus.d.ts:18*
 
 **Parameters:**
 
@@ -87,6 +107,17 @@ ___
 | ------ | ------ |
 | classType | `any` |
 | methodType | [MethodType](../enums/methodtype.md) |
+
+**Returns:** `void`
+
+*Defined in [src/interfaces/methodus.ts:22](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L22)*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| classType | `any` |
+| methodType | `MethodType` |
 
 **Returns:** `void`
 

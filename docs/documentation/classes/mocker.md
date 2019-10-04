@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [Mocker](../classes/mocker.md)
+[A Methodus guide](../README.md) > [Mocker](../classes/mocker.md)
 
 # Class: Mocker
 
@@ -23,7 +23,7 @@
 
 ▸ **mock**(target: *`any`*): `any`
 
-*Defined in [mocker.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/mocker.ts#L5)*
+*Defined in build/mocker.d.ts:2*
 
 **Parameters:**
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **mockServer**(target: *`any`*): `any`
 
-*Defined in [mocker.ts:14](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/mocker.ts#L14)*
+*Defined in build/mocker.d.ts:3*
 
 **Parameters:**
 

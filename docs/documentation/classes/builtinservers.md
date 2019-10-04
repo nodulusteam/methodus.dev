@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [BuiltInServers](../classes/builtinservers.md)
+[A Methodus guide](../README.md) > [BuiltInServers](../classes/builtinservers.md)
 
 # Class: BuiltInServers
 
@@ -25,7 +25,8 @@ Servers built into Methodus
 
 **Express**: *`object`*
 
-*Defined in [built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L12)*
+*Defined in build/built-in-servers.d.ts:2*
+*Defined in [src/built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L12)*
 
 Express backed server
 
@@ -35,7 +36,7 @@ Express backed server
 
 **● name**: *`string`* = "express"
 
-*Defined in [built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L12)*
+*Defined in [src/built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L12)*
 
 ___
 <a id="express.path"></a>
@@ -44,7 +45,7 @@ ___
 
 **● path**: *`string`* = "./servers/express"
 
-*Defined in [built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L12)*
+*Defined in [src/built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L12)*
 
 ___
 <a id="express.static"></a>
@@ -53,7 +54,7 @@ ___
 
 **● static**: *`serveStatic`* =  express.static
 
-*Defined in [built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L12)*
+*Defined in [src/built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L12)*
 
 ___
 
@@ -64,7 +65,8 @@ ___
 
 **Socket**: *`object`*
 
-*Defined in [built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L17)*
+*Defined in build/built-in-servers.d.ts:3*
+*Defined in [src/built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L17)*
 
 SocketIO backed server
 
@@ -74,7 +76,7 @@ SocketIO backed server
 
 **● name**: *`string`* = "Socket"
 
-*Defined in [built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L17)*
+*Defined in [src/built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L17)*
 
 ___
 <a id="socket.path-1"></a>
@@ -83,7 +85,7 @@ ___
 
 **● path**: *`string`* = "./servers/socketio"
 
-*Defined in [built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/built-in-servers.ts#L17)*
+*Defined in [src/built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/built-in-servers.ts#L17)*
 
 ___
 

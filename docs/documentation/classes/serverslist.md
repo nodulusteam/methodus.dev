@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [ServersList](../classes/serverslist.md)
+[A Methodus guide](../README.md) > [ServersList](../classes/serverslist.md)
 
 # Class: ServersList
 
@@ -37,7 +37,7 @@
 
 ⊕ **new ServersList**(): [ServersList](serverslist.md)
 
-*Defined in [servers/serversList.ts:8](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L8)*
+*Defined in build/servers/serversList.d.ts:6*
 
 **Returns:** [ServersList](serverslist.md)
 
@@ -51,7 +51,8 @@ ___
 
 **● _app**: *`any`*
 
-*Defined in [servers/serversList.ts:7](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L7)*
+*Defined in build/servers/serversList.d.ts:5*
+*Defined in [src/servers/serversList.ts:7](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/serversList.ts#L7)*
 
 ___
 <a id="classes"></a>
@@ -60,7 +61,8 @@ ___
 
 **● classes**: *`any`*
 
-*Defined in [servers/serversList.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L5)*
+*Defined in build/servers/serversList.d.ts:3*
+*Defined in [src/servers/serversList.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/serversList.ts#L5)*
 
 ___
 <a id="clients"></a>
@@ -69,7 +71,8 @@ ___
 
 **● clients**: *`any`*
 
-*Defined in [servers/serversList.ts:6](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L6)*
+*Defined in build/servers/serversList.d.ts:4*
+*Defined in [src/servers/serversList.ts:6](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/serversList.ts#L6)*
 
 ___
 <a id="instances"></a>
@@ -78,7 +81,8 @@ ___
 
 **● instances**: *`any`*
 
-*Defined in [servers/serversList.ts:4](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L4)*
+*Defined in build/servers/serversList.d.ts:2*
+*Defined in [src/servers/serversList.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/serversList.ts#L4)*
 
 ___
 <a id="serversarray"></a>
@@ -87,7 +91,8 @@ ___
 
 **● serversArray**: *`any`[]*
 
-*Defined in [servers/serversList.ts:8](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L8)*
+*Defined in build/servers/serversList.d.ts:6*
+*Defined in [src/servers/serversList.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/serversList.ts#L8)*
 
 ___
 
@@ -99,7 +104,7 @@ ___
 
 ▸ **addServer**(server: *`any`*): `string`
 
-*Defined in [servers/serversList.ts:15](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L15)*
+*Defined in build/servers/serversList.d.ts:8*
 
 **Parameters:**
 
@@ -116,7 +121,7 @@ ___
 
 ▸ **get**(instanceId: *`any`*, serverType?: *`any`*): `any`
 
-*Defined in [servers/serversList.ts:25](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L25)*
+*Defined in build/servers/serversList.d.ts:10*
 
 **Parameters:**
 
@@ -134,7 +139,7 @@ ___
 
 ▸ **reset**(): `void`
 
-*Defined in [servers/serversList.ts:32](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L32)*
+*Defined in build/servers/serversList.d.ts:11*
 
 **Returns:** `void`
 
@@ -145,7 +150,7 @@ ___
 
 ▸ **set**(instanceId: *`any`*, serverType: *`any`*, instance: *`any`*): `any`
 
-*Defined in [servers/serversList.ts:20](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/servers/serversList.ts#L20)*
+*Defined in build/servers/serversList.d.ts:9*
 
 **Parameters:**
 

@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [Servers](../classes/servers.md)
+[A Methodus guide](../README.md) > [Servers](../classes/servers.md)
 
 # Class: Servers
 
@@ -8,9 +8,14 @@
 
 ## Index
 
+### Constructors
+
+* [constructor](servers.md#constructor)
+
 ### Properties
 
 * [server](servers.md#server)
+* [testTarget](servers.md#testtarget)
 
 ### Methods
 
@@ -23,6 +28,32 @@
 
 ---
 
+## Constructors
+
+<a id="constructor"></a>
+
+###  constructor
+
+⊕ **new Servers**(): [Servers](servers.md)
+
+⊕ **new Servers**(): [Servers](servers.md)
+
+⊕ **new Servers**(): [Servers](servers.md)
+
+*Defined in build/tests/emitter.spec.d.ts:2*
+
+**Returns:** [Servers](servers.md)
+
+*Defined in build/tests/express.spec.d.ts:3*
+
+**Returns:** [Servers](servers.md)
+
+*Defined in build/tests/socket.spec.d.ts:3*
+
+**Returns:** [Servers](servers.md)
+
+___
+
 ## Properties
 
 <a id="server"></a>
@@ -31,9 +62,23 @@
 
 **● server**: *`any`*
 
-*Defined in [tests/emitter.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/emitter.spec.ts#L9)*
-*Defined in [tests/express.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/express.spec.ts#L9)*
-*Defined in [tests/socket.spec.ts:8](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/socket.spec.ts#L8)*
+*Defined in build/tests/emitter.spec.d.ts:4*
+*Defined in build/tests/express.spec.d.ts:5*
+*Defined in build/tests/socket.spec.d.ts:2*
+*Defined in [src/tests/emitter.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/emitter.spec.ts#L9)*
+*Defined in [src/tests/express.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/express.spec.ts#L9)*
+*Defined in [src/tests/socket.spec.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/socket.spec.ts#L8)*
+
+___
+<a id="testtarget"></a>
+
+### `<Private>` testTarget
+
+**● testTarget**: *`any`*
+
+*Defined in build/tests/emitter.spec.d.ts:2*
+*Defined in build/tests/express.spec.d.ts:3*
+*Defined in build/tests/socket.spec.d.ts:3*
 
 ___
 
@@ -45,7 +90,7 @@ ___
 
 ▸ **create**(): `Promise`<`void`>
 
-*Defined in [tests/express.spec.ts:43](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/express.spec.ts#L43)*
+*Defined in build/tests/express.spec.d.ts:10*
 
 **Returns:** `Promise`<`void`>
 
@@ -56,7 +101,19 @@ ___
 
 ▸ **list**(): `Promise`<`void`>
 
-*Defined in [tests/emitter.spec.ts:29](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/emitter.spec.ts#L29)*
+▸ **list**(): `Promise`<`void`>
+
+▸ **list**(): `Promise`<`void`>
+
+*Defined in build/tests/emitter.spec.d.ts:7*
+
+**Returns:** `Promise`<`void`>
+
+*Defined in build/tests/express.spec.d.ts:8*
+
+**Returns:** `Promise`<`void`>
+
+*Defined in build/tests/socket.spec.d.ts:7*
 
 **Returns:** `Promise`<`void`>
 
@@ -67,7 +124,19 @@ ___
 
 ▸ **listDefaults**(): `Promise`<`void`>
 
-*Defined in [tests/emitter.spec.ts:39](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/emitter.spec.ts#L39)*
+▸ **listDefaults**(): `Promise`<`void`>
+
+▸ **listDefaults**(): `Promise`<`void`>
+
+*Defined in build/tests/emitter.spec.d.ts:8*
+
+**Returns:** `Promise`<`void`>
+
+*Defined in build/tests/express.spec.d.ts:9*
+
+**Returns:** `Promise`<`void`>
+
+*Defined in build/tests/socket.spec.d.ts:8*
 
 **Returns:** `Promise`<`void`>
 
@@ -78,7 +147,19 @@ ___
 
 ▸ **read**(): `Promise`<`any`>
 
-*Defined in [tests/emitter.spec.ts:51](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/emitter.spec.ts#L51)*
+▸ **read**(): `Promise`<`any`>
+
+▸ **read**(): `Promise`<`any`>
+
+*Defined in build/tests/emitter.spec.d.ts:9*
+
+**Returns:** `Promise`<`any`>
+
+*Defined in build/tests/express.spec.d.ts:11*
+
+**Returns:** `Promise`<`any`>
+
+*Defined in build/tests/socket.spec.d.ts:9*
 
 **Returns:** `Promise`<`any`>
 
@@ -89,7 +170,19 @@ ___
 
 ▸ **serverKill**(): `Promise`<`void`>
 
-*Defined in [tests/emitter.spec.ts:22](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/emitter.spec.ts#L22)*
+▸ **serverKill**(): `Promise`<`void`>
+
+▸ **serverKill**(): `Promise`<`void`>
+
+*Defined in build/tests/emitter.spec.d.ts:6*
+
+**Returns:** `Promise`<`void`>
+
+*Defined in build/tests/express.spec.d.ts:7*
+
+**Returns:** `Promise`<`void`>
+
+*Defined in build/tests/socket.spec.d.ts:6*
 
 **Returns:** `Promise`<`void`>
 
@@ -98,11 +191,23 @@ ___
 
 ###  serverSetup
 
-▸ **serverSetup**(): `Promise`<`Object`>
+▸ **serverSetup**(): `Promise`<`unknown`>
 
-*Defined in [tests/emitter.spec.ts:12](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/emitter.spec.ts#L12)*
+▸ **serverSetup**(): `Promise`<`unknown`>
 
-**Returns:** `Promise`<`Object`>
+▸ **serverSetup**(): `Promise`<`unknown`>
+
+*Defined in build/tests/emitter.spec.d.ts:5*
+
+**Returns:** `Promise`<`unknown`>
+
+*Defined in build/tests/express.spec.d.ts:6*
+
+**Returns:** `Promise`<`unknown`>
+
+*Defined in build/tests/socket.spec.d.ts:5*
+
+**Returns:** `Promise`<`unknown`>
 
 ___
 

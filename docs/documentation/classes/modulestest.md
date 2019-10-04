@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [ModulesTest](../classes/modulestest.md)
+[A Methodus guide](../README.md) > [ModulesTest](../classes/modulestest.md)
 
 # Class: ModulesTest
 
@@ -11,6 +11,7 @@
 ### Methods
 
 * [createModule](modulestest.md#createmodule)
+* [createServer](modulestest.md#createserver)
 
 ---
 
@@ -22,7 +23,18 @@
 
 ▸ **createModule**(): `Promise`<`void`>
 
-*Defined in [decorators/module/module.spec.ts:38](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/decorators/module/module.spec.ts#L38)*
+*Defined in build/decorators/module/module.spec.d.ts:10*
+
+**Returns:** `Promise`<`void`>
+
+___
+<a id="createserver"></a>
+
+###  createServer
+
+▸ **createServer**(): `Promise`<`void`>
+
+*Defined in build/di/di.spec.d.ts:2*
 
 **Returns:** `Promise`<`void`>
 

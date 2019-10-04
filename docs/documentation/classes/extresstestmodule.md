@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [ExtressTestModule](../classes/extresstestmodule.md)
+[A Methodus guide](../README.md) > [ExtressTestModule](../classes/extresstestmodule.md)
 
 # Class: ExtressTestModule
 
@@ -22,7 +22,7 @@
 
 ⊕ **new ExtressTestModule**(): [ExtressTestModule](extresstestmodule.md)
 
-*Defined in [tests/servers/express.module.ts:15](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/servers/express.module.ts#L15)*
+*Defined in build/tests/servers/express.module.d.ts:1*
 
 **Returns:** [ExtressTestModule](extresstestmodule.md)
 

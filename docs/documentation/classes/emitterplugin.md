@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [EmitterPlugin](../classes/emitterplugin.md)
+[A Methodus guide](../README.md) > [EmitterPlugin](../classes/emitterplugin.md)
 
 # Class: EmitterPlugin
 
@@ -9,6 +9,7 @@
 ## Implements
 
 * [ITransport](../interfaces/itransport.md)
+* `ITransport`
 
 ## Index
 
@@ -33,7 +34,8 @@
 
 *Implementation of [ITransport](../interfaces/itransport.md).[name](../interfaces/itransport.md#name)*
 
-*Defined in [tests/servers/emitter.plugin.ts:60](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/servers/emitter.plugin.ts#L60)*
+*Defined in build/tests/servers/emitter.plugin.d.ts:16*
+*Defined in [src/tests/servers/emitter.plugin.ts:60](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/servers/emitter.plugin.ts#L60)*
 
 ___
 
@@ -47,7 +49,7 @@ ___
 
 *Implementation of [ITransport](../interfaces/itransport.md).[register](../interfaces/itransport.md#register)*
 
-*Defined in [tests/servers/emitter.plugin.ts:62](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/servers/emitter.plugin.ts#L62)*
+*Defined in build/tests/servers/emitter.plugin.d.ts:17*
 
 **Parameters:**
 
@@ -67,7 +69,7 @@ ___
 
 *Implementation of [ITransport](../interfaces/itransport.md).[send](../interfaces/itransport.md#send)*
 
-*Defined in [tests/servers/emitter.plugin.ts:68](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/tests/servers/emitter.plugin.ts#L68)*
+*Defined in build/tests/servers/emitter.plugin.d.ts:18*
 
 **Parameters:**
 

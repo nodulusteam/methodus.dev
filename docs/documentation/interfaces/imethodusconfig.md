@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [IMethodusConfig](../interfaces/imethodusconfig.md)
+[A Methodus guide](../README.md) > [IMethodusConfig](../interfaces/imethodusconfig.md)
 
 # Interface: IMethodusConfig
 
@@ -22,9 +22,10 @@
 
 ###  classes
 
-**● classes**: *`Map`<`string`, [IMethodusClassConfig](imethodusclassconfig.md)>*
+**● classes**: *`Map`<`string`, `IMethodusClassConfig`>*
 
-*Defined in [interfaces/methodus.ts:27](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L27)*
+*Defined in build/interfaces/methodus.d.ts:22*
+*Defined in [src/interfaces/methodus.ts:27](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L27)*
 
 ___
 <a id="port"></a>
@@ -33,16 +34,18 @@ ___
 
 **● port**: *`number`*
 
-*Defined in [interfaces/methodus.ts:29](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L29)*
+*Defined in build/interfaces/methodus.d.ts:24*
+*Defined in [src/interfaces/methodus.ts:29](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L29)*
 
 ___
 <a id="servers"></a>
 
 ### `<Optional>` servers
 
-**● servers**: *[IServerConfig](iserverconfig.md)[]*
+**● servers**: *`IServerConfig`[]*
 
-*Defined in [interfaces/methodus.ts:28](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/interfaces/methodus.ts#L28)*
+*Defined in build/interfaces/methodus.d.ts:23*
+*Defined in [src/interfaces/methodus.ts:28](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L28)*
 
 ___
 

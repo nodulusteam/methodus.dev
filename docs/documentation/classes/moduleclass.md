@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [ModuleClass](../classes/moduleclass.md)
+[A Methodus guide](../README.md) > [ModuleClass](../classes/moduleclass.md)
 
 # Class: ModuleClass
 
@@ -26,7 +26,13 @@
 
 ⊕ **new ModuleClass**(): [ModuleClass](moduleclass.md)
 
-*Defined in [decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/decorators/module/module.spec.ts#L17)*
+⊕ **new ModuleClass**(): [ModuleClass](moduleclass.md)
+
+*Defined in build/decorators/module/module.spec.d.ts:3*
+
+**Returns:** [ModuleClass](moduleclass.md)
+
+*Defined in build/di/tests/server.d.ts:3*
 
 **Returns:** [ModuleClass](moduleclass.md)
 
@@ -40,7 +46,9 @@ ___
 
 **● name**: *`string`*
 
-*Defined in [decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/decorators/module/module.spec.ts#L17)*
+*Defined in build/decorators/module/module.spec.d.ts:3*
+*Defined in build/di/tests/server.d.ts:3*
+*Defined in [src/decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/module/module.spec.ts#L17)*
 
 ___
 

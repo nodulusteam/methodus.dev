@@ -1,4 +1,4 @@
-[@methodus/server](../README.md) > [Proxy](../classes/proxy.md)
+[A Methodus guide](../README.md) > [Proxy](../classes/proxy.md)
 
 # Class: Proxy
 
@@ -20,9 +20,9 @@
 
 ### `<Static>` ProxyClass
 
-▸ **ProxyClass**(packageName: *`string`*, className: *`string`*, localClassPath: *`any`*): `(Anonymous function)`
+▸ **ProxyClass**(packageName: *`string`*, className: *`string`*, localClassPath: *`any`*): `function`
 
-*Defined in [decorators/proxy.ts:7](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/decorators/proxy.ts#L7)*
+*Defined in build/decorators/proxy/proxy.d.ts:2*
 
 **Parameters:**
 
@@ -32,7 +32,7 @@
 | className | `string` |
 | localClassPath | `any` |
 
-**Returns:** `(Anonymous function)`
+**Returns:** `function`
 
 ___
 

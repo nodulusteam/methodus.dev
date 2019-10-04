@@ -34,6 +34,7 @@
         "report": "nyc report --html --clover",
         "doc": "docsify serve docs",
         "docs": "typedoc",
+       
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "rimraf output && npm run test && nyc report"
     },
@@ -65,6 +66,7 @@
         "socket.io-client": "^2.0.3",
         "stream-from-promise": "^1.0.0",
         "tslib": "^1.9.3",
+        "typedoc-plugin-linkrewriter": "^0.1.1",
         "uuid": "^3.1.0"
     },
     "optionalDependencies": {

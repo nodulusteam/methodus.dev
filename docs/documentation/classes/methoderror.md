@@ -1,8 +1,10 @@
-[@methodus/server](../README.md) > [MethodError](../classes/methoderror.md)
+[A Methodus guide](../README.md) > [MethodError](../classes/methoderror.md)
 
 # Class: MethodError
 
 ## Hierarchy
+
+ `Error`
 
  `Error`
 
@@ -34,7 +36,7 @@
 
 ⊕ **new MethodError**(error: *`any`*, statusCode?: *`any`*, additional?: *`any`*): [MethodError](methoderror.md)
 
-*Defined in [response/methodError.ts:7](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/response/methodError.ts#L7)*
+*Defined in build/response/methodError.d.ts:4*
 
 **Parameters:**
 
@@ -56,7 +58,8 @@ ___
 
 **● additional**: *`any`*
 
-*Defined in [response/methodError.ts:7](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/response/methodError.ts#L7)*
+*Defined in build/response/methodError.d.ts:4*
+*Defined in [src/response/methodError.ts:7](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodError.ts#L7)*
 
 ___
 <a id="error"></a>
@@ -65,7 +68,8 @@ ___
 
 **● error**: *`string`*
 
-*Defined in [response/methodError.ts:5](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/response/methodError.ts#L5)*
+*Defined in build/response/methodError.d.ts:2*
+*Defined in [src/response/methodError.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodError.ts#L5)*
 
 ___
 <a id="message"></a>
@@ -76,7 +80,9 @@ ___
 
 *Inherited from Error.message*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:904*
+*Overrides Error.message*
+
+*Defined in node_modules/typescript/lib/lib.es5.d.ts:974*
 
 ___
 <a id="name"></a>
@@ -87,7 +93,9 @@ ___
 
 *Inherited from Error.name*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:903*
+*Overrides Error.name*
+
+*Defined in node_modules/typescript/lib/lib.es5.d.ts:973*
 
 ___
 <a id="stack"></a>
@@ -100,7 +108,7 @@ ___
 
 *Overrides Error.stack*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:905*
+*Defined in node_modules/typescript/lib/lib.es5.d.ts:975*
 
 ___
 <a id="statuscode"></a>
@@ -109,7 +117,8 @@ ___
 
 **● statusCode**: *`number`*
 
-*Defined in [response/methodError.ts:6](https://github.com/nodulusteam/methodus.dev/blob/907fca8/src/response/methodError.ts#L6)*
+*Defined in build/response/methodError.d.ts:3*
+*Defined in [src/response/methodError.ts:6](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodError.ts#L6)*
 
 ___
 <a id="error-1"></a>
@@ -118,7 +127,8 @@ ___
 
 **● Error**: *`ErrorConstructor`*
 
-*Defined in C:/projects/methodus/methodus.dev/node_modules/typedoc/node_modules/typescript/lib/lib.es5.d.ts:914*
+*Defined in node_modules/typescript/lib/lib.es5.d.ts:984*
+*Defined in node_modules/typescript/lib/lib.es5.d.ts:984*
 
 ___
 
