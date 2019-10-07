@@ -59,7 +59,7 @@ ___
 **● action**: *`string`*
 
 *Defined in build/response/methodResult.d.ts:22*
-*Defined in [src/response/methodResult.ts:84](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L84)*
+*Defined in [src/response/methodResult.ts:86](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L86)*
 
 ___
 <a id="href"></a>
@@ -69,7 +69,7 @@ ___
 **● href**: *`string`*
 
 *Defined in build/response/methodResult.d.ts:21*
-*Defined in [src/response/methodResult.ts:83](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L83)*
+*Defined in [src/response/methodResult.ts:85](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L85)*
 
 ___
 <a id="methodkey"></a>
@@ -79,7 +79,7 @@ ___
 **● methodKey**: *`string`*
 
 *Defined in build/response/methodResult.d.ts:24*
-*Defined in [src/response/methodResult.ts:86](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L86)*
+*Defined in [src/response/methodResult.ts:88](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L88)*
 
 ___
 <a id="rel"></a>
@@ -89,7 +89,7 @@ ___
 **● rel**: *`string`*
 
 *Defined in build/response/methodResult.d.ts:20*
-*Defined in [src/response/methodResult.ts:82](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L82)*
+*Defined in [src/response/methodResult.ts:84](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L84)*
 
 ___
 <a id="types"></a>
@@ -99,7 +99,7 @@ ___
 **● types**: *`string`[]*
 
 *Defined in build/response/methodResult.d.ts:23*
-*Defined in [src/response/methodResult.ts:85](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L85)*
+*Defined in [src/response/methodResult.ts:87](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L87)*
 
 ___
 

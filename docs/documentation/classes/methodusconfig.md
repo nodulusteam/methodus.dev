@@ -58,7 +58,7 @@ ___
 **● classes**: *`Map`<`string`, `MethodusClassConfig`>* =  new Map<string, MethodusClassConfig>()
 
 *Defined in build/config/config.d.ts:10*
-*Defined in [src/config/config.ts:16](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L16)*
+*Defined in [src/config/config.ts:14](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L14)*
 
 ___
 <a id="clients"></a>
@@ -68,7 +68,7 @@ ___
 **● clients**: *`Map`<`string`, `MethodusClientConfig`>* =  new Map<string, MethodusClientConfig>()
 
 *Defined in build/config/config.d.ts:12*
-*Defined in [src/config/config.ts:18](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L18)*
+*Defined in [src/config/config.ts:16](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L16)*
 
 ___
 <a id="plugins"></a>
@@ -78,7 +78,7 @@ ___
 **● plugins**: *`PluginEntry`[]*
 
 *Defined in build/config/config.d.ts:13*
-*Defined in [src/config/config.ts:19](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L19)*
+*Defined in [src/config/config.ts:17](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L17)*
 
 ___
 <a id="port"></a>
@@ -88,7 +88,7 @@ ___
 **● port**: *`number`* = 0
 
 *Defined in build/config/config.d.ts:14*
-*Defined in [src/config/config.ts:20](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L20)*
+*Defined in [src/config/config.ts:18](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L18)*
 
 ___
 <a id="servers"></a>
@@ -98,7 +98,7 @@ ___
 **● servers**: *`ServerConfig`[]*
 
 *Defined in build/config/config.d.ts:11*
-*Defined in [src/config/config.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L17)*
+*Defined in [src/config/config.ts:15](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L15)*
 
 ___
 

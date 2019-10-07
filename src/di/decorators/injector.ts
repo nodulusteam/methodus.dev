@@ -60,7 +60,7 @@ export class Injector {
             if (dep) {
                 return Injector.get(dep);
             } else {
-                console.log(record);
+               return null
             }
         });
 

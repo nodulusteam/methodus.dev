@@ -59,7 +59,7 @@ ___
 **● additional**: *`any`*
 
 *Defined in build/response/methodError.d.ts:4*
-*Defined in [src/response/methodError.ts:7](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodError.ts#L7)*
+*Defined in [src/response/methodError.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodError.ts#L5)*
 
 ___
 <a id="error"></a>
@@ -69,7 +69,7 @@ ___
 **● error**: *`string`*
 
 *Defined in build/response/methodError.d.ts:2*
-*Defined in [src/response/methodError.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodError.ts#L5)*
+*Defined in [src/response/methodError.ts:3](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodError.ts#L3)*
 
 ___
 <a id="message"></a>
@@ -118,7 +118,7 @@ ___
 **● statusCode**: *`number`*
 
 *Defined in build/response/methodError.d.ts:3*
-*Defined in [src/response/methodError.ts:6](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodError.ts#L6)*
+*Defined in [src/response/methodError.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodError.ts#L4)*
 
 ___
 <a id="error-1"></a>

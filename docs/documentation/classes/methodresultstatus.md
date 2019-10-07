@@ -89,7 +89,7 @@ ___
 *Overrides [MethodResult](methodresult.md).[page](methodresult.md#page)*
 
 *Defined in build/response/methodResult.d.ts:29*
-*Defined in [src/response/methodResult.ts:97](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L97)*
+*Defined in [src/response/methodResult.ts:99](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L99)*
 
 ___
 <a id="result"></a>
@@ -114,7 +114,7 @@ ___
 *Overrides [MethodResult](methodresult.md).[statusCode](methodresult.md#statuscode)*
 
 *Defined in build/response/methodResult.d.ts:31*
-*Defined in [src/response/methodResult.ts:99](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L99)*
+*Defined in [src/response/methodResult.ts:101](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L101)*
 
 ___
 <a id="stream"></a>
@@ -139,7 +139,7 @@ ___
 *Overrides [MethodResult](methodresult.md).[total](methodresult.md#total)*
 
 *Defined in build/response/methodResult.d.ts:30*
-*Defined in [src/response/methodResult.ts:98](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L98)*
+*Defined in [src/response/methodResult.ts:100](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L100)*
 
 ___
 

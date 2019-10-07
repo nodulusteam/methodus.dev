@@ -74,7 +74,7 @@ ___
 **● server**: *[Server](server.md)*
 
 *Defined in build/server.configured.d.ts:5*
-*Defined in [src/server.configured.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.configured.ts#L9)*
+*Defined in [src/server.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.configured.ts#L7)*
 
 ___
 <a id="target"></a>
@@ -84,7 +84,7 @@ ___
 **● target**: *`any`*
 
 *Defined in build/server.configured.d.ts:6*
-*Defined in [src/server.configured.ts:10](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.configured.ts#L10)*
+*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.configured.ts#L8)*
 
 ___
 <a id="defaultmaxlisteners"></a>

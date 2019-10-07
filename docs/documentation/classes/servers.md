@@ -65,20 +65,23 @@ ___
 *Defined in build/tests/emitter.spec.d.ts:4*
 *Defined in build/tests/express.spec.d.ts:5*
 *Defined in build/tests/socket.spec.d.ts:2*
-*Defined in [src/tests/emitter.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/emitter.spec.ts#L9)*
-*Defined in [src/tests/express.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/express.spec.ts#L9)*
-*Defined in [src/tests/socket.spec.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/socket.spec.ts#L8)*
+*Defined in [src/tests/emitter.spec.ts:15](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/emitter.spec.ts#L15)*
+*Defined in [src/tests/express.spec.ts:15](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/express.spec.ts#L15)*
+*Defined in [src/tests/socket.spec.ts:10](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/socket.spec.ts#L10)*
 
 ___
 <a id="testtarget"></a>
 
 ### `<Private>` testTarget
 
-**● testTarget**: *`any`*
+**● testTarget**: *`TestTarget`* =  Injector.get(TestTarget)
 
 *Defined in build/tests/emitter.spec.d.ts:2*
 *Defined in build/tests/express.spec.d.ts:3*
 *Defined in build/tests/socket.spec.d.ts:3*
+*Defined in [src/tests/emitter.spec.ts:10](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/emitter.spec.ts#L10)*
+*Defined in [src/tests/express.spec.ts:9](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/express.spec.ts#L9)*
+*Defined in [src/tests/socket.spec.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/socket.spec.ts#L12)*
 
 ___
 

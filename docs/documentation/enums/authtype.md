@@ -23,7 +23,7 @@
 **ApiKey**: 
 
 *Defined in build/decorators/auth/auth.d.ts:5*
-*Defined in [src/decorators/auth/auth.ts:6](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/auth/auth.ts#L6)*
+*Defined in [src/decorators/auth/auth.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/auth/auth.ts#L6)*
 
 ___
 <a id="basic"></a>
@@ -33,7 +33,7 @@ ___
 **Basic**: 
 
 *Defined in build/decorators/auth/auth.d.ts:4*
-*Defined in [src/decorators/auth/auth.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/auth/auth.ts#L5)*
+*Defined in [src/decorators/auth/auth.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/auth/auth.ts#L5)*
 
 ___
 <a id="bearertoken"></a>
@@ -43,7 +43,7 @@ ___
 **BearerToken**: 
 
 *Defined in build/decorators/auth/auth.d.ts:6*
-*Defined in [src/decorators/auth/auth.ts:7](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/auth/auth.ts#L7)*
+*Defined in [src/decorators/auth/auth.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/auth/auth.ts#L7)*
 
 ___
 <a id="digestauth"></a>
@@ -53,7 +53,7 @@ ___
 **DigestAuth**: 
 
 *Defined in build/decorators/auth/auth.d.ts:7*
-*Defined in [src/decorators/auth/auth.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/auth/auth.ts#L8)*
+*Defined in [src/decorators/auth/auth.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/auth/auth.ts#L8)*
 
 ___
 <a id="none"></a>
@@ -63,7 +63,7 @@ ___
 **None**: 
 
 *Defined in build/decorators/auth/auth.d.ts:3*
-*Defined in [src/decorators/auth/auth.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/auth/auth.ts#L4)*
+*Defined in [src/decorators/auth/auth.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/auth/auth.ts#L4)*
 
 ___
 

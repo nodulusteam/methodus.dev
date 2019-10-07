@@ -1,6 +1,6 @@
 import { Injector } from './injector';
 
-export function Inject(): any {
+export function Inject(name?: string): any {
     return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
         const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
         const propertyName = getConstructorArgumentsNames(target.prototype.constructor, parameterIndex);

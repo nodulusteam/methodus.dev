@@ -71,7 +71,7 @@ ___
 **● _on**: *`object`*
 
 *Defined in build/response/methodResult.d.ts:8*
-*Defined in [src/response/methodResult.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L8)*
+*Defined in [src/response/methodResult.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L8)*
 
 #### Type declaration
 
@@ -89,7 +89,7 @@ ___
 **● headers**: *`any`*
 
 *Defined in build/response/methodResult.d.ts:7*
-*Defined in [src/response/methodResult.ts:7](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L7)*
+*Defined in [src/response/methodResult.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L7)*
 
 ___
 <a id="links"></a>
@@ -99,7 +99,7 @@ ___
 **● links**: *`string`[]* =  []
 
 *Defined in build/response/methodResult.d.ts:9*
-*Defined in [src/response/methodResult.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L9)*
+*Defined in [src/response/methodResult.ts:9](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L9)*
 
 ___
 <a id="page"></a>
@@ -109,7 +109,7 @@ ___
 **● page**: *`number`* = 1
 
 *Defined in build/response/methodResult.d.ts:3*
-*Defined in [src/response/methodResult.ts:3](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L3)*
+*Defined in [src/response/methodResult.ts:3](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L3)*
 
 ___
 <a id="result"></a>
@@ -119,7 +119,7 @@ ___
 **● result**: *`T`*
 
 *Defined in build/response/methodResult.d.ts:5*
-*Defined in [src/response/methodResult.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L5)*
+*Defined in [src/response/methodResult.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L5)*
 
 ___
 <a id="statuscode"></a>
@@ -129,7 +129,7 @@ ___
 **● statusCode**: *`number`* = 200
 
 *Defined in build/response/methodResult.d.ts:6*
-*Defined in [src/response/methodResult.ts:6](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L6)*
+*Defined in [src/response/methodResult.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L6)*
 
 ___
 <a id="stream"></a>
@@ -139,7 +139,7 @@ ___
 **● stream**: *`any`*
 
 *Defined in build/response/methodResult.d.ts:2*
-*Defined in [src/response/methodResult.ts:2](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L2)*
+*Defined in [src/response/methodResult.ts:2](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L2)*
 
 ___
 <a id="total"></a>
@@ -149,7 +149,7 @@ ___
 **● total**: *`number`* = 0
 
 *Defined in build/response/methodResult.d.ts:4*
-*Defined in [src/response/methodResult.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/response/methodResult.ts#L4)*
+*Defined in [src/response/methodResult.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodResult.ts#L4)*
 
 ___
 

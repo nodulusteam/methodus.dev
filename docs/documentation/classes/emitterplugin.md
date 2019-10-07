@@ -35,7 +35,7 @@
 *Implementation of [ITransport](../interfaces/itransport.md).[name](../interfaces/itransport.md#name)*
 
 *Defined in build/tests/servers/emitter.plugin.d.ts:16*
-*Defined in [src/tests/servers/emitter.plugin.ts:60](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/servers/emitter.plugin.ts#L60)*
+*Defined in [src/tests/servers/emitter.plugin.ts:59](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/servers/emitter.plugin.ts#L59)*
 
 ___
 

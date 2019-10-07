@@ -35,7 +35,7 @@
 
 **Returns:** `void`
 
-*Defined in [src/server.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L12)*
+*Defined in [src/server.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L12)*
 
 **Parameters:**
 

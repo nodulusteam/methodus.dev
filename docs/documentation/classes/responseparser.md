@@ -2,6 +2,8 @@
 
 # Class: ResponseParser
 
+this function parses values from the request object into the function args @param {any} args - the arguments sent to the original function. @param {\[string\]} paramsMap - express route string.
+
 ## Hierarchy
 
 **ResponseParser**
@@ -52,6 +54,7 @@ ___
 **● parser**: *`any`*
 
 *Defined in build/rest.d.ts:11*
+*Defined in [src/rest.ts:22](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/rest.ts#L22)*
 
 ___
 <a id="response"></a>
@@ -61,6 +64,7 @@ ___
 **● response**: *`any`*
 
 *Defined in build/rest.d.ts:12*
+*Defined in [src/rest.ts:23](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/rest.ts#L23)*
 
 ___
 

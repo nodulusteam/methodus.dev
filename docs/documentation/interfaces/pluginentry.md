@@ -24,7 +24,7 @@
 **● name**: *`string`*
 
 *Defined in build/config/config.d.ts:6*
-*Defined in [src/config/config.ts:9](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L9)*
+*Defined in [src/config/config.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L8)*
 
 ___
 <a id="options"></a>
@@ -34,7 +34,7 @@ ___
 **● options**: *`any`*
 
 *Defined in build/config/config.d.ts:7*
-*Defined in [src/config/config.ts:10](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/config/config.ts#L10)*
+*Defined in [src/config/config.ts:9](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L9)*
 
 ___
 

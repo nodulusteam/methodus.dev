@@ -28,9 +28,10 @@
 
 ### `<Static>``<Private>` records
 
-**● records**: *`any`*
+**● records**: *`object`[]* =  []
 
 *Defined in build/di/decorators/injector.d.ts:3*
+*Defined in [src/di/decorators/injector.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/di/decorators/injector.ts#L5)*
 
 ___
 <a id="singletons"></a>
@@ -40,6 +41,7 @@ ___
 **● singletons**: *`any`*
 
 *Defined in build/di/decorators/injector.d.ts:4*
+*Defined in [src/di/decorators/injector.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/di/decorators/injector.ts#L6)*
 
 ___
 

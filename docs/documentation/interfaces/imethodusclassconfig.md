@@ -25,7 +25,7 @@
 **● classType**: *`any`*
 
 *Defined in build/interfaces/methodus.d.ts:3*
-*Defined in [src/interfaces/methodus.ts:4](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L4)*
+*Defined in [src/interfaces/methodus.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L4)*
 
 ___
 <a id="methodtype"></a>
@@ -35,7 +35,7 @@ ___
 **● methodType**: *`MethodType`*
 
 *Defined in build/interfaces/methodus.d.ts:2*
-*Defined in [src/interfaces/methodus.ts:3](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L3)*
+*Defined in [src/interfaces/methodus.ts:3](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L3)*
 
 ___
 <a id="servertype"></a>
@@ -45,7 +45,7 @@ ___
 **● serverType**: *`ServerType`*
 
 *Defined in build/interfaces/methodus.d.ts:4*
-*Defined in [src/interfaces/methodus.ts:5](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L5)*
+*Defined in [src/interfaces/methodus.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L5)*
 
 ___
 

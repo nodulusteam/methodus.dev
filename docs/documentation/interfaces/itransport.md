@@ -32,7 +32,7 @@
 **● name**: *`string`*
 
 *Defined in build/interfaces/methodus.d.ts:10*
-*Defined in [src/interfaces/methodus.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L12)*
+*Defined in [src/interfaces/methodus.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L12)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 **Returns:** `void`
 
-*Defined in [src/interfaces/methodus.ts:13](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L13)*
+*Defined in [src/interfaces/methodus.ts:13](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L13)*
 
 **Parameters:**
 
@@ -90,7 +90,7 @@ ___
 
 **Returns:** `Promise`<`any`>
 
-*Defined in [src/interfaces/methodus.ts:14](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L14)*
+*Defined in [src/interfaces/methodus.ts:14](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L14)*
 
 **Parameters:**
 

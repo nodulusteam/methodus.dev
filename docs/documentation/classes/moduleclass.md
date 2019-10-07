@@ -48,7 +48,8 @@ ___
 
 *Defined in build/decorators/module/module.spec.d.ts:3*
 *Defined in build/di/tests/server.d.ts:3*
-*Defined in [src/decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/decorators/module/module.spec.ts#L17)*
+*Defined in [src/decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/module/module.spec.ts#L17)*
+*Defined in [src/di/tests/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/di/tests/server.ts#L19)*
 
 ___
 

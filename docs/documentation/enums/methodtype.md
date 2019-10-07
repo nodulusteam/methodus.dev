@@ -26,7 +26,7 @@
 **Http**:  = "Http"
 
 *Defined in build/interfaces/methodus.d.ts:41*
-*Defined in [src/interfaces/methodus.ts:50](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L50)*
+*Defined in [src/interfaces/methodus.ts:50](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L50)*
 
 ___
 <a id="http2"></a>
@@ -36,7 +36,7 @@ ___
 **Http2**:  = "Http2"
 
 *Defined in build/interfaces/methodus.d.ts:42*
-*Defined in [src/interfaces/methodus.ts:51](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L51)*
+*Defined in [src/interfaces/methodus.ts:51](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L51)*
 
 ___
 <a id="kafka"></a>
@@ -46,7 +46,7 @@ ___
 **Kafka**:  = "Kafka"
 
 *Defined in build/interfaces/methodus.d.ts:46*
-*Defined in [src/interfaces/methodus.ts:55](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L55)*
+*Defined in [src/interfaces/methodus.ts:55](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L55)*
 
 ___
 <a id="local"></a>
@@ -56,7 +56,7 @@ ___
 **Local**:  = "Local"
 
 *Defined in build/interfaces/methodus.d.ts:40*
-*Defined in [src/interfaces/methodus.ts:49](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L49)*
+*Defined in [src/interfaces/methodus.ts:49](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L49)*
 
 ___
 <a id="mq"></a>
@@ -66,7 +66,7 @@ ___
 **MQ**:  = "MQ"
 
 *Defined in build/interfaces/methodus.d.ts:43*
-*Defined in [src/interfaces/methodus.ts:52](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L52)*
+*Defined in [src/interfaces/methodus.ts:52](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L52)*
 
 ___
 <a id="mock"></a>
@@ -76,7 +76,7 @@ ___
 **Mock**:  = "Mock"
 
 *Defined in build/interfaces/methodus.d.ts:47*
-*Defined in [src/interfaces/methodus.ts:56](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L56)*
+*Defined in [src/interfaces/methodus.ts:56](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L56)*
 
 ___
 <a id="redis"></a>
@@ -86,7 +86,7 @@ ___
 **Redis**:  = "Redis"
 
 *Defined in build/interfaces/methodus.d.ts:44*
-*Defined in [src/interfaces/methodus.ts:53](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L53)*
+*Defined in [src/interfaces/methodus.ts:53](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L53)*
 
 ___
 <a id="socket"></a>
@@ -96,7 +96,7 @@ ___
 **Socket**:  = "Socket"
 
 *Defined in build/interfaces/methodus.d.ts:45*
-*Defined in [src/interfaces/methodus.ts:54](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/interfaces/methodus.ts#L54)*
+*Defined in [src/interfaces/methodus.ts:54](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L54)*
 
 ___
 

@@ -67,7 +67,7 @@ ___
 **● _app**: *`any`*
 
 *Defined in build/server.d.ts:10*
-*Defined in [src/server.ts:20](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L20)*
+*Defined in [src/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L19)*
 
 ___
 <a id="_plugins"></a>
@@ -77,7 +77,7 @@ ___
 **● _plugins**: *`PluginEntry`[]* =  []
 
 *Defined in build/server.d.ts:13*
-*Defined in [src/server.ts:23](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L23)*
+*Defined in [src/server.ts:22](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L22)*
 
 ___
 <a id="app"></a>
@@ -87,7 +87,7 @@ ___
 **● app**: *`any`*
 
 *Defined in build/server.d.ts:7*
-*Defined in [src/server.ts:16](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L16)*
+*Defined in [src/server.ts:15](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L15)*
 
 ___
 <a id="config"></a>
@@ -97,7 +97,7 @@ ___
 **● config**: *[MethodusConfig](methodusconfig.md)*
 
 *Defined in build/server.d.ts:8*
-*Defined in [src/server.ts:17](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L17)*
+*Defined in [src/server.ts:16](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L16)*
 
 ___
 <a id="httpserver"></a>
@@ -107,7 +107,7 @@ ___
 **● httpServer**: *`any`*
 
 *Defined in build/server.d.ts:11*
-*Defined in [src/server.ts:21](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L21)*
+*Defined in [src/server.ts:20](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L20)*
 
 ___
 <a id="instanceid"></a>
@@ -117,7 +117,7 @@ ___
 **● instanceId**: *`string`*
 
 *Defined in build/server.d.ts:14*
-*Defined in [src/server.ts:24](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L24)*
+*Defined in [src/server.ts:23](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L23)*
 
 ___
 <a id="port"></a>
@@ -127,7 +127,7 @@ ___
 **● port**: *`number`* = 0
 
 *Defined in build/server.d.ts:12*
-*Defined in [src/server.ts:22](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L22)*
+*Defined in [src/server.ts:21](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L21)*
 
 ___
 <a id="serverkey"></a>
@@ -137,7 +137,7 @@ ___
 **● serverKey**: *`string`*
 
 *Defined in build/server.d.ts:9*
-*Defined in [src/server.ts:18](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/server.ts#L18)*
+*Defined in [src/server.ts:17](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L17)*
 
 ___
 

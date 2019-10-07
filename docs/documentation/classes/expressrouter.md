@@ -49,7 +49,7 @@ ___
 **● routers**: *`any`* =  []
 
 *Defined in build/servers/express/Router.d.ts:3*
-*Defined in [src/servers/express/Router.ts:8](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/servers/express/Router.ts#L8)*
+*Defined in [src/servers/express/Router.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/express/Router.ts#L6)*
 
 ___
 

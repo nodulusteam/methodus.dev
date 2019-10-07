@@ -44,9 +44,7 @@
 * [Server](classes/server.md)
 * [Servers](classes/servers.md)
 * [ServersList](classes/serverslist.md)
-* [SimpleClass](classes/simpleclass.md)
 * [Verbs](classes/verbs.md)
-* [WebRequest](classes/webrequest.md)
 
 ### Interfaces
 
@@ -87,7 +85,7 @@
 **● resultEmitter**: *`EventEmitter`* =  new EventEmitter()
 
 *Defined in build/tests/servers/emitter.plugin.d.ts:6*
-*Defined in [src/tests/servers/emitter.plugin.ts:12](https://github.com/nodulusteam/methodus.dev/blob/c7705c6/src/tests/servers/emitter.plugin.ts#L12)*
+*Defined in [src/tests/servers/emitter.plugin.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/servers/emitter.plugin.ts#L12)*
 
 ___
 
