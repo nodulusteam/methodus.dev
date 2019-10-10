@@ -168,9 +168,9 @@ export namespace Methods {
                                 if (methodus._mocks && methodus._mocks[propertyKey]) {
                                     if (typeof methodus._mocks[propertyKey] === 'function') {
                                         // tslint:disable-next-line:max-line-length
-                                        methodResult = new MethodResult(methodus._mocks[propertyKey](...ParserResponse.args));
+                                        methodResult = methodus._mocks[propertyKey].apply(target, ParserResponse.args);
                                     } else {
-                                        methodResult = new MethodResult(methodus._mocks[propertyKey]);
+                                        methodResult = methodus._mocks[propertyKey];
                                     }
                                 } else {
                                     methodResult = await originalMethod.apply(target, ParserResponse.args);
