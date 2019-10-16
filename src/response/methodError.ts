@@ -2,6 +2,7 @@
 export class MethodError extends Error {
     error: string;
     statusCode: number;
+    statusText?: string;
     additional: any;
     constructor(error: any, statusCode?: any, additional?: any) {
         let message = error;
@@ -11,6 +12,7 @@ export class MethodError extends Error {
         super(message);
 
         if (error.error && error.statusCode) {
+            this.statusText = error.error;
             this.error = error.error;
             this.statusCode = error.statusCode;
             this.stack = error.stack;

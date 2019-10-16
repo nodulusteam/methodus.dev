@@ -54,17 +54,17 @@ export class RestResponse {
             }
 
             methodResult.result.pipe(res).on('error', (err: any) => {
-               // logger.error('stream errored', err);
+                // logger.error('stream errored', err);
             }).on('reponse', (response: any) => {
-               // logger.trace('stream responsed', response);
+                // logger.trace('stream responsed', response);
             }).on('finish', (response: any) => {
-               // logger.info('stream finished');
+                // logger.info('stream finished');
             });
             return;
         }
 
         if (methodResult.error) {
-            res.send(methodResult.error);
+            res.send({ error: methodResult.error });
         } else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
             res.end(methodResult.result);
         } else {
@@ -100,7 +100,7 @@ export class RestParser {
                 try {
                     return item.type.deserialize(item.value);
                 } catch (error) {
-                  //  logger.warn(this, 'error deserializing argument', item);
+                    //  logger.warn(this, 'error deserializing argument', item);
                 }
             } else if (item.type && item.type.prototype && item.type.prototype.constructor) {
                 return new item.type(item.value);
@@ -108,7 +108,7 @@ export class RestParser {
                 try {
                     return JSON.parse(item.value);
                 } catch (error) {
-                   // logger.warn(this, 'error parsing argument', item);
+                    // logger.warn(this, 'error parsing argument', item);
                 }
 
             } else if (item.value === undefined && typeof (item) === 'object') {
