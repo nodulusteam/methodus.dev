@@ -190,10 +190,11 @@ export namespace Methods {
                         }
                     } catch (error) {
                         error.statusCode = error.statusCode || 500;
+                        logger.error(error);
                         if (ParserResponse.isRest) {
                             return new parser.response(args, error, restHeaders);
                         } else {
-                            logger.error(error);
+                          
                             throw (error);
                         }
                     }

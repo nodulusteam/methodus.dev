@@ -16,7 +16,7 @@ export class Verbs {
 export class RestResponse {
     constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
         const res = args[1]; // in express this will ontain the response
-        const next = args[2];
+       
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
         } else if (!methodResult || methodResult.error) {
@@ -64,7 +64,7 @@ export class RestResponse {
         }
 
         if (methodResult.error) {
-            return next(methodResult.error);
+            return res.json({ error: methodResult.error });
         } else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
             return res.end(methodResult.result);
         } else {
