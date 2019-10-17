@@ -16,7 +16,7 @@ export class Verbs {
 export class RestResponse {
     constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
         const res = args[1]; // in express this will ontain the response
-
+        const next = args[2];
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
         } else if (!methodResult || methodResult.error) {
@@ -64,21 +64,21 @@ export class RestResponse {
         }
 
         if (methodResult.error) {
-            res.send({ error: methodResult.error });
+            return next(methodResult.error);
         } else if (methodResult.result && Buffer.isBuffer(methodResult.result)) {
-            res.end(methodResult.result);
+            return res.end(methodResult.result);
         } else {
             if (methodResult.result === 0) {
                 methodResult.result = JSON.stringify(methodResult.result);
             }
 
             if (typeof methodResult.result === 'string') {
-                res.end(methodResult.result, 'utf-8');
+                return res.end(methodResult.result, 'utf-8');
             } else {
                 res.set('Content-Type', 'application/json');
                 const str = JSON.stringify((methodResult.result) ? methodResult.result : methodResult);
                 res.setHeader('ETag', etag(str));
-                res.send(str);
+                return res.send(str);
             }
         }
     }

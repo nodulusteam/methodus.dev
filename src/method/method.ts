@@ -122,6 +122,11 @@ export namespace Methods {
                                 ex.error = ex.error.toString();
                                 ex.message = ex.error; // the message property is what we display
                             }
+                            try {
+                                ex.message = JSON.parse(ex.message).error;
+                            } catch (err) {
+
+                            }
                             throw (ex);
                         }
                     } else {
@@ -185,11 +190,10 @@ export namespace Methods {
                         }
                     } catch (error) {
                         error.statusCode = error.statusCode || 500;
-                        logger.error(error);
-
                         if (ParserResponse.isRest) {
                             return new parser.response(args, error, restHeaders);
                         } else {
+                            logger.error(error);
                             throw (error);
                         }
                     }

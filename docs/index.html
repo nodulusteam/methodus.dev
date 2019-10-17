@@ -16,9 +16,9 @@
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
 
 	<style>
-	.markdown-section{
-		max-width: 1000px
-	}
+		.markdown-section {
+			max-width: 1000px
+		}
 	</style>
 </head>
 
@@ -31,8 +31,16 @@
 			}
 			return 'hsl(' + (colorNum * (360 / colors) % 360) + ',100%,50%)';
 		}
+		var colorsArray = [
+			'#7d2c75',
+			'#000000',
+			'#45b83d',
+			'#d6d24d',
+			'#342863',
 
-		const color = selectColor(Math.floor(Math.random() * 10), 10);
+		];
+
+		const color = colorsArray[Math.floor(Math.random() * colorsArray.length)];//  selectColor( Math.floor(Math.random() * 10), 10);
 		window.$docsify = {
 			name: 'Methodus',
 			themeColor: color,
@@ -101,7 +109,7 @@
 				if (typeof self === 'undefined' || !self.Prism || !self.document) {
 					return;
 				}
-			 
+
 			})();
 
 	</script>

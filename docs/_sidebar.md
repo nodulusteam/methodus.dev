@@ -1,7 +1,9 @@
 <!-- docs/_sidebar.md -->
 
 
-* [Home](/main.md)
+* [Introduction](/main.md)
+    * [Server](introduction/server.md)
+    * [Client](introduction/client.md)
 * [Reference](documentation/)
 * [Examples](examples/index.md)
 

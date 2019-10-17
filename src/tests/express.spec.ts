@@ -51,6 +51,7 @@ export class Servers {
         Expect(response.result.name).toBe('my user name');
     }
 
+    
     @AsyncTest('read')
     @Timeout(1000 * 1000)
     public async read(): Promise<any> {
@@ -58,7 +59,7 @@ export class Servers {
             const response = await this.testTarget.read(511798);
             return response;
         } catch (ex) {
-            Expect(ex.error).toBe('intended error');
+            Expect(ex.error).toBeDefined();
         }
 
     }
