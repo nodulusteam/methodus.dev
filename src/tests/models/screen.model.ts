@@ -1,9 +1,9 @@
-import { Repo, Model, Field } from '@methodus/data';
+import { Repo, Field, ModelInMemory } from '@methodus/data';
 
 /**
  * @hidden
  */
-@Model('Screen')
+@ModelInMemory('Screen')
 export class ScreenModel extends Repo<ScreenModel> {
     @Field()
     public Name?: string;

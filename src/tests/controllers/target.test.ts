@@ -11,6 +11,15 @@ import { Injectable } from '../../di';
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestTarget')
 export class TestTarget {
+
+    @MethodPipe(Verbs.Post, '/api/player')
+    public async create(@Mapping.Files('files') files: any,
+        @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+
+
+
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
     public async list(@Mapping.Headers('auth') auth: string,
@@ -32,11 +41,6 @@ export class TestTarget {
         return new MethodResult({});
     }
 
-    @MethodPipe(Verbs.Post, '/api/player')
-    public async create(@Mapping.Files('files') files: any,
-        @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string): Promise<MethodResult> {
-        return new MethodResult({});
-    }
 
     @Method(Verbs.Get, '/api/player/:player_id')
     public async read(@Mapping.Param('player_id') playerId: number): Promise<MethodResult> {

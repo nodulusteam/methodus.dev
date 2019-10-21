@@ -1,5 +1,5 @@
 process.env.test = 'true';
-import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
+import { Test, Expect, TestFixture, Timeout, SetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
 import { Injector } from './shim';
@@ -13,7 +13,7 @@ export class Servers {
     constructor() {
 
     }
-    @AsyncSetupFixture
+    @SetupFixture
     public async serverSetup() {
         return new Promise(async (resolve) => {
             this.server = new SocketTestServer();
@@ -29,7 +29,7 @@ export class Servers {
     }
 
 
-    @AsyncTest('list')
+    @Test('list')
     @Timeout(1000 * 1000)
     public async list() {
         const response = await this.testTarget.list('someauth', 'up');
@@ -37,7 +37,7 @@ export class Servers {
 
     }
 
-    @AsyncTest('list')
+    @Test('list')
     @Timeout(1000 * 1000)
     public async listDefaults() {
         const response = await this.testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
@@ -45,7 +45,7 @@ export class Servers {
 
     }
 
-    @AsyncTest('read')
+    @Test('read')
     @Timeout(1000 * 1000)
     public async read(): Promise<any> {
         try {

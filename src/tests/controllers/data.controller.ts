@@ -1,15 +1,19 @@
-import { Verbs, Method, Mapping, MethodResult, MethodConfigBase,Injectable } from '../shim';
+import { Verbs, Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '../shim';
 /**
  * @hidden
  */
-@Injectable()
+@Singleton()
 @MethodConfigBase('DataController')
 export class DataController {
-    public repository: any;
+    public repository: any
+    constructor(repo: any) {
+       
+        this.repository = repo;
+    }
 
     @Method(Verbs.Get, '/id/:id')
     public async get(@Mapping.Param('id') id: string) {
-        const result = (this as any).methodus.repository.get(id);
+        const result = this.repository.get(id);
         return new MethodResult(result);
     }
 

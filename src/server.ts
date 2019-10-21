@@ -79,7 +79,7 @@ export class Server {
                 metaObject.methodType = _class.transportType.name;
                 ClassContainer.set(configName, metaObject);
                 logger.info(
-                    colors.blue(`using class ${_class.classType.name} in ${_class.transportType.name} mode`));
+                    colors.blue(`using client class ${_class.classType.name} in ${_class.transportType.name} mode`));
 
             } else {
                 logger.error('could not load metadata for ' + configName);
@@ -174,8 +174,9 @@ export class Server {
                         metaObject.serverType = serverTypeName;
                         metaObject.instanceId = serverInstance.instanceId;
                         ClassContainer.set(configName, metaObject);
+
                         logger.info(
-                            colors.blue(`using class ${_class.classType.name} in ${_class.methodType} mode`));
+                            colors.blue(`using server class ${configName} in ${_class.methodType} mode`));
 
                         const activeServers = Servers.get(serverInstance.instanceId, serverTypeName);
                         if (activeServers) {

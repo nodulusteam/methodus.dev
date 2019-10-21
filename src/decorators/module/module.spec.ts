@@ -1,4 +1,4 @@
-import { AsyncTest, Expect, TestFixture, Timeout } from 'alsatian';
+import { Test, Expect, TestFixture, Timeout } from 'alsatian';
 import { Module } from './module';
 import { TestTarget, TestController, ScreensDataController } from '../../tests/controllers/';
 import {
@@ -33,7 +33,7 @@ export class ExpressTestServer extends ConfiguredServer {
 
 @TestFixture('Module decorators')
 export class ModulesTest {
-    @AsyncTest('Create module')
+    @Test('Create module')
     @Timeout(1000 * 1000)
     public async createModule() {
         const module = new ModuleClass();

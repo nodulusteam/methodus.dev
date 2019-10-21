@@ -1,5 +1,5 @@
 
-import { Expect, Test, TestCase, TestFixture, AsyncTest } from 'alsatian';
+import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { MethodResult } from './methodResult';
 import { TestController } from '../tests/controllers/controller.test';
 @TestFixture('Test MethodResult')
@@ -13,7 +13,7 @@ export class MethodResultTest {
         Expect(result).not.toBeNull();
     }
 
-    @AsyncTest('createWithLinks')
+    @Test('createWithLinks')
     @TestCase({ prop1: 1, prop2: 2 })
     public async createWithLinks(object: any) {
         const result = new MethodResult(object);

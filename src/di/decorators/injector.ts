@@ -11,7 +11,7 @@ export class Injector {
             Object.defineProperty(target, ANNOTATIONS, { value: [] })[ANNOTATIONS];
 
         const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
-        Injector.register(target, constructorArgs, name);
+        Injector.register(target, constructorArgs, name || target.name);
         annotations.push('injectable');
     }
 
@@ -60,7 +60,7 @@ export class Injector {
             if (dep) {
                 return Injector.get(dep);
             } else {
-               return null
+                return null
             }
         });
 

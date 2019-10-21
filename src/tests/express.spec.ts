@@ -1,7 +1,7 @@
 process.env.test = 'true';
-import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
+import { Test, Expect, TestFixture, Timeout, SetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { ExpressTestServer } from './servers/express.server';
-import { TestTarget } from './controllers';
+import { TestTarget } from './controllers/target.test';
 import { Injector } from './shim';
 
 @TestFixture('Test Express configuration')
@@ -13,7 +13,7 @@ export class Servers {
     }
 
     server: any;
-    @AsyncSetupFixture
+    @SetupFixture
     public async serverSetup() {
         return new Promise(async (resolve, reject) => {
             this.server = new ExpressTestServer();
@@ -28,7 +28,7 @@ export class Servers {
         this.server.kill();
     }
 
-    @AsyncTest('list')
+    @Test('list')
     @Timeout(1000 * 1000)
     public async list() {
         const response = await this.testTarget.list('someauth', 'up');
@@ -36,7 +36,7 @@ export class Servers {
 
     }
 
-    @AsyncTest('list')
+    @Test('list')
     @Timeout(1000 * 1000)
     public async listDefaults() {
         const response = await this.testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
@@ -44,7 +44,7 @@ export class Servers {
 
     }
 
-    @AsyncTest('create')
+    @Test('create')
     @Timeout(1000 * 1000)
     public async create() {
         const response = await this.testTarget.create('cookie-value', {}, 'my user name');
@@ -52,7 +52,7 @@ export class Servers {
     }
 
     
-    @AsyncTest('read')
+    @Test('read')
     @Timeout(1000 * 1000)
     public async read(): Promise<any> {
         try {

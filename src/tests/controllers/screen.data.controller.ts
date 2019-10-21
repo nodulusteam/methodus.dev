@@ -1,14 +1,11 @@
 import { DataController } from './data.controller';
-import { MethodConfig, Method, Mapping, MethodResult, Verbs, MethodConfigExtend } from '../shim';
+import { MethodConfig, Method, Mapping, MethodResult, Verbs } from '../shim';
 import { ScreenModel } from '../models/screen.model';
-import { Injectable } from '../../di';
 
 /**
  * @hidden
  */
-@Injectable()
-@MethodConfigExtend(DataController)
-@MethodConfig('ScreensDataController', [], ScreenModel)
+@MethodConfig('ScreensDataController', [], '/screens')
 export class ScreensDataController extends DataController {
 
     @Method(Verbs.Get, '/special/:id')
@@ -19,7 +16,8 @@ export class ScreensDataController extends DataController {
         return new MethodResult(result);
     }
     constructor() {
-        super();
+        super(ScreenModel);
+        this.repository = ScreenModel;
     }
 
 }

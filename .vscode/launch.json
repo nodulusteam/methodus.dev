@@ -9,7 +9,7 @@
             "console": "internalConsole",
             "name": "T Run express test",
             "type": "node",
-            "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
+            "program": "${workspaceRoot}/node_modules/alsatian/dist/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
                 "build/tests/express.spec.js"

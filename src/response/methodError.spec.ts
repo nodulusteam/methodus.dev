@@ -1,5 +1,5 @@
 
-import { Expect, Test, TestCase, TestFixture, AsyncTest } from 'alsatian';
+import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { MethodError } from './methodError';
 
 @TestFixture('Test MethodError')
@@ -13,15 +13,13 @@ export class MethodErrorTest {
         Expect(result).not.toBeNull();
     }
 
-    @AsyncTest('createNewMethodErrorWithError')
-    @TestCase()
+    @Test('createNewMethodErrorWithError')
     public async createNewMethodErrorWithError() {
         const result = new MethodError(new Error('my errror'));
         Expect(result).not.toBeNull();
     }
 
-    @AsyncTest('createNewMethodErrorWithObjectError')
-    @TestCase()
+    @Test('createNewMethodErrorWithObjectError')
     public async createNewMethodErrorWithObjectError() {
         const result = new MethodError({ message: 'my-message', error: 'my-message', statusCode: 503 });
         Expect(result).not.toBeNull();

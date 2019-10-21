@@ -5,7 +5,6 @@ import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus } from '../response';
 import { ResponseParser, Verbs } from '../rest';
 import { Servers } from '../servers/serversList';
-import { Injector } from '../di';
 
 
 const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
@@ -46,22 +45,12 @@ export namespace Methods {
             const originalMethod = descriptor.value;
             // const {value} = descriptor;
             const value = async function (...args: any[]) {
-
-                if (args && args[args.length - 1] && args[args.length - 1].instruct) {
-                    mTarget = args[args.length - 1].target;
-                    target = mTarget;
-
-                    metaObject = mTarget._descriptors[propertyKey];
-                    paramsMap = metaObject.params as any;
-                    paramsMap.sort((a: any, b: any) => {
-                        return a.index - b.index;
-                    });
-                }
-
+ 
+                target = this;//Injector.get(target.name);
                 validateServerIsRunning();
                 // extract metadata for class and method
-                let configName = name;
-                if (!configName && target.constructor) {
+                let configName = target.name;
+                if (!configName && target.constructor && target.constructor.name !== 'Object') {
                     configName = target.constructor.name;
                 }
 
@@ -182,7 +171,7 @@ export namespace Methods {
                                 }
                                 break;
                             case MethodType.Local:
-                                let instanceFromDI = Injector.get(configName) || this;
+                                let instanceFromDI = this;// Injector.get(configName) || this;
 
                                 methodResult = await originalMethod.apply(instanceFromDI, ParserResponse.args);
                                 break;
@@ -194,7 +183,7 @@ export namespace Methods {
                         if (ParserResponse.isRest) {
                             return new parser.response(args, error, restHeaders);
                         } else {
-                          
+
                             throw (error);
                         }
                     }

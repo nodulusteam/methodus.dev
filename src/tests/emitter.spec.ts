@@ -1,5 +1,5 @@
 process.env.test = 'true';
-import { AsyncTest, Expect, TestFixture, Timeout, AsyncSetupFixture, AsyncTeardownFixture } from 'alsatian';
+import { Test, Expect, TestFixture, Timeout, SetupFixture, AsyncTeardownFixture } from 'alsatian';
 import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
@@ -14,7 +14,7 @@ export class Servers {
 
     server: any;
 
-    @AsyncSetupFixture
+    @SetupFixture
     public async serverSetup() {
         return new Promise(async (resolve, reject) => {
             this.server = new EmitterTestServer();
@@ -30,7 +30,7 @@ export class Servers {
     }
 
 
-    @AsyncTest('list')
+    @Test('list')
     @Timeout(1000 * 1000)
     public async list() {
         resultEmitter.on('list', (data) => {
@@ -40,7 +40,7 @@ export class Servers {
     }
 
 
-    @AsyncTest('listDefaults')
+    @Test('listDefaults')
     @Timeout(1000 * 1000)
     public async listDefaults() {
         resultEmitter.on('listdefaults', (data) => {
@@ -52,7 +52,7 @@ export class Servers {
     }
 
 
-    @AsyncTest('read')
+    @Test('read')
     @Timeout(1000 * 1000)
     public async read(): Promise<any> {
         resultEmitter.on('read', (data) => {
