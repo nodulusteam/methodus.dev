@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "4.0.7",
+    "version": "4.0.8",
     "description": "Server components for @methodus workflow",
     "main": "build/index.js",
     "types": "build/index.d.ts",
