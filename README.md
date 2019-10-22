@@ -3,7 +3,7 @@
 ![reliability](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=reliability_rating "reliability")
 ![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage "coverage")
 ![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_shield)
+
 
 
 ## Introduction
@@ -74,7 +74,16 @@ Build binding packages to your server application
 
 Model API data objects and manage DB access (mongodb)
  
- 
+
+![@methodus/server](https://img.shields.io/npm/v/@methodus/server?color=%233399ff&label=%40methodus%2Fserver&style=flat-square)
+![@methodus/client](https://img.shields.io/npm/v/@methodus/client?color=%23004d99&label=%40methodus%2Fclient&style=flat-square)
+![@methodus/contracts](https://img.shields.io/npm/v/@methodus/contracts?color=%238080ff&label=%40methodus%2Fcontracts&style=flat-square)
+![@methodus/data](https://img.shields.io/npm/v/@methodus/data?color=%23994d00&label=%40methodus%2Fdata&style=flat-square)
+![@methodus/describe](https://img.shields.io/npm/v/@methodus/describe?color=%2353c653&label=%40methodus%2Fdescribe&style=flat-square)
+
+
 
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_large)
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_shield)

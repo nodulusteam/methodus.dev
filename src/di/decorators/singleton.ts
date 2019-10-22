@@ -5,7 +5,7 @@ export function Singleton() {
     function DecoratorFactory(cls: any) {
 
         const annotations = cls.hasOwnProperty(ANNOTATIONS) ?
-            (cls as any)[ANNOTATIONS] :
+            cls[ANNOTATIONS] :
             Object.defineProperty(cls, ANNOTATIONS, { value: [] })[ANNOTATIONS];
 
         annotations.push('singleton');

@@ -7,11 +7,10 @@
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "ES6",
-        "includeDeclarations":"true",
+        "includeDeclarations": "true",
         "mode": "file",
         "name": "A Methodus guide",
         "readme": "none",
-        "rewriteLinks": "linkrewriter.js",
         "out": "docs/documentation",
         "exclude": "tests"
     },

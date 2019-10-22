@@ -143,6 +143,12 @@ export class WebRequest {
             case AuthType.Basic:
                 requestOptions.auth = { user: this.authOptions.user, pass: this.authOptions.password };
                 break;
+            case AuthType.ApiKey:
+                break;
+            case AuthType.BearerToken:
+                break;
+            case AuthType.DigestAuth:
+                break;
         }
         if (this.auth) {
             logger('Auth is', requestOptions.auth);

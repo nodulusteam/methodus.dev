@@ -8,6 +8,8 @@ import { PluginLoader } from './plugins';
 import * as figlet from 'figlet';
 import { ServerContainer } from './server-container';
 import { ClientContainer } from './client-container';
+import * as uuidv1 from 'uuid/v1';
+
 export interface IApp {
     set(key: string, value: any): void;
 }
@@ -34,13 +36,7 @@ export class Server {
     }
 
     makeid() {
-        let text = '';
-        const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-        for (let i = 0; i < 5; i++) {
-            text += possible.charAt(Math.floor(Math.random() * possible.length));
-        }
-        return text;
+        return uuidv1();
     }
 
     plugins(plugins: PluginEntry[]) {

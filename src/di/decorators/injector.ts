@@ -7,7 +7,7 @@ export class Injector {
     static inject(target: any, name?: string) {
         //use the injectable logic here
         const annotations = target.hasOwnProperty(ANNOTATIONS) ?
-            (target as any)[ANNOTATIONS] :
+            target[ANNOTATIONS] :
             Object.defineProperty(target, ANNOTATIONS, { value: [] })[ANNOTATIONS];
 
         const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
@@ -34,7 +34,7 @@ export class Injector {
     }
     static get(_token: any) {
         if (!_token) {
-            debugger;
+            console.error('missing token');
         }
         //some times the token is a string so
         let symbol = _token;
@@ -43,8 +43,8 @@ export class Injector {
         }
 
         // get the `token` from the record set
-        const all = Injector.records.filter((record) => {
-            return record.token.name === symbol
+        const all = Injector.records.filter((injectedRecord) => {
+            return injectedRecord.token.name === symbol
         });
 
         if (!all || all.length === 0) {

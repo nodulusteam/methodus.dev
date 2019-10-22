@@ -33,7 +33,7 @@ export class Proxy {
                         const localClass = require(path.join(process.cwd(), startPathForLoad, localClassPath));
                         logger.info(`succesfully loaded ${localClass} locally`);
                         return localClass[className];
-                    } catch (error) {
+                    } catch (exception) {
                         logger.info(`will try last option ${localClassPath} locally`);
                         const localClass = require(path.join(process.cwd(),
                             'node_modules',

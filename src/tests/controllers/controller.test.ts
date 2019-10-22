@@ -1,5 +1,5 @@
 import {
-    MethodResult, Verbs, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, generateUuid,
+    MethodResult, Verbs, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,
     Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext,
 } from '../shim';
 import { Auth, AuthType } from '../../decorators';
@@ -22,7 +22,7 @@ export class TestController {
         result.on('finish', (data: any) => {
             return data;
         });
-        result.setHeader('good-header', generateUuid());
+        //  result.setHeader('good-header', generateUuid());
         return result;
     }
 
