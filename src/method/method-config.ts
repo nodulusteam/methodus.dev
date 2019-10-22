@@ -41,9 +41,7 @@ export namespace Methods {
                 const new_assign = Object.assign({}, baseClone, targetClone);
                 proto.methodus[name]._descriptors = new_assign;
                 if (prefix) {
-
                     Object.values(proto.methodus[name]._descriptors).forEach((item: any) => {
-                        console.log(name, 'update', item.route, 'to', prefix + item.route);
                         item.route = prefix + item.route;
                     });
                 }
