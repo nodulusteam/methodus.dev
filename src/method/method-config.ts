@@ -35,7 +35,7 @@ export namespace Methods {
             if (Object.keys(proto.methodus).length > 1) {
 
                 let baseClass: any = Object.values(proto.methodus).filter((item: any) => { return item.isBase });
-                const baseClone = JSON.parse(JSON.stringify(baseClass[0]._descriptors));
+                const baseClone = baseClass[0] ?  JSON.parse(JSON.stringify(baseClass[0]._descriptors)) : {};
                 const targetClone = JSON.parse(JSON.stringify(proto.methodus[name]._descriptors));
 
                 const new_assign = Object.assign({}, baseClone, targetClone);
