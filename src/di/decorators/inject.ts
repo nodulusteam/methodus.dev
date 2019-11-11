@@ -1,10 +1,14 @@
 import { Injector } from './injector';
 
-export function Inject(name?: string): any {
+export function Inject(name?: string, propertyName?: string): any {
     return function (target: any, propertyKey: string | symbol, parameterIndex: number) {
         const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
-        const propertyName = getConstructorArgumentsNames(target.prototype.constructor, parameterIndex);
-        target.prototype[propertyName] = Injector.get(constructorArgs[parameterIndex]);
+        if (!propertyName) {
+            propertyName = getConstructorArgumentsNames(target.prototype.constructor, parameterIndex);
+        }
+        if (propertyName) {
+            target.prototype[propertyName] = Injector.get(constructorArgs[parameterIndex]);
+        }
     };
 }
 
