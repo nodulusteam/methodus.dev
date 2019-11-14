@@ -17,7 +17,7 @@ export class WebRequest {
     }
 
     sendRequest(verb: Verbs, uri: string, params: any[], paramsMap: any[], securityContext?: any) {
-        const body: any = {};
+        let body: any = {};
         const headers: any = {};
         const cookies: any = {};
         const query: any = {};
@@ -41,7 +41,12 @@ export class WebRequest {
                     if (item.name) {
                         body[item.name] = item.value;
                     } else {
-                        Object.assign(body, item.value);
+                        if (typeof item.value === 'object') {
+                            Object.assign(body, item.value);
+
+                        } else {
+                            body = item.value;
+                        }
                     }
 
                     break;
@@ -158,10 +163,15 @@ export class WebRequest {
             Object.assign(requestOptions, { proxy: process.env.PROXY });
         }
 
-        logger(this, body, uri);
-        if (Object.keys(body).length > 0) {
-            requestOptions.body = body;
+        if (typeof body === 'object') {
+            if (Object.keys(body).length)
+                requestOptions.body = body;
+            headers['Content-Type'] = 'application/json';
             requestOptions.json = true;
+        } else if (body.length) {
+            requestOptions.body = body;
+            requestOptions.json = false;
+            headers['Content-Type'] = 'application/xml';
         }
         if (securityContext) {
             requestOptions.headers = {
