@@ -1,0 +1,30 @@
+{
+  "name": "@methodus/platform-express",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run build && jest --verbose",
+    "build": "rimraf build && tsc"
+  },
+  "author": "nodulusteam",
+  "license": "ISC",
+  "peerDependencies": {
+    "@methodus/server": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/jest": "^24.0.23",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6"
+  },
+  "devDependencies": {
+    "@methodus/server": "^5.0.0",
+    "@types/express": "^4.17.2",
+    "alsatian": "^3.1.0",
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.2.0"
+  }
+}
