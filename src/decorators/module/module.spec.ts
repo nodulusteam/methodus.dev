@@ -1,8 +1,7 @@
-import { Test, Expect, TestFixture, Timeout } from 'alsatian';
 import { Module } from './module';
 import { TestTarget, TestController, ScreensDataController } from '../../tests/controllers/';
 import {
-     RouterConfiguration, ServerType,
+    RouterConfiguration, ServerType,
     ClientConfiguration, BuiltInTransports, ConfiguredServer, ModuleConfiguration,
 } from '../../tests/shim';
 import { ProxiedController } from '../../tests/controllers/proxy.controller';
@@ -29,15 +28,9 @@ export class ExpressTestServer extends ConfiguredServer {
 }
 
 
-
-
-@TestFixture('Module decorators')
-export class ModulesTest {
-    @Test('Create module')
-    @Timeout(1000 * 1000)
-    public async createModule() {
+describe('Module decorators', () => {
+    it('Create module', () => {
         const module = new ModuleClass();
-        Expect(module).toBeDefined();
-    }
-
-}
+        expect(module).toBeDefined();
+    });
+});

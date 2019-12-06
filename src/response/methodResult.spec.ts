@@ -1,26 +1,22 @@
 
-import { Expect, Test, TestCase, TestFixture } from 'alsatian';
 import { MethodResult } from './methodResult';
 import { TestController } from '../tests/controllers/controller.test';
-@TestFixture('Test MethodResult')
-export class MethodResultTest {
 
-    @Test('createNew')
-    @TestCase('{ "prop1": "1", "prop2": "2" }')
-    @TestCase({ prop1: 1, prop2: 2 })
-    public async createNew(object: any) {
-        const result = new MethodResult(object);
-        Expect(result).not.toBeNull();
-    }
+describe('Test MethodResult', () => {
 
-    @Test('createWithLinks')
-    @TestCase({ prop1: 1, prop2: 2 })
-    public async createWithLinks(object: any) {
-        const result = new MethodResult(object);
+    it('createNew', async () => {
+        const result = new MethodResult({ prop1: 1, prop2: 2 });
+        expect(result).not.toBeNull();
+    });
+
+
+    it('createNew', async () => {
+        const result = new MethodResult({ prop1: 1, prop2: 2 });
         result.linkAction('list', TestController, 'my-rel', {}, 'www.com');
         const linksResult = result.apply();
-        Expect(linksResult.result).not.toBeNull();
-        Expect(linksResult.getLinks()).not.toBeNull();
-    }
+        expect(linksResult.result).not.toBeNull();
+        expect(linksResult.getLinks()).not.toBeNull();
+    });
 
-}
+});
+

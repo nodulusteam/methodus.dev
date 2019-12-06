@@ -1,8 +1,8 @@
 import {
     MethodResult, Mapping, Verbs, Method, MethodMock, MethodConfig, MethodPipe,
-} from '../shim';
-import { Auth, AuthType } from '../../decorators';
-import { Injectable } from '../../di';
+    Injectable, Auth, AuthType
+} from '@methodus/server';
+
 
 /**
  * @hidden

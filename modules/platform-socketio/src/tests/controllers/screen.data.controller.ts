@@ -1,5 +1,5 @@
 import { DataController } from './data.controller';
-import { MethodConfig, Method, Mapping, MethodResult, Verbs } from '../shim';
+import { MethodConfig, Method, Mapping, MethodResult, Verbs } from '@methodus/server';
 import { ScreenModel } from '../models/screen.model';
 
 /**

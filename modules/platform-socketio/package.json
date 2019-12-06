@@ -1,14 +1,25 @@
 {
-  "name": "@methodus/platform-fastify",
+  "name": "@methodus/platform-socketio",
   "version": "0.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && jest",
+    "build": "rimraf build && tsc"
   },
-  "author": "",
+  "author": "nodulusteam",
   "license": "ISC",
+  "peerDependencies": {
+    "@methodus/server": "^5.0.0"
+  },
   "dependencies": {
-    "fastify": "^2.10.0"
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^2.1.2",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "@types/jest": "^24.0.23"
   }
 }

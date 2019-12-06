@@ -1,63 +1,54 @@
 process.env.test = 'true';
-import { Test, Expect, TestFixture, Timeout, SetupFixture, TeardownFixture } from 'alsatian';
+
 import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
 import { Injector } from '../di';
 
-@TestFixture('Test Emitter configuration')
-export class Servers {
-    private testTarget: TestTarget
-    constructor() {
-        this.testTarget = Injector.get(TestTarget);
-    }
 
-    server: any;
 
-    @SetupFixture
-    public async serverSetup() {
+describe('Test Emitter configuration', () => {
+    let testTarget: TestTarget;
+    let server: EmitterTestServer;
+
+    afterAll(() => {
+        server.kill();
+    });
+
+    beforeAll(() => {
+        testTarget = Injector.get(TestTarget);
+
         return new Promise(async (resolve, reject) => {
-            this.server = new EmitterTestServer();
-            this.server.on('ready', () => {
+            server = new EmitterTestServer();
+            server.on('ready', () => {
                 resolve();
             });
         });
-    }
 
-    @TeardownFixture
-    public async serverKill() {
-        this.server.kill();
-    }
+    });
 
 
-    @Test('list')
-    @Timeout(1000 * 1000)
-    public async list() {
+    it('list', async () => {
         resultEmitter.on('list', (data) => {
-            Expect(data.result.length).toBe(5);
+            expect(data.result.length).toBe(5);
         });
-        await this.testTarget.list('someauth', 'up');
-    }
+        await testTarget.list('someauth', 'up');
+    });
 
 
-    @Test('listDefaults')
-    @Timeout(1000 * 1000)
-    public async listDefaults() {
+    it('listDefaults', async () => {
         resultEmitter.on('listdefaults', (data) => {
-            Expect(data.result.length).toBe(5);
+            expect(data.result.length).toBe(5);
         });
 
-        await this.testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
+        await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
+    });
 
-    }
-
-
-    @Test('read')
-    @Timeout(1000 * 1000)
-    public async read(): Promise<any> {
+    it('read', async () => {
         resultEmitter.on('read', (data) => {
-            Expect(data.error).toBe('intended error');
+            expect(data.error).toBe('intended error');
         });
-        await this.testTarget.read(511798);
-    }
-}
+        await testTarget.read(511798);
+    });
+});
+

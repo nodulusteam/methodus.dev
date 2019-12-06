@@ -3,7 +3,7 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
-import { BaseServer, Servers, logger, Singleton } from '@methodus/server';
+import { BaseServer, Servers } from '@methodus/server';
 import { ExpressRouter } from './Router';
 
 
@@ -18,7 +18,6 @@ import * as fileUpload from 'express-fileupload';
 /**
  * @hidden
  */
-@Singleton()
 export class ExpressPlugin extends BaseServer {
     _app: any;
     constructor(port: any, onStart?: any) {
@@ -71,10 +70,10 @@ export class ExpressPlugin extends BaseServer {
         }
     }
 
-    register(server: any, parentServer: any) {
+    public static register(server: any, parentServer: any) {
         if (server.options) {
             const serverType = server.type.name;
-            logger.info(colors.green(`> Starting REST server on port ${server.options.port}`));
+            console.info(colors.green(`> Starting REST server on port ${server.options.port}`));
 
             parentServer._app[serverType] = new ExpressPlugin(server.options.port, server.options.onStart);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);

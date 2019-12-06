@@ -1,6 +1,6 @@
 {
   "name": "@methodus/platform-express",
-  "version": "0.0.0",
+  "version": "5.0.0-beta",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,9 @@
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
+    "ejs": "^2.5.7",
+    "errorhandler": "^1.5.0",
+    "compression": "^1.7.0",
     "express-fileupload": "^1.1.6"
   },
   "devDependencies": {
