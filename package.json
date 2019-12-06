@@ -26,10 +26,10 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
-        "build": "rimraf build && tsc",
+        "build": "rimraf build  && tsc",
         "watch": "rimraf build && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "npm run build && npm run test:full ",
+        "test": "npm run build && rimraf coverage && npm run test:full ",
         "test:full": "jest",
         "report": "nyc report --html --clover",
         "doc": "docsify serve docs",
