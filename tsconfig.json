@@ -1,6 +1,7 @@
 {
     "exclude": [
-        "docs"
+        "docs",
+        "modules"
     ],
     "typedocOptions": {
         "theme": "markdown",

@@ -1,14 +1,16 @@
 ## Getting started
 
 
-A Methodus server application will contain one or more frameworks agnostically bound to logic code.
+### A Methodus server application will contain one or more frameworks, agnostically bound to logic code.
 
 ## Install
-`npm i @methodus/server @methodus/describe` or `yarn add @methodus/server @methodus/describe`
+`npm i @methodus/server @methodus/describe` or `yarn add @methodus/server @methodus/describe`. This will install the server components of methodus as well as a plugin for API tests.
 
 
-There is no scaffolding tool for Methodus, so structure is based on the developer. How ever an entry file is required.
-So before you start create your flavor of a nodeJS Typescript application and add an `index.ts` file.
+> There is no scaffolding tool for Methodus, so structure is based on the developers preferences.
+How ever an entry file is required. So before you start create your flavor of a nodeJS Typescript
+application and add an `index.ts` file.
+
 
 *index.ts*
 ```typescript

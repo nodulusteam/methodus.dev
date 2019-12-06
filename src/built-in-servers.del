@@ -9,7 +9,7 @@ export class BuiltInServers {
      * Express backed server
      * @public
      */
-    public static Express: any = { name: 'express', path: './servers/express', static: express.static };
+    public static Express: any = { name: 'express', path: '', static: express.static };
     /**
      * SocketIO backed server
      * @public

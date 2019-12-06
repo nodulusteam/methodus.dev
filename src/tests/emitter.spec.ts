@@ -1,5 +1,5 @@
 process.env.test = 'true';
-import { Test, Expect, TestFixture, Timeout, SetupFixture, AsyncTeardownFixture } from 'alsatian';
+import { Test, Expect, TestFixture, Timeout, SetupFixture, TeardownFixture } from 'alsatian';
 import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
@@ -24,7 +24,7 @@ export class Servers {
         });
     }
 
-    @AsyncTeardownFixture
+    @TeardownFixture
     public async serverKill() {
         this.server.kill();
     }

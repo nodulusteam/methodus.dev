@@ -1,6 +1,6 @@
 
 import {
-    BuiltInServers, RouterConfiguration, ServerConfiguration, ServerType,
+    RouterConfiguration, ServerType,
     ClientConfiguration, BuiltInTransports, ConfiguredServer, ModuleConfiguration,
     Module,
 } from '../../tests/shim';
@@ -24,7 +24,7 @@ export class ModuleClass {
 
 @Singleton()
 @Injectable()
-@ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8040 })
+//@ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8040 })
 @ModuleConfiguration(ModuleClass)
 export class ExpressTestServer extends ConfiguredServer {
     constructor() {

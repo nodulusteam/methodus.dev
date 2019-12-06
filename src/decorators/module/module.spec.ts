@@ -2,7 +2,7 @@ import { Test, Expect, TestFixture, Timeout } from 'alsatian';
 import { Module } from './module';
 import { TestTarget, TestController, ScreensDataController } from '../../tests/controllers/';
 import {
-    BuiltInServers, RouterConfiguration, ServerConfiguration, ServerType,
+     RouterConfiguration, ServerType,
     ClientConfiguration, BuiltInTransports, ConfiguredServer, ModuleConfiguration,
 } from '../../tests/shim';
 import { ProxiedController } from '../../tests/controllers/proxy.controller';
@@ -20,7 +20,7 @@ export class ModuleClass {
     }
 }
 
-@ServerConfiguration(BuiltInServers.Express, { port: process.env.PORT || 8020 })
+// @ServerConfiguration(Express, { port: process.env.PORT || 8020 })
 @ModuleConfiguration(ModuleClass)
 export class ExpressTestServer extends ConfiguredServer {
     constructor() {
