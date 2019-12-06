@@ -1,6 +1,6 @@
 // import { MethodResult, MethodError } from './response';
 import { ServerType } from './interfaces';
-import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './servers/express/rest';
+import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './transports/rest/rest';
 // import * as etag from 'etag';
 
 export class Verbs {

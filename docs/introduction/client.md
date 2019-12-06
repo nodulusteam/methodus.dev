@@ -1,37 +1,15 @@
 ## Philosophy
 
-A Methodus server application will contain one or more frameworks agnostically bound to logic code.
-
-
-```
-@ServerConfiguration(BuiltInServers.Express, { port:  3060 })
-@PluginConfiguration('@methodus/describe')
-@ModuleConfiguration(MyLogicModule)
-export class SetupServer extends ConfiguredServer {
-  constructor() {
-    super(SetupServer);     
-  }
-}
-```
+Client applications today are usually peered with a client-side framework like angular, react and vue, and communicate with their backends using rest API's and HTTP requests. HTTP is a transport element, and methodus is all about transports, so we can implement the same approach we use on the server for the client API calls.
 
 
 
+In traditional development we will have something to invoke this API like: 
+`
+return this.http.get(this.configUrl);
+`
+Which means we explicitly use the GET verb of the HTTP library to make the call. A methodus contract, generated from the backend will provide a class we can use to call the server functions, rather than the undelying HTTP vocabullary, leaving the application free to integrate the transports in different ways.
 
-
-
-
-We love developing applications, but the process requires the we predecide allot before we actually begin.
-* What framework to use?
-* How will it be deployed?
-* What is the testing strategy?
-
-Once these decisions are made, they are rarely changed. And since changes cost money, they are never made.
-So, by abstracting the framework code from our logic code, we get a generic application, that can run on virtually any protocol/framework.
-
-## Method - The basic unit
-
-## The source
-Every developer has to make alot of decisions while developing an application, the architects probably will make some more
-
-The root functionality of methodus is the ability to control the program flow by injecting logic to the gap between a caller and a callee of a function.
-This ability is very useful when developing distributed / dynamic applications,  allowing developers to use an agile, contained approach in their code logic.
+`
+  return serverContract.getConfig();
+`

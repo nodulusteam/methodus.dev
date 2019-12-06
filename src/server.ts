@@ -134,7 +134,6 @@ export class Server {
 
         }
         if (this.config) {
-
             const classes = this.config.classes.entries();
             for (let i = 0; i < this.config.classes.size; i++) {
                 const element = classes.next();
