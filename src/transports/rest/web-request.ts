@@ -7,6 +7,15 @@ import * as https from 'https';
 const logger = require('debug')('methodus:transports:http');
 import * as request from 'request-promise-native';
 import { AuthType } from '../../decorators';
+
+
+
+export interface RequestParams{
+    from:string;
+    name:string;
+
+}
+
 /**
  * @hidden
  */
@@ -16,7 +25,7 @@ export class WebRequest {
 
     }
 
-    sendRequest(verb: Verbs, uri: string, params: any[], paramsMap: any[], securityContext?: any) {
+    sendRequest(verb: Verbs, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
         let body: any = {};
         const headers: any = {};
         const cookies: any = {};

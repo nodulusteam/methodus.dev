@@ -1,9 +1,7 @@
 import {
     MethodResult, Verbs, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,
-    Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext,
-} from '../shim';
-import { Auth, AuthType } from '../../decorators';
-import { Injectable } from '../../di';
+    Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext, Auth, AuthType ,Injectable
+} from '@methodus/server';
 
 /**
  * @hidden

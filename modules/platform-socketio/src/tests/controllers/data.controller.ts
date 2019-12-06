@@ -1,4 +1,4 @@
-import { Verbs, Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '../shim';
+import { Verbs, Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '@methodus/server';
 /**
  * @hidden
  */
