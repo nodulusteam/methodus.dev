@@ -1,8 +1,9 @@
 {
   "name": "@methodus/platform-express",
-  "version": "5.0.0-beta",
+  "version": "5.0.2-beta",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "test": "npm run build && jest --verbose",
     "build": "rimraf build && tsc"
@@ -13,7 +14,6 @@
     "@methodus/server": "^5.0.0"
   },
   "dependencies": {
-    "@types/jest": "^24.0.23",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
     "express": "^4.17.1",
@@ -23,9 +23,9 @@
     "express-fileupload": "^1.1.6"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.23",
     "@methodus/server": "^5.0.0",
     "@types/express": "^4.17.2",
-    "alsatian": "^3.1.0",
     "jest": "^24.9.0",
     "rimraf": "^3.0.0",
     "ts-jest": "^24.2.0"

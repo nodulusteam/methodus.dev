@@ -1,4 +1,4 @@
-import { logger } from '../../log';
+import { logger } from '@methodus/server';
 /**
  * @hidden
  */

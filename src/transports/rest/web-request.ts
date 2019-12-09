@@ -9,11 +9,11 @@ import * as request from 'request-promise-native';
 import { AuthType } from '../../decorators';
 
 
-
-export interface RequestParams{
-    from:string;
-    name:string;
-
+export interface RequestParams {
+    from: string;
+    name?: string;
+    value?: any;
+    index: number;
 }
 
 /**
@@ -31,7 +31,6 @@ export class WebRequest {
         const cookies: any = {};
         const query: any = {};
         const files: any = [];
-
         paramsMap.forEach((item: any) => {
             item.value = params[item.index];
             switch (item.from) {
