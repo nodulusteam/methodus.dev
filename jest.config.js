@@ -6,7 +6,8 @@ module.exports = {
     ],
     "collectCoverageFrom": [
       "<rootDir>/src/**/*.ts",
-      "!<rootDir>/src/tests/**/*"
+      "!<rootDir>/src/tests/**/*",
+      "!<rootDir>/src/**/*test*"
     ],
     collectCoverage: true,
     "coverageReporters": ["json", "lcov", "text", "clover"],
