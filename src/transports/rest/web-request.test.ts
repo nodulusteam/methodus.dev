@@ -2,10 +2,10 @@
 import { WebRequest } from './web-request';
 import { Verbs } from '../../verbs';
 
-(() => {
+(async() => {
     {
         const request = new WebRequest();
-        const result = request.sendRequest(Verbs.Get, 'https://jsonplaceholder.typicode.com/posts', [
+        const result = await request.sendRequest(Verbs.Get, 'https://jsonplaceholder.typicode.com/posts', [
             { key1: 'value1', key2: 'value2' },
             { key1: 'value1', key2: 'value2' },
             ['file1', 'file2'],

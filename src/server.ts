@@ -5,7 +5,6 @@ import { logger } from './log';
 import * as colors from 'colors';
 import { ClassContainer } from './class-container';
 import { PluginLoader } from './plugins';
-import * as figlet from 'figlet';
 import { ServerContainer } from './server-container';
 import { ClientContainer } from './client-container';
 import * as uuidv1 from 'uuid/v1';
@@ -49,15 +48,7 @@ export class Server {
         return this;
     }
 
-    async printlogo() {
 
-        const options: any = {
-            font: 'Bigfig',
-            horizontalLayout: 'default',
-            verticalLayout: 'default',
-        };
-        console.log(figlet.textSync('methodus', options));
-    }
 
     public useClient(_class: any) {
         if (_class.classType) {
@@ -85,7 +76,7 @@ export class Server {
 
     async start() {
         this.port = 0;
-        await this.printlogo();
+        console.log(`> Methodus.`);
         // add this instance to the global bridge of servers
         // Bridge.set(this.serverKey, { server: this });
 
