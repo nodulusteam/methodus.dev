@@ -4,7 +4,6 @@ import { Methods as MethodConfigNS } from './method-config';
 
 import { Methods as MethodPipeNS } from './method-pipe';
 import { Methods as MethodConfigBaseNS } from './method-config-base';
-import { Methods as MethodConfigExtendNS } from './method-config-extend';
 import { Methods as MethodMockNS } from './method-mock';
 
 /**
@@ -20,11 +19,6 @@ export const Method = MethodNS.Method;
  * @hidden
  */
 export const MethodConfigBase = MethodConfigBaseNS.MethodConfigBase;
-
-/**
- * @hidden
- */
-export const MethodConfigExtend = MethodConfigExtendNS.MethodConfigExtend;
 
 /**
  * @hidden

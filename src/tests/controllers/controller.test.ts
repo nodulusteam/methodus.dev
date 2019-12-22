@@ -3,7 +3,8 @@ import {
     Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext,
 } from '../shim';
 import { Auth, AuthType } from '../../decorators';
-import { Injectable } from '../../di';
+import { Injectable, Inject } from '../../di';
+import { TestLogger } from './logger.service';
 
 /**
  * @hidden
@@ -12,6 +13,15 @@ import { Injectable } from '../../di';
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestController')
 export class TestController {
+
+    /**
+     *
+     */
+    constructor(@Inject() private testLogger: TestLogger) {
+        this.testLogger.log('ok');
+
+    }
+
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
     public async list(
@@ -53,7 +63,7 @@ export class TestController {
 
     @Method(Verbs.Get, '/api/player/:field/:value')
     public async getByField(@Param('field') field: any, @Param('value') value: number) {
-        return new MethodResult({});
+        return new MethodResult({}, 100, 1);
     }
 
     @Method(Verbs.Put, '/api/player')

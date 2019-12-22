@@ -1,5 +1,6 @@
-import { MethodConfig, Method } from '../shim';
+import { MethodConfig, Method, Inject } from '../shim';
 import { MethodResult } from '../../response';
+import { TestLogger } from './logger.service';
 
 /**
  * @hidden
@@ -10,8 +11,8 @@ export class DataService {
     public async special(id: string) {
         return new MethodResult(id);
     }
-    constructor() {
-
+    constructor(@Inject() private testLogger:TestLogger) {
+        this.testLogger.log('ok');
     }
 
 }

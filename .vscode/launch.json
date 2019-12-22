@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -26,7 +25,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/build/transports/rest/web-request.test.js",
+            "program": "${workspaceRoot}/build/server-container.spec.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
@@ -37,7 +36,6 @@
             "runtimeExecutable": null,
             "env": {}
         },
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -118,7 +116,6 @@
                 "NODE_LOG_LEVEL": "trace"
             }
         },
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -139,7 +136,6 @@
                 "NODE_LOG_LEVEL": "trace"
             }
         },
-
         {
             "request": "launch",
             "console": "internalConsole",

@@ -1,6 +1,6 @@
- 
+
 import * as etag from 'etag';
-import { MethodResult,MethodError} from '../../response';
+import { MethodResult, MethodError } from '../../response';
 
 export class Verbs {
     public static Get: string = 'GET';
@@ -17,7 +17,7 @@ export class Verbs {
 export class RestResponse {
     constructor(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
         const res = args[1]; // in express this will ontain the response
-       
+        
         if (methodResult && methodResult.statusCode) {
             res.status(methodResult.statusCode);
         } else if (!methodResult || methodResult.error) {
@@ -45,7 +45,7 @@ export class RestResponse {
             });
         }
 
-        // when we pipe the result using node streams we eed to pass inthe original headers for the response
+        // when we pipe the result using node streams we eed to pass in the original headers for the response
         if (methodResult && methodResult.result && methodResult.result.readable) {
 
             if (methodResult.headers) {
