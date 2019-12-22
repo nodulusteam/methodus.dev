@@ -1,6 +1,6 @@
 export * from './verbs';
 export * from './log';
-export * from './interfaces/methodus';
+export * from './interfaces';
 export * from './decorators';
 export * from './method/index';
 export * from './response';

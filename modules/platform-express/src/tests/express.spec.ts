@@ -43,4 +43,14 @@ describe('Test Express configuration', () => {
             expect(error).toBeDefined();
         }
     });
+
+    it('getByField', async () => {
+        try {
+            await testTarget.getByField(511798);
+        } catch (error) {
+            expect(error).toBeDefined();
+        }
+    });
+    
+
 });

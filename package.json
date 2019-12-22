@@ -29,7 +29,7 @@
         "build": "rimraf build  && tsc",
         "watch": "rimraf build && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "npm run build && rimraf coverage && npm run test:full ",
+        "test": "npm run build && npm run test:full ",
         "test:full": "jest",
         "report": "nyc report --html --clover",
         "doc": "docsify serve docs",
@@ -41,22 +41,24 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
+        "@types/request-promise-native": "^1.0.16",
         "colors": "^1.1.2",
         "correlation-id": "^2.0.0",
         "debug": "^4.1.1",
         "etag": "^1.8.1",
         "logelas": "^4.1.3",
+       
         "method-override": "^2.3.9",
         "mkdirp": "^0.5.1",
         "request": "^2.88.0",
         "request-promise-native": "^1.0.4",
         "stream-from-promise": "^1.0.0",
         "tslib": "^1.9.3",
-        "uuid": "^3.1.0",
-        "@types/request-promise-native": "^1.0.16"
+        "uuid": "^3.1.0"
     },
     "optionalDependencies": {},
     "devDependencies": {
+        "memory-streams": "^0.1.3",
         "@methodus/data": "^2.0.0",
         "@types/etag": "^1.8.0",
         "@types/jest": "^24.0.23",
