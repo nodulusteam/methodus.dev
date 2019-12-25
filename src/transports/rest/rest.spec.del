@@ -1,4 +1,4 @@
-import { RestResponse } from './rest';
+// import { RestResponse } from './rest';
 import { MethodResult, MethodError } from '../../response';
 import * as streams from 'memory-streams';
 

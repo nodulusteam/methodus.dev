@@ -1,6 +1,7 @@
 // import { MethodResult, MethodError } from './response';
 import { ServerType } from './interfaces';
-import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './transports/rest/rest';
+import { Injector } from './di';
+// import { RestParser as RestExpress, RestResponse as RestResponseExpress } from './transports/rest/rest';
 // import * as etag from 'etag';
 
 export class Verbs {
@@ -11,7 +12,7 @@ export class Verbs {
     public static Head: string = 'HEAD';
     public static Delete: string = 'DELETE';
 }
- 
+
 
 /** this function parses values from the request object into the function args
  *  @param {any} args - the arguments sent to the original function.
@@ -22,13 +23,16 @@ export class ResponseParser {
     parser: any;
     response: any;
     constructor(type: ServerType) {
-
-        this.parser = new RestExpress();
-        this.response = RestResponseExpress;
+        debugger;
+        this.parser = Injector.get(`ParserFor${type}`);
+        const responseClass = Injector.get(`ResponseFor${type}`);
+        if (!this.parser || !responseClass) {
+            throw new Error(`No ${type} parser loaded, are you missing an additional package?`)
+        }
+        this.response = responseClass.handle;
     }
     parse(args: any, paramsMap: any, functionArgs: any) {
         return this.parser.parse(args, paramsMap, functionArgs);
     }
 }
 
- 

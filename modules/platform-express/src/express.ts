@@ -4,17 +4,17 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 import { BaseServer, Servers } from '@methodus/server';
-import { ExpressRouter } from './Router';
-
-
-export * from './Router';
+import { ExpressRouter } from './router';
 import * as http from 'http';
 import * as colors from 'colors';
-
-
-
-
 import * as fileUpload from 'express-fileupload';
+
+export * from './router';
+
+
+
+
+
 /**
  * @hidden
  */

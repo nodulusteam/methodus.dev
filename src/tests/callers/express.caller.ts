@@ -9,7 +9,7 @@ import { Injector } from '../../di';
 /**
  * @hidden
  */
-@ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8090')
+@ClientConfiguration(TestTarget, BuiltInTransports.Http, 'https://jsonplaceholder.typicode.com')
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);

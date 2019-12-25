@@ -24,7 +24,7 @@
 
 ▸ **createNewMethodError**(object: *`any`*): `Promise`<`void`>
 
-*Defined in build/response/methodError.spec.d.ts:2*
+*Defined in build/response/method.error.spec.d.ts:2*
 
 **Parameters:**
 
@@ -41,7 +41,7 @@ ___
 
 ▸ **createNewMethodErrorWithError**(): `Promise`<`void`>
 
-*Defined in build/response/methodError.spec.d.ts:3*
+*Defined in build/response/method.error.spec.d.ts:3*
 
 **Returns:** `Promise`<`void`>
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **createNewMethodErrorWithObjectError**(): `Promise`<`void`>
 
-*Defined in build/response/methodError.spec.d.ts:4*
+*Defined in build/response/method.error.spec.d.ts:4*
 
 **Returns:** `Promise`<`void`>
 

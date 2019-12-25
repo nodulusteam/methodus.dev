@@ -25,7 +25,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/build/server-container.spec.js",
+            "program": "${workspaceRoot}/build/tests/run.debug.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
@@ -144,7 +144,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/response/methodResult.spec.js"
+                "build/response/method.result.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -201,7 +201,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest caller",
-            "program": "${workspaceRoot}/tests/callers/express.caller.js",
+            "program": "${workspaceRoot}/build/tests/callers/express.caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],

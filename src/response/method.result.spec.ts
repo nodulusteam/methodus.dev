@@ -1,5 +1,5 @@
 
-import { MethodResult } from './methodResult';
+import { MethodResult } from './method.result';
 import { TestController } from '../tests/controllers/controller.test';
 import * as fs from 'fs';
 

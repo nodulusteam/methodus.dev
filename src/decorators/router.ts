@@ -6,6 +6,8 @@ export interface ServerDefinition {
   path?: string;
   static?: any;
   module?: any;
+  parser?: any;
+  response?: any;
 }
 
 /** the RouterConfiguration decorator registers the controller as a router

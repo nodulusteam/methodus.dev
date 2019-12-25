@@ -24,7 +24,7 @@ export namespace Methods {
             let methodResult: MethodResult | MethodError | any = null;
             target.methodus = target.methodus || {};
             const name = target.name || target.constructor.name;
-            target.methodus[name] = target.methodus[name] || { _auth: {},_events: {}, _descriptors: {} };
+            target.methodus[name] = target.methodus[name] || { _auth: {}, _events: {}, _descriptors: {} };
 
             const mTarget = target.methodus[name];
 
@@ -128,7 +128,7 @@ export namespace Methods {
                         logger.error(error);
 
                         if (ParserResponse.isRest) {
-                            return new parser.response(args, error, restHeaders);
+                            return parser.response(args, error, restHeaders);
 
                         } else {
                             throw (error);
@@ -140,11 +140,11 @@ export namespace Methods {
                         if (methodResult.toString() === '[object Promise]') {
                             methodResult.then((resolvedPromise: any) => {
                                 // methodResult = new MethodResult(StreamFromPromise(methodResult, { objectmode: true }));
-                                return new parser.response(args, resolvedPromise, restHeaders);
+                                return parser.response(args, resolvedPromise, restHeaders);
 
                             });
                         } else {
-                            return new parser.response(args, methodResult, restHeaders);
+                            return parser.response(args, methodResult, restHeaders);
                         }
 
                     } else {

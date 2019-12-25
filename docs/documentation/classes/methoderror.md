@@ -36,7 +36,7 @@
 
 ⊕ **new MethodError**(error: *`any`*, statusCode?: *`any`*, additional?: *`any`*): [MethodError](methoderror.md)
 
-*Defined in build/response/methodError.d.ts:4*
+*Defined in build/response/method.error.d.ts:4*
 
 **Parameters:**
 
@@ -58,8 +58,8 @@ ___
 
 **● additional**: *`any`*
 
-*Defined in build/response/methodError.d.ts:4*
-*Defined in [src/response/methodError.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodError.ts#L5)*
+*Defined in build/response/method.error.d.ts:4*
+*Defined in [src/response/method.error.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.error.ts#L5)*
 
 ___
 <a id="error"></a>
@@ -68,8 +68,8 @@ ___
 
 **● error**: *`string`*
 
-*Defined in build/response/methodError.d.ts:2*
-*Defined in [src/response/methodError.ts:3](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodError.ts#L3)*
+*Defined in build/response/method.error.d.ts:2*
+*Defined in [src/response/method.error.ts:3](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.error.ts#L3)*
 
 ___
 <a id="message"></a>
@@ -117,8 +117,8 @@ ___
 
 **● statusCode**: *`number`*
 
-*Defined in build/response/methodError.d.ts:3*
-*Defined in [src/response/methodError.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/methodError.ts#L4)*
+*Defined in build/response/method.error.d.ts:3*
+*Defined in [src/response/method.error.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.error.ts#L4)*
 
 ___
 <a id="error-1"></a>

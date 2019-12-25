@@ -1,5 +1,5 @@
 
-import { MethodError } from './methodError';
+import { MethodError } from './method.error';
 
 describe('Test MethodError', () => {
     it('createNew', async () => {

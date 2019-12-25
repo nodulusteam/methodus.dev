@@ -2,7 +2,7 @@ import 'reflect-metadata';
 const ANNOTATIONS = '__annotations__';
 
 export class Injector {
-    private static records: { token: any, deps: any }[] = [];
+    private static records: { token: any, deps: any, alias?: string }[] = [];
     private static singletons: any = {};
     static inject(target: any, name?: string) {
         //use the injectable logic here
@@ -29,7 +29,8 @@ export class Injector {
 
         Injector.records.push({
             token,
-            deps: deps
+            deps: deps,
+            alias
         });
     }
     static get(_token: any) {
@@ -44,7 +45,7 @@ export class Injector {
 
         // get the `token` from the record set
         const all = Injector.records.filter((injectedRecord) => {
-            return injectedRecord.token.name === symbol
+            return injectedRecord.token.name === symbol || injectedRecord.alias === symbol
         });
 
         if (!all || all.length === 0) {

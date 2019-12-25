@@ -33,16 +33,16 @@ export namespace Methods {
         const name = target.name || target.constructor.name;
         target.methodus[name] = target.methodus[name] || { _auth: {}, _events: {}, _descriptors: {} };
 
-        let mTarget = target.methodus[name];
+        const mTarget = target.methodus[name];
 
-        let metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
+        const metaObject = Object.assign({}, { verb, route, propertyKey, middlewares, params: [] });
         if (mTarget._descriptors[propertyKey]) {
-            metaObject = Object.assign(metaObject, { params: mTarget._descriptors[propertyKey].params });
+            Object.assign(metaObject, { params: mTarget._descriptors[propertyKey].params });
         }
 
         Reflect.defineMetadata(methodMetadataKey, metaObject, target, propertyKey);
         mTarget._descriptors[propertyKey] = metaObject as any;
-        let paramsMap: any[] = metaObject.params;
+        const paramsMap: any[] = metaObject.params;
         paramsMap.sort((a, b) => {
             return a.index - b.index;
         });
@@ -183,18 +183,18 @@ export namespace Methods {
 
                     }
                 } catch (error) {
+                   
                     error.statusCode = error.statusCode || 500;
                     logger.error(error);
                     if (ParserResponse.isRest) {
-                        return new parser.response(args, error, restHeaders);
+                        return parser.response(args, error, restHeaders);
                     } else {
 
                         throw (error);
                     }
                 }
-
                 if (methodResult && ParserResponse.isRest) {
-                    return new parser.response(args, methodResult, methodResult.headers);
+                    return parser.response(args, methodResult, methodResult.headers);
                 } else {
                     return handleResult(methodResult);
                 }
