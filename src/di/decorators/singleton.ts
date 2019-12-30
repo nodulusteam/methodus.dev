@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { Injector } from './injector';
+import { Injector } from '../injector';
 const ANNOTATIONS = '__annotations__';
 
 export function Singleton(name?: string) {

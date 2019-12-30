@@ -1,39 +1,40 @@
 import 'reflect-metadata';
+import { ServersList } from '../servers/serversList';
 const ANNOTATIONS = '__annotations__';
 
-export class Injector {
-    private static records: { token: any, deps: any, alias?: string }[] = [];
-    private static singletons: any = {};
-    static inject(target: any, name?: string) {
+export class InjectorType {
+    private records: { token: any, deps: any, alias?: string }[] = [];
+    private singletons: any = {};
+    inject(target: any, name?: string) {
         //use the injectable logic here
         const annotations = target.hasOwnProperty(ANNOTATIONS) ?
             target[ANNOTATIONS] :
             Object.defineProperty(target, ANNOTATIONS, { value: [] })[ANNOTATIONS];
 
         const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
-        Injector.register(target, constructorArgs, name || target.name);
+        this.register(target, constructorArgs, name || target.name);
         annotations.push('injectable');
     }
 
 
-    static resolveAndCreate(tokens: Array<any>) {
+    resolveAndCreate(tokens: Array<any>) {
         tokens.forEach((token: any) => {
-            Injector.records.push({
+            this.records.push({
                 token,
                 deps: Reflect.getOwnMetadata('design:paramtypes', token) || []
             })
         })
         return this
     }
-    static register(token: any, deps: any = [], alias?: string) {
+    register(token: any, deps: any = [], alias?: string) {
 
-        Injector.records.push({
+        this.records.push({
             token,
             deps: deps,
             alias
         });
     }
-    static get(_token: any) {
+    get(_token: any) {
         if (!_token) {
             console.error('missing token');
         }
@@ -44,7 +45,7 @@ export class Injector {
         }
 
         // get the `token` from the record set
-        const all = Injector.records.filter((injectedRecord) => {
+        const all = this.records.filter((injectedRecord) => {
             return injectedRecord.token.name === symbol || injectedRecord.alias === symbol
         });
 
@@ -59,7 +60,7 @@ export class Injector {
 
         record.deps = record.deps.map((dep: any) => {
             if (dep) {
-                return Injector.get(dep);
+                return this.get(dep);
             } else {
                 return null
             }
@@ -79,3 +80,15 @@ export class Injector {
 
     }
 }
+
+// test for globals
+
+if (!(global as any).METHODUS_BRIDGE) {
+    (global as any).METHODUS_BRIDGE = new ServersList();
+}
+const bridge = (global as any).METHODUS_BRIDGE;
+if (!bridge.Injector) {
+    bridge.Injector = new InjectorType();
+}
+
+export const Injector = bridge.Injector;

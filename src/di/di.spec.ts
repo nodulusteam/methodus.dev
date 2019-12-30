@@ -1,4 +1,4 @@
-import { Injector } from './decorators';
+import { Injector } from './injector';
 import { ExpressTestServer } from './tests/server';
 
 describe('Injection decorators', () => {

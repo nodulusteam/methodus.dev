@@ -1,7 +1,6 @@
 import { DataController } from './data.controller';
-import { MethodConfig, Method, Mapping, MethodResult, Verbs } from '../shim';
 import { ScreenModel } from '../models/screen.model';
-import { Inject } from '../../di';
+import { MethodConfig, Method, Mapping, MethodResult, Verbs, Inject } from '@methodus/server';
 import { TestLogger } from './logger.service';
 
 /**

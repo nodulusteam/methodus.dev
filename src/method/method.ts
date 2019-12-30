@@ -5,6 +5,7 @@ import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus } from '../response';
 import { ResponseParser, Verbs } from '../rest';
 import { Servers } from '../servers/serversList';
+import { validate } from './validate';
 
 
 const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
@@ -70,6 +71,24 @@ export namespace Methods {
             let parser: any;
             let completeConfiguration: any;
             let methodType = MethodType.Local; // we default to local
+
+
+
+            const validationResult: any = await validate(args);
+            if (validationResult) {
+                throw new MethodError(validationResult.join(','));
+            }
+
+
+            // try {
+
+            //     if (!validationResult) {
+            //         throw new Error('Validation error');
+            //     }
+            // } catch (error) {
+            //     throw (error);
+            // }
+
 
             const config = Servers.classes[configName];
             if (!config) {
@@ -183,7 +202,7 @@ export namespace Methods {
 
                     }
                 } catch (error) {
-                   
+
                     error.statusCode = error.statusCode || 500;
                     logger.error(error);
                     if (ParserResponse.isRest) {

@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "5.0.2-beta",
+    "version": "5.0.5-beta",
     "description": "Server components for @methodus workflow",
     "main": "build/index.js",
     "types": "build/index.d.ts",
@@ -47,7 +47,6 @@
         "debug": "^4.1.1",
         "etag": "^1.8.1",
         "logelas": "^4.1.3",
-       
         "method-override": "^2.3.9",
         "mkdirp": "^0.5.1",
         "request": "^2.88.0",

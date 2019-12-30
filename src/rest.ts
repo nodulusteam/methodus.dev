@@ -23,7 +23,6 @@ export class ResponseParser {
     parser: any;
     response: any;
     constructor(type: ServerType) {
-        debugger;
         this.parser = Injector.get(`ParserFor${type}`);
         const responseClass = Injector.get(`ResponseFor${type}`);
         if (!this.parser || !responseClass) {

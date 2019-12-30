@@ -1,5 +1,4 @@
-import { MethodConfig, Method, Inject } from '../shim';
-import { MethodResult } from '../../response';
+import { MethodConfig, Method, Inject,MethodResult } from '@methodus/server';
 import { TestLogger } from './logger.service';
 
 /**

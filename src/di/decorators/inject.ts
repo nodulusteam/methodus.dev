@@ -1,4 +1,4 @@
-import { Injector } from './injector';
+import { Injector } from '../injector';
 
 export function Inject(name?: string, propertyName?: string): any {
     return function (target: any, propertyKey: string | symbol, parameterIndex: number) {

@@ -1,11 +1,8 @@
 import {
     MethodResult, Verbs, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,
-    Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext,
-} from '../shim';
-import { Auth, AuthType } from '../../decorators';
-import { Injectable, Inject } from '../../di';
+    Param, Body, Headers, Files, Cookies, Query, Response, Request, SecurityContext, Auth, AuthType, Injectable, Inject
+} from '@methodus/server';
 import { TestLogger } from './logger.service';
-import { ScreenModel } from '../models/screen.model';
 
 /**
  * @hidden
@@ -50,12 +47,13 @@ export class TestController {
         return new MethodResultStatus([1, 2, 3, 4, 5], 203, 5, 1);
     }
 
-    @Method(Verbs.Post, '/api/screens')
-    public async create(@Body('item') item: ScreenModel) {
-        return new MethodResult(item);
+    @MethodPipe(Verbs.Post, '/api/player')
+    public async create(@Files('files') files: any,
+        @Cookies('cookies') cookies: any, @Body('name') name: string) {
+        return new MethodResult({ name });
     }
 
-    @MethodPipe(Verbs.Get, '/api/player/:player_id')
+    @Method(Verbs.Get, '/api/player/:player_id')
     public async read(@Param('player_id') playerId: number) {
         throw new MethodError('intended error', 500, 'some more data');
     }
