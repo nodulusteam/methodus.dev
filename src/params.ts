@@ -3,15 +3,33 @@ import 'reflect-metadata';
 export namespace Mapping {
     function pushParams(target: any, propertyKey: any, param: any) {
         const designType = Reflect.getMetadata('design:paramtypes', target, propertyKey);
-        let typeName = (designType && designType[param.index] !== undefined && designType[param.index].name) ?
-            designType[param.index].name.toLowerCase() : 'any';
-        if (param.type) {
-            typeName = param.type;
+
+        const actualParam = designType[param.index];
+        let objectSchema: any = {};
+        let typeName;
+        if (actualParam && actualParam.odm) {
+            //create a schema for the type
+            Object.values(actualParam.odm.fields).forEach((field: any) => {
+                objectSchema[field.propertyKey] = field.type;
+            });
+
+            typeName = actualParam;
+        } else if (actualParam && actualParam.type) {
+            typeName = actualParam.type;
+
+        } else {
+
+
+            typeName = (designType && designType[param.index] !== undefined && designType[param.index].name) ?
+                designType[param.index].name.toLowerCase() : 'any';
+            if (param.type) {
+                typeName = param.type;
+            }
+            if (typeName === undefined) {
+                typeName = 'object';
+            }
         }
 
-        if (typeName === undefined) {
-            typeName = 'object';
-        }
         target.methodus = target.methodus || {};
         const name = target.name || target.constructor.name;
         target.methodus[name] = target.methodus[name] || { _auth: {}, _events: {}, _descriptors: {} };

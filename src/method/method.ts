@@ -72,24 +72,6 @@ export namespace Methods {
             let completeConfiguration: any;
             let methodType = MethodType.Local; // we default to local
 
-
-
-            const validationResult: any = await validate(args);
-            if (validationResult) {
-                throw new MethodError(validationResult.join(','));
-            }
-
-
-            // try {
-
-            //     if (!validationResult) {
-            //         throw new Error('Validation error');
-            //     }
-            // } catch (error) {
-            //     throw (error);
-            // }
-
-
             const config = Servers.classes[configName];
             if (!config) {
                 let client = Servers.clients[configName];
@@ -111,6 +93,11 @@ export namespace Methods {
 
                     methodus.resolver = client.resolver;
                     try {
+
+                        const validationResult: any = await validate(args);
+                        if (validationResult) {
+                            throw new MethodError(validationResult.join(','));
+                        }
 
                         if (client.transportType === TransportType.Mock) {
                             // looking for mock mappings
@@ -176,6 +163,11 @@ export namespace Methods {
                 const restHeaders: any = null;
                 try {
 
+                    const validationResult: any = await validate(ParserResponse.args);
+                    if (validationResult) {
+                        throw new MethodError(validationResult.join(','));
+                    }
+
                     const mappedArgs = paramsMap.map((param) => {
                         return { [param.name || param.from]: ParserResponse.args[param.index] };
                     });
@@ -220,26 +212,8 @@ export namespace Methods {
             }
         };
 
-        // delete descriptor.value;
-        // delete descriptor.writable;
         descriptor.value = value;
-        // descriptor.get = function () {
-        //     // Create an instance of the bound function for the instance.
-        //     // And set an instance property to override the property
-        //     // from the object prototype.
-        //     Object.defineProperty(this, propertyKey, {
-        //         enumerable: descriptor.enumerable,
-        //         configurable: descriptor.configurable,
-        //         value() {
-        //             return value.apply(this, arguments as any);
-        //         },
-        //     });
-        // };
         return descriptor;
-
-
-
-
     }
 
     async function handleResult(methodResult: any) {

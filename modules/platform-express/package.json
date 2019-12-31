@@ -1,6 +1,6 @@
 {
   "name": "@methodus/platform-express",
-  "version": "5.0.3-beta",
+  "version": "5.0.4-beta",
   "description": "",
   "main": "build/index.js",
   "types": "build/index.d.ts",
