@@ -36,7 +36,7 @@ export namespace Mapping {
         const mTarget = target.methodus[name];
 
         mTarget._descriptors[propertyKey] = mTarget._descriptors[propertyKey] || { params: [] };
-        mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName }));
+        mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName, schema: objectSchema }));
     }
 
     function build(from: string, name?: string, type?: string, defaultValue?: any) {
