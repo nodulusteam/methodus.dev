@@ -1,7 +1,7 @@
 import { MethodusClientConfig } from './config/client-config';
 import { TransportType } from './interfaces';
 import { Injectable } from './di';
-import { ParserResponse } from './transports/rest/rest';
+
 
 export class Mocker {
     public static mock(target: any) {
@@ -37,4 +37,15 @@ export class Response {
         return;
     }
 
+}
+
+class ParserResponse {
+    args: any;
+    isRest: boolean;
+    securityContext: any;
+    constructor(args: any, isRest: boolean, securityContext: any) {
+        this.args = args;
+        this.isRest = isRest;
+        this.securityContext = securityContext;
+    }
 }

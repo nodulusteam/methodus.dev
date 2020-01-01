@@ -51,6 +51,49 @@ describe('Test Express configuration', () => {
             expect(error).toBeDefined();
         }
     });
-    
+
+    it('delete', async () => {
+        const result = await testTarget.delete();
+        expect(result).toBeDefined();
+
+        const result2 = await testTarget.delete2();
+        expect(result2).toBeDefined();
+
+    });
+
+
+    it('delete2', async () => {
+
+
+        const result2 = await testTarget.delete2();
+        expect(result2).toBeDefined();
+
+    });
+
+    it('headers', async () => {
+
+
+        const result2 = await testTarget.headers({ applicaiotn: 'json' });
+        expect(result2).toBeDefined();
+
+    });
+
+    it('buffer1', async () => {
+
+
+        const result2 = await testTarget.buffer1();
+        expect(result2).toBeDefined();
+
+    });
+
+
+    it('return0', async () => {
+
+
+        const result2 = await testTarget.return0();
+        expect(result2).toBeDefined();
+
+    });
+
 
 });

@@ -10,9 +10,11 @@ export class ScreenModel extends Repo<ScreenModel> {
     @Field()
     public Name?: string;
 
+    @Validator.IsNotEmpty()
     @Field()
     public Type?: string;
 
+    @Validator.IsDate()
     @Field()
     public Date?: Date;
 

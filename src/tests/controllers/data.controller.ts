@@ -1,4 +1,5 @@
-import { Verbs, Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '../shim';
+import {  Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '../shim';
+import { Verbs } from '@methodus/platform-express';
 /**
  * @hidden
  */

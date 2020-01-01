@@ -1,4 +1,5 @@
-import { Proxy, Method, MethodResult, MethodConfig, Verbs, Mapping, } from '@methodus/server';
+import { Proxy, Method, MethodResult, MethodConfig, Mapping, } from '@methodus/server';
+import { Verbs } from '../shim';
 
 /**
  * @hidden

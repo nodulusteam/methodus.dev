@@ -1,13 +1,12 @@
 
 import 'reflect-metadata';
-import { Verbs } from '../../rest';
+// import { Verbs } from '../../response';
+import * as request from 'request-promise-native';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
-import { Logger } from '../../log';
+import { AuthType,Logger } from '@methodus/server';
 const logger = new Logger('transports:http');
-import * as request from 'request-promise-native';
-import { AuthType } from '../../decorators';
 
 
 export interface RequestParams {
@@ -26,7 +25,7 @@ export class WebRequest {
 
     }
 
-    sendRequest(verb: Verbs, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
+    sendRequest(verb: string, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
         let body: any = {};
         const headers: any = {};
         const cookies: any = {};
@@ -95,9 +94,11 @@ export class WebRequest {
 
             }
         });
-
+        debugger;
         if (Object.keys(query).length > 0) {
+            debugger;
             uri += '?' + Object.keys(query).map((element: any) => {
+                debugger;
                 if (Array.isArray(query[element])) {
                     return query[element].map((subelement: any) => {
                         if (typeof subelement !== 'string') {

@@ -1,10 +1,24 @@
-/** this function parses values from the request object into the function args
-  *  @param {any} args - the arguments sent to the original function.
-  *  @param {[string]} paramsMap - express route string.
+
+const primitiveArray: any = {
+    'bool': (val: string | boolean) => val === 'true' || val === true,
+    'date': (val: string) => new Date(val),
+    'string': (val: string) => val,
+    'object': (val: string | any) => typeof val === 'string' ? JSON.parse(val) : val,
+};
+
+/** Deserialize values according to their types
+  *  @param { type: any, value: string } item - the arguments sent to the original function.
   *
   */
 export function deserialize(item: { type: any, value: string }) {
     if (item !== undefined && item !== null) {
+
+        if (primitiveArray[item.type]) {
+            return primitiveArray[item.type](item.value);
+        }
+
+
+
         if (item.type && item.type.deserialize) {
             try {
                 return item.type.deserialize(item.value);

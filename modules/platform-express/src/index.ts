@@ -1,7 +1,8 @@
 import 'reflect-metadata';
-import { ServerDefinition } from '@methodus/server';
-export * from './express';
 import * as express from 'express';
+import { ServerDefinition } from '@methodus/server';
+export * from './verbs';
+export * from './express';
 export * from './router';
 export * from './parser';
 import { ExpressPlugin } from './express';

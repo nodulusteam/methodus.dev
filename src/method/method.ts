@@ -2,8 +2,7 @@ import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
 import { MethodType, TransportType } from '../interfaces';
 import { logger } from '../log';
-import { MethodError, MethodResult, MethodResultStatus } from '../response';
-import { ResponseParser, Verbs } from '../rest';
+import { MethodError, MethodResult, MethodResultStatus, ResponseParser } from '../response';
 import { Servers } from '../servers/serversList';
 import { validate } from './validate';
 
@@ -21,13 +20,13 @@ export namespace Methods {
      *  @param {string} route - express route string.
      *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
      */
-    export function Method(verb?: Verbs, route?: string, middlewares?: any[]) {
+    export function Method(verb?: string, route?: string, middlewares?: any[]) {
         return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
             return verbBasedMethod(target, propertyKey, descriptor, verb, route, middlewares);
         };
     }
 
-    function verbBasedMethod(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>, verb?: Verbs, route?: string, middlewares?: any[]) {
+    function verbBasedMethod(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>, verb?: string, route?: string, middlewares?: any[]) {
 
 
         target.methodus = target.methodus || {};
@@ -138,19 +137,17 @@ export namespace Methods {
             } else {
                 // this is a local call
                 const existingClassMetadata: any = ClassContainer.get(methodus.name);
-
                 // merge the configuration object
                 Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
 
                 const functionArgs: any[] = [];
-
+                // acquire the method information from the config classes map
+                completeConfiguration = Object.assign({}, methodus, config);
                 // rest paramters should be parsed differntly
-                parser = new ResponseParser(methodus.serverType);
+                parser = new ResponseParser(completeConfiguration.serverType.name);
 
                 ParserResponse = parser.parse(args, paramsMap, functionArgs);
 
-                // acquire the method information from the config classes map
-                completeConfiguration = Object.assign({}, methodus, config);
                 if (completeConfiguration && completeConfiguration.methodType) {
                     methodType = completeConfiguration.methodType;
                 }

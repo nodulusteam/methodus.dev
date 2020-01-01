@@ -1,11 +1,10 @@
-import { Verbs } from '../verbs';
 import { MethodType } from '../interfaces';
 
 /**
  * @hidden
  */
 export interface MethodDescriptor {
-    verb: Verbs;
+    verb: string;
     route: string;
     methodType: MethodType;
     propertyKey: string;

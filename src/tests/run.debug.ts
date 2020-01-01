@@ -1,13 +1,31 @@
-process.env.test = 'true';
 
-import { Mocker } from '../mocker';
-import { TestController } from './controllers';
+
 import { Injector } from './shim';
+import { TestController } from './controllers';
+import { EmitterTestServer } from './servers/emitter.server';
 
 (async () => {
+
+
+    let server: EmitterTestServer;
+
+
+
+
+
+    await new Promise(async (resolve, reject) => {
+        server = new EmitterTestServer();
+        server.on('ready', () => {
+            resolve();
+        });
+    });
+
+
+
     const testController = Injector.get(TestController);
-    Mocker.mockServer(TestController);
-    const mockResult = await testController.list('', '');
-    console.log(mockResult);
+
+    const mockResult = await testController.testTypes(new Date().toISOString() as any,  'somstring', 'true' as any);
+
+
     return mockResult;
 })()

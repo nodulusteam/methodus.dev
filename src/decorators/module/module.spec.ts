@@ -2,16 +2,17 @@ import { Module } from './module';
 import { TestTarget, TestController, ScreensDataController } from '../../tests/controllers/';
 import {
     RouterConfiguration, ServerType,
-    ClientConfiguration, BuiltInTransports, ConfiguredServer, ModuleConfiguration,
+    ClientConfiguration, ConfiguredServer, ModuleConfiguration,
 } from '../../tests/shim';
 import { ProxiedController } from '../../tests/controllers/proxy.controller';
+import { Http } from '@methodus/platform-rest';
 
 @Module()
 @RouterConfiguration(TestController, ServerType.Express)
 @RouterConfiguration(ScreensDataController, ServerType.Express)
 @RouterConfiguration(ProxiedController, ServerType.Express)
 // @PluginConfiguration('@methodus/describe')
-@ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8020')
+@ClientConfiguration(TestTarget, Http, 'http://localhost:8020')
 export class ModuleClass {
     name: string;
     constructor() {

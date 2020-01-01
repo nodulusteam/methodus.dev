@@ -1,4 +1,5 @@
-import { MethodConfig, Method, Verbs } from '../../../shim';
+import { MethodConfig, Method, } from '../../../shim';
+import { Verbs } from '@methodus/platform-express';
 
 @MethodConfig('ProxiedClass')
 export class ProxiedClass {

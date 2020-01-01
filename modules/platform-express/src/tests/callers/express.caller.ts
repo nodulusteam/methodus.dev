@@ -1,14 +1,16 @@
 
-import {Injector,
-    BuiltInTransports,
+import {
+    Injector,
+
     ClientConfiguration, ConfiguredServer,
 } from '@methodus/server';
+import { Http } from '@methodus/platform-rest';
 import { TestTarget } from '../controllers/';
 
 /**
  * @hidden
  */
-@ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8090')
+@ClientConfiguration(TestTarget, Http, 'http://localhost:8090')
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);

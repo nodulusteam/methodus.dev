@@ -21,7 +21,9 @@ export class RestParser {
                     if (args[0][item.from]) {
                         value = args[0][item.from][item.name] || item.defaultValue || null;
                     }
-                    value = deserialize({ value, type: item.type });
+                    const typeForDeserialization = (item.actualType.odm) ? item.actualType : item.type;
+
+                    value = deserialize({ value, type: typeForDeserialization });
                 } else if (item.from) {
 
                     switch (item.from) {
@@ -32,7 +34,8 @@ export class RestParser {
                             value = args[0];
                             break;
                         default:
-                            value = deserialize({ type: item.type, value: args[0][item.from] });
+                            const typeForDeserialization = (item.actualType.odm) ? item.actualType : item.type;
+                            value = deserialize({ type: typeForDeserialization, value: args[0][item.from] });
                             break;
                     }
 

@@ -11,7 +11,7 @@ import { Injector } from '@methodus/server';
             resolve();
         });
     });
-    const response = await testTarget.list('someauth', 'up');
+    const response = await testTarget.buffer1();
     console.log(response);
 })();
 

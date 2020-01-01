@@ -5,7 +5,7 @@ import { MethodType } from '../interfaces';
 import { MethodResult, MethodError } from '../response';
 import { Servers } from '../servers/serversList';
 import { logger } from '../log';
-import { ResponseParser, Verbs } from '../rest';
+import { ResponseParser } from '../response/response-parser';
 import { ClassContainer } from '../class-container';
 
 
@@ -18,7 +18,7 @@ export namespace Methods {
      *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
      */
 
-    export function MethodPipe(verb: Verbs, route: string, middlewares?: any[]) {
+    export function MethodPipe(verb: string, route: string, middlewares?: any[]) {
         return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
             // we will return a MethodResult or a MEthodError
             let methodResult: MethodResult | MethodError | any = null;

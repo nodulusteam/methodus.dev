@@ -19,9 +19,6 @@ import * as path from 'path';
 
 const server = new Server();
 
-
-
-
 describe('server containers', () => {
 
     it('EmitterPlugin type', async () => {
@@ -40,5 +37,3 @@ describe('server containers', () => {
         expect(true).toBe(true);
     });
 });
-
-

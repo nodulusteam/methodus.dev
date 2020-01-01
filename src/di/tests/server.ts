@@ -1,9 +1,11 @@
 
 import {
     RouterConfiguration, ServerType,
-    ClientConfiguration, BuiltInTransports, ConfiguredServer, ModuleConfiguration,
+    ClientConfiguration, ConfiguredServer, ModuleConfiguration,
     Module,
 } from '../../tests/shim';
+import { Http } from '@methodus/platform-rest';
+
 import { ProxiedController } from '../../tests/controllers/proxy.controller';
 import { Injectable, Singleton } from '../decorators';
 import { TestController, ScreensDataController, TestTarget } from '../../tests/controllers';
@@ -14,7 +16,7 @@ import { TestController, ScreensDataController, TestTarget } from '../../tests/c
 @RouterConfiguration(ScreensDataController, ServerType.Express)
 @RouterConfiguration(ProxiedController, ServerType.Express)
 // @PluginConfiguration('@methodus/describe')
-@ClientConfiguration(TestTarget, BuiltInTransports.Http, 'http://localhost:8040')
+@ClientConfiguration(TestTarget, Http, 'http://localhost:8040')
 export class ModuleClass {
     name: string;
     constructor() {

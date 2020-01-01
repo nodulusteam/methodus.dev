@@ -1,15 +1,15 @@
 
 import {
-    BuiltInTransports,
     ClientConfiguration, ConfiguredServer,
 } from '../shim';
+import { Http } from '@methodus/platform-rest';
 import { TestTarget } from '../controllers/';
 import { Injector } from '../../di';
 
 /**
  * @hidden
  */
-@ClientConfiguration(TestTarget, BuiltInTransports.Http, 'https://jsonplaceholder.typicode.com')
+@ClientConfiguration(TestTarget, Http, 'https://jsonplaceholder.typicode.com')
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);

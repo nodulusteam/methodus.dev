@@ -25,7 +25,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/build/tests/testing.spec.js",
+            "program": "${workspaceRoot}/build/tests/run.debug.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [

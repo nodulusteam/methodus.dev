@@ -1,4 +1,5 @@
-import { MethodResult, Mapping, Verbs, Method, MethodMock, MethodConfig, MethodPipe, Auth, AuthType, Injectable } from '@methodus/server';
+import { MethodResult, Mapping, Method, MethodMock, MethodConfig, MethodPipe, Auth, AuthType, Injectable } from '@methodus/server';
+import { Verbs } from '../shim';
 
 /**
  * @hidden
@@ -55,7 +56,30 @@ export class TestTarget {
     }
 
     @Method(Verbs.Delete, '/api/player')
-    public async delete(): Promise<MethodResult> {
+    public async delete(): Promise<any> {
+        return new MethodResult({});
+    }
+
+    @Method(Verbs.Delete, '/api/player')
+    public async delete2() {
+        return new MethodResult({});
+    }
+
+
+
+    @Method(Verbs.Post, '/api/headers')
+    public async headers(@Mapping.Headers() headers: any) {
+        return new MethodResult({});
+    }
+
+
+    @Method(Verbs.Get, '/api/buffer1')
+    public async buffer1() {
+        return new MethodResult({});
+    }
+
+    @Method(Verbs.Get, '/api/return0')
+    public async return0() {
         return new MethodResult({});
     }
 
