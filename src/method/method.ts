@@ -96,7 +96,7 @@ export namespace Methods {
 
                         const validationResult: any = await validate(args);
                         if (validationResult) {
-                            throw new MethodError(JSON.stringify(validationResult));
+                            throw new MethodError(validationResult, 422);
                         }
 
                         if (client.transportType === TransportType.Mock) {
@@ -165,7 +165,7 @@ export namespace Methods {
 
                     const validationResult: any = await validate(ParserResponse.args);
                     if (validationResult) {
-                        throw new MethodError(JSON.stringify(validationResult));
+                        throw new MethodError(validationResult, 422);
                     }
 
                     const mappedArgs = paramsMap.map((param) => {

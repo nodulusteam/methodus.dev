@@ -5,15 +5,16 @@ export namespace Mapping {
         const designType = Reflect.getMetadata('design:paramtypes', target, propertyKey);
 
         const actualParam = designType[param.index];
-        let objectSchema: any = {};
+        let objectSchema: any = null;
         let typeName;
         if (actualParam && actualParam.odm) {
+            objectSchema = {};
             //create a schema for the type
             Object.values(actualParam.odm.fields).forEach((field: any) => {
                 objectSchema[field.propertyKey] = field.type;
             });
 
-            typeName = actualParam;
+            typeName = actualParam.name;
         } else if (actualParam && actualParam.type) {
             typeName = actualParam.type;
 
@@ -36,7 +37,7 @@ export namespace Mapping {
         const mTarget = target.methodus[name];
 
         mTarget._descriptors[propertyKey] = mTarget._descriptors[propertyKey] || { params: [] };
-        mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName, schema: objectSchema }));
+        mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName, actualType: actualParam, schema: objectSchema }));
     }
 
     function build(from: string, name?: string, type?: string, defaultValue?: any) {

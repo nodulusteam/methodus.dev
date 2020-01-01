@@ -1,4 +1,4 @@
-import { Injectable, MethodResult, MethodError } from '@methodus/server';
+import { Injectable, MethodResult, MethodError, deserialize } from '@methodus/server';
 
 import * as etag from 'etag';
 /**
@@ -6,37 +6,6 @@ import * as etag from 'etag';
  */
 @Injectable('ParserForexpress')
 export class RestParser {
-    /** this function parses values from the request object into the function args
-     *  @param {any} args - the arguments sent to the original function.
-     *  @param {[string]} paramsMap - express route string.
-     *
-     */
-    deserialize(item: { type: any, value: string }) {
-        if (item !== undefined && item !== null) {
-            if (item.type && item.type.deserialize) {
-                try {
-                    return item.type.deserialize(item.value);
-                } catch (error) {
-                    //  logger.warn(this, 'error deserializing argument', item);
-                }
-            } else if (item.type && item.type.prototype && item.type.prototype.constructor) {
-                return new item.type(item.value);
-            } else if (typeof (item.value) === 'string' && item.type === 'object') {
-                try {
-                    return JSON.parse(item.value);
-                } catch (error) {
-                    // logger.warn(this, 'error parsing argument', item);
-                }
-
-            } else if (item.value === undefined && typeof (item) === 'object') {
-                return item;
-            }
-        } else {
-            return item;
-        }
-
-        return item.value;
-    }
 
     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
 
@@ -52,7 +21,7 @@ export class RestParser {
                     if (args[0][item.from]) {
                         value = args[0][item.from][item.name] || item.defaultValue || null;
                     }
-                    value = this.deserialize({ value, type: item.type });
+                    value = deserialize({ value, type: item.type });
                 } else if (item.from) {
 
                     switch (item.from) {
@@ -63,7 +32,7 @@ export class RestParser {
                             value = args[0];
                             break;
                         default:
-                            value = this.deserialize({ type: item.type, value: args[0][item.from] });
+                            value = deserialize({ type: item.type, value: args[0][item.from] });
                             break;
                     }
 

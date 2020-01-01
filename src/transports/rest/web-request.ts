@@ -4,7 +4,8 @@ import { Verbs } from '../../rest';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
-const logger = require('debug')('methodus:transports:http');
+import { Logger } from '../../log';
+const logger = new Logger('transports:http');
 import * as request from 'request-promise-native';
 import { AuthType } from '../../decorators';
 
@@ -164,7 +165,7 @@ export class WebRequest {
                 break;
         }
         if (this.auth) {
-            logger('Auth is', requestOptions.auth);
+            logger.log('Auth is', requestOptions.auth);
         }
 
         if (process.env.PROXY) {
@@ -229,7 +230,7 @@ export class WebRequest {
 
         // very important it allows the download of binary files
         requestOptions.encoding = null;
-        logger(this, 'request options are: ', requestOptions);
+        logger.log(this, 'request options are: ', requestOptions);
 
         const returnedPipe = this.promiseToTry(requestOptions);
         return returnedPipe;
@@ -239,7 +240,7 @@ export class WebRequest {
     public promiseToTry(requestOptions: any) {
         const requestToPipe = request(requestOptions);
         requestToPipe.on('error', (error: any) => {
-            logger(error);
+            logger.error(error);
         });
         return requestToPipe;
     }

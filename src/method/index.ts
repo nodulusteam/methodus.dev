@@ -1,4 +1,6 @@
 export * from './method-config';
+export * from './deserialize';
+
 import { Methods as MethodNS } from './method';
 import { Methods as MethodConfigNS } from './method-config';
 
