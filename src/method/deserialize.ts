@@ -3,8 +3,17 @@ const primitiveArray: any = {
     'bool': (val: string | boolean) => val === 'true' || val === true,
     'date': (val: string) => new Date(val),
     'string': (val: string) => val,
-    'object': (val: string | any) => typeof val === 'string' ? JSON.parse(val) : val,
-};
+    'object': (val: string | any) => {
+        if (typeof val === 'string') {
+            try {
+                return JSON.parse(val);
+            } catch (error) {
+                return val;
+            }
+        }
+
+    }
+}
 
 /** Deserialize values according to their types
   *  @param { type: any, value: string } item - the arguments sent to the original function.

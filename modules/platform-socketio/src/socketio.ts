@@ -143,23 +143,3 @@ export class SocketIORouter {
         });
     }
 }
-
-// /**
-//  * @hidden
-//  */
-// export function register(server: any, parentServer: any) {
-//     const serverType = server.type.name;
-
-//     //logger.info(this, colors.green(`> Starting SOCKETIO server on port ${server.options.port}`));
-
-//     const httpServer = Servers.get(server.instanceId, 'http');
-
-//     // if (!httpServer) {
-//     //     httpServer = this.httpServer;
-//     // }
-
-//     const app = new SocketIO(server.options, httpServer);
-//     Servers.set(server.instanceId, serverType, app);
-//     // if (server.onStart)
-//     //     server.onStart(app);
-// }

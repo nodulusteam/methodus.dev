@@ -8,19 +8,23 @@ export namespace Mapping {
         let objectSchema: any = null;
         let typeName;
         if (actualParam && actualParam.odm) {
-            objectSchema = {};
-            //create a schema for the type
-            Object.values(actualParam.odm.fields).forEach((field: any) => {
-                objectSchema[field.propertyKey] = field.type;
-            });
-
+            //recurse odm
+            objectSchema = recurseODM(actualParam.odm);
+            function recurseODM(odm: any) {
+                const _objectSchema: any = {};
+                Object.values(odm.fields).forEach((field: any) => {
+                    if (field.odm && field.odm.odm) {
+                        _objectSchema[field.propertyKey] = recurseODM(field.odm.odm);
+                    } else {
+                        _objectSchema[field.propertyKey] = field.type;
+                    }
+                });
+                return _objectSchema;
+            }
             typeName = actualParam.name;
         } else if (actualParam && actualParam.type) {
             typeName = actualParam.type;
-
         } else {
-
-
             typeName = (designType && designType[param.index] !== undefined && designType[param.index].name) ?
                 designType[param.index].name.toLowerCase() : 'any';
             if (param.type) {

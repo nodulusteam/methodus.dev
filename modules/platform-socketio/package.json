@@ -1,6 +1,6 @@
 {
   "name": "@methodus/platform-socketio",
-  "version": "5.0.0-beta",
+  "version": "5.0.1",
   "description": "",
   "main": "build/index.js",
   "scripts": {

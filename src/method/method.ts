@@ -15,7 +15,7 @@ export namespace Methods {
 
     const methodMetadataKey = 'methodus';
 
-    /** the @Method decorator registers the model with the odm
+    /** the @Method decorator registers route listeners
      *  @param {Verbs} verb - the HTTP verb for the route.
      *  @param {string} route - express route string.
      *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
@@ -169,7 +169,7 @@ export namespace Methods {
                         return { [param.name || param.from]: ParserResponse.args[param.index] };
                     });
 
-                    logger.info('@Method::call', methodType, originalMethod.name, ...mappedArgs);
+                    logger.info('@Method::call', methodType, originalMethod.name, JSON.stringify(mappedArgs));
                     switch (methodType) {
                         case MethodType.Mock:
                             if (methodus._mocks && methodus._mocks[propertyKey]) {

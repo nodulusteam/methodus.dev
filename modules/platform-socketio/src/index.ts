@@ -1,24 +1,14 @@
 import 'reflect-metadata';
 import { SocketIOPlugin } from './socketio';
-import {  ServerDefinition } from '@methodus/server';
+import { ServerDefinition } from '@methodus/server';
+import { SocketIOParser, SocketIOResponse } from './parser';
 
 
 export const SocketIO: ServerDefinition = {
     name: 'socketio',
-    module: SocketIOPlugin
+    module: SocketIOPlugin,
+    parser: SocketIOParser,
+    response: SocketIOResponse,
 }
 
 
-// export function register(server: any, parentServer: any) {
-
-//     console.log(colors.green(`> Starting SOCKETIO server`));
-
-//     const httpServer = Servers.get(server.instanceId, 'http')
-//         || http.createServer(parentServer._app);
-
-//     Servers.set(server.instanceId, 'http', httpServer);
-
-//     const app = new SocketIO(server.options, httpServer);
-//     Servers.set(server.instanceId, server.type.name, app);
-
-// }

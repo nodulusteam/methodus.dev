@@ -12,7 +12,7 @@ import { ClassContainer } from '../class-container';
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
     const methodMetadataKey = 'methodus';
-    /** the @Method decorator registers the model with the odm
+    /** the @Method decorator registers route listeners
      *  @param {Verbs} verb - the HTTP verb for the route.
      *  @param {string} route - express route string.
      *  @param {Function[]} middlewares - an array of middlewares to apply to this function}

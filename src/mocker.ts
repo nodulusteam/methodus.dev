@@ -16,7 +16,7 @@ export class Mocker {
         // get the bridge
         const bridge = (global as any).METHODUS_BRIDGE;
         const configEntry = new MethodusClientConfig(target, TransportType.Mock);
-        target.prototype.methodus[target.name].serverType = 'Mockserver';
+        target.prototype.methodus[target.name].serverType = { name: 'Mockserver' };
         bridge.classes[target.name] = configEntry;
         return bridge;
     }
