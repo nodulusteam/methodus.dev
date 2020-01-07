@@ -94,11 +94,8 @@ export class WebRequest {
 
             }
         });
-        debugger;
         if (Object.keys(query).length > 0) {
-            debugger;
             uri += '?' + Object.keys(query).map((element: any) => {
-                debugger;
                 if (Array.isArray(query[element])) {
                     return query[element].map((subelement: any) => {
                         if (typeof subelement !== 'string') {
