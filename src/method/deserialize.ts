@@ -4,14 +4,16 @@ const primitiveArray: any = {
     'date': (val: string) => new Date(val),
     'string': (val: string) => val,
     'object': (val: string | any) => {
-        if (typeof val === 'string') {
+        let returnValue = val;
+        if (typeof returnValue === 'string') {
             try {
-                return JSON.parse(val);
-            } catch (error) {
-                return val;
+                returnValue = JSON.parse(val);
+            }
+            catch (error) {
+
             }
         }
-
+        return returnValue;
     }
 }
 
