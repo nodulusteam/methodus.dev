@@ -2,7 +2,7 @@ import { Injectable } from '../../di';
 
 @Injectable('TestLogger')
 export class TestLogger{
-    log(...args: any){
+    log(...args: any[]){
         console.log(args)
     }
 }

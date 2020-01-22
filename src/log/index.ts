@@ -10,28 +10,35 @@ export class Logger {
     constructor(name: string) {
         this.logger = require('debug')(`methodus:${name}`);
     }
+    getArgs(...args: any[]) {
+        return args.map((item: any) => {
+            if (item instanceof Object && item !== null) {
+                return JSON.stringify(item);
+            }
+            return item;
+        }).join(',');
+    }
+    info(...args: any[]) {
+        (args) ?
+            this.logger('#INFO#', this.getArgs(args)) : null;
+    }
+    log(...args: any[]) {
+        (args) ?
+            this.logger('#DEBUG#', this.getArgs(args)) : null;
+    }
+    debug(...args: any[]) {
+        (args) ?
+            this.logger('#DEBUG#', this.getArgs(args)) : null;
+    }
+    error(...args: any[]) {
+        (args) ?
+            this.logger('#ERROR#', this.getArgs(args)) : null;
+    }
+    warn(...args: any[]) {
+        (args) ?
+            this.logger('#WARN#', this.getArgs(args)) : null;
+    }
 
-    info(...args: any) {
-        (args) ?
-            this.logger('#INFO#', args.join(',')) : null;
-    }
-    log(...args: any) {
-        (args) ?
-            this.logger('#DEBUG#', args.join(',')) : null;
-    }
-    debug(...args: any) {
-        (args) ?
-            this.logger('#DEBUG#', args.join(',')) : null;
-    }
-    error(...args: any) {
-        (args) ?
-            this.logger('#ERROR#', args.join(',')) : null;
-    }
-    warn(...args: any) {
-        (args) ?
-            this.logger('#WARN#', args.join(',')) : null;
-    }
-    
 }
 
 
