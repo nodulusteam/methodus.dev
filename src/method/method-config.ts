@@ -2,7 +2,7 @@
 /// <reference path="./method.ts" />
 import 'reflect-metadata';
 import { ClassContainer } from '../class-container';
-import { Injector } from '../di';
+import { Injector, RegistrationTypes } from '../di';
 
 
 // tslint:disable-next-line:no-namespace
@@ -15,7 +15,7 @@ export namespace Methods {
         return (target: any) => {
 
             //use the injectable logic here
-            Injector.inject(target, name);
+            Injector.inject(RegistrationTypes.Controller, target, name);
             const instance = Injector.get(target);
 
             const existingMetadata = ClassContainer.get(name) || {};

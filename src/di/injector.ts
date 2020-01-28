@@ -2,17 +2,24 @@ import 'reflect-metadata';
 import { ServersList } from '../servers/serversList';
 const ANNOTATIONS = '__annotations__';
 
+export const enum RegistrationTypes {
+    Main = 'main',
+    Module = 'module',
+    Controller = 'controller',
+    Service = 'service',
+    UnKnown = 'unknown'
+}
 export class InjectorType {
-    private records: { token: any, deps: any, alias?: string }[] = [];
+    private records: { registrationType: RegistrationTypes, token: any, deps: any, alias?: string }[] = [];
     private singletons: any = {};
-    inject(target: any, name?: string) {
+    inject(registrationType: RegistrationTypes, target: any, name?: string) {
         //use the injectable logic here
         const annotations = target.hasOwnProperty(ANNOTATIONS) ?
             target[ANNOTATIONS] :
             Object.defineProperty(target, ANNOTATIONS, { value: [] })[ANNOTATIONS];
 
         const constructorArgs = Reflect.getOwnMetadata('design:paramtypes', target);
-        this.register(target, constructorArgs, name || target.name);
+        this.register(target, constructorArgs, registrationType, name || target.name);
         annotations.push('injectable');
     }
 
@@ -20,15 +27,17 @@ export class InjectorType {
     resolveAndCreate(tokens: Array<any>) {
         tokens.forEach((token: any) => {
             this.records.push({
+                registrationType: RegistrationTypes.UnKnown,
                 token,
                 deps: Reflect.getOwnMetadata('design:paramtypes', token) || []
             })
         })
         return this
     }
-    register(token: any, deps: any = [], alias?: string) {
+    register(token: any, deps: any = [], registrationType: RegistrationTypes, alias?: string) {
 
         this.records.push({
+            registrationType,
             token,
             deps: deps,
             alias

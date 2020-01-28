@@ -1,5 +1,5 @@
 import 'reflect-metadata'
-import { Injector } from '../injector';
+import { Injector, RegistrationTypes } from '../injector';
 const ANNOTATIONS = '__annotations__';
 
 export function Singleton(name?: string) {
@@ -11,7 +11,7 @@ export function Singleton(name?: string) {
 
         annotations.push('singleton');
 
-        Injector.inject(cls, name);
+        Injector.inject(RegistrationTypes.Service, cls, name);
         
         return cls;
     }

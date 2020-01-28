@@ -1,9 +1,9 @@
 import 'reflect-metadata'
-import { Injector } from '../injector';
+import { Injector, RegistrationTypes } from '../injector';
 
 export function Injectable(name?: string) {
     function DecoratorFactory(cls: any) {
-        Injector.inject(cls, name);
+        Injector.inject(RegistrationTypes.Service, cls, name);
         return cls;
     }
     return DecoratorFactory

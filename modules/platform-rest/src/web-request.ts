@@ -228,8 +228,7 @@ export class WebRequest {
 
         // very important it allows the download of binary files
         requestOptions.encoding = null;
-        logger.log(this, 'request options are: ', requestOptions);
-
+        logger.log('request options are: ', JSON.stringify(requestOptions));
         const returnedPipe = this.promiseToTry(requestOptions);
         return returnedPipe;
 

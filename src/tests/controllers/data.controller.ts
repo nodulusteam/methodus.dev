@@ -1,5 +1,5 @@
-import {  Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '../shim';
-import { Verbs } from '@methodus/platform-express';
+import { Method, MethodResult, MethodConfigBase, Singleton } from '../shim';
+
 /**
  * @hidden
  */
@@ -8,12 +8,12 @@ import { Verbs } from '@methodus/platform-express';
 export class DataController {
     public repository: any
     constructor(repo: any) {
-       
+
         this.repository = repo;
     }
 
-    @Method(Verbs.Get, '/id/:id')
-    public async get(@Mapping.Param('id') id: string) {
+    @Method()
+    public async get(id: string) {
         const result = this.repository.get(id);
         return new MethodResult(result);
     }
