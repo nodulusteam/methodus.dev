@@ -1,7 +1,9 @@
 import { MethodType } from '../../interfaces';
 import { fp } from '../../fp';
 import * as path from 'path';
-import { logger } from '../../log';
+
+import { Logger } from '../../log';
+const logger = new Logger('ProxyClass');
 
 export class Proxy {
     public static ProxyClass(packageName: string, className: string, localClassPath: any) {

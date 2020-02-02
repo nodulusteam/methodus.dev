@@ -1,8 +1,9 @@
 import {
-    MethodResult, Mapping, Verbs, Method, MethodMock, MethodConfig, MethodPipe,
+    MethodResult, Mapping, Method, MethodMock, MethodConfig, MethodPipe,
 } from '../shim';
 import { Auth, AuthType } from '../../decorators';
 import { Injectable } from '../../di';
+import { Verbs } from '@methodus/platform-express';
 
 /**
  * @hidden
@@ -11,6 +12,16 @@ import { Injectable } from '../../di';
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestTarget')
 export class TestTarget {
+
+
+
+    @Method(Verbs.Get, '/api/testTypes')
+    public async testTypes(@Mapping.Query('date') date: Date): Promise<MethodResult> {
+        return new MethodResult({});
+    }
+
+
+
 
     @MethodPipe(Verbs.Post, '/api/player')
     public async create(@Mapping.Files('files') files: any,

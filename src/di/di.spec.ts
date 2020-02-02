@@ -1,17 +1,10 @@
-import { Test, Expect, TestFixture, Timeout } from 'alsatian';
-import { Injector } from './decorators';
+import { Injector } from './injector';
 import { ExpressTestServer } from './tests/server';
 
+describe('Injection decorators', () => {
 
-
-
-@TestFixture('Injection decorators')
-export class ModulesTest {
-
-    @Test('Create server')
-    @Timeout(1000 * 1000)
-    public async createServer() {
+    it('Create server', async () => {
         const module = Injector.get(ExpressTestServer);
-        Expect(module).toBeDefined();
-    }
-}
+        expect(module).toBeDefined();
+    });
+});

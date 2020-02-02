@@ -7,6 +7,38 @@
         {
             "request": "launch",
             "console": "internalConsole",
+            "name": "T | Run jest",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": [
+                "--verbose"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {}
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run test",
+            "type": "node",
+            "program": "${workspaceRoot}/build/tests/run.debug.js",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": [
+                "--verbose"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {}
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
             "name": "T Run express test",
             "type": "node",
             "program": "${workspaceRoot}/node_modules/alsatian/dist/cli/alsatian-cli",
@@ -84,7 +116,6 @@
                 "NODE_LOG_LEVEL": "trace"
             }
         },
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -105,7 +136,6 @@
                 "NODE_LOG_LEVEL": "trace"
             }
         },
-
         {
             "request": "launch",
             "console": "internalConsole",
@@ -114,7 +144,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/response/methodResult.spec.js"
+                "build/response/method.result.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -171,7 +201,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest caller",
-            "program": "${workspaceRoot}/tests/callers/express.caller.js",
+            "program": "${workspaceRoot}/build/tests/callers/express.caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],

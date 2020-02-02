@@ -1,24 +1,13 @@
-process.env.test = 'true';
-import { Test, Expect, TestFixture, Timeout } from 'alsatian';
 import { MethodusConfig, MethodusClassConfig } from '../config';
-/**
- * @hidden
- */
-@TestFixture('Test additional method classes')
-export class Units {
 
-    @Test('MethodusConfig')
-    @Timeout(1000 * 1000)
-    public async createMethodusConfig() {
+describe('Test additional method classes', () => {
+    it('MethodusConfig', async () => {
         const config = new MethodusConfig(undefined, undefined);
-        Expect(config).toBeDefined();
-    }
+        expect(config).toBeDefined();
+    });
 
-    @Test('MethodusConfig')
-    @Timeout(1000 * 1000)
-    public async createMethodusConfigWithServers() {
+    it('MethodusConfig', async () => {
         const config = new MethodusConfig([], new Map<string, MethodusClassConfig>());
-        Expect(config).toBeDefined();
-    }
-
-}
+        expect(config).toBeDefined();
+    });
+});

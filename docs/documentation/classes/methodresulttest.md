@@ -23,7 +23,7 @@
 
 ▸ **createNew**(object: *`any`*): `Promise`<`void`>
 
-*Defined in build/response/methodResult.spec.d.ts:2*
+*Defined in build/response/method.result.spec.d.ts:2*
 
 **Parameters:**
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **createWithLinks**(object: *`any`*): `Promise`<`void`>
 
-*Defined in build/response/methodResult.spec.d.ts:3*
+*Defined in build/response/method.result.spec.d.ts:3*
 
 **Parameters:**
 

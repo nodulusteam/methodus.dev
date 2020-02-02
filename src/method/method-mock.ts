@@ -3,10 +3,8 @@
 import 'reflect-metadata';
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
-    /** the @MethodMock decorator registers the model with the odm
-     *  @param {Verbs} verb - the HTTP verb for the route.
-     *  @param {string} route - express route string.
-     *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
+    /** the @MethodMock decorator 
+
      */
 
     export function MethodMock(mockedResult: any) {

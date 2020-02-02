@@ -1,5 +1,5 @@
-import { Proxy, Method, MethodResult, MethodConfig, Verbs, Mapping, } from '../shim';
-
+import { Proxy, Method, MethodResult, MethodConfig, Mapping, } from '../shim';
+import { Verbs } from '@methodus/platform-express';
 /**
  * @hidden
  */

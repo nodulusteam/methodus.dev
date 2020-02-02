@@ -1,6 +1,9 @@
 import { DataController } from './data.controller';
-import { MethodConfig, Method, Mapping, MethodResult, Verbs } from '../shim';
+import { MethodConfig, Method, Mapping, MethodResult } from '../shim';
+import { Verbs } from '@methodus/platform-express';
 import { ScreenModel } from '../models/screen.model';
+import { Inject } from '../../di';
+import { TestLogger } from './logger.service';
 
 /**
  * @hidden
@@ -15,8 +18,9 @@ export class ScreensDataController extends DataController {
         // const item = await this.repository.get(id);
         return new MethodResult(result);
     }
-    constructor() {
+    constructor(@Inject('TestLogger', 'testLogger') private testLogger: TestLogger) {
         super(ScreenModel);
+        this.testLogger.log('instance created for ScreensDataController');
         this.repository = ScreenModel;
     }
 

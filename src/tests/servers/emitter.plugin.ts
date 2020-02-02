@@ -4,6 +4,7 @@ import * as colors from 'colors';
 import { Servers, logger, ITransport } from '../shim';
 import { EventEmitter } from 'events';
 import { fp } from '../../fp';
+ 
 const metadataKey = 'methodus';
 /**
  * @hidden
@@ -69,5 +70,21 @@ export class EmitterPlugin implements ITransport {
             paramsMap, securityContext);
     }
 }
+
+// @Injectable('ParserForPlugin')
+// export class Parser {
+//     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
+//         return new ParserResponse(functionArgs, false, {});
+//     }
+
+// }
+// @Injectable('ResponseForPlugin')
+// export class Response {
+
+//     handle() {
+//         return;
+//     }
+
+// }
 
 const messageServer: CustomMessageServer = new CustomMessageServer();

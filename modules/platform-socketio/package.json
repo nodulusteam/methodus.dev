@@ -1,0 +1,25 @@
+{
+  "name": "@methodus/platform-socketio",
+  "version": "5.0.1",
+  "description": "",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "npm run build && jest",
+    "build": "rimraf build && tsc"
+  },
+  "author": "nodulusteam",
+  "license": "ISC",
+  "peerDependencies": {
+    "@methodus/server": "^5.0.0"
+  },
+  "dependencies": {
+    "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/socket.io": "^2.1.2",
+    "jest": "^24.9.0",
+    "ts-jest": "^24.2.0",
+    "@types/jest": "^24.0.23"
+  }
+}
