@@ -3,4 +3,5 @@
 build/tests/**/*
 package.json
 views/*
+modules/*
 README.md

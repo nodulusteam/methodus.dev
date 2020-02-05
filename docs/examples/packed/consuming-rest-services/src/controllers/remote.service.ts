@@ -1,4 +1,7 @@
-import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { Verbs } from '@methodus/platform-express';
+import { Http } from '@methodus/platform-rest';
+
 
 @MethodConfig('RemoteService')// anotate using the class Name - exact!
 export class RemoteService {

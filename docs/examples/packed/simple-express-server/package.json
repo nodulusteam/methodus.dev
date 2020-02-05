@@ -1,19 +1,20 @@
 {
-  "name": "simple-express-server",
+  "name": "methodus-simple-express-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A simple “Express” application (Hello World);",
+  "main": "build/index.js",
   "scripts": {
-    "open": "call start http://localhost:6695",
-    "start": "tsc && npm run open &&  node index.js"
+    "build": "tsc",
+    "start": "nodemon build/index.js localhost 8080"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@methodus/server": "^3.0.18",
-    "@types/node": "^12.0.0"
+    "@methodus/platform-express": "^5.0.11",
+    "@methodus/server": "^5.0.19"
   },
-  "peerDependencies": {
-    "typescript": "^3.4.0"
-  }
+  "devDependencies": {
+    "@types/node": "^12.0.7",
+    "nodemon": "1.18.4",
+    "typescript": "3.5.1"
+  },
+  "keywords": []
 }

@@ -1,9 +1,10 @@
 import * as path from 'path';
-import { BuiltInServers, MethodusConfig, Server } from '@methodus/server';
+import { MethodusConfig, Server } from '@methodus/server';
 import { Response } from 'express-serve-static-core';
+import { Express } from '@methodus/platform-express';
 
 export function init(config: MethodusConfig, pluginOptions: any) {
-    config.run(BuiltInServers.Express, {
+    config.run(Express, {
         onStart: (instance: any) => {
             const options = {
                 etag: true,
@@ -16,7 +17,7 @@ export function init(config: MethodusConfig, pluginOptions: any) {
                 },
             };
             const clientDir = path.resolve(path.join(__dirname, '..', pluginOptions.clientPath));
-            instance.use(pluginOptions.path, BuiltInServers.Express.static(clientDir, options));
+            instance.use(pluginOptions.path, Express.static(clientDir, options));
         },
     });
     return config;

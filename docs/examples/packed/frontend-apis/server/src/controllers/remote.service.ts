@@ -1,4 +1,5 @@
-import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Body, Param, MethodResult } from '@methodus/server';
+import { Verbs } from '@methodus/platform-express';
 import { TodoModel } from '../models/todo.model';
 
 @MethodConfig('RemoteService')// anotate using the class Name - exact!

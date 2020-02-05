@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "open": "call start http://localhost:6695/",
     "start": "tsc && npm run open &&  node build/index.js",
     "contract": "contracts-server ./build.json",
@@ -12,13 +13,18 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/data": "^2.0.23",
-    "@methodus/describe": "^4.0.10",
-    "@methodus/server": "^3.0.31",
-    "@types/node": "^12.0.0"
+    "@methodus/data": "^2.0.35",
+    "@methodus/describe": "^7.0.7",
+    "@methodus/platform-express": "^5.0.11",
+    "@methodus/platform-rest": "^5.0.3",
+    "@methodus/server": "^5.0.19",
+    "express-serve-static-core": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.0",
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
-    "@methodus/contracts": "latest",
-    "typescript": "^3.4.0"
+    "@methodus/contracts": "latest"
   }
 }

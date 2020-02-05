@@ -1,13 +1,16 @@
 import {
     ServerConfiguration, RouterConfiguration, ClientConfiguration,
-    ConfiguredServer, BuiltInServers, BuiltInTransports, PluginConfiguration,
+    ConfiguredServer, PluginConfiguration,
 } from '@methodus/server';
+import { Express } from '@methodus/platform-express';
+import { Http } from '@methodus/platform-rest';
+
 import { LocalController } from './controllers/local.controller';
 import { RemoteService } from './controllers/remote.service';
 @PluginConfiguration('@methodus/describe')
-@ServerConfiguration(BuiltInServers.Express, { port: 6695 })
-@RouterConfiguration(LocalController, BuiltInServers.Express)
-@ClientConfiguration(RemoteService, BuiltInTransports.Http, 'https://jsonplaceholder.typicode.com')
+@ServerConfiguration(Express, { port: 6695 })
+@RouterConfiguration(LocalController, Express)
+@ClientConfiguration(RemoteService, Http, 'https://jsonplaceholder.typicode.com')
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);

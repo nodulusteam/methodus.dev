@@ -4,17 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "open": "call start http://localhost:6695/describe/",
     "start": "tsc && npm run open &&  node build/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/describe": "^4.0.10",
-    "@methodus/server": "^3.0.18",
-    "@types/node": "^12.0.0"
+    "@methodus/describe": "^7.0.7",
+    "@methodus/platform-express": "^5.0.11",
+    "@methodus/platform-rest": "^5.0.3",
+    "@methodus/server": "^5.0.19"
   },
-  "peerDependencies": {
-    "typescript": "^3.4.0"
+  "devDependencies": {
+    "typescript": "^3.4.0",
+    "@types/node": "^12.0.0"
   }
 }
