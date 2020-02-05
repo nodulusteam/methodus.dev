@@ -17,10 +17,5 @@ jobs:
           yarn install
           yarn test
           yarn publish
-      - run: |
-          cd modules/platform-express
-          yarn install
-          yarn test
-          yarn publish    
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
