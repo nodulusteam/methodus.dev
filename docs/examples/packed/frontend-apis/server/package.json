@@ -17,8 +17,7 @@
     "@methodus/describe": "^7.0.7",
     "@methodus/platform-express": "^5.0.11",
     "@methodus/platform-rest": "^5.0.3",
-    "@methodus/server": "^5.0.19",
-    "express-serve-static-core": "^0.1.1"
+    "@methodus/server": "^5.0.19"
   },
   "devDependencies": {
     "@types/node": "^12.0.0",

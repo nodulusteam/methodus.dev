@@ -1,6 +1,5 @@
 import * as path from 'path';
 import { MethodusConfig, Server } from '@methodus/server';
-import { Response } from 'express-serve-static-core';
 import { Express } from '@methodus/platform-express';
 
 export function init(config: MethodusConfig, pluginOptions: any) {
@@ -12,7 +11,7 @@ export function init(config: MethodusConfig, pluginOptions: any) {
                 index: ['index.html', 'player.html', 'admin.html'],
                 maxAge: '1d',
                 redirect: false,
-                setHeaders: (res: Response) => {
+                setHeaders: (res: any) => {
                     res.set('x-timestamp', Date.now().toString());
                 },
             };

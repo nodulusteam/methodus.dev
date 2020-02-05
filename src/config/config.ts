@@ -3,6 +3,7 @@ import { MethodType, ServerType, TransportType } from '../interfaces';
 import { MethodusClassConfig } from './class-config';
 import { MethodusClientConfig } from './client-config';
 import { ServerConfig } from './server-config';
+import { ServerDefinition } from '../decorators';
 
 export interface PluginEntry {
     name: string;
@@ -48,7 +49,7 @@ export class MethodusConfig {
         this.classes.set(classType.name, configEntry);
     }
 
-    public run(serverType: ServerType, configuration: any) {
+    public run(serverType: ServerDefinition, configuration: any) {
         this.servers = this.servers || [];
         this.servers.push(new ServerConfig(serverType, configuration));
     }
