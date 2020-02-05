@@ -64,20 +64,17 @@ export class TestController {
 
     @Method(Verbs.Delete, '/api/player')
     public async delete() {
-        console.log('in delete')
         return {};
     }
 
 
     @Method(Verbs.Delete, '/api/player')
     public async delete2() {
-        console.log('in delete2')
         return Buffer.from('somestringforbuffe');
     }
 
     @Method(Verbs.Post, '/api/headers')
     public async headers(@Mapping.Headers() headers: any) {
-        console.log('in headers')
         return headers;
     }
 

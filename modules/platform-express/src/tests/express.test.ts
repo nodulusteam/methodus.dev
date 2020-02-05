@@ -12,7 +12,7 @@ import { Injector } from '@methodus/server';
         });
     });
     const response = await testTarget.buffer1();
-    console.log(response);
+    return response;
 })();
 
 

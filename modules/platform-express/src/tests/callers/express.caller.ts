@@ -21,6 +21,5 @@ if (process.env.TESTMODE === 'run') {
     new Xserver();
     setTimeout(async () => {
         const result = await Injector.get(TestTarget).list('aaaa', 'aaaa');
-        console.log(result);
     }, 4000);
 }

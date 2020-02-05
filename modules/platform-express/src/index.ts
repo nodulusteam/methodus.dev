@@ -3,7 +3,7 @@ import * as express from 'express';
 import { ServerDefinition } from '@methodus/server';
 export * from './verbs';
 export * from './express';
-export * from './router';
+export * from './routing';
 export * from './parser';
 import { ExpressPlugin } from './express';
 import { RestParser, RestResponse } from './parser';

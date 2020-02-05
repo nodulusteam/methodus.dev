@@ -4,14 +4,12 @@ import * as bodyParser from 'body-parser';
 import * as cookieParser from 'cookie-parser';
 import * as path from 'path';
 import { BaseServer, Servers } from '@methodus/server';
-import { ExpressRouter } from './router';
+import { ExpressRouter } from './routing';
 import * as http from 'http';
 import * as colors from 'colors';
 import * as fileUpload from 'express-fileupload';
 
-export * from './router';
-
-
+ 
 
 
 
