@@ -3,6 +3,19 @@
 
 ### A Methodus server application will contain one or more frameworks, agnostically bound to logic code.
 
+## Install the CLI
+`npm i -g @methodus/cli`
+
+
+## Create the project
+`methodus application [name]`
+
+
+
+
+
+
+
 ## Install
 `npm i @methodus/server @methodus/describe` or `yarn add @methodus/server @methodus/describe`. This will install the server components of methodus as well as a plugin for API tests.
 

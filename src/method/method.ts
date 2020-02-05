@@ -5,6 +5,8 @@ import { logger } from '../log';
 import { MethodError, MethodResult, MethodResultStatus, ResponseParser } from '../response';
 import { Servers } from '../servers/serversList';
 import { validate } from './validate';
+import stringify from 'fast-safe-stringify';
+
 
 
 const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
@@ -169,7 +171,8 @@ export namespace Methods {
                         return { [param.name || param.from]: ParserResponse.args[param.index] };
                     });
 
-                    logger.info('@Method::call', methodType, originalMethod.name, JSON.stringify(mappedArgs));
+                    //fast-safe-stringify
+                    logger.info('@Method::call', methodType, originalMethod.name, stringify(mappedArgs));
                     switch (methodType) {
                         case MethodType.Mock:
                             if (methodus._mocks && methodus._mocks[propertyKey]) {
@@ -191,7 +194,7 @@ export namespace Methods {
 
                     }
                 } catch (error) {
-
+                    
                     error.statusCode = error.statusCode || 500;
                     logger.error(error);
                     if (ParserResponse.isRest) {

@@ -1,7 +1,6 @@
 import {
-    MethodResult,  Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping
+    MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping
 } from '../shim';
-import { Verbs } from '@methodus/platform-express';
 import { Auth, AuthType } from '../../decorators';
 import { Injectable, Inject } from '../../di';
 import { TestLogger } from './logger.service';
@@ -23,7 +22,7 @@ export class TestController {
     }
 
 
-    @Method(Verbs.Get, '/api/testTypes')
+    @Method('GET', '/api/testTypes')
     public async testTypes(@Mapping.Query('date') date: Date,
         @Mapping.Query('string') astring: string,
         @Mapping.Query('bool') bool: boolean): Promise<MethodResult> {
@@ -34,7 +33,7 @@ export class TestController {
 
 
     @MethodMock({})
-    @Method(Verbs.Get, '/api/player')
+    @Method('GET', '/api/player')
     public async list(
         @Mapping.Headers('auth') auth: string = 'kkk',
         @Mapping.Query('order_by') orderBy: string = 'asc'): Promise<any> {
@@ -47,7 +46,7 @@ export class TestController {
         return result;
     }
 
-    @Method(Verbs.Get, '/api/player/desfaults')
+    @Method('GET', '/api/player/desfaults')
     public async listdefaults(@Mapping.Param() params: any,
         @Mapping.Body() body: any,
         @Mapping.Headers() headers: any,
@@ -61,27 +60,27 @@ export class TestController {
         return new MethodResultStatus([1, 2, 3, 4, 5], 203, 5, 1);
     }
 
-    @Method(Verbs.Post, '/api/screens')
+    @Method('POST', '/api/screens')
     public async create(@Mapping.Body('item') item: ScreenModel) {
         return new MethodResult(item);
     }
 
-    @MethodPipe(Verbs.Get, '/api/player/:player_id')
+    @MethodPipe('GET', '/api/player/:player_id')
     public async read(@Mapping.Param('player_id') playerId: number) {
         throw new MethodError('intended error', 500, 'some more data');
     }
 
-    @Method(Verbs.Get, '/api/player/:field/:value')
+    @Method('GET', '/api/player/:field/:value')
     public async getByField(@Mapping.Param('field') field: any, @Mapping.Param('value') value: number) {
         return new MethodResult({}, 100, 1);
     }
 
-    @Method(Verbs.Put, '/api/player')
+    @Method('PUT', '/api/player')
     public async update() {
         return new MethodResult({});
     }
 
-    @Method(Verbs.Delete, '/api/player')
+    @Method('DELETE', '/api/player')
     public delete() {
         return new MethodResult({});
     }

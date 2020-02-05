@@ -27,7 +27,7 @@ export class TestController {
         return result;
     }
 
-    @Method(Verbs.Get, '/api/player/desfaults')
+    @Method(Verbs.Get, '/api/playerdata/defaults')
     public async listdefaults(@Param() params: any,
         @Mapping.Body() body: any,
         @Mapping.Headers() headers: any,

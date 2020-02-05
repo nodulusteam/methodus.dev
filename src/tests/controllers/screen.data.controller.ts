@@ -1,6 +1,5 @@
 import { DataController } from './data.controller';
 import { MethodConfig, Method, Mapping, MethodResult } from '../shim';
-import { Verbs } from '@methodus/platform-express';
 import { ScreenModel } from '../models/screen.model';
 import { Inject } from '../../di';
 import { TestLogger } from './logger.service';
@@ -11,7 +10,7 @@ import { TestLogger } from './logger.service';
 @MethodConfig('ScreensDataController', [], '/screens')
 export class ScreensDataController extends DataController {
 
-    @Method(Verbs.Get, '/special/:id')
+    @Method('Get', '/special/:id')
     public async special(@Mapping.Param('id') id: string) {
         const result = this.repository.get(id);
 

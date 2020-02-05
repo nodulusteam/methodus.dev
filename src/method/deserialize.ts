@@ -21,9 +21,8 @@ const primitiveArray: any = {
   *  @param { type: any, value: string } item - the arguments sent to the original function.
   *
   */
-export function deserialize(item: { type: any, value: string }) {
-    if (item !== undefined && item !== null) {
-
+export function deserialize(item: { type?: any, value: string } | any) {
+    if (item !== undefined && item !== null && item.type) {
         if (primitiveArray[item.type]) {
             return primitiveArray[item.type](item.value);
         }
@@ -37,20 +36,27 @@ export function deserialize(item: { type: any, value: string }) {
                 //  logger.warn(this, 'error deserializing argument', item);
             }
         } else if (item.type && item.type.prototype && item.type.prototype.constructor) {
-            return new item.type(item.value);
+            return new item.type(JSON.parse(item.value));
         } else if (typeof (item.value) === 'string' && item.type === 'object') {
-            try {
-                return JSON.parse(item.value);
-            } catch (error) {
-                // logger.warn(this, 'error parsing argument', item);
-            }
+            return returnJson(item.value);
 
         } else if (item.value === undefined && typeof (item) === 'object') {
             return item;
         }
+    } else if (typeof item.value === 'string') {
+        return returnJson(item.value);
     } else {
         return item;
     }
 
     return item.value;
+}
+
+
+function returnJson(str: string) {
+    try {
+        return JSON.parse(str);
+    } catch (error) {
+    }
+    return str;
 }
