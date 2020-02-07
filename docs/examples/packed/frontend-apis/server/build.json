@@ -9,11 +9,14 @@
         "contracts": {
             "LocalController": {
                 "path": "./src/controllers/local.controller.ts"
+            },
+            "RemoteService": {
+                "path": "./src/controllers/remote.service.ts"
             }
         },
         "models": {
             "TodoModel": {
-                "path": "./models/todo.model.ts"
+                "path": "./src/models/todo.model.ts"
             }
         },
         "includes": {},

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LocalController } from './contracts';
-import { TodoModel } from '@todo/client';
+import { TodoModel } from './contracts.service';
+import { ContractsService } from './contracts.service';
+
 
 @Component({
   selector: 'app-root',
@@ -8,14 +9,18 @@ import { TodoModel } from '@todo/client';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+
+  constructor(private contractsService: ContractsService) {
+
+  }
   title = 'Methodus Todo app';
   todos: TodoModel[];
   activeTodo: TodoModel;
   public async ngOnInit() {
-    this.todos = await LocalController.list();
+    this.todos = await this.contractsService.localController.list();
   }
 
   public async getMore(id: number) {
-    this.activeTodo = await LocalController.get(id);
+    this.activeTodo = await this.contractsService.localController.get(id);
   }
 }

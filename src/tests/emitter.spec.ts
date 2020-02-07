@@ -35,7 +35,7 @@ describe('Test Emitter configuration', () => {
 
 
 
-    xit('list', async () => {
+    it('list', async () => {
         resultEmitter.on('list', (data) => {
             expect(data.result.length).toBe(5);
         });
@@ -43,7 +43,7 @@ describe('Test Emitter configuration', () => {
     });
 
 
-    xit('listDefaults', async () => {
+    it('listDefaults', async () => {
         resultEmitter.on('listdefaults', (data) => {
             expect(data.result.length).toBe(5);
         });
@@ -51,7 +51,7 @@ describe('Test Emitter configuration', () => {
         await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
     });
 
-    xit('read', async () => {
+    it('read', async () => {
         resultEmitter.on('read', (data) => {
             expect(data.error).toBe('intended error');
         });

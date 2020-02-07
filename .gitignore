@@ -7,3 +7,5 @@ coverage/
 .npmrc
 yarn.lock
 examples/packed/**/*.js
+docs/examples/packed/frontend-apis/@todo/
+docs/examples/packed/frontend-apis/public/

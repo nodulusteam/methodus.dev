@@ -1,4 +1,7 @@
 
+import { logger } from '../log';
+
+
 const primitiveArray: any = {
     'bool': (val: string | boolean) => val === 'true' || val === true,
     'date': (val: string) => new Date(val),
@@ -33,10 +36,10 @@ export function deserialize(item: { type?: any, value: string } | any) {
             try {
                 return item.type.deserialize(item.value);
             } catch (error) {
-                //  logger.warn(this, 'error deserializing argument', item);
+                logger.warn('error deserializing argument, will try other ways', item);
             }
         } else if (item.type && item.type.prototype && item.type.prototype.constructor) {
-            return new item.type(JSON.parse(item.value));
+            return new item.type(returnJson(item.value));
         } else if (typeof (item.value) === 'string' && item.type === 'object') {
             return returnJson(item.value);
 
