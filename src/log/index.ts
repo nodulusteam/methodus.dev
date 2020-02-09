@@ -17,7 +17,7 @@ export class Logger {
         } catch (error) {
             stringResult = item.toString();
         }
-        return;
+        return stringResult;
     }
     getArgs(...args: any[]) {
         return args.map((item: any) => {
