@@ -16,8 +16,8 @@
     "@methodus/data": "^2.0.35",
     "@methodus/describe": "^7.0.7",
     "@methodus/platform-express": "^5.0.11",
-    "@methodus/platform-rest": "^5.0.3",
-    "@methodus/server": "^5.0.19"
+    "@methodus/platform-rest": "^5.0.6",
+    "@methodus/server": "^5.0.23"
   },
   "devDependencies": {
     "@types/node": "^12.0.0",
