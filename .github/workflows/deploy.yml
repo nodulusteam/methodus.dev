@@ -1,4 +1,4 @@
-name: build_and_test_server
+name: publish server component
 
 on: [create]
 
