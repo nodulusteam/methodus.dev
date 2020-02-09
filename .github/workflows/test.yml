@@ -1,4 +1,4 @@
-name: server
+name: build_and_test_server
 
 on: [push]
 
