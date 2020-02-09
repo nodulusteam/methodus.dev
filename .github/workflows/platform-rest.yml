@@ -1,6 +1,6 @@
-name: Node CI
+name: platform-rest
 
-on: [push]
+on: [create]
 
 jobs:
   build:
