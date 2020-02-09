@@ -15,7 +15,6 @@ jobs:
           node-version: '10.x'          
       - run: |
           yarn install
-          yarn test
-          yarn publish
+          yarn test          
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
