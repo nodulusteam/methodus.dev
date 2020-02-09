@@ -5,7 +5,7 @@ import * as request from 'request-promise-native';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
-import { AuthType,Logger } from '@methodus/server';
+import { AuthType, Logger } from '@methodus/server';
 const logger = new Logger('transports:http');
 
 
@@ -151,19 +151,20 @@ export class WebRequest {
             };
         }
 
-        switch (this.auth) {
-            case AuthType.Basic:
-                requestOptions.auth = { user: this.authOptions.user, pass: this.authOptions.password };
-                break;
-            case AuthType.ApiKey:
-                break;
-            case AuthType.BearerToken:
-                break;
-            case AuthType.DigestAuth:
-                break;
-        }
+
         if (this.auth) {
             logger.log('Auth is', requestOptions.auth);
+            switch (this.auth) {
+                case AuthType.Basic:
+                    requestOptions.auth = { user: this.authOptions.user, pass: this.authOptions.password };
+                    break;
+                case AuthType.ApiKey:
+                    break;
+                case AuthType.BearerToken:
+                    break;
+                case AuthType.DigestAuth:
+                    break;
+            }
         }
 
         if (process.env.PROXY) {
