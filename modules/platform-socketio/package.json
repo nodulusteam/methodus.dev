@@ -1,6 +1,6 @@
 {
   "name": "@methodus/platform-socketio",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -17,6 +17,7 @@
     "socket.io-client": "^2.0.3"
   },
   "devDependencies": {
+    "@methodus/data": "^2.0.35",
     "@methodus/server": "^5.0.22",
     "@types/jest": "^24.0.23",
     "@types/socket.io": "^2.1.2",
