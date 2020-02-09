@@ -2,11 +2,11 @@
   "name": "@methodus/platform-express",
   "version": "5.0.11",
   "description": "Express plugin for methodus",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "npm run build && jest",
-    "build": "rimraf build && tsc"
+    "build": "rimraf lib && tsc"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,8 @@
     "ejs": "^2.5.7",
     "errorhandler": "^1.5.0",
     "express": "^4.17.1",
-    "express-fileupload": "^1.1.6"
+    "express-fileupload": "^1.1.6",
+    "fast-safe-stringify": "^2.0.7"
   },
   "devDependencies": {
     "@methodus/data": "^2.0.35",
@@ -36,7 +37,7 @@
     "@types/express-fileupload": "^1.1.0",
     "@types/jest": "^24.0.23",
     "jest": "^24.9.0",
-    "rimraf": "^3.0.0",
+    "rimraf": "^3.0.1",
     "ts-jest": "^24.2.0",
     "typescript": "^3.7.5"
   }

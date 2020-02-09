@@ -25,7 +25,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/build/tests/express.test.js",
+            "program": "${workspaceRoot}/lib/tests/express.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [

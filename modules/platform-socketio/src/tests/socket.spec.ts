@@ -1,8 +1,8 @@
+import { Injector } from '@methodus/server';
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
-import { Injector } from '@methodus/server';
 
-describe('Test Express configuration', () => {
+describe('Test SocketIO configuration', () => {
     const testTarget = Injector.get(TestTarget);
     let server: SocketTestServer;
     beforeAll(async () => {
@@ -14,16 +14,15 @@ describe('Test Express configuration', () => {
         });
     });
 
-    // afterAll(async () => {
-    //     server.kill();
-    // });
 
     it('list', async () => {
         const response = await testTarget.list('someauth', 'up');
         expect(response.result.length).toEqual(5);
-        return true;
     });
 
+    afterAll(async () => {
+        server.kill();
+    });
     // it('listDefaults', async () => {
     //     const response = await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
     //     expect(response.result.length).toBe(5);

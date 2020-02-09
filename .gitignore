@@ -1,4 +1,4 @@
-build
+lib
 node_modules/
 logs/
 coverage/
@@ -9,3 +9,4 @@ yarn.lock
 examples/packed/**/*.js
 docs/examples/packed/frontend-apis/@todo/
 docs/examples/packed/frontend-apis/public/
+build/*

@@ -2,7 +2,7 @@ import { Proxy } from '../proxy';
 import { MethodConfig, Method } from '../../../shim';
 
 (global as any).METHODUS_BRIDGE.classes['ProxiedClass'] = 'local';
-@Proxy.ProxyClass('../build/decorators/proxy/test', 'ProxiedClass', './class.test')
+@Proxy.ProxyClass('../lib/decorators/proxy/test', 'ProxiedClass', './class.test')
 @MethodConfig('ProxiedClass')
 export class ProxiedClass {
     @Method('GET', '/add')

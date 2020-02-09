@@ -25,7 +25,7 @@ Servers built into Methodus
 
 **Express**: *`object`*
 
-*Defined in build/built-in-servers.d.ts:2*
+*Defined in lib/built-in-servers.d.ts:2*
 *Defined in [src/built-in-servers.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/built-in-servers.ts#L12)*
 
 Express backed server
@@ -65,7 +65,7 @@ ___
 
 **Socket**: *`object`*
 
-*Defined in build/built-in-servers.d.ts:3*
+*Defined in lib/built-in-servers.d.ts:3*
 *Defined in [src/built-in-servers.ts:17](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/built-in-servers.ts#L17)*
 
 SocketIO backed server

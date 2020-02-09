@@ -28,7 +28,7 @@
 
 **● classRouters**: *`any`[]* =  []
 
-*Defined in build/servers/base.d.ts:4*
+*Defined in lib/servers/base.d.ts:4*
 *Defined in [src/servers/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/base.ts#L6)*
 
 ___
@@ -38,7 +38,7 @@ ___
 
 **● config**: *[IMethodusConfig](../interfaces/imethodusconfig.md)*
 
-*Defined in build/servers/base.d.ts:3*
+*Defined in lib/servers/base.d.ts:3*
 *Defined in [src/servers/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/base.ts#L5)*
 
 ___
@@ -51,7 +51,7 @@ ___
 
 ▸ **_send**(functionArgs: *`any`*, methodinformation: *`any`*, paramsMap: *`any`*, securityContext: *`any`*): `any`
 
-*Defined in build/servers/base.d.ts:6*
+*Defined in lib/servers/base.d.ts:6*
 
 **Parameters:**
 
@@ -71,7 +71,7 @@ ___
 
 ▸ **useClass**(classType: *`any`*, methodType: *[MethodType](../enums/methodtype.md)*): `any`
 
-*Defined in build/servers/base.d.ts:5*
+*Defined in lib/servers/base.d.ts:5*
 
 **Parameters:**
 

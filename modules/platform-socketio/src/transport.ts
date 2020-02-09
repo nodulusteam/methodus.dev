@@ -16,6 +16,7 @@ export function send(methodus: any, functionArgs: any, paramsMap: any, securityC
         socket.on('connect', () => {
             const messageName = methodus.verb + '_' + methodus.route;
             socket.emit(messageName, dataObject, (data: any) => {
+                socket.close();
                 if (data.error && data.statusCode) {
                     logger.error(data);
                     reject(data);

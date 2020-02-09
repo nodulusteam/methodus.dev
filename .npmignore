@@ -1,6 +1,6 @@
 *
-!build/**/*
-build/tests/**/*
+!lib/**/*
+lib/tests/**/*
 package.json
 views/*
 modules/*

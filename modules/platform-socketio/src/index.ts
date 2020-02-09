@@ -1,14 +1,14 @@
 import 'reflect-metadata';
-import { SocketIOPlugin } from './socketio';
 import { ServerDefinition } from '@methodus/server';
+import { SocketIOPlugin } from './socketio';
 import { SocketIOParser, SocketIOResponse } from './parser';
+import { send } from './transport';
 
 
-export const SocketIO: ServerDefinition = {
+export const SocketIO: ServerDefinition = Object.assign({
     name: 'socketio',
     module: SocketIOPlugin,
     parser: SocketIOParser,
     response: SocketIOResponse,
-}
 
-
+}, { send: send });

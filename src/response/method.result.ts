@@ -47,10 +47,7 @@ export class MethodResult<T = any> {
                 rel || linksSource.name, host).toString());
         }
 
-        //  response.setHeader('Link', JSON.stringify(linksArray));
 
-        // this.links = this.links.concat(mappedLinks);
-        // return mappedLinks;
     }
     public apply() {
         this.setHeader('Link', JSON.stringify(this.links));

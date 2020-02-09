@@ -19,7 +19,7 @@
         "importHelpers": true,
         "target": "ES2017", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */
         "module": "commonjs",
-        "outDir": "build/",
+        "outDir": "lib/",
         "rootDir": "src",
         "lib": [
             "es2016",

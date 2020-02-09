@@ -11,8 +11,15 @@ import { Injector } from '@methodus/server';
             resolve();
         });
     });
-    const response = await testTarget.buffer1();
-    return response;
+
+    try {
+        const response = await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
+        return response;
+
+    } catch (error) {
+        debugger;
+    }
+
 })();
 
 

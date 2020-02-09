@@ -2,8 +2,8 @@
     "name": "@methodus/server",
     "version": "5.0.22",
     "description": "Server components for @methodus workflow",
-    "main": "build/index.js",
-    "types": "build/index.d.ts",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "directories": {
         "test": "tests",
         "examples": "examples"
@@ -26,10 +26,10 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
-        "build": "rimraf build  && tsc",
-        "watch": "rimraf build && tsc -w",
+        "build": "rimraf lib  && tsc",
+        "watch": "rimraf lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "npm run build && npm run test:full ",
+        "test": "npm run lib && npm run test:full ",
         "test:full": "jest",
         "report": "nyc report --html --clover",
         "doc": "docsify serve docs",

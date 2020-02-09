@@ -13,6 +13,7 @@ import { Injector } from '@methodus/server';
             resolve();
         });
     });
+
     const response = await testTarget.list('someauth', 'up');
     console.log(response);
 })();

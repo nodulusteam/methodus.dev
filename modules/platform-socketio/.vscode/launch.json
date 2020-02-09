@@ -13,6 +13,7 @@
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
+                "--detectOpenHandles",
                 "--verbose"
             ],
             "sourceMaps": true,
@@ -25,7 +26,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/build/tests/socket.test.js",
+            "program": "${workspaceRoot}/lib/tests/socket.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [

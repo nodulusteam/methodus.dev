@@ -1,12 +1,12 @@
 {
   "name": "@methodus/testing",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
-  "main": "build/index.js",
-  "types": "build/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
     "test": "npm run build && jest",
-    "build": "rimraf build && tsc"
+    "build": "rimraf lib && tsc"
   },
   "author": "nodulusteam",
   "license": "ISC",

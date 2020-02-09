@@ -25,7 +25,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/build/tests/run.debug.js",
+            "program": "${workspaceRoot}/lib/tests/run.debug.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
@@ -44,7 +44,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/dist/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/tests/express.spec.js"
+                "lib/tests/express.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -64,7 +64,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/tests/emitter.spec.js"
+                "lib/tests/emitter.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -84,7 +84,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/decorators/module/module.spec.js"
+                "lib/decorators/module/module.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -104,7 +104,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/transports/rest/Request.spec.js"
+                "lib/transports/rest/Request.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -124,7 +124,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/di/di.spec.js"
+                "lib/di/di.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -144,7 +144,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/response/method.result.spec.js"
+                "lib/response/method.result.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -164,7 +164,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/tests/socket.spec.js"
+                "lib/tests/socket.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -184,7 +184,7 @@
             "program": "${workspaceRoot}/node_modules/alsatian/cli/alsatian-cli",
             "stopOnEntry": false,
             "args": [
-                "build/decorators/proxy/proxy.spec.js"
+                "lib/decorators/proxy/proxy.spec.js"
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
@@ -201,7 +201,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest caller",
-            "program": "${workspaceRoot}/build/tests/callers/express.caller.js",
+            "program": "${workspaceRoot}/lib/tests/callers/express.caller.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],
@@ -219,7 +219,7 @@
             "type": "node",
             "request": "launch",
             "name": "* Rest server",
-            "program": "${workspaceRoot}/build/tests/servers/express.server.js",
+            "program": "${workspaceRoot}/lib/tests/servers/express.server.js",
             "cwd": "${workspaceRoot}/",
             "console": "internalConsole",
             "outFiles": [],

@@ -10,10 +10,19 @@ export class Logger {
     constructor(name: string) {
         this.logger = require('debug')(`methodus:${name}`);
     }
+    safeJSON(item: any) {
+        let stringResult;
+        try {
+            stringResult = JSON.stringify(item);
+        } catch (error) {
+            stringResult = item.toString();
+        }
+        return;
+    }
     getArgs(...args: any[]) {
         return args.map((item: any) => {
             if (item instanceof Object && item !== null) {
-                return JSON.stringify(item);
+                return this.safeJSON(item);
             }
             return item;
         }).join(',');
@@ -38,11 +47,6 @@ export class Logger {
         (args) ?
             this.logger('#WARN#', this.getArgs(args)) : null;
     }
-
 }
-
-
-
-
 
 export const logger = new Logger('general');

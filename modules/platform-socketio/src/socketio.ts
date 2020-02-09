@@ -68,36 +68,36 @@ export class SocketIOPlugin extends BaseServer {
     }
 
 
-    async _send(functionArgs: any, methodus: any, paramsMap: any) {
-        return new Promise(async (resolve, reject) => {
-            debug('sending data in socket', functionArgs, methodus, paramsMap);
+    // async send(functionArgs: any, methodus: any, paramsMap: any) {
+    //     return new Promise(async (resolve, reject) => {
+    //         debug('sending data in socket', functionArgs, methodus, paramsMap);
 
-            const dataObject: any = {};
-            functionArgs.forEach((element: any, index: any) => {
-                dataObject[paramsMap.filter((item: any) => {
-                    return item.index === index;
-                })[0].name] = element;
-            });
+    //         const dataObject: any = {};
+    //         functionArgs.forEach((element: any, index: any) => {
+    //             dataObject[paramsMap.filter((item: any) => {
+    //                 return item.index === index;
+    //             })[0].name] = element;
+    //         });
 
-            const myUri = await methodus.resolver();
-            const socket = require('socket.io-client')(myUri);
-            socket.on('connect', () => {
-                debug('socket connection ok');
-                const messageName = methodus.verb + '_' + methodus.route;
-                debug('messageName:method:recipient', messageName);
-                socket.emit(messageName, dataObject, (data: any) => {
-                    debug('recieved result', data);
-                    if (data.error && data.statusCode) {
-                        //logger.error(data);
-                        reject(data);
-                    } else {
-                        //logger.info('return value is', data);
-                        resolve(data);
-                    }
-                });
-            });
-        });
-    }
+    //         const myUri = await methodus.resolver();
+    //         const socket = require('socket.io-client')(myUri);
+    //         socket.on('connect', () => {
+    //             debug('socket connection ok');
+    //             const messageName = methodus.verb + '_' + methodus.route;
+    //             debug('messageName:method:recipient', messageName);
+    //             socket.emit(messageName, dataObject, (data: any) => {
+    //                 debug('recieved result', data);
+    //                 if (data.error && data.statusCode) {
+    //                     //logger.error(data);
+    //                     reject(data);
+    //                 } else {
+    //                     //logger.info('return value is', data);
+    //                     resolve(data);
+    //                 }
+    //             });
+    //         });
+    //     });
+    // }
 }
 
 /**

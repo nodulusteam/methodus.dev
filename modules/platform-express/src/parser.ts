@@ -1,5 +1,5 @@
 import { Injectable, MethodResult, MethodError, deserialize } from '@methodus/server';
-
+import stringify from 'fast-safe-stringify';
 import * as etag from 'etag';
 /**
  * @hidden
@@ -131,7 +131,7 @@ export class RestResponse {
                 return res.end(methodResult.result, 'utf-8');
             } else {
                 res.set('Content-Type', 'application/json');
-                const str = JSON.stringify((methodResult.result) ? methodResult.result : methodResult);
+                const str = stringify((methodResult.result) ? methodResult.result : methodResult);
                 res.setHeader('ETag', etag(str));
                 return res.send(str);
             }
