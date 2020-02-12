@@ -17,9 +17,12 @@ export class AppComponent implements OnInit {
   todos: TodoModel[];
   activeTodo: TodoModel;
   public async ngOnInit() {
-    this.todos = await this.contractsService.localController.list();
+    await this.getTodoList()
   }
 
+  public async getTodoList() {
+    this.todos = await this.contractsService.localController.list();
+  }
   public async getMore(id: number) {
     this.activeTodo = await this.contractsService.localController.get(id);
   }
