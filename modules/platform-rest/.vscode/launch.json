@@ -25,7 +25,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/lib/rest.test.js",
+            "program": "${workspaceRoot}/lib/tests/rest.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
@@ -34,7 +34,11 @@
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "env": {}
+            "env": {
+                "DEBUG": "methodus:*",
+                // "PROXY": "http://emea-chain.proxy.att.com",
+                // "PROXY_PORT":"8080"
+            }
         },
         {
             "type": "node",

@@ -1,7 +1,7 @@
 
 import 'reflect-metadata';
 // import { Verbs } from '../../response';
-import * as request from 'request-promise-native';
+import axios, { AxiosResponse } from 'axios';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
@@ -25,7 +25,7 @@ export class WebRequest {
 
     }
 
-    sendRequest(verb: string, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
+    async sendRequest(verb: string, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
         let body: any = {};
         const headers: any = {};
         const cookies: any = {};
@@ -134,7 +134,8 @@ export class WebRequest {
 
             requestOptions = {
                 method: verb,
-                uri,
+                url: uri,
+                href: uri,
                 timeout: 1000 * 60 * 5,
                 rejectUnauthorized: false,
                 strictSSL: false,
@@ -146,7 +147,8 @@ export class WebRequest {
         } else {
             requestOptions = {
                 method: verb,
-                uri,
+                url: uri,
+                href: uri,
                 timeout: 1000 * 60 * 5,
             };
         }
@@ -168,7 +170,12 @@ export class WebRequest {
         }
 
         if (process.env.PROXY) {
-            Object.assign(requestOptions, { proxy: process.env.PROXY });
+            Object.assign(requestOptions, {
+                proxy: {
+                    host: process.env.PROXY,
+                    port: process.env.PROXY_PORT,
+                }
+            });
         }
 
         if (typeof body === 'object') {
@@ -230,17 +237,19 @@ export class WebRequest {
         // very important it allows the download of binary files
         requestOptions.encoding = null;
         logger.log('request options are: ', JSON.stringify(requestOptions));
-        const returnedPipe = this.promiseToTry(requestOptions);
+        const returnedPipe = await this.promiseToTry(requestOptions);
         return returnedPipe;
 
     }
 
-    public promiseToTry(requestOptions: any) {
-        const requestToPipe = request(requestOptions);
-        requestToPipe.on('error', (error: any) => {
+    public async promiseToTry(requestOptions: any): Promise<any> {
+        try {
+            const result = await axios(requestOptions);
+            return result.data;
+        } catch (error) {
+            debugger;
             logger.error(error);
-        });
-        return requestToPipe;
+        }
+        return {} as AxiosResponse;
     }
-
 }

@@ -1,8 +1,9 @@
 import 'reflect-metadata';
 import { BaseServer, Servers } from '@methodus/server';
-// import { ExpressRouter } from './routing';
+
 import * as colors from 'colors';
 import * as grpc from 'grpc';
+import { gRpcRouter } from './grpc.router';
 
 
 
@@ -27,11 +28,12 @@ export class gRpcPlugin extends BaseServer {
             console.info(colors.green(`> Starting gRPC server on port ${server.options.port}`));
 
             parentServer._app[serverType] = new gRpcPlugin(server.options.port, server.options.onStart);
-            Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
-
+            Servers.set(parentServer.instanceId, server.type.name, parentServer._app[serverType]);
+            return parentServer._app[serverType];
         } else {
             throw new Error('Missing configuration options for Express');
         }
+       
     }
 
     close() {
@@ -40,6 +42,6 @@ export class gRpcPlugin extends BaseServer {
     }
 
     useClass(classType: any, methodType: any) {
-        // return new ExpressRouter(classType, methodType, this._app);
+        return new gRpcRouter(classType, methodType, this._app);
     }
 }
