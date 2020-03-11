@@ -1,124 +1,160 @@
-import { WebRequest } from "../web-request";
-import { Verbs } from "../verbs";
+import { WebRequest } from '../web-request';
+import { Verbs } from '../verbs';
+import mockAxios from 'jest-mock-axios';
 
-const TESTBASE = "http://jsonplaceholder.typicode.com";//"https://www.mocky.io/v2/5185415ba171ea3a00704eed"; //
+const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
-describe("Web request", () => {
-  describe("Test all verbs", () => {
-    jest.setTimeout(150 * 1000);
-    it("Get list", async () => {
-      const request = new WebRequest();
-      const resultx = await request.sendRequest(
-        Verbs.Get,
-        `${TESTBASE}/posts`,
-        [],
-        []
-      );
-      
-      expect(resultx.data.length === 100).toBeTruthy();
+describe('Web request', () => {
+    afterEach(() => {
+        mockAxios.reset();
     });
 
-    it("Get one", async () => {
-      const request = new WebRequest();
-      const result = await request.sendRequest(
-        Verbs.Get,
-        `${TESTBASE}/posts/:postid`,
-        [1],
-        [{ index: 0, name: "postid", from: "params" }]
-      );
-      expect(result.data.id === 1).toBeTruthy();
+    describe('Test all verbs', () => {
+        let catchFn = jest.fn(),
+            thenFn = jest.fn();
+
+        it('Get list', () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(Verbs.Get, `${TESTBASE}/posts`, [], [])
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json' },
+                method: 'get',
+                timeout: 300000,
+                url: `${TESTBASE}/posts`,
+            });
+            // console.log(resultx);
+            // expect(resultx.data.length === 100).toBeTruthy();
+        });
+
+        it('Get one', () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(Verbs.Get, `${TESTBASE}/posts/:postid`, [1], [{ index: 0, name: 'postid', from: 'params' }])
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json' },
+                method: 'get',
+                timeout: 300000,
+                url: `${TESTBASE}/posts/1`,
+            });
+        });
+
+        it('Post', () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(Verbs.Post, `${TESTBASE}/posts/`, [{ id: 1, userid: 1 }], [{ index: 0, from: 'body' }])
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json' },
+                method: 'post',
+                timeout: 300000,
+                data: {
+                    id: 1,
+                    userid: 1,
+                },
+                url: `${TESTBASE}/posts/`,
+            });
+        });
+
+        it('Put', async () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(
+                    Verbs.Put,
+                    `${TESTBASE}/posts/:postid`,
+                    [1, { id: 1, userid: 1 }],
+                    [
+                        { index: 0, name: 'postid', from: 'params' },
+                        { index: 1, from: 'body' },
+                    ]
+                )
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json' },
+                method: 'put',
+                timeout: 300000,
+                data: {
+                    id: 1,
+                    userid: 1,
+                },
+                url: `${TESTBASE}/posts/1`,
+            });
+        });
     });
 
-    it("Post", async () => {
-      const request = new WebRequest();
-      const result = await request.sendRequest(
-        Verbs.Post,
-        `${TESTBASE}/posts/`,
-        [
-          {
-            id: 1,
-            userid: 1
-          }
-        ],
-        [{ index: 0, from: "body" }]
-      );
-     
-      expect(result.statusText === "Created").toBeTruthy();
+    describe('Test arguments collections', () => {
+        let catchFn = jest.fn(),
+            thenFn = jest.fn();
+
+        it('test Request no name collection objects', async () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(
+                    Verbs.Post,
+                    `${TESTBASE}/posts/:key1/:key2`,
+                    [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: 'value1', key2: 'value2' }, { user_id: 'id1' }],
+                    [
+                        { index: 0, from: 'params' },
+                        { index: 1, from: 'body' },
+                        { index: 2, from: 'files' },
+                        { index: 3, from: 'query' },
+                        { index: 4, name: 'secure', from: 'security_context' },
+                    ]
+                )
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json', security_context: '{"user_id":"id1"}' },
+                method: 'post',
+                timeout: 300000,
+                data: {
+                    key1: 'value1',
+                    key2: 'value2',
+                },
+                url: `${TESTBASE}/posts/value1/value2?key1=value1&key2=value2`,
+            });
+        });
+
+        it('test Request named collection objects', () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(
+                    Verbs.Post,
+                    `${TESTBASE}/posts/:key1/:key2`,
+                    ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
+                    [
+                        { index: 0, from: 'params', name: 'key1' },
+                        { index: 1, from: 'params', name: 'key2' },
+                        { index: 2, from: 'query', name: 'key1' },
+                        { index: 3, from: 'query', name: 'key2' },
+                        { index: 4, from: 'body', name: 'formData' },
+                    ]
+                )
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json' },
+                method: 'post',
+                timeout: 300000,
+                data: {
+                    formData: {
+                        user_id: 'id1',
+                    },
+                },
+                url: `${TESTBASE}/posts/value1/value2?key1=value1&key2=value2`,
+            });
+        });
     });
-
-    it("Put", async () => {
-      const request = new WebRequest();
-      const result = await request.sendRequest(
-        Verbs.Put,
-        `${TESTBASE}/posts/:postid`,
-        [
-          1,
-          {
-            id: 1,
-            userid: 1
-          }
-        ],
-        [
-          { index: 0, name: "postid", from: "params" },
-          { index: 1, from: "body" }
-        ]
-      );
-      console.log(result.statusText);
-      expect(result.statusText === "OK").toBeTruthy();
-    });
-  });
-
-  xit("test Request named collection objects", async () => {
-    const request = new WebRequest();
-    const result = await request.sendRequest(
-      Verbs.Get,
-      "https://jsonplaceholder.typicode.com/posts",
-      [
-        { key1: "value1", key2: "value2" },
-        { key1: "value1", key2: "value2" },
-        [],
-        "value1",
-        { user_id: "id1" },
-        [{ "Content-Type": "application/json" }],
-        [{ "Content-Type": "application/json" }]
-      ],
-      [
-        { index: 0, from: "params" },
-        { index: 1, from: "body" },
-        { index: 2, from: "files" },
-        { index: 3, from: "query" },
-        { index: 4, name: "secure", from: "security_context" },
-        { index: 5, from: "headers" },
-        { index: 6, from: "cookies" }
-      ]
-    );
-    expect(result).not.toBeNull();
-  });
-
-  xit("test Request no name collection objects", async () => {
-    const request = new WebRequest();
-    const result = await request.sendRequest(
-      Verbs.Get,
-      "https://jsonplaceholder.typicode.com/posts",
-      [
-        { key1: "value1", key2: "value2" },
-        { key1: "value1", key2: "value2" },
-        [],
-        { key1: ["value1", "value2"], key2: "value2" },
-        { user_id: "id1" },
-        [{ "Content-Type": "application/json" }],
-        [{ "Content-Type": "application/json" }]
-      ],
-      [
-        { index: 0, from: "params" },
-        { index: 1, from: "body" },
-        { index: 2, from: "files" },
-        { index: 3, from: "query", name: "key1" },
-        { index: 4, name: "secure", from: "security_context" },
-        { index: 5, from: "headers" },
-        { index: 6, from: "cookies" }
-      ]
-    );
-    expect(result).not.toBeNull();
-  });
 });
