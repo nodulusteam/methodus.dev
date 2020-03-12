@@ -1,6 +1,6 @@
+import mockAxios from 'jest-mock-axios';
 import { send } from '../index';
 import { Verbs } from '../verbs';
-import mockAxios from 'jest-mock-axios';
 
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
@@ -12,12 +12,12 @@ describe('test the send function', () => {
     let catchFn = jest.fn(),
         thenFn = jest.fn();
 
-    it('send', async () => {
+    it('send', () => {
         const methodus = {
             route: '/posts/:param1',
             verb: Verbs.Post,
             type: 'http',
-            _auth: 0,
+            _auth: { type: 0 },
             resolver: () => TESTBASE,
         };
 
@@ -75,40 +75,22 @@ describe('test the send function', () => {
         });
     });
 
-    xit('send with null resolver', async () => {
+    fit('send with null resolver', () => {
+        let thenFn = jest.fn();
+
         const methodus = {
             route: '/posts',
             verb: Verbs.Get,
             type: 'http',
-            _auth: 0,
+            _auth: { type: 0 },
             resolver: () => null,
         };
 
-        try {
-            await send(
-                methodus,
-                [
-                    { key1: 'value1', key2: 'value2' },
-                    { key1: 'value1', key2: 'value2' },
-                    ['file1', 'file2'],
-                    'value1',
-                    { user_id: 'id1' },
-                    { 'Content-Type': 'application/json' },
-                    { 'Content-Type': 'application/json' },
-                ],
-                [
-                    { index: 0, name: 'param1', from: 'params' },
-                    { index: 1, name: 'user', from: 'body' },
-                    { index: 2, name: 'files', from: 'files' },
-                    { index: 3, name: 'forkKey', from: 'query' },
-                    { index: 4, name: 'secure', from: 'security_context' },
-                    { index: 5, name: 'Content-Type', from: 'headers' },
-                    { index: 5, name: 'Content-Type', from: 'cookies' },
-                ],
-                {}
-            );
-        } catch (error) {
-            expect(error).toBeDefined();
-        }
+        send(methodus, [], [])
+            .then(thenFn)
+            .catch(error => {
+                console.log(error);
+                expect(error).toBe(new Error('Missing base url for method /posts'));
+            });
     });
 });

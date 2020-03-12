@@ -1,6 +1,6 @@
+import mockAxios from 'jest-mock-axios';
 import { WebRequest } from '../web-request';
 import { Verbs } from '../verbs';
-import mockAxios from 'jest-mock-axios';
 
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
@@ -127,6 +127,39 @@ describe('Web request', () => {
         });
 
         it('test Request named collection objects', () => {
+            const request = new WebRequest();
+            request
+                .sendRequest(
+                    Verbs.Post,
+                    `${TESTBASE}/posts/:key1/:key2`,
+                    ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
+                    [
+                        { index: 0, from: 'params', name: 'key1' },
+                        { index: 1, from: 'params', name: 'key2' },
+                        { index: 2, from: 'query', name: 'key1' },
+                        { index: 3, from: 'query', name: 'key2' },
+                        { index: 4, from: 'body', name: 'formData' },
+                    ]
+                )
+                .then(thenFn)
+                .catch(catchFn);
+
+            expect(mockAxios.request).toHaveBeenCalledWith({
+                headers: { 'Content-Type': 'application/json' },
+                method: 'post',
+                timeout: 300000,
+                data: {
+                    formData: {
+                        user_id: 'id1',
+                    },
+                },
+                url: `${TESTBASE}/posts/value1/value2?key1=value1&key2=value2`,
+            });
+        });
+
+
+
+        it('test files', () => {
             const request = new WebRequest();
             request
                 .sendRequest(

@@ -148,7 +148,7 @@ export class WebRequest {
         }
 
         if (this.auth) {
-            logger.log('Auth is', requestOptions.auth);
+            logger.log('Auth is ${JSON.stringify(this.auth)}');
             switch (this.auth) {
                 case AuthType.Basic:
                     requestOptions.auth = {
@@ -156,12 +156,12 @@ export class WebRequest {
                         password: this.authOptions.password,
                     };
                     break;
-                case AuthType.ApiKey:
-                    break;
-                case AuthType.BearerToken:
-                    break;
-                case AuthType.DigestAuth:
-                    break;
+                // case AuthType.ApiKey:
+                //     break;
+                // case AuthType.BearerToken:
+                //     break;
+                // case AuthType.DigestAuth:
+                //     break;
             }
         }
 
@@ -224,7 +224,7 @@ export class WebRequest {
             Object.assign(requestOptions.data, formData);
         }
 
-        logger.log('request options are: ', JSON.stringify(requestOptions));
+        logger.log('Request options are: ', JSON.stringify(requestOptions));
         const returnedPipe = await this.promiseToTry(requestOptions);
         return returnedPipe;
     }
