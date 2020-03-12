@@ -5,6 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Current File",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": ["${fileBasenameNoExtension}", "--config", "jest.config.js"],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "disableOptimisticBPs": true,
+            "windows": {
+                "program": "${workspaceFolder}/node_modules/jest/bin/jest"
+            }
+        },
+
+        {
             "request": "launch",
             "console": "internalConsole",
             "name": "T | Run jest",
@@ -12,9 +26,7 @@
             "program": "${workspaceRoot}/node_modules/jest/bin/jest",
             "stopOnEntry": false,
             "outputCapture": "std",
-            "args": [
-                "--verbose"
-            ],
+            "args": ["--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
@@ -25,28 +37,26 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/lib/rest.test.js",
+            "program": "${workspaceRoot}/lib/tests/rest.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
-            "args": [
-                "--verbose"
-            ],
+            "args": ["--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "env": {}
+            "env": {
+                "DEBUG": "methodus:*"
+                // "PROXY": "http://emea-chain.proxy.att.com",
+                // "PROXY_PORT": "8080"
+            }
         },
         {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
+            "skipFiles": ["<node_internals>/**"],
             "program": "${workspaceFolder}\\index.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
+            "outFiles": ["${workspaceFolder}/**/*.js"]
         }
     ]
 }

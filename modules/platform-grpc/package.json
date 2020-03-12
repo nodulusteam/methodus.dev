@@ -1,0 +1,21 @@
+{
+  "name": "@methodus/platform-grpc",
+  "version": "0.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.3",
+    "@methodus/server": "^5.0.23",
+    "grpc": "^1.24.2",
+    "protobufjs": "^6.8.8"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
