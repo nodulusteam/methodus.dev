@@ -67,7 +67,7 @@ export class TestController {
 
     @MethodPipe('GET', '/api/player/:player_id')
     public async read(@Mapping.Param('player_id') playerId: number) {
-        throw new MethodError('intended error', 500, 'some more data');
+        throw new MethodError('intended error', 500, { cause: 'some more data' });
     }
 
     @Method('GET', '/api/player/:field/:value')

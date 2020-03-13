@@ -30,7 +30,7 @@
         "watch": "rimraf lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "npm run build && npm run test:full ",
-        "test:full": "jest",
+        "test:full": "jest --verbose",
         "report": "nyc report --html --clover",
         "doc": "docsify serve docs",
         "docs": "typedoc",

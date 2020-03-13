@@ -75,7 +75,7 @@ describe('test the send function', () => {
         });
     });
 
-    fit('send with null resolver', () => {
+    it('send with null resolver', () => {
         let thenFn = jest.fn();
 
         const methodus = {

@@ -1,5 +1,5 @@
 import * as uuidv1 from 'uuid/v1';
-import { Dictionary } from '../interfaces';
+import { Dictionary, ServerDefinition } from '../interfaces';
 
 export class ServersList {
     public instances: Dictionary = {};
@@ -12,7 +12,7 @@ export class ServersList {
         this.clients = {};
         this.serversArray = [];
     }
-    public addServer(server: any) {
+    public addServer(server: ServerDefinition) {
         const id = uuidv1();
         this.instances[id] = server;
         return id;

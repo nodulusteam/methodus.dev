@@ -2,9 +2,9 @@
 import { MethodError } from './method.error';
 
 describe('Test MethodError', () => {
-    it('createNew', async () => {
-        const result = new MethodError({ prop1: 1, prop2: 2 });
-        expect(result).not.toBeNull();
+    it('create with string ', async () => {
+        const result = new MethodError('An error message');
+        expect(result.error).toBe('An error message');
     });
 
     it('createNewMethodErrorWithError', async () => {
@@ -12,8 +12,14 @@ describe('Test MethodError', () => {
         expect(result).not.toBeNull();
     });
 
-    it('createNewMethodErrorWithObjectError', async () => {
-        const result = new MethodError({ message: 'my-message', error: 'my-message', statusCode: 503 });
-        expect(result).not.toBeNull();
+    it('createNewMethodError With additionals', async () => {
+        const result = new MethodError(new Error('my errror'), 503, { ref: 'some-ref' });
+        expect(result.additional['ref']).toBe('some-ref');
+        expect(result.statusCode).toBe(503);
     });
+
+    // it('createNewMethodErrorWithObjectError', async () => {
+    //     const result = new MethodError({ message: 'my-message', error: 'my-message', statusCode: 503 });
+    //     expect(result).not.toBeNull();
+    // });
 });

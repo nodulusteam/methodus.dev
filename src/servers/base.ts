@@ -1,12 +1,12 @@
 // <references path='../interfaces/methodus.ts' />
 import { MethodType, IMethodusConfig } from '../shim';
-import { Dictionary } from '../interfaces';
+import { Dictionary, ClassRef } from '../interfaces';
 
 export abstract class BaseServer { // implements Methodus.Server
     config?: IMethodusConfig;
-    classRouters: any[] = [];
+    classRouters: ClassRef[] = [];
     useClass(classType: any, methodType: MethodType) { return new Object() as any; }
-    _send(functionArgs: any[], methodinformation: any, paramsMap: Dictionary, securityContext?: any) {
+    _send(functionArgs: any[], methodinformation: any, paramsMap: Dictionary, securityContext?: Dictionary) {
         return new Object() as any;
     }
 }
