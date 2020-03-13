@@ -84,12 +84,13 @@ export class LocalController {
 #### **index.ts**
 
 ```typescript
-import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
+import { ServerConfiguration, RouterConfiguration, ConfiguredServer } from '@methodus/server';
+import { Express } from '@methodus/platform-express';
 import { LocalController } from './controller';
 // instantiate express on given port
-@ServerConfiguration(BuiltInServers.Express, { port: 6695 }) 
+@ServerConfiguration(Express, { port: 6695 }) 
 // attach the DataController class to the Express instance 
-@RouterConfiguration(LocalController, BuiltInServers.Express) 
+@RouterConfiguration(LocalController, Express) 
 export class Xserver extends ConfiguredServer {
     constructor() {
         super(Xserver);

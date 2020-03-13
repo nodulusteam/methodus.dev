@@ -30,9 +30,10 @@ export class Xserver extends ConfiguredServer {
 ### @ServerConfiguration 
 > Used to bind a server instance to a framework. This example use the builtin `Express` server.
 ```typescript
-import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
+import { ServerConfiguration, RouterConfiguration, ConfiguredServer } from '@methodus/server';
+import { Express } from '@methodus/platform-express';
 import { DataController } from './controller';
-@ServerConfiguration(BuiltInServers.Express, { port: 6695 }) // instantiate express on given port
+@ServerConfiguration(Express, { port: 6695 }) // instantiate express on given port
 ```
 
 ### @PluginConfiguration
@@ -44,19 +45,21 @@ import { DataController } from './controller';
 ### RouterConfiguration
 > Bind a Controller to a server *InBound* function
 ```typescript
-import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
+import { ServerConfiguration, RouterConfiguration, ConfiguredServer } from '@methodus/server';
+import { Express } from '@methodus/platform-express';
 import { LocalController } from './controller';
-@ServerConfiguration(BuiltInServers.Express, { port: 6695 }) // instantiate express on given port
-@RouterConfiguration(LocalController, BuiltInServers.Express)
+@ServerConfiguration(Express, { port: 6695 }) // instantiate express on given port
+@RouterConfiguration(LocalController, Express)
 ```
 
 
 ### ClientConfiguration
 > Bind a Controller to a server *OutBound* function
 ```typescript
-import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
+import { ServerConfiguration, RouterConfiguration, ConfiguredServer } from '@methodus/server';
+import { Express } from '@methodus/platform-express';
 import { RemoteController } from './controller';
-@ClientConfiguration(RemoteController, BuiltInServers.Express)
+@ClientConfiguration(RemoteController, Express)
 ```
 
 
@@ -64,7 +67,7 @@ import { RemoteController } from './controller';
 ### ModuleConfiguration
 > Bundle a group of servers, clients, routes and plugins in a single reusable module.
 ```typescript
-import { ServerConfiguration, RouterConfiguration, ConfiguredServer, BuiltInServers } from '@methodus/server';
+import { ModuleConfiguration } from '@methodus/server';
 import { ModuleClass } from './moduleClass';
 @ModuleConfiguration(ModuleClass)
 ```

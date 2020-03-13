@@ -45,7 +45,7 @@ export class SetupServer extends ConfiguredServer {
 
 *module.ts*
 ```typescript
-import { BuiltInServers, Module, RouterConfiguration } from '@methodus/server';
+import { Module, RouterConfiguration } from '@methodus/server';
 import { Express } from '@methodus/platform-express';
 import { MyLogicController } from './controller';
 
