@@ -3,7 +3,7 @@ import { MethodType, ServerType, TransportType } from '../interfaces';
 import { MethodusClassConfig } from './class-config';
 import { MethodusClientConfig } from './client-config';
 import { ServerConfig } from './server-config';
-import { ServerDefinition } from '../decorators';
+import { ServerDefinition } from '../interfaces';
 
 export interface PluginEntry {
     name: string;

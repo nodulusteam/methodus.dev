@@ -1,51 +1,51 @@
-[A Methodus guide](../README.md) > [ConfiguredServer](../classes/configuredserver.md)
+[A Methodus guide](../README.md) > [ExpressTestServer](../classes/expresstestserver.md)
 
-# Class: ConfiguredServer
+# Class: ExpressTestServer
 
 ## Hierarchy
 
- `EventEmitter`
+↳  [ConfiguredServer](configuredserver.md)
 
- `EventEmitter`
+↳  [ConfiguredServer](configuredserver.md)
 
-**↳ ConfiguredServer**
+ `ConfiguredServer`
 
-↳  [ExpressTestServer](expresstestserver.md)
+ `ConfiguredServer`
 
-↳  [ExpressTestServer](expresstestserver.md)
+**↳ ExpressTestServer**
 
 ## Index
 
 ### Constructors
 
-* [constructor](configuredserver.md#constructor)
+* [constructor](expresstestserver.md#constructor)
 
 ### Properties
 
-* [server](configuredserver.md#server)
-* [target](configuredserver.md#target)
-* [defaultMaxListeners](configuredserver.md#defaultmaxlisteners)
+* [server](expresstestserver.md#server)
+* [target](expresstestserver.md#target)
+* [defaultMaxListeners](expresstestserver.md#defaultmaxlisteners)
 
 ### Methods
 
-* [addListener](configuredserver.md#addlistener)
-* [emit](configuredserver.md#emit)
-* [eventNames](configuredserver.md#eventnames)
-* [getMaxListeners](configuredserver.md#getmaxlisteners)
-* [init](configuredserver.md#init)
-* [kill](configuredserver.md#kill)
-* [listenerCount](configuredserver.md#listenercount)
-* [listeners](configuredserver.md#listeners)
-* [off](configuredserver.md#off)
-* [on](configuredserver.md#on)
-* [once](configuredserver.md#once)
-* [prependListener](configuredserver.md#prependlistener)
-* [prependOnceListener](configuredserver.md#prependoncelistener)
-* [rawListeners](configuredserver.md#rawlisteners)
-* [removeAllListeners](configuredserver.md#removealllisteners)
-* [removeListener](configuredserver.md#removelistener)
-* [setMaxListeners](configuredserver.md#setmaxlisteners)
-* [listenerCount](configuredserver.md#listenercount-1)
+* [addListener](expresstestserver.md#addlistener)
+* [emit](expresstestserver.md#emit)
+* [eventNames](expresstestserver.md#eventnames)
+* [getMaxListeners](expresstestserver.md#getmaxlisteners)
+* [init](expresstestserver.md#init)
+* [kill](expresstestserver.md#kill)
+* [listenerCount](expresstestserver.md#listenercount)
+* [listeners](expresstestserver.md#listeners)
+* [off](expresstestserver.md#off)
+* [on](expresstestserver.md#on)
+* [once](expresstestserver.md#once)
+* [prependListener](expresstestserver.md#prependlistener)
+* [prependOnceListener](expresstestserver.md#prependoncelistener)
+* [rawListeners](expresstestserver.md#rawlisteners)
+* [removeAllListeners](expresstestserver.md#removealllisteners)
+* [removeListener](expresstestserver.md#removelistener)
+* [setMaxListeners](expresstestserver.md#setmaxlisteners)
+* [listenerCount](expresstestserver.md#listenercount-1)
 
 ---
 
@@ -55,17 +55,19 @@
 
 ###  constructor
 
-⊕ **new ConfiguredServer**(target?: *`any`*): [ConfiguredServer](configuredserver.md)
+⊕ **new ExpressTestServer**(): [ExpressTestServer](expresstestserver.md)
 
-*Defined in lib/server.configured.d.ts:6*
+⊕ **new ExpressTestServer**(): [ExpressTestServer](expresstestserver.md)
 
-**Parameters:**
+*Overrides [ConfiguredServer](configuredserver.md).[constructor](configuredserver.md#constructor)*
 
-| Name | Type |
-| ------ | ------ |
-| `Optional` target | `any` |
+*Defined in lib/decorators/module/module.spec.d.ts:6*
 
-**Returns:** [ConfiguredServer](configuredserver.md)
+**Returns:** [ExpressTestServer](expresstestserver.md)
+
+*Defined in lib/di/tests/server.d.ts:6*
+
+**Returns:** [ExpressTestServer](expresstestserver.md)
 
 ___
 
@@ -77,8 +79,11 @@ ___
 
 **● server**: *[Server](server.md)*
 
+*Inherited from [ConfiguredServer](configuredserver.md).[server](configuredserver.md#server)*
+
+*Overrides [ConfiguredServer](configuredserver.md).[server](configuredserver.md#server)*
+
 *Defined in lib/server.configured.d.ts:5*
-*Defined in [src/server.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/server.configured.ts#L7)*
 
 ___
 <a id="target"></a>
@@ -87,8 +92,11 @@ ___
 
 **● target**: *`any`*
 
+*Inherited from [ConfiguredServer](configuredserver.md).[target](configuredserver.md#target)*
+
+*Overrides [ConfiguredServer](configuredserver.md).[target](configuredserver.md#target)*
+
 *Defined in lib/server.configured.d.ts:6*
-*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/server.configured.ts#L8)*
 
 ___
 <a id="defaultmaxlisteners"></a>
@@ -187,6 +195,10 @@ ___
 
 ▸ **init**(): `Promise`<`void`>
 
+*Inherited from [ConfiguredServer](configuredserver.md).[init](configuredserver.md#init)*
+
+*Overrides [ConfiguredServer](configuredserver.md).[init](configuredserver.md#init)*
+
 *Defined in lib/server.configured.d.ts:8*
 
 **Returns:** `Promise`<`void`>
@@ -197,6 +209,10 @@ ___
 ###  kill
 
 ▸ **kill**(): `void`
+
+*Inherited from [ConfiguredServer](configuredserver.md).[kill](configuredserver.md#kill)*
+
+*Overrides [ConfiguredServer](configuredserver.md).[kill](configuredserver.md#kill)*
 
 *Defined in lib/server.configured.d.ts:9*
 

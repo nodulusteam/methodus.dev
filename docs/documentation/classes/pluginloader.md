@@ -22,7 +22,7 @@
 
 ▸ **config**(serverConfiguration: *[MethodusConfig](methodusconfig.md)*, pluginList: *[PluginEntry](../interfaces/pluginentry.md)[]*): `Promise`<`void`>
 
-*Defined in build/plugins.d.ts:3*
+*Defined in lib/plugins.d.ts:3*
 
 **Parameters:**
 

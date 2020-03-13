@@ -29,7 +29,7 @@
 **● classRouters**: *`any`[]* =  []
 
 *Defined in lib/servers/base.d.ts:4*
-*Defined in [src/servers/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/base.ts#L6)*
+*Defined in [src/servers/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/base.ts#L6)*
 
 ___
 <a id="config"></a>
@@ -39,7 +39,7 @@ ___
 **● config**: *[IMethodusConfig](../interfaces/imethodusconfig.md)*
 
 *Defined in lib/servers/base.d.ts:3*
-*Defined in [src/servers/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/base.ts#L5)*
+*Defined in [src/servers/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/base.ts#L5)*
 
 ___
 

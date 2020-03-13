@@ -23,8 +23,8 @@
 
 **● name**: *`string`*
 
-*Defined in build/config/config.d.ts:6*
-*Defined in [src/config/config.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L8)*
+*Defined in lib/config/config.d.ts:7*
+*Defined in [src/config/config.ts:9](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/config/config.ts#L9)*
 
 ___
 <a id="options"></a>
@@ -33,8 +33,8 @@ ___
 
 **● options**: *`any`*
 
-*Defined in build/config/config.d.ts:7*
-*Defined in [src/config/config.ts:9](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/config/config.ts#L9)*
+*Defined in lib/config/config.d.ts:8*
+*Defined in [src/config/config.ts:10](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/config/config.ts#L10)*
 
 ___
 

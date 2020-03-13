@@ -6,7 +6,7 @@ import { Methods as MethodConfigNS } from './method-config';
 
 import { Methods as MethodPipeNS } from './method-pipe';
 import { Methods as MethodConfigBaseNS } from './method-config-base';
-import { Methods as MethodMockNS } from './method-mock';
+import { Decorators as MethodMockNS } from './method-mock';
 
 /**
  * @hidden
@@ -25,7 +25,7 @@ export const MethodConfigBase = MethodConfigBaseNS.MethodConfigBase;
 /**
  * @hidden
  */
-export const MethodMock = MethodMockNS.MethodMock;
+export const MethodMock = MethodMockNS.Methods.MethodMock;
 
 /**
  * @hidden

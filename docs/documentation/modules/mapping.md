@@ -26,7 +26,7 @@
 
 ▸ **Body**(name?: *`undefined` \| `string`*, type?: *`any`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:34](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L34)*
+*Defined in [src/params.ts:57](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L57)*
 
 **Parameters:**
 
@@ -44,7 +44,7 @@ ___
 
 ▸ **Cookies**(name?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:50](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L50)*
+*Defined in [src/params.ts:73](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L73)*
 
 **Parameters:**
 
@@ -61,7 +61,7 @@ ___
 
 ▸ **Files**(name?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:42](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L42)*
+*Defined in [src/params.ts:65](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L65)*
 
 **Parameters:**
 
@@ -78,7 +78,7 @@ ___
 
 ▸ **Headers**(name?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:46](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L46)*
+*Defined in [src/params.ts:69](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L69)*
 
 **Parameters:**
 
@@ -95,7 +95,7 @@ ___
 
 ▸ **Param**(name?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:38](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L38)*
+*Defined in [src/params.ts:61](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L61)*
 
 **Parameters:**
 
@@ -112,7 +112,7 @@ ___
 
 ▸ **Query**(name?: *`undefined` \| `string`*, type?: *`any`*, defaultValue?: *`any`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:54](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L54)*
+*Defined in [src/params.ts:77](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L77)*
 
 **Parameters:**
 
@@ -131,7 +131,7 @@ ___
 
 ▸ **Request**(name?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:66](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L66)*
+*Defined in [src/params.ts:89](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L89)*
 
 **Parameters:**
 
@@ -148,7 +148,7 @@ ___
 
 ▸ **Response**(name?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:62](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L62)*
+*Defined in [src/params.ts:85](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L85)*
 
 **Parameters:**
 
@@ -165,7 +165,7 @@ ___
 
 ▸ **SecurityContext**(name?: *`undefined` \| `string`*, type?: *`any`*): `(Anonymous function)`
 
-*Defined in [src/params.ts:58](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/params.ts#L58)*
+*Defined in [src/params.ts:81](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/params.ts#L81)*
 
 **Parameters:**
 

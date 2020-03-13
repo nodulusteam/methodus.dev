@@ -5,6 +5,7 @@
 
 ### Modules
 
+* [Decorators](modules/decorators.md)
 * [Mapping](modules/mapping.md)
 * [Methods](modules/methods.md)
 
@@ -12,39 +13,35 @@
 
 * [AuthType](enums/authtype.md)
 * [MethodType](enums/methodtype.md)
+* [RegistrationTypes](enums/registrationtypes.md)
 * [ServerType](enums/servertype.md)
 * [TransportType](enums/transporttype.md)
 
 ### Classes
 
 * [BaseServer](classes/baseserver.md)
-* [BuiltInServers](classes/builtinservers.md)
-* [BuiltInTransports](classes/builtintransports.md)
 * [ConfiguredServer](classes/configuredserver.md)
 * [EmitterPlugin](classes/emitterplugin.md)
-* [ExpressRouter](classes/expressrouter.md)
-* [ExtressTestModule](classes/extresstestmodule.md)
-* [FP](classes/fp.md)
-* [Injector](classes/injector.md)
+* [ExpressTestServer](classes/expresstestserver.md)
+* [InjectorType](classes/injectortype.md)
+* [Logger](classes/logger.md)
 * [MethodError](classes/methoderror.md)
-* [MethodErrorTest](classes/methoderrortest.md)
 * [MethodResult](classes/methodresult.md)
 * [MethodResultStatus](classes/methodresultstatus.md)
-* [MethodResultTest](classes/methodresulttest.md)
 * [MethodusConfig](classes/methodusconfig.md)
 * [Mocker](classes/mocker.md)
 * [ModuleClass](classes/moduleclass.md)
-* [ModulesTest](classes/modulestest.md)
+* [Parser](classes/parser.md)
+* [ParserForMocker](classes/parserformocker.md)
+* [ParserResponse](classes/parserresponse.md)
 * [PluginLoader](classes/pluginloader.md)
 * [ProxiedClass](classes/proxiedclass.md)
 * [Proxy](classes/proxy.md)
-* [ProxyTest](classes/proxytest.md)
 * [ResponseParser](classes/responseparser.md)
 * [RestLink](classes/restlink.md)
 * [Server](classes/server.md)
-* [Servers](classes/servers.md)
 * [ServersList](classes/serverslist.md)
-* [Verbs](classes/verbs.md)
+* [TestLogger](classes/testlogger.md)
 
 ### Interfaces
 
@@ -56,36 +53,68 @@
 * [ITransport](interfaces/itransport.md)
 * [PluginEntry](interfaces/pluginentry.md)
 * [Router](interfaces/router.md)
+* [ServerDefinition](interfaces/serverdefinition.md)
 
 ### Variables
 
+* [Injector](#injector)
+* [Servers](#servers)
+* [logger](#logger)
 * [resultEmitter](#resultemitter)
 
 ### Functions
 
 * [Auth](#auth)
-* [ClientConfiguration](#clientconfiguration)
 * [Inject](#inject)
 * [Injectable](#injectable)
 * [Module](#module)
 * [ModuleConfiguration](#moduleconfiguration)
-* [PluginConfiguration](#pluginconfiguration)
-* [RouterConfiguration](#routerconfiguration)
-* [ServerConfiguration](#serverconfiguration)
 * [Singleton](#singleton)
+* [deserialize](#deserialize)
+* [validate](#validate)
 
 ---
 
 ## Variables
 
+<a id="injector"></a>
+
+### `<Const>` Injector
+
+**● Injector**: *`any`* =  bridge.Injector
+
+*Defined in lib/di/injector.d.ts:17*
+*Defined in [src/di/injector.ts:103](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/di/injector.ts#L103)*
+
+___
+<a id="servers"></a>
+
+### `<Const>` Servers
+
+**● Servers**: *`any`* =  (global as any).METHODUS_BRIDGE
+
+*Defined in lib/servers/serversList.d.ts:13*
+*Defined in [src/servers/serversList.ts:45](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/serversList.ts#L45)*
+
+___
+<a id="logger"></a>
+
+### `<Const>` logger
+
+**● logger**: *`Logger`* =  new Logger('general')
+
+*Defined in lib/log/index.d.ts:12*
+*Defined in [src/log/index.ts:52](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/log/index.ts#L52)*
+
+___
 <a id="resultemitter"></a>
 
 ### `<Const>` resultEmitter
 
 **● resultEmitter**: *`EventEmitter`* =  new EventEmitter()
 
-*Defined in build/tests/servers/emitter.plugin.d.ts:6*
-*Defined in [src/tests/servers/emitter.plugin.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/tests/servers/emitter.plugin.ts#L12)*
+*Defined in lib/tests/servers/emitter.plugin.d.ts:6*
+*Defined in [src/tests/servers/emitter.plugin.ts:13](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/tests/servers/emitter.plugin.ts#L13)*
 
 ___
 
@@ -97,7 +126,7 @@ ___
 
 ▸ **Auth**(type: *[AuthType](enums/authtype.md)*, options?: *`any`*): `function`
 
-*Defined in build/decorators/auth/auth.d.ts:9*
+*Defined in lib/decorators/auth/auth.d.ts:9*
 
 the AuthConfig decorator registers the controller as a router @param {AuthType} type - the type of authentication to apply. @param {options} options - the auth options
 
@@ -111,34 +140,20 @@ the AuthConfig decorator registers the controller as a router @param {AuthType} 
 **Returns:** `function`
 
 ___
-<a id="clientconfiguration"></a>
+<a id="inject"></a>
 
-###  ClientConfiguration
+###  Inject
 
-▸ **ClientConfiguration**(controller: *`any`*, transportType: *`any`*, resolver?: *`any`*): `function`
+▸ **Inject**(name?: *`undefined` \| `string`*, propertyName?: *`undefined` \| `string`*): `any`
 
-*Defined in build/decorators/client.d.ts:2*
-
-the MethodConfig decorator registers the controller as a router @param {string} name - the identifier of the controller in the resolver. @param {Function\[\]} middlewares - an array of middlewares to apply to this controller}
+*Defined in lib/di/decorators/inject.d.ts:1*
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| controller | `any` |
-| transportType | `any` |
-| `Optional` resolver | `any` |
-
-**Returns:** `function`
-
-___
-<a id="inject"></a>
-
-###  Inject
-
-▸ **Inject**(): `any`
-
-*Defined in build/di/decorators/inject.d.ts:1*
+| `Optional` name | `undefined` \| `string` |
+| `Optional` propertyName | `undefined` \| `string` |
 
 **Returns:** `any`
 
@@ -149,7 +164,7 @@ ___
 
 ▸ **Injectable**(name?: *`undefined` \| `string`*): `function`
 
-*Defined in build/di/decorators/injectable.d.ts:2*
+*Defined in lib/di/decorators/injectable.d.ts:2*
 
 **Parameters:**
 
@@ -164,11 +179,17 @@ ___
 
 ###  Module
 
-▸ **Module**(): `function`
+▸ **Module**(name?: *`undefined` \| `string`*): `function`
 
-*Defined in build/decorators/module/module.d.ts:2*
+*Defined in lib/decorators/module/module.d.ts:2*
 
 the Module decorator registers a module
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` name | `undefined` \| `string` |
 
 **Returns:** `function`
 
@@ -179,7 +200,7 @@ ___
 
 ▸ **ModuleConfiguration**(moduleClass: *`any`*): `function`
 
-*Defined in build/decorators/module/module-config.d.ts:2*
+*Defined in lib/decorators/module/module-config.d.ts:2*
 
 the ModuleConfiguration decorator registers a module to the main server instance @param {Class} Class - A module class, using the @Module decorator
 
@@ -192,75 +213,57 @@ the ModuleConfiguration decorator registers a module to the main server instance
 **Returns:** `function`
 
 ___
-<a id="pluginconfiguration"></a>
-
-###  PluginConfiguration
-
-▸ **PluginConfiguration**(name: *`string`*, options?: *`any`*): `function`
-
-*Defined in build/decorators/plugin.d.ts:2*
-
-the MethodConfig decorator registers the controller as a router @param {string} name - the identifier of the controller in the resolver. @param {Function\[\]} middlewares - an array of middlewares to apply to this controller}
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| name | `string` |
-| `Optional` options | `any` |
-
-**Returns:** `function`
-
-___
-<a id="routerconfiguration"></a>
-
-###  RouterConfiguration
-
-▸ **RouterConfiguration**(controller: *`any`*, serverType: *[ServerType](enums/servertype.md) \| `string`*): `function`
-
-*Defined in build/decorators/router.d.ts:3*
-
-the RouterConfiguration decorator registers the controller as a router @param {type} controller - a controller class using the @MethodConfig decorator. @param {string} serverType - the name of the server
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| controller | `any` |
-| serverType | [ServerType](enums/servertype.md) \| `string` |
-
-**Returns:** `function`
-
-___
-<a id="serverconfiguration"></a>
-
-###  ServerConfiguration
-
-▸ **ServerConfiguration**(serverType: *`any`*, options?: *`any`*): `function`
-
-*Defined in build/decorators/server.d.ts:2*
-
-the ServerConfiguration decorator registers a server @param {string} serverType - the type for the server. @param {object} options - any options that needs to be passed to the server object
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| serverType | `any` |
-| `Optional` options | `any` |
-
-**Returns:** `function`
-
-___
 <a id="singleton"></a>
 
 ###  Singleton
 
-▸ **Singleton**(): `function`
+▸ **Singleton**(name?: *`undefined` \| `string`*): `function`
 
-*Defined in build/di/decorators/singleton.d.ts:2*
+*Defined in lib/di/decorators/singleton.d.ts:2*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| `Optional` name | `undefined` \| `string` |
 
 **Returns:** `function`
+
+___
+<a id="deserialize"></a>
+
+###  deserialize
+
+▸ **deserialize**(item: *`object` \| `any`*): `any`
+
+*Defined in lib/method/deserialize.d.ts:1*
+
+Deserialize values according to their types @param { type: any, value: string } item - the arguments sent to the original function.
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| item | `object` \| `any` |
+
+**Returns:** `any`
+
+___
+<a id="validate"></a>
+
+###  validate
+
+▸ **validate**(args: *`any`[]*): `Promise`<`boolean` \| `string` \| `string`[]>
+
+*Defined in lib/method/validate.d.ts:1*
+
+**Parameters:**
+
+| Name | Type |
+| ------ | ------ |
+| args | `any`[] |
+
+**Returns:** `Promise`<`boolean` \| `string` \| `string`[]>
 
 ___
 

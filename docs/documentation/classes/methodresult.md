@@ -48,7 +48,7 @@
 
 ⊕ **new MethodResult**(result: *`T`*, total?: *`undefined` \| `number`*, page?: *`undefined` \| `number`*): [MethodResult](methodresult.md)
 
-*Defined in build/response/method.result.d.ts:9*
+*Defined in lib/response/method.result.d.ts:9*
 
 **Parameters:**
 
@@ -70,8 +70,8 @@ ___
 
 **● _on**: *`object`*
 
-*Defined in build/response/method.result.d.ts:8*
-*Defined in [src/response/method.result.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L8)*
+*Defined in lib/response/method.result.d.ts:8*
+*Defined in [src/response/method.result.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L8)*
 
 #### Type declaration
 
@@ -88,8 +88,8 @@ ___
 
 **● headers**: *`any`*
 
-*Defined in build/response/method.result.d.ts:7*
-*Defined in [src/response/method.result.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L7)*
+*Defined in lib/response/method.result.d.ts:7*
+*Defined in [src/response/method.result.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L7)*
 
 ___
 <a id="links"></a>
@@ -98,8 +98,8 @@ ___
 
 **● links**: *`string`[]* =  []
 
-*Defined in build/response/method.result.d.ts:9*
-*Defined in [src/response/method.result.ts:9](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L9)*
+*Defined in lib/response/method.result.d.ts:9*
+*Defined in [src/response/method.result.ts:9](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L9)*
 
 ___
 <a id="page"></a>
@@ -108,8 +108,8 @@ ___
 
 **● page**: *`number`* = 1
 
-*Defined in build/response/method.result.d.ts:3*
-*Defined in [src/response/method.result.ts:3](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L3)*
+*Defined in lib/response/method.result.d.ts:3*
+*Defined in [src/response/method.result.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L3)*
 
 ___
 <a id="result"></a>
@@ -118,8 +118,8 @@ ___
 
 **● result**: *`T`*
 
-*Defined in build/response/method.result.d.ts:5*
-*Defined in [src/response/method.result.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L5)*
+*Defined in lib/response/method.result.d.ts:5*
+*Defined in [src/response/method.result.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L5)*
 
 ___
 <a id="statuscode"></a>
@@ -128,8 +128,8 @@ ___
 
 **● statusCode**: *`number`* = 200
 
-*Defined in build/response/method.result.d.ts:6*
-*Defined in [src/response/method.result.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L6)*
+*Defined in lib/response/method.result.d.ts:6*
+*Defined in [src/response/method.result.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L6)*
 
 ___
 <a id="stream"></a>
@@ -138,8 +138,8 @@ ___
 
 **● stream**: *`any`*
 
-*Defined in build/response/method.result.d.ts:2*
-*Defined in [src/response/method.result.ts:2](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L2)*
+*Defined in lib/response/method.result.d.ts:2*
+*Defined in [src/response/method.result.ts:2](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L2)*
 
 ___
 <a id="total"></a>
@@ -148,8 +148,8 @@ ___
 
 **● total**: *`number`* = 0
 
-*Defined in build/response/method.result.d.ts:4*
-*Defined in [src/response/method.result.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L4)*
+*Defined in lib/response/method.result.d.ts:4*
+*Defined in [src/response/method.result.ts:4](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L4)*
 
 ___
 
@@ -161,7 +161,7 @@ ___
 
 ▸ **apply**(): `this`
 
-*Defined in build/response/method.result.d.ts:16*
+*Defined in lib/response/method.result.d.ts:16*
 
 **Returns:** `this`
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **compileLink**(action: *`any`*, data: *`any`*, rel: *`string`*, host: *`string`*): [RestLink](restlink.md)
 
-*Defined in build/response/method.result.d.ts:17*
+*Defined in lib/response/method.result.d.ts:17*
 
 **Parameters:**
 
@@ -192,7 +192,7 @@ ___
 
 ▸ **getLinks**(): `string`[]
 
-*Defined in build/response/method.result.d.ts:11*
+*Defined in lib/response/method.result.d.ts:11*
 
 **Returns:** `string`[]
 
@@ -203,7 +203,7 @@ ___
 
 ▸ **linkAction**(propertyKey: *`any`*, linksSource: *`any`*, rel?: *`undefined` \| `string`*, datasource?: *`any`*, host?: *`undefined` \| `string`*): `void`
 
-*Defined in build/response/method.result.d.ts:15*
+*Defined in lib/response/method.result.d.ts:15*
 
 **Parameters:**
 
@@ -224,7 +224,7 @@ ___
 
 ▸ **on**(key: *`any`*, value: *`any`*): `void`
 
-*Defined in build/response/method.result.d.ts:14*
+*Defined in lib/response/method.result.d.ts:14*
 
 **Parameters:**
 
@@ -242,7 +242,7 @@ ___
 
 ▸ **pipe**(streamToPipe: *`any`*): `any`
 
-*Defined in build/response/method.result.d.ts:12*
+*Defined in lib/response/method.result.d.ts:12*
 
 **Parameters:**
 
@@ -259,7 +259,7 @@ ___
 
 ▸ **setHeader**(key: *`any`*, value: *`any`*): `void`
 
-*Defined in build/response/method.result.d.ts:13*
+*Defined in lib/response/method.result.d.ts:13*
 
 **Parameters:**
 

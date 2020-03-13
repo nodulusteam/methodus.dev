@@ -24,8 +24,8 @@
 
 **● classes**: *`Map`<`string`, `IMethodusClassConfig`>*
 
-*Defined in build/interfaces/methodus.d.ts:22*
-*Defined in [src/interfaces/methodus.ts:27](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L27)*
+*Defined in lib/interfaces/index.d.ts:22*
+*Defined in [src/interfaces/index.ts:27](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L27)*
 
 ___
 <a id="port"></a>
@@ -34,8 +34,8 @@ ___
 
 **● port**: *`number`*
 
-*Defined in build/interfaces/methodus.d.ts:24*
-*Defined in [src/interfaces/methodus.ts:29](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L29)*
+*Defined in lib/interfaces/index.d.ts:24*
+*Defined in [src/interfaces/index.ts:29](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L29)*
 
 ___
 <a id="servers"></a>
@@ -44,8 +44,8 @@ ___
 
 **● servers**: *`IServerConfig`[]*
 
-*Defined in build/interfaces/methodus.d.ts:23*
-*Defined in [src/interfaces/methodus.ts:28](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L28)*
+*Defined in lib/interfaces/index.d.ts:23*
+*Defined in [src/interfaces/index.ts:28](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L28)*
 
 ___
 

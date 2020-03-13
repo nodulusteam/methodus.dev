@@ -31,8 +31,8 @@
 
 **● name**: *`string`*
 
-*Defined in build/interfaces/methodus.d.ts:10*
-*Defined in [src/interfaces/methodus.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L12)*
+*Defined in lib/interfaces/index.d.ts:10*
+*Defined in [src/interfaces/index.ts:12](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L12)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 ▸ **register**(server: *`any`*, parentServer: *`any`*): `void`
 
-*Defined in build/interfaces/methodus.d.ts:11*
+*Defined in lib/interfaces/index.d.ts:11*
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ ___
 
 **Returns:** `void`
 
-*Defined in [src/interfaces/methodus.ts:13](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L13)*
+*Defined in [src/interfaces/index.ts:13](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L13)*
 
 **Parameters:**
 
@@ -77,7 +77,7 @@ ___
 
 ▸ **send**(methodus: *`any`*, functionArgs: *`any`*, paramsMap: *`any`*, securityContext: *`any`*): `Promise`<`any`>
 
-*Defined in build/interfaces/methodus.d.ts:12*
+*Defined in lib/interfaces/index.d.ts:12*
 
 **Parameters:**
 
@@ -90,7 +90,7 @@ ___
 
 **Returns:** `Promise`<`any`>
 
-*Defined in [src/interfaces/methodus.ts:14](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L14)*
+*Defined in [src/interfaces/index.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L14)*
 
 **Parameters:**
 

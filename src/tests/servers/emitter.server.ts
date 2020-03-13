@@ -2,12 +2,13 @@ import * as path from 'path';
 
 import {
     ServerConfiguration, RouterConfiguration, MethodResult, MethodError,
-    ClientConfiguration, ConfiguredServer, deserialize,
+    ClientConfiguration, ConfiguredServer,
 } from '../shim';
 import { TestController } from '../controllers/';
 import { TestTarget } from '../controllers/';
 import { EmitterPlugin } from './emitter.plugin';
 import { PluginConfiguration, Injectable } from '../shim';
+import { deserialize } from '../../method/deserialize';
 
 const ServerPlugin = new EmitterPlugin();
 /**

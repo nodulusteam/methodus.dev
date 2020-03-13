@@ -1,5 +1,6 @@
+import { ServerDefinition } from '../interfaces';
 
-import { ServerDefinition } from '../decorators';
+ 
 
 /**
  * @hidden

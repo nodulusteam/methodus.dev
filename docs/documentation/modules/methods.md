@@ -9,8 +9,6 @@
 * [Method](methods.md#method)
 * [MethodConfig](methods.md#methodconfig)
 * [MethodConfigBase](methods.md#methodconfigbase)
-* [MethodConfigExtend](methods.md#methodconfigextend)
-* [MethodMock](methods.md#methodmock)
 * [MethodPipe](methods.md#methodpipe)
 
 ---
@@ -21,18 +19,18 @@
 
 ###  Method
 
-▸ **Method**(verb: *`Verbs`*, route: *`string`*, middlewares?: *`any`[]*): `(Anonymous function)`
+▸ **Method**(verb?: *`undefined` \| `string`*, route?: *`undefined` \| `string`*, middlewares?: *`any`[]*): `(Anonymous function)`
 
-*Defined in [src/method/method.ts:25](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/method/method.ts#L25)*
+*Defined in [src/method/method.ts:25](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/method/method.ts#L25)*
 
-the @Method decorator registers the model with the odm @param {Verbs} verb - the HTTP verb for the route. @param {string} route - express route string. @param {Function\[\]} middlewares - an array of middlewares to apply to this function}
+the @Method decorator registers route listeners @param {Verbs} verb - the HTTP verb for the route. @param {string} route - express route string. @param {Function\[\]} middlewares - an array of middlewares to apply to this function}
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| verb | `Verbs` |
-| route | `string` |
+| `Optional` verb | `undefined` \| `string` |
+| `Optional` route | `undefined` \| `string` |
 | `Optional` middlewares | `any`[] |
 
 **Returns:** `(Anonymous function)`
@@ -42,9 +40,9 @@ ___
 
 ###  MethodConfig
 
-▸ **MethodConfig**(name: *`string`*, middlewares?: *`any`[]*, repository?: *`any`*): `(Anonymous function)`
+▸ **MethodConfig**(name: *`string`*, middlewares?: *`any`[]*, prefix?: *`undefined` \| `string`*): `(Anonymous function)`
 
-*Defined in [src/method/method-config.ts:13](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/method/method-config.ts#L13)*
+*Defined in [src/method/method-config.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/method/method-config.ts#L14)*
 
 the MethodConfig decorator registers the controller as a router @param {string} name - the identifier of the controller in the resolver. @param {Function\[\]} middlewares - an array of middlewares to apply to this controller}
 
@@ -54,7 +52,7 @@ the MethodConfig decorator registers the controller as a router @param {string} 
 | ------ | ------ |
 | name | `string` |
 | `Optional` middlewares | `any`[] |
-| `Optional` repository | `any` |
+| `Optional` prefix | `undefined` \| `string` |
 
 **Returns:** `(Anonymous function)`
 
@@ -65,7 +63,7 @@ ___
 
 ▸ **MethodConfigBase**(name: *`string`*, middlewares?: *`any`[]*, repository?: *`any`*): `(Anonymous function)`
 
-*Defined in [src/method/method-config-base.ts:15](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/method/method-config-base.ts#L15)*
+*Defined in [src/method/method-config-base.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/method/method-config-base.ts#L14)*
 
 the MethodConfig decorator registers the controller as a router @param {string} name - the identifier of the controller in the resolver. @param {Function\[\]} middlewares - an array of middlewares to apply to this controller}
 
@@ -80,60 +78,21 @@ the MethodConfig decorator registers the controller as a router @param {string} 
 **Returns:** `(Anonymous function)`
 
 ___
-<a id="methodconfigextend"></a>
-
-###  MethodConfigExtend
-
-▸ **MethodConfigExtend**(extendTarget: *`any`*, name?: *`undefined` \| `string`*): `(Anonymous function)`
-
-*Defined in [src/method/method-config-extend.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/method/method-config-extend.ts#L12)*
-
-the MethodConfig decorator registers the controller as a router @param {string} name - the identifier of the controller in the resolver. @param {Function\[\]} middlewares - an array of middlewares to apply to this controller}
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| extendTarget | `any` |
-| `Optional` name | `undefined` \| `string` |
-
-**Returns:** `(Anonymous function)`
-
-___
-<a id="methodmock"></a>
-
-###  MethodMock
-
-▸ **MethodMock**(mockedResult: *`any`*): `(Anonymous function)`
-
-*Defined in [src/method/method-mock.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/method/method-mock.ts#L12)*
-
-the @MethodMock decorator registers the model with the odm @param {Verbs} verb - the HTTP verb for the route. @param {string} route - express route string. @param {Function\[\]} middlewares - an array of middlewares to apply to this function}
-
-**Parameters:**
-
-| Name | Type |
-| ------ | ------ |
-| mockedResult | `any` |
-
-**Returns:** `(Anonymous function)`
-
-___
 <a id="methodpipe"></a>
 
 ###  MethodPipe
 
-▸ **MethodPipe**(verb: *`Verbs`*, route: *`string`*, middlewares?: *`any`[]*): `(Anonymous function)`
+▸ **MethodPipe**(verb: *`string`*, route: *`string`*, middlewares?: *`any`[]*): `(Anonymous function)`
 
-*Defined in [src/method/method-pipe.ts:21](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/method/method-pipe.ts#L21)*
+*Defined in [src/method/method-pipe.ts:21](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/method/method-pipe.ts#L21)*
 
-the @Method decorator registers the model with the odm @param {Verbs} verb - the HTTP verb for the route. @param {string} route - express route string. @param {Function\[\]} middlewares - an array of middlewares to apply to this function}
+the @Method decorator registers route listeners @param {Verbs} verb - the HTTP verb for the route. @param {string} route - express route string. @param {Function\[\]} middlewares - an array of middlewares to apply to this function}
 
 **Parameters:**
 
 | Name | Type |
 | ------ | ------ |
-| verb | `Verbs` |
+| verb | `string` |
 | route | `string` |
 | `Optional` middlewares | `any`[] |
 

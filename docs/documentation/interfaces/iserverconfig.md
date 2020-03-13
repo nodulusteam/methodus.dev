@@ -23,8 +23,8 @@
 
 **● options**: *`any`*
 
-*Defined in build/interfaces/methodus.d.ts:28*
-*Defined in [src/interfaces/methodus.ts:35](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L35)*
+*Defined in lib/interfaces/index.d.ts:28*
+*Defined in [src/interfaces/index.ts:35](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L35)*
 
 ___
 <a id="type"></a>
@@ -33,8 +33,8 @@ ___
 
 **● type**: *`ServerType`*
 
-*Defined in build/interfaces/methodus.d.ts:27*
-*Defined in [src/interfaces/methodus.ts:34](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L34)*
+*Defined in lib/interfaces/index.d.ts:27*
+*Defined in [src/interfaces/index.ts:34](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L34)*
 
 ___
 

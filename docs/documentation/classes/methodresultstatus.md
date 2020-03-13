@@ -50,7 +50,7 @@
 
 *Overrides [MethodResult](methodresult.md).[constructor](methodresult.md#constructor)*
 
-*Defined in build/response/method.result.d.ts:31*
+*Defined in lib/response/method.result.d.ts:31*
 
 **Parameters:**
 
@@ -77,7 +77,7 @@ ___
 
 *Overrides MethodResult.headers*
 
-*Defined in build/response/method.result.d.ts:7*
+*Defined in lib/response/method.result.d.ts:7*
 
 ___
 <a id="page"></a>
@@ -88,8 +88,8 @@ ___
 
 *Overrides [MethodResult](methodresult.md).[page](methodresult.md#page)*
 
-*Defined in build/response/method.result.d.ts:29*
-*Defined in [src/response/method.result.ts:99](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L99)*
+*Defined in lib/response/method.result.d.ts:29*
+*Defined in [src/response/method.result.ts:96](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L96)*
 
 ___
 <a id="result"></a>
@@ -102,7 +102,7 @@ ___
 
 *Overrides MethodResult.result*
 
-*Defined in build/response/method.result.d.ts:5*
+*Defined in lib/response/method.result.d.ts:5*
 
 ___
 <a id="statuscode"></a>
@@ -113,8 +113,8 @@ ___
 
 *Overrides [MethodResult](methodresult.md).[statusCode](methodresult.md#statuscode)*
 
-*Defined in build/response/method.result.d.ts:31*
-*Defined in [src/response/method.result.ts:101](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L101)*
+*Defined in lib/response/method.result.d.ts:31*
+*Defined in [src/response/method.result.ts:98](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L98)*
 
 ___
 <a id="stream"></a>
@@ -127,7 +127,7 @@ ___
 
 *Overrides MethodResult.stream*
 
-*Defined in build/response/method.result.d.ts:2*
+*Defined in lib/response/method.result.d.ts:2*
 
 ___
 <a id="total"></a>
@@ -138,8 +138,8 @@ ___
 
 *Overrides [MethodResult](methodresult.md).[total](methodresult.md#total)*
 
-*Defined in build/response/method.result.d.ts:30*
-*Defined in [src/response/method.result.ts:100](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/response/method.result.ts#L100)*
+*Defined in lib/response/method.result.d.ts:30*
+*Defined in [src/response/method.result.ts:97](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/method.result.ts#L97)*
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 *Overrides MethodResult.apply*
 
-*Defined in build/response/method.result.d.ts:16*
+*Defined in lib/response/method.result.d.ts:16*
 
 **Returns:** `this`
 
@@ -170,7 +170,7 @@ ___
 
 *Overrides MethodResult.compileLink*
 
-*Defined in build/response/method.result.d.ts:17*
+*Defined in lib/response/method.result.d.ts:17*
 
 **Parameters:**
 
@@ -194,7 +194,7 @@ ___
 
 *Overrides MethodResult.getLinks*
 
-*Defined in build/response/method.result.d.ts:11*
+*Defined in lib/response/method.result.d.ts:11*
 
 **Returns:** `string`[]
 
@@ -207,7 +207,7 @@ ___
 
 *Overrides [MethodResult](methodresult.md).[linkAction](methodresult.md#linkaction)*
 
-*Defined in build/response/method.result.d.ts:33*
+*Defined in lib/response/method.result.d.ts:33*
 
 **Parameters:**
 
@@ -232,7 +232,7 @@ ___
 
 *Overrides MethodResult.on*
 
-*Defined in build/response/method.result.d.ts:14*
+*Defined in lib/response/method.result.d.ts:14*
 
 **Parameters:**
 
@@ -254,7 +254,7 @@ ___
 
 *Overrides MethodResult.pipe*
 
-*Defined in build/response/method.result.d.ts:12*
+*Defined in lib/response/method.result.d.ts:12*
 
 **Parameters:**
 
@@ -275,7 +275,7 @@ ___
 
 *Overrides MethodResult.setHeader*
 
-*Defined in build/response/method.result.d.ts:13*
+*Defined in lib/response/method.result.d.ts:13*
 
 **Parameters:**
 

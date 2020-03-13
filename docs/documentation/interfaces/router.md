@@ -22,8 +22,8 @@
 
 **● prefix**: *`string`*
 
-*Defined in build/interfaces/methodus.d.ts:7*
-*Defined in [src/interfaces/methodus.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L8)*
+*Defined in lib/interfaces/index.d.ts:7*
+*Defined in [src/interfaces/index.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L8)*
 
 ___
 

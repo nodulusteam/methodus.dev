@@ -33,7 +33,7 @@ this function parses values from the request object into the function args @para
 
 ⊕ **new ResponseParser**(type: *[ServerType](../enums/servertype.md)*): [ResponseParser](responseparser.md)
 
-*Defined in build/rest.d.ts:12*
+*Defined in lib/response/response-parser.d.ts:4*
 
 **Parameters:**
 
@@ -53,8 +53,8 @@ ___
 
 **● parser**: *`any`*
 
-*Defined in build/rest.d.ts:11*
-*Defined in [src/rest.ts:22](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/rest.ts#L22)*
+*Defined in lib/response/response-parser.d.ts:3*
+*Defined in [src/response/response-parser.ts:23](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/response-parser.ts#L23)*
 
 ___
 <a id="response"></a>
@@ -63,8 +63,8 @@ ___
 
 **● response**: *`any`*
 
-*Defined in build/rest.d.ts:12*
-*Defined in [src/rest.ts:23](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/rest.ts#L23)*
+*Defined in lib/response/response-parser.d.ts:4*
+*Defined in [src/response/response-parser.ts:24](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/response/response-parser.ts#L24)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 ▸ **parse**(args: *`any`*, paramsMap: *`any`*, functionArgs: *`any`*): `any`
 
-*Defined in build/rest.d.ts:14*
+*Defined in lib/response/response-parser.d.ts:6*
 
 **Parameters:**
 

@@ -24,7 +24,7 @@
 
 ▸ **set**(key: *`string`*, value: *`any`*): `void`
 
-*Defined in build/server.d.ts:4*
+*Defined in lib/server.d.ts:4*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@
 
 **Returns:** `void`
 
-*Defined in [src/server.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/server.ts#L12)*
+*Defined in [src/server.ts:13](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/server.ts#L13)*
 
 **Parameters:**
 

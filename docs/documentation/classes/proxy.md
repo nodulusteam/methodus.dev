@@ -22,7 +22,7 @@
 
 ▸ **ProxyClass**(packageName: *`string`*, className: *`string`*, localClassPath: *`any`*): `function`
 
-*Defined in build/decorators/proxy/proxy.d.ts:2*
+*Defined in lib/decorators/proxy/proxy.d.ts:2*
 
 **Parameters:**
 

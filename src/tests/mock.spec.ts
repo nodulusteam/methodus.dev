@@ -1,6 +1,7 @@
 import { Mocker } from '../mocker';
 import { TestController } from './controllers';
-import { Injector, MethodResult, MethodError, Injectable, deserialize } from './shim';
+import { Injector, MethodResult, MethodError, Injectable } from './shim';
+import { deserialize } from '../method/deserialize';
 
 
 

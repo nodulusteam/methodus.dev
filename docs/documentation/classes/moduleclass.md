@@ -28,11 +28,11 @@
 
 ⊕ **new ModuleClass**(): [ModuleClass](moduleclass.md)
 
-*Defined in build/decorators/module/module.spec.d.ts:3*
+*Defined in lib/decorators/module/module.spec.d.ts:3*
 
 **Returns:** [ModuleClass](moduleclass.md)
 
-*Defined in build/di/tests/server.d.ts:3*
+*Defined in lib/di/tests/server.d.ts:3*
 
 **Returns:** [ModuleClass](moduleclass.md)
 
@@ -46,10 +46,10 @@ ___
 
 **● name**: *`string`*
 
-*Defined in build/decorators/module/module.spec.d.ts:3*
-*Defined in build/di/tests/server.d.ts:3*
-*Defined in [src/decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/decorators/module/module.spec.ts#L17)*
-*Defined in [src/di/tests/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/di/tests/server.ts#L19)*
+*Defined in lib/decorators/module/module.spec.d.ts:3*
+*Defined in lib/di/tests/server.d.ts:3*
+*Defined in [src/decorators/module/module.spec.ts:17](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/decorators/module/module.spec.ts#L17)*
+*Defined in [src/di/tests/server.ts:24](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/di/tests/server.ts#L24)*
 
 ___
 

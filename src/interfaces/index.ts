@@ -67,3 +67,14 @@ export const enum ServerType {
     Custom = 'Custom',
 
 }
+
+
+export interface ServerDefinition {
+    name: string;
+    path?: string;
+    static?: any;
+    module?: any;
+    parser?: any;
+    response?: any;
+  }
+  

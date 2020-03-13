@@ -23,7 +23,7 @@
 
 ▸ **mock**(target: *`any`*): `any`
 
-*Defined in build/mocker.d.ts:2*
+*Defined in lib/mocker.d.ts:2*
 
 **Parameters:**
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **mockServer**(target: *`any`*): `any`
 
-*Defined in build/mocker.d.ts:3*
+*Defined in lib/mocker.d.ts:3*
 
 **Parameters:**
 

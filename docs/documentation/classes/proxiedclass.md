@@ -24,7 +24,7 @@
 
 ▸ **add**(a: *`number`*, b: *`number`*): `number`
 
-*Defined in build/decorators/proxy/test/class.test.d.ts:2*
+*Defined in lib/decorators/proxy/test/class.test.d.ts:2*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@
 
 **Returns:** `number`
 
-*Defined in build/decorators/proxy/test/proxy.test.d.ts:2*
+*Defined in lib/decorators/proxy/test/proxy.test.d.ts:2*
 
 **Parameters:**
 

@@ -29,8 +29,8 @@
 
 **● classRouters**: *`any`[]*
 
-*Defined in build/interfaces/methodus.d.ts:15*
-*Defined in [src/interfaces/methodus.ts:19](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L19)*
+*Defined in lib/interfaces/index.d.ts:15*
+*Defined in [src/interfaces/index.ts:19](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L19)*
 
 ___
 <a id="config"></a>
@@ -39,8 +39,8 @@ ___
 
 **● config**: *`IMethodusConfig`*
 
-*Defined in build/interfaces/methodus.d.ts:16*
-*Defined in [src/interfaces/methodus.ts:20](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L20)*
+*Defined in lib/interfaces/index.d.ts:16*
+*Defined in [src/interfaces/index.ts:20](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L20)*
 
 ___
 <a id="sockets"></a>
@@ -49,8 +49,8 @@ ___
 
 **● sockets**: *`any`*
 
-*Defined in build/interfaces/methodus.d.ts:17*
-*Defined in [src/interfaces/methodus.ts:21](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L21)*
+*Defined in lib/interfaces/index.d.ts:17*
+*Defined in [src/interfaces/index.ts:21](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L21)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 ▸ **_send**(channel: *`any`*, functionArgs: *`any`*, message: *`any`*, paramsMap?: *`any`*): `any`
 
-*Defined in build/interfaces/methodus.d.ts:19*
+*Defined in lib/interfaces/index.d.ts:19*
 
 **Parameters:**
 
@@ -77,7 +77,7 @@ ___
 
 **Returns:** `any`
 
-*Defined in [src/interfaces/methodus.ts:23](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L23)*
+*Defined in [src/interfaces/index.ts:23](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L23)*
 
 **Parameters:**
 
@@ -99,7 +99,7 @@ ___
 
 ▸ **useClass**(classType: *`any`*, methodType: *`MethodType`*): `void`
 
-*Defined in build/interfaces/methodus.d.ts:18*
+*Defined in lib/interfaces/index.d.ts:18*
 
 **Parameters:**
 
@@ -110,7 +110,7 @@ ___
 
 **Returns:** `void`
 
-*Defined in [src/interfaces/methodus.ts:22](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/interfaces/methodus.ts#L22)*
+*Defined in [src/interfaces/index.ts:22](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/interfaces/index.ts#L22)*
 
 **Parameters:**
 

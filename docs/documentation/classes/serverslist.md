@@ -37,7 +37,7 @@
 
 ⊕ **new ServersList**(): [ServersList](serverslist.md)
 
-*Defined in build/servers/serversList.d.ts:6*
+*Defined in lib/servers/serversList.d.ts:6*
 
 **Returns:** [ServersList](serverslist.md)
 
@@ -51,8 +51,8 @@ ___
 
 **● _app**: *`any`*
 
-*Defined in build/servers/serversList.d.ts:5*
-*Defined in [src/servers/serversList.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/serversList.ts#L7)*
+*Defined in lib/servers/serversList.d.ts:5*
+*Defined in [src/servers/serversList.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/serversList.ts#L7)*
 
 ___
 <a id="classes"></a>
@@ -61,8 +61,8 @@ ___
 
 **● classes**: *`any`*
 
-*Defined in build/servers/serversList.d.ts:3*
-*Defined in [src/servers/serversList.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/serversList.ts#L5)*
+*Defined in lib/servers/serversList.d.ts:3*
+*Defined in [src/servers/serversList.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/serversList.ts#L5)*
 
 ___
 <a id="clients"></a>
@@ -71,8 +71,8 @@ ___
 
 **● clients**: *`any`*
 
-*Defined in build/servers/serversList.d.ts:4*
-*Defined in [src/servers/serversList.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/serversList.ts#L6)*
+*Defined in lib/servers/serversList.d.ts:4*
+*Defined in [src/servers/serversList.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/serversList.ts#L6)*
 
 ___
 <a id="instances"></a>
@@ -81,8 +81,8 @@ ___
 
 **● instances**: *`any`*
 
-*Defined in build/servers/serversList.d.ts:2*
-*Defined in [src/servers/serversList.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/serversList.ts#L4)*
+*Defined in lib/servers/serversList.d.ts:2*
+*Defined in [src/servers/serversList.ts:4](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/serversList.ts#L4)*
 
 ___
 <a id="serversarray"></a>
@@ -91,8 +91,8 @@ ___
 
 **● serversArray**: *`any`[]*
 
-*Defined in build/servers/serversList.d.ts:6*
-*Defined in [src/servers/serversList.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9494017/src/servers/serversList.ts#L8)*
+*Defined in lib/servers/serversList.d.ts:6*
+*Defined in [src/servers/serversList.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3c34c71/src/servers/serversList.ts#L8)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 ▸ **addServer**(server: *`any`*): `string`
 
-*Defined in build/servers/serversList.d.ts:8*
+*Defined in lib/servers/serversList.d.ts:8*
 
 **Parameters:**
 
@@ -121,7 +121,7 @@ ___
 
 ▸ **get**(instanceId: *`any`*, serverType?: *`any`*): `any`
 
-*Defined in build/servers/serversList.d.ts:10*
+*Defined in lib/servers/serversList.d.ts:10*
 
 **Parameters:**
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **reset**(): `void`
 
-*Defined in build/servers/serversList.d.ts:11*
+*Defined in lib/servers/serversList.d.ts:11*
 
 **Returns:** `void`
 
@@ -150,7 +150,7 @@ ___
 
 ▸ **set**(instanceId: *`any`*, serverType: *`any`*, instance: *`any`*): `any`
 
-*Defined in build/servers/serversList.d.ts:9*
+*Defined in lib/servers/serversList.d.ts:9*
 
 **Parameters:**
 
