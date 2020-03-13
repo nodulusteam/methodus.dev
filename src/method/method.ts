@@ -22,13 +22,13 @@ export namespace Methods {
      *  @param {string} route - express route string.
      *  @param {Function[]} middlewares - an array of middlewares to apply to this function}
      */
-    export function Method(verb?: string, route?: string, middlewares?: any[]) {
+    export function Method(verb?: string, route?: string, middlewares?: Function[]) {
         return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
             return verbBasedMethod(target, propertyKey, descriptor, verb, route, middlewares);
         };
     }
 
-    function verbBasedMethod(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>, verb?: string, route?: string, middlewares?: any[]) {
+    function verbBasedMethod(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>, verb?: string, route?: string, middlewares?: Function[]) {
 
 
         target.methodus = target.methodus || {};

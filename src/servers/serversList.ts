@@ -1,11 +1,11 @@
 import * as uuidv1 from 'uuid/v1';
+import { Dictionary } from '../interfaces';
 
 export class ServersList {
-    public instances: any = {};
-    public classes: any;
-    public clients: any;
-    public _app: any;
-public serversArray: any[];
+    public instances: Dictionary = {};
+    public classes: Dictionary;
+    public clients: Dictionary;
+    public serversArray: any[];
     constructor() {
         this.classes = {};
         this.instances = {};
@@ -17,12 +17,12 @@ public serversArray: any[];
         this.instances[id] = server;
         return id;
     }
-    public set(instanceId: any, serverType: any, instance: any) {
+    public set(instanceId: string, serverType: string, instance: any) {
         this.instances[instanceId][serverType] = instance;
         this.serversArray.push(instance);
         return instance;
     }
-    public get(instanceId: any, serverType?: any) {
+    public get(instanceId: string, serverType?: string) {
         if (serverType) {
             return this.instances[instanceId][serverType];
         } else {

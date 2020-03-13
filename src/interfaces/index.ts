@@ -8,6 +8,8 @@ export interface Router {
     prefix: string;
 }
 
+export type Dictionary<T = any> = { [key: string]: T };
+
 export interface ITransport {
     name: string;
     register(server: any, parentServer: any): void;
