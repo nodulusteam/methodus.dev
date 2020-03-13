@@ -1,17 +1,12 @@
-
 ### Step 1 - create a controller : LocalController
+
 Methodus controllers are transport agnostic; parameters are passed via arguments to a function , which returns a value or raise an error, pretty straightforward but extermely powerful.
 This simple controller is not doing any thing.
-
-
-
-
-
-
 
 <!-- tabs:start -->
 
 #### **package.json**
+
 > Start a new NodeJS Typescript project (npm i/yarn)
 
 ```Json
@@ -39,16 +34,15 @@ This simple controller is not doing any thing.
 ```
 
 #### **remote.controller.ts**
+
 > Create the remote contract controller. This controller is a virtual controller to a remote endpoint. The transport configuration determines its role in the server file.
 
-
 ```typescript
- 
-import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { Verbs } from '@methodus/platform-rest';
 
-@MethodConfig('RemoteService')// anotate using the class Name - exact!
+@MethodConfig('RemoteService') // anotate using the class Name - exact!
 export class RemoteService {
-
     @Method(Verbs.Get, '/todos')
     public static async list(): Promise<MethodResult<string[]>> {
         return new MethodResult([]);
@@ -68,20 +62,18 @@ export class RemoteService {
     public static async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
         return new MethodResult({});
     }
-
 }
 ```
 
 #### **local.controller.ts**
 
 ```typescript
- 
-import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { Verbs } from '@methodus/platform-rest';
 import { RemoteService } from './remote.service';
 
-@MethodConfig('LocalController')// anotate using the class Name - exact!
+@MethodConfig('LocalController') // anotate using the class Name - exact!
 export class LocalController {
-
     @Method(Verbs.Get, '/todos')
     public static async list(): Promise<MethodResult> {
         return await RemoteService.list(); // calling the remote service
@@ -105,13 +97,11 @@ export class LocalController {
 ```
 
 #### **index.ts**
+
 > We want to "bind" our controller as a REST endpoint, for that we will need a server.
 
 ```typescript
- import {
-    ServerConfiguration, RouterConfiguration, ClientConfiguration,
-    ConfiguredServer, PluginConfiguration,
-} from '@methodus/server';
+import { ServerConfiguration, RouterConfiguration, ClientConfiguration, ConfiguredServer, PluginConfiguration } from '@methodus/server';
 import { Express } from '@methodus/platform-express';
 import { Http } from '@methodus/platform-rest';
 
@@ -135,13 +125,12 @@ export class Xserver extends ConfiguredServer {
 > The `@ClientConfiguration` decorator represents a target reachable by the transport,
 > while the `@RouterConfiguration` is used to bind our controller to the type of server we wish to use.
 
-> @PluginConfiguration is a way to connect "sub applications" to a main one. In this case we're using the "Describe" plugin, which contains an api explorer for us to use. 
+> @PluginConfiguration is a way to connect "sub applications" to a main one. In this case we're using the "Describe" plugin, which contains an api explorer for us to use.
 
 <!-- tabs:end -->
 
- 
-
 ### Run
+
 After running your server you should be able to browse to http://localhost:6695/describe/
 
 [![Edit Methodus - Consuming Rest Services](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/methodus-consuming-rest-services-35j7u?autoresize=1&fontsize=14&hidenavigation=1&initialpath=%2Fdescribe%2F&module=%2Fsrc%2Findex.ts&view=preview)

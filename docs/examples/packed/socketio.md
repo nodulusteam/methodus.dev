@@ -8,7 +8,8 @@ This simple controller is not doing any thing.
 -   src/local.controller.ts
 
 ```typescript
-import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Mapping, MethodResult, MethodError } from '@methodus/server';
+import { Verbs } from '@methodus/platform-rest';
 import { RemoteService } from './remote.service';
 
 @MethodConfig('LocalController') // anotate using the class Name - exact!
@@ -19,17 +20,17 @@ export class LocalController {
     }
 
     @Method(Verbs.Get, '/todos/:id')
-    public static async get(@Param('id') id: number): Promise<MethodResult> {
+    public static async get(@Mapping.Param('id') id: number): Promise<MethodResult> {
         return await RemoteService.get(id);
     }
 
     @Method(Verbs.Post, '/todos')
-    public static async create(@Body('data') data: any): Promise<MethodResult> {
+    public static async create(@Mapping.Body('data') data: any): Promise<MethodResult> {
         return await RemoteService.create(data);
     }
 
     @Method(Verbs.Put, '/todos/:id')
-    public static async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
+    public static async update(@Mapping.Param('id') id: number, @Mapping.Body('data') data: any): Promise<MethodResult> {
         return await RemoteService.update(id, data);
     }
 }
@@ -42,7 +43,8 @@ export class LocalController {
 This controller is a virtual controller to a remote endpoint. The transport configuration determines its role in the server file.
 
 ```typescript
-import { MethodConfig, Method, Verbs, Body, Param, MethodResult, MethodError } from '@methodus/server';
+import { MethodConfig, Method, Mapping, MethodResult, MethodError } from '@methodus/server';
+import { Verbs } from '@methodus/platform-rest';
 
 @MethodConfig('RemoteService') // anotate using the class Name - exact!
 export class RemoteService {
@@ -52,17 +54,17 @@ export class RemoteService {
     }
 
     @Method(Verbs.Get, '/todos/:id')
-    public static async get(@Param('id') id: number): Promise<MethodResult<any>> {
+    public static async get(@Mapping.Param('id') id: number): Promise<MethodResult<any>> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Post, '/todos')
-    public static async create(@Body('data') data: any): Promise<MethodResult> {
+    public static async create(@Mapping.Body('data') data: any): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Put, '/todos/:id')
-    public static async update(@Param('id') id: number, @Body('data') data: any): Promise<MethodResult> {
+    public static async update(@Mapping.Param('id') id: number, @Mapping.Body('data') data: any): Promise<MethodResult> {
         return new MethodResult({});
     }
 }

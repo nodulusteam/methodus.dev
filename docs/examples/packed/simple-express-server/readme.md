@@ -59,8 +59,11 @@ After running your server you should be able to browse to http://localhost:6695/
 #### **controller.ts**
 
 ```typescript
-import { MethodConfig, Method, Verbs, Body, Param,
+import { MethodConfig, Method,Mapping ,
 MethodResult, MethodError } from '@methodus/server';
+import { Verbs } from '@methodus/platform-rest';
+
+
 const items: any = { 'item1': 'item 1 value',
                      'item2': 'item 2 value',
                      'item3': 'item 3 value' }
@@ -71,11 +74,11 @@ export class LocalController {
         return new MethodResult(items); // always return a MethodResult object
     }
     @Method(Verbs.Get, '/:id')
-    public static async get(@Param('id') id: string): Promise<MethodResult> {
+    public static async get(@Mapping.Param('id') id: string): Promise<MethodResult> {
         return new MethodResult(items[id]);
     }
     @Method(Verbs.Post, '/api/error/')
-    public static async error(@Body('item') item: any): Promise<MethodResult> {
+    public static async error(@Mapping.Body('item') item: any): Promise<MethodResult> {
         throw new MethodError('some error happend', 503);
     }
 }

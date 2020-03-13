@@ -1,15 +1,16 @@
-import { Verbs, Method, Param, Body, MethodResult, MethodConfig } from '../../';
+import { Method, Mapping  , MethodResult, MethodConfig } from '../../';
+import { Verbs } from '@methodus/platform-rest';
 
 @MethodConfig('DataController')
 export class DataController {
 
     @Method(Verbs.Get, '/items/:id')
-    public async list(@Param('id') id: string): Promise<MethodResult> {
+    public async list(@Mapping.Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
     @Method(Verbs.Get, '/items/:id')
-    public async get(@Param('id') id: string): Promise<MethodResult> {
+    public async get(@Mapping.Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 
@@ -19,11 +20,11 @@ export class DataController {
     }
 
     @Method(Verbs.Put, '/id/:id')
-    public async update(@Param('id') id: string): Promise<MethodResult> {
+    public async update(@Mapping.Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
     @Method(Verbs.Delete, '/id/:id')
-    public async remove(@Param('id') id: string): Promise<MethodResult> {
+    public async remove(@Mapping.Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({});
     }
 }
