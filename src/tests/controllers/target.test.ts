@@ -1,7 +1,7 @@
 import {
-    MethodResult, Mapping, Method, MethodMock, MethodConfig, MethodPipe,
+    MethodResult, Mapping, Method, MethodMock, MethodConfig, MethodPipe, AuthType,
 } from '../shim';
-import { Auth, AuthType } from '../../decorators';
+import { Auth } from '../../decorators';
 import { Injectable } from '../../di';
 
 /**

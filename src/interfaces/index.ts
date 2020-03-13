@@ -10,6 +10,19 @@ export interface Router {
 
 export type Dictionary<T = any> = { [key: string]: T };
 
+export type ClassNoArgs = { new(): any };
+export type ClassArgs = { new(...args: any[]): any };
+export type ClassRef = ClassNoArgs | ClassArgs;
+
+export const enum AuthType {
+    None,
+    Basic,
+    ApiKey,
+    BearerToken,
+    DigestAuth
+}
+
+
 export interface ITransport {
     name: string;
     register(server: any, parentServer: any): void;
@@ -78,5 +91,5 @@ export interface ServerDefinition {
     module?: any;
     parser?: any;
     response?: any;
-  }
-  
+}
+

@@ -1,10 +1,11 @@
 import 'reflect-metadata';
+import { ClassRef } from '../../interfaces';
 
 /** the ModuleConfiguration decorator registers a module to the main server instance
  *  @param {Class} Class - A module class, using the @Module decorator
  */
-export function ModuleConfiguration(moduleClass: any) {
-  return (target: any) => {
+export function ModuleConfiguration(moduleClass: ClassRef) {
+  return (target: ClassRef) => {
     const moduleClassInfo = moduleClass.prototype!.constructor ;
     if (!moduleClassInfo.prototype.options) {
       throw new Error('Empty module.');

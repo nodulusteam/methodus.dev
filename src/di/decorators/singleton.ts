@@ -1,12 +1,13 @@
 import 'reflect-metadata'
 import { Injector, RegistrationTypes } from '../injector';
+import { ClassRef, Dictionary } from '../../interfaces';
 const ANNOTATIONS = '__annotations__';
 
 export function Singleton(name?: string) {
-    function DecoratorFactory(cls: any) {
+    function DecoratorFactory(cls: ClassRef | any) {
 
         const annotations = cls.hasOwnProperty(ANNOTATIONS) ?
-            cls[ANNOTATIONS] :
+            (cls as Dictionary)[ANNOTATIONS] :
             Object.defineProperty(cls, ANNOTATIONS, { value: [] })[ANNOTATIONS];
 
         annotations.push('singleton');

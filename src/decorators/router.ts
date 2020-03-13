@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { MethodType, ServerType, ServerDefinition } from '../interfaces';
+import { MethodType, ServerType, ServerDefinition, ClassRef } from '../interfaces';
 
 
 
@@ -8,8 +8,8 @@ export namespace Decorators {
    *  @param {type} controller - a controller class using the @MethodConfig decorator.
    *  @param {string} serverType - the name of the server
    */
-  export function RouterConfiguration(controller: any, serverType: ServerType | string | ServerDefinition | any) {
-    return (target: any) => {
+  export function RouterConfiguration(controller: ClassRef, serverType: ServerType | string | ServerDefinition | any) {
+    return (target: ClassRef) => {
       const original = target.prototype.constructor;
       original.prototype.options = original.prototype.options ||
         { servers: [], classes: [], clients: [], plugins: [] };

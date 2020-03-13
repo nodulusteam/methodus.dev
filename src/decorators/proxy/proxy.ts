@@ -1,4 +1,4 @@
-import { MethodType } from '../../interfaces';
+import { MethodType, ClassRef } from '../../interfaces';
 import { fp } from '../../fp';
 import * as path from 'path';
 
@@ -6,8 +6,8 @@ import { Logger } from '../../log';
 const logger = new Logger('ProxyClass');
 
 export class Proxy {
-    public static ProxyClass(packageName: string, className: string, localClassPath: any) {
-        return (target: any) => {
+    public static ProxyClass(packageName: string, className: string, localClassPath: string) {
+        return (target: ClassRef) => {
             const methodus = fp.maybeMethodus(target)[className];
             let classTransport = MethodType.Http;
             const bridge = (global as any).METHODUS_BRIDGE.classes;

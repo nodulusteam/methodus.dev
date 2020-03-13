@@ -1,7 +1,7 @@
 import {
-    MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping
+    MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping, AuthType
 } from '../shim';
-import { Auth, AuthType } from '../../decorators';
+import { Auth } from '../../decorators';
 import { Injectable, Inject } from '../../di';
 import { TestLogger } from './logger.service';
 import { ScreenModel } from '../models/screen.model';

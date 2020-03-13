@@ -7,15 +7,13 @@ import { Servers } from '../servers/serversList';
 
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
-    /** the MethodConfig decorator registers the controller as a router
-     *  @param {string} name - the identifier of the controller in the resolver.
-     *  @param {Function[]} middlewares - an array of middlewares to apply to this controller}
+    /** the MethodConfigBase decorator allows MethodConfig classes to inherit from.
+     *  @param {string} name - the identifier of the controller.
+     *  @param {Function[]} middlewares - an array of middlewares functions to apply to this controller}
      */
-    export function MethodConfigBase(name: string, middlewares?: any[], repository?: any) {
+    export function MethodConfigBase(name: string, middlewares?: Function[], repository?: any) {
         return (target: any) => {
-            //use the injectable logic here
-           // Injector.inject(target,name);
-            
+
             const existingMetadata = ClassContainer.get(name) || {};
             existingMetadata.name = name;
             const original = target.prototype.constructor;
@@ -31,7 +29,7 @@ export namespace Methods {
             proto.methodus[name].isBase = true;
             proto.methodus_base = JSON.parse(JSON.stringify(proto.methodus[name]));
 
-          
+
 
             Servers.classes[target.name] = {
                 classType: target,
@@ -52,9 +50,7 @@ export namespace Methods {
                 });
             }
 
-            // if (repository) {
-            //     proto.methodus_base.repository = repository;
-            // }
+
             proto.methodus_base.middlewares = middlewares;
             target.methodus_base = proto.methodus_base;
             existingMetadata.middlewares = middlewares;
