@@ -5,37 +5,56 @@ import { Verbs } from '../verbs';
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
 describe('Web request', () => {
+    // var axios = require('axios');
+    // var MockAdapter = require('axios-mock-adapter');
+
+    // This sets the mock adapter on the default instance
+    //  var mockerApi = new MockAdapter(axios);
+
+    jest.setTimeout(1000 * 30);
     afterEach(() => {
         mockAxios.reset();
     });
 
     describe('Test all verbs', () => {
-        let catchFn = jest.fn(),
-            thenFn = jest.fn();
+        
 
-        it('Get list', () => {
+        it('Get list', async () => {
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
             const request = new WebRequest();
-            request
+            const response = request
                 .sendRequest(Verbs.Get, `${TESTBASE}/posts`, [], [])
                 .then(thenFn)
                 .catch(catchFn);
 
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
+
+            expect(mockAxios.request).toHaveBeenCalledTimes(1);
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json' },
                 method: 'get',
                 timeout: 300000,
                 url: `${TESTBASE}/posts`,
             });
-            // console.log(resultx);
-            // expect(resultx.data.length === 100).toBeTruthy();
+
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        it('Get one', () => {
+        it('Get one', async () => {
             const request = new WebRequest();
-            request
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
+            const response = request
                 .sendRequest(Verbs.Get, `${TESTBASE}/posts/:postid`, [1], [{ index: 0, name: 'postid', from: 'params' }])
                 .then(thenFn)
                 .catch(catchFn);
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json' },
@@ -43,14 +62,23 @@ describe('Web request', () => {
                 timeout: 300000,
                 url: `${TESTBASE}/posts/1`,
             });
+
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        it('Post', () => {
+        it('Post', async () => {
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
             const request = new WebRequest();
-            request
+            const response = request
                 .sendRequest(Verbs.Post, `${TESTBASE}/posts/`, [{ id: 1, userid: 1 }], [{ index: 0, from: 'body' }])
                 .then(thenFn)
                 .catch(catchFn);
+
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json' },
@@ -62,11 +90,16 @@ describe('Web request', () => {
                 },
                 url: `${TESTBASE}/posts/`,
             });
+
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
         it('Put', async () => {
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
             const request = new WebRequest();
-            request
+            const response = request
                 .sendRequest(
                     Verbs.Put,
                     `${TESTBASE}/posts/:postid`,
@@ -79,6 +112,10 @@ describe('Web request', () => {
                 .then(thenFn)
                 .catch(catchFn);
 
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
+
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json' },
                 method: 'put',
@@ -89,16 +126,20 @@ describe('Web request', () => {
                 },
                 url: `${TESTBASE}/posts/1`,
             });
+
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
     });
 
     describe('Test arguments collections', () => {
-        let catchFn = jest.fn(),
-            thenFn = jest.fn();
+        
 
         it('test Request no name collection objects', async () => {
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
             const request = new WebRequest();
-            request
+            const response = request
                 .sendRequest(
                     Verbs.Post,
                     `${TESTBASE}/posts/:key1/:key2`,
@@ -114,6 +155,10 @@ describe('Web request', () => {
                 .then(thenFn)
                 .catch(catchFn);
 
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
+
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json', security_context: '{"user_id":"id1"}' },
                 method: 'post',
@@ -124,11 +169,16 @@ describe('Web request', () => {
                 },
                 url: `${TESTBASE}/posts/value1/value2?key1=value1&key2=value2`,
             });
+
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        it('test Request named collection objects', () => {
+        it('test Request named collection objects', async () => {
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
             const request = new WebRequest();
-            request
+            const response = request
                 .sendRequest(
                     Verbs.Post,
                     `${TESTBASE}/posts/:key1/:key2`,
@@ -144,6 +194,10 @@ describe('Web request', () => {
                 .then(thenFn)
                 .catch(catchFn);
 
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
+
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json' },
                 method: 'post',
@@ -155,13 +209,16 @@ describe('Web request', () => {
                 },
                 url: `${TESTBASE}/posts/value1/value2?key1=value1&key2=value2`,
             });
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
+        it('test files', async () => {
+            let catchFn = jest.fn(),
+            thenFn = jest.fn();
 
-
-        it('test files', () => {
             const request = new WebRequest();
-            request
+            const response = request
                 .sendRequest(
                     Verbs.Post,
                     `${TESTBASE}/posts/:key1/:key2`,
@@ -177,6 +234,10 @@ describe('Web request', () => {
                 .then(thenFn)
                 .catch(catchFn);
 
+            mockAxios.mockResponse({ status: 200, data: { key: 2 } });
+
+            await response;
+
             expect(mockAxios.request).toHaveBeenCalledWith({
                 headers: { 'Content-Type': 'application/json' },
                 method: 'post',
@@ -188,6 +249,8 @@ describe('Web request', () => {
                 },
                 url: `${TESTBASE}/posts/value1/value2?key1=value1&key2=value2`,
             });
+            expect(thenFn).toHaveBeenCalledTimes(1);
+            expect(catchFn).toHaveBeenCalledTimes(0);
         });
     });
 });

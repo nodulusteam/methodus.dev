@@ -14,6 +14,15 @@ export type ClassNoArgs = { new(): any };
 export type ClassArgs = { new(...args: any[]): any };
 export type ClassRef = ClassNoArgs | ClassArgs;
 
+export type ModuleTargetClass = {
+    new(): any,
+    imports?: ClassRef[];
+    declarations?: ClassRef[];
+    providers?: ClassRef[];
+    exports?: ClassRef[];
+};
+
+
 export const enum AuthType {
     None,
     Basic,

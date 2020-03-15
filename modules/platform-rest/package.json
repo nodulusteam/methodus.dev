@@ -22,10 +22,10 @@
     },
     "devDependencies": {
         "@methodus/server": "^5.0.22",
-        "jest-mock-axios": "^3.2.0",
         "@types/jest": "^24.0.23",
         "cross-env": "^7.0.2",
         "jest": "^24.9.0",
+        "jest-mock-axios": "^3.2.0",
         "rimraf": "^3.0.0",
         "ts-jest": "^24.2.0",
         "typescript": "^3.7.5"

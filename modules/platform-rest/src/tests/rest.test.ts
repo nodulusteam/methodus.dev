@@ -1,17 +1,17 @@
 //import { WebRequest } from '../web-request';
 import { Verbs } from '../verbs';
 import { send } from '../';
-// const TESTBASE = 'http://jsonplaceholder.typicode.com'; //'http://jsonplaceholder.typicode.com';
+const TESTBASE = 'http://jsonplaceholder.typicode.com'; //'http://jsonplaceholder.typicode.com';
 (async () => {
     const methodus = {
         route: '/posts',
         verb: Verbs.Get,
         type: 'http',
         _auth: { type: 0 },
-        resolver: () => null,
+        resolver: () => TESTBASE,
     };
 
-    await send(
+    const result = await send(
         methodus,
         [
             // { key1: 'value1', key2: 'value2' },
@@ -32,6 +32,8 @@ import { send } from '../';
             // { index: 5, name: 'Content-Type', from: 'cookies' },
         ]
     );
+
+    console.log(result);
 
     // //send get
     // const listResult = await request.sendRequest(Verbs.Get, `${TESTBASE}/posts/`, [], []);

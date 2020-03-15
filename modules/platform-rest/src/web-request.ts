@@ -225,14 +225,12 @@ export class WebRequest {
         }
 
         logger.log('Request options are: ', JSON.stringify(requestOptions));
-        const returnedPipe = await this.promiseToTry(requestOptions);
-        return returnedPipe;
+        return await this.promiseToTry(requestOptions);
     }
 
     public async promiseToTry(axiosOptions: AxiosRequestConfig): Promise<AxiosResponse> {
         try {
-            const instance = axios.create(axiosOptions);
-            const result = await instance.request(axiosOptions);
+            const result = await axios.request(axiosOptions);
             return result;
         } catch (error) {
             logger.error(error);
