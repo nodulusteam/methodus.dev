@@ -3,5 +3,5 @@
 lib/tests/**/*
 package.json
 views/*
-modules/*
+modules/**
 README.md

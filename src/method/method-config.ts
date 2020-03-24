@@ -25,6 +25,10 @@ export namespace Methods {
             if (target.methodus) { // means its a static class , no prototype
                 proto = target;
             }
+
+            if(!proto.methodus){
+                return;
+            }
             proto.methodus[name] = proto.methodus[name] || { _auth: {}, _events: {}, _descriptors: {} };
             proto.methodus[name].name = name;
 
