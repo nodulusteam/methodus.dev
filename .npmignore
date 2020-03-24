@@ -2,6 +2,7 @@
 !lib/**/*
 lib/tests/**/*
 package.json
+package-lock.json
 views/*
 modules/**
 README.md
