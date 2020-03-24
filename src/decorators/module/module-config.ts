@@ -6,7 +6,7 @@ import { ClassRef } from '../../interfaces';
  */
 export function ModuleConfiguration(moduleClass: ClassRef) {
   return (target: ClassRef) => {
-    const moduleClassInfo = moduleClass.prototype!.constructor ;
+    const moduleClassInfo = moduleClass.prototype.constructor ;
     if (!moduleClassInfo.prototype.options) {
       throw new Error('Empty module.');
     }
