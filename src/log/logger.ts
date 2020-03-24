@@ -1,12 +1,9 @@
 import { Injectable } from '../di/decorators/injectable';
 
-
 @Injectable('Logger')
 export class Logger {
     logger: any;
-    /**
-     *
-     */
+
     constructor(name: string) {
         this.logger = require('debug')(`methodus:${name}`);
     }
@@ -20,32 +17,34 @@ export class Logger {
         return stringResult;
     }
     getArgs(...args: any[]) {
-        return args.map((item: any) => {
-            if (item instanceof Object && item !== null) {
-                return this.safeJSON(item);
-            }
-            return item;
-        }).join(',');
+        return args
+            .map((item: any) => {
+                if (item instanceof Object && item !== null) {
+                    return this.safeJSON(item);
+                }
+                return item;
+            })
+            .join(',');
+    }
+    print(verb: string, args: any[]) {
+        if (args) {
+            this.logger(`#${verb}#`, this.getArgs(args));
+        }
     }
     info(...args: any[]) {
-        (args) ?
-            this.logger('#INFO#', this.getArgs(args)) : null;
+        this.print('INFO', args);
     }
     log(...args: any[]) {
-        (args) ?
-            this.logger('#DEBUG#', this.getArgs(args)) : null;
+        this.print('DEBUG', args);
     }
     debug(...args: any[]) {
-        (args) ?
-            this.logger('#DEBUG#', this.getArgs(args)) : null;
+        this.print('DEBUG', args);
     }
     error(...args: any[]) {
-        (args) ?
-            this.logger('#ERROR#', this.getArgs(args)) : null;
+        this.print('ERROR', args);
     }
     warn(...args: any[]) {
-        (args) ?
-            this.logger('#WARN#', this.getArgs(args)) : null;
+        this.print('WARN', args);
     }
 }
 
