@@ -11,7 +11,6 @@ export const name: string = 'gRpc';
 //  */
 export function send(methodus: any, functionArgs: any, paramsMap: any, securityContext: any): any {
 
-    debugger;
 
     const service = new protobuf.Service(methodus.name, {});
     const method = new protobuf.Method(methodus.propertyKey, 'rpc', '', '');

@@ -15,15 +15,8 @@ export class WebRequest {
     constructor() { }
 
     async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
-
-        debugger;
-
         const auth: AuthType = methodus._auth.type || AuthType.None
         const authOptions: any = methodus._auth.options;
-
-        //  public auth: AuthType = AuthType.None, public authOptions: any = {}
-
-
         const verb = methodus.verb;
 
         let body: Dictionary<string> | string = {};

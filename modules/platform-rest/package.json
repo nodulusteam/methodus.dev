@@ -1,12 +1,12 @@
 {
     "name": "@methodus/platform-rest",
-    "version": "5.0.14",
+    "version": "5.0.15",
     "description": "REST plugin for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
         "test": "npm run build && cross-env DEBUG=methodus:* jest --verbose",
-        "build": "rimraf lib && tsc" 
+        "build": "rimraf lib && tsc"
     },
     "repository": {
         "type": "git",

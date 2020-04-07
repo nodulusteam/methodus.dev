@@ -113,7 +113,7 @@ export namespace Methods {
                                 methodResult = await originalMethod.apply(target, args);
                             }
                         } else {
-                            const result = await client.transportType.send(methodus, args, paramsMap);
+                            const result = await client.transportType.send.apply(target, [methodus, args, paramsMap]);
                             methodResult = new MethodResult(result);
                         }
 
@@ -194,7 +194,7 @@ export namespace Methods {
 
                     }
                 } catch (error) {
-                    
+
                     error.statusCode = error.statusCode || 500;
                     logger.error(error);
                     if (ParserResponse.isRest) {
