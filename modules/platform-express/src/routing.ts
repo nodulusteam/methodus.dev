@@ -29,8 +29,9 @@ export class ExpressRouter {
         // build routes and verbs object
         Object.keys(methodus._descriptors).forEach((itemKey) => {
             const item = methodus._descriptors[itemKey];
-            routerDataObject[item.route] = routerDataObject[item.route] || [];
-            routerDataObject[item.route].push(item);
+            const routeKey = methodus.prefix ? methodus.prefix+ item.route : item.route;
+            routerDataObject[routeKey] = routerDataObject[routeKey] || [];
+            routerDataObject[routeKey].push(item);
         });
 
         Object.keys(routerDataObject).forEach((route: string) => {

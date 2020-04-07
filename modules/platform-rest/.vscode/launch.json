@@ -13,6 +13,9 @@
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen",
             "disableOptimisticBPs": true,
+            "env": {
+                "DEBUG":"methodus:*"
+            },
             "windows": {
                 "program": "${workspaceFolder}/node_modules/jest/bin/jest"
             }

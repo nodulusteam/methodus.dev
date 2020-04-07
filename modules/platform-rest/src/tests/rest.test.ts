@@ -1,13 +1,19 @@
-//import { WebRequest } from '../web-request';
-import { Verbs } from '../verbs';
+
 import { send } from '../';
+import { Verbs } from '../interfaces';
+import { AuthType } from '@methodus/server';
 const TESTBASE = 'http://jsonplaceholder.typicode.com'; //'http://jsonplaceholder.typicode.com';
 (async () => {
     const methodus = {
         route: '/posts',
         verb: Verbs.Get,
         type: 'http',
-        _auth: { type: 0 },
+        _auth: {
+            type: AuthType.BearerToken, options: async function (_requestOptions: any) {
+
+                return 'Bearer XXCSKJH234SKJDHSK234JHS234KJDHNBM234234NBMXCBIUSI234DKS324J6HD43K';
+            }
+        },
         resolver: () => TESTBASE,
     };
 

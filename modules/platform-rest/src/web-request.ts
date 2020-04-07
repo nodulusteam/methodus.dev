@@ -1,27 +1,31 @@
 import 'reflect-metadata';
-import axios, { AxiosRequestConfig, Method, AxiosResponse } from 'axios';
+import axios, { AxiosRequestConfig, Method } from 'axios';
 import * as https from 'https';
 import { AuthType, Logger } from '@methodus/server';
 import * as fs from 'fs';
 import * as path from 'path';
-
-export type Dictionary<T = any> = { [key: string]: T };
+import { Dictionary, RequestParams, MethodusObject } from './interfaces';
 const logger = new Logger('transports:http');
 
-export interface RequestParams {
-    from: string;
-    name?: string;
-    value?: any;
-    index: number;
-}
 
 /**
  * @hidden
  */
 export class WebRequest {
-    constructor(public auth: AuthType = AuthType.None, public authOptions: any = {}) {}
+    constructor() { }
 
-    async sendRequest(verb: string, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
+    async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
+
+        debugger;
+
+        const auth: AuthType = methodus._auth.type || AuthType.None
+        const authOptions: any = methodus._auth.options;
+
+        //  public auth: AuthType = AuthType.None, public authOptions: any = {}
+
+
+        const verb = methodus.verb;
+
         let body: Dictionary<string> | string = {};
         const headers: Dictionary = {};
         const query: Dictionary = {};
@@ -101,7 +105,7 @@ export class WebRequest {
 
                         if (query[element] && query[element].toISOString) {
                             // test for date
-                            return `${element}=${query[element].toISOString()}`;
+                            return `${element}=${encodeURIComponent(query[element].toISOString())}`;
                         } else if (typeof query[element] !== 'string') {
                             // test for other object types
                             return `${element}=${encodeURIComponent(JSON.stringify(query[element]))}`;
@@ -147,19 +151,25 @@ export class WebRequest {
             };
         }
 
-        if (this.auth) {
-            logger.log('Auth is ${JSON.stringify(this.auth)}');
-            switch (this.auth) {
+        if (auth) {
+            logger.log(`Auth is ${JSON.stringify(auth)}`);
+            switch (auth) {
                 case AuthType.Basic:
                     requestOptions.auth = {
-                        username: this.authOptions.user,
-                        password: this.authOptions.password,
+                        username: authOptions.user,
+                        password: authOptions.password,
                     };
                     break;
                 // case AuthType.ApiKey:
                 //     break;
-                // case AuthType.BearerToken:
-                //     break;
+                case AuthType.BearerToken:
+                    if (typeof authOptions === 'function') {
+                        requestOptions.headers = requestOptions.headers || {};
+                        requestOptions.headers['Authorization'] = await authOptions.apply(this, [requestOptions]);
+                    } else {
+                        requestOptions.headers['Authorization'] = authOptions.token;
+                    }
+                    break;
                 // case AuthType.DigestAuth:
                 //     break;
             }
@@ -225,12 +235,9 @@ export class WebRequest {
         }
 
         logger.log('Request options are: ', JSON.stringify(requestOptions));
-        return await this.promiseToTry(requestOptions);
-    }
-
-    public async promiseToTry(axiosOptions: AxiosRequestConfig): Promise<AxiosResponse> {
         try {
-            const result = await axios.request(axiosOptions);
+            const result = await axios.request(requestOptions);
+            logger.log('Request success');
             return result;
         } catch (error) {
             logger.error(error);

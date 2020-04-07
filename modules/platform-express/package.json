@@ -1,6 +1,6 @@
 {
   "name": "@methodus/platform-express",
-  "version": "5.0.12",
+  "version": "5.0.14",
   "description": "Express plugin for methodus",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

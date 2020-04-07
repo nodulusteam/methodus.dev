@@ -1,12 +1,12 @@
 {
     "name": "@methodus/platform-rest",
-    "version": "5.0.11",
+    "version": "5.0.14",
     "description": "REST plugin for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "test": "npm run build && jest --verbose",
-        "build": "rimraf lib && tsc"
+        "test": "npm run build && cross-env DEBUG=methodus:* jest --verbose",
+        "build": "rimraf lib && tsc" 
     },
     "repository": {
         "type": "git",
@@ -14,9 +14,6 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
-    "peerDependencies": {
-        "@methodus/server": "^5.0.22"
-    },
     "dependencies": {
         "axios": "^0.19.2"
     },

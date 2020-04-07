@@ -1,27 +1,20 @@
 import { MethodError } from '@methodus/server';
-import { WebRequest, Dictionary } from './web-request';
+import { WebRequest } from './web-request';
+import { MethodusObject, ParamMapItem } from './interfaces';
 export const Http = { name: 'Http', path: '@methodus/platform-rest' };
 export * from './web-request';
-export * from './verbs';
+export * from './interfaces';
 
 export const name: string = 'Http/Rest';
-export type ParamMapItem = { from: string; name?: string; index: number };
-export interface MethodusObject {
-    verb: string;
-    route: string;
-    resolver: Function;
-    _auth: {
-        type: number;
-        options?: Dictionary<string>;
-    };
-}
+
+
 
 export async function send(methodus: MethodusObject, functionArgs: any[], paramsMap: ParamMapItem[], securityContext?: any): Promise<any> {
-    const request = new WebRequest(methodus._auth.type, methodus._auth.options);
-    const baseUrl = methodus.resolver();
+    const request = new WebRequest();
+    const baseUrl = (typeof methodus.resolver === 'function') ? methodus.resolver() : methodus.resolver;
 
     if (baseUrl) {
-        const requestResult = await request.sendRequest(methodus.verb, baseUrl + methodus.route, functionArgs, paramsMap, securityContext);
+        const requestResult = await request.sendRequest.apply(this, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
         if (requestResult.data) {
             return requestResult.data;
         } else {

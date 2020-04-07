@@ -1,10 +1,9 @@
 import mockAxios from 'jest-mock-axios';
-import { send } from '../index';
-import { Verbs } from '../verbs';
+import { send, Verbs } from '../index';
 
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
-describe('test the send function', () => {
+xdescribe('Test the external send function', () => {
     afterEach(() => {
         mockAxios.reset();
     });
@@ -12,7 +11,7 @@ describe('test the send function', () => {
     let catchFn = jest.fn(),
         thenFn = jest.fn();
 
-    it('send', () => {
+    xit('Run using only send', () => {
         const methodus = {
             route: '/posts/:param1',
             verb: Verbs.Post,
@@ -42,13 +41,13 @@ describe('test the send function', () => {
         });
     });
 
-    it('send with auth', () => {
+    xit('send with auth', () => {
         const methodus = {
             route: '/posts',
             verb: Verbs.Post,
             type: 'http',
             _auth: { type: 1, options: { user: 'node', password: 'test' } },
-            resolver: () => TESTBASE,
+            resolver: TESTBASE,
         };
 
         send(
@@ -75,7 +74,7 @@ describe('test the send function', () => {
         });
     });
 
-    it('send with null resolver', () => {
+    xit('send with null resolver', () => {
         let thenFn = jest.fn();
 
         const methodus = {
@@ -90,7 +89,7 @@ describe('test the send function', () => {
             .then(thenFn)
             .catch(error => {
                 console.log(error);
-                expect(error).toBe(new Error('Missing base url for method /posts'));
+                expect(error).toEqual(new Error('Missing base url for method /posts'));
             });
     });
 });

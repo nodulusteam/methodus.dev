@@ -8,7 +8,7 @@ import { Dictionary, AuthType, ClassRef } from '../../interfaces';
  *  @param {AuthType} type - the type of authentication to apply.
  *  @param {options} options - the auth options
  */
-export function Auth(type: AuthType, options?: Dictionary) {
+export function Auth(type: AuthType, options?: Dictionary| Function) {
     return (target: ClassRef) => {
         const original = target.prototype.constructor;
         original.prototype.options = original.prototype.options ||
