@@ -1,0 +1,23 @@
+{
+    "name": "integration-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "test": "npm run build && jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@methodus/platform-express": "^5.0.14",
+        "@methodus/platform-rest": "^5.0.16",
+        "@methodus/server": "^5.0.28"
+    },
+    "devDependencies": {
+        "jest": "^25.3.0",
+        "superagent": "^5.2.2",
+        "ts-jest": "^25.3.1",
+        "@types/superagent": "^4.1.7"
+    }
+}
