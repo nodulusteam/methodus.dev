@@ -4,5 +4,5 @@ lib/tests/**/*
 package.json
 package-lock.json
 views/*
-modules/**
+modules/**/*
 README.md
