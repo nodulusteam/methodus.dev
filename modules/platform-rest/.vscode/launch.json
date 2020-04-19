@@ -14,7 +14,7 @@
             "internalConsoleOptions": "neverOpen",
             "disableOptimisticBPs": true,
             "env": {
-                "DEBUG":"methodus:*"
+                "DEBUG": "methodus:*"
             },
             "windows": {
                 "program": "${workspaceFolder}/node_modules/jest/bin/jest"
@@ -33,7 +33,9 @@
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "env": {}
+            "env": {
+                "DEBUG": "methodus:*"
+            }
         },
         {
             "request": "launch",
@@ -48,11 +50,35 @@
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": {
-                "DEBUG": "methodus:*"
+                "DEBUG": "methodus:*",
+                "METHODUS_PROXY": "emea-chain.proxy.att.com",
+                "METHODUS_PROXY_PORT": "8080"
                 // "PROXY": "http://emea-chain.proxy.att.com",
                 // "PROXY_PORT": "8080"
             }
         },
+
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run https test",
+            "type": "node",
+            "program": "${workspaceRoot}/lib/tests/https.test.js",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": ["--verbose"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "DEBUG": "methodus:*",
+                "METHODUS_PROXY": "emea-chain.proxy.att.com",
+                "METHODUS_PROXY_PORT": "8080"
+                // "PROXY": "http://emea-chain.proxy.att.com",
+                // "PROXY_PORT": "8080"
+            }
+        },
+
         {
             "type": "node",
             "request": "launch",

@@ -3,7 +3,7 @@ import { send, Verbs } from '../index';
 
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
-xdescribe('Test the external send function', () => {
+describe('Test the external send function', () => {
     afterEach(() => {
         mockAxios.reset();
     });
@@ -11,7 +11,7 @@ xdescribe('Test the external send function', () => {
     let catchFn = jest.fn(),
         thenFn = jest.fn();
 
-    xit('Run using only send', () => {
+    it('Run using only send', () => {
         const methodus = {
             route: '/posts/:param1',
             verb: Verbs.Post,
@@ -41,7 +41,7 @@ xdescribe('Test the external send function', () => {
         });
     });
 
-    xit('send with auth', () => {
+    it('send with auth', () => {
         const methodus = {
             route: '/posts',
             verb: Verbs.Post,
@@ -74,7 +74,7 @@ xdescribe('Test the external send function', () => {
         });
     });
 
-    xit('send with null resolver', () => {
+    it('send with null resolver', () => {
         let thenFn = jest.fn();
 
         const methodus = {

@@ -13,10 +13,10 @@ describe('Web request tests for platform-rest', () => {
         mockAxios.reset();
     });
 
-    xdescribe('Test all verbs', () => {
+    describe('Test all verbs', () => {
 
 
-        xit(`Simple Get request, no auth, ${TESTBASE}/posts`, async () => {
+        it(`Simple Get request, no auth, ${TESTBASE}/posts`, async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
             const request = new WebRequest();
@@ -42,7 +42,7 @@ describe('Web request tests for platform-rest', () => {
             expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        xit(`Simple Get request, use param variale , ${TESTBASE}/posts/:postid`, async () => {
+        it(`Simple Get request, use param variale , ${TESTBASE}/posts/:postid`, async () => {
             const request = new WebRequest();
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
@@ -67,7 +67,7 @@ describe('Web request tests for platform-rest', () => {
             expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        xit(`Post request, JSON data ${TESTBASE}/posts ,  body is an object`, async () => {
+        it(`Post request, JSON data ${TESTBASE}/posts ,  body is an object`, async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
             const request = new WebRequest();
@@ -96,7 +96,7 @@ describe('Web request tests for platform-rest', () => {
             expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        xit(`Post request , HTML data ${TESTBASE}/posts ,  body is an html`, async () => {
+        it(`Post request , HTML data ${TESTBASE}/posts ,  body is an html`, async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
             const request = new WebRequest();
@@ -124,7 +124,7 @@ describe('Web request tests for platform-rest', () => {
 
 
 
-        xit('Put request, With headers collection', async () => {
+        it('Put request, With headers collection', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
             const request = new WebRequest();
@@ -163,11 +163,11 @@ describe('Web request tests for platform-rest', () => {
         });
     });
 
-    xdescribe('Test arguments collections', () => {
+    describe('Test arguments collections', () => {
 
 
 
-        xit('test Request no name collection objects, Query as array', async () => {
+        it('test Request no name collection objects, Query as array', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
 
@@ -208,7 +208,7 @@ describe('Web request tests for platform-rest', () => {
             expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        xit('test Request no name collection objects, Query as array of Objects', async () => {
+        it('test Request no name collection objects, Query as array of Objects', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
 
@@ -251,7 +251,7 @@ describe('Web request tests for platform-rest', () => {
         });
 
 
-        xit('test Request no name collection objects, Query as Objects', async () => {
+        it('test Request no name collection objects, Query as Objects', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
 
@@ -294,7 +294,7 @@ describe('Web request tests for platform-rest', () => {
         });
 
 
-        xit('test Request no name collection objects', async () => {
+        it('test Request no name collection objects', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
             const request = new WebRequest();
@@ -334,7 +334,7 @@ describe('Web request tests for platform-rest', () => {
             expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        xit('test Request named collection objects', async () => {
+        it('test Request named collection objects', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
             const request = new WebRequest();
@@ -374,7 +374,7 @@ describe('Web request tests for platform-rest', () => {
             expect(catchFn).toHaveBeenCalledTimes(0);
         });
 
-        xit('test files', async () => {
+        it('test files', async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
 

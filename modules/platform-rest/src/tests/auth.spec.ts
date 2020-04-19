@@ -3,7 +3,6 @@ import { WebRequest } from '../web-request';
 import { Verbs, MethodusObject } from '../interfaces';
 import { AuthType } from '@methodus/server';
 
-
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
 describe('Web request tests for platform-rest', () => {
@@ -14,7 +13,7 @@ describe('Web request tests for platform-rest', () => {
     });
 
     describe('Test Auth options', () => {
-        xit(`Simple Get request, Basic auth, ${TESTBASE}/posts`, async () => {
+        it(`Simple Get request, Basic auth, ${TESTBASE}/posts`, async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
 
@@ -57,7 +56,10 @@ describe('Web request tests for platform-rest', () => {
             const methodus: MethodusObject = {
                 verb: Verbs.Get, _auth: {
                     type: AuthType.BearerToken,
-                    options: async function () { return new Promise(function (resolve) { resolve('token') }) }
+                    // options: { token: 'token' }
+                    options: () => {
+                        return 'token'
+                    }
                 },
                 route: `${TESTBASE}/posts`, resolver: TESTBASE
             };
@@ -72,9 +74,11 @@ describe('Web request tests for platform-rest', () => {
 
             expect(mockAxios.request).toHaveBeenCalledTimes(1);
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    "Authorization": "token",
+                },
                 method: 'get',
-
                 timeout: 300000,
                 url: `${TESTBASE}/posts`,
             });
