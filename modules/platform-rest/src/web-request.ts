@@ -42,7 +42,7 @@ export class WebRequest {
                     if (item.name) {
                         (body as Dictionary)[item.name] = item.value;
                     } else {
-                        if (typeof item.value === 'object') {
+                        if (typeof item.value === 'object' && !Array.isArray(item.value)) {
                             Object.assign(body, item.value);
                         } else {
                             body = item.value;
@@ -264,7 +264,7 @@ export class WebRequest {
 
         logger.log('Request options are: ', JSON.stringify(requestOptions));
         try {
-           
+
             const result = await axios.request(requestOptions);
             logger.log('Request success');
             return result;

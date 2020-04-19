@@ -15,6 +15,7 @@ export interface RequestParams {
     name?: string;
     value?: any;
     index: number;
+    schema?: any;
 }
 
 export type ParamMapItem = { from: string; name?: string; index: number };
