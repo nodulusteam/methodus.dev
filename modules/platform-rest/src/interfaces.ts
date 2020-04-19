@@ -10,6 +10,7 @@ export class Verbs {
 }
 
 export interface RequestParams {
+    type?: string,
     from: string;
     name?: string;
     value?: any;
