@@ -163,17 +163,6 @@ export class WebRequest {
 
             }
 
-
-
-            // requestOptions = {
-            //     method: verb.toLowerCase() as Method,
-            //     baseURL: uri,
-            //     url: uri,
-
-            //     timeout: 1000 * 60 * 5,
-            //     httpAgent: agent, // add when working with https sites
-            //     httpsAgent: agent,
-            // };
         } else {
             requestOptions = {
                 method: verb.toLowerCase() as Method,
@@ -201,7 +190,7 @@ export class WebRequest {
                 case AuthType.BearerToken:
                     requestOptions.headers = requestOptions.headers || {};
                     if (typeof authOptions === 'function') {
-                        requestOptions.headers['Authorization'] = authOptions.apply(this, [requestOptions]);
+                        requestOptions.headers['Authorization'] = await authOptions.apply(this, [requestOptions]);
                     } else {
                         requestOptions.headers['Authorization'] = authOptions.token;
                     }

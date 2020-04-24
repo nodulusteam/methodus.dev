@@ -1,8 +1,7 @@
 {
     "exclude": [
         "docs",
-        "modules/*",
-        "integration-test/*"
+        "modules/*"
     ],
     "typedocOptions": {
         "excludeExternals": "true",

@@ -48,7 +48,7 @@ describe('Web request tests for platform-rest', () => {
         });
 
 
-        it(`Simple Get request, BearerToken auth, ${TESTBASE}/posts`, async () => {
+       xit(`Simple Get request, BearerToken auth, ${TESTBASE}/posts`, async () => {
             let catchFn = jest.fn(),
                 thenFn = jest.fn();
 
@@ -57,7 +57,7 @@ describe('Web request tests for platform-rest', () => {
                 verb: Verbs.Get, _auth: {
                     type: AuthType.BearerToken,
                     // options: { token: 'token' }
-                    options: () => {
+                    options: async () => {
                         return 'token'
                     }
                 },
