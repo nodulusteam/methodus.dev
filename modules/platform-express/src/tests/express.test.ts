@@ -18,7 +18,6 @@ import { ExpressSecuredTestServer } from './servers/express.server.https';
 
     } catch (error) {
         console.log(error);
-        debugger;
     }
 
 })();

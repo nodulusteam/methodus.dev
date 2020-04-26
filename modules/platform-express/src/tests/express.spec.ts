@@ -31,9 +31,8 @@ describe('Test Express configuration', () => {
     });
 
 
-    fit('create', async () => {
+    it('create', async () => {
         const response = await testTarget.create('cookie-value', {}, 'my user name');
-        console.log(response.result);
         expect(response.result.name).toBe('my user name');
     });
 
@@ -88,13 +87,7 @@ describe('Test Express configuration', () => {
     });
 
 
-    it('return0', async () => {
-
-
-        const result2 = await testTarget.return0();
-        expect(result2).toBeDefined();
-
-    });
+  
 
 
 });
