@@ -1,12 +1,12 @@
-import { ExpressTestServer } from './servers/express.server';
 import { TestTarget } from './controllers/target.test';
 import { Injector } from '@methodus/server';
+import { ExpressSecuredTestServer } from './servers/express.server.https';
 
 (async () => {
     const testTarget = Injector.get(TestTarget);
-    let server: ExpressTestServer;
+    let server: ExpressSecuredTestServer;
     await new Promise(async (resolve, reject) => {
-        server = new ExpressTestServer();
+        server = new ExpressSecuredTestServer();
         server.on('ready', () => {
             resolve();
         });
@@ -17,6 +17,7 @@ import { Injector } from '@methodus/server';
         return response;
 
     } catch (error) {
+        console.log(error);
         debugger;
     }
 

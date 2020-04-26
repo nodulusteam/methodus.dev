@@ -19,6 +19,7 @@ export class Server {
 
     public _app: any = {};
     private httpServer: any;
+    private httpsServer: any;
     private port: number = 0;
     private _plugins: PluginEntry[] = [];
     private instanceId: string;
@@ -88,6 +89,9 @@ export class Server {
         if (this.httpServer) {
             Servers.set(this.instanceId, 'http', this.httpServer);
         }
+        if (this.httpsServer) {
+            Servers.set(this.instanceId, 'https', this.httpsServer);
+        }
         if (this.app) {
             Servers.set(this.instanceId, 'express', this.app);
         }
@@ -121,6 +125,11 @@ export class Server {
             const httpServerIntance = Servers.get(this.instanceId, 'http');
             if (httpServerIntance) {
                 httpServerIntance.listen(this.port);
+            }
+
+            const httpsServerIntance = Servers.get(this.instanceId, 'https');
+            if (httpsServerIntance) {
+                httpsServerIntance.listen(this.port);
             }
 
         }

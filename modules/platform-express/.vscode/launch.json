@@ -34,7 +34,9 @@
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "env": {}
+            "env": {
+                "DEBUG": "methodus:*,express:*"
+            }
         },
         {
             "type": "node",

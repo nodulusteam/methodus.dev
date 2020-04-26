@@ -6,10 +6,13 @@ import * as path from 'path';
 import { BaseServer, Servers } from '@methodus/server';
 import { ExpressRouter } from './routing';
 import * as http from 'http';
+import * as https from 'https';
 import * as colors from 'colors';
 import * as fileUpload from 'express-fileupload';
 
- 
+
+
+
 
 
 
@@ -76,11 +79,29 @@ export class ExpressPlugin extends BaseServer {
             parentServer._app[serverType] = new ExpressPlugin(server.options.port, server.options.onStart);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
             parentServer.app = app._app;
-            const httpServer = Servers.get(server.instanceId, 'http')
-                || http.createServer(app._app);
-            parentServer._app.http = httpServer;
 
-            Servers.set(server.instanceId, 'http', httpServer);
+            if (server.options.secured) {
+                const httpsServer = Servers.get(server.instanceId, 'https')
+                    || https.createServer({
+                        cert: server.options.cert,
+                        key: server.options.key,
+                        passphrase: server.options.passphrase,
+                    }, app._app);
+                parentServer._app.https = httpsServer;
+
+                Servers.set(server.instanceId, 'https', httpsServer);
+
+            } else {
+
+                const httpServer = Servers.get(server.instanceId, 'http')
+                    || http.createServer(app._app);
+                parentServer._app.http = httpServer;
+
+                Servers.set(server.instanceId, 'http', httpServer);
+            }
+
+
+
         } else {
             throw new Error('Missing configuration options for Express');
         }

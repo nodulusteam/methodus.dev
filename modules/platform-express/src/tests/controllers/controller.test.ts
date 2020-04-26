@@ -1,5 +1,5 @@
 import {
-    MethodResult,  Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,
+    MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,
     Param, Mapping, Auth, AuthType, Injectable
 } from '@methodus/server';
 import { AuthMiddleware } from '../middlewares/auth.middleware';
@@ -13,6 +13,14 @@ import { Verbs } from '../shim';
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestController', [AuthMiddleware])
 export class TestController {
+
+
+    @Method(Verbs.Get, '/')
+    public async life(): Promise<any> {
+        return true;
+    }
+
+
     @MethodMock({})
     @Method(Verbs.Get, '/api/player')
     public async list(
@@ -49,7 +57,7 @@ export class TestController {
 
     @Method(Verbs.Get, '/api/player/:player_id')
     public async read(@Mapping.Param('player_id') playerId: number) {
-        throw new MethodError('intended error', 500, 'some more data');
+        throw new MethodError('intended error', 500, { addition: 'some more data'});
     }
 
     @Method(Verbs.Get, '/api/player/:field/:value', [MethodMiddleware])

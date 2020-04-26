@@ -17,7 +17,7 @@ import { Express } from '../../index';
 @RouterConfiguration(Injector.get(ScreensDataController), Express)
 @RouterConfiguration(TestController, Express)
 @RouterConfiguration(ProxiedController, Express)
-@ClientConfiguration(TestTarget, Http, 'http://localhost:8020')
+@ClientConfiguration(TestTarget, Http, 'https://localhost:8020')
 export class ExtressTestModule {
     constructor() {
 
