@@ -16,3 +16,4 @@ export * from './verbs';
 export * from './express';
 export * from './routing';
 export * from './parser';
+export * from './options';
