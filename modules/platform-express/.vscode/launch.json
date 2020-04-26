@@ -18,7 +18,9 @@
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
-            "env": {}
+            "env": {
+                "DEBUG":"methodus:*"
+            }
         },
         {
             "request": "launch",

@@ -67,7 +67,7 @@ export namespace Methods {
                         try {
 
                             const result = await client.transportType.send(methodus, args, paramsMap, []);
-                            return new MethodResult(result);
+                            return result;
 
                         } catch (ex) {
                             if (Buffer.isBuffer(ex.error)) {
@@ -78,7 +78,7 @@ export namespace Methods {
                     } else {
 
                         const result = await originalMethod.apply(this, args);
-                        return new MethodResult(result);
+                        return result;
 
                     }
 

@@ -1,14 +1,14 @@
-import { ExpressTestServer } from './servers/express.server';
 import { TestTarget } from './controllers/target.test';
 import { Injector } from '@methodus/server';
+import { ExpressSecuredTestServer } from './servers/express.server.https';
 
 
 describe('Test Express configuration', () => {
     const testTarget = Injector.get(TestTarget);
-    let server: ExpressTestServer;
+    let server: ExpressSecuredTestServer;
     beforeAll(async () => {
         await new Promise(async (resolve, reject) => {
-            server = new ExpressTestServer();
+            server = new ExpressSecuredTestServer();
             server.on('ready', () => {
                 resolve();
             });
@@ -31,7 +31,7 @@ describe('Test Express configuration', () => {
     });
 
 
-    it('create', async () => {
+    fit('create', async () => {
         const response = await testTarget.create('cookie-value', {}, 'my user name');
         console.log(response.result);
         expect(response.result.name).toBe('my user name');

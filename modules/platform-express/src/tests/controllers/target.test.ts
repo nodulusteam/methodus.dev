@@ -12,7 +12,7 @@ export class TestTarget {
     @MethodPipe(Verbs.Post, '/api/player')
     public async create(@Mapping.Files('files') files: any,
         @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string): Promise<MethodResult> {
-        return new MethodResult({});
+        return new MethodResult({status: 'ok'});
     }
 
 

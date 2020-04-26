@@ -113,8 +113,7 @@ export namespace Methods {
                                 methodResult = await originalMethod.apply(target, args);
                             }
                         } else {
-                            const result = await client.transportType.send.apply(target, [methodus, args, paramsMap]);
-                            methodResult = new MethodResult(result);
+                            methodResult = await client.transportType.send.apply(target, [methodus, args, paramsMap]);
                         }
 
                         return handleResult(methodResult);
