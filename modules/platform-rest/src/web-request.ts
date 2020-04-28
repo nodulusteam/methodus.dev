@@ -4,8 +4,9 @@ import * as https from 'https';
 import { AuthType, Logger } from '@methodus/server';
 import * as fs from 'fs';
 import * as path from 'path';
-import { Dictionary, RequestParams, MethodusObject } from './interfaces';
 import * as tunnel from 'tunnel';
+import { Encoder } from './encoder';
+import { Dictionary, RequestParams, MethodusObject } from './interfaces';
 
 const logger = new Logger('transports:http');
 
@@ -180,10 +181,21 @@ export class WebRequest {
             logger.log(`Auth is ${JSON.stringify(auth)}`);
             switch (auth) {
                 case AuthType.Basic:
-                    requestOptions.auth = {
-                        username: authOptions.user,
-                        password: authOptions.password,
-                    };
+                    requestOptions.headers = requestOptions.headers || {};
+                    if (typeof authOptions === 'function') {
+                        requestOptions.headers['Authorization'] = await authOptions.apply(this, [requestOptions]);
+                    } else if (authOptions.user && authOptions.password) {
+                        const base64HEader = Encoder.encodeBase64(`${authOptions.user}:${authOptions.password}`);
+                        requestOptions.headers['Authorization'] = `Basic ${base64HEader}`;
+                    } else if (authOptions.token) {
+                        requestOptions.headers['Authorization'] = `Basic ${authOptions.token}`;
+                    }
+
+
+                    // requestOptions.auth = {
+                    //     username: authOptions.user,
+                    //     password: authOptions.password,
+                    // };
                     break;
                 // case AuthType.ApiKey:
                 //     break;

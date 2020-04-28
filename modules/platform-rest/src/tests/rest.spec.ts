@@ -62,11 +62,12 @@ describe('Test the external send function', () => {
             .catch(catchFn);
 
         expect(mockAxios.request).toHaveBeenCalledWith({
-            headers: { 'Content-Type': 'application/json', 'Custom-Header': 'xxxxx/json' },
-            auth: {
-                password: 'test',
-                username: 'node',
+            headers: {
+                'Content-Type': 'application/json',
+                'Custom-Header': 'xxxxx/json',
+                'Authorization': 'Basic bm9kZTp0ZXN0',
             },
+
             method: 'post',
             timeout: 300000,
             data: { user: '<xml>value</xml>' },
