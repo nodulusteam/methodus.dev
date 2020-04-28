@@ -224,11 +224,11 @@ export class WebRequest {
             headers['Content-Type'] = 'application/xml';
         }
 
-        if (securityContext) {
-            requestOptions.headers = {
-                security_context: JSON.stringify(securityContext),
-            };
-        }
+        // if (securityContext) {
+        //       Object.assign(requestOptions.headers = {
+        //         security_context: JSON.stringify(securityContext),
+        //     };
+        // }
 
         if (headers && Object.keys(headers).length > 0) {
             if (!requestOptions.headers) {

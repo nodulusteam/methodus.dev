@@ -194,7 +194,7 @@ describe('Web request tests for platform-rest', () => {
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json', security_context: '{"user_id":"id1"}' },
+                headers: { 'Content-Type': 'application/json', },
                 method: 'post',
                 timeout: 300000,
                 data: {
@@ -236,7 +236,7 @@ describe('Web request tests for platform-rest', () => {
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json', security_context: '{"user_id":"id1"}' },
+                headers: { 'Content-Type': 'application/json', },
                 method: 'post',
                 timeout: 300000,
                 data: {
@@ -279,7 +279,7 @@ describe('Web request tests for platform-rest', () => {
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json', security_context: '{"user_id":"id1"}' },
+                headers: { 'Content-Type': 'application/json', },
                 method: 'post',
                 timeout: 300000,
                 data: {
@@ -320,7 +320,7 @@ describe('Web request tests for platform-rest', () => {
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json', security_context: '{"user_id":"id1"}' },
+                headers: { 'Content-Type': 'application/json', },
                 method: 'post',
                 timeout: 300000,
                 data: {

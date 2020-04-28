@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-rest",
-    "version": "5.0.21",
+    "version": "5.0.22",
     "description": "REST plugin for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
