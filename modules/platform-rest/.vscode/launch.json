@@ -78,7 +78,26 @@
                 // "PROXY_PORT": "8080"
             }
         },
-
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run html test",
+            "type": "node",
+            "program": "${workspaceRoot}/lib/tests/html.test.js",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": ["--verbose"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "DEBUG": "methodus:*",
+                // "METHODUS_PROXY": "emea-chain.proxy.att.com",
+                // "METHODUS_PROXY_PORT": "8080"
+                // "PROXY": "http://emea-chain.proxy.att.com",
+                // "PROXY_PORT": "8080"
+            }
+        },
         {
             "type": "node",
             "request": "launch",

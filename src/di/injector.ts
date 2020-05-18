@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { ServersList } from '../servers/serversList';
 const ANNOTATIONS = '__annotations__';
 
-export const enum RegistrationTypes {
+export enum RegistrationTypes {
     Main = 'main',
     Module = 'module',
     Controller = 'controller',

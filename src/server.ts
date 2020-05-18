@@ -166,7 +166,7 @@ export class Server {
                     Servers.classes[configName] = _class;
                     if (metaObject) {
                         metaObject.methodType = _class.methodType;
-                        metaObject.serverType = serverTypeName;
+                        metaObject.serverType = _class.serverType;
                         metaObject.instanceId = serverInstance.instanceId;
                         ClassContainer.set(configName, metaObject);
 

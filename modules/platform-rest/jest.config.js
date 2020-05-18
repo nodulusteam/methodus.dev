@@ -3,7 +3,7 @@ module.exports = {
     preset: 'ts-jest',
     testEnvironment: 'node',
     moduleFileExtensions: ['js', 'ts', 'json'],
-    testMatch: ['<rootDir>/src/**/*.spec.ts'],
+    testMatch: ['<rootDir>/src/**/html.spec.ts'],
     collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/tests/**/*'],
     collectCoverage: true,
     coverageReporters: ['json', 'lcov', 'text', 'clover'],

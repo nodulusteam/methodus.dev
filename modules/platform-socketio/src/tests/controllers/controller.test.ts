@@ -46,7 +46,7 @@ export class TestController {
 
     @Method('Get', '/api/player/:player_id')
     public async read(@Mapping.Param('player_id') playerId: number) {
-        throw new MethodError('intended error', 500, 'some more data');
+        throw new MethodError('intended error', 500);
     }
 
     @Method('Get', '/api/player/:field/:value')

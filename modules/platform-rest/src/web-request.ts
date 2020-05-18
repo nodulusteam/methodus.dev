@@ -216,8 +216,9 @@ export class WebRequest {
         if (typeof body === 'object') {
             if (Object.keys(body).length) {
                 requestOptions.data = body;
+                headers['Content-Type'] = 'application/json';
             }
-            headers['Content-Type'] = 'application/json';
+            
         } else if ((body as string).length) {
             requestOptions.data = body;
 

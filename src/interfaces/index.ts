@@ -23,7 +23,7 @@ export type ModuleTargetClass = {
 };
 
 
-export const enum AuthType {
+export enum AuthType {
     None,
     Basic,
     ApiKey,
@@ -59,7 +59,7 @@ export interface IServerConfig {
     options: any;
 }
 
-export const enum TransportType {
+export enum TransportType {
     Http = 'Http',
     MQ = 'MQ',
     Redis = 'Redis',
@@ -69,7 +69,7 @@ export const enum TransportType {
     Custom = 'Custom',
 }
 
-export const enum MethodType {
+export enum MethodType {
     Local = 'Local',
     Http = 'Http',
     Http2 = 'Http2',
@@ -80,7 +80,7 @@ export const enum MethodType {
     Mock = 'Mock',
 }
 
-export const enum ServerType {
+export enum ServerType {
     Express = 'express',
 
     RabbitMQ = 'amqp',
