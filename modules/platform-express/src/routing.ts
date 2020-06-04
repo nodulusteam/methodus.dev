@@ -1,5 +1,7 @@
 import * as express from 'express';
-import { fp, MethodType, Injector } from '@methodus/server';
+import { MethodType, fp } from '@methodus/framework-commons';
+import { Injector } from '@methodus/framework-injection';
+
 
 
 
@@ -29,7 +31,7 @@ export class ExpressRouter {
         // build routes and verbs object
         Object.keys(methodus._descriptors).forEach((itemKey) => {
             const item = methodus._descriptors[itemKey];
-            const routeKey = methodus.prefix ? methodus.prefix+ item.route : item.route;
+            const routeKey = methodus.prefix ? methodus.prefix + item.route : item.route;
             routerDataObject[routeKey] = routerDataObject[routeKey] || [];
             routerDataObject[routeKey].push(item);
         });
@@ -37,6 +39,9 @@ export class ExpressRouter {
         Object.keys(routerDataObject).forEach((route: string) => {
             const autoRouter: any = express.Router();
             routerDataObject[route].map((item: any) => {
+                if (!item.verb) {
+                    throw `Validation error, missing Verb ${JSON.stringify(item)}`;
+                }
                 const verb = item.verb.toLowerCase();
                 const functionArray = [...globalMiddlewares];
                 if (item.middlewares) {

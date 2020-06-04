@@ -1,4 +1,3 @@
-
 import { send } from '../';
 import { Verbs } from '../interfaces';
 import { AuthType } from '@methodus/server';
@@ -9,10 +8,10 @@ const TESTBASE = 'http://jsonplaceholder.typicode.com'; //'http://jsonplaceholde
         verb: Verbs.Get,
         type: 'http',
         _auth: {
-            type: AuthType.BearerToken, options: async function (_requestOptions: any) {
-
+            type: AuthType.BearerToken,
+            options: async function (_requestOptions: any) {
                 return 'Bearer XXCSKJH234SKJDHSK234JHS234KJDHNBM234234NBMXCBIUSI234DKS324J6HD43K';
-            }
+            },
         },
         resolver: () => TESTBASE,
     };

@@ -1,5 +1,5 @@
+import { Injector } from '@methodus/framework-injection';
 import { TestTarget } from './controllers/target.test';
-import { Injector } from '@methodus/server';
 import { ExpressSecuredTestServer } from './servers/express.server.https';
 
 
@@ -38,8 +38,10 @@ describe('Test Express configuration', () => {
 
     it('read', async () => {
         try {
+            
             await testTarget.read(511798);
         } catch (error) {
+            
             expect(error).toBeDefined();
         }
     });

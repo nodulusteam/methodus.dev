@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run jest",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": [
+                "--verbose"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "DEBUG":"methodus:*"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run test",
+            "type": "node",
+            "program": "${workspaceRoot}/lib/di.test.js",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": [
+                "--verbose"
+            ],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "DEBUG": "methodus:*,express:*"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}\\index.js",
+            "outFiles": [
+                "${workspaceFolder}/**/*.js"
+            ]
+        }
+    ]
+}

@@ -2,8 +2,8 @@ process.env.test = 'true';
 import {
     ModuleConfiguration,
     ServerConfiguration,
-    ConfiguredServer,
-} from '@methodus/server';
+} from '@methodus/framework-decorators';
+import { ConfiguredServer } from '@methodus/server';
 import { ExtressTestModule } from './express.module';
 import { Express } from '../../index';
 /**

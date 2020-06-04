@@ -2,6 +2,18 @@
     "exclude": [
         "docs"
     ],
+    "typedocOptions": {
+        "theme": "markdown",
+        "excludeExternals": "true",
+        "excludeNotExported": "true",
+        "target": "ES6",
+        "includeDeclarations": "true",
+        "mode": "module",
+        "name": "A Methodus guide",
+        "readme": "none",
+        "out": "docs",
+        "exclude": "tests"
+    },
     "compilerOptions": {
         "importHelpers": true,
         "target": "ES2015", /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */

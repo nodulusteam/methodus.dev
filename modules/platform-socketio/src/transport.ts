@@ -1,4 +1,4 @@
-import { logger } from '@methodus/server';
+import { logger } from '@methodus/framework-commons';
 /**
  * @hidden
  */
@@ -6,9 +6,11 @@ export function send(methodus: any, functionArgs: any, paramsMap: any, securityC
     return new Promise(async (resolve, reject) => {
         const dataObject: any = {};
         functionArgs.forEach((element: any, index: any) => {
-            dataObject[paramsMap.filter((item: any) => {
-                return item.index === index;
-            })[0].name] = element;
+            dataObject[
+                paramsMap.filter((item: any) => {
+                    return item.index === index;
+                })[0].name
+            ] = element;
         });
 
         const myUri = await methodus.resolver();

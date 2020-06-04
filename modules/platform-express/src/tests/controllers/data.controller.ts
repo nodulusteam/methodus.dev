@@ -8,7 +8,6 @@ import { Verbs } from '../shim';
 export class DataController {
     public repository: any
     constructor(repo: any) {
-       
         this.repository = repo;
     }
 
@@ -17,5 +16,4 @@ export class DataController {
         const result = this.repository.get(id);
         return new MethodResult(result);
     }
-
 }

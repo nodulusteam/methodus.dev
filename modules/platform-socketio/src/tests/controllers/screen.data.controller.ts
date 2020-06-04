@@ -7,7 +7,6 @@ import { ScreenModel } from '../models/screen.model';
  */
 @MethodConfig('ScreensDataController', [], '/screens')
 export class ScreensDataController extends DataController {
-
     @Method('Get', '/special/:id')
     public async special(@Mapping.Param('id') id: string) {
         const result = this.repository.get(id);
@@ -19,5 +18,4 @@ export class ScreensDataController extends DataController {
         super(ScreenModel);
         this.repository = ScreenModel;
     }
-
 }

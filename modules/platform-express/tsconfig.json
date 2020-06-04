@@ -6,12 +6,12 @@
         "theme": "markdown",
         "excludeExternals": "true",
         "excludeNotExported": "true",
-        "target": "ES6",
+        "target": "commonjs",
         "includeDeclarations": "true",
         "mode": "file",
         "name": "A Methodus guide",
         "readme": "none",
-        "out": "docs/documentation",
+        "out": "docs",
         "exclude": "tests"
     },
     "compilerOptions": {

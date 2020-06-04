@@ -1,4 +1,3 @@
-
 export type Dictionary<T = any> = { [key: string]: T };
 export class Verbs {
     public static Get: string = 'GET';
@@ -10,7 +9,7 @@ export class Verbs {
 }
 
 export interface RequestParams {
-    type?: string,
+    type?: string;
     from: string;
     name?: string;
     value?: any;
@@ -28,5 +27,3 @@ export interface MethodusObject {
         options?: Dictionary<string> | Function;
     };
 }
-
-

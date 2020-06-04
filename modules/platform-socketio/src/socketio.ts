@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 // <references path='../interfaces/methodus.ts' />
 const debug = require('debug')('methodus');
-import * as colors from 'colors';
 import * as http from 'http';
 const metadataKey = 'methodus';
 import * as socketIO from 'socket.io';
@@ -35,7 +34,6 @@ export class SocketIOPlugin extends BaseServer {
         nsp.use((socket: any, next: any) => {
             next();
         });
-
     }
     close() {
         this._app.close();
@@ -51,22 +49,16 @@ export class SocketIOPlugin extends BaseServer {
             });
             socket.attached = true;
         }
-
     }
     public static register(server: any, parentServer: any) {
-
-        console.log(colors.green(`> Starting SOCKETIO server`));
-
-        const httpServer = Servers.get(server.instanceId, 'http')
-            || http.createServer(parentServer._app);
+        console.log(`> Starting SOCKETIO server`);
+        const httpServer = Servers.get(server.instanceId, 'http') || http.createServer(parentServer._app);
 
         Servers.set(server.instanceId, 'http', httpServer);
 
         const app = new SocketIOPlugin(server.options, httpServer);
         Servers.set(server.instanceId, server.type.name, app);
-
     }
-
 
     // async send(functionArgs: any, methodus: any, paramsMap: any) {
     //     return new Promise(async (resolve, reject) => {
@@ -138,7 +130,6 @@ export class SocketIORouter {
                 } catch (error) {
                     callback(error);
                 }
-
             });
         });
     }

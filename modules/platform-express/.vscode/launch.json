@@ -19,7 +19,7 @@
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": {
-                "DEBUG":"methodus:*"
+                //"DEBUG":"methodus:*"
             }
         },
         {

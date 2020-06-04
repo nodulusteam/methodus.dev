@@ -7,11 +7,9 @@ export * from './interfaces';
 
 export const name: string = 'Http/Rest';
 
-
-
 export async function send<T = any>(methodus: MethodusObject, functionArgs: any[], paramsMap: ParamMapItem[], securityContext?: any): Promise<MethodResult<T>> {
     const request = new WebRequest();
-    const baseUrl = (typeof methodus.resolver === 'function') ? methodus.resolver() : methodus.resolver;
+    const baseUrl = typeof methodus.resolver === 'function' ? methodus.resolver() : methodus.resolver;
 
     if (baseUrl) {
         const requestResult = await request.sendRequest.apply(this, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);

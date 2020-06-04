@@ -1,7 +1,4 @@
-import {
-    ServerConfiguration, RouterConfiguration,
-    ClientConfiguration, ConfiguredServer,
-} from '@methodus/server';
+import { ServerConfiguration, RouterConfiguration, ClientConfiguration, ConfiguredServer } from '@methodus/server';
 import { TestController, TestTarget } from '../controllers/';
 import { SocketIO } from '../../index';
 

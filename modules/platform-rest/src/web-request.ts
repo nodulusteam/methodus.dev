@@ -10,15 +10,14 @@ import { Dictionary, RequestParams, MethodusObject } from './interfaces';
 
 const logger = new Logger('transports:http');
 
-
 /**
  * @hidden
  */
 export class WebRequest {
-    constructor() { }
+    constructor() {}
 
     async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
-        const auth: AuthType = methodus._auth.type || AuthType.None
+        const auth: AuthType = methodus._auth.type || AuthType.None;
         const authOptions: any = methodus._auth.options;
         const verb = methodus.verb;
 
@@ -33,7 +32,7 @@ export class WebRequest {
                     if (item.name) {
                         uri = uri.replace(':' + item.name, item.value);
                     } else {
-                        Object.keys(item.value).forEach(element => {
+                        Object.keys(item.value).forEach((element) => {
                             uri = uri.replace(':' + element, item.value[element]);
                         });
                     }
@@ -118,7 +117,7 @@ export class WebRequest {
             baseURL: uri,
             url: uri,
             timeout: 1000 * 60 * 5,
-        }
+        };
 
         let mixedProtocolProxySettings = false;
 
@@ -135,12 +134,8 @@ export class WebRequest {
             });
         }
 
-
         if (uri.indexOf('https://') === 0) {
-            const hostParts = uri
-                .split('://')[1]
-                .split('/')[0]
-                .split(':');
+            const hostParts = uri.split('://')[1].split('/')[0].split(':');
             const sslPort = hostParts[1] ? Number(hostParts[1]) : 443;
 
             let agent;
@@ -151,7 +146,7 @@ export class WebRequest {
                     path: parts.join('/').split('?')[0] || '',
                     rejectUnauthorized: false,
                 });
-                Object.assign(requestOptions, { httpsAgent: agent })
+                Object.assign(requestOptions, { httpsAgent: agent });
             } else {
                 agent = tunnel.httpsOverHttp({
                     proxy: {
@@ -160,10 +155,8 @@ export class WebRequest {
                     },
                 });
 
-                Object.assign(requestOptions, { httpsAgent: agent, proxy: false, })
-
+                Object.assign(requestOptions, { httpsAgent: agent, proxy: false });
             }
-
         } else {
             requestOptions = {
                 method: verb.toLowerCase() as Method,
@@ -172,9 +165,8 @@ export class WebRequest {
             };
 
             if (process.env.METHODUS_PROXY && process.env.METHODUS_PROXY_PORT) {
-                Object.assign(requestOptions, { proxy: { host: process.env.METHODUS_PROXY, port: process.env.METHODUS_PROXY_PORT } })
+                Object.assign(requestOptions, { proxy: { host: process.env.METHODUS_PROXY, port: process.env.METHODUS_PROXY_PORT } });
             }
-
         }
 
         if (auth) {
@@ -190,7 +182,6 @@ export class WebRequest {
                     } else if (authOptions.token) {
                         requestOptions.headers['Authorization'] = `Basic ${authOptions.token}`;
                     }
-
 
                     // requestOptions.auth = {
                     //     username: authOptions.user,
@@ -212,13 +203,11 @@ export class WebRequest {
             }
         }
 
-
         if (typeof body === 'object') {
             if (Object.keys(body).length) {
                 requestOptions.data = body;
                 headers['Content-Type'] = 'application/json';
             }
-            
         } else if ((body as string).length) {
             requestOptions.data = body;
 
@@ -266,7 +255,6 @@ export class WebRequest {
 
         logger.log('Request options are: ', JSON.stringify(requestOptions));
         try {
-
             const result = await axios.request(requestOptions);
             logger.log('Request success');
             return result;

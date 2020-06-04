@@ -1,7 +1,4 @@
-import {
-    MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,Mapping,
-     Auth, AuthType ,Injectable
-} from '@methodus/server';
+import { MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping, Auth, AuthType, Injectable } from '@methodus/server';
 
 /**
  * @hidden
@@ -12,9 +9,7 @@ import {
 export class TestController {
     @MethodMock({})
     @Method('Get', '/api/player')
-    public async list(
-        @Mapping.Headers('auth') auth: string = 'kkk',
-        @Mapping.Query('order_by') orderBy: string = 'asc'): Promise<any> {
+    public async list(@Mapping.Headers('auth') auth: string = 'kkk', @Mapping.Query('order_by') orderBy: string = 'asc'): Promise<any> {
         const result = new MethodResult([1, 2, 3, 4, 5], 5, 2);
         result.pipe({});
         result.on('finish', (data: any) => {
@@ -25,7 +20,8 @@ export class TestController {
     }
 
     @Method('Get', '/api/player/desfaults')
-    public async listdefaults(@Mapping.Param() params: any,
+    public async listdefaults(
+        @Mapping.Param() params: any,
         @Mapping.Body() body: any,
         @Mapping.Headers() headers: any,
         @Mapping.Files() files: any,
@@ -33,14 +29,13 @@ export class TestController {
         @Mapping.Query() query: any,
         @Mapping.Response() res: any,
         @Mapping.Request() req: any,
-        @Mapping.SecurityContext() securityContext: any,
+        @Mapping.SecurityContext() securityContext: any
     ): Promise<any> {
         return new MethodResultStatus([1, 2, 3, 4, 5], 203, 5, 1);
     }
 
     @MethodPipe('Post', '/api/player')
-    public async create(@Mapping.Files('files') files: any,
-        @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string) {
+    public async create(@Mapping.Files('files') files: any, @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string) {
         return new MethodResult({ name });
     }
 
@@ -63,5 +58,4 @@ export class TestController {
     public delete() {
         return new MethodResult({});
     }
-
 }

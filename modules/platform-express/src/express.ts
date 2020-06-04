@@ -7,14 +7,7 @@ import { BaseServer, Servers } from '@methodus/server';
 import { ExpressRouter } from './routing';
 import * as http from 'http';
 import * as https from 'https';
-import * as colors from 'colors';
 import * as fileUpload from 'express-fileupload';
-
-
-
-
-
-
 
 /**
  * @hidden
@@ -74,7 +67,7 @@ export class ExpressPlugin extends BaseServer {
     public static register(server: any, parentServer: any) {
         if (server.options) {
             const serverType = server.type.name;
-            console.info(colors.green(`> Starting REST server on port ${server.options.port}`));
+            console.info(`> Starting Express server on port ${server.options.port}`);
 
             parentServer._app[serverType] = new ExpressPlugin(server.options.port, server.options.onStart);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);

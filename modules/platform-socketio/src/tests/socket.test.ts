@@ -6,7 +6,6 @@ import { Injector } from '@methodus/server';
     const testTarget = Injector.get(TestTarget);
     let server: SocketTestServer;
 
-
     await new Promise(async (resolve, reject) => {
         server = new SocketTestServer();
         server.on('ready', () => {
@@ -17,4 +16,3 @@ import { Injector } from '@methodus/server';
     const response = await testTarget.list('someauth', 'up');
     console.log(response);
 })();
-

@@ -1,4 +1,4 @@
-import { Injectable } from '@methodus/server';
+import { Injectable } from '@methodus/framework-injection';
 
 /**
  * @hidden
@@ -7,18 +7,15 @@ import { Injectable } from '@methodus/server';
 export class SocketIOParser {
     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
         return new ParserResponse(args, false, {});
-
     }
 }
-
-
 
 /**
  * @hidden
  */
 @Injectable('ResponseForsocketio')
 export class SocketIOResponse {
-    constructor() { }
+    constructor() {}
 
     // public handle(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
     //     const res = args[1]; // in express this will ontain the response
@@ -87,7 +84,6 @@ export class SocketIOResponse {
     //         }
     //     }
     // }
-
 }
 export class ParserResponse {
     args: any;

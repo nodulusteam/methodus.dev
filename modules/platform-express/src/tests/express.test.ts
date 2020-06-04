@@ -1,5 +1,5 @@
+import { Injector } from '@methodus/framework-injection';
 import { TestTarget } from './controllers/target.test';
-import { Injector } from '@methodus/server';
 import { ExpressSecuredTestServer } from './servers/express.server.https';
 
 (async () => {

@@ -65,7 +65,7 @@ describe('Test the external send function', () => {
             headers: {
                 'Content-Type': 'application/json',
                 'Custom-Header': 'xxxxx/json',
-                'Authorization': 'Basic bm9kZTp0ZXN0',
+                Authorization: 'Basic bm9kZTp0ZXN0',
             },
 
             method: 'post',
@@ -88,7 +88,7 @@ describe('Test the external send function', () => {
 
         send(methodus, [], [])
             .then(thenFn)
-            .catch(error => {
+            .catch((error) => {
                 console.log(error);
                 expect(error).toEqual(new Error('Missing base url for method /posts'));
             });

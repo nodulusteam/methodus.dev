@@ -14,7 +14,6 @@ describe('Test SocketIO configuration', () => {
         });
     });
 
-
     it('list', async () => {
         const response = await testTarget.list('someauth', 'up');
         expect(response.result.length).toEqual(5);

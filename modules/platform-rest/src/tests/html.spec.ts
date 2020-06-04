@@ -31,13 +31,13 @@ describe('Test the external send function', () => {
             .then(thenFn)
             .catch(catchFn);
 
-        expect(mockAxios.request).toHaveBeenCalledWith({
-            headers: { 'Content-Type': 'application/html' },
-            method: 'get',
-            timeout: 300000,            
-            url: `${TESTBASE}/search?q=congress`,
-        });
+        expect(mockAxios.request).toHaveBeenCalledWith(
+            jasmine.objectContaining({
+                headers: { 'Content-Type': 'application/html' },
+                method: 'get',
+                timeout: 300000,
+                url: `${TESTBASE}/search?q=congress`,
+            })
+        );
     });
-
-
 });
