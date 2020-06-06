@@ -72,11 +72,5 @@
         "typedoc-plugin-markdown": "^1.2.0",
         "typescript": "^3.9.5",
         "cross-env": "^7.0.2"
-    },
-    "dependencies": {
-        "@methodus/framework-commons": "file:./modules/framework-commons",
-        "@methodus/framework-injection": "file:./modules/framework-injection",
-        "@methodus/framework-decorators": "file:./modules/framework1-decorators",
-        "@methodus/server": "file:./modules/framework2-server"
     }
 }
