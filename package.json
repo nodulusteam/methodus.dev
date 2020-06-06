@@ -27,12 +27,13 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
+        "clean": "rm -rf ./modules/*/yarn.lock && rm -rf ./modules/*/node_modules && rm -rf ./modules/*/dist && rm -rf ./modules/*/lib",
         "build": "lerna run build --concurrency 1 --no-sort",
-        "bootstrap": "lerna bootstrap --concurrency 1 --no-sort",
+        "bootstrap": "lerna bootstrap --concurrency 1 --no-sort",        
         "watch": "rimraf lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
-        "test": "lerna run test --concurrency 1 --no-sort && yarn merge",
+        "test": "lerna run test --loglevel=silly --concurrency=1&& yarn merge",
         "test:full": "jest --verbose --coverage",
         "merge": "node ./mapCoverage.js",
         "publish-diff": "lerna publish from-package",
@@ -69,9 +70,13 @@
         "tslint": "^5.11.0",
         "typedoc": "^0.17.7",
         "typedoc-plugin-markdown": "^1.2.0",
-        "typescript": "^3.9.5"
+        "typescript": "^3.9.5",
+        "cross-env": "^7.0.2"
     },
     "dependencies": {
-        "cross-env": "^7.0.2"
+        "@methodus/framework-commons": "file:./modules/framework-commons",
+        "@methodus/framework-injection": "file:./modules/framework-injection",
+        "@methodus/framework-decorators": "file:./modules/framework1-decorators",
+        "@methodus/server": "file:./modules/framework2-server"
     }
 }

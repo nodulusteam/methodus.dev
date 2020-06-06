@@ -2,14 +2,14 @@
     "packages": [
         "modules/framework-commons",
         "modules/framework-injection",
-        "modules/framework-decorators",
-        "modules/server",
-        "modules/platform-express",
+        "modules/framework1-decorators",
+        "modules/framework2-server",
+        "modules/methodus-cli",
         "modules/platform-rest",
+        "modules/platform1-express",
         "modules/platform-socketio",
         "modules/tests-integrations",
         "modules/testing",
-        "modules/methodus-cli",
         "modules/methodus-contracts"
     ],
     "useWorkspaces": false,

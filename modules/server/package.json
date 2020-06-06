@@ -48,6 +48,9 @@
     },
     "optionalDependencies": {},
     "devDependencies": {
+        "@methodus/framework-commons": "file:../framework-commons",
+        "@methodus/framework-injection": "file:../framework-injection",
+        "@methodus/framework-decorators": "file:../framework-decorators",
         "tslib": "^1.9.3",
         "@methodus/data": "^2.0.0",
         "@methodus/testing": "^0.0.2",

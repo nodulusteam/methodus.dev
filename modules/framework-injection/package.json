@@ -5,9 +5,10 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
+        "postinstall": "yarn build && yarn link",
         "test": "npm run build && jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-injection.json",
-        "build": "rimraf lib && yarn format && tsc",
+        "build": "rimraf lib && tsc",
         "docs": "typedoc",
         "format": "prettier -c --write ./src"
     },
@@ -18,6 +19,7 @@
        
     },
     "devDependencies": {
+        "@methodus/framework-commons": "file:../framework-commons",
         "@types/jest": "^24.0.23",
         "jest": "^24.9.0",
         "reflect-metadata": "^0.1.13",
