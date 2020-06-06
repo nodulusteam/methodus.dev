@@ -4,8 +4,7 @@
     "description": "Commons for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
-    "scripts": {
-        "postinstall": "yarn build",
+    "scripts": {        
         "test": "npm run build && jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-commons.json",
         "build": "rimraf lib && tsc",
