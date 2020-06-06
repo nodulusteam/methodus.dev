@@ -15,6 +15,7 @@ jobs:
           node-version: '10.x'          
       - run: |
           yarn
+          ./scripts/link.sh
           ./scripts/install.sh
           ./scripts/build.sh
           ./scripts/test.sh         
