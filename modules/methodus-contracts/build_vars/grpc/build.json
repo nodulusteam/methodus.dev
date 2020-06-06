@@ -1,0 +1,29 @@
+{
+    "@tests/simple": {
+        "contractNameServer": "@server-contracts/grpc",
+        "contractNameClient": "@client-contracts/grpc",
+        "buildPath": "./build_path/",
+        "path": "./build_vars/grpc",
+        "buildFolder": "build",
+        "models": {},
+        "npmrc": "./.npmrc",
+        "npmignore": "./.npmignore",
+        "contracts": {
+            "Simple": {
+                "path": "./controllers/simple.controller.ts"
+            },
+            "Target": {
+                "path": "./controllers/target.controller.ts"
+            }
+        },
+        "includes": {
+            "Mock": {
+                "path": "./mocks/mock.ts"
+            }
+        },
+        "dependencies": {},
+        "protobuf": {
+            "buildPath": "./build_path_proto/"
+        }
+    }
+}

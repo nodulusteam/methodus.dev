@@ -1,0 +1,34 @@
+{
+    "models": {
+        "contractNameServer": "@server-contracts/models",
+        "contractNameClient": "@client-contracts/models",
+        "buildPath": "./build_path/",
+        "path": "build_vars/models",
+        "buildFolder": "./",
+        "models": {
+            "UserModel": {
+                "path": "./models/user.model.ts"
+            },
+            "GroupModel": {
+                "path": "./models/group.ts"
+            }
+        },
+        "npmrc": "./.npmrc",
+        "contracts": {
+            "DataController": {
+                "path": "./controllers/datacontroller.ts"
+            },
+            "ModelsController": {
+                "path": "./controllers/models.controller.ts"
+            }
+        },
+        "includes": {
+            "Mock": {
+                "alias": "mocker",
+                "path": "../../build_mocks/mock.ts"
+            }
+        },
+       
+        "dependencies": {}
+    }
+}

@@ -1,0 +1,46 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "**/*.d.ts"
+        ]
+    },
+    "jsRules": {},
+    "rules": {
+        "one-variable-per-declaration": false,       
+        "no-var-requires": false,
+        "interface-name": [
+            false
+        ],
+        "class-name": false,
+        "ordered-imports": false,
+        "object-literal-sort-keys": false,
+        "quotemark": [
+            true,
+            "single",
+            "avoid-escape"
+        ],
+        "variable-name": [
+            false,
+            "ban-keywords",
+            "allow-leading-underscore"
+        ],
+        "indent": [
+            false
+        ],
+        "max-classes-per-file": [
+            true,
+            4
+        ],
+        "member-access": false,
+        "no-console": false,
+        "align": [
+            false,
+            "statements"
+        ]
+    },
+    "rulesDirectory": []
+}

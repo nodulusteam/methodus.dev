@@ -1,0 +1,37 @@
+{
+    "@tmla-tiles/case": {
+        "contractName": "@tmla-contracts/case",
+        "buildPath": "../../",
+        "path": "../eco-tmla-ms-case/module",
+        "models": {
+            "Case": {
+                "path": "./models/case.server.model.mongo.ts"
+            },
+            "CaseStatus": {
+                "path": "./models/casestatus.server.model.mongo.ts"
+            }
+        },
+        "contracts": {
+            "Case": {
+                "path": "./controllers/case.server.controller.methodus.ts"
+            },
+            "CaseRuleEngine": {
+                "path": "./controllers/case-rule-engine.server.controller.methodus.ts"
+            },
+            "CaseReport": {
+                "path": "./controllers/case.report.controller.methodus.ts"
+            }
+        },
+        "dependencies": {
+            "multer": "^1.3.0",
+            "multer-autoreap": "^0.1.3"
+        },
+        "bindings": {
+            "CaseEventHandler": {
+                "transport": "MQ",
+                "server": "amqp",
+                "path": "./controllers/case.events.controller.ts"
+            }
+        }
+    }
+}

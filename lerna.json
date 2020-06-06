@@ -1,6 +1,5 @@
 {
     "packages": [
-        "modules/methodus-cli",
         "modules/framework-commons",
         "modules/framework-injection",
         "modules/framework-decorators",
@@ -9,7 +8,9 @@
         "modules/platform-rest",
         "modules/platform-socketio",
         "modules/tests-integrations",
-        "modules/testing"       
+        "modules/testing",
+        "modules/methodus-cli",
+        "modules/methodus-contracts"
     ],
     "useWorkspaces": false,
     "npmClient": "yarn",

@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "declaration": true,
+        "lib": [
+            "es2015",
+            "dom"
+        ],
+        "outDir": "lib",
+        "target": "ES5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "preserveConstEnums": true, 
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "forceConsistentCasingInFileNames": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "types": [
+            "node"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "inherit": {
+        "contractNameServer": "@server-contracts/inherit",
+        "contractNameClient": "@client-contracts/inherit",
+        "buildPath": "./build_path/",
+        "path": "build_vars/inherit",
+        "models": {
+            "UserModel": {
+                "path": "./models/user.model.ts"
+            }
+        },
+        "npmrc": "./.npmrc",
+        "contracts": {
+            "Inherit": {
+                "path": "./controllers/inherit.controller.ts"
+            },
+            "Inherit2": {
+                "path": "./controllers/inherit2.controller.ts"
+            },
+            "BaseController": {
+                "path": "./controllers/basecontroller.ts"
+            }
+        },
+        "includes": {
+            "Mock": {
+                "path": "../../build_mocks/mock.ts"
+            }
+        },
+       
+        "dependencies": {
+            "debug": "*"
+        }
+    }
+}

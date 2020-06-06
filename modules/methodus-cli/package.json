@@ -8,7 +8,8 @@
         "clear-sandbox": "shx rm -rf sandbox",
         "start": "node src/index.ts",
         "build": "shx rm -rf dist && tsc",
-        "test": "yarn jest-test & yarn clear-sandbox",
+        "test": "yarn jest-test & yarn clear-sandbox && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-cli.json",
         "jest-test": "jest || exit 0"
     },
     "bin": {

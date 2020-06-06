@@ -1,0 +1,16 @@
+{
+    "name": "{name}",
+    "version": "{version}",
+    "description": "",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "module": "lib/index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "compile": "tsc"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {},
+    "dependencies": {}
+}
