@@ -1,5 +1,5 @@
 {
-    "name": "@methodus/root",
+    "name": "@methodus/dev",
     "version": "5.1.2",
     "private": true,
     "description": "Server components for @methodus workflow",
