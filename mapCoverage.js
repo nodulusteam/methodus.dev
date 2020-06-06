@@ -46,7 +46,13 @@ const projects = [
 projects.forEach(project => {
   const coverage = require(`./coverage/coverage-${project}.json`);
   Object.keys(coverage).forEach(
-    filename => map.addFileCoverage(coverage[filename])
+    (filename) => {
+      try {
+        return map.addFileCoverage(coverage[filename]);
+      } catch (error) {
+        console.error(error);
+      }
+    }
   );
 });
 

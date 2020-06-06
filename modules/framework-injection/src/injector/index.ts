@@ -61,7 +61,7 @@ export class InjectorType {
             alias,
         });
     }
-    get<T = any>(_token: any): T | null {
+    get<T = any>(_token: any): T {
         if (!_token) {
             console.error('missing token');
         }
@@ -80,7 +80,7 @@ export class InjectorType {
         });
 
         if (!all || all.length === 0) {
-            return null;
+            return null as any;
             // throw new Error(`Injection token not found ${symbol},
             // did you forgot to decorate it with the @Injectible decorator? `)
         }
