@@ -1,45 +1,45 @@
 cd modules
 cd framework-commons
 pwd
-yarn build
+yarn test
 cd ..
 cd framework-injection
 pwd
-yarn build
+yarn test
 cd ..
 cd framework-decorators
 pwd
-yarn build
+yarn test
 cd ..
 cd server
 pwd
-yarn build
+yarn test
 cd .. 
 cd methodus-cli
 pwd
-yarn build
+yarn test
 cd .. 
 cd platform-rest
 pwd
-yarn build
+yarn test
 cd .. 
 cd platform-express
 pwd
-yarn build
+yarn test
 cd .. 
 cd platform-socketio
 pwd
-yarn build
+yarn test
 cd ..  
 cd tests-integrations
 pwd
-yarn build
+yarn test
 cd ..  
 cd testing
 pwd
-yarn build
+yarn test
 cd .. 
 cd methodus-contracts
 pwd
-yarn build
+yarn test
 cd ../.. 
