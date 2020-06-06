@@ -1,7 +1,9 @@
 name: build
 
-on: [push]
-
+on:
+  push:
+    branches:
+      - lerna
 jobs:
   build:
     runs-on: ubuntu-latest
