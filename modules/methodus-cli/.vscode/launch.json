@@ -1,0 +1,136 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run jest",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": ["--verbose"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {}
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create module",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/dist/index.js",
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+            },
+            "args": ["generate", "module", "MyModule"]
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create module",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}/dist/index.js",
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+            },
+            "args": ["generate", "module", "MyModule"]
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create controller",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+            },
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": [
+                "generate",
+                "controller",
+                "SingleControllerName",
+                "--module",
+                "MyModule"
+            ]
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create service",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+            },
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": ["generate", "service", "SingleServiceName"]
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create controller inside a module",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\ProjectX"
+            },
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": [
+                "generate",
+                "controller",
+                "MyController",
+                "--module",
+                "MyLogicModule"
+            ]
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create service inside a module",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\MyProject"
+            },
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": ["generate", "service", "MyService", "--module", "MyModule"]
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "console": "integratedTerminal",
+            "name": "No args",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj"
+            },
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": []
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "New application",
+            "skipFiles": ["<node_internals>/**"],
+            "console": "integratedTerminal",
+            "program": "${workspaceFolder}/dist/index.js",
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj"
+            },
+            "args": ["application", "ProjectX"]
+        }
+    ]
+}

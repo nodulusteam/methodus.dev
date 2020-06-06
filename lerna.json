@@ -1,5 +1,6 @@
 {
     "packages": [
+        "modules/methodus-cli",
         "modules/framework-commons",
         "modules/framework-injection",
         "modules/framework-decorators",
