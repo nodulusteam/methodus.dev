@@ -12,11 +12,7 @@ import { MyModule } from "./my-module/my-module";
 @Module('AppModule')
 @ServerConfiguration(Express, { port: 3060 })
 @RouterConfiguration(SingleControllerName, Express)
-export class AppModule extends ConfiguredServer {
-    constructor() {
-        super(AppModule);
-    }
-
+export class AppModule extends ConfiguredServer {  
     declarations = [SingleControllerName];
     providers = [SingleServiceName];
     imports = [MyModule];
