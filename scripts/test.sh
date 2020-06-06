@@ -1,3 +1,4 @@
+mkdir coverage
 cd modules
 cd framework-commons
 pwd
@@ -43,3 +44,4 @@ cd methodus-contracts
 pwd
 yarn test
 cd ../.. 
+node ./mapCoverage.js
