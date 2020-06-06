@@ -13,7 +13,6 @@
                 "path": "./models/group.ts"
             }
         },
-        "npmrc": "./.npmrc",
         "contracts": {
             "DataController": {
                 "path": "./controllers/datacontroller.ts"

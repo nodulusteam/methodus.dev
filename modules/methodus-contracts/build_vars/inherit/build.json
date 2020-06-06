@@ -9,7 +9,6 @@
                 "path": "./models/user.model.ts"
             }
         },
-        "npmrc": "./.npmrc",
         "contracts": {
             "Inherit": {
                 "path": "./controllers/inherit.controller.ts"

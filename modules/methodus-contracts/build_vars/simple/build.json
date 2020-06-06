@@ -6,7 +6,6 @@
         "path": "./build_vars/simple",
         "buildFolder": "build",
         "models": {},
-        "npmrc": "./.npmrc",
         "npmignore": "./.npmignore",
         "contracts": {
             "Simple": {

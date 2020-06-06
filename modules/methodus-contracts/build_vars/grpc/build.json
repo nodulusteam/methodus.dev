@@ -6,7 +6,6 @@
         "path": "./build_vars/grpc",
         "buildFolder": "build",
         "models": {},
-        "npmrc": "./.npmrc",
         "npmignore": "./.npmignore",
         "contracts": {
             "Simple": {
