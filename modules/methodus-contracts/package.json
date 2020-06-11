@@ -8,7 +8,7 @@
         "contracts-client": "lib/client.js"
     },
     "scripts": {
-        "build": "rimraf lib && tsc",
+        "build": "rimraf ./lib && tsc",
         "tslint": "tslint --project",
         "test": "yarn test:all && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-contracts.json",

@@ -26,8 +26,8 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
-        "build": "rimraf lib && tsc",
-        "watch": "rimraf lib && tsc -w",
+        "build": "rimraf ./lib && tsc",
+        "watch": "rimraf ./lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-server.json",

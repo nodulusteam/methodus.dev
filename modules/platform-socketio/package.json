@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "scripts": {
         "test": "jest && yarn coverage",
-        "build": "rimraf lib && yarn format && tsc",
+        "build": "rimraf ./lib && yarn format && tsc",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-socketio.json",
         "docs": "typedoc",
         "format": "prettier -c --write ./src"

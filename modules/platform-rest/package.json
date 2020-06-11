@@ -7,7 +7,7 @@
     "scripts": {
         "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-rest.json",
-        "build": "rimraf lib && yarn format && tsc",
+        "build": "rimraf ./lib && yarn format && tsc",
         "docs": "typedoc",
         "format": "prettier -c --write ./src"
     },
