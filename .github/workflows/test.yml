@@ -17,6 +17,7 @@ jobs:
           yarn
           yarn bootstrap
           yarn build
-          yarn test    
+          yarn test
+          yarn sonar    
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
