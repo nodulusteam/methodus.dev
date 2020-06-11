@@ -29,7 +29,7 @@
     "scripts": {
         "clean": "rm -rf ./modules/*/yarn.lock && rm -rf ./modules/*/node_modules && rm -rf ./modules/*/dist && rm -rf ./modules/*/lib",
         "build": "lerna run build",
-        "bootstrap": "lerna bootstrap && lerna link",        
+        "bootstrap": "lerna bootstrap && lerna link",
         "watch": "rimraf lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
@@ -46,12 +46,13 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "devDependencies": {
-        "@methodus/data": "^2.0.0",       
+        "@methodus/data": "^2.0.0",
         "@types/jest": "^24.0.23",
         "@types/mongodb": "^3.1.27",
         "@types/node": "^10.0.0",
         "@types/uuid": "^3.4.4",
         "child-process-debug": "0.0.7",
+        "cross-env": "^7.0.2",
         "docsify": "^4.10.2",
         "istanbul-api": "^3.0.0",
         "istanbul-lib-coverage": "^3.0.0",
@@ -71,6 +72,7 @@
         "typedoc": "^0.17.7",
         "typedoc-plugin-markdown": "^1.2.0",
         "typescript": "^3.9.5",
-        "cross-env": "^7.0.2"
-    }
+        "lerna": "^3.22.1"
+    },
+    "dependencies": {}
 }
