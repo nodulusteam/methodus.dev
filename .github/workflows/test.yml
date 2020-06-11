@@ -16,7 +16,6 @@ jobs:
       - run: |
           yarn
           yarn bootstrap
-          lerna link
           yarn build
           yarn test    
         env:
