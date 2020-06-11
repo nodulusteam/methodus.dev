@@ -1,5 +1,6 @@
 import mockAxios from 'jest-mock-axios';
-import { send, Verbs } from '../index';
+import { Verbs } from '../index';
+import { send } from '../sender';
 
 const TESTBASE = 'https://www.google.com';
 

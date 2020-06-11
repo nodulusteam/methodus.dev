@@ -5,9 +5,9 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "test": "yarn format && yarn build && jest && yarn coverage",
+        "test": "jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-decorators.json",
-        "build": "rimraf lib && tsc",
+        "build": "rimraf lib && yarn format & tsc",
         "docs": "typedoc",
         "format": "prettier -c --write ./src"
     },
@@ -15,7 +15,8 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
-       
+       "@methodus/framework-commons":"*",
+       "@methodus/framework-injection":"*"
     },
     "devDependencies": {
         "typedoc": "^0.17.7",

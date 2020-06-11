@@ -1,4 +1,4 @@
-import { send } from '../';
+import { send } from '../sender';
 import { Verbs } from '../interfaces';
 import { AuthType } from '@methodus/server';
 const TESTBASE = 'http://jsonplaceholder.typicode.com'; //'http://jsonplaceholder.typicode.com';

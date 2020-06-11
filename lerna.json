@@ -1,17 +1,6 @@
 {
-    "packages": [
-        "modules/framework-commons",
-        "modules/framework-injection",
-        "modules/framework1-decorators",
-        "modules/framework2-server",
-        "modules/methodus-cli",
-        "modules/platform-rest",
-        "modules/platform1-express",
-        "modules/platform-socketio",
-        "modules/tests-integrations",
-        "modules/testing",
-        "modules/methodus-contracts"
-    ],
+    "packages": ["modules/*"],
+    "ignore": ["@methodus/platform-grpc","@methodus/cli","@methodus/contracts"],
     "useWorkspaces": false,
     "npmClient": "yarn",
     "version": "0.0.0"

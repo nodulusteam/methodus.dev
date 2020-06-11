@@ -3,7 +3,6 @@ import { MethodusConfig, PluginEntry } from './config';
 export class PluginLoader {
 
     constructor() {
-        debugger;
 
     }
     async config(serverConfiguration: MethodusConfig, pluginList: PluginEntry[]) {

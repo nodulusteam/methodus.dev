@@ -1,7 +1,7 @@
 import {
     MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping, AuthType
 } from '@methodus/server';
-import { Auth } from '@Methodus/framework-decorators';
+import { Auth } from '@methodus/framework-decorators';
 import { TestLogger } from './logger.service';
 import { ScreenModel } from '../models/screen.model';
 import { Injectable,Inject } from '@methodus/framework-injection';

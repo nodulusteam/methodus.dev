@@ -1,4 +1,4 @@
-import { send } from '../';
+import { send } from '../sender';
 import { Verbs } from '../interfaces';
 const TESTBASE = 'https://www.google.com';
 (async () => {

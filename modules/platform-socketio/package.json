@@ -4,8 +4,9 @@
     "description": "",
     "main": "lib/index.js",
     "scripts": {
-        "test": "yarn build && jest",
+        "test": "jest && yarn coverage",
         "build": "rimraf lib && yarn format && tsc",
+        "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-socketio.json",
         "docs": "typedoc",
         "format": "prettier -c --write ./src"
     },
@@ -16,7 +17,10 @@
     },
     "dependencies": {
         "socket.io": "^2.3.0",
-        "socket.io-client": "^2.3.0"
+        "socket.io-client": "^2.3.0",
+        "@methodus/framework-commons": "*",
+        "@methodus/framework-injection": "*",
+        "@methodus/server": "*"
     },
     "devDependencies": {
         "@types/jest": "^24.0.23",

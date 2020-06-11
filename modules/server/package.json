@@ -29,7 +29,7 @@
         "build": "rimraf lib && tsc",
         "watch": "rimraf lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "yarn build && jest && yarn coverage",
+        "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-server.json",
         "doc": "docsify serve docs",
         "docs": "typedoc",
@@ -40,6 +40,9 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
+        "@methodus/framework-commons": "*",
+        "@methodus/framework-injection": "*",
+        "@methodus/framework-decorators": "*",
         "debug": "^4.1.1",
         "fast-safe-stringify": "^2.0.7",
         "method-override": "^2.3.9",

@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "test": "npm run build &&  jest && yarn coverage",
+        "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-rest.json",
         "build": "rimraf lib && yarn format && tsc",
         "docs": "typedoc",
@@ -22,7 +22,8 @@
         "axios": "^0.19.2",
         "btoa": "^1.2.1",
         "js-base64": "^2.5.2",
-        "tunnel": "^0.0.6"
+        "tunnel": "^0.0.6",
+        "@methodus/server":"*"
     },
     "devDependencies": {
         "@types/jest": "^24.0.23",

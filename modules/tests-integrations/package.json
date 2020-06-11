@@ -6,13 +6,20 @@
     "types": "lib/index.d.ts",
     "scripts": {
         "build": "rimraf lib && tsc",
-        "test": "yarn build && jest && yarn coverage",
+        "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-integrations.json"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "peerDependencies": {},
-    "dependencies": {},
+    "dependencies": {
+        "@methodus/server": "*",
+        "@methodus/platform-express": "*",
+        "@methodus/platform-rest": "*",
+        "@methodus/framework-commons":"*",
+        "@methodus/framework-decorators": "*",
+        "@methodus/framework-injection": "*"
+    },
     "devDependencies": {
         "@types/jest": "^24.0.23",
         "@types/node": "^14.0.9",

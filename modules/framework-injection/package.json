@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {       
-        "test": "yarn build && jest --silent && yarn coverage",
+        "test": "jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-injection.json",
         "build": "rimraf lib && tsc",
         "docs": "typedoc",
@@ -15,7 +15,7 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
-       
+        "@methodus/framework-commons": "*"
     },
     "devDependencies": {
         "@types/jest": "^24.0.23",

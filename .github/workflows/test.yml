@@ -15,9 +15,9 @@ jobs:
           node-version: '10.x'          
       - run: |
           yarn
-          ./scripts/link.sh
-          ./scripts/install.sh
-          ./scripts/build.sh
-          ./scripts/test.sh         
+          yarn bootstrap
+          lerna link
+          yarn build
+          yarn test    
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}

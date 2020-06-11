@@ -5,7 +5,7 @@ import {
     ClientConfiguration, ConfiguredServer,
 } from '@methodus/server';
 import { Http } from '@methodus/platform-rest';
-import { TestTarget } from '../controllers/';
+import { TestTarget } from '../controllers';
 
 /**
  * @hidden
