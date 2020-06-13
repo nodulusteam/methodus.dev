@@ -9,20 +9,22 @@ jobs:
       matrix:
         node-version: [ 10.x ]
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: setup node  
+        uses: actions/setup-node@v1
         with:
-          node-version: '10.x'          
-      - run: |
+          node-version: '10.x' 
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}           
+        run: |
           yarn
           yarn bootstrap
           yarn build
           yarn test
-          yarn sonar    
+          yarn sonar   
+      - name: SonarCloud Scan
+        uses: sonarsource/sonarcloud-github-action@master
         env:
-          NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}  
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}  
