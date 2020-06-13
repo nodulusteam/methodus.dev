@@ -1,5 +1,5 @@
 
-import { Injector } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 import { MethodHandler } from '../method/handlers/default'
 import * as fs from 'fs';
 import { MethodResult } from './method.result';
@@ -14,8 +14,8 @@ class TestController {
 }
 
 describe('Test MethodResult', () => {
-    beforeAll(() => {      
-        const handler = Injector.get<MethodHandler>('MethodHandler');
+    beforeAll(() => {
+        const handler = injection.Injector.get<MethodHandler>('MethodHandler');
         console.log(handler);
     });
     it('createNew', async () => {

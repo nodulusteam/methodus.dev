@@ -1,21 +1,17 @@
 import { Proxy } from './proxy';
 import { MethodConfig } from '../method/method-config';
 import { Method } from '../method/method';
-import {
-    Injector,
-    RegistrationTypes,
-    Injectable,
-} from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 
-@Injectable('MethodHandler')
+@injection.Injectable('MethodHandler')
 class MethodHandler {
     methodDecorator() {}
 }
 
-Injector.register(
+injection.Injector.register(
     MethodHandler,
     [],
-    RegistrationTypes.Service,
+    injection.RegistrationTypes.Service,
     'MethodHandler'
 );
 

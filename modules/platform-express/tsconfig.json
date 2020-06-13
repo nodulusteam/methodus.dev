@@ -11,7 +11,7 @@
         "mode": "file",
         "name": "A Methodus guide",
         "readme": "none",
-        "out": "docs",
+        "out": "../../docs/platform/express",
         "exclude": "tests"
     },
     "compilerOptions": {

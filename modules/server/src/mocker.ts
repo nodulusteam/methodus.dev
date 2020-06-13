@@ -1,6 +1,6 @@
 import { MethodusClientConfig } from './config/client-config';
 import { TransportType } from '@methodus/framework-commons';
-import { Injectable } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 
 
 export class Mocker {
@@ -23,14 +23,14 @@ export class Mocker {
 
 }
 
-@Injectable('ParserForMockserver')
+@injection.Injectable('ParserForMockserver')
 export class Parser {
     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
         return new ParserResponse(functionArgs, false, {});
     }
 
 }
-@Injectable('ResponseForMockserver')
+@injection.Injectable('ResponseForMockserver')
 export class Response {
 
     handle() {

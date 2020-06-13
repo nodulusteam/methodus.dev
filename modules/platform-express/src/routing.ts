@@ -1,6 +1,5 @@
 import * as express from 'express';
-import { MethodType, fp } from '@methodus/framework-commons';
-import { Injector } from '@methodus/framework-injection';
+import { injectionModule as injection, MethodType, commonsModule as commons } from '@methodus/server';
 
 
 
@@ -13,9 +12,9 @@ export class ExpressRouter {
         if (!keyName) {
             keyName = obj.constructor.name;
         }
-        obj = Injector.get(keyName);
+        obj = injection.Injector.get(keyName);
 
-        const methodus = fp.maybeMethodus(obj)[keyName];
+        const methodus = commons.util.maybeMethodus(obj)[keyName];
         const globalMiddlewares: any[] = [];
         if (methodus.middlewares) {
             methodus.middlewares.forEach((element: any) => {

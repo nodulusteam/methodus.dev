@@ -3,7 +3,7 @@
 import 'reflect-metadata';
 import { MethodType, ServerType } from '@methodus/framework-commons';
 import { Servers } from '../servers/serversList';
-import { ClassContainer } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
@@ -14,7 +14,7 @@ export namespace Methods {
     export function MethodConfigBase(name: string, middlewares?: Function[], repository?: any) {
         return (target: any) => {
 
-            const existingMetadata = ClassContainer.get(name) || {};
+            const existingMetadata = injection.ClassContainer.get(name) || {};
             existingMetadata.name = name;
             const original = target.prototype.constructor;
             original.prototype.options = original.prototype.options ||
@@ -54,7 +54,7 @@ export namespace Methods {
             proto.methodus_base.middlewares = middlewares;
             target.methodus_base = proto.methodus_base;
             existingMetadata.middlewares = middlewares;
-            ClassContainer.set(name, existingMetadata);
+            injection.ClassContainer.set(name, existingMetadata);
         };
     }
 }

@@ -1,8 +1,8 @@
 import { Mocker, deserialize, MethodResult, MethodError } from '@methodus/server';
-import { Injectable, Injector } from '@methodus/framework-injection';
+import { injectionModule as injection } from '@methodus/server';
 import { TestController } from './controllers';
 
-@Injectable('ParserForundefined')
+@injection.Injectable('ParserForundefined')
 export class ParserForMocker {
     /**
      *
@@ -30,7 +30,7 @@ export class ParserForMocker {
 /**
  * @hidden
  */
-@Injectable('ResponseForundefined')
+@injection.Injectable('ResponseForundefined')
 export class MockerResponse {
     constructor() { }
 
@@ -55,7 +55,7 @@ class ParserResponse {
 describe('Test additional method classes', () => {
     it('TestController mock', async () => {
 
-        const testController = Injector.get(TestController);
+        const testController = injection.Injector.get(TestController);
         Mocker.mock(TestController);
         const mockResult = await testController.list('', '');
         expect(mockResult).toBeDefined();
@@ -63,7 +63,7 @@ describe('Test additional method classes', () => {
 
     it('TestController mock for server', async () => {
 
-        const testController = Injector.get(TestController);
+        const testController = injection.Injector.get(TestController);
         Mocker.mockServer(TestController);
         const mockResult = await testController.list('', '');
         expect(mockResult).toBeDefined();

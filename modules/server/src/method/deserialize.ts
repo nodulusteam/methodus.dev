@@ -1,5 +1,5 @@
 
-import { logger } from '@methodus/framework-commons';
+import commons from '@methodus/framework-commons';
 
 
 const primitiveArray: any = {
@@ -36,7 +36,7 @@ export function deserialize(item: { type?: any, value: string } | any) {
             try {
                 return item.type.deserialize(item.value);
             } catch (error) {
-                logger.warn('error deserializing argument, will try other ways', item);
+                commons.logger.warn('error deserializing argument, will try other ways', item);
             }
         } else if (item.type && item.type.prototype && item.type.prototype.constructor) {
             return new item.type(returnJson(item.value));

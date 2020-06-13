@@ -1,16 +1,17 @@
 {
     "exclude": ["docs"],
     "typedocOptions": {
-        "theme": "markdown",
+         
+        "exclude": "**/*+(index|.spec|.e2e).ts",      
+        "module": "commonjs",
         "excludeExternals": "true",
         "excludeNotExported": "true",
-        "target": "ES6",
-        "includeDeclarations": "true",
+        "target": "commonjs",
+        "includeDeclarations": "false",
         "mode": "file",
-        "name": "A Methodus guide",
-        "readme": "none",
-        "out": "docs",
-        "exclude": "tests"
+        "name": "Methodus - framework injection",
+        "readme": "readme.md",
+        "out": "../../docs/framework/injection"
     },
     "compilerOptions": {
         "importHelpers": false,

@@ -1,6 +1,6 @@
 
 import {
-    Injector,
+    injectionModule as injection,
 
     ClientConfiguration, ConfiguredServer,
 } from '@methodus/server';
@@ -20,7 +20,7 @@ export class Xserver extends ConfiguredServer {
 if (process.env.TESTMODE === 'run') {
     new Xserver();
     setTimeout(async () => {
-        const result = await Injector.get(TestTarget).list('aaaa', 'aaaa');
+        const result = await injection.Injector.get(TestTarget).list('aaaa', 'aaaa');
         return result;
     }, 4000);
 }

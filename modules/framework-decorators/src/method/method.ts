@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { Injector } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 const methodMetadataKey = 'methodus';
 /** the @Method decorator registers route listeners
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -50,7 +50,7 @@ export function Method(
             return a.index - b.index;
         });
 
-        const methodHandler = Injector.get('MethodHandler');
+        const methodHandler = injection.Injector.get('MethodHandler');
         return methodHandler.methodDecorator.apply(this, [
             target,
             propertyKey,

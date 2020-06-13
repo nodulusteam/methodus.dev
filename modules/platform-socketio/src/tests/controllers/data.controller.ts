@@ -1,8 +1,8 @@
-import { Method, Mapping, MethodResult, MethodConfigBase, Singleton } from '@methodus/server';
+import { injectionModule as injection, Method, Mapping, MethodResult, MethodConfigBase } from '@methodus/server';
 /**
  * @hidden
  */
-@Singleton()
+@injection.Singleton()
 @MethodConfigBase('DataController')
 export class DataController {
     public repository: any;

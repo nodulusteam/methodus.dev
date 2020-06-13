@@ -4,7 +4,7 @@ import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
  
-import { Injector } from '@methodus/framework-injection';
+import { injectionModule as injection } from '@methodus/server';
 
 
 describe('Test Emitter configuration', () => {
@@ -16,8 +16,8 @@ describe('Test Emitter configuration', () => {
     });
 
     beforeAll(() => {
-        if(Injector.get(TestTarget)){
-            testTarget = Injector.get(TestTarget)!;
+        if(injection.Injector.get(TestTarget)){
+            testTarget = injection.Injector.get(TestTarget)!;
         }
 
         return new Promise(async (resolve, reject) => {

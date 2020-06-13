@@ -1,4 +1,4 @@
-import { Injector } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 import { TestMap } from './test-map';
 export class Module {
     public testMap: TestMap
@@ -7,6 +7,6 @@ export class Module {
         this.testMap = (testMap) ? testMap : new TestMap();
     }
     get<T>(name: string) {
-        return Injector.get(name) as T;
+        return injection.Injector.get(name) as T;
     }
 }

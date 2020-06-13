@@ -1,10 +1,10 @@
-import { Injector } from '@methodus/framework-injection';
+import { injectionModule as injection } from '@methodus/server';
 import { TestTarget } from './controllers/target.test';
 import { ExpressSecuredTestServer } from './servers/express.server.https';
 
 
 describe('Test Express configuration', () => {
-    const testTarget = Injector.get(TestTarget);
+    const testTarget = injection.Injector.get(TestTarget);
     let server: ExpressSecuredTestServer;
     beforeAll(async () => {
         await new Promise(async (resolve, reject) => {

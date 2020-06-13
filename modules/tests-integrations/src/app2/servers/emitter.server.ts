@@ -1,11 +1,10 @@
 import * as path from 'path';
 import { MethodResult, MethodError, ConfiguredServer, } from '@methodus/server';
 import { PluginConfiguration, ServerConfiguration, RouterConfiguration, ClientConfiguration, } from '@methodus/framework-decorators';
-import { Injectable } from '@methodus/framework-injection';
 import { TestController } from '../controllers/';
 import { TestTarget } from '../controllers/';
 import { EmitterPlugin } from './emitter.plugin';
-import { deserialize } from '@methodus/server';
+import { deserialize, injectionModule as injection } from '@methodus/server';
 
 const ServerPlugin = new EmitterPlugin();
 /**
@@ -27,7 +26,7 @@ export class EmitterTestServer extends ConfiguredServer {
 /**
  * @hidden
  */
-@Injectable('ParserForPlugin')
+@injection.Injectable('ParserForPlugin')
 export class ParserForPlugin {
     /**
      *
@@ -55,7 +54,7 @@ export class ParserForPlugin {
 /**
  * @hidden
  */
-@Injectable('ResponseForPlugin')
+@injection.Injectable('ResponseForPlugin')
 export class EmitterResponse {
     constructor() { }
 

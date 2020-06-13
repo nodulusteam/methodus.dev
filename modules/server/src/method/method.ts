@@ -1,11 +1,10 @@
 import 'reflect-metadata';
-import { MethodType, TransportType } from '@methodus/framework-commons';
-import { logger } from '@methodus/framework-commons';
+import commons, { MethodType, TransportType } from '@methodus/framework-commons';
 import { MethodError, MethodResult, MethodResultStatus, ResponseParser } from '../response';
 import { Servers } from '../servers/serversList';
 import { validate } from './validate';
 import stringify from 'fast-safe-stringify';
-import { ClassContainer } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 
 const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
 const methodMetadataKey = 'methodus';
@@ -72,7 +71,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
 
 
 
-            const existingClassMetadata: any = ClassContainer.get(configName);
+            const existingClassMetadata: any = injection.ClassContainer.get(configName);
             if (client) {
 
 
@@ -130,7 +129,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
 
         } else {
             // this is a local call
-            const existingClassMetadata: any = ClassContainer.get(methodus.name);
+            const existingClassMetadata: any = injection.ClassContainer.get(methodus.name);
             // merge the configuration object
             Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
 
@@ -164,7 +163,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 });
 
                 //fast-safe-stringify
-                logger.info('@Method::call', methodType, originalMethod.name, stringify(mappedArgs));
+                commons.logger.info('@Method::call', methodType, originalMethod.name, stringify(mappedArgs));
                 switch (methodType) {
                     case MethodType.Mock:
                         if (methodus._mocks && methodus._mocks[propertyKey]) {
@@ -188,7 +187,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
             } catch (error) {
 
                 error.statusCode = error.statusCode || 500;
-                logger.error(error);
+                commons.logger.error(error);
                 if (ParserResponse.isRest) {
                     return parser.response(args, error, restHeaders);
                 } else {
@@ -243,7 +242,7 @@ export async function handleResult(methodResult: any) {
             delete error.response;
             delete error.options;
             delete error.message;
-            logger.error(error);
+            commons.logger.error(error);
             throw new MethodResultStatus(error, error.statusCode);
         }
     }

@@ -1,6 +1,6 @@
 import { DataController } from './data.controller';
 import { ScreenModel } from '../models/screen.model';
-import { MethodConfig, Method, Mapping, MethodResult, Inject } from '@methodus/server';
+import { MethodConfig, Method, Mapping, MethodResult, injectionModule as injection } from '@methodus/server';
 import { TestLogger } from './logger.service';
 
 /**
@@ -16,7 +16,7 @@ export class ScreensDataController extends DataController {
         // const item = await this.repository.get(id);
         return new MethodResult(result);
     }
-    constructor(@Inject('TestLogger', 'testLogger') private testLogger: TestLogger) {
+    constructor(@injection.Inject('TestLogger', 'testLogger') private testLogger: TestLogger) {
         super(ScreenModel);
         this.testLogger.log('instance created for ScreensDataController');
         this.repository = ScreenModel;

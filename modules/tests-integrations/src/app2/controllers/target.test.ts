@@ -2,11 +2,11 @@ import {
     MethodResult, Mapping, Method, MethodMock, MethodConfig, MethodPipe, AuthType,
 } from '@methodus/server';
 import { Auth } from '@methodus/framework-decorators';
-import { Injectable } from '@methodus/framework-injection';
+import { injectionModule as injection } from '@methodus/server';
 /**
  * @hidden
  */
-@Injectable()
+@injection.Injectable()
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestTarget')
 export class TestTarget {

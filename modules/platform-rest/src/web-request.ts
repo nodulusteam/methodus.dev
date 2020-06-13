@@ -1,14 +1,14 @@
 import 'reflect-metadata';
 import axios, { AxiosRequestConfig, Method } from 'axios';
 import * as https from 'https';
-import { AuthType, Logger } from '@methodus/server';
+import { AuthType, commonsModule as commons } from '@methodus/server';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as tunnel from 'tunnel';
 import { Encoder } from './encoder';
 import { Dictionary, RequestParams, MethodusObject } from './interfaces';
 
-const logger = new Logger('transports:http');
+const logger = new commons.Logger('transports:http');
 
 /**
  * @hidden

@@ -1,4 +1,5 @@
-import { logger } from '@methodus/framework-commons';
+import commons from '@methodus/framework-commons';
+const logger = commons.logger;
 import { MethodusConfig, PluginEntry } from './config';
 export class PluginLoader {
 

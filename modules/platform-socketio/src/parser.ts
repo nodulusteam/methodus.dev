@@ -1,9 +1,9 @@
-import { Injectable } from '@methodus/framework-injection';
+import { injectionModule as injection } from '@methodus/server';
 
 /**
  * @hidden
  */
-@Injectable('ParserForsocketio')
+@injection.Injectable('ParserForsocketio')
 export class SocketIOParser {
     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
         return new ParserResponse(args, false, {});
@@ -13,7 +13,7 @@ export class SocketIOParser {
 /**
  * @hidden
  */
-@Injectable('ResponseForsocketio')
+@injection.Injectable('ResponseForsocketio')
 export class SocketIOResponse {
     constructor() {}
 

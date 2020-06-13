@@ -1,8 +1,8 @@
-import { Injectable } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 
-@Injectable('TestLogger')
-export class TestLogger{
-    log(...args: any[]){
+@injection.Injectable('TestLogger')
+export class TestLogger {
+    log(...args: any[]) {
         console.log(args)
     }
 }

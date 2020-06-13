@@ -1,6 +1,6 @@
 import {
     MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus,
-    Param, Mapping, Auth, AuthType, Injectable
+    Param, Mapping, Auth, AuthType, injectionModule as injection,
 } from '@methodus/server';
 import { AuthMiddleware } from '../middlewares/auth.middleware';
 import { MethodMiddleware } from '../middlewares/method.middleware';
@@ -9,7 +9,7 @@ import { Verbs } from '../shim';
 /**
  * @hidden
  */
-@Injectable()
+@injection.Injectable()
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestController', [AuthMiddleware])
 export class TestController {

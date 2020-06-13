@@ -1,9 +1,9 @@
-import { MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping, Auth, AuthType, Injectable } from '@methodus/server';
+import { injectionModule as injection, MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping, Auth, AuthType } from '@methodus/server';
 
 /**
  * @hidden
  */
-@Injectable()
+@injection.Injectable()
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestController')
 export class TestController {

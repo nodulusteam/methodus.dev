@@ -1,7 +1,6 @@
-import { Logger, fp, MethodType, ClassRef } from '@methodus/framework-commons';
+import commons, { MethodType, ClassRef } from '@methodus/framework-commons';
+import injection from '@methodus/framework-injection';
 import * as path from 'path';
-import { ClassContainer } from '@methodus/framework-injection';
-const logger = new Logger('ProxyClass');
 
 export class Proxy {
     public static ProxyClass(
@@ -10,9 +9,9 @@ export class Proxy {
         localClassPath: string
     ) {
         return (target: ClassRef) => {
-            const methodus = fp.maybeMethodus(target)[className];
+            const methodus = commons.util.maybeMethodus(target)[className];
             let classTransport = MethodType.Http;
-            const cls = ClassContainer.get(className);
+            const cls = injection.ClassContainer.get(className);
             if (cls) {
                 classTransport = MethodType.Local;
             }
@@ -29,15 +28,17 @@ export class Proxy {
                     .join(startPathForLoad, localClassPath)
                     .replace(/\\/g, '/');
 
-                logger.info(`trying to load ${localLoadPath} locally`);
+                commons.logger.info(`trying to load ${localLoadPath} locally`);
 
                 try {
                     const localClass = require(localLoadPath);
-                    logger.info(`succesfully loaded ${localLoadPath} locally`);
+                    commons.logger.info(
+                        `succesfully loaded ${localLoadPath} locally`
+                    );
                     return localClass[className];
                 } catch (error) {
                     try {
-                        logger.info(
+                        commons.logger.info(
                             `will try other options ${localClassPath} locally`
                         );
                         const localClass = require(path.join(
@@ -45,10 +46,12 @@ export class Proxy {
                             startPathForLoad,
                             localClassPath
                         ));
-                        logger.info(`succesfully loaded ${localClass} locally`);
+                        commons.logger.info(
+                            `succesfully loaded ${localClass} locally`
+                        );
                         return localClass[className];
                     } catch (exception) {
-                        logger.info(
+                        commons.logger.info(
                             `will try last option ${localClassPath} locally`
                         );
                         const localClass = require(path.join(
@@ -57,12 +60,14 @@ export class Proxy {
                             startPathForLoad,
                             localClassPath
                         ));
-                        logger.info(`succesfully loaded ${localClass} locally`);
+                        commons.logger.info(
+                            `succesfully loaded ${localClass} locally`
+                        );
                         return localClass[className];
                     }
                 }
             }
-            logger.info(`using the contract class for ${className}`);
+            commons.logger.info(`using the contract class for ${className}`);
             return target;
         };
     }

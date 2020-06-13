@@ -1,9 +1,5 @@
 import 'reflect-metadata';
-import {
-    Injector,
-    RegistrationTypes,
-    ClassContainer,
-} from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 
 /** the MethodConfig decorator registers the controller as a router
  *  @param {string} name - the identifier of the controller in the resolver.
@@ -16,10 +12,14 @@ export function MethodConfig(
 ) {
     return (target: any) => {
         //use the injectable logic here
-        Injector.inject(RegistrationTypes.Controller, target, name);
-        const instance = Injector.get(name);
+        injection.Injector.inject(
+            injection.RegistrationTypes.Controller,
+            target,
+            name
+        );
+        const instance = injection.Injector.get(name);
 
-        const existingMetadata = Injector.get(name) || {};
+        const existingMetadata = injection.Injector.get(name) || {};
         existingMetadata.name = name;
         let proto = target.prototype || target.__proto__;
 
@@ -61,7 +61,7 @@ export function MethodConfig(
 
         proto.methodus[name].middlewares = middlewares;
         existingMetadata.middlewares = middlewares;
-        ClassContainer.set(name, existingMetadata);
+        injection.ClassContainer.set(name, existingMetadata);
 
         Object.values(proto.methodus[name]._descriptors).forEach(
             (descriptor: any) => {

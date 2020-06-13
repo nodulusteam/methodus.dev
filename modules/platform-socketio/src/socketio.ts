@@ -4,7 +4,7 @@ const debug = require('debug')('methodus');
 import * as http from 'http';
 const metadataKey = 'methodus';
 import * as socketIO from 'socket.io';
-import { fp, Servers, BaseServer } from '@methodus/server';
+import { commonsModule as commons, Servers, BaseServer } from '@methodus/server';
 
 /**
  * @hidden
@@ -99,8 +99,8 @@ export class SocketIORouter {
     prefix: string = '';
     public router: any = null;
     constructor(obj: any, socket: any) {
-        const proto = fp.maybeProto(obj);
-        const methodus = fp.maybeMethodus(obj)[obj.name];
+        const proto = commons.util.maybeProto(obj);
+        const methodus = commons.util.maybeMethodus(obj)[obj.name];
 
         const existingClassMetadata = Reflect.getOwnMetadata(metadataKey, proto) || {};
         existingClassMetadata.returnMessages = true;

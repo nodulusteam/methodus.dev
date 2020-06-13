@@ -1,12 +1,13 @@
 import 'reflect-metadata';
 import { Servers } from './servers';
 import { MethodusConfig, ServerConfig, PluginEntry } from './config';
-import { logger } from '@methodus/framework-commons';
+import commons from '@methodus/framework-commons';
 import { MethodHandler } from './method/handlers/default';
 import { PluginLoader } from './plugins';
-import { ClientContainer, ServerContainer, ClassContainer, Injector } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 import { v1 as uuidv1 } from 'uuid';
 
+ 
 export interface IApp {
     set(key: string, value: any): void;
 }
@@ -32,7 +33,7 @@ export class Server {
         this.serverKey = this.makeid();
         this.instanceId = Servers.addServer(this);
         //bind handlers
-        const handler: MethodHandler | null = Injector.get<MethodHandler>('MethodHandler');
+        const handler: MethodHandler | null = injection.Injector.get<MethodHandler>('MethodHandler');
         console.log(handler);
     }
 
@@ -60,18 +61,18 @@ export class Server {
             if (!configName && methodusClass.constructor) {
                 configName = methodusClass.constructor.name;
             }
-            const metaObject = ClassContainer.get(configName);
-            _class.transportType = new ClientContainer(_class.transportType);
+            const metaObject = injection.ClassContainer.get(configName);
+            _class.transportType = new injection.ClientContainer(_class.transportType);
             Servers.clients[configName] = _class;
 
             if (metaObject) {
                 metaObject.methodType = _class.transportType.name;
-                ClassContainer.set(configName, metaObject);
-                logger.info
+                injection.ClassContainer.set(configName, metaObject);
+                commons.logger.info
                     (`using client class ${_class.classType.name} in ${_class.transportType.name} mode`);
 
             } else {
-                logger.error('could not load metadata for ' + configName);
+                commons.logger.error('could not load metadata for ' + configName);
             }
         }
     }
@@ -110,7 +111,7 @@ export class Server {
                 const aServerInstance = Servers.get(this.instanceId, server.type.name);
                 if (!aServerInstance) {
                     server.instanceId = this.instanceId;
-                    return new ServerContainer(server, this);
+                    return new injection.ServerContainer(server, this);
                 } else {
                     return aServerInstance;
                 }
@@ -161,7 +162,7 @@ export class Server {
                 if (!configName && methodusClass.constructor) {
                     configName = methodusClass.constructor.name;
                 }
-                const metaObject = ClassContainer.get(configName);
+                const metaObject = injection.ClassContainer.get(configName);
                 const serverTypeName = _class.serverType.name || _class.serverType;
                 if (server[serverTypeName]) {
                     Servers.classes[configName] = _class;
@@ -169,9 +170,9 @@ export class Server {
                         metaObject.methodType = _class.methodType;
                         metaObject.serverType = _class.serverType;
                         metaObject.instanceId = serverInstance.instanceId;
-                        ClassContainer.set(configName, metaObject);
+                        injection.ClassContainer.set(configName, metaObject);
 
-                        logger.info(
+                        commons.logger.info(
                             `using server class ${configName} in ${_class.methodType} mode`);
 
                         const activeServers = Servers.get(serverInstance.instanceId, serverTypeName);
@@ -179,7 +180,7 @@ export class Server {
                             activeServers.useClass(_class.classType, metaObject.methodType);
                         }
                     } else {
-                        logger.error('could not load metadata for ' + configName);
+                        commons.logger.error('could not load metadata for ' + configName);
                     }
                 }
             }

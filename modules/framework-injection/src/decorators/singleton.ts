@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Injector, RegistrationTypes } from '../injector';
-import { ClassRef, Dictionary } from '@methodus/framework-commons';
+import { ClassRef,Dictionary } from '@methodus/framework-commons';
 const ANNOTATIONS = '__annotations__';
 
 export function Singleton(name?: string) {
@@ -8,8 +8,8 @@ export function Singleton(name?: string) {
         const annotations = cls.hasOwnProperty(ANNOTATIONS)
             ? (cls as Dictionary)[ANNOTATIONS]
             : Object.defineProperty(cls, ANNOTATIONS, { value: [] })[
-                  ANNOTATIONS
-              ];
+            ANNOTATIONS
+            ];
 
         annotations.push('singleton');
 

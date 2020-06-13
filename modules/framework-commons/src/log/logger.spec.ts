@@ -1,7 +1,6 @@
-import { Logger } from '../index';
-
+import commons from '../index';
 describe('Test Logger', () => {
-    let logger = new Logger('methodus');
+    let logger = new commons.Logger('methodus');
     it('log ', async () => {
         logger.log();
         logger.log('log some data');

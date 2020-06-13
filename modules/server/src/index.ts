@@ -9,7 +9,8 @@ export * from './server.configured';
 export * from './mocker';
 export * from '@methodus/framework-decorators';
 export * from '@methodus/framework-commons';
-export * from '@methodus/framework-injection';
+import commons from '@methodus/framework-commons';
+import injection from '@methodus/framework-injection';
 export * from './method/handlers/default';
 
 import { Mapping } from './params';
@@ -50,3 +51,5 @@ export const Request = Mapping.Request;
  */
 export const SecurityContext = Mapping.SecurityContext;
 
+export const commonsModule = commons;
+export const injectionModule = injection;

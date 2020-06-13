@@ -1,8 +1,7 @@
 
 import 'reflect-metadata';
-import { Servers, logger, ITransport } from '@methodus/server';
+import { Servers, ITransport, commonsModule as commons } from '@methodus/server';
 import { EventEmitter } from 'events';
-import { fp } from '@methodus/framework-commons';
  
 const metadataKey = 'methodus';
 /**
@@ -17,8 +16,8 @@ export class CustomMessageRouter {
     prefix: string = '';
 
     constructor(obj: any) {
-        const proto = fp.maybeProto(obj);
-        const methodus = fp.maybeMethodus(obj)[obj.name];
+        const proto = commons.util.maybeProto(obj);
+        const methodus = commons.util.maybeMethodus(obj)[obj.name];
 
         const existingClassMetadata = Reflect.getOwnMetadata(metadataKey, proto) || {};
         existingClassMetadata.returnMessages = true;
@@ -36,7 +35,7 @@ export class CustomMessageRouter {
                     const result = await proto[itemKey](...functionArgs, data.securityContext);
                     resultEmitter.emit(itemKey, result);
                 } catch (error) {
-                    logger.error(error);
+                    commons.logger.error(error);
                 }
             });
         });
@@ -59,7 +58,7 @@ export class EmitterPlugin implements ITransport {
     name: string = 'Plugin';
 
     public register(server: any, parentServer: any): void {
-        logger.info(`> Starting Custom ${server.type.name} server`);
+        commons.logger.info(`> Starting Custom ${server.type.name} server`);
 
         const app = new CustomMessageServer();
         Servers.set(server.instanceId, server.type.name, app);

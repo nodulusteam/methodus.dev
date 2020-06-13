@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { RegistrationTypes, Injector } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 import { ModuleTargetClass } from '@methodus/framework-commons';
 
 /** the Module decorator registers a module
@@ -18,6 +18,10 @@ export function Module(name?: string) {
             original.prototype.options.name = name;
         }
 
-        Injector.inject(RegistrationTypes.Module, target, name);
+        injection.Injector.inject(
+            injection.RegistrationTypes.Module,
+            target,
+            name
+        );
     };
 }

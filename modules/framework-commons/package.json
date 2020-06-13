@@ -8,7 +8,7 @@
         "test": "jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../coverage/coverage-commons.json",
         "build": "rimraf ./lib && tsc",
-        "docs": "typedoc"
+        "docs": "rimraf ../../docs/framework/common && typedoc --entryPoint './src/index.ts'"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",

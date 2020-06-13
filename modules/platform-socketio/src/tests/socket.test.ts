@@ -1,9 +1,9 @@
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
-import { Injector } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 
 (async () => {
-    const testTarget = Injector.get(TestTarget);
+    const testTarget = injection.Injector.get(TestTarget);
     let server: SocketTestServer;
 
     await new Promise(async (resolve, reject) => {

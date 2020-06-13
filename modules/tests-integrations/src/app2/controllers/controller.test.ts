@@ -1,15 +1,15 @@
 import {
+    injectionModule as injection,
     MethodResult, Method, MethodMock, MethodConfig, MethodError, MethodPipe, MethodResultStatus, Mapping, AuthType
 } from '@methodus/server';
 import { Auth } from '@methodus/framework-decorators';
 import { TestLogger } from './logger.service';
 import { ScreenModel } from '../models/screen.model';
-import { Injectable,Inject } from '@methodus/framework-injection';
 
 /**
  * @hidden
  */
-@Injectable()
+@injection.Injectable()
 @Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @MethodConfig('TestController')
 export class TestController {
@@ -17,7 +17,7 @@ export class TestController {
     /**
      *
      */
-    constructor(@Inject() private testLogger: TestLogger) {
+    constructor(@injection.Inject() private testLogger: TestLogger) {
         this.testLogger.log('instance created for TestController');
     }
 

@@ -1,12 +1,12 @@
-import { Injector } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 import { SingleServiceName } from './single-service-name';
 
 describe('SingleServiceName', () => {
 
-     
+
     let service: SingleServiceName;
-    beforeAll(() => {        
-        service = Injector.get(SingleServiceName);
+    beforeAll(() => {
+        service = injection.Injector.get(SingleServiceName);
     })
 
     it('Service created', async () => {

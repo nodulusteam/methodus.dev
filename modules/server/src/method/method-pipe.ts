@@ -1,12 +1,11 @@
 // tslint:disable-next-line:no-reference
 /// <reference path="./method.ts" />
 import 'reflect-metadata';
-import { MethodType } from '@methodus/framework-commons';
+import commons, { MethodType } from '@methodus/framework-commons';
+import injection from '@methodus/framework-injection';
 import { MethodResult, MethodError } from '../response';
 import { Servers } from '../servers/serversList';
-import { logger } from '@methodus/framework-commons';
 import { ResponseParser } from '../response/response-parser';
-import { ClassContainer } from '@methodus/framework-injection';
 
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
@@ -58,7 +57,7 @@ export namespace Methods {
 
                 if (!config) {
                     const client = Servers.clients[configName];
-                    const existingClassMetadata = ClassContainer.get(configName);
+                    const existingClassMetadata = injection.ClassContainer.get(configName);
                     if (client) {
                         // merge the configuration object
                         Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
@@ -85,7 +84,7 @@ export namespace Methods {
 
                     // try to get the method metadata from the Relection API.
 
-                    const existingClassMetadata: any = ClassContainer.get(methodus.name);
+                    const existingClassMetadata: any = injection.ClassContainer.get(methodus.name);
 
                     // merge the configuration object
                     Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
@@ -112,7 +111,7 @@ export namespace Methods {
                             return { [param.name || param.from]: ParserResponse.args[param.index] };
                         });
 
-                        logger.info(`@Method::call`, methodType, originalMethod.name, ...mappedArgs);
+                        commons.logger.info(`@Method::call`, methodType, originalMethod.name, ...mappedArgs);
                         switch (methodType) {
                             case MethodType.Mock:
                                 methodResult = new MethodResult(methodus._mocks[propertyKey]);
@@ -124,7 +123,7 @@ export namespace Methods {
 
                     } catch (error) {
                         error.statusCode = error.statusCode || 500;
-                        logger.error(error);
+                        commons.logger.error(error);
 
                         if (ParserResponse.isRest) {
                             return parser.response(args, error, restHeaders);
@@ -148,7 +147,7 @@ export namespace Methods {
 
                     } else {
 
-                        logger.info(`@Method::OK`, methodType, originalMethod.name);
+                        commons.logger.info(`@Method::OK`, methodType, originalMethod.name);
                         return methodResult;
 
                     }

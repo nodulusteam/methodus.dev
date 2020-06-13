@@ -1,10 +1,10 @@
 
 import { MethodResult } from './method.result';
 import { MethodConfig, Method } from '@methodus/framework-decorators';
-import { Injectable } from '@methodus/framework-injection';
+import injection from '@methodus/framework-injection';
 // import { Injectable } from '@methodus/framework-injection';
 
-@Injectable('MethodHandler')
+@injection.Injectable('MethodHandler')
 class MethodHandler {
     methodDecorator() {
 

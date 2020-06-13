@@ -1,10 +1,10 @@
-import { Injectable, MethodResult, MethodError, deserialize } from '@methodus/server';
+import { injectionModule as injection, MethodResult, MethodError, deserialize } from '@methodus/server';
 import stringify from 'fast-safe-stringify';
 import * as etag from 'etag';
 /**
  * @hidden
  */
-@Injectable('ParserForexpress')
+@injection.Injectable('ParserForexpress')
 export class RestParser {
 
     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
@@ -66,7 +66,7 @@ export class RestParser {
 /**
  * @hidden
  */
-@Injectable('ResponseForexpress')
+@injection.Injectable('ResponseForexpress')
 export class RestResponse {
     constructor() { }
 

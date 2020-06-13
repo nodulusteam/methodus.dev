@@ -1,16 +1,16 @@
 {
     "exclude": ["docs", "node_modules"],
     "typedocOptions": {
-        "theme": "markdown",
+        "exclude": "**/*+(index|.spec|.e2e).ts",      
+        "module": "commonjs",
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "commonjs",
-        "includeDeclarations": "true",
+        "includeDeclarations": "false",
         "mode": "file",
-        "name": "A Methodus guide",
-        "readme": "none",
-        "out": "docs",
-        "exclude": "tests"
+        "name": "Methodus - framework commons",
+        "readme": "readme.md",
+        "out": "../../docs/framework/common"
     },
     "compilerOptions": {
         "target": "ESNEXT",

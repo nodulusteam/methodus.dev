@@ -9,7 +9,7 @@
         "mode": "file",
         "name": "A Methodus guide",
         "readme": "none",
-        "out": "docs",
+        "out": "../../docs/framework/decorators",
         "exclude": "tests"
     },
     "compilerOptions": {

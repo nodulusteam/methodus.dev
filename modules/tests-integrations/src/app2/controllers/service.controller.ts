@@ -1,4 +1,4 @@
-import { MethodConfig, Method, Inject,MethodResult } from '@methodus/server';
+import { MethodConfig, Method,MethodResult, injectionModule as injection } from '@methodus/server';
 import { TestLogger } from './logger.service';
 
 /**
@@ -10,7 +10,7 @@ export class DataService {
     public async special(id: string) {
         return new MethodResult(id);
     }
-    constructor(@Inject() private testLogger:TestLogger) {
+    constructor(@injection.Inject() private testLogger:TestLogger) {
         this.testLogger.log('instance created for DataService');
     }
 
