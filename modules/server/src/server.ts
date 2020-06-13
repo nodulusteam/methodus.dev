@@ -7,7 +7,7 @@ import { PluginLoader } from './plugins';
 import injection from '@methodus/framework-injection';
 import { v1 as uuidv1 } from 'uuid';
 
- 
+
 export interface IApp {
     set(key: string, value: any): void;
 }
@@ -68,8 +68,8 @@ export class Server {
             if (metaObject) {
                 metaObject.methodType = _class.transportType.name;
                 injection.ClassContainer.set(configName, metaObject);
-                commons.logger.info
-                    (`using client class ${_class.classType.name} in ${_class.transportType.name} mode`);
+                commons.logger
+                    .info(`using client class ${_class.classType.name} in ${_class.transportType.name} mode`);
 
             } else {
                 commons.logger.error('could not load metadata for ' + configName);

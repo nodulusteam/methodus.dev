@@ -1,6 +1,6 @@
 {
     "packages": ["modules/*"],
-    "ignore": ["@methodus/platform-grpc","@methodus/cli","@methodus/contracts"],
+    "ignore": ["@methodus/platform-grpc"],
     "useWorkspaces": false,
     "npmClient": "yarn",
     "version": "0.0.0"

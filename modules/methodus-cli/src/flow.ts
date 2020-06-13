@@ -47,7 +47,7 @@ export async function flow(
                 templatePath
             );
             if (templateConfig && what) {
-                await new CLI(what, templateConfig).generate(
+                new CLI(what, templateConfig).generate(
                     verb,
                     templatePath
                 ); // what is the name
@@ -160,11 +160,11 @@ async function generate(
     patchModuleFile(cli, moduleFilePath, name, templateKey);
 }
 async function findModule(moduleName: string, controllerCli: CLI) {
-    const files = await glob.sync(`**/${camelCaseToDash(moduleName)}.ts`, {
+    const files = glob.sync(`**/${camelCaseToDash(moduleName)}.ts`, {
         cwd: controllerCli.CURR_DIR,
     }); //find the module
 
-    debugger;
+    
     if (files.length === 0) {
         throw `Module ${moduleName} could not be found.`;
     }
