@@ -9,11 +9,10 @@
         "start-build": "ts-node src/index.ts"
     },
     "license": "MIT",
-    "dependencies": {
-        "@methodus/describe": "^7.0.7",
-        "@methodus/platform-express": "^5.0.12",
-        "@methodus/platform-rest": "^5.0.8",
-        "@methodus/server": "^5.0.23"
+    "dependencies": {        
+        "@methodus/platform-express": "^6.0.0",
+        "@methodus/platform-rest": "^6.0.0",
+        "@methodus/server": "^6.0.0"
     },
     "devDependencies": {
         "@types/node": "^13.9.0",

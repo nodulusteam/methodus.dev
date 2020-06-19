@@ -1,6 +1,6 @@
-// <references path='../interfaces/methodus.ts' />
-import { Dictionary, ClassRef, IMethodusConfig, MethodType } from '@methodus/framework-commons';
+import { IMethodusConfig, ClassRef, MethodType, Dictionary } from "../interfaces";
 
+ 
 export abstract class BaseServer { // implements Methodus.Server
     config?: IMethodusConfig;
     classRouters: ClassRef[] = [];

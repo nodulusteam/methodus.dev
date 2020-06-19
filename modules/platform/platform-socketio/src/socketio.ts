@@ -1,11 +1,9 @@
-import 'reflect-metadata';
-// <references path='../interfaces/methodus.ts' />
 const debug = require('debug')('methodus');
 import * as http from 'http';
 const metadataKey = 'methodus';
 import * as socketIO from 'socket.io';
-import { commonsModule as commons, Servers, BaseServer } from '@methodus/server';
-
+import { commonsModule as commons, Servers } from '@methodus/server';
+import { BaseServer } from '@methodus/framework-commons';
 /**
  * @hidden
  */
