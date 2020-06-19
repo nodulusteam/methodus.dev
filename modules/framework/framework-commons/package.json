@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-commons",
-    "version": "0.0.1",
+    "version": "6.0.0-alpha",
     "description": "Commons for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
