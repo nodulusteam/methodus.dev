@@ -1,4 +1,3 @@
 *
-!lib/*
-lib/tests/*
+!lib/**/*
 !package.json
