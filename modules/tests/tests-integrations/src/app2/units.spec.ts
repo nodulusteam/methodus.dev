@@ -1,4 +1,4 @@
-import { MethodusConfig, MethodusClassConfig } from '@methodus/server';
+import { MethodusConfig, MethodusClassConfig } from '@methodus/framework-commons';
 
 describe('Test additional method classes', () => {
     it('MethodusConfig', async () => {

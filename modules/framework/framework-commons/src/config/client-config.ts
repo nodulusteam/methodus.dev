@@ -1,4 +1,4 @@
-import { TransportType } from '@methodus/framework-commons';
+import { TransportType } from "../interfaces";
 
 /**
  * @hidden

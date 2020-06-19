@@ -1,4 +1,4 @@
-
+export * from './plugin-entry';
 export interface IMethodusClassConfig {
     methodType: MethodType;
     classType: any;

@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 import { Servers } from './servers';
-import { MethodusConfig, ServerConfig, PluginEntry } from './config';
-import commons from '@methodus/framework-commons';
+import commons, { MethodusConfig, ServerConfig, PluginEntry } from '@methodus/framework-commons';
 import { MethodHandler } from './method/handlers/method.handler';
 import { MethodPipeHandler } from './method/handlers/pipe.handler';
 

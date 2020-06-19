@@ -1,5 +1,5 @@
 
-import { MethodusConfig } from './config';
+import { MethodusConfig } from '@methodus/framework-commons';
 import { Server } from './server';
 import { EventEmitter } from 'events';
 

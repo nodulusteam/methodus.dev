@@ -1,6 +1,4 @@
-import { ServerDefinition } from '@methodus/framework-commons';
-
- 
+import { ServerDefinition } from "../interfaces";
 
 /**
  * @hidden

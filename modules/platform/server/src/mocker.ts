@@ -1,5 +1,4 @@
-import { MethodusClientConfig } from './config/client-config';
-import { TransportType } from '@methodus/framework-commons';
+import { TransportType,MethodusClientConfig } from '@methodus/framework-commons';
 import injection from '@methodus/framework-injection';
 
 

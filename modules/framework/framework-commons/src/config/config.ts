@@ -1,14 +1,11 @@
 
-import { MethodType, ServerType, TransportType } from '@methodus/framework-commons';
 import { MethodusClassConfig } from './class-config';
 import { MethodusClientConfig } from './client-config';
 import { ServerConfig } from './server-config';
-import { ServerDefinition } from '@methodus/framework-commons';
+import { PluginEntry } from '../interfaces/plugin-entry';
+import { ServerDefinition, TransportType, MethodType, ServerType } from '../interfaces';
 
-export interface PluginEntry {
-    name: string;
-    options: any;
-}
+
 
 export class MethodusConfig {
 
