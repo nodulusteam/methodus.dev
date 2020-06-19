@@ -3,8 +3,6 @@
     "version": "6.0.0-alpha",
     "private": true,
     "description": "Server components for @methodus workflow",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
     "directories": {
         "test": "tests",
         "examples": "examples"
@@ -24,7 +22,7 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/nodulusteam/-methodus-server"
+        "url": "https://github.com/nodulusteam/methodus.dev"
     },
     "scripts": {
         "clean": "rm -rf ./modules/*/yarn.lock && rm -rf ./modules/*/node_modules && rm -rf ./modules/*/dist && rm -rf ./modules/*/lib",
