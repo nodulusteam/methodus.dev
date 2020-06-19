@@ -1,9 +1,9 @@
 import {
     injectionModule as injection,
-    Mapping
+
 } from '@methodus/server';
 import decorators from '@methodus/framework-decorators';
-import { AuthType, MethodResult, MethodResultStatus, MethodError } from '@methodus/framework-commons';
+import { AuthType, MethodResult, MethodResultStatus, MethodError, Mapping } from '@methodus/framework-commons';
 import { TestLogger } from './logger.service';
 import { ScreenModel } from '../models/screen.model';
 

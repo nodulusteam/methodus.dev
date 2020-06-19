@@ -1,7 +1,7 @@
-import { injectionModule as injection, Mapping } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 import { Verbs } from '../shim';
 import decorators from '@methodus/framework-decorators';
-import { MethodResult, AuthType } from '@methodus/framework-commons';
+import { MethodResult, AuthType, Mapping } from '@methodus/framework-commons';
 /**
  * @hidden
  */

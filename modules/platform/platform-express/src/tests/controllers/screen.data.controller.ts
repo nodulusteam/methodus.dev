@@ -1,6 +1,6 @@
 import { DataController } from './data.controller';
-import {decoratorsModule as decorators, Mapping } from '@methodus/server';
-import { MethodResult } from '@methodus/framework-commons';
+import { decoratorsModule as decorators } from '@methodus/server';
+import { MethodResult, Mapping } from '@methodus/framework-commons';
 import { ScreenModel } from '../models/screen.model';
 import { Verbs } from '../shim';
 

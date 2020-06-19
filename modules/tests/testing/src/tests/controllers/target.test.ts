@@ -1,9 +1,7 @@
 import {
     injectionModule as injection, decoratorsModule as decorators,
-    Mapping
 } from '@methodus/server';
-import { AuthType } from '@methodus/framework-commons';
-import { MethodResult } from '@methodus/framework-commons';
+import { MethodResult, Mapping, AuthType } from '@methodus/framework-commons';
 
 /**
  * @hidden

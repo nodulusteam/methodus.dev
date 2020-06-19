@@ -1,8 +1,8 @@
 import { DataController } from './data.controller';
 import { ScreenModel } from '../models/screen.model';
-import { Mapping,decoratorsModule as decorators, injectionModule as injection } from '@methodus/server';
+import { decoratorsModule as decorators, injectionModule as injection } from '@methodus/server';
 import { TestLogger } from './logger.service';
-import { MethodResult } from '@methodus/framework-commons';
+import { MethodResult, Mapping } from '@methodus/framework-commons';
 /**
  * @hidden
  */

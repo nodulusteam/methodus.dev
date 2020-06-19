@@ -1,6 +1,6 @@
-import { Mapping, injectionModule as injection } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 import deocorators from '@methodus/framework-decorators';
-import { MethodResult } from '@methodus/framework-commons';
+import { MethodResult, Mapping } from '@methodus/framework-commons';
 import { DataController } from './data.controller';
 import { ScreenModel } from '../models/screen.model';
 import { TestLogger } from './logger.service';

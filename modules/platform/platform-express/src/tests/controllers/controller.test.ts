@@ -1,11 +1,10 @@
 import {
-
-    Param, Mapping, injectionModule as injection,
+    Param, injectionModule as injection,
 } from '@methodus/server';
 import { AuthMiddleware } from '../middlewares/auth.middleware';
 import { MethodMiddleware } from '../middlewares/method.middleware';
 import { Verbs } from '../shim';
-import { MethodResult, MethodError, MethodResultStatus, AuthType } from '@methodus/framework-commons';
+import { MethodResult, MethodError, MethodResultStatus, AuthType, Mapping } from '@methodus/framework-commons';
 import decorators from '@methodus/framework-decorators';
 /**
  * @hidden

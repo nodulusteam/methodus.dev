@@ -1,5 +1,5 @@
-import { decoratorsModule as decorators, Mapping, } from '@methodus/server';
-import { MethodResult } from '@methodus/framework-commons';
+import { decoratorsModule as decorators,  } from '@methodus/server';
+import { MethodResult, Mapping } from '@methodus/framework-commons';
 /**
  * @hidden
  */
