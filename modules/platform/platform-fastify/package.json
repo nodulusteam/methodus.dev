@@ -1,6 +1,6 @@
 {
   "name": "@methodus/platform-fastify",
-  "version": "0.0.0",
+  "version": "6.0.0-alpha",
   "description": "",
   "main": "index.js",
   "scripts": {

@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "5.0.6",
+    "version": "6.0.0-alpha",
     "description": "",
     "main": "lib/index.js",
     "scripts": {
