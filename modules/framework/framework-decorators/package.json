@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-decorators",
-    "version": "6.0.0-alpha",
+    "version": "6.0.1-alpha.0",
     "description": "Server Decorators for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
