@@ -17,10 +17,10 @@
         "@methodus/server": "^6.0.0-alpha"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^0.0.1",
-        "@methodus/framework-decorators": "^0.0.1",
-        "@methodus/framework-injection": "^0.0.1",
-        "@methodus/server": "^0.0.1",
+        "@methodus/framework-commons": "6.0.1-alpha.0",
+        "@methodus/framework-decorators": "6.0.1-alpha.0",
+        "@methodus/framework-injection": "6.0.1-alpha.0",
+        "@methodus/server": "6.0.1-alpha.0",
         "body-parser": "^1.19.0",
         "compression": "^1.7.0",
         "cookie-parser": "^1.4.4",
@@ -32,7 +32,7 @@
     },
     "devDependencies": {
         "@methodus/data": "^2.0.35",
-        "@methodus/platform-rest": "^0.0.1",
+        "@methodus/platform-rest": "6.0.1-alpha.0",
         "@types/cookie-parser": "^1.4.2",
         "@types/etag": "^1.8.0",
         "@types/express": "^4.17.2",

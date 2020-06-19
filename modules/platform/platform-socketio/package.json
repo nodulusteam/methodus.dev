@@ -16,10 +16,10 @@
         "@methodus/server": "^6.0.0-alpha"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^0.0.1",
-        "@methodus/framework-decorators": "^0.0.1",
-        "@methodus/framework-injection": "^0.0.1",
-        "@methodus/server": "^0.0.1",
+        "@methodus/framework-commons": "6.0.1-alpha.0",
+        "@methodus/framework-decorators": "6.0.1-alpha.0",
+        "@methodus/framework-injection": "6.0.1-alpha.0",
+        "@methodus/server": "6.0.1-alpha.0",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"
     },
