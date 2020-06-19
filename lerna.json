@@ -1,5 +1,5 @@
 {
-    "packages": ["modules/*"],
+    "packages": ["modules/framework/*", "modules/platform/*", "modules/testing/*", "modules/tools/*"],
     "ignore": ["@methodus/platform-grpc"],
     "useWorkspaces": false,
     "npmClient": "yarn",

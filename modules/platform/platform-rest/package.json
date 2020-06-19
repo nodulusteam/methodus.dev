@@ -1,0 +1,43 @@
+{
+    "name": "@methodus/platform-rest",
+    "version": "5.0.24",
+    "description": "REST plugin for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "test": "jest && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-rest.json",
+        "build": "rimraf ./lib && yarn format && tsc",
+        "docs": "typedoc",
+        "format": "prettier -c --write ./src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/-methodus-server/modules/platform-rest"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "atob": "^2.1.2",
+        "axios": "^0.19.2",
+        "btoa": "^1.2.1",
+        "js-base64": "^2.5.2",
+        "tunnel": "^0.0.6",        
+        "@methodus/framework-commons": "*",
+        "@methodus/framework-injection": "*",
+        "@methodus/framework-decorators": "*"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/tunnel": "^0.0.1",
+        "cross-env": "^7.0.2",
+        "jest": "^24.9.0",
+        "jest-mock-axios": "^3.2.0",
+        "rimraf": "^3.0.0",
+        "ts-jest": "^24.2.0",
+        "prettier": "^2.0.5",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
+    }
+}

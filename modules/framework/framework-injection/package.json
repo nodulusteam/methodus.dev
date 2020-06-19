@@ -1,0 +1,31 @@
+{
+    "name": "@methodus/framework-injection",
+    "version": "1.0.0",
+    "description": "Dependency injection for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {       
+        "test": "jest --silent && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-injection.json",
+        "build": "rimraf ./lib && tsc",
+        "docs": "typedoc",
+        "format": "prettier -c --write ./src"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "peerDependencies": {},
+    "dependencies": {
+        "@methodus/framework-commons": "*"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "jest": "^24.9.0",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "prettier": "^2.0.5",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
+    }
+}
