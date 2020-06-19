@@ -23,9 +23,9 @@
         "btoa": "^1.2.1",
         "js-base64": "^2.5.2",
         "tunnel": "^0.0.6",        
-        "@methodus/framework-commons": "*",
-        "@methodus/framework-injection": "*",
-        "@methodus/framework-decorators": "*"
+        "@methodus/framework-commons": "^6.0.0-alpha",
+        "@methodus/framework-injection": "^6.0.0-alpha",
+        "@methodus/framework-decorators": "^6.0.0-alpha"
     },
     "devDependencies": {
         "@types/jest": "^24.0.23",

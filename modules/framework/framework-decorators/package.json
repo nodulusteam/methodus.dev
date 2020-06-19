@@ -15,8 +15,8 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
-       "@methodus/framework-commons":"*",
-       "@methodus/framework-injection":"*"
+       "@methodus/framework-commons":"^6.0.0-alpha",
+       "@methodus/framework-injection":"^6.0.0-alpha"
     },
     "devDependencies": {
         "typedoc": "^0.17.7",

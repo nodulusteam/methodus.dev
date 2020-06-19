@@ -1,6 +1,6 @@
 {
     "name": "@methodus/testing",
-    "version": "0.0.3",
+    "version": "6.0.0-alpha",
     "description": "",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -12,8 +12,10 @@
     "author": "nodulusteam",
     "license": "ISC",
     "dependencies": {
-        "@methodus/server": "*",
-        "@methodus/framework-commons":"*"
+        "@methodus/server": "^6.0.0-alpha",
+        "@methodus/framework-commons": "^6.0.0-alpha",
+        "@methodus/framework-injection": "^6.0.0-alpha",
+        "@methodus/framework-decorators": "^6.0.0-alpha"
     },
     "devDependencies": {
         "jest": "^24.9.0",

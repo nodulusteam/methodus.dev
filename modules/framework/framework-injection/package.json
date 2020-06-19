@@ -15,7 +15,7 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
-        "@methodus/framework-commons": "*"
+        "@methodus/framework-commons": "6.0.0-alpha"
     },
     "devDependencies": {
         "@types/jest": "^24.0.23",

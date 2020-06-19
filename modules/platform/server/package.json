@@ -40,9 +40,9 @@
     "license": "BSD-3-Clause",
     "peerDependencies": {},
     "dependencies": {
-        "@methodus/framework-commons": "*",
-        "@methodus/framework-injection": "*",
-        "@methodus/framework-decorators": "*",
+        "@methodus/framework-commons": "^6.0.0-alpha",
+        "@methodus/framework-injection": "^6.0.0-alpha",
+        "@methodus/framework-decorators": "^6.0.0-alpha",
         "debug": "^4.1.1",
         "fast-safe-stringify": "^2.0.7",
         "method-override": "^2.3.9",
@@ -51,8 +51,7 @@
     },
     "optionalDependencies": {},
     "devDependencies": {
-        "@methodus/data": "^2.0.0",
-        "@methodus/testing": "^0.0.2",
+        "@methodus/data": "^2.0.0",         
         "@types/jest": "^24.0.23",
         "@types/mongodb": "^3.1.27",
         "@types/node": "^10.0.0",

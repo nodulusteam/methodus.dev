@@ -38,9 +38,9 @@ const projects = [
   'express',
   'rest',
   'testing',
-  //'integrations',
-  //'cli',
- // 'contracts'
+  'integrations',
+  'cli',
+  'contracts'
 ];
 
 projects.forEach(project => {
