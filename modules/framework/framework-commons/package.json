@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-commons",
-    "version": "6.0.0-alpha",
+    "version": "0.0.1",
     "description": "Commons for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -12,8 +12,6 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
-    "peerDependencies": {},
-    "dependencies": {},
     "devDependencies": {
         "@types/jest": "^24.0.23",
         "@types/node": "^14.0.9",
@@ -21,7 +19,7 @@
         "rimraf": "^3.0.1",
         "ts-jest": "^24.2.0",
         "typedoc": "^0.17.7",
-        "typescript": "^3.9.5",
-        "typedoc-plugin-markdown": "^2.3.1"
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
     }
 }

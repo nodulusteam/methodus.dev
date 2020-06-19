@@ -1,11 +1,9 @@
 {
   "name": "@methodus/platform-fastify",
-  "version": "6.0.0-alpha",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "dependencies": {
