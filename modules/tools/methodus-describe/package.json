@@ -29,6 +29,7 @@
     "license": "BSD-3-Clause",
     "devDependencies": {
         "@methodus/data": "^2.0.33",
+        "@methodus/contracts": "^6.0.2-alpha.0",
         "@methodus/platform-express": "^6.0.2-alpha.0",
         "@methodus/platform-rest": "^6.0.2-alpha.0",
         "@methodus/server": "^6.0.2-alpha.0",
