@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>success</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M43.4871476,5.13310149 L21.3711271,40.7651432 C20.5585448,42.0721647 19.1947843,42.8523249 17.7195724,42.8523249 C16.4145772,42.8523249 15.1784793,42.2403551 14.3314483,41.1724476 L0.728292243,24.0757952 C-0.357852795,22.7100083 -0.213979105,20.7038822 1.05859381,19.5083121 C2.29469171,18.3431379 4.37174146,18.3208476 5.63620882,19.4617052 L17.1947374,29.8854553 L37.8801264,1.36604248 C38.9095326,-0.0524305133 41.0433212,-0.435418223 42.502322,0.545354536 C44.0180617,1.5646287 44.4517092,3.58088675 43.4871476,5.13310149 L43.4871476,5.13310149 Z" id="path-1"></path>
+    </defs>
+    <g id="success" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M50,0 C77.6,0 100,22.4 100,50 C100,77.6 77.6,100 50,100 C22.4,100 0,77.6 0,50 C0,22.4 22.4,0 50,0 Z" id="Shape" fill="#FBFBFB"></path>
+        <g id="icon-/-check-heavy" transform="translate(31.000000, 29.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use id="Mask" fill="#0568AE" fill-rule="nonzero" xlink:href="#path-1"></use>
+            <g id="color-/-green-28A337" mask="url(#mask-2)" fill="#28A337" fill-rule="evenodd">
+                <rect id="Rectangle-2" x="0" y="0" width="44" height="44"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

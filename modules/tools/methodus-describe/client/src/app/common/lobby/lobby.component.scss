@@ -1,0 +1,124 @@
+.grouped-container {
+  width: 100%;
+  &-items {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 35px 0 20px 10px;
+    background: #f2f2f2;
+    .sqr {
+      margin: 0 10px 30px 10px;
+    }
+    &-type {
+      width: 100%;
+      margin-left: 12px;
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+  &-items:last-child {
+    border: none;
+  }
+}
+
+.all-container {
+  width: 100%;
+  &-items {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    border-bottom: 1px solid #d2d2d2;
+    padding: 20px 0 20px 0px;
+    .sqr {
+      margin: 0 10px 30px 10px;
+    }
+    .sqr.admin {
+      overflow: hidden;
+    }
+    &-type {
+      width: 100%;
+      margin-left: 12px;
+      font-weight: bold;
+      font-size: 25px;
+    }
+  }
+  &-items:last-child {
+    border: none;
+  }
+}
+
+.icon {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.sqr-btn {
+  /* padding:6%; */
+  font-size: 84px;
+  text-align: center;
+  vertical-align: middle;
+  svg {
+    height: 100%;
+  }
+}
+.sqr {
+  opacity: 0.9;
+  transition: transform 0.5s;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+.sqr-btn:hover,
+.sqr:hover {
+  opacity: 1;
+
+  transform: translate(2px, 2px);
+
+  border-radius: 35;
+  background: #fff;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) !important;
+
+  .sqr-toolbar {
+    visibility: visible;
+  }
+}
+
+.sqr-btn._meta_active,
+.sqr._meta_active {
+  opacity: 1;
+
+  transform: translate(2px, 2px);
+
+  margin-bottom: 20px;
+  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2) !important;
+
+  .sqr-toolbar {
+    visibility: visible;
+  }
+}
+
+.fancy-thumb {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.smallSqr {
+  width: 180px;
+  height: 150px;
+  .thumb-label {
+    font-size: 14px;
+  }
+}
+
+.no-results {
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,58 @@
+@import '../../sass/_variables';
+
+
+
+.active-link{
+    color: #c5c5c5;
+    background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    #LibrarySubmenu{
+        display: block!important;
+    }
+}
+
+
+
+
+.well
+{
+    font-size: 17px;
+    text-transform: capitalize;
+    background-color: white;
+    border-radius: 13px;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-top: 6px;
+    height: 22px;
+}
+.nav-bar{
+    margin:0;
+    width: 100%;
+    li{
+        float: right;
+        list-style: none;
+       
+    }
+}
+.help{
+    padding: 10px!important;
+    cursor: pointer;
+    color: white;
+    font-size: 22px;
+}
+ 
+.scroller{
+    overflow: auto;     
+    width: 100%;    
+}
+
+
+.logo{
+    padding:0px;
+}
+ .sidebar-body
+ {
+     
+    padding: 20px;
+    font-size: 24px;
+ }

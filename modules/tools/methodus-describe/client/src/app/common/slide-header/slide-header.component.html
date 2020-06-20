@@ -1,0 +1,13 @@
+<div class="{{class}} {{className}}">
+    <h5>{{title}}</h5>
+    <button *ngIf="closeFn" class="close-button" (click)="closeSlider();"><em class="fas fa-times"></em></button>
+    <button *ngIf="enableSave" class="btn btn-primary {{dirty}} save-btn" (click)="saveClick($event);">
+        Save
+    </button>
+    <div class="toolbar">
+        <ng-template [ngTemplateOutlet]="toolbar || defaultTemplate"></ng-template>
+    </div>
+</div>
+<div class="both title-break"></div>
+<ng-template #defaultTemplate>
+</ng-template>

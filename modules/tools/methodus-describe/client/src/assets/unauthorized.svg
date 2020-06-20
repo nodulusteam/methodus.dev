@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>page_error</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Not-authorized" transform="translate(-633.000000, -258.000000)">
+            <g id="page_error" transform="translate(633.000000, 258.000000)">
+                <path d="M50,0 C77.6,0 100,22.4 100,50 C100,77.6 77.6,100 50,100 C22.4,100 0,77.6 0,50 C0,22.4 22.4,0 50,0 Z" id="Shape" fill="#FBFBFB"></path>
+                <path d="M69.9,44.6 C69.9,44.5 69.9,44.4 69.8,44.3 L54.2,27.1 C54.1,27 54,27 53.9,27 L35.2,27 C32.9,27 31,29.1 31,31.6 L31,72.4 L34.8,68.4 L40,74 L45.2,68.5 L50.4,74 L55.6,68.5 L61,74 L66.2,68.5 L70,72.5 L69.9,44.6 Z M65.3,45.5 L53,45.5 C52.6,45.5 52.2,45.1 52.2,44.7 L52.2,31.3 C52.2,30.6 53.1,30.2 53.6,30.8 L65.9,44.3 C66.4,44.7 66,45.5 65.3,45.5 Z" id="Shape" fill="#D5D5D5"></path>
+            </g>
+        </g>
+    </g>
+</svg>

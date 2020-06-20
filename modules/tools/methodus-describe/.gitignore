@@ -1,0 +1,15 @@
+.npmrc
+@methodus/describe-client/node_modules
+client_old/
+node_modules/
+server/public/
+server/public_old/
+public/
+build/
+.scannerwork/
+client/@methodus/*
+.nyc_output/
+coverage/
+output/
+@methodus/
+client/yarn.lock

@@ -1,0 +1,44 @@
+{
+  "/api/*": {
+    "target": "http://localhost:3045",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {}
+  },
+  "/companies/*": {
+    "target": "http://localhost:3045",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {}
+  },
+  "/ec2/*": {
+    "target": "http://localhost:3045",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {}
+  },
+  "/cloudwatch/*": {
+    "target": "http://localhost:3045",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {}
+  },
+  "/cft/*": {
+    "target": "http://localhost:3045",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {}
+  },
+  "/socket.io/*": {
+    "target": "http://localhost:3045",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {}
+  }
+}

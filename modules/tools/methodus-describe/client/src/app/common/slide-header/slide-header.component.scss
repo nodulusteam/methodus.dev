@@ -1,0 +1,179 @@
+@import "../../../sass/_variables";
+
+.title-break{
+  border-bottom: 1px solid $color-blue;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.inline-topper {
+  pointer-events: none;
+  z-index: 0;
+  height: 51px;
+
+  padding-top: 10px;
+  .icon {
+    margin: 8px;
+    vertical-align: top;
+  }
+  h5 {
+    display: inline;
+    vertical-align: top;
+  }
+  .bar-icon {
+    margin-left: 15px;
+  }
+}
+
+.topper {
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 50px; 
+  margin-top: 10px;
+  padding-left: 10px;
+  .icon {
+    margin: 8px;
+    vertical-align: top;
+  }
+  h5 {
+    display: inline;
+    vertical-align: top;
+  }
+  .bar-icon {
+    margin-left: 15px;
+  }
+}
+
+.both{
+  clear: both;
+}
+.flat-btn {
+  border: none;
+}
+
+.close-button{
+  float: right;
+  background-color: $color-white;
+  color:  $color-blue;
+  border: none;
+}
+
+.save-btn{
+  height: 28px;
+  font-size: 0.8rem;
+  line-height: 0.3rem;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 2px;
+  border: none;
+  float: right;
+  margin-right: 20px;
+}
+
+ 
+.close-button-topper {
+  position: absolute;
+  z-index: 2000;
+  top: 0px;
+  width: 49px;
+  height: 49px;
+  
+
+  color: $color-blue;
+  cursor: pointer;
+}
+
+.close-button-inline-topper {
+  color: $color-blue;
+  cursor: pointer;
+  position: absolute;
+
+  top: 0px;
+  width: 49px;
+  height: 49px;
+ 
+}
+.save-btn-inline-topper:hover {
+  font-size: 1.5em;
+}
+.btn-primary{
+  background-color:  $color-gray;
+  color: #fff;
+}
+.btn-primary.true{
+  background-color:  $color-blue;
+  color: #fff;
+}
+
+
+.save-btn-inline-topper {
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  color: white;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  width: 49px;
+  height: 49px;
+  background-color: $color-blue;
+  &.true {
+    background-color:  $color-red;
+    color: black;
+  }
+}
+
+.toolbar {
+  position: absolute;
+  top: 0;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+ 
+:host-context(.ltr) {
+  .toolbar {
+    right: 110px;
+  }
+
+  .save-btn-topper {
+    right: 49px;
+    &.true {
+      background-color: $color-red !important;
+      color: $color-white;
+    }
+  }
+  .save-btn-inline-topper {
+    float: left;
+    right: 49px;
+  }
+  .close-button-inline-topper {
+    float: right;
+    right: 0px;
+  }
+}
+
+.save-btn-topper {
+  color: $color-white;
+  position: absolute;
+  top: 0;
+  width: 49px;
+  height: 49px;
+  background-color: $color-blue;
+  cursor: pointer;
+}
+
+.save-btn-inline-topper:active,
+.save-btn-inline-topper:hover,
+.save-btn-topper:active,
+.save-btn-topper:hover,
+.btn-tool:hover,
+.btn-tool:active {
+  font-size: 1.5em;
+}
+
+.close-button-inline-topper:active,
+.close-button-inline-topper:hover,
+.close-button-topper:active,
+.close-button-topper:hover {
+  font-size: 1.5em;
+}

@@ -1,0 +1,52 @@
+{
+    "name": "@methodus/describe",
+    "version": "7.0.19",
+    "description": "Api explorer for Methodus applications",
+    "main": "build/index.js",
+    "scripts": {
+        "install": "yarn client && cd client && yarn",
+        "build": "rimraf build && tsc",
+        "test": "npm run build && npm run test:tests",
+        "test:tests": "jest --detectOpenHandles",
+        "cov": "run-s test:tests",
+        "contract": "contracts-server ./build.json",
+        "client": "contracts-client ./build.json",
+        "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-describe -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8c7c7f129d82d3fe77455df4bf7607c5dacbfdc2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/-methodus-describe"
+    },
+    "keywords": [
+        "methodus",
+        "describe",
+        "swagger",
+        "api browser",
+        "plugin",
+        "@methodus/server"
+    ],
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "devDependencies": {
+        "@methodus/data": "^2.0.33",
+        "@methodus/platform-express": "^6.0.2-alpha.0",
+        "@methodus/platform-rest": "^6.0.2-alpha.0",
+        "@methodus/server": "^6.0.2-alpha.0",
+        "@types/jest": "^24.0.21",
+        "@types/jquery": "^3.2.16",
+        "@types/node": "^10.12.9",
+        "express-basic-auth": "^1.2.0",
+        "jest": "^24.9.0",
+        "npm-run-all": "^4.1.5",
+        "prettier": "^1.15.2",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^24.1.0",
+        "tslint": "^5.10.0",
+        "typescript": "^3.9.5"
+    },
+    "peerDependencies": {
+        "@methodus/platform-express": "^6.0.0",
+        "@methodus/platform-rest": "^6.0.0",
+        "@methodus/server": "^6.0.0"
+    }
+}

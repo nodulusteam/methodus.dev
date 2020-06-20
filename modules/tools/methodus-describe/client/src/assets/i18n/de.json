@@ -1,0 +1,22 @@
+{
+  "LOGIN": {
+    "TITLE": "כניסה",
+    "INSERT_USERNAME": "נא הכנס שם משתמש",
+    "PASSWORD": "סיסמה",
+    "USERNAME": "שם משתמש",
+    "INSERT_PASSWORD": "נא הכנס סיסמה",
+    "INVALID_USERNAME_OR_PASSWORD": "שם משתמש/סיסמה לא נכונים. אנא נסה שנית",
+    "REMEMBER_ME": "זכור אותי",
+    "LOGIN_BTN": "כניסה"
+  },
+  "SIGNUP": {
+    "TITLE": "הצטרפות",
+    "INSERT_USERNAME": "נא הכנס שם משתמש",
+    "PASSWORD": "סיסמה",
+    "USERNAME": "שם משתמש",
+    "INSERT_PASSWORD": "נא הכנס סיסמה",
+    "INVALID_USERNAME_OR_PASSWORD": "שם משתמש/סיסמה לא נכונים. אנא נסה שנית",
+    "REMEMBER_ME": "זכור אותי",
+    "SIGNUP_BTN": "רישום"
+  }
+}
