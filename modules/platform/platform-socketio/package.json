@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "6.0.1",
+    "version": "6.0.2-alpha.0",
     "description": "",
     "main": "lib/index.js",
     "scripts": {
@@ -16,10 +16,10 @@
         "@methodus/server": "^6.0.0-alpha"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^6.0.1",
-        "@methodus/framework-decorators": "^6.0.1",
-        "@methodus/framework-injection": "^6.0.1",
-        "@methodus/server": "^6.0.1",
+        "@methodus/framework-commons": "^6.0.2-alpha.0",
+        "@methodus/framework-decorators": "^6.0.2-alpha.0",
+        "@methodus/framework-injection": "^6.0.2-alpha.0",
+        "@methodus/server": "^6.0.2-alpha.0",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"
     },

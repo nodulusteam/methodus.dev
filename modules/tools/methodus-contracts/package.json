@@ -1,6 +1,6 @@
 {
     "name": "@methodus/contracts",
-    "version": "6.0.1",
+    "version": "6.0.2-alpha.0",
     "description": "",
     "main": "lib/index.js",
     "bin": {
@@ -28,8 +28,8 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "devDependencies": {
-        "@methodus/testing": "^6.0.0",
         "@methodus/client": "^3.1.26",
+        "@methodus/testing": "^6.0.2-alpha.0",
         "@types/jest": "^24.0.21",
         "@types/lodash": "^4.14.75",
         "@types/node": "^8.0.31",
