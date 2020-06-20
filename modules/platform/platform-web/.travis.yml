@@ -1,0 +1,22 @@
+language: node_js
+node_js:
+  - "node"
+  - "10"
+deploy:
+  provider: npm
+  email: "$NPM_EMAIL"
+  api_key: "$NPM_TOKEN"
+  skip_cleanup: true
+  on:
+    branch: master  
+addons:
+  sonarcloud:
+    organization: "nodulusteam-github" # the key of the org you chose at step #3  
+before_script:
+  - npm i -g yarn
+  - yarn 
+  - yarn build
+  - yarn test
+script: 
+  - ls
+  - sonar-scanner
