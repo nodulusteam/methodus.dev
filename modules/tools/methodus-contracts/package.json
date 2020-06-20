@@ -8,6 +8,7 @@
         "contracts-client": "lib/client.js"
     },
     "scripts": {
+        "install": "yarn build",
         "build": "rimraf ./lib && tsc",
         "tslint": "tslint --project",
         "test": "yarn test:all && yarn coverage",
