@@ -28,6 +28,7 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "devDependencies": {
+        "@methodus/testing": "^6.0.0",
         "@methodus/client": "^3.1.26",
         "@types/jest": "^24.0.21",
         "@types/lodash": "^4.14.75",

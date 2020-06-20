@@ -4,7 +4,7 @@ export * from './interfaces';
 export * from './response';
 export * from './config';
 export * from './param/params';
-export { Mapping } from './param/params';
+import * as _Mapping from './param/params';
 export namespace commons {
     export const Logger = _Logger;
     export const logger = _logger;
@@ -13,3 +13,4 @@ export namespace commons {
 }
 
 export default commons;
+export const Mapping = _Mapping;

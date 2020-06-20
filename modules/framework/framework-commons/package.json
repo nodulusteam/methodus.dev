@@ -12,6 +12,9 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "dependencies": {
+        "reflect-metadata": "^0.1.13"
+    },
     "devDependencies": {
         "@types/jest": "^24.0.23",
         "@types/node": "^14.0.9",

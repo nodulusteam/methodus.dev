@@ -12,6 +12,8 @@ import { v1 as uuidv1 } from 'uuid';
 export interface IApp {
     set(key: string, value: any): void;
 }
+
+@injection.Singleton('MethodusServer')
 export class Server {
     public app: any;
     public config?: MethodusConfig;
