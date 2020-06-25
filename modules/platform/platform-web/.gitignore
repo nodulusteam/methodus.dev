@@ -6,4 +6,5 @@ coverage/
 yarn.lock
 .scannerwork/
 dist/
+!lib
 .npmrc
