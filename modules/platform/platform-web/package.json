@@ -9,7 +9,7 @@
     "watch": "./node_modules/.bin/webpack . --watch",
     "build": "npm run clear && tsc && npm run webpack",
     "serve": "webpack-dev-server",
-    "clear": "trash build output coverage dist",
+    "clear": "rimraf build output coverage dist",
     "unit": "karma start karma.conf.js",
     "docs": "typedoc",
     "testold": "nyc karma start karma.conf.js",

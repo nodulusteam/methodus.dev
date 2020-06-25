@@ -6,7 +6,8 @@
         "modules/tools/*"
     ],
     "ignore": [
-        "@methodus/platform-grpc"
+        "@methodus/platform-grpc",
+        "@methodus/describe"
     ],
     "useWorkspaces": false,
     "npmClient": "yarn",
