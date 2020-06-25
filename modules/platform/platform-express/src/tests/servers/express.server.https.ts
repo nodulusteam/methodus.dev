@@ -12,8 +12,8 @@ import { ConfiguredServer } from '@methodus/server';
 const options = {
     port: process.env.PORT || 8020,
     secured: true,
-    key: fs.readFileSync(path.join(process.cwd(), './certs/key.pem')),
-    cert: fs.readFileSync(path.join(process.cwd(), './certs/cert.pem')),
+    key: fs.readFileSync(path.join(process.cwd(), './certs/key.txt')),
+    cert: fs.readFileSync(path.join(process.cwd(), './certs/cert.txt')),
     passphrase: 'puravida',
 }
 
