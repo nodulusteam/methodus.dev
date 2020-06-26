@@ -1,10 +1,10 @@
 {
     "name": "@methodus/describe",
-    "version": "7.0.19",
+    "version": "7.0.20",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {
-        "build:additionals": "rimraf build && tsc && yarn client && cd client && yarn && cd ..",
+        "build:additionals": "rimraf build && tsc && yarn client && cd client && yarn && ng build --prod && cd ..",
         "test": "npm run build && npm run test:tests",
         "test:tests": "jest --detectOpenHandles",
         "cov": "run-s test:tests",
@@ -27,8 +27,11 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "devDependencies": {
-        "@methodus/data": "^2.0.33",
         "@methodus/contracts": "^6.0.2-alpha.0",
+        "@methodus/data": "^2.0.33",
+        "@methodus/framework-commons": "^6.0.2-alpha.0",
+        "@methodus/framework-decorators": "^6.0.2-alpha.0",
+        "@methodus/framework-injection": "^6.0.2-alpha.0",
         "@methodus/platform-express": "^6.0.2-alpha.0",
         "@methodus/platform-rest": "^6.0.2-alpha.0",
         "@methodus/server": "^6.0.2-alpha.0",
@@ -48,5 +51,6 @@
         "@methodus/platform-express": "^6.0.0",
         "@methodus/platform-rest": "^6.0.0",
         "@methodus/server": "^6.0.0"
-    }
+    },
+    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }
