@@ -22,5 +22,6 @@ jobs:
           yarn
           yarn bootstrap          
           yarn build
+          lerna link
           yarn build:additionals
           yarn test
