@@ -30,6 +30,8 @@ jobs:
       - name: methodus-contracts            
         run: |
           cd modules/tools/methodus-contracts
+          yarn link @methodus/platform-express
+          yarn
           yarn build
           yarn test    
           
