@@ -22,5 +22,5 @@ jobs:
           yarn
           yarn bootstrap          
           yarn build
-          build:additionals
+          yarn build:additionals
           yarn test
