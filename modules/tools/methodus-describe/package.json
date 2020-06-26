@@ -5,7 +5,7 @@
     "main": "build/index.js",
     "scripts": {
         "install": "yarn client && cd client && yarn && cd ..",
-        "build": "rimraf build && tsc",
+        "build:additionals": "rimraf build && tsc",
         "test": "npm run build && npm run test:tests",
         "test:tests": "jest --detectOpenHandles",
         "cov": "run-s test:tests",

@@ -20,22 +20,7 @@ jobs:
       - name: yarn            
         run: |
           yarn
-          yarn bootstrap
+          yarn bootstrap          
           yarn build
+          build:additionals
           yarn test
-          cd modules/tools/methodus-contracts
-          yarn link @methodus/platform-express
-          yarn
-          yarn build
-          yarn test
-          cd ../methodus-cli  
-          yarn        
-          yarn build
-          yarn test           
-          cd ../methodus-describe
-          yarn link @methodus/platform-express
-          yarn link @methodus/platform-rest
-          cd client
-          yarn link @methodus/platform-web
-          cd ..
-          yarn
