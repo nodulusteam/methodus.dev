@@ -27,8 +27,7 @@
         "bind",
         "application"
     ],
-    "devDependencies": {
-        "@methodus/testing": "^6.0.2-alpha.0",
+    "devDependencies": {         
         "@types/ejs": "^2.6.0",
         "@types/faker": "^4.1.9",
         "@types/glob": "^7.1.1",

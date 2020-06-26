@@ -27,6 +27,7 @@
     "scripts": {
         "clean": "rm -rf ./modules/*/yarn.lock && rm -rf ./modules/*/node_modules && rm -rf ./modules/*/dist && rm -rf ./modules/*/lib",
         "build": "lerna run build",
+        "build:additionals": "lerna run build",
         "bootstrap": "lerna bootstrap && lerna link",
         "watch": "rimraf ./lib && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",

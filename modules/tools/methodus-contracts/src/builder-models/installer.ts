@@ -1,4 +1,4 @@
-import * as shelljs from 'shelljs';
+import shelljs from 'shelljs';
 import * as exec from 'shelljs.exec';
 
 const LINE = '----------------------------------------------------------------------';
@@ -10,38 +10,13 @@ export class Installer {
     }
 
 
-
-    // public link(destFolder) {
-    //     const cwd = process.cwd();
-    //     this.shell.cd(destFolder);
-    //     let commandStr = 'npm unlink';
-    //     if (process.env.YARN) {
-    //         commandStr = 'yarn unlink';
-    //     }
-
-
-    //     exec(commandStr);
-
-    //     commandStr = 'npm link';
-    //     if (process.env.YARN) {
-    //         commandStr = 'yarn link';
-    //     }
-
-    //     if (exec(commandStr).code !== 0) {
-    //         this.shell.cd(cwd);
-    //         throw (new Error('could not link contract'));
-    //     }
-
-    //     this.shell.cd(cwd);
-    // }
-
-    public publish(destFolder) {
+    public publish(destFolder: string) {
         const cwd = process.cwd();
         this.shell.cd(destFolder);
 
-        let commandStr = 'npm publish';
+        let commandStr = 'npm pack';
         if (process.env.YARN) {
-            commandStr = 'yarn publish';
+            commandStr = 'yarn pack';
         }
 
         if (exec(commandStr).code !== 0) {
