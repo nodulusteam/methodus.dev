@@ -31,7 +31,6 @@ jobs:
           cd ../methodus-cli  
           yarn        
           yarn build
-          yarn test  
-
-           
-          
+          yarn test 
+          cd ../methodus-describe  
+          yarn
