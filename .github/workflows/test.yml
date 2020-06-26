@@ -22,16 +22,15 @@ jobs:
           yarn
           yarn bootstrap
           yarn build
-      - name: methodus-cli            
-        run: |
-          cd modules/tools/methodus-cli
-          yarn build
-          yarn test
-      - name: methodus-contracts            
-        run: |
           cd modules/tools/methodus-contracts
           yarn link @methodus/platform-express
           yarn
           yarn build
-          yarn test    
+          yarn test
+          cd ../methodus-cli  
+          yarn        
+          yarn build
+          yarn test  
+
+           
           
