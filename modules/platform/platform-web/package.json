@@ -7,7 +7,7 @@
     "scripts": {
         "webpack": "./node_modules/.bin/webpack --config webpack.config.dev.js --display-error-details",
         "watch": "./node_modules/.bin/webpack . --watch",
-        "build": "npm run clear && tsc && npm run webpack",
+        "build": "npm run clear && tsc && npm run webpack && yarn link",
         "serve": "webpack-dev-server",
         "clear": "rm -rf build output coverage dist",
         "docs": "typedoc",        

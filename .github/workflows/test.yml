@@ -31,6 +31,11 @@ jobs:
           cd ../methodus-cli  
           yarn        
           yarn build
-          yarn test 
-          cd ../methodus-describe  
+          yarn test           
+          cd ../methodus-describe
+          yarn link @methodus/platform-express
+          yarn link @methodus/platform-rest
+          cd client
+          yarn link @methodus/platform-web
+          cd ..
           yarn
