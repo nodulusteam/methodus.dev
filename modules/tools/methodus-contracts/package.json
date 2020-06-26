@@ -7,7 +7,7 @@
         "contracts-server": "lib/build.js",
         "contracts-client": "lib/client.js"
     },
-    "scripts": {       
+    "scripts": {
         "build": "rimraf ./lib && tsc",
         "tslint": "tslint --project",
         "test": "yarn test:all && yarn coverage",
@@ -31,20 +31,21 @@
         "@types/jest": "^24.0.21",
         "@types/lodash": "^4.14.75",
         "@types/node": "^8.0.31",
+        "@types/shelljs": "^0.8.8",
         "jest": "^24.9.0",
         "jsdoc-regex": "^1.0.1",
         "npm-run-all": "^4.1.5",
         "ts-jest": "^24.1.0",
         "tslint": "^5.12.0",
-        "@types/shelljs": "^0.8.8",
         "typescript": "^3.9.5"
     },
     "dependencies": {
         "@methodus/data": "^2.0.35",
-        "colors": "^1.1.2",        
+        "colors": "^1.1.2",
         "rimraf": "^3.0.1",
         "shelljs": "^0.7.8",
         "shelljs.exec": "^1.1.8",
         "ts-morph": "^4.0.0"
-    }
+    },
+    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }

@@ -25,5 +25,6 @@
         "typedoc": "^0.17.7",
         "typedoc-plugin-markdown": "^2.3.1",
         "typescript": "^3.7.5"
-    }
+    },
+    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }

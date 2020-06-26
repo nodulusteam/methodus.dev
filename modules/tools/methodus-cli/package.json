@@ -27,7 +27,7 @@
         "bind",
         "application"
     ],
-    "devDependencies": {         
+    "devDependencies": {
         "@types/ejs": "^2.6.0",
         "@types/faker": "^4.1.9",
         "@types/glob": "^7.1.1",
@@ -55,5 +55,6 @@
         "shelljs": "^0.8.2",
         "ts-morph": "^7.0.0",
         "yargs": "^12.0.1"
-    }
+    },
+    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }

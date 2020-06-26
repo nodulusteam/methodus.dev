@@ -26,5 +26,6 @@
         "rimraf": "^3.0.1",
         "ts-jest": "^24.2.0",
         "typescript": "^3.7.5"
-    }
+    },
+    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }

@@ -10,7 +10,7 @@
         "build": "npm run clear && tsc && npm run webpack && yarn link",
         "serve": "webpack-dev-server",
         "clear": "rm -rf build output coverage dist",
-        "docs": "typedoc",        
+        "docs": "typedoc",
         "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-web.json",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-client -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=ebd888eb856c222b3c5fe77a69b779e0e1c43b35"
@@ -50,5 +50,6 @@
     },
     "dependencies": {
         "reflect-metadata": "^0.1.13"
-    }
+    },
+    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }

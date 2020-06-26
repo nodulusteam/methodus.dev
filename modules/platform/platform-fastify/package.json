@@ -8,5 +8,6 @@
   "license": "ISC",
   "dependencies": {
     "fastify": "^2.10.0"
-  }
+  },
+  "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
 }
