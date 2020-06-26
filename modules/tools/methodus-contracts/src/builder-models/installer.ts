@@ -1,4 +1,4 @@
-import shelljs from 'shelljs';
+import * as shelljs from 'shelljs';
 import * as exec from 'shelljs.exec';
 
 const LINE = '----------------------------------------------------------------------';
