@@ -5,9 +5,7 @@
     "main": "build/index.js",
     "scripts": {
         "build:additionals": "rimraf build && tsc && yarn client && cd client && yarn && yarn prod && cd ..",
-        "test": "npm run build && npm run test:tests",
-        "test:tests": "jest --detectOpenHandles",
-        "cov": "run-s test:tests",
+        "test": "jest --coverage",         
         "contract": "contracts-server ./build.json",
         "client": "contracts-client ./build.json",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-describe -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8c7c7f129d82d3fe77455df4bf7607c5dacbfdc2"
