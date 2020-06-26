@@ -11,11 +11,16 @@ jobs:
       matrix:
         node-version: [ 10.x ]
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout repository
+        uses: actions/checkout@v1
+      - name: setup node  
+        uses: actions/setup-node@v1
         with:
           node-version: '10.x'          
-      - run: |
-          yarn install
+      - name: yarn            
+        run: |
+          yarn
           yarn bootstrap
+          yarn build
           yarn test
+          

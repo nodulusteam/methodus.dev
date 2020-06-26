@@ -1,0 +1,8 @@
+*
+!build/**/*
+!dist/**/*
+!package.json
+!readme.md
+build/tests
+
+

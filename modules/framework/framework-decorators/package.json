@@ -1,0 +1,29 @@
+{
+    "name": "@methodus/framework-decorators",
+    "version": "6.0.2-alpha.0",
+    "description": "Server Decorators for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "test": "jest --coverage && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json",
+        "build": "rimraf ./lib && yarn format & tsc",
+        "docs": "typedoc",
+        "format": "prettier -c --write ./src"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "@methodus/framework-commons": "^6.0.2-alpha.0",
+        "@methodus/framework-injection": "^6.0.2-alpha.0"
+    },
+    "devDependencies": {
+        "jest": "^24.9.0",
+        "prettier": "^2.0.5",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.7.5"
+    }
+}

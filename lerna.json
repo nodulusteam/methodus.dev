@@ -1,0 +1,17 @@
+{
+    "packages": [
+        "modules/framework/*",
+        "modules/platform/*",
+        "modules/tests/*",
+        "modules/tools/*"
+    ],
+    "ignore": [
+        "@methodus/platform-grpc",
+        "@methodus/contracts",
+        "@methodus/describe",
+        "@methodus/framework-integrations"
+    ],
+    "useWorkspaces": false,
+    "npmClient": "yarn",
+    "version": "6.0.2-alpha.0"
+}

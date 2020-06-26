@@ -1,0 +1,16 @@
+{
+  "name": "inherit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@methodus/describe": "^1.1.7",
+    "@methodus/server": "latest",
+    "@server/inherit": "file:../../../build_path/@server/inherit"
+  }
+}

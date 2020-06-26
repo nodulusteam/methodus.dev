@@ -1,0 +1,9 @@
+<ng-template [ngTemplateOutlet]="template || defaultTemplate" [ngTemplateOutletContext]="{item: item}">
+</ng-template>
+
+
+<ng-template #defaultTemplate let-item="item">
+  <div class="m10" *ngIf="item">
+    {{item.Name}}
+  </div>
+</ng-template>

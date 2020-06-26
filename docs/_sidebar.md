@@ -5,6 +5,8 @@
     * [Server](introduction/server.md)
     * [Client](introduction/client.md)
 * [Reference](documentation/)
+    * [Framework](documentation/framework)
+    * [Platform](documentation/platform)
 * [Examples](examples/index.md)
 
 

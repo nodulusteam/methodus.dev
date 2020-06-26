@@ -1,0 +1,10 @@
+build
+package-lock.json
+node_modules/
+logs/
+coverage/
+yarn.lock
+.scannerwork/
+dist/
+!lib
+.npmrc

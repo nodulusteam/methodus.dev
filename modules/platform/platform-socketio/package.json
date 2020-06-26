@@ -1,0 +1,36 @@
+{
+    "name": "@methodus/platform-socketio",
+    "version": "6.0.2-alpha.0",
+    "description": "",
+    "main": "lib/index.js",
+    "scripts": {
+        "test": "jest && yarn coverage",
+        "build": "rimraf ./lib && yarn format && tsc",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json",
+        "docs": "typedoc",
+        "format": "prettier -c --write ./src"
+    },
+    "author": "nodulusteam",
+    "license": "ISC",
+    "peerDependencies": {
+        "@methodus/server": "^6.0.0-alpha"
+    },
+    "dependencies": {
+        "@methodus/framework-commons": "^6.0.2-alpha.0",
+        "@methodus/framework-decorators": "^6.0.2-alpha.0",
+        "@methodus/framework-injection": "^6.0.2-alpha.0",
+        "@methodus/server": "^6.0.2-alpha.0",
+        "socket.io": "^2.3.0",
+        "socket.io-client": "^2.3.0"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/socket.io": "^2.1.2",
+        "jest": "^24.9.0",
+        "prettier": "^2.0.5",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
+    }
+}

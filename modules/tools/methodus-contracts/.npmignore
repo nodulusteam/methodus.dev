@@ -1,0 +1,5 @@
+*
+!lib/**
+!template/**
+!package.json
+!readme.md

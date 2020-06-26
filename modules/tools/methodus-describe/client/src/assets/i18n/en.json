@@ -1,0 +1,16 @@
+{
+  "NAVBAR": {
+    "HOME": "Home",
+    "SERVICES": "Local Services",
+    "ADMIN": "Manage"
+  },
+  "COMMON": {
+    "SAVE": "Save"
+  },
+  "DATA": {
+    "CONFIRM_DELETE": "Are you sure you wish to delete?"
+  },
+  "LOBBY": {
+    "NORESULTS": "No results."
+  }
+}
