@@ -92,7 +92,7 @@ export class Server {
             const loader = new PluginLoader();
             await loader.config(this.config, this._plugins);
         }
-        const onStart: any = [];
+        const onStart:any[] = [];
         if (this.httpServer) {
             Servers.set(this.instanceId, 'http', this.httpServer);
         }

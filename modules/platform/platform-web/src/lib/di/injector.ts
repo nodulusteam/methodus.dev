@@ -18,7 +18,7 @@ export class Injector {
         if (target.name!.length > 2) {
             name = target.name;
         }
-        Injector.register(name!, target, constructorArgs);
+        Injector.register(name, target, constructorArgs);
         annotations.push('injectable');
     }
 

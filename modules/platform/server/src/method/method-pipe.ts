@@ -165,7 +165,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 return value.apply(this, arguments as any);
             },
         });
-    };
+    }
     return descriptor;
 };
 

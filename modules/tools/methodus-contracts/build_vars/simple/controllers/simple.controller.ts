@@ -13,11 +13,9 @@ export class Simple {
     @MethodMock(Mock.simple)
     @Method(Verbs.Get, '/simple/get')
     public async get(@Param('id') id: string, @SecurityContext() user: any): Promise<MethodResult<any>> {
-        // some comments
-        let x = 1 + 1;
-        let b = x * 10;
+        // some comments        
         return new MethodResult({ Name: 'roi' });
-        //some othe comments
+        // some othe comments
     }
 
     @Method(Verbs.Post, '/simple/post')

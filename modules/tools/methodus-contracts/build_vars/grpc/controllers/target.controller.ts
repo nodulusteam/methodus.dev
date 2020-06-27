@@ -9,9 +9,7 @@ export class Target {
     @MethodMock(Mock.simple)
     @Method()
     public async get(@Param('id') id: string, @SecurityContext() user: any): Promise<MethodResult<any>> {
-        // some comments
-        let x = 1 + 1;
-        let b = x * 10;
+        // some comments        
         return new MethodResult({ Name: 'roi' });
         //some othe comments
     }

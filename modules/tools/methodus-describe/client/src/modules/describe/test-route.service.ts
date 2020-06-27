@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Rest } from '@methodus/client';
-import { Base64 } from 'js-base64';
-
 
 @Injectable()
 export class TestRouteService {

@@ -99,8 +99,8 @@ export async function flow(
         // });
     }
 
-    const answers = await inquirer.prompt([QUESTIONS[0]]);
-    await goForQuestions(answers);
+    const answers2 = await inquirer.prompt([QUESTIONS[0]]);
+    await goForQuestions(answers2);
     //    .then(async (answers: any) => {
     //         answers = Object.assign({}, answers); //yargs.argv
     //         const projectChoice = answers['template'];
