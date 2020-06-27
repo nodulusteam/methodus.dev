@@ -1,7 +1,6 @@
 
 import {
-    ServerConfiguration, PluginConfiguration,
-    ClientConfiguration, ConfiguredServer, MethodType, ServerType,
+    ServerConfiguration, ClientConfiguration, ConfiguredServer, MethodType, ServerType,
 } from '@methodus/server';
 const URL = 'http://localhost:6200';
 const HTTP = 'Http';
@@ -18,7 +17,6 @@ import { Inherit, Inherit2 } from '@server/inherit';
 @ServerConfiguration(ServerType.Express, { port: process.env.PORT || 6690 })
 @ClientConfiguration(Inherit, MethodType.Http, URL)
 @ClientConfiguration(Inherit2, MethodType.Http, URL)
-// @PluginConfiguration('@methodus/describe')
 class SetupServer extends ConfiguredServer {
     constructor() {
         super(SetupServer);

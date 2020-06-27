@@ -117,7 +117,6 @@ export class MethodBlock extends BaseBlock {
               }
             });
             const routeFor = clone.prefix ? clone.prefix + clone.route : clone.route;
-            const authOptions: any = {};
             const result = await callService.activate(routeFor, clone);
 
             if (result.ok) {
@@ -168,7 +167,7 @@ export function cloneObject(source) {
   try {
     _clone = JSON.parse(JSON.stringify(source));
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return source;
   }
   return _clone;

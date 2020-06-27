@@ -15,7 +15,6 @@ export async function send<T = any>(methodus: MethodusObject, functionArgs: any[
         const requestResult = await request.sendRequest.apply(this, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
         if (requestResult.data) {
             return createResult(requestResult);
-            return requestResult.data;
         } else {
             throw new MethodError(requestResult);
         }

@@ -28,7 +28,7 @@ export function MethodConfig(name: string, middlewares?: any[], baseRoute?: stri
                 let descriptorsCollection;
                 if (proto.methodus[parentClass[0]]) {
                     descriptorsCollection = proto.methodus[parentClass[0]]._descriptors;
-                    if (!descriptorsCollection || (descriptorsCollection && !Object.keys(descriptorsCollection).length)) {
+                    if (!descriptorsCollection || (descriptorsCollection && Object.keys(descriptorsCollection).length === 0)) {
                         Object.keys(proto.methodus).forEach((key) => {
                             if (Object.keys(proto.methodus[key]._descriptors).length > 0) {
                                 descriptorsCollection = proto.methodus[key]._descriptors;

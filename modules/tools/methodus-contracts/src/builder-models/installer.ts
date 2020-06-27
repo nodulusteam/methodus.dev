@@ -1,14 +1,11 @@
 import * as shelljs from 'shelljs';
 import * as exec from 'shelljs.exec';
-
-const LINE = '----------------------------------------------------------------------';
-const Console = console;
+ 
 export class Installer {
     shell: any;
     constructor() {
         this.shell = shelljs;
     }
-
 
     public publish(destFolder: string) {
         const cwd = process.cwd();

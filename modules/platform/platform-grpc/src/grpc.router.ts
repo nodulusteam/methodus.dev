@@ -33,11 +33,8 @@ export class gRpcRouter {
             const item = methodus._descriptors[itemKey];
             const method = new protobuf.Method(item.propertyKey, 'rpc', '', '');
             service.add(method);
-            const router = service.create((method, requestData, callback) => { callback(null, protobuf.util.newBuffer(0)); }, true, true);
-
+            // const router = service.create((method:any, requestData:any, callback:Function) => { callback(null, protobuf.util.newBuffer(0)); }, true, true);
             //  const method = service.add({ name: item.propertyKey, } as ReflectionObject);
-
-
             routerDataObject[item.route] = routerDataObject[item.route] || [];
             routerDataObject[item.route].push(item);
         });

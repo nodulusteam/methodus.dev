@@ -164,7 +164,7 @@ async function findModule(moduleName: string, controllerCli: CLI) {
         cwd: controllerCli.CURR_DIR,
     }); //find the module
 
-    
+
     if (files.length === 0) {
         throw `Module ${moduleName} could not be found.`;
     }
@@ -205,7 +205,7 @@ function patchModuleFile(
             if (moduleDecorators) {
                 let property = classInFile.getProperty(propertyToHandle);
                 if (!property) {
-                    property = classInFile.addProperty({
+                    classInFile.addProperty({
                         initializer: `[${name}]`,
                         isStatic: false,
                         name: propertyToHandle,

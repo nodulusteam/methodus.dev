@@ -1,4 +1,4 @@
-import { MethodDescriptor, MethodType, ParamsMap, Prototyped, Verbs } from '../commons/';
+import { MethodDescriptor, MethodType, ParamsMap, Verbs } from '../commons/';
 import { Rest } from '../transports/rest';
 import { Socket } from '../transports/socket';
 
@@ -36,13 +36,11 @@ export function Method(verb: Verbs, route: string) {
         const originalMethod = descriptor.value;
         descriptor.value = async (...args: any[]) => {
             let childMethodus = null;
-            if (args && args.length > 0 && args[args.length - 1] && args[args.length - 1].methodus) {
+            if (args.length > 0 && args[args.length - 1] && args[args.length - 1].methodus) {
                 childMethodus = args[args.length - 1].methodus;
                 args.splice(args.length - 1, 1);
             }
 
-
-            let proto = target.prototype || target.__proto__;
             let name = target.name;
             if (target.constructor) {
                 name = target.constructor.name;
@@ -62,7 +60,7 @@ export function Method(verb: Verbs, route: string) {
             }
 
 
-            if (args && args[args.length - 1] && args[args.length - 1].instruct) {
+            if (args[args.length - 1] && args[args.length - 1].instruct) {
                 mTarget = args[args.length - 1].target;
 
                 metaObject = mTarget._descriptors[propertyKey];
