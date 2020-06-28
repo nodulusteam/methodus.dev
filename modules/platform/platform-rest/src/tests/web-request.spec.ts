@@ -17,8 +17,9 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Get, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts`, resolver: TESTBASE };
-            const response = request.sendRequest(methodus, `${TESTBASE}/posts`, [], []).then(thenFn).catch(catchFn);
+            await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -43,10 +44,10 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const methodus = { verb: Verbs.Get, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:postid`, resolver: TESTBASE };
 
-            const response = request
-                .sendRequest(methodus, `${TESTBASE}/posts/:postid`, [1], [{ index: 0, name: 'postid', from: 'params' }])
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(methodus, `${TESTBASE}/posts/:postid`, [1], [{ index: 0, name: 'postid', from: 'params' }]);
+
+            const response = request.send().then(thenFn).catch(catchFn);
+
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -69,13 +70,10 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts`, resolver: TESTBASE };
-            const response = request
-                .sendRequest(methodus, `${TESTBASE}/posts/`, [{ id: 1, userid: 1 }], [{ index: 0, from: 'body' }])
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(methodus, `${TESTBASE}/posts/`, [{ id: 1, userid: 1 }], [{ index: 0, from: 'body' }]);
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
-
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
@@ -98,10 +96,9 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts`, resolver: TESTBASE };
-            const response = request
-                .sendRequest(methodus, `${TESTBASE}/posts/`, [`</html></html>`], [{ index: 0, from: 'body' }])
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(methodus, `${TESTBASE}/posts/`, [`</html></html>`], [{ index: 0, from: 'body' }]);
+
+            const response = request.send().then(thenFn).catch(catchFn);
 
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
@@ -124,20 +121,18 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Put, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:postid`, resolver: 'http://www.googl.eomon' };
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:postid`,
-                    [1, { id: 1, userid: 1 }, { 'Custom-Header': 'none' }],
-                    [
-                        { index: 0, name: 'postid', from: 'params' },
-                        { index: 1, from: 'body' },
-                        { index: 2, from: 'headers' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:postid`,
+                [1, { id: 1, userid: 1 }, { 'Custom-Header': 'none' }],
+                [
+                    { index: 0, name: 'postid', from: 'params' },
+                    { index: 1, from: 'body' },
+                    { index: 2, from: 'headers' },
+                ]
+            );
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -165,30 +160,32 @@ describe('Web request tests for platform-rest', () => {
 
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:key1/:key2`,
-                    [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: ['value1', 'value2', 'value3'] }, { user_id: 'id1' }],
-                    [
-                        { index: 0, from: 'params' },
-                        { index: 1, from: 'body' },
-                        { index: 2, from: 'files' },
-                        { index: 3, from: 'query' },
-                        { index: 4, name: 'secure', from: 'security_context' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:key1/:key2`,
+                [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: ['value1', 'value2', 'value3'] }, { user_id: 'id1' }],
+                [
+                    { index: 0, from: 'params' },
+                    { index: 1, from: 'body' },
+                    { index: 2, from: 'files' },
+                    { index: 3, from: 'query' },
+                    { index: 4, name: 'secure', from: 'security_context' },
+                ]
+            );
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json' },
+                headers: {
+                    'Content-Type': 'application/json',
+                    security_context: JSON.stringify({ user_id: 'id1' }),
+                },
                 method: 'post',
                 timeout: 300000,
+
                 data: {
                     key1: 'value1',
                     key2: 'value2',
@@ -207,28 +204,25 @@ describe('Web request tests for platform-rest', () => {
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
             const date = new Date();
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:key1/:key2`,
-                    [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: [date] }, { user_id: 'id1' }],
-                    [
-                        { index: 0, from: 'params' },
-                        { index: 1, from: 'body' },
-                        { index: 2, from: 'files' },
-                        { index: 3, from: 'query' },
-                        { index: 4, name: 'secure', from: 'security_context' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:key1/:key2`,
+                [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: [date] }, { user_id: 'id1' }],
+                [
+                    { index: 0, from: 'params' },
+                    { index: 1, from: 'body' },
+                    { index: 2, from: 'files' },
+                    { index: 3, from: 'query' },
+                    { index: 4, name: 'secure', from: 'security_context' },
+                ]
+            );
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
-
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', security_context: JSON.stringify({ user_id: 'id1' }) },
                 method: 'post',
                 timeout: 300000,
                 data: {
@@ -249,28 +243,25 @@ describe('Web request tests for platform-rest', () => {
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
             const date = new Date();
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:key1/:key2`,
-                    [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: date }, { user_id: 'id1' }],
-                    [
-                        { index: 0, from: 'params' },
-                        { index: 1, from: 'body' },
-                        { index: 2, from: 'files' },
-                        { index: 3, from: 'query' },
-                        { index: 4, name: 'secure', from: 'security_context' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:key1/:key2`,
+                [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: date }, { user_id: 'id1' }],
+                [
+                    { index: 0, from: 'params' },
+                    { index: 1, from: 'body' },
+                    { index: 2, from: 'files' },
+                    { index: 3, from: 'query' },
+                    { index: 4, name: 'secure', from: 'security_context' },
+                ]
+            );
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
-
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', security_context: JSON.stringify({ user_id: 'id1' }) },
                 method: 'post',
                 timeout: 300000,
                 data: {
@@ -289,28 +280,26 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:key1/:key2`,
-                    [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: 'value1', key2: 'value2' }, { user_id: 'id1' }],
-                    [
-                        { index: 0, from: 'params' },
-                        { index: 1, from: 'body' },
-                        { index: 2, from: 'files' },
-                        { index: 3, from: 'query' },
-                        { index: 4, name: 'secure', from: 'security_context' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:key1/:key2`,
+                [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: 'value1', key2: 'value2' }, { user_id: 'id1' }],
+                [
+                    { index: 0, from: 'params' },
+                    { index: 1, from: 'body' },
+                    { index: 2, from: 'files' },
+                    { index: 3, from: 'query' },
+                    { index: 4, name: 'secure', from: 'security_context' },
+                ]
+            );
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/json', security_context: JSON.stringify({ user_id: 'id1' }) },
                 method: 'post',
                 timeout: 300000,
                 data: {
@@ -329,24 +318,21 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:key1/:key2`,
-                    ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
-                    [
-                        { index: 0, from: 'params', name: 'key1' },
-                        { index: 1, from: 'params', name: 'key2' },
-                        { index: 2, from: 'query', name: 'key1' },
-                        { index: 3, from: 'query', name: 'key2' },
-                        { index: 4, from: 'body', name: 'formData' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:key1/:key2`,
+                ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
+                [
+                    { index: 0, from: 'params', name: 'key1' },
+                    { index: 1, from: 'params', name: 'key2' },
+                    { index: 2, from: 'query', name: 'key1' },
+                    { index: 3, from: 'query', name: 'key2' },
+                    { index: 4, from: 'body', name: 'formData' },
+                ]
+            );
 
+            const response = request.send().then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
-
             await response;
 
             expect(mockAxios.request).toHaveBeenCalledWith({
@@ -371,21 +357,20 @@ describe('Web request tests for platform-rest', () => {
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
 
-            const response = request
-                .sendRequest(
-                    methodus,
-                    `${TESTBASE}/posts/:key1/:key2`,
-                    ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
-                    [
-                        { index: 0, from: 'params', name: 'key1' },
-                        { index: 1, from: 'params', name: 'key2' },
-                        { index: 2, from: 'query', name: 'key1' },
-                        { index: 3, from: 'query', name: 'key2' },
-                        { index: 4, from: 'body', name: 'formData' },
-                    ]
-                )
-                .then(thenFn)
-                .catch(catchFn);
+            await request.sendRequest(
+                methodus,
+                `${TESTBASE}/posts/:key1/:key2`,
+                ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
+                [
+                    { index: 0, from: 'params', name: 'key1' },
+                    { index: 1, from: 'params', name: 'key2' },
+                    { index: 2, from: 'query', name: 'key1' },
+                    { index: 3, from: 'query', name: 'key2' },
+                    { index: 4, from: 'body', name: 'formData' },
+                ]
+            );
+
+            const response = request.send().then(thenFn).catch(catchFn);
 
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 

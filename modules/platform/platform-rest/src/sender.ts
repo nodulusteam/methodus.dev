@@ -12,11 +12,13 @@ export async function send<T = any>(methodus: MethodusObject, functionArgs: any[
     const baseUrl = typeof methodus.resolver === 'function' ? methodus.resolver() : methodus.resolver;
 
     if (baseUrl) {
-        const requestResult = await request.sendRequest.apply(this, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
-        if (requestResult.data) {
+        await request.sendRequest.apply(request, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
+        try {
+            debugger;
+            const requestResult = await request.send();
             return createResult(requestResult);
-        } else {
-            throw new MethodError(requestResult);
+        } catch (error) {
+            throw new MethodError(error);
         }
     } else {
         throw new MethodError(`Missing base url for method ${methodus.route}`, 302);

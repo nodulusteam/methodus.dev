@@ -11,83 +11,94 @@ import commons, { AuthType } from '@methodus/framework-commons';
 
 const logger = new commons.Logger('transports:http');
 
+export type RequestPayload = {
+    params: any[];
+    uri: string;
+    body: any;
+    query: any;
+    headers: any;
+    files: any;
+    securityContext?: any;
+    verb: string;
+    parts: string[];
+    auth?: AuthType;
+    authOptions: any;
+};
+
 /**
  * @hidden
  */
 export class WebRequest {
+    onBeforeRequest?: Function;
+    private _requestOptions: any;
     constructor() {}
 
-    async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any) {
-        const auth: AuthType = methodus._auth.type || AuthType.None;
-        const authOptions: any = methodus._auth.options;
-        const verb = methodus.verb;
-
-        let body: Dictionary<string> | string = {};
-        const headers: Dictionary = {};
-        const query: Dictionary = {};
-        const files: Dictionary = [];
+    handleParamsMap(paramsMap: any[], payload: RequestPayload) {
         paramsMap.forEach((item: any) => {
-            item.value = params[item.index];
+            item.value = payload.params[item.index];
             switch (item.from) {
                 case 'params':
                     if (item.name) {
-                        uri = uri.replace(':' + item.name, item.value);
+                        payload.uri = payload.uri.replace(':' + item.name, item.value);
                     } else {
                         Object.keys(item.value).forEach((element) => {
-                            uri = uri.replace(':' + element, item.value[element]);
+                            payload.uri = payload.uri.replace(':' + element, item.value[element]);
                         });
                     }
                     break;
 
                 case 'body':
                     if (item.name) {
-                        (body as Dictionary)[item.name] = item.value;
+                        (payload.body as Dictionary)[item.name] = item.value;
                     } else {
                         if (typeof item.value === 'object' && !Array.isArray(item.value)) {
-                            Object.assign(body, item.value);
+                            Object.assign(payload.body, item.value);
                         } else {
-                            body = item.value;
+                            payload.body = item.value;
                         }
                     }
 
                     break;
                 case 'query':
                     if (item.name) {
-                        query[item.name] = item.value;
+                        payload.query[item.name] = item.value;
                     } else {
-                        Object.assign(query, item.value);
+                        Object.assign(payload.query, item.value);
                     }
                     break;
                 case 'security_context':
-                    securityContext = {
+                    payload.securityContext = {
                         uid: item.value.uid,
                         user_id: item.value.user_id,
                     };
                     break;
                 case 'headers':
                     if (item.name) {
-                        headers[item.name] = item.value;
+                        payload.headers[item.name] = item.value;
                     } else {
-                        Object.assign(headers, item.value);
+                        Object.assign(payload.headers, item.value);
                     }
                     break;
 
                 case 'files':
                     if (item.name) {
-                        files[item.name] = item.value;
+                        payload.files[item.name] = item.value;
                     } else {
-                        Object.assign(files, item.value);
+                        Object.assign(payload.files, item.value);
                     }
                     break;
             }
         });
-        if (Object.keys(query).length > 0) {
-            uri +=
+        return payload;
+    }
+    handleQuery(payload: RequestPayload) {
+        if (Object.keys(payload.query).length > 0) {
+            payload.uri +=
                 '?' +
-                Object.keys(query)
+                Object.keys(payload.query)
                     .map((element: any) => {
-                        if (Array.isArray(query[element])) {
-                            return query[element]
+                        if (Array.isArray(payload.query[element])) {
+                            return payload.query[element]
                                 .map((subelement: any) => {
                                     if (typeof subelement !== 'string') {
                                         return `${element}=${encodeURIComponent(JSON.stringify(subelement))}`;
@@ -98,32 +109,25 @@ export class WebRequest {
                                 .join('&');
                         }
 
-                        if (query[element] && query[element].toISOString) {
+                        if (payload.query[element] && payload.query[element].toISOString) {
                             // test for date
-                            return `${element}=${encodeURIComponent(query[element].toISOString())}`;
-                        } else if (typeof query[element] !== 'string') {
+                            return `${element}=${encodeURIComponent(payload.query[element].toISOString())}`;
+                        } else if (typeof payload.query[element] !== 'string') {
                             // test for other object types
-                            return `${element}=${encodeURIComponent(JSON.stringify(query[element]))}`;
+                            return `${element}=${encodeURIComponent(JSON.stringify(payload.query[element]))}`;
                         } else {
-                            return `${element}=${encodeURIComponent(query[element])}`;
+                            return `${element}=${encodeURIComponent(payload.query[element])}`;
                         }
                     })
                     .join('&');
         }
+        return payload;
+    }
 
-        const parts = uri.split('://')[1].split('/');
-        parts.splice(0, 1);
-        let requestOptions: AxiosRequestConfig = {
-            method: verb.toLowerCase() as Method,
-            baseURL: uri,
-            url: uri,
-            timeout: 1000 * 60 * 5,
-        };
-
+    handleProxy(requestOptions: any, payload: RequestPayload) {
         let mixedProtocolProxySettings = false;
-
         if (process.env.METHODUS_PROXY) {
-            if (uri.indexOf('https://') === 0 && process.env.METHODUS_PROXY_PORT! !== '443') {
+            if (payload.uri.indexOf('https://') === 0 && process.env.METHODUS_PROXY_PORT! !== '443') {
                 mixedProtocolProxySettings = true;
             }
 
@@ -135,8 +139,8 @@ export class WebRequest {
             });
         }
 
-        if (uri.indexOf('https://') === 0) {
-            const hostParts = uri.split('://')[1].split('/')[0].split(':');
+        if (payload.uri.indexOf('https://') === 0) {
+            const hostParts = payload.uri.split('://')[1].split('/')[0].split(':');
             const sslPort = hostParts[1] ? Number(hostParts[1]) : 443;
 
             let agent;
@@ -144,7 +148,7 @@ export class WebRequest {
                 agent = new https.Agent({
                     host: hostParts[0],
                     port: sslPort,
-                    path: parts.join('/').split('?')[0] || '',
+                    path: payload.parts.join('/').split('?')[0] || '',
                     rejectUnauthorized: false,
                 });
                 Object.assign(requestOptions, { httpsAgent: agent });
@@ -160,8 +164,8 @@ export class WebRequest {
             }
         } else {
             requestOptions = {
-                method: verb.toLowerCase() as Method,
-                url: uri,
+                method: payload.verb.toLowerCase() as Method,
+                url: payload.uri,
                 timeout: 1000 * 60 * 5,
             };
 
@@ -169,19 +173,22 @@ export class WebRequest {
                 Object.assign(requestOptions, { proxy: { host: process.env.METHODUS_PROXY, port: process.env.METHODUS_PROXY_PORT } });
             }
         }
+        return requestOptions;
+    }
 
-        if (auth) {
-            logger.log(`Auth is ${JSON.stringify(auth)}`);
-            switch (auth) {
+    async handleAuth(requestOptions: any, payload: RequestPayload) {
+        if (payload.auth) {
+            logger.log(`Auth is ${JSON.stringify(payload.auth)}`);
+            switch (payload.auth) {
                 case AuthType.Basic:
                     requestOptions.headers = requestOptions.headers || {};
-                    if (typeof authOptions === 'function') {
-                        requestOptions.headers['Authorization'] = await authOptions.apply(this, [requestOptions]);
-                    } else if (authOptions.user && authOptions.password) {
-                        const base64HEader = Encoder.encodeBase64(`${authOptions.user}:${authOptions.password}`);
+                    if (typeof payload.authOptions === 'function') {
+                        requestOptions.headers['Authorization'] = await payload.authOptions.apply(this, [requestOptions]);
+                    } else if (payload.authOptions.user && payload.authOptions.password) {
+                        const base64HEader = Encoder.encodeBase64(`${payload.authOptions.user}:${payload.authOptions.password}`);
                         requestOptions.headers['Authorization'] = `Basic ${base64HEader}`;
-                    } else if (authOptions.token) {
-                        requestOptions.headers['Authorization'] = `Basic ${authOptions.token}`;
+                    } else if (payload.authOptions.token) {
+                        requestOptions.headers['Authorization'] = `Basic ${payload.authOptions.token}`;
                     }
 
                     // requestOptions.auth = {
@@ -193,43 +200,21 @@ export class WebRequest {
                 //     break;
                 case AuthType.BearerToken:
                     requestOptions.headers = requestOptions.headers || {};
-                    if (typeof authOptions === 'function') {
-                        requestOptions.headers['Authorization'] = await authOptions.apply(this, [requestOptions]);
+                    if (typeof payload.authOptions === 'function') {
+                        requestOptions.headers['Authorization'] = await payload.authOptions.apply(this, [requestOptions]);
                     } else {
-                        requestOptions.headers['Authorization'] = authOptions.token;
+                        requestOptions.headers['Authorization'] = payload.authOptions.token;
                     }
                     break;
                 // case AuthType.DigestAuth:
                 //     break;
             }
         }
-
-        if (typeof body === 'object') {
-            if (Object.keys(body).length) {
-                requestOptions.data = body;
-                headers['Content-Type'] = 'application/json';
-            }
-        } else if ((body as string).length) {
-            requestOptions.data = body;
-
-            headers['Content-Type'] = 'application/xml';
-        }
-
-        if (securityContext) {
-            Object.assign(requestOptions.headers, {
-                security_context: JSON.stringify(securityContext),
-            });
-        }
-
-        if (headers && Object.keys(headers).length > 0) {
-            if (!requestOptions.headers) {
-                requestOptions.headers = {};
-            }
-            Object.assign(requestOptions.headers, headers);
-        }
-
-        if (files && files.length > 0) {
-            const file: any = files[0];
+        return requestOptions;
+    }
+    handleFiles(requestOptions: any, payload: RequestPayload) {
+        if (payload.files && payload.files.length > 0) {
+            const file: any = payload.files[0];
             const formData: any = {
                 custom_file: {
                     value: fs.createReadStream(path.resolve(file.path)),
@@ -241,24 +226,95 @@ export class WebRequest {
                 },
             };
             Object.assign(requestOptions.data, formData);
-        } else if (files && files.readable) {
+        } else if (payload.files && payload.files.readable) {
             const formData: any = {
                 custom_file: {
-                    value: files,
+                    value: payload.files,
                     options: {
-                        filename: path.basename(files.path),
+                        filename: path.basename(payload.files.path),
                     },
                 },
             };
             requestOptions.data = formData;
             Object.assign(requestOptions.data, formData);
         }
+        return requestOptions;
+    }
 
-        logger.log('Request options are: ', JSON.stringify(requestOptions));
+    handleHeaders(requestOptions: any, payload: RequestPayload) {
+        requestOptions.headers = {};
+        if (typeof payload.body === 'object') {
+            if (Object.keys(payload.body).length) {
+                requestOptions.data = payload.body;
+                requestOptions.headers['Content-Type'] = 'application/json';
+            }
+        } else if ((payload.body as string).length) {
+            requestOptions.data = payload.body;
+            requestOptions.headers['Content-Type'] = 'application/xml';
+        }
+
+        if (payload.securityContext) {
+            Object.assign(requestOptions.headers, {
+                security_context: JSON.stringify(payload.securityContext),
+            });
+        }
+
+        if (payload.headers && Object.keys(payload.headers).length > 0) {
+            if (!requestOptions.headers) {
+                requestOptions.headers = {};
+            }
+            Object.assign(requestOptions.headers, payload.headers);
+        }
+        return requestOptions;
+    }
+    async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any): Promise<any> {
+        const auth: AuthType = methodus._auth.type || AuthType.None;
+        const authOptions: any = methodus._auth.options;
+        const verb = methodus.verb;
+
+        let body: Dictionary<string> | string = {};
+        const headers: Dictionary = {};
+        const query: Dictionary = {};
+        const files: Dictionary = [];
+        const parts = uri.split('://')[1].split('/');
+        parts.splice(0, 1);
+
+        const payload = this.handleParamsMap(paramsMap, {
+            auth,
+            authOptions,
+            params,
+            uri,
+            body,
+            query,
+            headers,
+            files,
+            verb,
+            parts,
+        });
+        this.handleQuery(payload);
+        let requestOptions: AxiosRequestConfig = {
+            method: verb.toLowerCase() as Method,
+            baseURL: uri,
+            url: uri,
+            timeout: 1000 * 60 * 5,
+        };
+
+        requestOptions = this.handleProxy(requestOptions, payload);
+        requestOptions = this.handleHeaders(requestOptions, payload);
+        requestOptions = this.handleFiles(requestOptions, payload);
+        requestOptions = await this.handleAuth(requestOptions, payload);
+
+        logger.debug('Request options are: ', JSON.stringify(requestOptions));
+        if (this.onBeforeRequest) {
+            this.onBeforeRequest(requestOptions);
+        }
+
+        this._requestOptions = requestOptions;
+    }
+
+    async send() {
         try {
-            const result = await axios.request(requestOptions);
-            logger.log('Request success');
-            return result;
+            return await axios.request(this._requestOptions);
         } catch (error) {
             logger.error(error);
             throw error;

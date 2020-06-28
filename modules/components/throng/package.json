@@ -1,0 +1,43 @@
+{
+  "name": "@methodus/throng",
+  "version": "1.0.2",
+  "description": "Throng is a Caching & Throttle TypeScript decorators.",
+  "typings": "build/index.d.ts",
+  "main": "build/index.js",
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "npm run clear && tsc",
+    "serve": "webpack-dev-server",
+    "clear": "rimraf build",
+    "docs": "typedoc",
+    "sonar": "sonar-scanner.sh -Dsonar.projectKey=nodulusteam_-methodus-throng -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
+    "test": "npm run build && cross-env CACHE_DELETE_ON_EXPIRE=true DEBUG=methodus:throng:* CACHE_RELOAD_ON_EXPIRE=true CACHE_CHECK_PERIOD=10 jest --verbose"
+  },
+  "keywords": [
+    "cahce",
+    "throttle",
+    "methodus",
+    "decorator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nodulusteam/-methodus-throng"
+  },
+  "author": "nodulus",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^24.0.23",
+    "@types/node": "^12.12.11",
+    "cross-env": "^6.0.3",
+    "jest": "^24.9.0",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "node-cache": "^5.0.2",
+    "p-limit": "^2.2.1",
+    "reflect-metadata": "^0.1.13"
+  }
+}

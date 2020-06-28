@@ -23,6 +23,7 @@
         "@methodus/framework-injection": "^6.0.2-alpha.0",
         "atob": "^2.1.2",
         "axios": "^0.19.2",
+        "axios-mock-adapter": "^1.18.1",
         "btoa": "^1.2.1",
         "js-base64": "^2.5.2",
         "tunnel": "^0.0.6"

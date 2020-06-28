@@ -1,0 +1,45 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}",
+            "outputCapture": "std",
+            "env": {
+                "DEBUG": "methodus:*"
+            },
+
+            "program": "${workspaceFolder}/lib/test/auth-test.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Test spreadsheet Program",
+            "console": "internalConsole",
+            "cwd": "${workspaceFolder}",
+            "outputCapture": "std",
+            "env": {               
+                "DEBUG": "methodus:*"
+            },
+
+            "program": "${workspaceFolder}/lib/test/create.test.js"
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest",
+            "console": "internalConsole",
+            "outputCapture": "std",
+            "skipFiles": ["<node_internals>/**"],
+            "program": "${workspaceFolder}\\node_modules\\jest\\bin\\jest",
+            "args": []
+        }
+    ]
+}
