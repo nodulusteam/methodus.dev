@@ -309,8 +309,6 @@ export class WebRequest {
             this.onBeforeRequest(requestOptions);
         }
 
-        // this._requestOptions = requestOptions;
-        debugger;
         return requestOptions;
     }
 

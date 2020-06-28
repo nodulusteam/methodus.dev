@@ -14,7 +14,6 @@ export async function send<T = any>(methodus: MethodusObject, functionArgs: any[
     if (baseUrl) {
         const requestOptions = await request.sendRequest.apply(request, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
         try {
-            debugger;
             const requestResult = await request.send(requestOptions);
             return createResult(requestResult);
         } catch (error) {

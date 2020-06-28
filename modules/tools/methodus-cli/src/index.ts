@@ -12,7 +12,6 @@ flow(
     commandArguments.module
 )
     .then(result => {
-        debugger;
         console.log(colors.green('Complete.'));
     })
     .catch(error => {

@@ -30,7 +30,6 @@ export class Common {
             Object.keys(configuration.contracts).forEach((contractKey) => {
                 const contract = configuration.contracts[contractKey];
                 const sourceFile = sourceProject.project.addExistingSourceFile(path.join(source, contract.path));
-                debugger;
                 targetProject.ProxifyFromFile(sourceFile, 'contracts', contractKey.toLocaleLowerCase(), options);
             });
         }
