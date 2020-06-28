@@ -9,6 +9,7 @@ describe('Web request tests for platform-rest', () => {
     jest.setTimeout(1000 * 30);
     afterEach(() => {
         mockAxios.reset();
+        jest.clearAllMocks();
     });
 
     describe('Test Auth options', () => {
@@ -23,8 +24,8 @@ describe('Web request tests for platform-rest', () => {
                 route: `${TESTBASE}/posts`,
                 resolver: TESTBASE,
             };
-            await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []).then(thenFn).catch(catchFn);
-            const response = request.send();
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
             await response;
 
@@ -56,8 +57,8 @@ describe('Web request tests for platform-rest', () => {
                 route: `${TESTBASE}/posts`,
                 resolver: TESTBASE,
             };
-            await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []).then(thenFn).catch(catchFn);
-            const response = request.send();
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -95,8 +96,8 @@ describe('Web request tests for platform-rest', () => {
                 route: `${TESTBASE}/posts`,
                 resolver: TESTBASE,
             };
-            await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []).then(thenFn).catch(catchFn);
-            const response = request.send();
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], [])
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -133,10 +134,10 @@ describe('Web request tests for platform-rest', () => {
             route: `${TESTBASE}/posts`,
             resolver: TESTBASE,
         };
-        const response = request.sendRequest(methodus, `${TESTBASE}/posts`, [], []).then(thenFn).catch(catchFn);
 
+        const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
+        const response = request.send(requestOptions).then(thenFn).catch(catchFn);
         mockAxios.mockResponse({ status: 200, data: { key: 2 } });
-
         await response;
 
         expect(mockAxios.request).toHaveBeenCalledTimes(1);

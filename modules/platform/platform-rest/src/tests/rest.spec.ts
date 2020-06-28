@@ -1,18 +1,23 @@
 import mockAxios from 'jest-mock-axios';
 import { Verbs } from '../index';
 import { send } from '../sender';
+import { WebRequest } from '../web-request';
 
 const TESTBASE = 'http://jsonplaceholder.typicode.com';
 
 describe('Test the external send function', () => {
     afterEach(() => {
         mockAxios.reset();
+        jest.clearAllMocks();
     });
+    // let catchFn = jest.fn(),
+    //     thenFn = jest.fn();
 
-    let catchFn = jest.fn(),
-        thenFn = jest.fn();
+    it('Run using only send', async () => {
+        WebRequest.prototype.send = jest.fn().mockImplementationOnce(() => {
+            return {};
+        });
 
-    it('Run using only send', () => {
         const methodus = {
             route: '/posts/:param1',
             verb: Verbs.Post,
@@ -21,7 +26,7 @@ describe('Test the external send function', () => {
             resolver: () => TESTBASE,
         };
 
-        send(
+        await send(
             methodus,
             ['value1', { user_id: 'id1' }, 'value2'],
             [
@@ -29,11 +34,11 @@ describe('Test the external send function', () => {
                 { index: 1, name: 'user', from: 'body' },
                 { index: 2, name: 'forkKey', from: 'query' },
             ]
-        )
-            .then(thenFn)
-            .catch(catchFn);
+        );
+        // .then(thenFn)
+        // .catch(catchFn);
 
-        expect(mockAxios.request).toHaveBeenCalledWith({
+        expect(WebRequest.prototype.send).toHaveBeenCalledWith({
             headers: { 'Content-Type': 'application/json' },
             method: 'post',
             timeout: 300000,
@@ -42,7 +47,7 @@ describe('Test the external send function', () => {
         });
     });
 
-    it('send with auth', () => {
+    it('send with auth', async () => {
         const methodus = {
             route: '/posts',
             verb: Verbs.Post,
@@ -50,19 +55,19 @@ describe('Test the external send function', () => {
             _auth: { type: 1, options: { user: 'node', password: 'test' } },
             resolver: TESTBASE,
         };
-
-        send(
+        WebRequest.prototype.send = jest.fn().mockImplementationOnce(() => {
+            return {};
+        });
+        await send(
             methodus,
             ['<xml>value</xml>', 'xxxxx/json'],
             [
                 { index: 0, name: 'user', from: 'body' },
                 { index: 1, name: 'Custom-Header', from: 'headers' },
             ]
-        )
-            .then(thenFn)
-            .catch(catchFn);
+        );
 
-        expect(mockAxios.request).toHaveBeenCalledWith({
+        expect(WebRequest.prototype.send).toHaveBeenCalledWith({
             headers: {
                 'Content-Type': 'application/json',
                 'Custom-Header': 'xxxxx/json',
@@ -76,7 +81,7 @@ describe('Test the external send function', () => {
         });
     });
 
-    it('send with null resolver', () => {
+    it('send with null resolver', async () => {
         let thenFn = jest.fn();
 
         const methodus = {
@@ -87,7 +92,7 @@ describe('Test the external send function', () => {
             resolver: () => null,
         };
 
-        send(methodus, [], [])
+        await send(methodus, [], [])
             .then(thenFn)
             .catch((error) => {
                 console.log(error);

@@ -12,10 +12,10 @@ export async function send<T = any>(methodus: MethodusObject, functionArgs: any[
     const baseUrl = typeof methodus.resolver === 'function' ? methodus.resolver() : methodus.resolver;
 
     if (baseUrl) {
-        await request.sendRequest.apply(request, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
+        const requestOptions = await request.sendRequest.apply(request, [methodus, baseUrl + methodus.route, functionArgs, paramsMap, securityContext]);
         try {
             debugger;
-            const requestResult = await request.send();
+            const requestResult = await request.send(requestOptions);
             return createResult(requestResult);
         } catch (error) {
             throw new MethodError(error);

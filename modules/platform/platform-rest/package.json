@@ -5,7 +5,7 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "test": "jest && yarn coverage",
+        "test": "rimraf ./lib && tsc && jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-rest.json",
         "build": "rimraf ./lib && yarn format && tsc && yarn link",
         "docs": "typedoc",

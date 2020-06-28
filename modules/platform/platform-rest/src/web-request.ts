@@ -30,7 +30,7 @@ export type RequestPayload = {
  */
 export class WebRequest {
     onBeforeRequest?: Function;
-    private _requestOptions: any;
+    // private _requestOptions: any;
     constructor() {}
 
     handleParamsMap(paramsMap: any[], payload: RequestPayload) {
@@ -309,12 +309,14 @@ export class WebRequest {
             this.onBeforeRequest(requestOptions);
         }
 
-        this._requestOptions = requestOptions;
+        // this._requestOptions = requestOptions;
+        debugger;
+        return requestOptions;
     }
 
-    async send() {
+    async send(requestOptions: any) {
         try {
-            return await axios.request(this._requestOptions);
+            return await axios.request(requestOptions);
         } catch (error) {
             logger.error(error);
             throw error;

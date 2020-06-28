@@ -9,6 +9,7 @@ describe('Web request tests for platform-rest', () => {
     jest.setTimeout(1000 * 30);
     afterEach(() => {
         mockAxios.reset();
+        jest.clearAllMocks();
     });
 
     describe('Test all verbs', () => {
@@ -17,9 +18,9 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Get, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts`, resolver: TESTBASE };
-            await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -44,9 +45,9 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const methodus = { verb: Verbs.Get, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:postid`, resolver: TESTBASE };
 
-            await request.sendRequest(methodus, `${TESTBASE}/posts/:postid`, [1], [{ index: 0, name: 'postid', from: 'params' }]);
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts/:postid`, [1], [{ index: 0, name: 'postid', from: 'params' }]);
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
 
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
@@ -70,9 +71,9 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts`, resolver: TESTBASE };
-            await request.sendRequest(methodus, `${TESTBASE}/posts/`, [{ id: 1, userid: 1 }], [{ index: 0, from: 'body' }]);
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts/`, [{ id: 1, userid: 1 }], [{ index: 0, from: 'body' }]);
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
             await response;
 
@@ -96,9 +97,9 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts`, resolver: TESTBASE };
-            await request.sendRequest(methodus, `${TESTBASE}/posts/`, [`</html></html>`], [{ index: 0, from: 'body' }]);
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts/`, [`</html></html>`], [{ index: 0, from: 'body' }]);
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
 
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
@@ -121,7 +122,7 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Put, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:postid`, resolver: 'http://www.googl.eomon' };
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:postid`,
                 [1, { id: 1, userid: 1 }, { 'Custom-Header': 'none' }],
@@ -132,7 +133,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -160,7 +161,7 @@ describe('Web request tests for platform-rest', () => {
 
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:key1/:key2`,
                 [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: ['value1', 'value2', 'value3'] }, { user_id: 'id1' }],
@@ -173,7 +174,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -204,7 +205,7 @@ describe('Web request tests for platform-rest', () => {
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
             const date = new Date();
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:key1/:key2`,
                 [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: [date] }, { user_id: 'id1' }],
@@ -217,7 +218,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
             await response;
 
@@ -243,7 +244,7 @@ describe('Web request tests for platform-rest', () => {
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
             const date = new Date();
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:key1/:key2`,
                 [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: date }, { user_id: 'id1' }],
@@ -256,7 +257,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
             await response;
 
@@ -280,7 +281,7 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:key1/:key2`,
                 [{ key1: 'value1', key2: 'value2' }, { key1: 'value1', key2: 'value2' }, [], { key1: 'value1', key2: 'value2' }, { user_id: 'id1' }],
@@ -293,7 +294,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
             await response;
@@ -318,7 +319,7 @@ describe('Web request tests for platform-rest', () => {
                 thenFn = jest.fn();
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:key1/:key2`,
                 ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
@@ -331,7 +332,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
             await response;
 
@@ -357,7 +358,7 @@ describe('Web request tests for platform-rest', () => {
             const request = new WebRequest();
             const methodus = { verb: Verbs.Post, _auth: { type: AuthType.None }, route: `${TESTBASE}/posts/:key1/:key2`, resolver: TESTBASE };
 
-            await request.sendRequest(
+            const requestOptions = await request.sendRequest(
                 methodus,
                 `${TESTBASE}/posts/:key1/:key2`,
                 ['value1', 'value2', 'value1', 'value2', { user_id: 'id1' }],
@@ -370,7 +371,7 @@ describe('Web request tests for platform-rest', () => {
                 ]
             );
 
-            const response = request.send().then(thenFn).catch(catchFn);
+            const response = request.send(requestOptions).then(thenFn).catch(catchFn);
 
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
