@@ -5,7 +5,7 @@
     "main": "build/index.js",
     "scripts": {
         "build:additionals": "rimraf build && tsc && yarn client && cd client && yarn && yarn prod && cd ..",
-        "test": "jest --coverage",         
+        "test": "jest --coverage",
         "contract": "contracts-server ./build.json",
         "client": "contracts-client ./build.json",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-describe -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8c7c7f129d82d3fe77455df4bf7607c5dacbfdc2"
@@ -50,5 +50,5 @@
         "@methodus/platform-rest": "^6.0.0",
         "@methodus/server": "^6.0.0"
     },
-    "gitHead": "5a1606310ca9be53e26880393d868cbea8149ff8"
+    "gitHead": "8d3274502bc8d2fd50e82551275eb386a5e96663"
 }
