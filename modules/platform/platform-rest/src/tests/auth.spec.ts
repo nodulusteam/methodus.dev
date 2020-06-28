@@ -96,7 +96,7 @@ describe('Web request tests for platform-rest', () => {
                 route: `${TESTBASE}/posts`,
                 resolver: TESTBASE,
             };
-            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], [])
+            const requestOptions = await request.sendRequest(methodus, `${TESTBASE}/posts`, [], []);
             const response = request.send(requestOptions).then(thenFn).catch(catchFn);
             mockAxios.mockResponse({ status: 200, data: { key: 2 } });
 
