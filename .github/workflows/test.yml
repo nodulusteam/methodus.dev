@@ -25,6 +25,7 @@ jobs:
           yarn bootstrap:link
           yarn build:additionals
           yarn test
+          cat ./coverage/lcov.info
       - name: SonarCloud Scan
         uses: sonarsource/sonarcloud-github-action@master
         env:
