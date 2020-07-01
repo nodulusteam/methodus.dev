@@ -31,14 +31,12 @@ export type RequestPayload = {
 export class WebRequest {
     onBeforeRequest?: Function;
     // private _requestOptions: any;
-    constructor() { }
-
+    constructor() {}
 
     async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any): Promise<any> {
         const auth: AuthType = methodus._auth.type || AuthType.None;
         const authOptions: any = methodus._auth.options;
         const verb = methodus.verb;
-
         let body: Dictionary<string> | string = {};
         const headers: Dictionary = {};
         const query: Dictionary = {};

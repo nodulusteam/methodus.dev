@@ -3,7 +3,6 @@
         "modules/framework/*",
         "modules/platform/*",
         "modules/tests/*",
-        "modules/components/*",
         "modules/tools/*"
     ],
     "ignore": [

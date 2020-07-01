@@ -25,7 +25,6 @@ describe('Call using inherit controllers', () => {
     test('ExtendTestContract', async () => {
         const testContract = Injector.get<ExtendTestContract>(ExtendTestContract);
         customGlobal.fetch.mockResponseOnce(JSON.stringify({ status: 200, body: { 'ok': 1 } }));
-        debugger;
         const result: any = await testContract.baseAction(1, 'test');
         expect(result.body.ok).toBe(1);
     });

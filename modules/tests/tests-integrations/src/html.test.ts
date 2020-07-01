@@ -18,6 +18,5 @@ const TESTBASE = 'https://www.google.com';
             { index: 1, name: 'Content-Type', from: 'headers' },
         ]
     );
-    debugger;
     return result;
 })();
