@@ -1,6 +1,6 @@
 import { fp, MethodType, Injector } from '@methodus/server';
 import * as protobuf from 'protobufjs';
-import { ReflectionObject } from 'protobufjs';
+// import { ReflectionObject } from 'protobufjs';
 
 export class gRpcRouter {
     public routers: any = [];

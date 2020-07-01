@@ -69,7 +69,7 @@ export class Server {
         //     const loader = new PluginLoader();
         //     await loader.config(this.config, this._plugins);
         // }
-        const onStart: any = [];
+        const onStart: any = new Array<Function>();
 
         if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {

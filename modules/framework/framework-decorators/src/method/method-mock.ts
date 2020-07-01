@@ -21,5 +21,5 @@ export function MethodMock(mockedResult: any) {
         }
 
         return descriptor;
-    };
+    }
 }
