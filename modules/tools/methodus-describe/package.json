@@ -1,6 +1,6 @@
 {
     "name": "@methodus/describe",
-    "version": "6.0.3",
+    "version": "6.0.4",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {
@@ -30,8 +30,8 @@
         "@methodus/framework-commons": "^6.0.2",
         "@methodus/framework-decorators": "^6.0.3",
         "@methodus/framework-injection": "^6.0.2",
-        "@methodus/platform-express": "^6.0.3",
-        "@methodus/platform-rest": "^6.0.3",
+        "@methodus/platform-express": "^6.0.4",
+        "@methodus/platform-rest": "^6.0.4",
         "@methodus/server": "^6.0.3",
         "@types/jest": "^24.0.21",
         "@types/jquery": "^3.2.16",
