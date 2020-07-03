@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-rest",
-    "version": "6.0.2-alpha.0",
+    "version": "6.0.2",
     "description": "REST plugin for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -18,9 +18,9 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "dependencies": {
-        "@methodus/framework-commons": "^6.0.2-alpha.0",
-        "@methodus/framework-decorators": "^6.0.2-alpha.0",
-        "@methodus/framework-injection": "^6.0.2-alpha.0",
+        "@methodus/framework-commons": "^6.0.2",
+        "@methodus/framework-decorators": "^6.0.2",
+        "@methodus/framework-injection": "^6.0.2",
         "atob": "^2.1.2",
         "axios": "^0.19.2",
         "axios-mock-adapter": "^1.18.1",

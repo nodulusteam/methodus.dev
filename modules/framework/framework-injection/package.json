@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-injection",
-    "version": "6.0.2-alpha.0",
+    "version": "6.0.2",
     "description": "Dependency injection for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -14,7 +14,7 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "dependencies": {
-        "@methodus/framework-commons": "^6.0.2-alpha.0",
+        "@methodus/framework-commons": "^6.0.2",
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {

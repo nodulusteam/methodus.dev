@@ -6,10 +6,10 @@
         "modules/tools/*"
     ],
     "ignore": [
-        "@methodus/platform-grpc",       
+        "@methodus/platform-grpc",
         "@methodus/framework-integrations"
     ],
     "useWorkspaces": false,
     "npmClient": "yarn",
-    "version": "6.0.2-alpha.0"
+    "version": "6.0.2"
 }
