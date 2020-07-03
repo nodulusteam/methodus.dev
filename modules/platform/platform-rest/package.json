@@ -1,0 +1,45 @@
+{
+    "name": "@methodus/platform-rest",
+    "version": "6.0.5",
+    "description": "REST plugin for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "test": "rimraf ./lib && tsc && jest && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-rest.json",
+        "build": "rimraf ./lib && yarn format && tsc && yarn link",
+        "docs": "typedoc",
+        "format": "prettier -c --write ./src"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/-methodus-server/modules/platform-rest"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "@methodus/framework-commons": "^6.0.2",
+        "@methodus/framework-decorators": "^6.0.3",
+        "@methodus/framework-injection": "^6.0.2",
+        "atob": "^2.1.2",
+        "axios": "^0.19.2",
+        "axios-mock-adapter": "^1.18.1",
+        "btoa": "^1.2.1",
+        "js-base64": "^2.5.2",
+        "tunnel": "^0.0.6"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/tunnel": "^0.0.1",
+        "cross-env": "^7.0.2",
+        "jest": "^24.9.0",
+        "jest-mock-axios": "^3.2.0",
+        "prettier": "^2.0.5",
+        "rimraf": "^3.0.0",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
+    },
+    "gitHead": "8d3274502bc8d2fd50e82551275eb386a5e96663"
+}

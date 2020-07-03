@@ -1,0 +1,32 @@
+{
+  "name": "simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@client-contracts/simple": "file:../../../build_path/@client-contracts/simple",
+    "@client/inherit": "file:../../../build_path/@client/inherit",
+    "@client/models": "file:../../../build_path/@client/models",
+    "@methodus/client": "^1.0.2",
+    "@methodus/server": "^1.1.6",
+    "@server-contracts/simple": "file:../../../build_path/@server-contracts/simple",
+    "@server/inherit": "file:../../../build_path/@server/inherit",
+    "@server/models": "file:../../../build_path/@server/models",
+    "@types/express": "^4.16.0",
+    "clean-webpack-plugin": "^1.0.0",
+    "copy-webpack-plugin": "^4.6.0",
+    "express": "^4.16.4",
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^5.2.1",
+    "webpack": "^4.25.1",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.1.10"
+  }
+}

@@ -1,4 +1,0 @@
-*
-!lib/*
-lib/tests/*
-!package.json

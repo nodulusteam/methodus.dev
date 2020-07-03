@@ -1,0 +1,161 @@
+<div class="card d-flex flex-column test-form">
+  <table aria-describedby="test form" class="nav nav-tabs d-flex align-items-start" style="margin-bottom: -2px;">
+    <tr>
+      <th [ngClass]="{'active':tabs[0].selected }" id="method_name">
+        <a class="nav-link no-break" [ngClass]="{'active':tabs[0].selected }" data-toggle="tab" role="tab"
+          (click)="selectTab(tabs[0])"><em class="icon-insert-template"></em>
+          {{controllerName}}.{{methodName}}
+        </a></th>
+      <th id="result_tab" [ngClass]="{'active':tabs[1].selected }"> <a class="nav-link no-break" data-toggle="tab"
+          [ngClass]="{'active':tabs[1].selected }" role="tab" (click)="selectTab(tabs[1])"><em class="icon-list"></em>
+          Result
+
+
+          <div class="spinner-border text-primary" role="status" [hidden]="!inRequest">
+            <span class="sr-only">Loading...</span>
+          </div>
+
+          <span class="well bg-success">
+            <em id="StatusCode"></em>
+            <em id="ResultStatusOK" class="mdi mdi-check hide"></em>
+            <em id="ResultStatusBAD" class="mdi mdi-exclamation hide"></em>
+          </span>
+        </a></th>
+      <th id="navigation_tab" [ngClass]="{'active':tabs[2].selected }"><a class="nav-link no-break" data-toggle="tab"
+          [ngClass]="{'active':tabs[2].selected }" role="tab" (click)="selectTab(tabs[2])"> <em
+            class="icon-sitemap"></em> Navigation</a>
+      </th>
+
+    </tr>
+  </table>
+  <div class="card-body tab-content d-flex align-items-stretch">
+    <div role="tabpanel" class="full-size" id="testFormTab" *ngIf="methodInfo && tabs[0].selected">
+
+      <form id="TestForm" name="TestForm" target="resultFrame" [action]="methodInfo.route" [method]="methodInfo.verb">
+        <div class="btn-group" dropdown>
+          <button id="button-basic" dropdownToggle type="button" class="btn btn-sm dropdown-toggle">
+            Authorization <span class="caret"></span>
+          </button>
+          <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+            <li role="menuitem"><a class="dropdown-item text-sm" (click)="setAuth(0)">No auth</a></li>
+            <li role="menuitem"><a class="dropdown-item text-sm" (click)="setAuth(1)">Basic auth</a></li>
+            <li role="menuitem"><a class="dropdown-item text-sm" (click)="setAuth(3)">Bearer token</a></li>
+          </ul>
+          <div [ngSwitch]="auth" style="padding-top: 5px;">
+            <div *ngSwitchCase="0">None</div>
+            <div class="input-group input-group-sm mb-3" *ngSwitchCase="1">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Basic</span>
+              </div>
+              <input name="user"  [(ngModel)]="auth_user" type="text" placeholder="username" class="form-control">
+              <input name="password"  [(ngModel)]="auth_password" type="password" placeholder="password" class="form-control" />
+            </div>
+            <div class="input-group input-group-sm mb-3" *ngSwitchCase="3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm">Token</span>
+              </div>
+              <input type="text" name="token" [(ngModel)]="auth_token"  placeholder="token" class="form-control">
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div [appAdaptHeight]="260" style="width: 100%;" class="scroller form-horizontal form-material ">
+
+          <button (click)="resetForm()" class="right-btn btn btn-xs btn-primary" title="Reset input fields"><em
+              class="icon-reload"></em></button>
+
+
+
+
+          <div class="form-group" *ngFor="let param of methodInfo.params">
+            <label *ngIf="forParams(param.from )">
+              {{param.name}} <small>{{param.from}}::<em>{{param.type}}</em></small>
+            </label>
+            <input type=" text" [(ngModel)]="param.value" [ngModelOptions]="{standalone: true}" id="<%=param.name%>"
+              class="form-control form-control-line param store" *ngIf="forTextBox(param.from , param.type)" />
+            <div class="code-container" *ngIf="forTextArea(param.from , param.type)">
+              <ngx-monaco-editor class="my-code-editor" [(ngModel)]="param.value" [ngModelOptions]="{standalone: true}"
+                [options]="fieldOptions">
+              </ngx-monaco-editor>
+            </div>
+          </div>
+        </div>
+        <div class="form-footer">
+          <input type="button" value="Submit" class="btn btn-primary" (click)="testMethod();" />
+          <input type="reset" class="btn btn-default" />
+        </div>
+      </form>
+    </div>
+    <div class="results-block" role="tabpanel" *ngIf="tabs[1].selected">
+      <as-split>
+        <as-split-area size="40">
+          <as-split direction="vertical" gutterSize="5">
+            <as-split-area size="80" style="overflow: hidden!important">
+              <ngx-monaco-editor class="my-code-editor" [options]="editorOptions" [(ngModel)]="actionResultJson">
+              </ngx-monaco-editor>
+            </as-split-area>
+            <as-split-area size="20" style="overflow: hidden!important">
+              <div class="output" *ngIf="activationResult">
+                <div class="form-group">
+                  <label>Status</label>
+                  {{activationResult.status}} - {{activationResult.statusText}}
+                </div>
+                <div class="form-group">
+                  <label>Url</label>
+                  {{activationResult.url}}
+                </div>
+              </div>
+            </as-split-area>
+          </as-split>
+        </as-split-area>
+      </as-split>
+    </div>
+    <div *ngIf="tabs[2].selected" class="navigation-results" role="tabpanel" id="NavigationResults">
+      <ul class="nav nav-tabs d-flex align-items-start" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link " [ngClass]="{'active':navigationtabs[0].selected }" data-toggle="tab" role="tab"
+            (click)="selectNavigationTab(navigationtabs[0])" style="word-break: break-all;">
+            <input type="radio" name="resultsMode" value="result" [(ngModel)]="resultsMode"> Current
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" [ngClass]="{'active':navigationtabs[1].selected }" role="tab"
+            (click)="selectNavigationTab(navigationtabs[1])"> <input type="radio" name="resultsMode" value="history"
+              [(ngModel)]="resultsMode"> History
+          </a>
+        </li>
+      </ul>
+      <div class="card-block scroller" role="tabpanel" id="testFormTab" [appAdaptHeight]="200"
+        *ngIf="methodInfo && navigationtabs[0].selected">
+
+        <ul class="list-group">
+          <li *ngFor="let nav of navigationResult" class="list-group-item">
+            <span class="badge badge-primary"> {{nav.rel}}</span>&nbsp;<span
+              class="badge badge-success">{{nav.verb}}</span>&nbsp;<span
+              class="badge badge-secondary"><em>{{nav.action}}</em></span>&nbsp;<a href="{{nav.href}}" target="_blank"
+              class="badge badge-warning"><em>>>></em></a><br />
+            <a (click)="navigate(nav)" class="cursor"><small>{{nav.href}}</small></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-block scroller" role="tabpanel" id="testFormTab" [appAdaptHeight]="200"
+        *ngIf="methodInfo && navigationtabs[1].selected">
+
+        <ul class="list-group">
+          <li *ngFor="let nav of navigationService.history" class="list-group-item">
+            <span class="badge badge-primary"> {{nav.rel}}</span>&nbsp;<span
+              class="badge badge-success">{{nav.verb}}</span>&nbsp;<span
+              class="badge badge-danger"><em>{{nav.hit}}</em></span>&nbsp;<span
+              class="badge badge-secondary"><em>{{nav.action}}</em></span>&nbsp;<a href="{{nav.href}}" target="_blank"
+              class="badge badge-warning"><em>>>></em></a><br />
+            <a (click)="navigate(nav)" class="cursor"><small>{{nav.href}}</small></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,91 @@
+<script></script>
+
+<div class="menu">
+    <div class="menu-header">
+        <ul class="menu-header-bar">
+            <li class=""></li>
+
+            <li class="logo-title">
+                <svg
+                    version="1.0"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="256.000000pt"
+                    height="256.000000pt"
+                    viewBox="0 0 256.000000 256.000000"
+                    preserveAspectRatio="xMidYMid meet"
+                >
+                    <metadata>
+                        Created by potrace 1.15, written by Peter Selinger 2001-2017
+                    </metadata>
+                    <g
+                        transform="translate(0.000000,256.000000) scale(0.100000,-0.100000)"
+                        [attr.fill]="color"
+                        stroke="none"
+                    >
+                        <path
+                            d="M1231 2541 c-53 -98 -271 -599 -271 -621 0 -21 8 -35 26 -47 25 -16
+         28 -16 74 10 26 15 51 27 54 27 3 0 6 -213 6 -474 l0 -474 -46 -11 c-26 -7
+         -73 -23 -105 -36 l-58 -23 -6 36 c-33 227 -103 503 -189 755 -44 126 -44 127
+         -22 127 13 0 30 8 39 18 31 34 21 64 -40 128 -149 156 -345 254 -567 285 -79
+         11 -88 11 -106 -6 -12 -11 -20 -31 -20 -50 0 -27 7 -37 40 -59 104 -69 217
+         -212 303 -381 137 -275 255 -755 282 -1155 12 -174 35 -199 128 -139 89 56
+         169 97 265 134 50 19 94 35 97 35 3 0 5 -134 5 -298 0 -218 3 -301 12 -310 17
+         -17 279 -17 296 0 9 9 12 92 12 310 0 164 2 298 5 298 3 0 47 -16 97 -35 96
+         -37 176 -78 265 -134 93 -60 116 -35 128 139 27 400 145 880 282 1155 86 169
+         199 312 303 381 33 22 40 32 40 59 0 19 -8 39 -20 50 -18 17 -27 17 -106 6
+         -222 -31 -418 -129 -566 -285 -41 -42 -58 -68 -58 -86 0 -31 28 -60 57 -60 21
+         0 20 -5 -23 -127 -86 -252 -156 -528 -189 -755 l-6 -36 -58 23 c-32 13 -79 29
+         -105 36 l-46 11 0 474 c0 261 3 474 6 474 3 0 28 -12 54 -27 46 -26 49 -26 74
+         -10 19 13 26 26 25 50 0 19 -56 154 -137 332 l-138 300 -41 3 c-33 2 -44 -1
+         -52 -17z"
+                        />
+                    </g>
+                </svg>
+
+                Describe - API explorer for Methodus
+
+
+                <span class="app-title" *ngIf="app">
+                  {{ app.name }} {{ app.version }}
+                </span>
+            </li>
+
+        </ul>
+    </div>
+    <div class="menu-container">
+        <ul class="nav-bar menubars"></ul>
+        <ul class="mainmenu">
+            <li class="topItem">
+                <a
+                    class="nav-link active"
+                    data-toggle="tab"
+                    routerLink="describe/describe/local-services"
+                    routerLinkActive="active-top"
+                    role="tab"
+                    >Services</a
+                >
+            </li>
+            <li class="topItem">
+                <a
+                    class="nav-link"
+                    data-toggle="tab"
+                    routerLink="describe/describe/remote-services"
+                    routerLinkActive="active-top"
+                    role="tab"
+                    >Remotes</a
+                >
+            </li>
+            <li class="topItem">
+                <a
+                    class="nav-link"
+                    data-toggle="tab"
+                    routerLink="editor/blocky"
+                    routerLinkActive="active-top"
+                    role="tab"
+                    >Test Editor</a
+                >
+            </li>
+        </ul>
+    </div>
+</div>
+<app-loader name="main"></app-loader>

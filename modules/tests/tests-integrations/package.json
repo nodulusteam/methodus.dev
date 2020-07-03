@@ -1,0 +1,31 @@
+{
+    "name": "@methodus/framework-integrations",
+    "version": "6.0.5",
+    "description": "Integrations tests for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "build": "rimraf ./lib && tsc",
+        "test": "jest && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-integrations.json"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "@methodus/framework-commons": "^6.0.2",
+        "@methodus/framework-decorators": "^6.0.3",
+        "@methodus/framework-injection": "^6.0.2",
+        "@methodus/platform-express": "^6.0.5",
+        "@methodus/platform-rest": "^6.0.5",
+        "@methodus/server": "^6.0.3"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/node": "^14.0.9",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typescript": "^3.7.5"
+    },
+    "gitHead": "8d3274502bc8d2fd50e82551275eb386a5e96663"
+}

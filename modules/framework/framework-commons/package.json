@@ -1,0 +1,29 @@
+{
+    "name": "@methodus/framework-commons",
+    "version": "6.0.2",
+    "description": "Commons for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "test": "jest --silent && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
+        "build": "rimraf ./lib && tsc",
+        "docs": "rimraf ../../docs/modules/framework/common && typedoc"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "dependencies": {
+        "reflect-metadata": "^0.1.13"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/node": "^14.0.9",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
+    },
+    "gitHead": "8d3274502bc8d2fd50e82551275eb386a5e96663"
+}

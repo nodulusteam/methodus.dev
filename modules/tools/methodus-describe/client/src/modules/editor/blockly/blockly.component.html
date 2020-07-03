@@ -1,0 +1,127 @@
+<as-split direction="horizontal" gutterSize="5" (dragEnd)="persistUi('hor', $event)">
+    <as-split-area [size]="splitConfig.hor.sizes[0]">
+        <as-split direction="vertical">
+            <as-split-area style="overflow: hidden;">
+                <div class="toolbar-bg">
+                    <button class="btn btn-info " (click)="triggerUpload()"> <em class="icon-upload"></em></button>
+                    <div class="btn-group" dropdown>
+                        <button type="button" class="btn btn-info ">{{activeWorkspace}}</button>
+                        <button id="button-split" type="button" dropdownToggle
+                            class="btn btn-info  dropdown-toggle dropdown-toggle-split" aria-controls="dropdown-split">
+                            <span class="caret"></span>
+                        </button>
+                        <ul id="dropdown-split" *dropdownMenu class="dropdown-menu" role="menu"
+                            aria-labelledby="button-split">
+                            <li role="menuitem" *ngFor="let workspace of workspaces">
+                                <div class="row dropdown-item">
+                                    <span class="col-8">
+                                        <span *ngIf="workspace.rename">
+                                            <input type="text" [(ngModel)]="workspace.newname" (click)="prevent($event)"
+                                                class="form-control form-sm" />
+
+                                        </span>
+                                        <span *ngIf="!workspace.rename">
+                                            <a class="text-md" *ngIf="!workspace.rename"
+                                                (click)="loadWorkspace(workspace.name)">
+                                                {{workspace.name}} </a>
+
+                                        </span>
+
+                                    </span>
+                                    <span class="col-4">
+                                        <span *ngIf="workspace.rename">
+                                            <a (click)="editWorkspaceAccept($event, workspace)"
+                                                class="btn btn-xs btn-success">
+                                                <em class="fas fa-check"></em></a>
+
+                                                <a (click)="editWorkspaceCancel($event, workspace)" class="btn btn-xs btn-default">
+                                                        <em class="fas fa-back"></em></a>
+
+                                                
+                                        </span>
+
+                                        <span *ngIf="!workspace.rename">
+                                            <a (click)="editWorkspace($event, workspace)"
+                                                class="btn btn-xs btn-info">
+                                                <em class="fas fa-edit"></em></a>
+
+
+                                            <a (click)="deleteWorkspace(workspace.name)" class="btn btn-xs btn-danger">
+                                                <em class="fas fa-trash"></em></a></span>
+
+                                    </span>
+
+
+                                </div>
+                            </li>
+                            <li role="menuitem"><a class="dropdown-item text-md" (click)="initWorkspace()">+ New
+                                    Description</a></li>
+                        </ul>
+                    </div>
+
+                    <button class="btn btn-info " (click)="export()"> <em class="icon-floppy-disk"></em></button>
+                    <button (click)="stepCode()" class="btn btn-success "><em class="icon-play"></em></button>
+
+
+
+
+                    <img src="assets/logo_blockly.svg" class="toolbar-logo" alt="blockly-svg" />
+                    <div class="hidden">
+                        <input id="fileInput" type="file" #fileInput (change)="readForUpload($event)">
+                    </div>
+
+
+
+
+                </div>
+                <ngx-blockly *ngIf="loadComplete" [config]="config" [generatorConfig]="generatorConfig"
+                    (javascriptCode)="onCode($event)">
+                </ngx-blockly>
+
+            </as-split-area>
+        </as-split>
+    </as-split-area>
+    <as-split-area [size]="splitConfig.hor.sizes[1]">
+        <as-split direction="vertical" gutterSize="5" (dragEnd)="persistUi('ver', $event)">
+            <as-split-area [size]="splitConfig.ver.sizes[0]" style="overflow: hidden!important">
+
+                <ngx-monaco-editor class="my-code-editor" [(ngModel)]="javascriptCode"
+                    [ngModelOptions]="{standalone: true}" [options]="fieldOptions">
+                </ngx-monaco-editor>
+
+            </as-split-area>
+            <as-split-area [size]="splitConfig.ver.sizes[1]">
+
+                <div class="testsPanel">
+                    <table class="table" aria-describedby="tests">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th id="value1">value1</th>
+                                <th id="operator">operator</th>
+                                <th id="value2">value2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let expect of testService.expectations;let i = index"
+                                class="expect-{{expect.result}}">
+                                <td>{{i+1}}.</td>
+                                <td>{{expect.testValue}}</td>
+                                <td>{{expect.operator}}</td>
+                                <td>{{expect.value}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </as-split-area>
+            <as-split-area [size]="splitConfig.ver.sizes[2]" style="overflow: hidden!important">
+                <div class="output">
+                    <label class="label-output">Output</label>
+                    <pre id="testOutput" class="full-output"></pre>
+                </div>
+            </as-split-area>
+        </as-split>
+    </as-split-area>
+</as-split>
+<hotkeys-cheatsheet></hotkeys-cheatsheet>

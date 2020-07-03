@@ -1,0 +1,49 @@
+{
+    "name": "@methodus/platform-express",
+    "version": "6.0.5",
+    "description": "Express plugin for methodus",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "scripts": {
+        "test": "jest && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-express.json",
+        "build": "rimraf ./lib && tsc && yarn link",
+        "docs": "typedoc",
+        "format": "prettier -c --write ./src"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
+    "peerDependencies": {
+        "@methodus/server": "^6.0.0-alpha"
+    },
+    "dependencies": {
+        "@methodus/framework-commons": "^6.0.2",
+        "@methodus/framework-decorators": "^6.0.3",
+        "@methodus/framework-injection": "^6.0.2",
+        "@methodus/server": "^6.0.3",
+        "body-parser": "^1.19.0",
+        "compression": "^1.7.0",
+        "cookie-parser": "^1.4.4",
+        "ejs": "^2.5.7",
+        "errorhandler": "^1.5.0",
+        "express": "^4.17.1",
+        "express-fileupload": "^1.1.6",
+        "fast-safe-stringify": "^2.0.7"
+    },
+    "devDependencies": {
+        "@methodus/data": "^2.0.35",
+        "@methodus/platform-rest": "^6.0.5",
+        "@types/cookie-parser": "^1.4.2",
+        "@types/etag": "^1.8.0",
+        "@types/express": "^4.17.2",
+        "@types/express-fileupload": "^1.1.0",
+        "@types/jest": "^24.0.23",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
+    },
+    "gitHead": "8d3274502bc8d2fd50e82551275eb386a5e96663"
+}

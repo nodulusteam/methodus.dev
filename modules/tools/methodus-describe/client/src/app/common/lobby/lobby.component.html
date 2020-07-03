@@ -1,0 +1,53 @@
+<div class="lobby mt5">
+  <app-loader name="lobby"></app-loader>
+
+  <div class="no-results" *ngIf="items && items.length===0">
+    <h4>No results</h4>
+
+    <div *ngIf="!noNew" class="sqr shadow sqr-btn {{itemClass}}" (click)="newItemHandler()" (next)="newItemHandler()">
+      <em class="fas fa-plus-circle"></em></div>
+
+  </div>
+
+  <div *ngIf="!noNew && items && items.length > 0" class="sqr shadow sqr-btn {{itemClass}}" (click)="newItemHandler()"
+    (next)="newItemHandler()">
+    <em class="fas fa-plus-circle"></em></div>
+  <div *ngIf="!groupBy" class="all-container">
+    <section class="all-container-items">
+      <ng-template *ngIf="!groupBy" [ngTemplateOutlet]="companiesTemplate" [ngTemplateOutletContext]="{items: items}">
+      </ng-template>
+    </section>
+  </div>
+  <div *ngIf="groupBy" class="grouped-container">
+    <accordion [closeOthers]="true">
+      <accordion-group [panelClass]="customClass" *ngFor="let key of itemsGroup | keys"
+        [heading]="getHeading(key,itemsGroup[key].length)" [isOpen]="isFirstOpen">
+        <section class="grouped-container-items">
+          <ng-template [ngTemplateOutlet]="companiesTemplate" [ngTemplateOutletContext]="{items: itemsGroup[key]}">
+          </ng-template>
+        </section>
+      </accordion-group>
+    </accordion>
+  </div>
+</div>
+
+<ng-template #companiesTemplate let-items="items">
+  <div *ngFor="let item of items" [ngClass]="{'admin': noNew === false}"
+    class="sqr shadow {{item._meta_active}} {{itemClass}}" (click)="selectItemHandler(item)">
+    <app-lobby-item [item]="item" [model]="model" [template]="itemTemplate"></app-lobby-item>
+    <ul class="sqr-toolbar btn-group" role="group" *ngIf="!noNew">
+      <li>
+        <button class="btn btn-secondary btn-md btn-danger" (click)="deleteItemHandler(item);"> <em
+            class="fas fa-trash"></em>
+        </button>
+      </li>
+      <li>
+        <button class="btn btn-secondary btn-md btn-primary" (click)="editItemHandler(item);"> <em
+            class="fas fa-edit"></em>
+        </button>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+
+ 

@@ -1,0 +1,55 @@
+{
+    "name": "@methodus/platform-web",
+    "version": "6.0.2",
+    "description": "Zero dependencies, Browser library for Contract based API access",
+    "main": "dist/methodus-client.js",
+    "types": "build/lib/index.d.ts",
+    "scripts": {
+        "webpack": "./node_modules/.bin/webpack --config webpack.config.dev.js --display-error-details",
+        "watch": "./node_modules/.bin/webpack . --watch",
+        "build": "npm run clear && tsc && npm run webpack && yarn link",
+        "serve": "webpack-dev-server",
+        "clear": "rm -rf build output coverage dist",
+        "docs": "typedoc",
+        "test": "jest && yarn coverage",
+        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-web.json",
+        "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-client -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=ebd888eb856c222b3c5fe77a69b779e0e1c43b35"
+    },
+    "author": "@nodulusteam",
+    "license": "BSD-3-Clause",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/-methodus-client"
+    },
+    "keywords": [
+        "rest",
+        "client http",
+        "rpc",
+        "auto",
+        "generated",
+        "spa"
+    ],
+    "devDependencies": {
+        "fetch-mock": "^7.3.9",
+        "istanbul-instrumenter-loader": "^3.0.1",
+        "jest": "^24.9.0",
+        "jest-fetch-mock": "^2.1.2",
+        "node-fetch": "^2.6.0",
+        "trash-cli": "^3.0.0",
+        "ts-jest": "^24.1.0",
+        "ts-loader": "^6.0.4",
+        "tslib": "^1.10.0",
+        "tslint": "^5.8.0",
+        "typedoc": "^0.15.0",
+        "typedoc-plugin-markdown": "^1.2.0",
+        "typescript": "^3.9.5",
+        "webpack": "^4.39.2",
+        "webpack-cli": "^3.3.7",
+        "webpack-dev-server": "^2.9.5",
+        "webpack-system-register": "^1.5.1"
+    },
+    "dependencies": {
+        "reflect-metadata": "^0.1.13"
+    },
+    "gitHead": "8d3274502bc8d2fd50e82551275eb386a5e96663"
+}
