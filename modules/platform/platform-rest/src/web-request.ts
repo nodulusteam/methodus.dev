@@ -31,7 +31,7 @@ export type RequestPayload = {
 export class WebRequest {
     onBeforeRequest?: Function;
     // private _requestOptions: any;
-    constructor() {}
+    constructor() { }
 
     async sendRequest(methodus: MethodusObject, uri: string, params: any[], paramsMap: RequestParams[], securityContext?: any): Promise<any> {
         const auth: AuthType = methodus._auth.type || AuthType.None;
@@ -57,20 +57,18 @@ export class WebRequest {
             parts,
         });
         handleQuery(payload);
-        let requestOptions: AxiosRequestConfig = {
+        const requestOptions: AxiosRequestConfig = {
             method: verb.toLowerCase() as Method,
-            baseURL: uri,
-            url: uri,
+            baseURL: payload.uri,
+            url: payload.uri,
             timeout: 1000 * 60 * 5,
         };
 
-        requestOptions = handleProxy(requestOptions, payload);
-        requestOptions = handleHeaders(requestOptions, payload);
-        requestOptions = handleFiles(requestOptions, payload);
-        requestOptions = await handleAuth.apply(this, [requestOptions, payload, this]);
-
+        Object.assign(requestOptions, handleProxy(requestOptions, payload));
+        Object.assign(requestOptions, handleHeaders(requestOptions, payload));
+        Object.assign(requestOptions, handleFiles(requestOptions, payload));
+        Object.assign(requestOptions, await handleAuth.apply(this, [requestOptions, payload, this]));
         logger.debug('Request options are: ', JSON.stringify(requestOptions));
-
         return requestOptions;
     }
 
