@@ -11,7 +11,7 @@
         "mode": "file",
         "name": "Methodus - framework injection",
         "readme": "readme.md",
-        "out": "../../docs/framework/injection"
+        "out": "../../docs/modules/framework/injection"
     },
     "compilerOptions": {
         "importHelpers": false,

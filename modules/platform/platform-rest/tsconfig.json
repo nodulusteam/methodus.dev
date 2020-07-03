@@ -11,7 +11,7 @@
         "mode": "file",
         "name": "A Methodus guide",
         "readme": "none",
-        "out": "docs/documentation",
+        "out": "docs/modules/platform/rest",
         "exclude": "tests"
     },
     "compilerOptions": {
