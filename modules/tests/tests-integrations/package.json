@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-integrations",
-    "version": "6.0.5",
+    "version": "7.0.0",
     "description": "Integrations tests for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -12,12 +12,12 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "dependencies": {
-        "@methodus/framework-commons": "^6.0.2",
-        "@methodus/framework-decorators": "^6.0.3",
-        "@methodus/framework-injection": "^6.0.2",
-        "@methodus/platform-express": "^6.0.5",
-        "@methodus/platform-rest": "^6.0.5",
-        "@methodus/server": "^6.0.3"
+        "@methodus/framework-commons": "^7.0.0",
+        "@methodus/framework-decorators": "^7.0.0",
+        "@methodus/framework-injection": "^7.0.0",
+        "@methodus/platform-express": "^7.0.0",
+        "@methodus/platform-rest": "^7.0.0",
+        "@methodus/server": "^7.0.0"
     },
     "devDependencies": {
         "@types/jest": "^24.0.23",
