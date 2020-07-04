@@ -13,9 +13,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
-      - run: yarn
-      - run: yarn bootstrap
-      - run: yarn test
+      - run: yarn ci
 
   release:
     name: Release
@@ -30,7 +28,7 @@ jobs:
           node-version: 12
 
       - name: Install Dependencies
-        run: yarn
+        run: yarn ci
 
       - name: Create Release Pull Request
         uses: changesets/action@master
@@ -46,7 +44,7 @@ jobs:
         with:
           node-version: 10
           registry-url: https://registry.npmjs.org/
-      - run: yarn
+      - run: yarn ci
       - run: yarn publish-ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
@@ -61,7 +59,7 @@ jobs:
           node-version: 10
           registry-url: https://npm.pkg.github.com/
           scope: "@methodus"
-      - run: yarn
+      - run: yarn ci
       - run: yarn publish-ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
