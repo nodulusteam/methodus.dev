@@ -58,8 +58,7 @@ export class WebRequest {
         });
         handleQuery(payload);
         const requestOptions: AxiosRequestConfig = {
-            method: verb.toLowerCase() as Method,
-            baseURL: payload.uri,
+            method: verb.toLowerCase() as Method,           
             url: payload.uri,
             timeout: 1000 * 60 * 5,
         };
