@@ -1,6 +1,6 @@
 {
     "name": "@methodus/cli",
-    "version": "6.0.2",
+    "version": "7.0.0",
     "main": "dist/index.js",
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
