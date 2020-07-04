@@ -25,7 +25,7 @@
         "url": "https://github.com/nodulusteam/methodus.dev"
     },
     "scripts": {
-        "ci":"yarn && yarn bootstrap && yarn build && yarn test",
+        "ci": "yarn && yarn bootstrap && yarn build && yarn test",
         "clean": "rm -rf ./modules/*/yarn.lock && rm -rf ./modules/*/node_modules && rm -rf ./modules/*/dist && rm -rf ./modules/*/lib",
         "build": "lerna run build",
         "build:additionals": "lerna run build:additionals",
@@ -75,10 +75,9 @@
         "ts-jest": "^24.2.0",
         "tslint": "^5.11.0",
         "typedoc": "^0.17.7",
+        "@changesets/cli": "^2.9.1",
         "typedoc-plugin-markdown": "^1.2.0",
         "typescript": "^3.9.5"
     },
-    "dependencies": {
-        "@changesets/cli": "^2.9.1"
-    }
+    "dependencies": {}
 }
