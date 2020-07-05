@@ -17,6 +17,9 @@
     },
     "author": "@nodulusteam",
     "license": "BSD-3-Clause",
+    "publishConfig": {
+        "access": "public"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/nodulusteam/-methodus-client"

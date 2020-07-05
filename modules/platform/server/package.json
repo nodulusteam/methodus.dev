@@ -38,6 +38,9 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "publishConfig": {
+        "access": "public"
+    },
     "dependencies": {
         "@methodus/framework-commons": "^7.0.0",
         "@methodus/framework-decorators": "^7.0.0",

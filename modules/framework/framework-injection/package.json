@@ -13,6 +13,9 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "publishConfig": {
+        "access": "public"
+    },
     "dependencies": {
         "@methodus/framework-commons": "^7.0.0",
         "reflect-metadata": "^0.1.13"

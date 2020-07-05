@@ -13,6 +13,9 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "publishConfig": {
+        "access": "public"
+    },
     "peerDependencies": {
         "@methodus/server": "^7.0.0"
     },
