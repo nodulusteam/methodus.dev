@@ -1,10 +1,8 @@
 name: Publish Packages
-
 on:
   push:
     branches:
       - master
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -14,14 +12,12 @@ jobs:
         with:
           node-version: 10
       - run: yarn ci
-
   release:
     name: Release
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v1
-
       - name: Setup Node.js
         uses: actions/setup-node@v1
         with:
@@ -34,7 +30,6 @@ jobs:
         uses: changesets/action@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
@@ -48,18 +43,3 @@ jobs:
       - run: yarn publish-ci
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 10
-          registry-url: https://npm.pkg.github.com/
-          scope: "@methodus"
-      - run: yarn ci
-      - run: yarn publish-ci
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
