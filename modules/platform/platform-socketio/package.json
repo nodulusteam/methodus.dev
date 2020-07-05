@@ -12,6 +12,9 @@
     },
     "author": "nodulusteam",
     "license": "ISC",
+    "publishConfig": {
+        "access": "public"
+    },
     "peerDependencies": {
         "@methodus/server": "^7.0.0"
     },
