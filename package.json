@@ -37,7 +37,7 @@
         "test": "lerna run test --loglevel=silly --concurrency=1&& yarn merge",
         "test:full": "jest --verbose --coverage",
         "merge": "node ./mapCoverage.js",
-        "publish-ci": "lerna publish from-package -y --no-verify-access",
+        "publish-ci": "yarn commit-version && lerna publish from-package -y --no-verify-access",
         "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
         "release": "lerna publish from-package",
         "doc": "docsify serve docs",

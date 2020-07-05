@@ -42,4 +42,4 @@ jobs:
       - run: yarn ci
       - run: yarn publish-ci
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
