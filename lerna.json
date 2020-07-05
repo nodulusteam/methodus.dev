@@ -6,6 +6,7 @@
         "modules/tools/*"
     ],
     "ignore": [
+        "@methodus/platform-fastify",
         "@methodus/platform-grpc",
         "@methodus/framework-integrations"
     ],
