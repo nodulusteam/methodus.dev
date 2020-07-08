@@ -4,7 +4,7 @@ import * as FileSaver from 'file-saver';
 import * as Interpreter from 'js-interpreter';
 import * as es7PluginBuilder from 'acorn-es7-plugin';
 es7PluginBuilder(acorn);
-import { Injector } from '@methodus/client';
+import { Injector } from '@methodus/platform-web';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { NgxBlocklyConfig, CustomBlock, NgxBlocklyGeneratorConfig } from 'ngx-blockly';

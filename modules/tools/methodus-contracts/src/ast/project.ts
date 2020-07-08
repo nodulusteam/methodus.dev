@@ -186,7 +186,7 @@ export class MethodusProject {
         if (options.isClient) {
             targetFile.getImportDeclarations().forEach((importDec) => {
                 if (importDec.getText().indexOf('@methodus/server') > -1) {
-                    importDec.replaceWithText(`import * as M from '@methodus/client'`);
+                    importDec.replaceWithText(`import * as M from '@methodus/platform-web'`);
                 }
             });
         }
@@ -234,7 +234,7 @@ export class MethodusProject {
                 });
             } else {
                 sourceFile.addImportDeclaration({
-                    moduleSpecifier: '@methodus/client',
+                    moduleSpecifier: '@methodus/platform-web',
                     namespaceImport: 'M'
                 });
             }

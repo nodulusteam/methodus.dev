@@ -1,7 +1,7 @@
 import { Component, OnInit, NgZone } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { Injector } from '@methodus/client';
+import { Injector } from '@methodus/platform-web';
 import { DescribeView } from '../../modules/shim';
 
 @Component({

@@ -70,7 +70,7 @@ Model API data objects and manage DB access (mongodb)
  
 
 ![@methodus/server](https://img.shields.io/npm/v/@methodus/server?color=%233399ff&label=%40methodus%2Fserver&style=flat-square)
-![@methodus/client](https://img.shields.io/npm/v/@methodus/client?color=%23004d99&label=%40methodus%2Fclient&style=flat-square)
+![@methodus/platform-web](https://img.shields.io/npm/v/@methodus/platform-web?color=%23004d99&label=%40methodus%2Fclient&style=flat-square)
 ![@methodus/contracts](https://img.shields.io/npm/v/@methodus/contracts?color=%238080ff&label=%40methodus%2Fcontracts&style=flat-square)
 ![@methodus/data](https://img.shields.io/npm/v/@methodus/data?color=%23994d00&label=%40methodus%2Fdata&style=flat-square)
 ![@methodus/describe](https://img.shields.io/npm/v/@methodus/describe?color=%2353c653&label=%40methodus%2Fdescribe&style=flat-square)

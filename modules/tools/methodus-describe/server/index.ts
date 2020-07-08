@@ -39,7 +39,7 @@ export function init(config, pluginOptions: any = {}) {
             instance.use(`${describePath}/`, Express.static(clientDir, options))
 
             instance.get(`${describePath}`, function (req, res) { res.redirect(`${describePath}/`); });
-            const methodClientPath = path.join(process.cwd(), 'node_modules', '@methodus/client', 'dist');
+            const methodClientPath = path.join(process.cwd(), 'node_modules', '@methodus/platform-web', 'dist');
             instance.use(`${describePath}/scripts/`, Express.static(methodClientPath, options));
 
         }

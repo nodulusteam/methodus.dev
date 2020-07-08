@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Injector } from '@methodus/client';
+import { Injector } from '@methodus/platform-web';
 import { Router, ActivatedRoute } from '@angular/router';
 import { DescribeView } from '../../shim';
 

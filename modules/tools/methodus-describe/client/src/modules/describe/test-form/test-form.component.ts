@@ -1,6 +1,6 @@
 import { DomSanitizer } from '@angular/platform-browser';
 import { Component, OnInit } from '@angular/core';
-import { Injector } from '@methodus/client';
+import { Injector } from '@methodus/platform-web';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DescribeView } from '../../shim';
 import { TestRouteService } from '../test-route.service';

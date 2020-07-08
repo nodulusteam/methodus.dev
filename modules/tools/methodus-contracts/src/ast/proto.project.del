@@ -188,7 +188,7 @@ export class ProtoProject {
         if (options.isClient) {
             targetFile.getImportDeclarations().forEach((importDec) => {
                 if (importDec.getText().indexOf('@methodus/server') > -1) {
-                    importDec.replaceWithText(`import * as M from '@methodus/client'`);
+                    importDec.replaceWithText(`import * as M from '@methodus/platform-web'`);
                 }
             });
         }

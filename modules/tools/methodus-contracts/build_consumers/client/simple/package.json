@@ -12,7 +12,7 @@
     "@client-contracts/simple": "file:../../../build_path/@client-contracts/simple",
     "@client/inherit": "file:../../../build_path/@client/inherit",
     "@client/models": "file:../../../build_path/@client/models",
-    "@methodus/client": "^1.0.2",
+    "@methodus/platform-web": "^1.0.2",
     "@methodus/server": "^1.1.6",
     "@server-contracts/simple": "file:../../../build_path/@server-contracts/simple",
     "@server/inherit": "file:../../../build_path/@server/inherit",

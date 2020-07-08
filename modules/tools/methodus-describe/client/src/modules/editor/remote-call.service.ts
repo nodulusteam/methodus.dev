@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Rest } from '@methodus/client';
+import { Rest } from '@methodus/platform-web';
 
 
 @Injectable()
@@ -21,5 +21,5 @@ export class RemoteCallService {
         const response = await fetch(restRequest.request, restRequest.options);
         return response;
     }
- 
+
 }
