@@ -41,7 +41,7 @@
         "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
         "release": "lerna publish from-package",
         "doc": "docsify serve ./modules/docs",
-        "docs": "lerna run docs",
+        "docs": "lerna run docs && cp -r modules/docs/* ./docs",
         "docsweb": "cross-env NODE_OPTIONS=--max_old_space_size=8192 typedoc --mode modules --out docs/documentation ./",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "rimraf output && npm run test"

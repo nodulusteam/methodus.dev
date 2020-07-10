@@ -4,10 +4,10 @@
 * [Introduction](/main.md)
     * [Server](introduction/server.md)
     * [Client](introduction/client.md)
-* [Reference](documentation/)
-    * [Framework](documentation/framework)
-    * [Platform](documentation/platform)
-    * [Tools](documentation/tools)
+* [Reference](modules/main.md)
+    * [Framework](modules/framework/main.md)
+    * [Platform](modules/platform/main.md)
+    * [Tools](modules/tools/main.md)
 * [Examples](examples/index.md)
 
 <!-- 
