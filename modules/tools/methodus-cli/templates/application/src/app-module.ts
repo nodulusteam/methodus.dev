@@ -1,12 +1,10 @@
 import {
-    Module,
-    ServerConfiguration,
-    ConfiguredServer,
+    decoratorsModule as decorators, ConfiguredServer
 } from '@methodus/server';
 import { Express } from '@methodus/platform-express';
 
-@Module('AppModule')
-@ServerConfiguration(Express, { port: 3060 })
+@decorators.Module('AppModule')
+@decorators.ServerConfiguration(Express, { port: 3060 })
 export class AppModule extends ConfiguredServer {
     
 }

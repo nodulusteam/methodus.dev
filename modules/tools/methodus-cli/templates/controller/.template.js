@@ -13,7 +13,7 @@ module.exports = {
         if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
         else return 'Controller name may only include letters, numbers, underscores and hashes.';
       }
-    }
+    } 
   ]
 
 }

@@ -4,7 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as shell from 'shelljs';
 const colors: any = require('colors');
- 
+
 import {
     CliOptions,
     TemplateConfig,
@@ -24,7 +24,8 @@ export class CLI {
     ) {
         this.CURR_DIR = process.env.APPLICATION_DIR || process.cwd();
     }
-    generate(projectChoice: string, templatePath: string) {
+    generate(projectChoice: string, templatePath: string, moduleFilePath?: string) {
+        debugger;
         const tartgetPath = path.join(
             this.CURR_DIR,
             camelCaseToDash(this.projectName)
@@ -45,7 +46,7 @@ export class CLI {
         this.createDirectoryContents(
             this.CURR_DIR,
             templatePath,
-            this.projectName,
+            camelCaseToDash(this.projectName),
             this.templateConfig
         );
 
@@ -60,14 +61,14 @@ export class CLI {
         console.log(colors.green('Done.'));
         console.log(
             colors.green(`Go into the project: cd ${camelCaseToDash(options.projectName)}`)
-                 
+
         );
 
         const message = options.config.postMessage;
 
         if (message) {
             console.log('');
-            console.log( colors.yellow(message));
+            console.log(colors.yellow(message));
             console.log('');
         }
     }

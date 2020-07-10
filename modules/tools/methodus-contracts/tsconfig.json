@@ -1,9 +1,8 @@
 {
     "compilerOptions": {
-        "target": "es2017",
+        "target": "es5",
         "moduleResolution": "node",
         "module": "commonjs",
-        
         "outDir": "lib",
         "rootDir": "src",
         "sourceMap": true, /* Generates corresponding '.map' file. */
@@ -50,6 +49,19 @@
         "build_path",
         "node_modules"
     ],
+    "typedocOptions": {
+        "theme": "markdown",
+        "excludeExternals": "true",
+        "excludeNotExported": "true",
+        "target": "commonjs",
+        "inputFiles": ["!./src"],
+        "includeDeclarations": "false",
+        "mode": "none",
+        "name": "@methodus/contracts",
+        "readme": "README.md",
+        "out": "../../docs/modules/tools/contracts",
+        "exclude": "src"
+    },
     "compileOnSave": true
 
 }

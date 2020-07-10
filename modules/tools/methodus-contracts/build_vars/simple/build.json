@@ -4,7 +4,6 @@
         "contractNameClient": "@client-contracts/simple",
         "buildPath": "./build_path/",
         "path": "./build_vars/simple",
-        "buildFolder": "build",
         "models": {},
         "npmignore": "./.npmignore",
         "contracts": {

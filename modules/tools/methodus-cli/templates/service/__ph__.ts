@@ -1,7 +1,7 @@
-import { Injectable } from '@methodus/server';
+import { injectionModule as injection } from '@methodus/server';
 
 
-@Injectable('<%=projectName%>')
+@injection.Injectable('<%=projectName%>')
 export class <%=projectName%> {
     constructor() {
 

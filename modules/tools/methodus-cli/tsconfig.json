@@ -2,9 +2,9 @@
     "compilerOptions": {
         "rootDir": "src",
         "outDir": "dist",
-        "target": "ES5",
+        "target": "es5",
         "lib": ["ES2017"],
-        "sourceMap": false,
+        "sourceMap": true,
         "allowJs": false,
         "moduleResolution": "node",
         "forceConsistentCasingInFileNames": true,
@@ -15,6 +15,18 @@
         "strictNullChecks": true,
         "suppressImplicitAnyIndexErrors": true,
         "noUnusedLocals": false
+    },
+    "typedocOptions": {
+        "theme": "markdown",
+        "excludeExternals": "true",
+        "excludeNotExported": "true",
+        "target": "commonjs",
+        "includeDeclarations": "true",
+        "mode": "module",
+        "name": "A Methodus guide",
+        "readme": "none",
+        "out": "../../docs/modules/tools/cli",
+        "exclude": "tests"
     },
     "exclude": ["node_modules", "dist", "sandbox", "templates"]
 }

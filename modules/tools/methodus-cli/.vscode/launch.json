@@ -21,15 +21,18 @@
 
         {
             "type": "node",
+            "stopOnEntry": true,
+            "outputCapture": "std",
             "request": "launch",
             "name": "Create module",
-            "console": "integratedTerminal",
+            "console": "internalConsole",
             "skipFiles": ["<node_internals>/**"],
+            "sourceMaps": true,
             "program": "${workspaceFolder}/dist/index.js",
             "env": {
                 "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
             },
-            "args": ["generate", "module", "MyModule"]
+            "args": ["generate", "module", "MyModule2"]
         },
 
         {
@@ -63,6 +66,25 @@
                 "MyModule"
             ]
         },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Create controller no module",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"],
+            "env": {
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+            },
+            "program": "${workspaceFolder}/dist/index.js",
+            "args": [
+                "generate",
+                "controller",
+                "ExternalControllerName"                
+            ]
+        },
+
+
         {
             "type": "node",
             "request": "launch",
@@ -115,7 +137,7 @@
             "name": "No args",
             "skipFiles": ["<node_internals>/**"],
             "env": {
-                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj"
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
             },
             "program": "${workspaceFolder}/dist/index.js",
             "args": []
@@ -125,7 +147,8 @@
             "request": "launch",
             "name": "New application",
             "skipFiles": ["<node_internals>/**"],
-            "console": "integratedTerminal",
+            "console": "internalConsole",
+            "outputCapture": "std",
             "program": "${workspaceFolder}/dist/index.js",
             "env": {
                 "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj"

@@ -1,8 +1,8 @@
-import { MethodConfig, Method, MethodResult, Mapping, Inject } from '@methodus/server';
+import { decoratorsModule as decorators, injectionModule as injection, commonsModule as commons } from '@methodus/server';
 import { Verbs } from '@methodus/platform-express';
  
 
-@MethodConfig('<%=projectName%>')
+@decorators.MethodConfig('<%=projectName%>')
 export class <%=projectName%> {
     constructor() {
 

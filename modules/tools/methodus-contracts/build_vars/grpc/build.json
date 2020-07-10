@@ -4,7 +4,6 @@
         "contractNameClient": "@client-contracts/grpc",
         "buildPath": "./build_path/",
         "path": "./build_vars/grpc",
-        "buildFolder": "build",
         "models": {},
         "npmignore": "./.npmignore",
         "contracts": {

@@ -4,7 +4,6 @@
         "contractNameClient": "@client-contracts/models",
         "buildPath": "./build_path/",
         "path": "build_vars/models",
-        "buildFolder": "./",
         "models": {
             "UserModel": {
                 "path": "./models/user.model.ts"

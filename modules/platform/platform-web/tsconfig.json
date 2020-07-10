@@ -24,12 +24,12 @@
     "theme": "markdown",
     "excludeExternals": "true",
     "excludeNotExported": "true",
-    "target": "ES6",
+    "target": "commonjs",
     "includeDeclarations": "true",
     "mode": "file",
-    "name": "Methodus client library",
+    "name": "Web platform components",
     "readme": "readme.md",
-    "out": "docs",
+    "out": "../../docs/modules/platform/web",
     "exclude": "tests"
   },
 }

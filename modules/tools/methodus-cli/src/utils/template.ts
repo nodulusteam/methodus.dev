@@ -26,14 +26,14 @@ export function getTemplateConfig(
         return templateConfigContent;
     }
 
-    return {};
+    return { args: []};
 }
 
 export interface TemplateConfig {
     isProject?: boolean;
     createDir?: boolean;
     baseOutput?: string;
-    args?: any[];
+    args: any[];
     files?: string[];
     postMessage?: string;
 }

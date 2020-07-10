@@ -1,4 +1,4 @@
-import { Injector } from '@methodus/server';
+import {   injectionModule as injection, } from '@methodus/server';
 import { <%=projectName%> } from './<%=projectNameCamel%>';
 
 describe('<%=projectName%>', () => {
@@ -6,7 +6,7 @@ describe('<%=projectName%>', () => {
      
     let controller: <%=projectName%>;
     beforeAll(() => {        
-        controller = Injector.get(<%=projectName%>);
+        controller = injection.Injector.get(<%=projectName%>);
     })
 
     it('Controller created', async () => {

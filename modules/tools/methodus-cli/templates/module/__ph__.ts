@@ -1,7 +1,7 @@
-import { Module } from '@methodus/server';
+import { decoratorsModule as decorators, injectionModule as injection } from '@methodus/server';
  
 
-@Module('<%=projectName%>')
+@decorators.Module('<%=projectName%>')
 export class <%=projectName%> {
     constructor() {
 

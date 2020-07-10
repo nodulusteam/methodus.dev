@@ -138,23 +138,44 @@ export async function goForQuestions(answers: any) {
     if (templateConfig) {
         answers = await inquirer.prompt(templateConfig.args as any);
         const projectName = answers['name'];
-        new CLI(projectName, templateConfig).generate(
+
+
+
+
+        const cli = new CLI(projectName, templateConfig);
+        const modules = listModules(cli);
+
+
+        const modulesAnswers: any = await inquirer.prompt([{
+            name: 'modules',
+            type: 'list',
+            message: 'What project template would you like to generate?',
+            choices: modules as any,
+            when: () => !yargs.argv['modules'],
+        }]);
+        const moduleName = modulesAnswers['name'];
+        let moduleFilePath;// = await findModule('AppModule', cli);
+        if (moduleName) {
+            moduleFilePath = await findModule(moduleName, cli);
+        } else {
+
+        }
+
+        cli.generate(
             projectChoice,
-            templatePath
+            templatePath,
+            moduleFilePath
         );
     }
 
 }
 async function generate(
     templateKey: string,
-    moduleName: string = '',
+    moduleFilePath: string = '',
     name: string
 ) {
     const cli = createCli(templateKey);
-    let moduleFilePath = await findModule('AppModule', cli);
-    if (moduleName) {
-        moduleFilePath = await findModule(moduleName, cli);
-    }
+
 
     createItem(cli, moduleFilePath, name, templateKey);
     patchModuleFile(cli, moduleFilePath, name, templateKey);
@@ -254,4 +275,31 @@ function createItem(
         name,
         controllerCli.templateConfig
     );
+}
+
+
+
+function listModules(controllerCli: CLI) {
+    const project = new Project({
+        tsConfigFilePath: `${controllerCli.CURR_DIR}/tsconfig.json`,
+        skipFileDependencyResolution: true,
+    });
+
+    const moduleFiles = project.getSourceFiles().map((
+        moduleSourceFile
+    ) => {
+        for (const classInFile of moduleSourceFile.getClasses()) {
+            const moduleDecorators = classInFile.getDecorator('Module');
+            if (moduleDecorators) {
+                return (moduleDecorators.getArguments()[0] as any).getLiteralValue();
+            }
+        }
+        return undefined;
+    }).filter((file) => file !== undefined);
+    return moduleFiles;
+
+}
+
+function listTree() {
+
 }

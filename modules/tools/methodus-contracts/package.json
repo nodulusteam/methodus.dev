@@ -23,6 +23,7 @@
         "test:client:models": "lib/client.js ./build_vars/models/build.json",
         "test:client:inherit": "lib/client.js ./build_vars/inherit/build.json",
         "pretest": "tsc",
+        "docs": "typedoc",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-contracts -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "author": "NodulusTeam",
@@ -37,7 +38,9 @@
         "npm-run-all": "^4.1.5",
         "ts-jest": "^24.1.0",
         "tslint": "^5.12.0",
-        "typescript": "^3.9.5"
+        "typescript": "^3.9.5",
+        "typedoc": "^0.17.7",
+        "typedoc-plugin-markdown": "^2.3.1"
     },
     "dependencies": {
         "@methodus/data": "^2.0.35",

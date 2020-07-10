@@ -6,12 +6,12 @@
         "theme": "markdown",
         "excludeExternals": "true",
         "excludeNotExported": "true",
-        "target": "ES6",
+        "target": "commonjs",
         "includeDeclarations": "true",
         "mode": "module",
         "name": "A Methodus guide",
         "readme": "none",
-        "out": "docs",
+        "out": "../../docs/modules/platform/socketio",
         "exclude": "tests"
     },
     "compilerOptions": {
