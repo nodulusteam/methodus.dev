@@ -11,22 +11,9 @@ This is a client library for the Methodus framework, but it can also be used ind
 # Usage
 The library is used to define transport related integrations using TypeScript decorators. The decorated classes will be used to invoke the transport and deliver the call using it. For example a website using Rest calls to a remote server will abstract the Rest calls to a decorated class and then use that class instead of direct Rest access code.
 
-Decorated client contract classes can be created manually or auto generated using the [@methodus/contracts](https://github.com/nodulusteam/-methodus-contracts) package.
+Decorated client contract classes can be created manually or auto generated using the [@methodus/contracts](https://github.com/nodulusteam/tools/methodus-contracts) package.
 
 
-
-
-
-
-
- 
-
-
-
-https://github.com/nodulusteam/-methodus-client
-https://github.com/nodulusteam/-methodus-server
-https://github.com/nodulusteam/-methodus-describe
-https://github.com/nodulusteam/-methodus-contracts
 
 
 
