@@ -1,0 +1,20 @@
+{
+  "name": "methodus-simple-express-server",
+  "version": "1.0.0",
+  "description": "A simple “Express” application (Hello World);",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "nodemon build/index.js localhost 8080"
+  },
+  "dependencies": {
+    "@methodus/platform-express": "^5.0.11",
+    "@methodus/server": "^5.0.19"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.7",
+    "nodemon": "1.18.4",
+    "typescript": "3.5.1"
+  },
+  "keywords": []
+}

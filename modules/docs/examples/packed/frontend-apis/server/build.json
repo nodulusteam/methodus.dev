@@ -1,0 +1,26 @@
+{
+    "todo": {
+        "contractNameServer": "@todo/server",
+        "contractNameClient": "@todo/client",
+        "buildPath": "../",
+        "path": "./",
+        "buildFolder": "build",
+        "srcFolder": "src",
+        "contracts": {
+            "LocalController": {
+                "path": "./src/controllers/local.controller.ts"
+            },
+            "RemoteService": {
+                "path": "./src/controllers/remote.service.ts"
+            }
+        },
+        "models": {
+            "TodoModel": {
+                "path": "./src/models/todo.model.ts"
+            }
+        },
+        "includes": {},
+        "dependencies": {},
+        "bindings": {}
+    }
+}

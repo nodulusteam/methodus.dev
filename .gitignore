@@ -11,5 +11,4 @@ docs/examples/packed/frontend-apis/public/
 build/*
 modules/platform-grpc/dist/
 yarn.lock
-docs
 docs_old/
