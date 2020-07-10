@@ -12,3 +12,4 @@ build/*
 modules/platform-grpc/dist/
 yarn.lock
 docs
+docs_old/

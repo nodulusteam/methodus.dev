@@ -1,8 +1,8 @@
 # ![logo](_media/methodus_32.png) Methodus
-![rating](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus&metric=sqale_rating "rating")
-![reliability](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus&metric=reliability_rating "reliability")
-![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus&metric=coverage "coverage")
-![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus&metric=vulnerabilities "coverage")
+<!-- ![rating](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=sqale_rating "rating")
+![reliability](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=reliability_rating "reliability")
+![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage "coverage")
+![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage") -->
 
 
 ## Introduction
