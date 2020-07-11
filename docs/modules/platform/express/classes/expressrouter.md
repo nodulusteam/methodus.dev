@@ -42,4 +42,4 @@ Name | Type |
 
 Defined in platform/platform-express/lib/routing.d.ts:3
 
-*Defined in [platform/platform-express/src/routing.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/routing.ts#L8)*
+*Defined in [platform/platform-express/src/routing.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/routing.ts#L8)*

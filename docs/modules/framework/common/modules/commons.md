@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [commons](commons.md)
+[Methodus - framework commons](../globals.md) › [commons](modules/framework/common/commons.md)
 
 # Namespace: commons
 
@@ -6,9 +6,9 @@
 
 ### Variables
 
-* [Logger](commons.md#const-logger)
-* [logger](commons.md#const-logger)
-* [util](commons.md#const-util)
+* [Logger](modules/framework/common/commons.md#const-logger)
+* [logger](modules/framework/common/commons.md#const-logger)
+* [util](modules/framework/common/commons.md#const-util)
 
 ## Variables
 

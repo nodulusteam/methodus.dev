@@ -6,7 +6,7 @@
     * [Client](introduction/client.md)
 * [Reference](documentation/main.md)
     * [Framework](modules/framework/main.md)
-        * [Common](modules/framework/common/globals.md)
+        * [Common](modules/framework/common/README.md)
         * [Decorators](modules/framework/decorators/README.md)
         * [Injection](modules/framework/injection/globals.md)
     * [Platform](modules/platform/main.md)

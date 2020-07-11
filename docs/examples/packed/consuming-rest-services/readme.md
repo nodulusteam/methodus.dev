@@ -27,7 +27,7 @@ This simple controller is not doing any thing.
     "@types/node": "^12.0.0"
   },
   "peerDependencies": {
-    "typescript": "^3.4.0"
+    "typescript": "^3.9.5"
   }
 }
 

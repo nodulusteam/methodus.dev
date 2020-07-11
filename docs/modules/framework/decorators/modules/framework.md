@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [framework](framework.md)
+[A Methodus guide](../README.md) › [framework](modules/framework/decorators/framework.md)
 
 # Namespace: framework
 
@@ -6,4 +6,4 @@
 
 ### Namespaces
 
-* [decorators](framework.decorators.md)
+* [decorators](modules/framework/decorators/framework.decorators.md)

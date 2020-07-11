@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IServerConfig](iserverconfig.md)
+[Methodus - framework commons](../globals.md) › [IServerConfig](modules/framework/common/iserverconfig.md)
 
 # Interface: IServerConfig
 
@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [options](iserverconfig.md#options)
-* [type](iserverconfig.md#type)
+* [options](modules/framework/common/iserverconfig.md#options)
+* [type](modules/framework/common/iserverconfig.md#type)
 
 ## Properties
 

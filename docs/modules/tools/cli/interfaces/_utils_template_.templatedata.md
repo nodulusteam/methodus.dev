@@ -20,7 +20,7 @@
 
 • **componentName**? : *undefined | string*
 
-*Defined in [utils/template.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L7)*
+*Defined in [utils/template.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L7)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **projectName**? : *undefined | string*
 
-*Defined in [utils/template.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L5)*
+*Defined in [utils/template.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L5)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **projectNameCamel**? : *undefined | string*
 
-*Defined in [utils/template.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L6)*
+*Defined in [utils/template.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L6)*

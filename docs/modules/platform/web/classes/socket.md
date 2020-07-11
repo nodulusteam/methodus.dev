@@ -36,7 +36,7 @@
 
 ⊕ **new Socket**(): [Socket](socket.md)
 
-*Defined in [src/lib/transports/socket.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L8)*
+*Defined in [src/lib/transports/socket.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L8)*
 
 **Returns:** [Socket](socket.md)
 
@@ -50,7 +50,7 @@ ___
 
 **● io**: *`any`*
 
-*Defined in [src/lib/transports/socket.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L8)*
+*Defined in [src/lib/transports/socket.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L8)*
 
 ___
 <a id="options"></a>
@@ -59,7 +59,7 @@ ___
 
 **● options**: *`any`*
 
-*Defined in [src/lib/transports/socket.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L6)*
+*Defined in [src/lib/transports/socket.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L6)*
 
 ___
 <a id="socket-1"></a>
@@ -68,7 +68,7 @@ ___
 
 **● socket**: *`any`*
 
-*Defined in [src/lib/transports/socket.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L7)*
+*Defined in [src/lib/transports/socket.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L7)*
 
 ___
 <a id="interceptor"></a>
@@ -77,7 +77,7 @@ ___
 
 **● interceptor**: *`function`*
 
-*Defined in [src/lib/transports/socket.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L5)*
+*Defined in [src/lib/transports/socket.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L5)*
 
 #### Type declaration
 ▸(options: *`any`*): `__type` \| `undefined`
@@ -100,7 +100,7 @@ ___
 
 ▸ **execute**(): `Promise`<`void`>
 
-*Defined in [src/lib/transports/socket.ts:41](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L41)*
+*Defined in [src/lib/transports/socket.ts:41](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L41)*
 
 **Returns:** `Promise`<`void`>
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **parse**(verb: *[Verbs](../enums/verbs.md)*, paramsMap: *[ParamsMap](paramsmap.md)[]*, args: *`any`[]*): `void`
 
-*Defined in [src/lib/transports/socket.ts:30](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L30)*
+*Defined in [src/lib/transports/socket.ts:30](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L30)*
 
 **Parameters:**
 
@@ -130,7 +130,7 @@ ___
 
 ▸ **send**(messageName: *`string`*, parameters: *`any`*): `Promise`<`void`>
 
-*Defined in [src/lib/transports/socket.ts:34](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L34)*
+*Defined in [src/lib/transports/socket.ts:34](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L34)*
 
 **Parameters:**
 
@@ -148,7 +148,7 @@ ___
 
 ▸ **intercept**(interceptor: *`function`*): `void`
 
-*Defined in [src/lib/transports/socket.ts:24](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/transports/socket.ts#L24)*
+*Defined in [src/lib/transports/socket.ts:24](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/transports/socket.ts#L24)*
 
 **Parameters:**
 

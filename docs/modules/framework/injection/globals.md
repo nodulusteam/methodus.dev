@@ -40,7 +40,7 @@
 
 • **ANNOTATIONS**: *"__annotations__"* = "__annotations__"
 
-*Defined in [src/decorators/singleton.ts:4](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/decorators/singleton.ts#L4)*
+*Defined in [src/decorators/singleton.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/decorators/singleton.ts#L4)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **RegExInsideParentheses**: *RegExp‹›* = /[(][^)]*[)]/
 
-*Defined in [src/decorators/inject.ts:35](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/decorators/inject.ts#L35)*
+*Defined in [src/decorators/inject.ts:35](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/decorators/inject.ts#L35)*
 
 ___
 
@@ -64,7 +64,7 @@ ___
 
 • **RegExParenthesesAndSpaces**: *RegExp‹›* = /[()\s]/g
 
-*Defined in [src/decorators/inject.ts:36](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/decorators/inject.ts#L36)*
+*Defined in [src/decorators/inject.ts:36](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/decorators/inject.ts#L36)*
 
 ## Functions
 
@@ -72,7 +72,7 @@ ___
 
 ▸ **GetArgumentNames**(`functionString`: any): *string[]*
 
-*Defined in [src/decorators/inject.ts:37](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/decorators/inject.ts#L37)*
+*Defined in [src/decorators/inject.ts:37](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/decorators/inject.ts#L37)*
 
 **Parameters:**
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **getConstructorArgumentsNames**(`constructor`: any, `index`: number): *any*
 
-*Defined in [src/decorators/inject.ts:29](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/decorators/inject.ts#L29)*
+*Defined in [src/decorators/inject.ts:29](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/decorators/inject.ts#L29)*
 
 **Parameters:**
 

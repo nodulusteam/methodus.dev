@@ -23,7 +23,7 @@
 
 **Delete**:  = "DELETE"
 
-*Defined in [src/lib/commons/enums.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L7)*
+*Defined in [src/lib/commons/enums.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L7)*
 
 ___
 <a id="get"></a>
@@ -32,7 +32,7 @@ ___
 
 **Get**:  = "GET"
 
-*Defined in [src/lib/commons/enums.ts:2](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L2)*
+*Defined in [src/lib/commons/enums.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L2)*
 
 ___
 <a id="head"></a>
@@ -41,7 +41,7 @@ ___
 
 **Head**:  = "HEAD"
 
-*Defined in [src/lib/commons/enums.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L6)*
+*Defined in [src/lib/commons/enums.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L6)*
 
 ___
 <a id="patch"></a>
@@ -50,7 +50,7 @@ ___
 
 **Patch**:  = "PATCH"
 
-*Defined in [src/lib/commons/enums.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L5)*
+*Defined in [src/lib/commons/enums.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L5)*
 
 ___
 <a id="post"></a>
@@ -59,7 +59,7 @@ ___
 
 **Post**:  = "POST"
 
-*Defined in [src/lib/commons/enums.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L3)*
+*Defined in [src/lib/commons/enums.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L3)*
 
 ___
 <a id="put"></a>
@@ -68,7 +68,7 @@ ___
 
 **Put**:  = "PUT"
 
-*Defined in [src/lib/commons/enums.ts:4](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L4)*
+*Defined in [src/lib/commons/enums.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L4)*
 
 ___
 

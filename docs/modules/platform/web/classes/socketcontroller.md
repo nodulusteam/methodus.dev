@@ -22,7 +22,7 @@
 
 ▸ **connect**(socket: *`any`*): `Promise`<[MethodResult](methodresult.md)>
 
-*Defined in [src/tests/contracts/socket.contract.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/tests/contracts/socket.contract.ts#L7)*
+*Defined in [src/tests/contracts/socket.contract.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/tests/contracts/socket.contract.ts#L7)*
 
 **Parameters:**
 

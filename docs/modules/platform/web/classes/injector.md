@@ -30,7 +30,7 @@
 
 **● records**: *`object`[]* =  []
 
-*Defined in [src/lib/di/injector.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/di/injector.ts#L5)*
+*Defined in [src/lib/di/injector.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/di/injector.ts#L5)*
 
 ___
 <a id="singletons"></a>
@@ -39,7 +39,7 @@ ___
 
 **● singletons**: *`any`*
 
-*Defined in [src/lib/di/injector.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/di/injector.ts#L6)*
+*Defined in [src/lib/di/injector.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/di/injector.ts#L6)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 ▸ **get**<`T`>(_token: *`any`*): `T`
 
-*Defined in [src/lib/di/injector.ts:46](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/di/injector.ts#L46)*
+*Defined in [src/lib/di/injector.ts:46](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/di/injector.ts#L46)*
 
 **Type parameters:**
 
@@ -71,7 +71,7 @@ ___
 
 ▸ **inject**(target: *`any`*, name?: *`string`*): `void`
 
-*Defined in [src/lib/di/injector.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/di/injector.ts#L8)*
+*Defined in [src/lib/di/injector.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/di/injector.ts#L8)*
 
 **Parameters:**
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **register**(name: *`string`*, target: *`any`*, deps?: *`any`*): `void`
 
-*Defined in [src/lib/di/injector.ts:38](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/di/injector.ts#L38)*
+*Defined in [src/lib/di/injector.ts:38](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/di/injector.ts#L38)*
 
 **Parameters:**
 
@@ -108,7 +108,7 @@ ___
 
 ▸ **resolveAndCreate**(tokens: *`Array`<`any`>*): [Injector](injector.md)
 
-*Defined in [src/lib/di/injector.ts:25](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/di/injector.ts#L25)*
+*Defined in [src/lib/di/injector.ts:25](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/di/injector.ts#L25)*
 
 **Parameters:**
 

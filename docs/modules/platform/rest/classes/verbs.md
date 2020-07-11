@@ -25,7 +25,7 @@
 
 Defined in lib/interfaces.d.ts:10
 
-*Defined in [src/interfaces.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-rest/src/interfaces.ts#L8)*
+*Defined in [src/interfaces.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-rest/src/interfaces.ts#L8)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Defined in lib/interfaces.d.ts:5
 
-*Defined in [src/interfaces.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-rest/src/interfaces.ts#L3)*
+*Defined in [src/interfaces.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-rest/src/interfaces.ts#L3)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Defined in lib/interfaces.d.ts:9
 
-*Defined in [src/interfaces.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-rest/src/interfaces.ts#L7)*
+*Defined in [src/interfaces.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-rest/src/interfaces.ts#L7)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 Defined in lib/interfaces.d.ts:8
 
-*Defined in [src/interfaces.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-rest/src/interfaces.ts#L6)*
+*Defined in [src/interfaces.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-rest/src/interfaces.ts#L6)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 Defined in lib/interfaces.d.ts:6
 
-*Defined in [src/interfaces.ts:4](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-rest/src/interfaces.ts#L4)*
+*Defined in [src/interfaces.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-rest/src/interfaces.ts#L4)*
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 Defined in lib/interfaces.d.ts:7
 
-*Defined in [src/interfaces.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-rest/src/interfaces.ts#L5)*
+*Defined in [src/interfaces.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-rest/src/interfaces.ts#L5)*

@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IMethodusClassConfig](imethodusclassconfig.md)
+[Methodus - framework commons](../globals.md) › [IMethodusClassConfig](modules/framework/common/imethodusclassconfig.md)
 
 # Interface: IMethodusClassConfig
 
@@ -10,9 +10,9 @@
 
 ### Properties
 
-* [classType](imethodusclassconfig.md#classtype)
-* [methodType](imethodusclassconfig.md#methodtype)
-* [serverType](imethodusclassconfig.md#servertype)
+* [classType](modules/framework/common/imethodusclassconfig.md#classtype)
+* [methodType](modules/framework/common/imethodusclassconfig.md#methodtype)
+* [serverType](modules/framework/common/imethodusclassconfig.md#servertype)
 
 ## Properties
 

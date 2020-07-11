@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [ITransport](itransport.md)
+[Methodus - framework commons](../globals.md) › [ITransport](modules/framework/common/itransport.md)
 
 # Interface: ITransport
 
@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [name](itransport.md#name)
+* [name](modules/framework/common/itransport.md#name)
 
 ### Methods
 
-* [register](itransport.md#register)
-* [send](itransport.md#send)
+* [register](modules/framework/common/itransport.md#register)
+* [send](modules/framework/common/itransport.md#send)
 
 ## Properties
 

@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IServer](iserver.md)
+[Methodus - framework commons](../globals.md) › [IServer](modules/framework/common/iserver.md)
 
 # Interface: IServer
 
@@ -10,14 +10,14 @@
 
 ### Properties
 
-* [classRouters](iserver.md#classrouters)
-* [config](iserver.md#config)
-* [sockets](iserver.md#optional-sockets)
+* [classRouters](modules/framework/common/iserver.md#classrouters)
+* [config](modules/framework/common/iserver.md#config)
+* [sockets](modules/framework/common/iserver.md#optional-sockets)
 
 ### Methods
 
-* [_send](iserver.md#_send)
-* [useClass](iserver.md#useclass)
+* [_send](modules/framework/common/iserver.md#_send)
+* [useClass](modules/framework/common/iserver.md#useclass)
 
 ## Properties
 
@@ -31,7 +31,7 @@ ___
 
 ###  config
 
-• **config**: *[IMethodusConfig](imethodusconfig.md)*
+• **config**: *[IMethodusConfig](modules/framework/common/imethodusconfig.md)*
 
 Defined in lib/interfaces/index.d.ts:41
 

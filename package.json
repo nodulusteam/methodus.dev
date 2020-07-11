@@ -40,8 +40,8 @@
         "publish-ci": "yarn commit-version | exit 0 && lerna publish from-package -y --no-verify-access ",
         "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
         "release": "lerna publish from-package",
-        "doc": "docsify serve ./modules/docs",
-        "docs": "lerna run docs && cp -r modules/docs/* ./docs",
+        "rundoc": "docsify serve ./docs",       
+        "docs": "lerna run docs",
         "docsweb": "cross-env NODE_OPTIONS=--max_old_space_size=8192 typedoc --mode modules --out docs/documentation ./",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "rimraf output && npm run test"
@@ -74,9 +74,9 @@
         "standard-version": "^4.4.0",
         "ts-jest": "^24.2.0",
         "tslint": "^5.11.0",
-        "typedoc": "^0.17.7",
+        "typedoc": "^0.17.8",
         "@changesets/cli": "^2.9.1",
-        "typedoc-plugin-markdown": "^1.2.0",
+        "typedoc-plugin-markdown": "^2.3.1",
         "typescript": "^3.9.5"
     },
     "dependencies": {}

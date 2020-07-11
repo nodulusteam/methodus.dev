@@ -35,7 +35,7 @@
 
 \+ **new CLI**(`projectName`: string, `templateConfig`: [TemplateConfig](../interfaces/_utils_template_.templateconfig.md)): *[CLI](_cli_.cli.md)*
 
-*Defined in [cli.ts:17](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L17)*
+*Defined in [cli.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L17)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ Name | Type |
 
 • **CURR_DIR**: *string*
 
-*Defined in [cli.ts:16](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L16)*
+*Defined in [cli.ts:16](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L16)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **SKIP_FILES**: *string[]* = ['node_modules', '.template.js']
 
-*Defined in [cli.ts:17](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L17)*
+*Defined in [cli.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L17)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **projectName**: *string*
 
-*Defined in [cli.ts:22](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L22)*
+*Defined in [cli.ts:22](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L22)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **templateConfig**: *[TemplateConfig](../interfaces/_utils_template_.templateconfig.md)*
 
-*Defined in [cli.ts:23](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L23)*
+*Defined in [cli.ts:23](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L23)*
 
 ## Methods
 
@@ -84,7 +84,7 @@ ___
 
 ▸ **createDirectoryContents**(`outputPath`: string, `templatePath`: string, `projectName`: string, `config`: [TemplateConfig](../interfaces/_utils_template_.templateconfig.md)): *void*
 
-*Defined in [cli.ts:123](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L123)*
+*Defined in [cli.ts:123](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L123)*
 
 **Parameters:**
 
@@ -103,7 +103,7 @@ ___
 
 ▸ **createProject**(`projectPath`: string): *boolean*
 
-*Defined in [cli.ts:76](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L76)*
+*Defined in [cli.ts:76](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L76)*
 
 **Parameters:**
 
@@ -119,7 +119,7 @@ ___
 
 ▸ **generate**(`projectChoice`: string, `templatePath`: string, `moduleFilePath?`: undefined | string): *void*
 
-*Defined in [cli.ts:27](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L27)*
+*Defined in [cli.ts:27](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L27)*
 
 **Parameters:**
 
@@ -137,7 +137,7 @@ ___
 
 ▸ **isNode**(`options`: [CliOptions](../interfaces/_utils_template_.clioptions.md)): *boolean*
 
-*Defined in [cli.ts:119](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L119)*
+*Defined in [cli.ts:119](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L119)*
 
 **Parameters:**
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **postProcess**(`options`: [CliOptions](../interfaces/_utils_template_.clioptions.md)): *boolean*
 
-*Defined in [cli.ts:88](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L88)*
+*Defined in [cli.ts:88](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L88)*
 
 **Parameters:**
 
@@ -169,7 +169,7 @@ ___
 
 ▸ **postProcessNode**(`options`: [CliOptions](../interfaces/_utils_template_.clioptions.md)): *boolean*
 
-*Defined in [cli.ts:95](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L95)*
+*Defined in [cli.ts:95](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L95)*
 
 **Parameters:**
 
@@ -185,7 +185,7 @@ ___
 
 ▸ **showMessage**(`options`: [CliOptions](../interfaces/_utils_template_.clioptions.md)): *void*
 
-*Defined in [cli.ts:59](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/cli.ts#L59)*
+*Defined in [cli.ts:59](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/cli.ts#L59)*
 
 **Parameters:**
 

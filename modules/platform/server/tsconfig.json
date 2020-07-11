@@ -3,13 +3,14 @@
     "typedocOptions": {
         "excludeExternals": "true",
         "excludeNotExported": "true",
-        "target": "es2015",
+        "target": "commonjs",
         "includeDeclarations": "true",
-        "mode": "file",
-        "name": "A Methodus guide",
-        "readme": "none",
-        "out": "docs/documentation",
-        "exclude": "tests"
+        "mode": "modules",
+        "name": "@methodus/server",
+        "readme": "README.md",
+        "out": "../../../docs/modules/platform/server",
+        "exclude": "tests",
+        "theme": "markdown"
     },
     "compilerOptions": {
         "esModuleInterop": true,

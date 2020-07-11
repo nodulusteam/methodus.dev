@@ -7,6 +7,7 @@
 * [Reference](documentation/main.md)
     * [Framework](modules/framework/main.md)
     * [Platform](modules/platform/main.md)
+        * [Server](modules/platform/server/README.md)
         * [Express](modules/platform/express/README.md)
         * [Rest](modules/platform/rest/README.md)
         * [Web](modules/platform/web/README.md)

@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [MethodHandler](methodhandler.md)
+[A Methodus guide](../README.md) › [MethodHandler](modules/framework/decorators/methodhandler.md)
 
 # Class: MethodHandler
 
@@ -10,7 +10,7 @@
 
 ### Methods
 
-* [methodDecorator](methodhandler.md#methoddecorator)
+* [methodDecorator](modules/framework/decorators/methodhandler.md#methoddecorator)
 
 ## Methods
 
@@ -18,6 +18,6 @@
 
 ▸ **methodDecorator**(): *void*
 
-*Defined in [src/proxy/proxy.spec.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-decorators/src/proxy/proxy.spec.ts#L8)*
+*Defined in [framework-decorators/src/proxy/proxy.spec.ts:8](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/proxy/proxy.spec.ts#L8)*
 
 **Returns:** *void*

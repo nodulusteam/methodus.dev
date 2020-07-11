@@ -46,7 +46,7 @@ Name | Type |
 
 Defined in lib/di.test.d.ts:8
 
-*Defined in [src/di.test.ts:17](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/di.test.ts#L17)*
+*Defined in [src/di.test.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/di.test.ts#L17)*
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 Defined in lib/di.test.d.ts:9
 
-*Defined in [src/di.test.ts:18](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-injection/src/di.test.ts#L18)*
+*Defined in [src/di.test.ts:18](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-injection/src/di.test.ts#L18)*
 
 ## Methods
 

@@ -24,7 +24,7 @@
 
 **Http**:  = "Http"
 
-*Defined in [src/lib/commons/enums.ts:13](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L13)*
+*Defined in [src/lib/commons/enums.ts:13](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L13)*
 
 ___
 <a id="kafka"></a>
@@ -33,7 +33,7 @@ ___
 
 **Kafka**:  = "Kafka"
 
-*Defined in [src/lib/commons/enums.ts:17](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L17)*
+*Defined in [src/lib/commons/enums.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L17)*
 
 ___
 <a id="local"></a>
@@ -42,7 +42,7 @@ ___
 
 **Local**:  = "Local"
 
-*Defined in [src/lib/commons/enums.ts:12](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L12)*
+*Defined in [src/lib/commons/enums.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L12)*
 
 ___
 <a id="mq"></a>
@@ -51,7 +51,7 @@ ___
 
 **MQ**:  = "MQ"
 
-*Defined in [src/lib/commons/enums.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L14)*
+*Defined in [src/lib/commons/enums.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L14)*
 
 ___
 <a id="mock"></a>
@@ -60,7 +60,7 @@ ___
 
 **Mock**:  = "Mock"
 
-*Defined in [src/lib/commons/enums.ts:18](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L18)*
+*Defined in [src/lib/commons/enums.ts:18](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L18)*
 
 ___
 <a id="redis"></a>
@@ -69,7 +69,7 @@ ___
 
 **Redis**:  = "Redis"
 
-*Defined in [src/lib/commons/enums.ts:15](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L15)*
+*Defined in [src/lib/commons/enums.ts:15](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L15)*
 
 ___
 <a id="socket"></a>
@@ -78,7 +78,7 @@ ___
 
 **Socket**:  = "Socket"
 
-*Defined in [src/lib/commons/enums.ts:16](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/enums.ts#L16)*
+*Defined in [src/lib/commons/enums.ts:16](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/enums.ts#L16)*
 
 ___
 

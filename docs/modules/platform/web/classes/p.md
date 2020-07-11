@@ -27,7 +27,7 @@
 
 ▸ **Body**(name?: *`string`*, type?: *`any`*): `(Anonymous function)`
 
-*Defined in [src/lib/decorators/params.ts:32](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/decorators/params.ts#L32)*
+*Defined in [src/lib/decorators/params.ts:32](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/decorators/params.ts#L32)*
 
 **Parameters:**
 
@@ -45,7 +45,7 @@ ___
 
 ▸ **Cookies**(name?: *`string`*): `(Anonymous function)`
 
-*Defined in [src/lib/decorators/params.ts:48](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/decorators/params.ts#L48)*
+*Defined in [src/lib/decorators/params.ts:48](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/decorators/params.ts#L48)*
 
 **Parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **Files**(name?: *`string`*): `(Anonymous function)`
 
-*Defined in [src/lib/decorators/params.ts:40](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/decorators/params.ts#L40)*
+*Defined in [src/lib/decorators/params.ts:40](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/decorators/params.ts#L40)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **Headers**(name?: *`string`*): `(Anonymous function)`
 
-*Defined in [src/lib/decorators/params.ts:44](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/decorators/params.ts#L44)*
+*Defined in [src/lib/decorators/params.ts:44](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/decorators/params.ts#L44)*
 
 **Parameters:**
 
@@ -96,7 +96,7 @@ ___
 
 ▸ **Param**(name?: *`string`*): `(Anonymous function)`
 
-*Defined in [src/lib/decorators/params.ts:36](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/decorators/params.ts#L36)*
+*Defined in [src/lib/decorators/params.ts:36](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/decorators/params.ts#L36)*
 
 **Parameters:**
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **Query**(name?: *`string`*): `(Anonymous function)`
 
-*Defined in [src/lib/decorators/params.ts:52](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/decorators/params.ts#L52)*
+*Defined in [src/lib/decorators/params.ts:52](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/decorators/params.ts#L52)*
 
 **Parameters:**
 

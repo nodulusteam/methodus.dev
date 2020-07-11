@@ -8,9 +8,13 @@
         "target": "commonjs",
         "includeDeclarations": "false",
         "mode": "file",
+        "baseUrl":"modules/framework/commons", 
         "name": "Methodus - framework commons",
         "readme": "readme.md",
-        "out": "../../docs/modules/framework/common"
+        "out": "../../../docs/modules/framework/common",
+        "theme": "markdown"
+       
+        
     },
     "compilerOptions": {
         "target": "ESNEXT",

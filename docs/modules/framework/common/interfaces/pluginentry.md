@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [PluginEntry](pluginentry.md)
+[Methodus - framework commons](../globals.md) › [PluginEntry](modules/framework/common/pluginentry.md)
 
 # Interface: PluginEntry
 
@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [name](pluginentry.md#name)
-* [options](pluginentry.md#options)
+* [name](modules/framework/common/pluginentry.md#name)
+* [options](modules/framework/common/pluginentry.md#options)
 
 ## Properties
 
@@ -21,7 +21,7 @@
 
 Defined in lib/interfaces/plugin-entry.d.ts:2
 
-*Defined in [src/interfaces/plugin-entry.ts:2](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/interfaces/plugin-entry.ts#L2)*
+*Defined in [src/interfaces/plugin-entry.ts:2](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/interfaces/plugin-entry.ts#L2)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 Defined in lib/interfaces/plugin-entry.d.ts:3
 
-*Defined in [src/interfaces/plugin-entry.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/interfaces/plugin-entry.ts#L3)*
+*Defined in [src/interfaces/plugin-entry.ts:3](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/interfaces/plugin-entry.ts#L3)*

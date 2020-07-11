@@ -22,4 +22,4 @@
     { send: send }
 )
 
-*Defined in [modules/platform/platform-socketio/src/index.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-socketio/src/index.ts#L7)*
+*Defined in [modules/platform/platform-socketio/src/index.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-socketio/src/index.ts#L7)*

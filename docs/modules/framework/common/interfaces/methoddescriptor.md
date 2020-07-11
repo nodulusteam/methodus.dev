@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [MethodDescriptor](methoddescriptor.md)
+[Methodus - framework commons](../globals.md) › [MethodDescriptor](modules/framework/common/methoddescriptor.md)
 
 # Interface: MethodDescriptor
 
@@ -6,18 +6,18 @@
 
 * **MethodDescriptor**
 
-  ↳ [EventDescriptor](eventdescriptor.md)
+  ↳ [EventDescriptor](modules/framework/common/eventdescriptor.md)
 
 ## Index
 
 ### Properties
 
-* [methodType](methoddescriptor.md#methodtype)
-* [middlewares](methoddescriptor.md#optional-middlewares)
-* [params](methoddescriptor.md#params)
-* [propertyKey](methoddescriptor.md#propertykey)
-* [route](methoddescriptor.md#route)
-* [verb](methoddescriptor.md#verb)
+* [methodType](modules/framework/common/methoddescriptor.md#methodtype)
+* [middlewares](modules/framework/common/methoddescriptor.md#optional-middlewares)
+* [params](modules/framework/common/methoddescriptor.md#params)
+* [propertyKey](modules/framework/common/methoddescriptor.md#propertykey)
+* [route](modules/framework/common/methoddescriptor.md#route)
+* [verb](modules/framework/common/methoddescriptor.md#verb)
 
 ## Properties
 

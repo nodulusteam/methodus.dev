@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [MethodusConfig](methodusconfig.md)
+[Methodus - framework commons](../globals.md) › [MethodusConfig](modules/framework/common/methodusconfig.md)
 
 # Class: MethodusConfig
 
@@ -10,27 +10,27 @@
 
 ### Constructors
 
-* [constructor](methodusconfig.md#constructor)
+* [constructor](modules/framework/common/methodusconfig.md#constructor)
 
 ### Properties
 
-* [classes](methodusconfig.md#classes)
-* [clients](methodusconfig.md#clients)
-* [plugins](methodusconfig.md#optional-plugins)
-* [port](methodusconfig.md#port)
-* [servers](methodusconfig.md#optional-servers)
+* [classes](modules/framework/common/methodusconfig.md#classes)
+* [clients](modules/framework/common/methodusconfig.md#clients)
+* [plugins](modules/framework/common/methodusconfig.md#optional-plugins)
+* [port](modules/framework/common/methodusconfig.md#port)
+* [servers](modules/framework/common/methodusconfig.md#optional-servers)
 
 ### Methods
 
-* [run](methodusconfig.md#run)
-* [use](methodusconfig.md#use)
-* [useClient](methodusconfig.md#useclient)
+* [run](modules/framework/common/methodusconfig.md#run)
+* [use](modules/framework/common/methodusconfig.md#use)
+* [useClient](modules/framework/common/methodusconfig.md#useclient)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new MethodusConfig**(`servers?`: ServerConfig[], `map?`: Map‹string, MethodusClassConfig›): *[MethodusConfig](methodusconfig.md)*
+\+ **new MethodusConfig**(`servers?`: ServerConfig[], `map?`: Map‹string, MethodusClassConfig›): *[MethodusConfig](modules/framework/common/methodusconfig.md)*
 
 Defined in lib/config/config.d.ts:11
 
@@ -41,7 +41,7 @@ Name | Type |
 `servers?` | ServerConfig[] |
 `map?` | Map‹string, MethodusClassConfig› |
 
-**Returns:** *[MethodusConfig](methodusconfig.md)*
+**Returns:** *[MethodusConfig](modules/framework/common/methodusconfig.md)*
 
 ## Properties
 
@@ -51,7 +51,7 @@ Name | Type |
 
 Defined in lib/config/config.d.ts:7
 
-*Defined in [src/config/config.ts:12](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/config.ts#L12)*
+*Defined in [src/config/config.ts:12](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L12)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Defined in lib/config/config.d.ts:9
 
-*Defined in [src/config/config.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/config.ts#L14)*
+*Defined in [src/config/config.ts:14](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L14)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Defined in lib/config/config.d.ts:10
 
-*Defined in [src/config/config.ts:15](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/config.ts#L15)*
+*Defined in [src/config/config.ts:15](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L15)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Defined in lib/config/config.d.ts:11
 
-*Defined in [src/config/config.ts:16](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/config.ts#L16)*
+*Defined in [src/config/config.ts:16](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L16)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 Defined in lib/config/config.d.ts:8
 
-*Defined in [src/config/config.ts:13](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/config.ts#L13)*
+*Defined in [src/config/config.ts:13](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L13)*
 
 ## Methods
 

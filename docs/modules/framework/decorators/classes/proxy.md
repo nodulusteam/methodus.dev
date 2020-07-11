@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [Proxy](proxy.md)
+[A Methodus guide](../README.md) › [Proxy](modules/framework/decorators/proxy.md)
 
 # Class: Proxy
 
@@ -10,7 +10,7 @@
 
 ### Methods
 
-* [ProxyClass](proxy.md#static-proxyclass)
+* [ProxyClass](modules/framework/decorators/proxy.md#static-proxyclass)
 
 ## Methods
 
@@ -18,7 +18,7 @@
 
 ▸ **ProxyClass**(`packageName`: string, `className`: string, `localClassPath`: string): *function*
 
-Defined in lib/proxy/proxy.d.ts:3
+Defined in framework-decorators/lib/proxy/proxy.d.ts:3
 
 **Parameters:**
 

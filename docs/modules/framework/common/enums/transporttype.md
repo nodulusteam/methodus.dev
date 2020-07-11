@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [TransportType](transporttype.md)
+[Methodus - framework commons](../globals.md) › [TransportType](modules/framework/common/transporttype.md)
 
 # Enumeration: TransportType
 
@@ -6,13 +6,13 @@
 
 ### Enumeration members
 
-* [Custom](transporttype.md#custom)
-* [Http](transporttype.md#http)
-* [Kafka](transporttype.md#kafka)
-* [MQ](transporttype.md#mq)
-* [Mock](transporttype.md#mock)
-* [Redis](transporttype.md#redis)
-* [Socket](transporttype.md#socket)
+* [Custom](modules/framework/common/transporttype.md#custom)
+* [Http](modules/framework/common/transporttype.md#http)
+* [Kafka](modules/framework/common/transporttype.md#kafka)
+* [MQ](modules/framework/common/transporttype.md#mq)
+* [Mock](modules/framework/common/transporttype.md#mock)
+* [Redis](modules/framework/common/transporttype.md#redis)
+* [Socket](modules/framework/common/transporttype.md#socket)
 
 ## Enumeration members
 

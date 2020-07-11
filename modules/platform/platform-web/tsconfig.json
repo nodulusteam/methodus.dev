@@ -26,9 +26,10 @@
     "excludeNotExported": "true",
     "target": "commonjs",
     "includeDeclarations": "true",
-    "mode": "file",
+    "mode": "modules",
     "name": "Web platform components",
     "readme": "readme.md",
+    "entryPoint":"src/lib/index",
     "out": "../../docs/modules/platform/web",
     "exclude": "tests"
   },

@@ -24,7 +24,7 @@
 
 \+ **new ParserResponse**(`args`: any, `isRest`: boolean, `securityContext`: any): *[ParserResponse](_src_parser_.parserresponse.md)*
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:91](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-socketio/src/parser.ts#L91)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:91](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-socketio/src/parser.ts#L91)*
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ Name | Type |
 
 • **args**: *any*
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:89](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-socketio/src/parser.ts#L89)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:89](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-socketio/src/parser.ts#L89)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **isRest**: *boolean*
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:90](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-socketio/src/parser.ts#L90)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:90](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-socketio/src/parser.ts#L90)*
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 • **securityContext**: *any*
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:91](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-socketio/src/parser.ts#L91)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:91](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-socketio/src/parser.ts#L91)*

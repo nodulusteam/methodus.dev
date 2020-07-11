@@ -22,7 +22,7 @@
 
 ▸ **camelCaseToDash**(`str`: string): *string*
 
-*Defined in [utils/template.ts:10](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L10)*
+*Defined in [utils/template.ts:10](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L10)*
 
 **Parameters:**
 
@@ -38,7 +38,7 @@ ___
 
 ▸ **getTemplateConfig**(`templatePath`: string): *[TemplateConfig](../interfaces/_utils_template_.templateconfig.md)*
 
-*Defined in [utils/template.ts:18](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L18)*
+*Defined in [utils/template.ts:18](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L18)*
 
 **Parameters:**
 
@@ -54,7 +54,7 @@ ___
 
 ▸ **render**(`content`: string, `data`: [TemplateData](../interfaces/_utils_template_.templatedata.md)): *string*
 
-*Defined in [utils/template.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L14)*
+*Defined in [utils/template.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L14)*
 
 **Parameters:**
 

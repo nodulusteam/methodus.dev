@@ -23,7 +23,7 @@
 
 **● methodus**: *`any`*
 
-*Defined in [src/lib/commons/methodus-class.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L3)*
+*Defined in [src/lib/commons/methodus-class.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L3)*
 
 ___
 <a id="name"></a>
@@ -32,7 +32,7 @@ ___
 
 **● name**: *`string`*
 
-*Defined in [src/lib/commons/methodus-class.ts:2](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L2)*
+*Defined in [src/lib/commons/methodus-class.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L2)*
 
 ___
 

@@ -15,7 +15,7 @@
 
 ▸ **flow**(`verb`: string, `what?`: undefined | string, `name?`: undefined | string, `moduleName?`: undefined | string): *Promise‹void›*
 
-*Defined in [flow.ts:37](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/flow.ts#L37)*
+*Defined in [flow.ts:37](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/flow.ts#L37)*
 
 **Parameters:**
 
@@ -34,7 +34,7 @@ ___
 
 ▸ **goForQuestions**(`answers`: any): *Promise‹void›*
 
-*Defined in [flow.ts:126](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/flow.ts#L126)*
+*Defined in [flow.ts:126](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/flow.ts#L126)*
 
 **Parameters:**
 

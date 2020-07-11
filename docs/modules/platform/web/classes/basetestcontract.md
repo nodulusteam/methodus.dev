@@ -28,7 +28,7 @@
 
 **● base**: *`string`* = ""
 
-*Defined in [src/tests/contracts/base.contract.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L5)*
+*Defined in [src/tests/contracts/base.contract.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L5)*
 
 ___
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **baseAction**(id: *`number`*, name: *`string`*): `Promise`<`object`>
 
-*Defined in [src/tests/contracts/base.contract.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L8)*
+*Defined in [src/tests/contracts/base.contract.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L8)*
 
 **Parameters:**
 

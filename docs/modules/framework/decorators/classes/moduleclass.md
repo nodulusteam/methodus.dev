@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [ModuleClass](moduleclass.md)
+[A Methodus guide](../README.md) › [ModuleClass](modules/framework/decorators/moduleclass.md)
 
 # Class: ModuleClass
 
@@ -10,21 +10,21 @@
 
 ### Constructors
 
-* [constructor](moduleclass.md#constructor)
+* [constructor](modules/framework/decorators/moduleclass.md#constructor)
 
 ### Properties
 
-* [name](moduleclass.md#name)
+* [name](modules/framework/decorators/moduleclass.md#name)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new ModuleClass**(): *[ModuleClass](moduleclass.md)*
+\+ **new ModuleClass**(): *[ModuleClass](modules/framework/decorators/moduleclass.md)*
 
-Defined in lib/module/module.spec.d.ts:2
+Defined in framework-decorators/lib/module/module.spec.d.ts:2
 
-**Returns:** *[ModuleClass](moduleclass.md)*
+**Returns:** *[ModuleClass](modules/framework/decorators/moduleclass.md)*
 
 ## Properties
 
@@ -32,6 +32,6 @@ Defined in lib/module/module.spec.d.ts:2
 
 • **name**: *string*
 
-Defined in lib/module/module.spec.d.ts:2
+Defined in framework-decorators/lib/module/module.spec.d.ts:2
 
-*Defined in [src/module/module.spec.ts:15](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-decorators/src/module/module.spec.ts#L15)*
+*Defined in [framework-decorators/src/module/module.spec.ts:15](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/module/module.spec.ts#L15)*

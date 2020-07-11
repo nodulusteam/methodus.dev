@@ -69,37 +69,37 @@ Name | Type |
 
 Defined in platform/platform-express/lib/index.d.ts:3
 
-*Defined in [platform/platform-express/src/index.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/index.ts#L7)*
+*Defined in [platform/platform-express/src/index.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/index.ts#L7)*
 
 ###  module
 
 • **module**: *ExpressPlugin* = ExpressPlugin
 
-*Defined in [platform/platform-express/src/index.ts:9](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/index.ts#L9)*
+*Defined in [platform/platform-express/src/index.ts:9](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/index.ts#L9)*
 
 ###  name
 
 • **name**: *string* = "express"
 
-*Defined in [platform/platform-express/src/index.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/index.ts#L8)*
+*Defined in [platform/platform-express/src/index.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/index.ts#L8)*
 
 ###  parser
 
 • **parser**: *RestParser* = RestParser
 
-*Defined in [platform/platform-express/src/index.ts:11](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/index.ts#L11)*
+*Defined in [platform/platform-express/src/index.ts:11](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/index.ts#L11)*
 
 ###  response
 
 • **response**: *RestResponse* = RestResponse
 
-*Defined in [platform/platform-express/src/index.ts:12](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/index.ts#L12)*
+*Defined in [platform/platform-express/src/index.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/index.ts#L12)*
 
 ###  static
 
 • **static**: *serveStatic* = express.static
 
-*Defined in [platform/platform-express/src/index.ts:10](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/index.ts#L10)*
+*Defined in [platform/platform-express/src/index.ts:10](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/index.ts#L10)*
 
 ___
 
@@ -107,34 +107,34 @@ ___
 
 ### ▪ **options**: *object*
 
-*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:12](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L12)*
+*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L12)*
 
 ###  cert
 
 • **cert**: *Buffer‹›* = fs.readFileSync(path.join(process.cwd(), './certs/cert.txt'))
 
-*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:16](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L16)*
+*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:16](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L16)*
 
 ###  key
 
 • **key**: *Buffer‹›* = fs.readFileSync(path.join(process.cwd(), './certs/key.txt'))
 
-*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:15](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L15)*
+*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:15](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L15)*
 
 ###  passphrase
 
 • **passphrase**: *string* = "puravida"
 
-*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:17](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L17)*
+*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L17)*
 
 ###  port
 
 • **port**: *string | number* = process.env.PORT || 8020
 
-*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:13](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L13)*
+*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:13](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L13)*
 
 ###  secured
 
 • **secured**: *boolean* = true
 
-*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:14](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L14)*
+*Defined in [platform/platform-express/src/tests/servers/express.server.https.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-express/src/tests/servers/express.server.https.ts#L14)*

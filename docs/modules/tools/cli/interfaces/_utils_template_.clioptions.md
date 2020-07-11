@@ -22,7 +22,7 @@
 
 • **config**: *[TemplateConfig](_utils_template_.templateconfig.md)*
 
-*Defined in [utils/template.ts:46](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L46)*
+*Defined in [utils/template.ts:46](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L46)*
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 • **projectName**: *string*
 
-*Defined in [utils/template.ts:42](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L42)*
+*Defined in [utils/template.ts:42](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L42)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **tartgetPath**: *string*
 
-*Defined in [utils/template.ts:45](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L45)*
+*Defined in [utils/template.ts:45](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L45)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 • **templateName**: *string*
 
-*Defined in [utils/template.ts:43](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L43)*
+*Defined in [utils/template.ts:43](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L43)*
 
 ___
 
@@ -54,4 +54,4 @@ ___
 
 • **templatePath**: *string*
 
-*Defined in [utils/template.ts:44](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L44)*
+*Defined in [utils/template.ts:44](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L44)*

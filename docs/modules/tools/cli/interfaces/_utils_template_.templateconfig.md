@@ -23,7 +23,7 @@
 
 • **args**: *any[]*
 
-*Defined in [utils/template.ts:36](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L36)*
+*Defined in [utils/template.ts:36](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L36)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **baseOutput**? : *undefined | string*
 
-*Defined in [utils/template.ts:35](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L35)*
+*Defined in [utils/template.ts:35](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L35)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **createDir**? : *undefined | false | true*
 
-*Defined in [utils/template.ts:34](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L34)*
+*Defined in [utils/template.ts:34](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L34)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **files**? : *string[]*
 
-*Defined in [utils/template.ts:37](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L37)*
+*Defined in [utils/template.ts:37](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L37)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **isProject**? : *undefined | false | true*
 
-*Defined in [utils/template.ts:33](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L33)*
+*Defined in [utils/template.ts:33](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L33)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 • **postMessage**? : *undefined | string*
 
-*Defined in [utils/template.ts:38](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/tools/methodus-cli/src/utils/template.ts#L38)*
+*Defined in [utils/template.ts:38](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/tools/methodus-cli/src/utils/template.ts#L38)*

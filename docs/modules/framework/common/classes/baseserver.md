@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [BaseServer](baseserver.md)
+[Methodus - framework commons](../globals.md) › [BaseServer](modules/framework/common/baseserver.md)
 
 # Class: BaseServer
 
@@ -10,13 +10,13 @@
 
 ### Properties
 
-* [classRouters](baseserver.md#classrouters)
-* [config](baseserver.md#optional-config)
+* [classRouters](modules/framework/common/baseserver.md#classrouters)
+* [config](modules/framework/common/baseserver.md#optional-config)
 
 ### Methods
 
-* [_send](baseserver.md#_send)
-* [useClass](baseserver.md#useclass)
+* [_send](modules/framework/common/baseserver.md#_send)
+* [useClass](modules/framework/common/baseserver.md#useclass)
 
 ## Properties
 
@@ -26,7 +26,7 @@
 
 Defined in lib/config/base.d.ts:4
 
-*Defined in [src/config/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/base.ts#L6)*
+*Defined in [src/config/base.ts:6](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/base.ts#L6)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Defined in lib/config/base.d.ts:3
 
-*Defined in [src/config/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-commons/src/config/base.ts#L5)*
+*Defined in [src/config/base.ts:5](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/base.ts#L5)*
 
 ## Methods
 

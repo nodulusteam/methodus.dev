@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [MethodType](methodtype.md)
+[Methodus - framework commons](../globals.md) › [MethodType](modules/framework/common/methodtype.md)
 
 # Enumeration: MethodType
 
@@ -6,14 +6,14 @@
 
 ### Enumeration members
 
-* [Http](methodtype.md#http)
-* [Http2](methodtype.md#http2)
-* [Kafka](methodtype.md#kafka)
-* [Local](methodtype.md#local)
-* [MQ](methodtype.md#mq)
-* [Mock](methodtype.md#mock)
-* [Redis](methodtype.md#redis)
-* [Socket](methodtype.md#socket)
+* [Http](modules/framework/common/methodtype.md#http)
+* [Http2](modules/framework/common/methodtype.md#http2)
+* [Kafka](modules/framework/common/methodtype.md#kafka)
+* [Local](modules/framework/common/methodtype.md#local)
+* [MQ](modules/framework/common/methodtype.md#mq)
+* [Mock](modules/framework/common/methodtype.md#mock)
+* [Redis](modules/framework/common/methodtype.md#redis)
+* [Socket](modules/framework/common/methodtype.md#socket)
 
 ## Enumeration members
 

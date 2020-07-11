@@ -51,7 +51,7 @@ After running your server you should be able to browse to http://localhost:6695/
     "@types/node": "^12.0.0"
   },
   "peerDependencies": {
-    "typescript": "^3.4.0"
+    "typescript": "^3.9.5"
   }
 }
 ```

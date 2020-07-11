@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IMethodusConfig](imethodusconfig.md)
+[Methodus - framework commons](../globals.md) › [IMethodusConfig](modules/framework/common/imethodusconfig.md)
 
 # Interface: IMethodusConfig
 
@@ -10,15 +10,15 @@
 
 ### Properties
 
-* [classes](imethodusconfig.md#classes)
-* [port](imethodusconfig.md#port)
-* [servers](imethodusconfig.md#optional-servers)
+* [classes](modules/framework/common/imethodusconfig.md#classes)
+* [port](modules/framework/common/imethodusconfig.md#port)
+* [servers](modules/framework/common/imethodusconfig.md#optional-servers)
 
 ## Properties
 
 ###  classes
 
-• **classes**: *Map‹string, [IMethodusClassConfig](imethodusclassconfig.md)›*
+• **classes**: *Map‹string, [IMethodusClassConfig](modules/framework/common/imethodusclassconfig.md)›*
 
 Defined in lib/interfaces/index.d.ts:47
 
@@ -34,6 +34,6 @@ ___
 
 ### `Optional` servers
 
-• **servers**? : *[IServerConfig](iserverconfig.md)[]*
+• **servers**? : *[IServerConfig](modules/framework/common/iserverconfig.md)[]*
 
 Defined in lib/interfaces/index.d.ts:48

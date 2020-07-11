@@ -1,4 +1,4 @@
-[A Methodus guide](README.md)
+[A Methodus guide](modules/framework/decorators/README.md)
 
 # A Methodus guide
 
@@ -6,33 +6,33 @@
 
 ### Namespaces
 
-* [framework](modules/framework.md)
+* [framework](modules/framework/decorators/modules/framework.md)
 
 ### Classes
 
-* [MethodHandler](classes/methodhandler.md)
-* [ModuleClass](classes/moduleclass.md)
-* [Proxy](classes/proxy.md)
-* [TestClass](classes/testclass.md)
+* [MethodHandler](modules/framework/decorators/classes/methodhandler.md)
+* [ModuleClass](modules/framework/decorators/classes/moduleclass.md)
+* [Proxy](modules/framework/decorators/classes/proxy.md)
+* [TestClass](modules/framework/decorators/classes/testclass.md)
 
 ### Variables
 
-* [_default](README.md#const-_default)
-* [methodMetadataKey](README.md#const-methodmetadatakey)
+* [_default](modules/framework/decorators/README.md#const-_default)
+* [methodMetadataKey](modules/framework/decorators/README.md#const-methodmetadatakey)
 
 ### Functions
 
-* [Auth](README.md#auth)
-* [ClientConfiguration](README.md#clientconfiguration)
-* [Method](README.md#method)
-* [MethodConfig](README.md#methodconfig)
-* [MethodMock](README.md#methodmock)
-* [MethodPipe](README.md#methodpipe)
-* [Module](README.md#module)
-* [ModuleConfiguration](README.md#moduleconfiguration)
-* [PluginConfiguration](README.md#pluginconfiguration)
-* [RouterConfiguration](README.md#routerconfiguration)
-* [ServerConfiguration](README.md#serverconfiguration)
+* [Auth](modules/framework/decorators/README.md#auth)
+* [ClientConfiguration](modules/framework/decorators/README.md#clientconfiguration)
+* [Method](modules/framework/decorators/README.md#method)
+* [MethodConfig](modules/framework/decorators/README.md#methodconfig)
+* [MethodMock](modules/framework/decorators/README.md#methodmock)
+* [MethodPipe](modules/framework/decorators/README.md#methodpipe)
+* [Module](modules/framework/decorators/README.md#module)
+* [ModuleConfiguration](modules/framework/decorators/README.md#moduleconfiguration)
+* [PluginConfiguration](modules/framework/decorators/README.md#pluginconfiguration)
+* [RouterConfiguration](modules/framework/decorators/README.md#routerconfiguration)
+* [ServerConfiguration](modules/framework/decorators/README.md#serverconfiguration)
 
 ## Variables
 
@@ -40,7 +40,7 @@
 
 • **_default**: *typeof decorators*
 
-Defined in lib/index.d.ts:20
+Defined in framework-decorators/lib/index.d.ts:20
 
 ___
 
@@ -48,9 +48,9 @@ ___
 
 • **methodMetadataKey**: *"methodus"* = "methodus"
 
-*Defined in [src/method/method.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-decorators/src/method/method.ts#L3)*
+*Defined in [framework-decorators/src/method/method.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/method/method.ts#L3)*
 
-*Defined in [src/method/method-pipe.ts:3](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/framework/framework-decorators/src/method/method-pipe.ts#L3)*
+*Defined in [framework-decorators/src/method/method-pipe.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/method/method-pipe.ts#L3)*
 
 ## Functions
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **Auth**(`type`: AuthType, `options?`: Dictionary | Function): *function*
 
-Defined in lib/auth/auth.d.ts:3
+Defined in framework-decorators/lib/auth/auth.d.ts:3
 
 the AuthConfig decorator registers the controller as a router
 
@@ -85,7 +85,7 @@ ___
 
 ▸ **ClientConfiguration**(`controller`: ClassRef, `transportType`: any, `resolver?`: Function | string): *function*
 
-Defined in lib/class/client.d.ts:3
+Defined in framework-decorators/lib/class/client.d.ts:3
 
 the MethodConfig decorator registers the controller as a router
 
@@ -113,7 +113,7 @@ ___
 
 ▸ **Method**(`verb?`: undefined | string, `route?`: undefined | string, `middlewares?`: Function[]): *function*
 
-Defined in lib/method/method.d.ts:2
+Defined in framework-decorators/lib/method/method.d.ts:2
 
 the @Method decorator registers route listeners
 
@@ -143,7 +143,7 @@ ___
 
 ▸ **MethodConfig**(`name`: string, `middlewares?`: any[], `prefix?`: undefined | string): *function*
 
-Defined in lib/method/method-config.d.ts:2
+Defined in framework-decorators/lib/method/method-config.d.ts:2
 
 the MethodConfig decorator registers the controller as a router
 
@@ -171,7 +171,7 @@ ___
 
 ▸ **MethodMock**(`mockedResult`: any): *function*
 
-Defined in lib/method/method-mock.d.ts:3
+Defined in framework-decorators/lib/method/method-mock.d.ts:3
 
 the @MethodMock decorator
 
@@ -199,7 +199,7 @@ ___
 
 ▸ **MethodPipe**(`verb?`: undefined | string, `route?`: undefined | string, `middlewares?`: Function[]): *function*
 
-Defined in lib/method/method-pipe.d.ts:2
+Defined in framework-decorators/lib/method/method-pipe.d.ts:2
 
 the @Method decorator registers route listeners
 
@@ -229,7 +229,7 @@ ___
 
 ▸ **Module**(`name?`: undefined | string): *function*
 
-Defined in lib/module/module.d.ts:3
+Defined in framework-decorators/lib/module/module.d.ts:3
 
 the Module decorator registers a module
 
@@ -255,7 +255,7 @@ ___
 
 ▸ **ModuleConfiguration**(`moduleClass`: ClassRef): *function*
 
-Defined in lib/module/module-config.d.ts:3
+Defined in framework-decorators/lib/module/module-config.d.ts:3
 
 the ModuleConfiguration decorator registers a module to the main server instance
 
@@ -281,7 +281,7 @@ ___
 
 ▸ **PluginConfiguration**(`name`: string, `options?`: Dictionary): *function*
 
-Defined in lib/class/plugin.d.ts:3
+Defined in framework-decorators/lib/class/plugin.d.ts:3
 
 the MethodConfig decorator registers the controller as a router
 
@@ -308,7 +308,7 @@ ___
 
 ▸ **RouterConfiguration**(`controller`: ClassRef | null, `serverType`: ServerType | string | ServerDefinition | any): *function*
 
-Defined in lib/class/router.d.ts:3
+Defined in framework-decorators/lib/class/router.d.ts:3
 
 the RouterConfiguration decorator registers the controller as a router
 
@@ -335,7 +335,7 @@ ___
 
 ▸ **ServerConfiguration**(`serverType`: ServerType | string | ServerDefinition | any, `options?`: Dictionary): *function*
 
-Defined in lib/class/server.d.ts:3
+Defined in framework-decorators/lib/class/server.d.ts:3
 
 the ServerConfiguration decorator registers a server
 

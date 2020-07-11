@@ -27,7 +27,7 @@
 
 **● methodType**: *[MethodType](../enums/methodtype.md)*
 
-*Defined in [src/lib/commons/method-descriptor.ts:6](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L6)*
+*Defined in [src/lib/commons/method-descriptor.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L6)*
 
 ___
 <a id="middlewares"></a>
@@ -36,7 +36,7 @@ ___
 
 **● middlewares**: *`any`*
 
-*Defined in [src/lib/commons/method-descriptor.ts:8](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L8)*
+*Defined in [src/lib/commons/method-descriptor.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L8)*
 
 ___
 <a id="params"></a>
@@ -45,7 +45,7 @@ ___
 
 **● params**: *[ParamsMap](paramsmap.md)[]*
 
-*Defined in [src/lib/commons/method-descriptor.ts:9](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L9)*
+*Defined in [src/lib/commons/method-descriptor.ts:9](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L9)*
 
 ___
 <a id="propertykey"></a>
@@ -54,7 +54,7 @@ ___
 
 **● propertyKey**: *`string`*
 
-*Defined in [src/lib/commons/method-descriptor.ts:7](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L7)*
+*Defined in [src/lib/commons/method-descriptor.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L7)*
 
 ___
 <a id="route"></a>
@@ -63,7 +63,7 @@ ___
 
 **● route**: *`string`*
 
-*Defined in [src/lib/commons/method-descriptor.ts:5](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L5)*
+*Defined in [src/lib/commons/method-descriptor.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L5)*
 
 ___
 <a id="verb"></a>
@@ -72,7 +72,7 @@ ___
 
 **● verb**: *[Verbs](../enums/verbs.md)*
 
-*Defined in [src/lib/commons/method-descriptor.ts:4](https://github.com/nodulusteam/methodus.dev/blob/3099105/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L4)*
+*Defined in [src/lib/commons/method-descriptor.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L4)*
 
 ___
 
