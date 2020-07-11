@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [name](modules/framework/common/pluginentry.md#name)
-* [options](modules/framework/common/pluginentry.md#options)
+* [name](#name)
+* [options](#options)
 
 ## Properties
 
@@ -21,7 +21,7 @@
 
 Defined in lib/interfaces/plugin-entry.d.ts:2
 
-*Defined in [src/interfaces/plugin-entry.ts:2](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/interfaces/plugin-entry.ts#L2)*
+*Defined in [src/interfaces/plugin-entry.ts:2](#L2)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 Defined in lib/interfaces/plugin-entry.d.ts:3
 
-*Defined in [src/interfaces/plugin-entry.ts:3](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/interfaces/plugin-entry.ts#L3)*
+*Defined in [src/interfaces/plugin-entry.ts:3](#L3)*

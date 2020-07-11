@@ -10,21 +10,21 @@
 
 ### Constructors
 
-* [constructor](modules/framework/common/methodusconfig.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [classes](modules/framework/common/methodusconfig.md#classes)
-* [clients](modules/framework/common/methodusconfig.md#clients)
-* [plugins](modules/framework/common/methodusconfig.md#optional-plugins)
-* [port](modules/framework/common/methodusconfig.md#port)
-* [servers](modules/framework/common/methodusconfig.md#optional-servers)
+* [classes](#classes)
+* [clients](#clients)
+* [plugins](#optional-plugins)
+* [port](#port)
+* [servers](#optional-servers)
 
 ### Methods
 
-* [run](modules/framework/common/methodusconfig.md#run)
-* [use](modules/framework/common/methodusconfig.md#use)
-* [useClient](modules/framework/common/methodusconfig.md#useclient)
+* [run](#run)
+* [use](#use)
+* [useClient](#useclient)
 
 ## Constructors
 
@@ -51,7 +51,7 @@ Name | Type |
 
 Defined in lib/config/config.d.ts:7
 
-*Defined in [src/config/config.ts:12](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L12)*
+*Defined in [src/config/config.ts:12](#L12)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 Defined in lib/config/config.d.ts:9
 
-*Defined in [src/config/config.ts:14](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L14)*
+*Defined in [src/config/config.ts:14](#L14)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 Defined in lib/config/config.d.ts:10
 
-*Defined in [src/config/config.ts:15](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L15)*
+*Defined in [src/config/config.ts:15](#L15)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 Defined in lib/config/config.d.ts:11
 
-*Defined in [src/config/config.ts:16](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L16)*
+*Defined in [src/config/config.ts:16](#L16)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 Defined in lib/config/config.d.ts:8
 
-*Defined in [src/config/config.ts:13](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/config.ts#L13)*
+*Defined in [src/config/config.ts:13](#L13)*
 
 ## Methods
 

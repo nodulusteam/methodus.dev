@@ -6,11 +6,11 @@
 
 ### Enumeration members
 
-* [ApiKey](modules/framework/common/authtype.md#apikey)
-* [Basic](modules/framework/common/authtype.md#basic)
-* [BearerToken](modules/framework/common/authtype.md#bearertoken)
-* [DigestAuth](modules/framework/common/authtype.md#digestauth)
-* [None](modules/framework/common/authtype.md#none)
+* [ApiKey](#apikey)
+* [Basic](#basic)
+* [BearerToken](#bearertoken)
+* [DigestAuth](#digestauth)
+* [None](#none)
 
 ## Enumeration members
 

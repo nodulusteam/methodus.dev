@@ -10,22 +10,22 @@
 
 ### Constructors
 
-* [constructor](modules/framework/common/logger.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [logger](modules/framework/common/logger.md#logger)
+* [logger](#logger)
 
 ### Methods
 
-* [debug](modules/framework/common/logger.md#debug)
-* [error](modules/framework/common/logger.md#error)
-* [getArgs](modules/framework/common/logger.md#getargs)
-* [info](modules/framework/common/logger.md#info)
-* [log](modules/framework/common/logger.md#log)
-* [print](modules/framework/common/logger.md#print)
-* [safeJSON](modules/framework/common/logger.md#safejson)
-* [warn](modules/framework/common/logger.md#warn)
+* [debug](#debug)
+* [error](#error)
+* [getArgs](#getargs)
+* [info](#info)
+* [log](#log)
+* [print](#print)
+* [safeJSON](#safejson)
+* [warn](#warn)
 
 ## Constructors
 
@@ -51,7 +51,7 @@ Name | Type |
 
 Defined in lib/log/logger.d.ts:2
 
-*Defined in [src/log/logger.ts:2](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/log/logger.ts#L2)*
+*Defined in [src/log/logger.ts:2](#L2)*
 
 ## Methods
 

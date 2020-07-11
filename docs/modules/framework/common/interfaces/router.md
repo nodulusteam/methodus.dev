@@ -10,7 +10,7 @@
 
 ### Properties
 
-* [prefix](modules/framework/common/router.md#prefix)
+* [prefix](#prefix)
 
 ## Properties
 

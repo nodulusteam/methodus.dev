@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [name](modules/framework/common/itransport.md#name)
+* [name](#name)
 
 ### Methods
 
-* [register](modules/framework/common/itransport.md#register)
-* [send](modules/framework/common/itransport.md#send)
+* [register](#register)
+* [send](#send)
 
 ## Properties
 

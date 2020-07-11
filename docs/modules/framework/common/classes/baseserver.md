@@ -10,13 +10,13 @@
 
 ### Properties
 
-* [classRouters](modules/framework/common/baseserver.md#classrouters)
-* [config](modules/framework/common/baseserver.md#optional-config)
+* [classRouters](#classrouters)
+* [config](#optional-config)
 
 ### Methods
 
-* [_send](modules/framework/common/baseserver.md#_send)
-* [useClass](modules/framework/common/baseserver.md#useclass)
+* [_send](#_send)
+* [useClass](#useclass)
 
 ## Properties
 
@@ -26,7 +26,7 @@
 
 Defined in lib/config/base.d.ts:4
 
-*Defined in [src/config/base.ts:6](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/base.ts#L6)*
+*Defined in [src/config/base.ts:6](#L6)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 Defined in lib/config/base.d.ts:3
 
-*Defined in [src/config/base.ts:5](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/config/base.ts#L5)*
+*Defined in [src/config/base.ts:5](#L5)*
 
 ## Methods
 

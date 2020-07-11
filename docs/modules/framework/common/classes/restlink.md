@@ -10,19 +10,19 @@
 
 ### Constructors
 
-* [constructor](modules/framework/common/restlink.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [action](modules/framework/common/restlink.md#action)
-* [href](modules/framework/common/restlink.md#href)
-* [methodKey](modules/framework/common/restlink.md#methodkey)
-* [rel](modules/framework/common/restlink.md#rel)
-* [types](modules/framework/common/restlink.md#types)
+* [action](#action)
+* [href](#href)
+* [methodKey](#methodkey)
+* [rel](#rel)
+* [types](#types)
 
 ### Methods
 
-* [toString](modules/framework/common/restlink.md#tostring)
+* [toString](#tostring)
 
 ## Constructors
 
@@ -52,7 +52,7 @@ Name | Type |
 
 Defined in lib/response/method.result.d.ts:22
 
-*Defined in [src/response/method.result.ts:84](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L84)*
+*Defined in [src/response/method.result.ts:84](#L84)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:21
 
-*Defined in [src/response/method.result.ts:83](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L83)*
+*Defined in [src/response/method.result.ts:83](#L83)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:24
 
-*Defined in [src/response/method.result.ts:86](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L86)*
+*Defined in [src/response/method.result.ts:86](#L86)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:20
 
-*Defined in [src/response/method.result.ts:82](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L82)*
+*Defined in [src/response/method.result.ts:82](#L82)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:23
 
-*Defined in [src/response/method.result.ts:85](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L85)*
+*Defined in [src/response/method.result.ts:85](#L85)*
 
 ## Methods
 

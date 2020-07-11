@@ -12,12 +12,12 @@
 
 ### Properties
 
-* [methodType](modules/framework/common/methoddescriptor.md#methodtype)
-* [middlewares](modules/framework/common/methoddescriptor.md#optional-middlewares)
-* [params](modules/framework/common/methoddescriptor.md#params)
-* [propertyKey](modules/framework/common/methoddescriptor.md#propertykey)
-* [route](modules/framework/common/methoddescriptor.md#route)
-* [verb](modules/framework/common/methoddescriptor.md#verb)
+* [methodType](#methodtype)
+* [middlewares](#optional-middlewares)
+* [params](#params)
+* [propertyKey](#propertykey)
+* [route](#route)
+* [verb](#verb)
 
 ## Properties
 

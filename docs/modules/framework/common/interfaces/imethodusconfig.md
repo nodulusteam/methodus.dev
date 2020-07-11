@@ -10,9 +10,9 @@
 
 ### Properties
 
-* [classes](modules/framework/common/imethodusconfig.md#classes)
-* [port](modules/framework/common/imethodusconfig.md#port)
-* [servers](modules/framework/common/imethodusconfig.md#optional-servers)
+* [classes](#classes)
+* [port](#port)
+* [servers](#optional-servers)
 
 ## Properties
 

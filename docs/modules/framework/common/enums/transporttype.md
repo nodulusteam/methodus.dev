@@ -6,13 +6,13 @@
 
 ### Enumeration members
 
-* [Custom](modules/framework/common/transporttype.md#custom)
-* [Http](modules/framework/common/transporttype.md#http)
-* [Kafka](modules/framework/common/transporttype.md#kafka)
-* [MQ](modules/framework/common/transporttype.md#mq)
-* [Mock](modules/framework/common/transporttype.md#mock)
-* [Redis](modules/framework/common/transporttype.md#redis)
-* [Socket](modules/framework/common/transporttype.md#socket)
+* [Custom](#custom)
+* [Http](#http)
+* [Kafka](#kafka)
+* [MQ](#mq)
+* [Mock](#mock)
+* [Redis](#redis)
+* [Socket](#socket)
 
 ## Enumeration members
 

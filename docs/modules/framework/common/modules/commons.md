@@ -6,9 +6,9 @@
 
 ### Variables
 
-* [Logger](modules/framework/common/commons.md#const-logger)
-* [logger](modules/framework/common/commons.md#const-logger)
-* [util](modules/framework/common/commons.md#const-util)
+* [Logger](#const-logger)
+* [logger](#const-logger)
+* [util](#const-util)
 
 ## Variables
 

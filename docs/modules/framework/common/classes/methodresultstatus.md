@@ -20,26 +20,26 @@
 
 ### Constructors
 
-* [constructor](modules/framework/common/methodresultstatus.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [headers](modules/framework/common/methodresultstatus.md#headers)
-* [page](modules/framework/common/methodresultstatus.md#page)
-* [result](modules/framework/common/methodresultstatus.md#result)
-* [statusCode](modules/framework/common/methodresultstatus.md#statuscode)
-* [stream](modules/framework/common/methodresultstatus.md#stream)
-* [total](modules/framework/common/methodresultstatus.md#total)
+* [headers](#headers)
+* [page](#page)
+* [result](#result)
+* [statusCode](#statuscode)
+* [stream](#stream)
+* [total](#total)
 
 ### Methods
 
-* [apply](modules/framework/common/methodresultstatus.md#apply)
-* [compileLink](modules/framework/common/methodresultstatus.md#protected-compilelink)
-* [getLinks](modules/framework/common/methodresultstatus.md#getlinks)
-* [linkAction](modules/framework/common/methodresultstatus.md#linkaction)
-* [on](modules/framework/common/methodresultstatus.md#on)
-* [pipe](modules/framework/common/methodresultstatus.md#pipe)
-* [setHeader](modules/framework/common/methodresultstatus.md#setheader)
+* [apply](#apply)
+* [compileLink](#protected-compilelink)
+* [getLinks](#getlinks)
+* [linkAction](#linkaction)
+* [on](#on)
+* [pipe](#pipe)
+* [setHeader](#setheader)
 
 ## Constructors
 
@@ -47,7 +47,7 @@
 
 \+ **new MethodResultStatus**(`result`: T, `statusCode`: number, `total?`: undefined | number, `page?`: undefined | number): *[MethodResultStatus](modules/framework/common/methodresultstatus.md)*
 
-*Overrides [MethodResult](modules/framework/common/methodresult.md).[constructor](methodresult.md#constructor)*
+*Overrides [MethodResult](#constructor)*
 
 Defined in lib/response/method.result.d.ts:31
 
@@ -68,7 +68,7 @@ Name | Type |
 
 • **headers**: *any*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[headers](methodresult.md#headers)*
+*Inherited from [MethodResult](#headers)*
 
 *Overrides void*
 
@@ -80,11 +80,11 @@ ___
 
 • **page**: *number* = 1
 
-*Overrides [MethodResult](modules/framework/common/methodresult.md).[page](methodresult.md#page)*
+*Overrides [MethodResult](#page)*
 
 Defined in lib/response/method.result.d.ts:29
 
-*Defined in [src/response/method.result.ts:97](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L97)*
+*Defined in [src/response/method.result.ts:97](#L97)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 • **result**: *T*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[result](methodresult.md#result)*
+*Inherited from [MethodResult](#result)*
 
 *Overrides void*
 
@@ -104,11 +104,11 @@ ___
 
 • **statusCode**: *number*
 
-*Overrides [MethodResult](modules/framework/common/methodresult.md).[statusCode](methodresult.md#statuscode)*
+*Overrides [MethodResult](#statuscode)*
 
 Defined in lib/response/method.result.d.ts:31
 
-*Defined in [src/response/method.result.ts:99](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L99)*
+*Defined in [src/response/method.result.ts:99](#L99)*
 
 ___
 
@@ -116,7 +116,7 @@ ___
 
 • **stream**: *any*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[stream](methodresult.md#stream)*
+*Inherited from [MethodResult](#stream)*
 
 *Overrides void*
 
@@ -128,11 +128,11 @@ ___
 
 • **total**: *number* = 0
 
-*Overrides [MethodResult](modules/framework/common/methodresult.md).[total](methodresult.md#total)*
+*Overrides [MethodResult](#total)*
 
 Defined in lib/response/method.result.d.ts:30
 
-*Defined in [src/response/method.result.ts:98](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L98)*
+*Defined in [src/response/method.result.ts:98](#L98)*
 
 ## Methods
 
@@ -140,7 +140,7 @@ Defined in lib/response/method.result.d.ts:30
 
 ▸ **apply**(): *this*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[apply](methodresult.md#apply)*
+*Inherited from [MethodResult](#apply)*
 
 *Overrides void*
 
@@ -154,7 +154,7 @@ ___
 
 ▸ **compileLink**(`action`: any, `data`: any, `rel`: string, `host`: string): *[RestLink](modules/framework/common/restlink.md)*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[compileLink](methodresult.md#protected-compilelink)*
+*Inherited from [MethodResult](#protected-compilelink)*
 
 *Overrides void*
 
@@ -177,7 +177,7 @@ ___
 
 ▸ **getLinks**(): *string[]*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[getLinks](methodresult.md#getlinks)*
+*Inherited from [MethodResult](#getlinks)*
 
 *Overrides void*
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **linkAction**(`propertyKey`: any, `linksSource`: any, `rel?`: undefined | string, `datasource?`: any, `host?`: undefined | string): *void*
 
-*Overrides [MethodResult](modules/framework/common/methodresult.md).[linkAction](methodresult.md#linkaction)*
+*Overrides [MethodResult](#linkaction)*
 
 Defined in lib/response/method.result.d.ts:33
 
@@ -213,7 +213,7 @@ ___
 
 ▸ **on**(`key`: any, `value`: any): *void*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[on](methodresult.md#on)*
+*Inherited from [MethodResult](#on)*
 
 *Overrides void*
 
@@ -234,7 +234,7 @@ ___
 
 ▸ **pipe**(`streamToPipe`: any): *any*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[pipe](methodresult.md#pipe)*
+*Inherited from [MethodResult](#pipe)*
 
 *Overrides void*
 
@@ -254,7 +254,7 @@ ___
 
 ▸ **setHeader**(`key`: any, `value`: any): *void*
 
-*Inherited from [MethodResult](modules/framework/common/methodresult.md).[setHeader](methodresult.md#setheader)*
+*Inherited from [MethodResult](#setheader)*
 
 *Overrides void*
 

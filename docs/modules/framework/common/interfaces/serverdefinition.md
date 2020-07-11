@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [module](modules/framework/common/serverdefinition.md#optional-module)
-* [name](modules/framework/common/serverdefinition.md#name)
-* [parser](modules/framework/common/serverdefinition.md#optional-parser)
-* [path](modules/framework/common/serverdefinition.md#optional-path)
-* [response](modules/framework/common/serverdefinition.md#optional-response)
-* [static](modules/framework/common/serverdefinition.md#optional-static)
+* [module](#optional-module)
+* [name](#name)
+* [parser](#optional-parser)
+* [path](#optional-path)
+* [response](#optional-response)
+* [static](#optional-static)
 
 ## Properties
 

@@ -10,9 +10,9 @@
 
 ### Properties
 
-* [classType](modules/framework/common/imethodusclassconfig.md#classtype)
-* [methodType](modules/framework/common/imethodusclassconfig.md#methodtype)
-* [serverType](modules/framework/common/imethodusclassconfig.md#servertype)
+* [classType](#classtype)
+* [methodType](#methodtype)
+* [serverType](#servertype)
 
 ## Properties
 

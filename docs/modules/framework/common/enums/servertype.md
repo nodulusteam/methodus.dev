@@ -6,13 +6,13 @@
 
 ### Enumeration members
 
-* [Custom](modules/framework/common/servertype.md#custom)
-* [Express](modules/framework/common/servertype.md#express)
-* [HTTP2](modules/framework/common/servertype.md#http2)
-* [Kafka](modules/framework/common/servertype.md#kafka)
-* [RabbitMQ](modules/framework/common/servertype.md#rabbitmq)
-* [Redis](modules/framework/common/servertype.md#redis)
-* [Socket](modules/framework/common/servertype.md#socket)
+* [Custom](#custom)
+* [Express](#express)
+* [HTTP2](#http2)
+* [Kafka](#kafka)
+* [RabbitMQ](#rabbitmq)
+* [Redis](#redis)
+* [Socket](#socket)
 
 ## Enumeration members
 

@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [options](modules/framework/common/iserverconfig.md#options)
-* [type](modules/framework/common/iserverconfig.md#type)
+* [options](#options)
+* [type](#type)
 
 ## Properties
 

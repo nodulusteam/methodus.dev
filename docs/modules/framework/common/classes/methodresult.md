@@ -18,28 +18,28 @@
 
 ### Constructors
 
-* [constructor](modules/framework/common/methodresult.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [_on](modules/framework/common/methodresult.md#private-_on)
-* [headers](modules/framework/common/methodresult.md#headers)
-* [links](modules/framework/common/methodresult.md#private-links)
-* [page](modules/framework/common/methodresult.md#page)
-* [result](modules/framework/common/methodresult.md#result)
-* [statusCode](modules/framework/common/methodresult.md#statuscode)
-* [stream](modules/framework/common/methodresult.md#stream)
-* [total](modules/framework/common/methodresult.md#total)
+* [_on](#private-_on)
+* [headers](#headers)
+* [links](#private-links)
+* [page](#page)
+* [result](#result)
+* [statusCode](#statuscode)
+* [stream](#stream)
+* [total](#total)
 
 ### Methods
 
-* [apply](modules/framework/common/methodresult.md#apply)
-* [compileLink](modules/framework/common/methodresult.md#protected-compilelink)
-* [getLinks](modules/framework/common/methodresult.md#getlinks)
-* [linkAction](modules/framework/common/methodresult.md#linkaction)
-* [on](modules/framework/common/methodresult.md#on)
-* [pipe](modules/framework/common/methodresult.md#pipe)
-* [setHeader](modules/framework/common/methodresult.md#setheader)
+* [apply](#apply)
+* [compileLink](#protected-compilelink)
+* [getLinks](#getlinks)
+* [linkAction](#linkaction)
+* [on](#on)
+* [pipe](#pipe)
+* [setHeader](#setheader)
 
 ## Constructors
 
@@ -67,7 +67,7 @@ Name | Type |
 
 Defined in lib/response/method.result.d.ts:8
 
-*Defined in [src/response/method.result.ts:11](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L11)*
+*Defined in [src/response/method.result.ts:11](#L11)*
 
 #### Type declaration:
 
@@ -83,7 +83,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:7
 
-*Defined in [src/response/method.result.ts:10](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L10)*
+*Defined in [src/response/method.result.ts:10](#L10)*
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:9
 
-*Defined in [src/response/method.result.ts:12](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L12)*
+*Defined in [src/response/method.result.ts:12](#L12)*
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:3
 
-*Defined in [src/response/method.result.ts:6](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L6)*
+*Defined in [src/response/method.result.ts:6](#L6)*
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:5
 
-*Defined in [src/response/method.result.ts:8](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L8)*
+*Defined in [src/response/method.result.ts:8](#L8)*
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:6
 
-*Defined in [src/response/method.result.ts:9](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L9)*
+*Defined in [src/response/method.result.ts:9](#L9)*
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:2
 
-*Defined in [src/response/method.result.ts:5](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L5)*
+*Defined in [src/response/method.result.ts:5](#L5)*
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 Defined in lib/response/method.result.d.ts:4
 
-*Defined in [src/response/method.result.ts:7](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/response/method.result.ts#L7)*
+*Defined in [src/response/method.result.ts:7](#L7)*
 
 ## Methods
 

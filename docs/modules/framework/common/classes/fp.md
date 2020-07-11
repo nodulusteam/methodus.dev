@@ -10,13 +10,13 @@
 
 ### Methods
 
-* [maybe](modules/framework/common/fp.md#maybe)
-* [maybeEach](modules/framework/common/fp.md#maybeeach)
-* [maybeJson](modules/framework/common/fp.md#maybejson)
-* [maybeMethodus](modules/framework/common/fp.md#maybemethodus)
-* [maybeProto](modules/framework/common/fp.md#maybeproto)
-* [maybeString](modules/framework/common/fp.md#maybestring)
-* [unique](modules/framework/common/fp.md#unique)
+* [maybe](#maybe)
+* [maybeEach](#maybeeach)
+* [maybeJson](#maybejson)
+* [maybeMethodus](#maybemethodus)
+* [maybeProto](#maybeproto)
+* [maybeString](#maybestring)
+* [unique](#unique)
 
 ## Methods
 

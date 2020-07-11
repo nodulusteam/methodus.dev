@@ -6,14 +6,14 @@
 
 ### Enumeration members
 
-* [Http](modules/framework/common/methodtype.md#http)
-* [Http2](modules/framework/common/methodtype.md#http2)
-* [Kafka](modules/framework/common/methodtype.md#kafka)
-* [Local](modules/framework/common/methodtype.md#local)
-* [MQ](modules/framework/common/methodtype.md#mq)
-* [Mock](modules/framework/common/methodtype.md#mock)
-* [Redis](modules/framework/common/methodtype.md#redis)
-* [Socket](modules/framework/common/methodtype.md#socket)
+* [Http](#http)
+* [Http2](#http2)
+* [Kafka](#kafka)
+* [Local](#local)
+* [MQ](#mq)
+* [Mock](#mock)
+* [Redis](#redis)
+* [Socket](#socket)
 
 ## Enumeration members
 

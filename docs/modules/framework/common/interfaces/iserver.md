@@ -10,14 +10,14 @@
 
 ### Properties
 
-* [classRouters](modules/framework/common/iserver.md#classrouters)
-* [config](modules/framework/common/iserver.md#config)
-* [sockets](modules/framework/common/iserver.md#optional-sockets)
+* [classRouters](#classrouters)
+* [config](#config)
+* [sockets](#optional-sockets)
 
 ### Methods
 
-* [_send](modules/framework/common/iserver.md#_send)
-* [useClass](modules/framework/common/iserver.md#useclass)
+* [_send](#_send)
+* [useClass](#useclass)
 
 ## Properties
 

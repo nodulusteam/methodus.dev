@@ -42,33 +42,33 @@
 
 ### Type aliases
 
-* [ClassArgs](modules/framework/common/globals.md#classargs)
-* [ClassNoArgs](modules/framework/common/globals.md#classnoargs)
-* [ClassRef](modules/framework/common/globals.md#classref)
-* [Dictionary](modules/framework/common/globals.md#dictionary)
-* [ModuleTargetClass](modules/framework/common/globals.md#moduletargetclass)
+* [ClassArgs](#classargs)
+* [ClassNoArgs](#classnoargs)
+* [ClassRef](#classref)
+* [Dictionary](#dictionary)
+* [ModuleTargetClass](#moduletargetclass)
 
 ### Variables
 
-* [Mapping](modules/framework/common/globals.md#const-mapping)
-* [logger](modules/framework/common/globals.md#const-logger)
-* [util](modules/framework/common/globals.md#const-util)
+* [Mapping](#const-mapping)
+* [logger](#const-logger)
+* [util](#const-util)
 
 ### Functions
 
-* [Body](modules/framework/common/globals.md#body)
-* [Cookies](modules/framework/common/globals.md#cookies)
-* [Files](modules/framework/common/globals.md#files)
-* [Headers](modules/framework/common/globals.md#headers)
-* [Param](modules/framework/common/globals.md#param)
-* [Query](modules/framework/common/globals.md#query)
-* [Request](modules/framework/common/globals.md#request)
-* [Response](modules/framework/common/globals.md#response)
-* [SecurityContext](modules/framework/common/globals.md#securitycontext)
-* [build](modules/framework/common/globals.md#build)
-* [pushParams](modules/framework/common/globals.md#pushparams)
-* [recurseODM](modules/framework/common/globals.md#recurseodm)
-* [validate](modules/framework/common/globals.md#validate)
+* [Body](#body)
+* [Cookies](#cookies)
+* [Files](#files)
+* [Headers](#headers)
+* [Param](#param)
+* [Query](#query)
+* [Request](#request)
+* [Response](#response)
+* [SecurityContext](#securitycontext)
+* [build](#build)
+* [pushParams](#pushparams)
+* [recurseODM](#recurseodm)
+* [validate](#validate)
 
 ## Type aliases
 
@@ -98,7 +98,7 @@ ___
 
 ###  ClassRef
 
-Ƭ **ClassRef**: *[ClassNoArgs](modules/framework/common/globals.md#classnoargs) | [ClassArgs](globals.md#classargs)*
+Ƭ **ClassRef**: *[ClassNoArgs](#classnoargs) | [ClassArgs](globals.md
 
 Defined in lib/interfaces/index.d.ts:19
 
@@ -126,13 +126,13 @@ Defined in lib/interfaces/index.d.ts:20
 
 * **new __type**(): *any*
 
-* **declarations**? : *[ClassRef](modules/framework/common/globals.md#classref)[]*
+* **declarations**? : *[ClassRef](#classref)[]*
 
-* **exports**? : *[ClassRef](modules/framework/common/globals.md#classref)[]*
+* **exports**? : *[ClassRef](#classref)[]*
 
-* **imports**? : *[ClassRef](modules/framework/common/globals.md#classref)[]*
+* **imports**? : *[ClassRef](#classref)[]*
 
-* **providers**? : *[ClassRef](modules/framework/common/globals.md#classref)[]*
+* **providers**? : *[ClassRef](#classref)[]*
 
 ## Variables
 
@@ -150,7 +150,7 @@ ___
 
 Defined in lib/log/logger.d.ts:13
 
-*Defined in [src/log/logger.ts:48](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/log/logger.ts#L48)*
+*Defined in [src/log/logger.ts:48](#L48)*
 
 ___
 
@@ -404,7 +404,7 @@ ___
 
 ▸ **build**(`from`: string, `name?`: undefined | string, `type?`: undefined | string, `defaultValue?`: any): *(Anonymous function)*
 
-*Defined in [src/param/params.ts:49](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/param/params.ts#L49)*
+*Defined in [src/param/params.ts:49](#L49)*
 
 **Parameters:**
 
@@ -423,7 +423,7 @@ ___
 
 ▸ **pushParams**(`target`: any, `propertyKey`: any, `param`: any): *void*
 
-*Defined in [src/param/params.ts:16](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/param/params.ts#L16)*
+*Defined in [src/param/params.ts:16](#L16)*
 
 **Parameters:**
 
@@ -441,7 +441,7 @@ ___
 
 ▸ **recurseODM**(`odm`: any): *any*
 
-*Defined in [src/param/params.ts:4](modules/framework/common/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-commons/src/param/params.ts#L4)*
+*Defined in [src/param/params.ts:4](#L4)*
 
 **Parameters:**
 
