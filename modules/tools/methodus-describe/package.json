@@ -1,6 +1,6 @@
 {
     "name": "@methodus/describe",
-    "version": "7.0.0",
+    "version": "7.1.0",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {
@@ -50,5 +50,5 @@
         "@methodus/platform-rest": "^7.0.0",
         "@methodus/server": "^7.0.0"
     },
-    "gitHead": "dd24286622a0ed1ce6fb7925dff25b7ce71d96e5"
+    "gitHead": "567d0c5652ff4edef7ea6371dd7fd625938a5a5c"
 }
