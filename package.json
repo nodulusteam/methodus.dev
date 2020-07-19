@@ -1,6 +1,6 @@
 {
     "name": "@methodus/dev",
-    "version": "6.0.0-alpha",
+    "version": "7.0.0",
     "private": true,
     "description": "Server components for @methodus workflow",
     "directories": {

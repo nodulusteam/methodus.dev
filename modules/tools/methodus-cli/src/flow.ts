@@ -132,6 +132,7 @@ export async function goForQuestions(answers: any) {
         'templates',
         projectChoice
     );
+    debugger;
     const templateConfig: TemplateConfig = getTemplateConfig(
         templatePath
     );
@@ -145,7 +146,7 @@ export async function goForQuestions(answers: any) {
         const cli = new CLI(projectName, templateConfig);
         const modules = listModules(cli);
 
-
+        debugger;
         const modulesAnswers: any = await inquirer.prompt([{
             name: 'modules',
             type: 'list',

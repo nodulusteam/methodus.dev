@@ -1,8 +1,8 @@
 import 'reflect-metadata';
-import commons, { MethodType, TransportType, MethodResult, MethodError, MethodResultStatus } from '@methodus/framework-commons';
+import commons, { MethodType, TransportType, MethodResult, MethodError, MethodResultStatus, validate } from '@methodus/framework-commons';
 import { ResponseParser } from '../response';
 import { Servers } from '../servers/serversList';
-import { validate } from '@methodus/framework-commons';
+
 import stringify from 'fast-safe-stringify';
 import injection from '@methodus/framework-injection';
 
