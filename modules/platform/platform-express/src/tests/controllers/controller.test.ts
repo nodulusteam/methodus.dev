@@ -1,5 +1,5 @@
 import {
-    Param, injectionModule as injection,
+    injectionModule as injection,
 } from '@methodus/server';
 import { AuthMiddleware } from '../middlewares/auth.middleware';
 import { MethodMiddleware } from '../middlewares/method.middleware';
@@ -36,7 +36,7 @@ export class TestController {
     }
 
     @decorators.Method(Verbs.Get, '/api/playerdata/defaults')
-    public async listdefaults(@Param() params: any,
+    public async listdefaults(@Mapping.Param() params: any,
         @Mapping.Body() body: any,
         @Mapping.Headers() headers: any,
         @Mapping.Files() files: any,

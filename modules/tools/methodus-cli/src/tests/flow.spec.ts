@@ -19,7 +19,7 @@ describe('Test the flow', () => {
         }
     });
 
-    it.only('goForQuestions', async () => {
+    it.skip('goForQuestions', async () => {
         await goForQuestions({ template: 'application' });
         expect(true).toBe(true);
     });
