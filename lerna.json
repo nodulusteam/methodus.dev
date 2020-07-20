@@ -12,5 +12,5 @@
     ],
     "useWorkspaces": false,
     "npmClient": "yarn",
-    "version": "7.0.0"
+    "version": "independent"
 }
