@@ -1,6 +1,7 @@
 {
     "name": "@methodus/framework-integrations",
     "version": "7.0.1",
+    "private": true,
     "description": "Integrations tests for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -27,5 +28,5 @@
         "ts-jest": "^24.2.0",
         "typescript": "^3.9.5"
     },
-    "gitHead": "567d0c5652ff4edef7ea6371dd7fd625938a5a5c"
+    "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }
