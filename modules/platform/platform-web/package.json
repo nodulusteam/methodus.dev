@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-web",
-    "version": "7.0.1",
+    "version": "7.0.2",
     "description": "Zero dependencies, Browser library for Contract based API access",
     "main": "dist/methodus-client.js",
     "types": "build/lib/index.d.ts",
