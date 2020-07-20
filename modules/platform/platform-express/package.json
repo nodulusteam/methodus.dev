@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-express",
-    "version": "7.0.0",
+    "version": "7.0.1",
     "description": "Express plugin for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -20,10 +20,10 @@
         "@methodus/server": "^7.0.0"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.0",
-        "@methodus/framework-decorators": "^7.0.0",
-        "@methodus/framework-injection": "^7.0.0",
-        "@methodus/server": "^7.0.0",
+        "@methodus/framework-commons": "^7.0.2",
+        "@methodus/framework-decorators": "^7.0.1",
+        "@methodus/framework-injection": "^7.0.1",
+        "@methodus/server": "^7.0.2",
         "body-parser": "^1.19.0",
         "compression": "^1.7.0",
         "cookie-parser": "^1.4.4",
@@ -35,7 +35,7 @@
     },
     "devDependencies": {
         "@methodus/data": "^2.0.35",
-        "@methodus/platform-rest": "^7.0.0",
+        "@methodus/platform-rest": "^7.0.1",
         "@types/cookie-parser": "^1.4.2",
         "@types/etag": "^1.8.0",
         "@types/express": "^4.17.2",

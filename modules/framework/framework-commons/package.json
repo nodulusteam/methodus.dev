@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-commons",
-    "version": "7.0.1",
+    "version": "7.0.2",
     "description": "Commons for methodus",
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
@@ -23,11 +23,11 @@
         "@types/jest": "^24.0.23",
         "@types/node": "^14.0.9",
         "jest": "^24.9.0",
+        "replace-in-file": "^6.1.0",
         "ts-jest": "^24.2.0",
         "typedoc": "^0.17.8",
         "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^3.9.5",
-        "replace-in-file": "^6.1.0"
+        "typescript": "^3.9.5"
     },
     "gitHead": "fb3f9a52059fa5290a332af54575f69f728017c6"
 }

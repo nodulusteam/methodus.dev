@@ -1,6 +1,6 @@
 {
     "name": "@methodus/cli",
-    "version": "7.0.2",
+    "version": "7.0.3",
     "main": "dist/index.js",
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
@@ -45,9 +45,9 @@
         "shx": "^0.3.2",
         "ts-jest": "^25.2.0",
         "ts-node": "^7.0.1",
-        "typescript": "^3.9.5",
         "typedoc": "^0.17.8",
-        "typedoc-plugin-markdown": "^2.3.1"
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^3.9.5"
     },
     "dependencies": {
         "colors": "^1.4.0",

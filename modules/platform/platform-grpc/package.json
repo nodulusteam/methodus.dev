@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-grpc",
-    "version": "7.0.0",
+    "version": "7.0.1",
     "description": "",
     "main": "dist/index.js",
     "scripts": {
@@ -11,7 +11,7 @@
     "license": "ISC",
     "dependencies": {
         "@grpc/proto-loader": "^0.5.3",
-        "@methodus/server": "^7.0.0",
+        "@methodus/server": "^7.0.2",
         "grpc": "^1.24.2",
         "protobufjs": "^6.8.8"
     },
