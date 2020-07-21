@@ -34,10 +34,10 @@ const projects = [
   'decorators',
   'commons',
   'injection',
-  'server',
   'express',
   'rest',
   'testing',
+  'server',
   //'integrations',
   'cli',
   'contracts'
@@ -50,6 +50,8 @@ projects.forEach(project => {
       try {
         return map.addFileCoverage(coverage[filename]);
       } catch (error) {
+        console.error(project, filename);
+        console.error(coverage[filename]);
         console.error(error);
       }
     }
