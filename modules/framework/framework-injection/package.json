@@ -21,14 +21,6 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@types/jest": "^24.0.23",
-        "jest": "^24.9.0",
-        "prettier": "^2.0.5",
-        "rimraf": "^3.0.1",
-        "ts-jest": "^24.2.0",
-        "typedoc": "^0.17.8",
-        "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^3.9.5"
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }

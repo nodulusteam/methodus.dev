@@ -7,11 +7,7 @@ import { ServerConfiguration } from './server';
 @ClientConfiguration(TestAll, 'Http')
 @RouterConfiguration(TestAll, 'SomeServer')
 @ServerConfiguration('Express', {})
-class TestAll {
-}
-
-
- 
+class TestAll {}
 
 describe('Class decorators', () => {
     it('Create class', () => {

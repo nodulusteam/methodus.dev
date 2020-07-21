@@ -29,18 +29,9 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "devDependencies": {
-        "@types/jest": "^24.0.21",
         "@types/lodash": "^4.14.75",
-        "@types/node": "^8.0.31",
         "@types/shelljs": "^0.8.8",
-        "jest": "^24.9.0",
-        "jsdoc-regex": "^1.0.1",
-        "npm-run-all": "^4.1.5",
-        "ts-jest": "^24.1.0",
-        "tslint": "^5.12.0",
-        "typedoc": "^0.17.8",
-        "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^3.9.5"
+        "jsdoc-regex": "^1.0.1"
     },
     "dependencies": {
         "@methodus/data": "^2.0.35",

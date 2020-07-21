@@ -53,24 +53,15 @@
     },
     "devDependencies": {
         "@methodus/data": "^2.0.0",
-        "@types/jest": "^24.0.23",
         "@types/mongodb": "^3.1.27",
-        "@types/node": "^10.0.0",
         "@types/uuid": "^3.4.4",
         "child-process-debug": "0.0.7",
-        "jest": "^24.9.0",
         "memory-streams": "^0.1.3",
         "mkdirp": "^0.5.1",
         "nedb": "^1.8.0",
         "nedb-promise": "^2.0.1",
-        "npm-run-all": "^4.1.5",
         "opn-cli": "^4.0.0",
-        "standard-version": "^8.0.1",
-        "ts-jest": "^24.2.0",
-        "tslint": "^5.11.0",
-        "typedoc": "^0.17.8",
-        "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^3.9.5"
+        "standard-version": "^8.0.1"
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }

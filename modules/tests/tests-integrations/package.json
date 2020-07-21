@@ -21,12 +21,6 @@
         "@methodus/server": "^7.0.3"
     },
     "devDependencies": {
-        "@types/jest": "^24.0.23",
-        "@types/node": "^14.0.9",
-        "jest": "^24.9.0",
-        "rimraf": "^3.0.1",
-        "ts-jest": "^24.2.0",
-        "typescript": "^3.9.5"
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }
