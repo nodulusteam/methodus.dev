@@ -27,7 +27,7 @@
 
 Defined in framework-decorators/lib/index.d.ts:12
 
-*Defined in [framework-decorators/src/index.ts:27](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L27)*
+*Defined in [framework-decorators/src/index.ts:27](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L27)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:15
 
-*Defined in [framework-decorators/src/index.ts:30](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L30)*
+*Defined in [framework-decorators/src/index.ts:30](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L30)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:7
 
-*Defined in [framework-decorators/src/index.ts:21](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L21)*
+*Defined in [framework-decorators/src/index.ts:21](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L21)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:9
 
-*Defined in [framework-decorators/src/index.ts:23](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L23)*
+*Defined in [framework-decorators/src/index.ts:23](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L23)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:10
 
-*Defined in [framework-decorators/src/index.ts:24](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L24)*
+*Defined in [framework-decorators/src/index.ts:24](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L24)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:8
 
-*Defined in [framework-decorators/src/index.ts:22](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L22)*
+*Defined in [framework-decorators/src/index.ts:22](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L22)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:14
 
-*Defined in [framework-decorators/src/index.ts:29](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L29)*
+*Defined in [framework-decorators/src/index.ts:29](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L29)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:13
 
-*Defined in [framework-decorators/src/index.ts:28](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L28)*
+*Defined in [framework-decorators/src/index.ts:28](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L28)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:16
 
-*Defined in [framework-decorators/src/index.ts:31](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L31)*
+*Defined in [framework-decorators/src/index.ts:31](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L31)*
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:11
 
-*Defined in [framework-decorators/src/index.ts:25](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L25)*
+*Defined in [framework-decorators/src/index.ts:25](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L25)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:17
 
-*Defined in [framework-decorators/src/index.ts:32](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L32)*
+*Defined in [framework-decorators/src/index.ts:32](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L32)*
 
 ___
 
@@ -137,4 +137,4 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:18
 
-*Defined in [framework-decorators/src/index.ts:33](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/index.ts#L33)*
+*Defined in [framework-decorators/src/index.ts:33](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L33)*

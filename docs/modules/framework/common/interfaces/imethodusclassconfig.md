@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IMethodusClassConfig](modules/framework/common/imethodusclassconfig.md)
+[Methodus - framework commons](../globals.md) › [IMethodusClassConfig](imethodusclassconfig.md)
 
 # Interface: IMethodusClassConfig
 
@@ -10,9 +10,9 @@
 
 ### Properties
 
-* [classType](#classtype)
-* [methodType](#methodtype)
-* [serverType](#servertype)
+* [classType](imethodusclassconfig.md#classtype)
+* [methodType](imethodusclassconfig.md#methodtype)
+* [serverType](imethodusclassconfig.md#servertype)
 
 ## Properties
 
@@ -20,7 +20,7 @@
 
 • **classType**: *any*
 
-Defined in lib/interfaces/index.d.ts:4
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:4
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **methodType**: *[MethodType](../enums/methodtype.md)*
 
-Defined in lib/interfaces/index.d.ts:3
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:3
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **serverType**: *[ServerType](../enums/servertype.md)*
 
-Defined in lib/interfaces/index.d.ts:5
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:5

@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [fp](modules/framework/common/fp.md)
+[Methodus - framework commons](../globals.md) › [fp](fp.md)
 
 # Class: fp
 
@@ -10,13 +10,13 @@
 
 ### Methods
 
-* [maybe](#maybe)
-* [maybeEach](#maybeeach)
-* [maybeJson](#maybejson)
-* [maybeMethodus](#maybemethodus)
-* [maybeProto](#maybeproto)
-* [maybeString](#maybestring)
-* [unique](#unique)
+* [maybe](fp.md#maybe)
+* [maybeEach](fp.md#maybeeach)
+* [maybeJson](fp.md#maybejson)
+* [maybeMethodus](fp.md#maybemethodus)
+* [maybeProto](fp.md#maybeproto)
+* [maybeString](fp.md#maybestring)
+* [unique](fp.md#unique)
 
 ## Methods
 
@@ -24,7 +24,7 @@
 
 ▸ **maybe**(`object`: any): *any*
 
-Defined in lib/fp/index.d.ts:2
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:2
 
 **Parameters:**
 
@@ -40,7 +40,7 @@ ___
 
 ▸ **maybeEach**(`object`: any, `callback`: any): *void*
 
-Defined in lib/fp/index.d.ts:6
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:6
 
 **Parameters:**
 
@@ -57,7 +57,7 @@ ___
 
 ▸ **maybeJson**(`object`: any): *object*
 
-Defined in lib/fp/index.d.ts:7
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:7
 
 **Parameters:**
 
@@ -73,7 +73,7 @@ ___
 
 ▸ **maybeMethodus**(`object`: any): *any*
 
-Defined in lib/fp/index.d.ts:5
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:5
 
 **Parameters:**
 
@@ -89,7 +89,7 @@ ___
 
 ▸ **maybeProto**(`object`: any): *any*
 
-Defined in lib/fp/index.d.ts:4
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:4
 
 **Parameters:**
 
@@ -105,7 +105,7 @@ ___
 
 ▸ **maybeString**(`object`: any): *string*
 
-Defined in lib/fp/index.d.ts:8
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:8
 
 **Parameters:**
 
@@ -121,7 +121,7 @@ ___
 
 ▸ **unique**(`myArray`: any): *any*
 
-Defined in lib/fp/index.d.ts:3
+Defined in modules/framework/framework-commons/lib/fp/index.d.ts:3
 
 **Parameters:**
 

@@ -34,4 +34,4 @@ Defined in framework-decorators/lib/module/module.spec.d.ts:2
 
 Defined in framework-decorators/lib/module/module.spec.d.ts:2
 
-*Defined in [framework-decorators/src/module/module.spec.ts:15](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/module/module.spec.ts#L15)*
+*Defined in [framework-decorators/src/module/module.spec.ts:15](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/module/module.spec.ts#L15)*

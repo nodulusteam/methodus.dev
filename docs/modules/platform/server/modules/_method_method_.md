@@ -16,7 +16,7 @@
 
 ▸ **handleResult**(`methodResult`: any): *Promise‹any›*
 
-*Defined in [src/method/method.ts:210](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/method.ts#L210)*
+*Defined in [src/method/method.ts:210](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/method.ts#L210)*
 
 **Parameters:**
 
@@ -32,7 +32,7 @@ ___
 
 ▸ **validateServerIsRunning**(): *void*
 
-*Defined in [src/method/method.ts:251](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/method.ts#L251)*
+*Defined in [src/method/method.ts:251](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/method.ts#L251)*
 
 **Returns:** *void*
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **verbBasedMethod**(`target`: any, `propertyKey`: string, `descriptor`: TypedPropertyDescriptor‹any›, `verb?`: undefined | string, `route?`: undefined | string, `middlewares?`: Function[]): *TypedPropertyDescriptor‹any›*
 
-*Defined in [src/method/method.ts:23](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/method.ts#L23)*
+*Defined in [src/method/method.ts:23](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/method.ts#L23)*
 
 the @Method decorator registers route listeners
 

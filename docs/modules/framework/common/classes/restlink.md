@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [RestLink](modules/framework/common/restlink.md)
+[Methodus - framework commons](../globals.md) › [RestLink](restlink.md)
 
 # Class: RestLink
 
@@ -10,27 +10,27 @@
 
 ### Constructors
 
-* [constructor](#constructor)
+* [constructor](restlink.md#constructor)
 
 ### Properties
 
-* [action](#action)
-* [href](#href)
-* [methodKey](#methodkey)
-* [rel](#rel)
-* [types](#types)
+* [action](restlink.md#action)
+* [href](restlink.md#href)
+* [methodKey](restlink.md#methodkey)
+* [rel](restlink.md#rel)
+* [types](restlink.md#types)
 
 ### Methods
 
-* [toString](#tostring)
+* [toString](restlink.md#tostring)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new RestLink**(`rel`: string, `href`: string, `action`: string, `types`: string[], `methodKey`: string): *[RestLink](modules/framework/common/restlink.md)*
+\+ **new RestLink**(`rel`: string, `href`: string, `action`: string, `types`: string[], `methodKey`: string): *[RestLink](restlink.md)*
 
-Defined in lib/response/method.result.d.ts:24
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:24
 
 **Parameters:**
 
@@ -42,7 +42,7 @@ Name | Type |
 `types` | string[] |
 `methodKey` | string |
 
-**Returns:** *[RestLink](modules/framework/common/restlink.md)*
+**Returns:** *[RestLink](restlink.md)*
 
 ## Properties
 
@@ -50,9 +50,9 @@ Name | Type |
 
 • **action**: *string*
 
-Defined in lib/response/method.result.d.ts:22
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:22
 
-*Defined in [src/response/method.result.ts:84](#L84)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:84](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L84)*
 
 ___
 
@@ -60,9 +60,9 @@ ___
 
 • **href**: *string*
 
-Defined in lib/response/method.result.d.ts:21
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:21
 
-*Defined in [src/response/method.result.ts:83](#L83)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:83](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L83)*
 
 ___
 
@@ -70,9 +70,9 @@ ___
 
 • **methodKey**: *string*
 
-Defined in lib/response/method.result.d.ts:24
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:24
 
-*Defined in [src/response/method.result.ts:86](#L86)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:86](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L86)*
 
 ___
 
@@ -80,9 +80,9 @@ ___
 
 • **rel**: *string*
 
-Defined in lib/response/method.result.d.ts:20
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:20
 
-*Defined in [src/response/method.result.ts:82](#L82)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:82](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L82)*
 
 ___
 
@@ -90,9 +90,9 @@ ___
 
 • **types**: *string[]*
 
-Defined in lib/response/method.result.d.ts:23
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:23
 
-*Defined in [src/response/method.result.ts:85](#L85)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:85](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L85)*
 
 ## Methods
 
@@ -100,6 +100,6 @@ Defined in lib/response/method.result.d.ts:23
 
 ▸ **toString**(): *string*
 
-Defined in lib/response/method.result.d.ts:26
+Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:26
 
 **Returns:** *string*

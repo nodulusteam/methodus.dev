@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [AuthType](modules/framework/common/authtype.md)
+[Methodus - framework commons](../globals.md) › [AuthType](authtype.md)
 
 # Enumeration: AuthType
 
@@ -6,11 +6,11 @@
 
 ### Enumeration members
 
-* [ApiKey](#apikey)
-* [Basic](#basic)
-* [BearerToken](#bearertoken)
-* [DigestAuth](#digestauth)
-* [None](#none)
+* [ApiKey](authtype.md#apikey)
+* [Basic](authtype.md#basic)
+* [BearerToken](authtype.md#bearertoken)
+* [DigestAuth](authtype.md#digestauth)
+* [None](authtype.md#none)
 
 ## Enumeration members
 
@@ -18,7 +18,7 @@
 
 • **ApiKey**: = 2
 
-Defined in lib/interfaces/index.d.ts:30
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:30
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **Basic**: = 1
 
-Defined in lib/interfaces/index.d.ts:29
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:29
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **BearerToken**: = 3
 
-Defined in lib/interfaces/index.d.ts:31
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:31
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **DigestAuth**: = 4
 
-Defined in lib/interfaces/index.d.ts:32
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:32
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • **None**: = 0
 
-Defined in lib/interfaces/index.d.ts:28
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:28

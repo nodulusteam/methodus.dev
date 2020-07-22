@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [Logger](modules/framework/common/logger.md)
+[Methodus - framework commons](../globals.md) › [Logger](logger.md)
 
 # Class: Logger
 
@@ -10,30 +10,30 @@
 
 ### Constructors
 
-* [constructor](#constructor)
+* [constructor](logger.md#constructor)
 
 ### Properties
 
-* [logger](#logger)
+* [logger](logger.md#logger)
 
 ### Methods
 
-* [debug](#debug)
-* [error](#error)
-* [getArgs](#getargs)
-* [info](#info)
-* [log](#log)
-* [print](#print)
-* [safeJSON](#safejson)
-* [warn](#warn)
+* [debug](logger.md#debug)
+* [error](logger.md#error)
+* [getArgs](logger.md#getargs)
+* [info](logger.md#info)
+* [log](logger.md#log)
+* [print](logger.md#print)
+* [safeJSON](logger.md#safejson)
+* [warn](logger.md#warn)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Logger**(`name`: string): *[Logger](modules/framework/common/logger.md)*
+\+ **new Logger**(`name`: string): *[Logger](logger.md)*
 
-Defined in lib/log/logger.d.ts:2
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:2
 
 **Parameters:**
 
@@ -41,7 +41,7 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 
-**Returns:** *[Logger](modules/framework/common/logger.md)*
+**Returns:** *[Logger](logger.md)*
 
 ## Properties
 
@@ -49,9 +49,9 @@ Name | Type |
 
 • **logger**: *any*
 
-Defined in lib/log/logger.d.ts:2
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:2
 
-*Defined in [src/log/logger.ts:2](#L2)*
+*Defined in [modules/framework/framework-commons/src/log/logger.ts:2](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/log/logger.ts#L2)*
 
 ## Methods
 
@@ -59,7 +59,7 @@ Defined in lib/log/logger.d.ts:2
 
 ▸ **debug**(...`args`: any[]): *void*
 
-Defined in lib/log/logger.d.ts:9
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:9
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **error**(...`args`: any[]): *void*
 
-Defined in lib/log/logger.d.ts:10
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:10
 
 **Parameters:**
 
@@ -91,7 +91,7 @@ ___
 
 ▸ **getArgs**(...`args`: any[]): *string*
 
-Defined in lib/log/logger.d.ts:5
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:5
 
 **Parameters:**
 
@@ -107,7 +107,7 @@ ___
 
 ▸ **info**(...`args`: any[]): *void*
 
-Defined in lib/log/logger.d.ts:7
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:7
 
 **Parameters:**
 
@@ -123,7 +123,7 @@ ___
 
 ▸ **log**(...`args`: any[]): *void*
 
-Defined in lib/log/logger.d.ts:8
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:8
 
 **Parameters:**
 
@@ -139,7 +139,7 @@ ___
 
 ▸ **print**(`verb`: string, `args`: any[]): *void*
 
-Defined in lib/log/logger.d.ts:6
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:6
 
 **Parameters:**
 
@@ -156,7 +156,7 @@ ___
 
 ▸ **safeJSON**(`item`: any): *any*
 
-Defined in lib/log/logger.d.ts:4
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:4
 
 **Parameters:**
 
@@ -172,7 +172,7 @@ ___
 
 ▸ **warn**(...`args`: any[]): *void*
 
-Defined in lib/log/logger.d.ts:11
+Defined in modules/framework/framework-commons/lib/log/logger.d.ts:11
 
 **Parameters:**
 

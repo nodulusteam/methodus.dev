@@ -14,7 +14,7 @@
 
 ▸ **MethodConfigBase**(`name`: string, `middlewares?`: Function[], `repository?`: any): *(Anonymous function)*
 
-*Defined in [src/method/method-config-base.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/method-config-base.ts#L14)*
+*Defined in [src/method/method-config-base.ts:14](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/method-config-base.ts#L14)*
 
 the MethodConfigBase decorator allows MethodConfig classes to inherit from.
 

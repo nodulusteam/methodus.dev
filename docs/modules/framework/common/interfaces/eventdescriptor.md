@@ -1,10 +1,10 @@
-[Methodus - framework commons](../globals.md) › [EventDescriptor](modules/framework/common/eventdescriptor.md)
+[Methodus - framework commons](../globals.md) › [EventDescriptor](eventdescriptor.md)
 
 # Interface: EventDescriptor
 
 ## Hierarchy
 
-* [MethodDescriptor](modules/framework/common/methoddescriptor.md)
+* [MethodDescriptor](methoddescriptor.md)
 
   ↳ **EventDescriptor**
 
@@ -12,15 +12,15 @@
 
 ### Properties
 
-* [exchange](#optional-exchange)
-* [methodType](#methodtype)
-* [middlewares](#optional-middlewares)
-* [name](#name)
-* [params](#params)
-* [propertyKey](#propertykey)
-* [route](#route)
-* [value](#optional-value)
-* [verb](#verb)
+* [exchange](eventdescriptor.md#optional-exchange)
+* [methodType](eventdescriptor.md#methodtype)
+* [middlewares](eventdescriptor.md#optional-middlewares)
+* [name](eventdescriptor.md#name)
+* [params](eventdescriptor.md#params)
+* [propertyKey](eventdescriptor.md#propertykey)
+* [route](eventdescriptor.md#route)
+* [value](eventdescriptor.md#optional-value)
+* [verb](eventdescriptor.md#verb)
 
 ## Properties
 
@@ -28,7 +28,7 @@
 
 • **exchange**? : *undefined | string*
 
-Defined in lib/interfaces/index.d.ts:102
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:102
 
 ___
 
@@ -36,9 +36,9 @@ ___
 
 • **methodType**: *[MethodType](../enums/methodtype.md)*
 
-*Inherited from [MethodDescriptor](#methodtype)*
+*Inherited from [MethodDescriptor](methoddescriptor.md).[methodType](methoddescriptor.md#methodtype)*
 
-Defined in lib/interfaces/index.d.ts:94
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:94
 
 ___
 
@@ -46,9 +46,9 @@ ___
 
 • **middlewares**? : *any*
 
-*Inherited from [MethodDescriptor](#optional-middlewares)*
+*Inherited from [MethodDescriptor](methoddescriptor.md).[middlewares](methoddescriptor.md#optional-middlewares)*
 
-Defined in lib/interfaces/index.d.ts:96
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:96
 
 ___
 
@@ -56,7 +56,7 @@ ___
 
 • **name**: *string*
 
-Defined in lib/interfaces/index.d.ts:100
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:100
 
 ___
 
@@ -64,9 +64,9 @@ ___
 
 • **params**: *any[]*
 
-*Inherited from [MethodDescriptor](#params)*
+*Inherited from [MethodDescriptor](methoddescriptor.md).[params](methoddescriptor.md#params)*
 
-Defined in lib/interfaces/index.d.ts:97
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:97
 
 ___
 
@@ -74,9 +74,9 @@ ___
 
 • **propertyKey**: *string*
 
-*Inherited from [MethodDescriptor](#propertykey)*
+*Inherited from [MethodDescriptor](methoddescriptor.md).[propertyKey](methoddescriptor.md#propertykey)*
 
-Defined in lib/interfaces/index.d.ts:95
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:95
 
 ___
 
@@ -84,9 +84,9 @@ ___
 
 • **route**: *string*
 
-*Inherited from [MethodDescriptor](#route)*
+*Inherited from [MethodDescriptor](methoddescriptor.md).[route](methoddescriptor.md#route)*
 
-Defined in lib/interfaces/index.d.ts:93
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:93
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 • **value**? : *any*
 
-Defined in lib/interfaces/index.d.ts:101
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:101
 
 ___
 
@@ -102,6 +102,6 @@ ___
 
 • **verb**: *string*
 
-*Inherited from [MethodDescriptor](#verb)*
+*Inherited from [MethodDescriptor](methoddescriptor.md).[verb](methoddescriptor.md#verb)*
 
-Defined in lib/interfaces/index.d.ts:92
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:92

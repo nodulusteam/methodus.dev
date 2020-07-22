@@ -19,6 +19,7 @@
 * [server](_server_configured_.configuredserver.md#optional-server)
 * [target](_server_configured_.configuredserver.md#target)
 * [defaultMaxListeners](_server_configured_.configuredserver.md#static-defaultmaxlisteners)
+* [errorMonitor](_server_configured_.configuredserver.md#static-readonly-errormonitor)
 
 ### Methods
 
@@ -47,7 +48,9 @@
 
 \+ **new ConfiguredServer**(`target?`: any): *[ConfiguredServer](_server_configured_.configuredserver.md)*
 
-*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/server.configured.ts#L8)*
+*Overrides void*
+
+*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/server.configured.ts#L8)*
 
 **Parameters:**
 
@@ -63,7 +66,7 @@ Name | Type |
 
 • **server**? : *[Server](_server_.server.md)*
 
-*Defined in [src/server.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/server.configured.ts#L7)*
+*Defined in [src/server.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/server.configured.ts#L7)*
 
 ___
 
@@ -71,7 +74,7 @@ ___
 
 • **target**: *any*
 
-*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/server.configured.ts#L8)*
+*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/server.configured.ts#L8)*
 
 ___
 
@@ -81,7 +84,25 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[defaultMaxListeners](_server_configured_.configuredserver.md#static-defaultmaxlisteners)*
 
-Defined in node_modules/@types/node/events.d.ts:18
+Defined in node_modules/@types/node/events.d.ts:45
+
+___
+
+### `Static` `Readonly` errorMonitor
+
+▪ **errorMonitor**: *keyof symbol*
+
+*Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[errorMonitor](_server_configured_.configuredserver.md#static-readonly-errormonitor)*
+
+Defined in node_modules/@types/node/events.d.ts:55
+
+This symbol shall be used to install a listener for only monitoring `'error'`
+events. Listeners installed using this symbol are called before the regular
+`'error'` listeners are called.
+
+Installing a listener using this symbol does not change the behavior once an
+`'error'` event is emitted, therefore the process will still crash if no
+regular `'error'` listener is installed.
 
 ## Methods
 
@@ -91,9 +112,7 @@ Defined in node_modules/@types/node/events.d.ts:18
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[addListener](_server_configured_.configuredserver.md#addlistener)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:20
+Defined in node_modules/@types/node/events.d.ts:62
 
 **Parameters:**
 
@@ -119,9 +138,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[emit](_server_configured_.configuredserver.md#emit)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:32
+Defined in node_modules/@types/node/events.d.ts:72
 
 **Parameters:**
 
@@ -140,9 +157,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[eventNames](_server_configured_.configuredserver.md#eventnames)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:33
+Defined in node_modules/@types/node/events.d.ts:77
 
 **Returns:** *Array‹string | symbol›*
 
@@ -154,9 +169,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[getMaxListeners](_server_configured_.configuredserver.md#getmaxlisteners)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:29
+Defined in node_modules/@types/node/events.d.ts:69
 
 **Returns:** *number*
 
@@ -166,7 +179,7 @@ ___
 
 ▸ **init**(): *Promise‹void›*
 
-*Defined in [src/server.configured.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/server.configured.ts#L17)*
+*Defined in [src/server.configured.ts:17](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/server.configured.ts#L17)*
 
 **Returns:** *Promise‹void›*
 
@@ -176,7 +189,7 @@ ___
 
 ▸ **kill**(): *void*
 
-*Defined in [src/server.configured.ts:56](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/server.configured.ts#L56)*
+*Defined in [src/server.configured.ts:56](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/server.configured.ts#L56)*
 
 **Returns:** *void*
 
@@ -186,11 +199,9 @@ ___
 
 ▸ **listenerCount**(`type`: string | symbol): *number*
 
-*Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[listenerCount](_server_configured_.configuredserver.md#static-listenercount)*
+*Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[listenerCount](_server_configured_.configuredserver.md#listenercount)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:34
+Defined in node_modules/@types/node/events.d.ts:73
 
 **Parameters:**
 
@@ -208,9 +219,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[listeners](_server_configured_.configuredserver.md#listeners)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:30
+Defined in node_modules/@types/node/events.d.ts:70
 
 **Parameters:**
 
@@ -228,9 +237,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[off](_server_configured_.configuredserver.md#off)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:26
+Defined in node_modules/@types/node/events.d.ts:66
 
 **Parameters:**
 
@@ -256,9 +263,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[on](_server_configured_.configuredserver.md#on)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:21
+Defined in node_modules/@types/node/events.d.ts:63
 
 **Parameters:**
 
@@ -284,9 +289,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[once](_server_configured_.configuredserver.md#once)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:22
+Defined in node_modules/@types/node/events.d.ts:64
 
 **Parameters:**
 
@@ -312,9 +315,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[prependListener](_server_configured_.configuredserver.md#prependlistener)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:23
+Defined in node_modules/@types/node/events.d.ts:75
 
 **Parameters:**
 
@@ -340,9 +341,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[prependOnceListener](_server_configured_.configuredserver.md#prependoncelistener)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:24
+Defined in node_modules/@types/node/events.d.ts:76
 
 **Parameters:**
 
@@ -368,9 +367,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[rawListeners](_server_configured_.configuredserver.md#rawlisteners)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:31
+Defined in node_modules/@types/node/events.d.ts:71
 
 **Parameters:**
 
@@ -388,9 +385,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[removeAllListeners](_server_configured_.configuredserver.md#removealllisteners)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:27
+Defined in node_modules/@types/node/events.d.ts:67
 
 **Parameters:**
 
@@ -408,9 +403,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[removeListener](_server_configured_.configuredserver.md#removelistener)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:25
+Defined in node_modules/@types/node/events.d.ts:65
 
 **Parameters:**
 
@@ -436,9 +429,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[setMaxListeners](_server_configured_.configuredserver.md#setmaxlisteners)*
 
-*Overrides void*
-
-Defined in node_modules/@types/node/events.d.ts:28
+Defined in node_modules/@types/node/events.d.ts:68
 
 **Parameters:**
 
@@ -456,7 +447,7 @@ ___
 
 *Inherited from [ConfiguredServer](_server_configured_.configuredserver.md).[listenerCount](_server_configured_.configuredserver.md#static-listenercount)*
 
-Defined in node_modules/@types/node/events.d.ts:17
+Defined in node_modules/@types/node/events.d.ts:44
 
 **`deprecated`** since v4.0.0
 

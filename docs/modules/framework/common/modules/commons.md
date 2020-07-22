@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [commons](modules/framework/common/commons.md)
+[Methodus - framework commons](../globals.md) › [commons](commons.md)
 
 # Namespace: commons
 
@@ -6,9 +6,9 @@
 
 ### Variables
 
-* [Logger](#const-logger)
-* [logger](#const-logger)
-* [util](#const-util)
+* [Logger](commons.md#const-logger)
+* [logger](commons.md#const-logger)
+* [util](commons.md#const-util)
 
 ## Variables
 
@@ -16,7 +16,7 @@
 
 • **Logger**: *typeof _Logger*
 
-Defined in lib/index.d.ts:8
+Defined in modules/framework/framework-commons/lib/index.d.ts:6
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **logger**: *_Logger*
 
-Defined in lib/index.d.ts:9
+Defined in modules/framework/framework-commons/lib/index.d.ts:7
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **util**: *[fp](../classes/fp.md)*
 
-Defined in lib/index.d.ts:10
+Defined in modules/framework/framework-commons/lib/index.d.ts:8

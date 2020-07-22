@@ -14,7 +14,7 @@
 
 ▸ **verbBasedMethod**(`target`: any, `propertyKey`: string, `descriptor`: TypedPropertyDescriptor‹any›, `verb?`: undefined | string, `route?`: undefined | string, `middlewares?`: Function[]): *TypedPropertyDescriptor‹any›*
 
-*Defined in [src/method/method-pipe.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/method-pipe.ts#L14)*
+*Defined in [src/method/method-pipe.ts:14](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/method-pipe.ts#L14)*
 
 the @Method decorator registers route listeners
 

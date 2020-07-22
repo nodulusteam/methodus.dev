@@ -14,7 +14,7 @@
 
 ▸ **deserialize**(`item`: object | any): *any*
 
-*Defined in [src/method/deserialize.ts:27](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/deserialize.ts#L27)*
+*Defined in [src/method/deserialize.ts:27](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/deserialize.ts#L27)*
 
 Deserialize values according to their types
 

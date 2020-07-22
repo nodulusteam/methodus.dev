@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IServerConfig](modules/framework/common/iserverconfig.md)
+[Methodus - framework commons](../globals.md) › [IServerConfig](iserverconfig.md)
 
 # Interface: IServerConfig
 
@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [options](#options)
-* [type](#type)
+* [options](iserverconfig.md#options)
+* [type](iserverconfig.md#type)
 
 ## Properties
 
@@ -19,7 +19,7 @@
 
 • **options**: *any*
 
-Defined in lib/interfaces/index.d.ts:53
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:53
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **type**: *[ServerType](../enums/servertype.md)*
 
-Defined in lib/interfaces/index.d.ts:52
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:52

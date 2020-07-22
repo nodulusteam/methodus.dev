@@ -12,6 +12,7 @@
 * [MethodPipeHandler](_index_.md#methodpipehandler)
 * [Mocker](_index_.md#mocker)
 * [Parser](_index_.md#parser)
+* [Response](_index_.md#response)
 * [ResponseParser](_index_.md#responseparser)
 * [Server](_index_.md#server)
 * [Servers](_index_.md#servers)
@@ -20,7 +21,6 @@
 
 ### Variables
 
-* [commonsModule](_index_.md#const-commonsmodule)
 * [decoratorsModule](_index_.md#const-decoratorsmodule)
 * [injectionModule](_index_.md#const-injectionmodule)
 
@@ -62,6 +62,12 @@ ___
 
 ___
 
+###  Response
+
+• **Response**:
+
+___
+
 ###  ResponseParser
 
 • **ResponseParser**:
@@ -92,19 +98,11 @@ ___
 
 ## Variables
 
-### `Const` commonsModule
-
-• **commonsModule**: *commons* = commons
-
-*Defined in [src/index.ts:51](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/index.ts#L51)*
-
-___
-
 ### `Const` decoratorsModule
 
 • **decoratorsModule**: *decorators* = decorators
 
-*Defined in [src/index.ts:53](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/index.ts#L53)*
+*Defined in [src/index.ts:26](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/index.ts#L26)*
 
 ___
 
@@ -112,4 +110,4 @@ ___
 
 • **injectionModule**: *injection* = injection
 
-*Defined in [src/index.ts:52](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/index.ts#L52)*
+*Defined in [src/index.ts:25](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/index.ts#L25)*

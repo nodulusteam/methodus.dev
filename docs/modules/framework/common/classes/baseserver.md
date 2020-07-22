@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [BaseServer](modules/framework/common/baseserver.md)
+[Methodus - framework commons](../globals.md) › [BaseServer](baseserver.md)
 
 # Class: BaseServer
 
@@ -10,13 +10,13 @@
 
 ### Properties
 
-* [classRouters](#classrouters)
-* [config](#optional-config)
+* [classRouters](baseserver.md#classrouters)
+* [config](baseserver.md#optional-config)
 
 ### Methods
 
-* [_send](#_send)
-* [useClass](#useclass)
+* [_send](baseserver.md#_send)
+* [useClass](baseserver.md#useclass)
 
 ## Properties
 
@@ -24,9 +24,9 @@
 
 • **classRouters**: *[ClassRef](../globals.md#classref)[]* = []
 
-Defined in lib/config/base.d.ts:4
+Defined in modules/framework/framework-commons/lib/config/base.d.ts:4
 
-*Defined in [src/config/base.ts:6](#L6)*
+*Defined in [modules/framework/framework-commons/src/config/base.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/config/base.ts#L6)*
 
 ___
 
@@ -34,9 +34,9 @@ ___
 
 • **config**? : *[IMethodusConfig](../interfaces/imethodusconfig.md)*
 
-Defined in lib/config/base.d.ts:3
+Defined in modules/framework/framework-commons/lib/config/base.d.ts:3
 
-*Defined in [src/config/base.ts:5](#L5)*
+*Defined in [modules/framework/framework-commons/src/config/base.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/config/base.ts#L5)*
 
 ## Methods
 
@@ -44,7 +44,7 @@ Defined in lib/config/base.d.ts:3
 
 ▸ **_send**(`functionArgs`: any[], `methodinformation`: any, `paramsMap`: [Dictionary](../globals.md#dictionary), `securityContext?`: [Dictionary](../globals.md#dictionary)): *any*
 
-Defined in lib/config/base.d.ts:6
+Defined in modules/framework/framework-commons/lib/config/base.d.ts:6
 
 **Parameters:**
 
@@ -63,7 +63,7 @@ ___
 
 ▸ **useClass**(`classType`: any, `methodType`: [MethodType](../enums/methodtype.md)): *any*
 
-Defined in lib/config/base.d.ts:5
+Defined in modules/framework/framework-commons/lib/config/base.d.ts:5
 
 **Parameters:**
 

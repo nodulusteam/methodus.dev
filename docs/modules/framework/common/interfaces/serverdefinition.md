@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [ServerDefinition](modules/framework/common/serverdefinition.md)
+[Methodus - framework commons](../globals.md) › [ServerDefinition](serverdefinition.md)
 
 # Interface: ServerDefinition
 
@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [module](#optional-module)
-* [name](#name)
-* [parser](#optional-parser)
-* [path](#optional-path)
-* [response](#optional-response)
-* [static](#optional-static)
+* [module](serverdefinition.md#optional-module)
+* [name](serverdefinition.md#name)
+* [parser](serverdefinition.md#optional-parser)
+* [path](serverdefinition.md#optional-path)
+* [response](serverdefinition.md#optional-response)
+* [static](serverdefinition.md#optional-static)
 
 ## Properties
 
@@ -23,7 +23,7 @@
 
 • **module**? : *any*
 
-Defined in lib/interfaces/index.d.ts:87
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:87
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **name**: *string*
 
-Defined in lib/interfaces/index.d.ts:84
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:84
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **parser**? : *any*
 
-Defined in lib/interfaces/index.d.ts:88
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:88
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **path**? : *undefined | string*
 
-Defined in lib/interfaces/index.d.ts:85
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:85
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **response**? : *any*
 
-Defined in lib/interfaces/index.d.ts:89
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:89
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 • **static**? : *any*
 
-Defined in lib/interfaces/index.d.ts:86
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:86

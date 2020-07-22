@@ -27,7 +27,7 @@
 
 \+ **new ResponseParser**(`type`: ServerType | nameStruct): *[ResponseParser](_response_response_parser_.responseparser.md)*
 
-*Defined in [src/response/response-parser.ts:13](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/response/response-parser.ts#L13)*
+*Defined in [src/response/response-parser.ts:13](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/response/response-parser.ts#L13)*
 
 **Parameters:**
 
@@ -43,7 +43,7 @@ Name | Type |
 
 • **parser**: *any*
 
-*Defined in [src/response/response-parser.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/response/response-parser.ts#L12)*
+*Defined in [src/response/response-parser.ts:12](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/response/response-parser.ts#L12)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **response**: *any*
 
-*Defined in [src/response/response-parser.ts:13](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/response/response-parser.ts#L13)*
+*Defined in [src/response/response-parser.ts:13](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/response/response-parser.ts#L13)*
 
 ## Methods
 
@@ -59,7 +59,7 @@ ___
 
 ▸ **parse**(`args`: any, `paramsMap`: any, `functionArgs`: any): *any*
 
-*Defined in [src/response/response-parser.ts:23](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/response/response-parser.ts#L23)*
+*Defined in [src/response/response-parser.ts:23](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/response/response-parser.ts#L23)*
 
 **Parameters:**
 

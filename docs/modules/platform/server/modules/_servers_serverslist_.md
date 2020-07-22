@@ -18,4 +18,4 @@
 
 • **Servers**: *any* = (global as any).METHODUS_BRIDGE
 
-*Defined in [src/servers/serversList.ts:45](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/servers/serversList.ts#L45)*
+*Defined in [src/servers/serversList.ts:45](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/servers/serversList.ts#L45)*

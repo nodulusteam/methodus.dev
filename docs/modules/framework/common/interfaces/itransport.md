@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [ITransport](modules/framework/common/itransport.md)
+[Methodus - framework commons](../globals.md) › [ITransport](itransport.md)
 
 # Interface: ITransport
 
@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [name](#name)
+* [name](itransport.md#name)
 
 ### Methods
 
-* [register](#register)
-* [send](#send)
+* [register](itransport.md#register)
+* [send](itransport.md#send)
 
 ## Properties
 
@@ -23,7 +23,7 @@
 
 • **name**: *string*
 
-Defined in lib/interfaces/index.d.ts:35
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:35
 
 ## Methods
 
@@ -31,7 +31,7 @@ Defined in lib/interfaces/index.d.ts:35
 
 ▸ **register**(`server`: any, `parentServer`: any): *void*
 
-Defined in lib/interfaces/index.d.ts:36
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:36
 
 **Parameters:**
 
@@ -48,7 +48,7 @@ ___
 
 ▸ **send**(`methodus`: any, `functionArgs`: any, `paramsMap`: any, `securityContext`: any): *Promise‹any›*
 
-Defined in lib/interfaces/index.d.ts:37
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:37
 
 **Parameters:**
 

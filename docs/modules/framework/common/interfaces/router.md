@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [Router](modules/framework/common/router.md)
+[Methodus - framework commons](../globals.md) › [Router](router.md)
 
 # Interface: Router
 
@@ -10,7 +10,7 @@
 
 ### Properties
 
-* [prefix](#prefix)
+* [prefix](router.md#prefix)
 
 ## Properties
 
@@ -18,4 +18,4 @@
 
 • **prefix**: *string*
 
-Defined in lib/interfaces/index.d.ts:8
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:8

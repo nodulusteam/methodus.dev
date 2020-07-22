@@ -13,6 +13,7 @@
 * [MethodHandler](modules/framework/decorators/classes/methodhandler.md)
 * [ModuleClass](modules/framework/decorators/classes/moduleclass.md)
 * [Proxy](modules/framework/decorators/classes/proxy.md)
+* [TestAll](modules/framework/decorators/classes/testall.md)
 * [TestClass](modules/framework/decorators/classes/testclass.md)
 
 ### Variables
@@ -48,9 +49,9 @@ ___
 
 • **methodMetadataKey**: *"methodus"* = "methodus"
 
-*Defined in [framework-decorators/src/method/method.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/method/method.ts#L3)*
+*Defined in [framework-decorators/src/method/method.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/method/method.ts#L3)*
 
-*Defined in [framework-decorators/src/method/method-pipe.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/method/method-pipe.ts#L3)*
+*Defined in [framework-decorators/src/method/method-pipe.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/method/method-pipe.ts#L3)*
 
 ## Functions
 

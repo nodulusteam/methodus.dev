@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [ServerType](modules/framework/common/servertype.md)
+[Methodus - framework commons](../globals.md) › [ServerType](servertype.md)
 
 # Enumeration: ServerType
 
@@ -6,13 +6,13 @@
 
 ### Enumeration members
 
-* [Custom](#custom)
-* [Express](#express)
-* [HTTP2](#http2)
-* [Kafka](#kafka)
-* [RabbitMQ](#rabbitmq)
-* [Redis](#redis)
-* [Socket](#socket)
+* [Custom](servertype.md#custom)
+* [Express](servertype.md#express)
+* [HTTP2](servertype.md#http2)
+* [Kafka](servertype.md#kafka)
+* [RabbitMQ](servertype.md#rabbitmq)
+* [Redis](servertype.md#redis)
+* [Socket](servertype.md#socket)
 
 ## Enumeration members
 
@@ -20,7 +20,7 @@
 
 • **Custom**: = "Custom"
 
-Defined in lib/interfaces/index.d.ts:81
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:81
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **Express**: = "express"
 
-Defined in lib/interfaces/index.d.ts:75
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:75
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **HTTP2**: = "Http2"
 
-Defined in lib/interfaces/index.d.ts:80
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:80
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **Kafka**: = "kafka"
 
-Defined in lib/interfaces/index.d.ts:79
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:79
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **RabbitMQ**: = "amqp"
 
-Defined in lib/interfaces/index.d.ts:76
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:76
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **Redis**: = "redis"
 
-Defined in lib/interfaces/index.d.ts:77
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:77
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 • **Socket**: = "Socket"
 
-Defined in lib/interfaces/index.d.ts:78
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:78

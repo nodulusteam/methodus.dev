@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [MethodType](modules/framework/common/methodtype.md)
+[Methodus - framework commons](../globals.md) › [MethodType](methodtype.md)
 
 # Enumeration: MethodType
 
@@ -6,14 +6,14 @@
 
 ### Enumeration members
 
-* [Http](#http)
-* [Http2](#http2)
-* [Kafka](#kafka)
-* [Local](#local)
-* [MQ](#mq)
-* [Mock](#mock)
-* [Redis](#redis)
-* [Socket](#socket)
+* [Http](methodtype.md#http)
+* [Http2](methodtype.md#http2)
+* [Kafka](methodtype.md#kafka)
+* [Local](methodtype.md#local)
+* [MQ](methodtype.md#mq)
+* [Mock](methodtype.md#mock)
+* [Redis](methodtype.md#redis)
+* [Socket](methodtype.md#socket)
 
 ## Enumeration members
 
@@ -21,7 +21,7 @@
 
 • **Http**: = "Http"
 
-Defined in lib/interfaces/index.d.ts:66
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:66
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **Http2**: = "Http2"
 
-Defined in lib/interfaces/index.d.ts:67
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:67
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **Kafka**: = "Kafka"
 
-Defined in lib/interfaces/index.d.ts:71
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:71
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 • **Local**: = "Local"
 
-Defined in lib/interfaces/index.d.ts:65
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:65
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 • **MQ**: = "MQ"
 
-Defined in lib/interfaces/index.d.ts:68
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:68
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 • **Mock**: = "Mock"
 
-Defined in lib/interfaces/index.d.ts:72
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:72
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 • **Redis**: = "Redis"
 
-Defined in lib/interfaces/index.d.ts:69
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:69
 
 ___
 
@@ -77,4 +77,4 @@ ___
 
 • **Socket**: = "Socket"
 
-Defined in lib/interfaces/index.d.ts:70
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:70

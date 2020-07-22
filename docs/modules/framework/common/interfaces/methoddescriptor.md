@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [MethodDescriptor](modules/framework/common/methoddescriptor.md)
+[Methodus - framework commons](../globals.md) › [MethodDescriptor](methoddescriptor.md)
 
 # Interface: MethodDescriptor
 
@@ -6,18 +6,18 @@
 
 * **MethodDescriptor**
 
-  ↳ [EventDescriptor](modules/framework/common/eventdescriptor.md)
+  ↳ [EventDescriptor](eventdescriptor.md)
 
 ## Index
 
 ### Properties
 
-* [methodType](#methodtype)
-* [middlewares](#optional-middlewares)
-* [params](#params)
-* [propertyKey](#propertykey)
-* [route](#route)
-* [verb](#verb)
+* [methodType](methoddescriptor.md#methodtype)
+* [middlewares](methoddescriptor.md#optional-middlewares)
+* [params](methoddescriptor.md#params)
+* [propertyKey](methoddescriptor.md#propertykey)
+* [route](methoddescriptor.md#route)
+* [verb](methoddescriptor.md#verb)
 
 ## Properties
 
@@ -25,7 +25,7 @@
 
 • **methodType**: *[MethodType](../enums/methodtype.md)*
 
-Defined in lib/interfaces/index.d.ts:94
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:94
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **middlewares**? : *any*
 
-Defined in lib/interfaces/index.d.ts:96
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:96
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **params**: *any[]*
 
-Defined in lib/interfaces/index.d.ts:97
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:97
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 • **propertyKey**: *string*
 
-Defined in lib/interfaces/index.d.ts:95
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:95
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **route**: *string*
 
-Defined in lib/interfaces/index.d.ts:93
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:93
 
 ___
 
@@ -65,4 +65,4 @@ ___
 
 • **verb**: *string*
 
-Defined in lib/interfaces/index.d.ts:92
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:92

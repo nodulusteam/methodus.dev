@@ -18,7 +18,7 @@
 
 ▸ **methodDecorator**(`target`: any, `propertyKey`: string, `descriptor`: TypedPropertyDescriptor‹any›, ...`args`: any): *void*
 
-*Defined in [src/method/handlers/method.handler.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/platform/server/src/method/handlers/method.handler.ts#L6)*
+*Defined in [src/method/handlers/method.handler.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/platform/server/src/method/handlers/method.handler.ts#L6)*
 
 **Parameters:**
 

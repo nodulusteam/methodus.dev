@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [TransportType](modules/framework/common/transporttype.md)
+[Methodus - framework commons](../globals.md) › [TransportType](transporttype.md)
 
 # Enumeration: TransportType
 
@@ -6,13 +6,13 @@
 
 ### Enumeration members
 
-* [Custom](#custom)
-* [Http](#http)
-* [Kafka](#kafka)
-* [MQ](#mq)
-* [Mock](#mock)
-* [Redis](#redis)
-* [Socket](#socket)
+* [Custom](transporttype.md#custom)
+* [Http](transporttype.md#http)
+* [Kafka](transporttype.md#kafka)
+* [MQ](transporttype.md#mq)
+* [Mock](transporttype.md#mock)
+* [Redis](transporttype.md#redis)
+* [Socket](transporttype.md#socket)
 
 ## Enumeration members
 
@@ -20,7 +20,7 @@
 
 • **Custom**: = "Custom"
 
-Defined in lib/interfaces/index.d.ts:62
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:62
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **Http**: = "Http"
 
-Defined in lib/interfaces/index.d.ts:56
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:56
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **Kafka**: = "Kafka"
 
-Defined in lib/interfaces/index.d.ts:60
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:60
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **MQ**: = "MQ"
 
-Defined in lib/interfaces/index.d.ts:57
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:57
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **Mock**: = "Mock"
 
-Defined in lib/interfaces/index.d.ts:61
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:61
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **Redis**: = "Redis"
 
-Defined in lib/interfaces/index.d.ts:58
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:58
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 • **Socket**: = "Socket"
 
-Defined in lib/interfaces/index.d.ts:59
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:59

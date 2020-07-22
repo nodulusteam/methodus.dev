@@ -24,4 +24,3 @@
 * ["servers/index"](modules/_servers_index_.md)
 * ["servers/serversList"](modules/_servers_serverslist_.md)
 * ["shim"](modules/_shim_.md)
-* ["types.d"](modules/_types_d_.md)

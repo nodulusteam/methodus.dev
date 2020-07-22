@@ -18,6 +18,6 @@
 
 ▸ **add**(): *void*
 
-*Defined in [framework-decorators/src/proxy/proxy.spec.ts:22](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/0650919/modules/framework/framework-decorators/src/proxy/proxy.spec.ts#L22)*
+*Defined in [framework-decorators/src/proxy/proxy.spec.ts:22](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/proxy/proxy.spec.ts#L22)*
 
 **Returns:** *void*

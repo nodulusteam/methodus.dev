@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [IServer](modules/framework/common/iserver.md)
+[Methodus - framework commons](../globals.md) › [IServer](iserver.md)
 
 # Interface: IServer
 
@@ -10,14 +10,14 @@
 
 ### Properties
 
-* [classRouters](#classrouters)
-* [config](#config)
-* [sockets](#optional-sockets)
+* [classRouters](iserver.md#classrouters)
+* [config](iserver.md#config)
+* [sockets](iserver.md#optional-sockets)
 
 ### Methods
 
-* [_send](#_send)
-* [useClass](#useclass)
+* [_send](iserver.md#_send)
+* [useClass](iserver.md#useclass)
 
 ## Properties
 
@@ -25,15 +25,15 @@
 
 • **classRouters**: *any[]*
 
-Defined in lib/interfaces/index.d.ts:40
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:40
 
 ___
 
 ###  config
 
-• **config**: *[IMethodusConfig](modules/framework/common/imethodusconfig.md)*
+• **config**: *[IMethodusConfig](imethodusconfig.md)*
 
-Defined in lib/interfaces/index.d.ts:41
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:41
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 • **sockets**? : *any*
 
-Defined in lib/interfaces/index.d.ts:42
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:42
 
 ## Methods
 
@@ -49,7 +49,7 @@ Defined in lib/interfaces/index.d.ts:42
 
 ▸ **_send**(`channel`: any, `functionArgs`: any, `message`: any, `paramsMap?`: any): *any*
 
-Defined in lib/interfaces/index.d.ts:44
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:44
 
 **Parameters:**
 
@@ -68,7 +68,7 @@ ___
 
 ▸ **useClass**(`classType`: any, `methodType`: [MethodType](../enums/methodtype.md)): *void*
 
-Defined in lib/interfaces/index.d.ts:43
+Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:43
 
 **Parameters:**
 
