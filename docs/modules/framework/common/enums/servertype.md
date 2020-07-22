@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [ServerType](servertype.md)
+[Methodus - framework commons](../globals.md) › [ServerType](modules/framework/common/servertype.md)
 
 # Enumeration: ServerType
 
@@ -6,13 +6,13 @@
 
 ### Enumeration members
 
-* [Custom](servertype.md#custom)
-* [Express](servertype.md#express)
-* [HTTP2](servertype.md#http2)
-* [Kafka](servertype.md#kafka)
-* [RabbitMQ](servertype.md#rabbitmq)
-* [Redis](servertype.md#redis)
-* [Socket](servertype.md#socket)
+* [Custom](#custom)
+* [Express](#express)
+* [HTTP2](#http2)
+* [Kafka](#kafka)
+* [RabbitMQ](#rabbitmq)
+* [Redis](#redis)
+* [Socket](#socket)
 
 ## Enumeration members
 

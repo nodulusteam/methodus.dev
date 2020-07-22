@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [Logger](logger.md)
+[Methodus - framework commons](../globals.md) › [Logger](modules/framework/common/logger.md)
 
 # Class: Logger
 
@@ -10,28 +10,28 @@
 
 ### Constructors
 
-* [constructor](logger.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [logger](logger.md#logger)
+* [logger](#logger)
 
 ### Methods
 
-* [debug](logger.md#debug)
-* [error](logger.md#error)
-* [getArgs](logger.md#getargs)
-* [info](logger.md#info)
-* [log](logger.md#log)
-* [print](logger.md#print)
-* [safeJSON](logger.md#safejson)
-* [warn](logger.md#warn)
+* [debug](#debug)
+* [error](#error)
+* [getArgs](#getargs)
+* [info](#info)
+* [log](#log)
+* [print](#print)
+* [safeJSON](#safejson)
+* [warn](#warn)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new Logger**(`name`: string): *[Logger](logger.md)*
+\+ **new Logger**(`name`: string): *[Logger](modules/framework/common/logger.md)*
 
 Defined in modules/framework/framework-commons/lib/log/logger.d.ts:2
 
@@ -41,7 +41,7 @@ Name | Type |
 ------ | ------ |
 `name` | string |
 
-**Returns:** *[Logger](logger.md)*
+**Returns:** *[Logger](modules/framework/common/logger.md)*
 
 ## Properties
 
@@ -51,7 +51,7 @@ Name | Type |
 
 Defined in modules/framework/framework-commons/lib/log/logger.d.ts:2
 
-*Defined in [modules/framework/framework-commons/src/log/logger.ts:2](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/log/logger.ts#L2)*
+*Defined in [modules/framework/framework-commons/src/log/logger.ts:2](#L2)*
 
 ## Methods
 

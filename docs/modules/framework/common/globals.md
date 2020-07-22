@@ -1,4 +1,4 @@
-[Methodus - framework commons](globals.md)
+[Methodus - framework commons](modules/framework/common/globals.md)
 
 # Methodus - framework commons
 
@@ -6,69 +6,69 @@
 
 ### Namespaces
 
-* [commons](modules/commons.md)
+* [commons](modules/framework/common/modules/commons.md)
 
 ### Enumerations
 
-* [AuthType](enums/authtype.md)
-* [MethodType](enums/methodtype.md)
-* [ServerType](enums/servertype.md)
-* [TransportType](enums/transporttype.md)
+* [AuthType](modules/framework/common/enums/authtype.md)
+* [MethodType](modules/framework/common/enums/methodtype.md)
+* [ServerType](modules/framework/common/enums/servertype.md)
+* [TransportType](modules/framework/common/enums/transporttype.md)
 
 ### Classes
 
-* [BaseServer](classes/baseserver.md)
-* [Logger](classes/logger.md)
-* [MethodError](classes/methoderror.md)
-* [MethodResult](classes/methodresult.md)
-* [MethodResultStatus](classes/methodresultstatus.md)
-* [MethodusConfig](classes/methodusconfig.md)
-* [RestLink](classes/restlink.md)
-* [fp](classes/fp.md)
+* [BaseServer](modules/framework/common/classes/baseserver.md)
+* [Logger](modules/framework/common/classes/logger.md)
+* [MethodError](modules/framework/common/classes/methoderror.md)
+* [MethodResult](modules/framework/common/classes/methodresult.md)
+* [MethodResultStatus](modules/framework/common/classes/methodresultstatus.md)
+* [MethodusConfig](modules/framework/common/classes/methodusconfig.md)
+* [RestLink](modules/framework/common/classes/restlink.md)
+* [fp](modules/framework/common/classes/fp.md)
 
 ### Interfaces
 
-* [EventDescriptor](interfaces/eventdescriptor.md)
-* [IMethodusClassConfig](interfaces/imethodusclassconfig.md)
-* [IMethodusConfig](interfaces/imethodusconfig.md)
-* [IServer](interfaces/iserver.md)
-* [IServerConfig](interfaces/iserverconfig.md)
-* [ITransport](interfaces/itransport.md)
-* [MethodDescriptor](interfaces/methoddescriptor.md)
-* [MethodusParam](interfaces/methodusparam.md)
-* [PluginEntry](interfaces/pluginentry.md)
-* [Router](interfaces/router.md)
-* [ServerDefinition](interfaces/serverdefinition.md)
+* [EventDescriptor](modules/framework/common/interfaces/eventdescriptor.md)
+* [IMethodusClassConfig](modules/framework/common/interfaces/imethodusclassconfig.md)
+* [IMethodusConfig](modules/framework/common/interfaces/imethodusconfig.md)
+* [IServer](modules/framework/common/interfaces/iserver.md)
+* [IServerConfig](modules/framework/common/interfaces/iserverconfig.md)
+* [ITransport](modules/framework/common/interfaces/itransport.md)
+* [MethodDescriptor](modules/framework/common/interfaces/methoddescriptor.md)
+* [MethodusParam](modules/framework/common/interfaces/methodusparam.md)
+* [PluginEntry](modules/framework/common/interfaces/pluginentry.md)
+* [Router](modules/framework/common/interfaces/router.md)
+* [ServerDefinition](modules/framework/common/interfaces/serverdefinition.md)
 
 ### Type aliases
 
-* [ClassArgs](globals.md#classargs)
-* [ClassNoArgs](globals.md#classnoargs)
-* [ClassRef](globals.md#classref)
-* [Dictionary](globals.md#dictionary)
-* [ModuleTargetClass](globals.md#moduletargetclass)
+* [ClassArgs](#classargs)
+* [ClassNoArgs](#classnoargs)
+* [ClassRef](#classref)
+* [Dictionary](#dictionary)
+* [ModuleTargetClass](#moduletargetclass)
 
 ### Variables
 
-* [Mapping](globals.md#const-mapping)
-* [logger](globals.md#const-logger)
-* [util](globals.md#const-util)
+* [Mapping](#const-mapping)
+* [logger](#const-logger)
+* [util](#const-util)
 
 ### Functions
 
-* [Body](globals.md#body)
-* [Cookies](globals.md#cookies)
-* [Files](globals.md#files)
-* [Headers](globals.md#headers)
-* [Param](globals.md#param)
-* [Query](globals.md#query)
-* [Request](globals.md#request)
-* [Response](globals.md#response)
-* [SecurityContext](globals.md#securitycontext)
-* [build](globals.md#build)
-* [pushParams](globals.md#pushparams)
-* [recurseODM](globals.md#recurseodm)
-* [validate](globals.md#validate)
+* [Body](#body)
+* [Cookies](#cookies)
+* [Files](#files)
+* [Headers](#headers)
+* [Param](#param)
+* [Query](#query)
+* [Request](#request)
+* [Response](#response)
+* [SecurityContext](#securitycontext)
+* [build](#build)
+* [pushParams](#pushparams)
+* [recurseODM](#recurseodm)
+* [validate](#validate)
 
 ## Type aliases
 
@@ -98,7 +98,7 @@ ___
 
 ###  ClassRef
 
-Ƭ **ClassRef**: *[ClassNoArgs](globals.md#classnoargs) | [ClassArgs](globals.md#classargs)*
+Ƭ **ClassRef**: *[ClassNoArgs](#classnoargs) | [ClassArgs](globals.md
 
 Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:19
 
@@ -126,13 +126,13 @@ Defined in modules/framework/framework-commons/lib/interfaces/index.d.ts:20
 
 * **new __type**(): *any*
 
-* **declarations**? : *[ClassRef](globals.md#classref)[]*
+* **declarations**? : *[ClassRef](#classref)[]*
 
-* **exports**? : *[ClassRef](globals.md#classref)[]*
+* **exports**? : *[ClassRef](#classref)[]*
 
-* **imports**? : *[ClassRef](globals.md#classref)[]*
+* **imports**? : *[ClassRef](#classref)[]*
 
-* **providers**? : *[ClassRef](globals.md#classref)[]*
+* **providers**? : *[ClassRef](#classref)[]*
 
 ## Variables
 
@@ -150,13 +150,13 @@ ___
 
 Defined in modules/framework/framework-commons/lib/log/logger.d.ts:13
 
-*Defined in [modules/framework/framework-commons/src/log/logger.ts:48](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/log/logger.ts#L48)*
+*Defined in [modules/framework/framework-commons/src/log/logger.ts:48](#L48)*
 
 ___
 
 ### `Const` util
 
-• **util**: *[fp](classes/fp.md)*
+• **util**: *[fp](modules/framework/common/classes/fp.md)*
 
 Defined in modules/framework/framework-commons/lib/fp/index.d.ts:10
 
@@ -404,7 +404,7 @@ ___
 
 ▸ **build**(`from`: string, `name?`: undefined | string, `type?`: undefined | string, `defaultValue?`: any): *(Anonymous function)*
 
-*Defined in [modules/framework/framework-commons/src/param/params.ts:49](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/param/params.ts#L49)*
+*Defined in [modules/framework/framework-commons/src/param/params.ts:49](#L49)*
 
 **Parameters:**
 
@@ -423,7 +423,7 @@ ___
 
 ▸ **pushParams**(`target`: any, `propertyKey`: any, `param`: any): *void*
 
-*Defined in [modules/framework/framework-commons/src/param/params.ts:16](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/param/params.ts#L16)*
+*Defined in [modules/framework/framework-commons/src/param/params.ts:16](#L16)*
 
 **Parameters:**
 
@@ -441,7 +441,7 @@ ___
 
 ▸ **recurseODM**(`odm`: any): *any*
 
-*Defined in [modules/framework/framework-commons/src/param/params.ts:4](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/param/params.ts#L4)*
+*Defined in [modules/framework/framework-commons/src/param/params.ts:4](#L4)*
 
 **Parameters:**
 

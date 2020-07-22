@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [TestAll](modules/framework/decorators/testall.md)
+[A Methodus guide](../README.md) › [TestAll](testall.md)
 
 # Class: TestAll
 

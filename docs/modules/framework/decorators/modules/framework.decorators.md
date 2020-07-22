@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [framework](modules/framework/decorators/framework.md) › [decorators](framework.decorators.md)
+[A Methodus guide](../README.md) › [framework](framework.md) › [decorators](framework.decorators.md)
 
 # Namespace: decorators
 
@@ -6,18 +6,18 @@
 
 ### Variables
 
-* [Auth](modules/framework/decorators/framework.decorators.md#const-auth)
-* [ClientConfiguration](modules/framework/decorators/framework.decorators.md#const-clientconfiguration)
-* [Method](modules/framework/decorators/framework.decorators.md#const-method)
-* [MethodConfig](modules/framework/decorators/framework.decorators.md#const-methodconfig)
-* [MethodMock](modules/framework/decorators/framework.decorators.md#const-methodmock)
-* [MethodPipe](modules/framework/decorators/framework.decorators.md#const-methodpipe)
-* [Module](modules/framework/decorators/framework.decorators.md#const-module)
-* [ModuleConfiguration](modules/framework/decorators/framework.decorators.md#const-moduleconfiguration)
-* [PluginConfiguration](modules/framework/decorators/framework.decorators.md#const-pluginconfiguration)
-* [Proxy](modules/framework/decorators/framework.decorators.md#const-proxy)
-* [RouterConfiguration](modules/framework/decorators/framework.decorators.md#const-routerconfiguration)
-* [ServerConfiguration](modules/framework/decorators/framework.decorators.md#const-serverconfiguration)
+* [Auth](framework.decorators.md#const-auth)
+* [ClientConfiguration](framework.decorators.md#const-clientconfiguration)
+* [Method](framework.decorators.md#const-method)
+* [MethodConfig](framework.decorators.md#const-methodconfig)
+* [MethodMock](framework.decorators.md#const-methodmock)
+* [MethodPipe](framework.decorators.md#const-methodpipe)
+* [Module](framework.decorators.md#const-module)
+* [ModuleConfiguration](framework.decorators.md#const-moduleconfiguration)
+* [PluginConfiguration](framework.decorators.md#const-pluginconfiguration)
+* [Proxy](framework.decorators.md#const-proxy)
+* [RouterConfiguration](framework.decorators.md#const-routerconfiguration)
+* [ServerConfiguration](framework.decorators.md#const-serverconfiguration)
 
 ## Variables
 
@@ -27,7 +27,7 @@
 
 Defined in framework-decorators/lib/index.d.ts:12
 
-*Defined in [framework-decorators/src/index.ts:27](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L27)*
+*Defined in [framework-decorators/src/index.ts:27](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L27)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:15
 
-*Defined in [framework-decorators/src/index.ts:30](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L30)*
+*Defined in [framework-decorators/src/index.ts:30](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L30)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:7
 
-*Defined in [framework-decorators/src/index.ts:21](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L21)*
+*Defined in [framework-decorators/src/index.ts:21](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L21)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:9
 
-*Defined in [framework-decorators/src/index.ts:23](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L23)*
+*Defined in [framework-decorators/src/index.ts:23](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L23)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:10
 
-*Defined in [framework-decorators/src/index.ts:24](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L24)*
+*Defined in [framework-decorators/src/index.ts:24](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L24)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:8
 
-*Defined in [framework-decorators/src/index.ts:22](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L22)*
+*Defined in [framework-decorators/src/index.ts:22](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L22)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:14
 
-*Defined in [framework-decorators/src/index.ts:29](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L29)*
+*Defined in [framework-decorators/src/index.ts:29](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L29)*
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:13
 
-*Defined in [framework-decorators/src/index.ts:28](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L28)*
+*Defined in [framework-decorators/src/index.ts:28](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L28)*
 
 ___
 
@@ -107,7 +107,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:16
 
-*Defined in [framework-decorators/src/index.ts:31](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L31)*
+*Defined in [framework-decorators/src/index.ts:31](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L31)*
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:11
 
-*Defined in [framework-decorators/src/index.ts:25](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L25)*
+*Defined in [framework-decorators/src/index.ts:25](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L25)*
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:17
 
-*Defined in [framework-decorators/src/index.ts:32](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L32)*
+*Defined in [framework-decorators/src/index.ts:32](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L32)*
 
 ___
 
@@ -137,4 +137,4 @@ ___
 
 Defined in framework-decorators/lib/index.d.ts:18
 
-*Defined in [framework-decorators/src/index.ts:33](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/index.ts#L33)*
+*Defined in [framework-decorators/src/index.ts:33](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/index.ts#L33)*

@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [ServerDefinition](serverdefinition.md)
+[Methodus - framework commons](../globals.md) › [ServerDefinition](modules/framework/common/serverdefinition.md)
 
 # Interface: ServerDefinition
 
@@ -10,12 +10,12 @@
 
 ### Properties
 
-* [module](serverdefinition.md#optional-module)
-* [name](serverdefinition.md#name)
-* [parser](serverdefinition.md#optional-parser)
-* [path](serverdefinition.md#optional-path)
-* [response](serverdefinition.md#optional-response)
-* [static](serverdefinition.md#optional-static)
+* [module](#optional-module)
+* [name](#name)
+* [parser](#optional-parser)
+* [path](#optional-path)
+* [response](#optional-response)
+* [static](#optional-static)
 
 ## Properties
 

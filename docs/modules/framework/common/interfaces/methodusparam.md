@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [MethodusParam](methodusparam.md)
+[Methodus - framework commons](../globals.md) › [MethodusParam](modules/framework/common/methodusparam.md)
 
 # Interface: MethodusParam
 
@@ -10,8 +10,8 @@
 
 ### Properties
 
-* [from](methodusparam.md#from)
-* [name](methodusparam.md#name)
+* [from](#from)
+* [name](#name)
 
 ## Properties
 
@@ -19,7 +19,7 @@
 
 • **from**: *string*
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:78](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L78)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:78](#L78)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **name**: *string*
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:77](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L77)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:77](#L77)*

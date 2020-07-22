@@ -1,4 +1,4 @@
-[A Methodus guide](../README.md) › [Proxy](modules/framework/decorators/proxy.md)
+[A Methodus guide](../README.md) › [Proxy](proxy.md)
 
 # Class: Proxy
 
@@ -10,7 +10,7 @@
 
 ### Methods
 
-* [ProxyClass](modules/framework/decorators/proxy.md#static-proxyclass)
+* [ProxyClass](proxy.md#static-proxyclass)
 
 ## Methods
 

@@ -5,11 +5,10 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
+        "build": "rm -rf ./lib && tsc",
         "test": "jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
-        "build": "rm -rf ./lib && tsc",
-        "docs": "rm -rf ../../docs/modules/framework/common && typedoc",
-        "docs:replace": "node ./docs.js"
+        "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
@@ -18,9 +17,6 @@
     },
     "dependencies": {
         "reflect-metadata": "^0.1.13"
-    },
-    "devDependencies": {
-      
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }

@@ -1,0 +1,19 @@
+import decorators from '@methodus/framework-decorators';
+import injection from '@methodus/framework-injection';
+import { TestLogger } from './logger.service';
+import { MethodResult } from '@methodus/framework-commons';
+
+/**
+ * @hidden
+ */
+@decorators.MethodConfig('DataService')
+export class DataService {
+    @decorators.Method()
+    public async special(id: string) {
+        return new MethodResult(id);
+    }
+    constructor(@injection.Inject() private testLogger:TestLogger) {
+        this.testLogger.log('instance created for DataService');
+    }
+
+}

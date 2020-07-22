@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [RestLink](restlink.md)
+[Methodus - framework commons](../globals.md) › [RestLink](modules/framework/common/restlink.md)
 
 # Class: RestLink
 
@@ -10,25 +10,25 @@
 
 ### Constructors
 
-* [constructor](restlink.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [action](restlink.md#action)
-* [href](restlink.md#href)
-* [methodKey](restlink.md#methodkey)
-* [rel](restlink.md#rel)
-* [types](restlink.md#types)
+* [action](#action)
+* [href](#href)
+* [methodKey](#methodkey)
+* [rel](#rel)
+* [types](#types)
 
 ### Methods
 
-* [toString](restlink.md#tostring)
+* [toString](#tostring)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new RestLink**(`rel`: string, `href`: string, `action`: string, `types`: string[], `methodKey`: string): *[RestLink](restlink.md)*
+\+ **new RestLink**(`rel`: string, `href`: string, `action`: string, `types`: string[], `methodKey`: string): *[RestLink](modules/framework/common/restlink.md)*
 
 Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:24
 
@@ -42,7 +42,7 @@ Name | Type |
 `types` | string[] |
 `methodKey` | string |
 
-**Returns:** *[RestLink](restlink.md)*
+**Returns:** *[RestLink](modules/framework/common/restlink.md)*
 
 ## Properties
 
@@ -52,7 +52,7 @@ Name | Type |
 
 Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:22
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:84](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L84)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:84](#L84)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:21
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:83](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L83)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:83](#L83)*
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:24
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:86](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L86)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:86](#L86)*
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:20
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:82](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L82)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:82](#L82)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.result.d.ts:23
 
-*Defined in [modules/framework/framework-commons/src/response/method.result.ts:85](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.result.ts#L85)*
+*Defined in [modules/framework/framework-commons/src/response/method.result.ts:85](#L85)*
 
 ## Methods
 

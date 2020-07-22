@@ -1,12 +1,12 @@
-[Methodus - framework commons](../globals.md) › [MethodError](methoderror.md)
+[Methodus - framework commons](../globals.md) › [MethodError](modules/framework/common/methoderror.md)
 
 # Class: MethodError
 
 ## Hierarchy
 
-* [Error](methoderror.md#static-error)
+* [Error](#static-error)
 
-* [Error](methoderror.md#static-error)
+* [Error](#static-error)
 
   ↳ **MethodError**
 
@@ -14,24 +14,24 @@
 
 ### Constructors
 
-* [constructor](methoderror.md#constructor)
+* [constructor](#constructor)
 
 ### Properties
 
-* [additional](methoderror.md#additional)
-* [error](methoderror.md#error)
-* [message](methoderror.md#message)
-* [name](methoderror.md#name)
-* [stack](methoderror.md#optional-stack)
-* [statusCode](methoderror.md#statuscode)
-* [statusText](methoderror.md#optional-statustext)
-* [Error](methoderror.md#static-error)
+* [additional](#additional)
+* [error](#error)
+* [message](#message)
+* [name](#name)
+* [stack](#optional-stack)
+* [statusCode](#statuscode)
+* [statusText](#optional-statustext)
+* [Error](#static-error)
 
 ## Constructors
 
 ###  constructor
 
-\+ **new MethodError**(`error`: [Error](methoderror.md#static-error) | string, `statusCode?`: undefined | number, `additional?`: [Dictionary](../globals.md#dictionary)): *[MethodError](methoderror.md)*
+\+ **new MethodError**(`error`: [Error](#static-error) | string, `statusCode?`: undefined | number, `additional?`: [Dictionary](../globals.md
 
 Defined in modules/framework/framework-commons/lib/response/method.error.d.ts:6
 
@@ -39,11 +39,11 @@ Defined in modules/framework/framework-commons/lib/response/method.error.d.ts:6
 
 Name | Type |
 ------ | ------ |
-`error` | [Error](methoderror.md#static-error) &#124; string |
+`error` | [Error](#static-error) &
 `statusCode?` | undefined &#124; number |
 `additional?` | [Dictionary](../globals.md#dictionary) |
 
-**Returns:** *[MethodError](methoderror.md)*
+**Returns:** *[MethodError](modules/framework/common/methoderror.md)*
 
 ## Properties
 
@@ -53,7 +53,7 @@ Name | Type |
 
 Defined in modules/framework/framework-commons/lib/response/method.error.d.ts:6
 
-*Defined in [modules/framework/framework-commons/src/response/method.error.ts:8](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.error.ts#L8)*
+*Defined in [modules/framework/framework-commons/src/response/method.error.ts:8](#L8)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.error.d.ts:3
 
-*Defined in [modules/framework/framework-commons/src/response/method.error.ts:5](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.error.ts#L5)*
+*Defined in [modules/framework/framework-commons/src/response/method.error.ts:5](#L5)*
 
 ___
 
@@ -71,9 +71,9 @@ ___
 
 • **message**: *string*
 
-*Inherited from [MethodError](methoderror.md).[message](methoderror.md#message)*
+*Inherited from [MethodError](#message)*
 
-*Overrides [MethodError](methoderror.md).[message](methoderror.md#message)*
+*Overrides [MethodError](#message)*
 
 Defined in node_modules/typescript/lib/lib.es5.d.ts:974
 
@@ -83,9 +83,9 @@ ___
 
 • **name**: *string*
 
-*Inherited from [MethodError](methoderror.md).[name](methoderror.md#name)*
+*Inherited from [MethodError](#name)*
 
-*Overrides [MethodError](methoderror.md).[name](methoderror.md#name)*
+*Overrides [MethodError](#name)*
 
 Defined in node_modules/typescript/lib/lib.es5.d.ts:973
 
@@ -95,9 +95,9 @@ ___
 
 • **stack**? : *undefined | string*
 
-*Inherited from [MethodError](methoderror.md).[stack](methoderror.md#optional-stack)*
+*Inherited from [MethodError](#optional-stack)*
 
-*Overrides [MethodError](methoderror.md).[stack](methoderror.md#optional-stack)*
+*Overrides [MethodError](#optional-stack)*
 
 Defined in node_modules/typescript/lib/lib.es5.d.ts:975
 
@@ -109,7 +109,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.error.d.ts:4
 
-*Defined in [modules/framework/framework-commons/src/response/method.error.ts:6](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.error.ts#L6)*
+*Defined in [modules/framework/framework-commons/src/response/method.error.ts:6](#L6)*
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 Defined in modules/framework/framework-commons/lib/response/method.error.d.ts:5
 
-*Defined in [modules/framework/framework-commons/src/response/method.error.ts:7](https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-commons/src/response/method.error.ts#L7)*
+*Defined in [modules/framework/framework-commons/src/response/method.error.ts:7](#L7)*
 
 ___
 

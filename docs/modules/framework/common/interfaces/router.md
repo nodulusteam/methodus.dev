@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [Router](router.md)
+[Methodus - framework commons](../globals.md) › [Router](modules/framework/common/router.md)
 
 # Interface: Router
 
@@ -10,7 +10,7 @@
 
 ### Properties
 
-* [prefix](router.md#prefix)
+* [prefix](#prefix)
 
 ## Properties
 

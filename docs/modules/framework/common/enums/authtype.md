@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [AuthType](authtype.md)
+[Methodus - framework commons](../globals.md) › [AuthType](modules/framework/common/authtype.md)
 
 # Enumeration: AuthType
 
@@ -6,11 +6,11 @@
 
 ### Enumeration members
 
-* [ApiKey](authtype.md#apikey)
-* [Basic](authtype.md#basic)
-* [BearerToken](authtype.md#bearertoken)
-* [DigestAuth](authtype.md#digestauth)
-* [None](authtype.md#none)
+* [ApiKey](#apikey)
+* [Basic](#basic)
+* [BearerToken](#bearertoken)
+* [DigestAuth](#digestauth)
+* [None](#none)
 
 ## Enumeration members
 

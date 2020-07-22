@@ -1,4 +1,4 @@
-[Methodus - framework commons](../globals.md) › [fp](fp.md)
+[Methodus - framework commons](../globals.md) › [fp](modules/framework/common/fp.md)
 
 # Class: fp
 
@@ -10,13 +10,13 @@
 
 ### Methods
 
-* [maybe](fp.md#maybe)
-* [maybeEach](fp.md#maybeeach)
-* [maybeJson](fp.md#maybejson)
-* [maybeMethodus](fp.md#maybemethodus)
-* [maybeProto](fp.md#maybeproto)
-* [maybeString](fp.md#maybestring)
-* [unique](fp.md#unique)
+* [maybe](#maybe)
+* [maybeEach](#maybeeach)
+* [maybeJson](#maybejson)
+* [maybeMethodus](#maybemethodus)
+* [maybeProto](#maybeproto)
+* [maybeString](#maybestring)
+* [unique](#unique)
 
 ## Methods
 

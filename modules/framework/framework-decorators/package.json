@@ -5,10 +5,10 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
+        "build": "rimraf ./lib && yarn format & tsc",
         "test": "jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json",
-        "build": "rimraf ./lib && yarn format & tsc",
-        "docs": "rm -rf ../../docs/modules/framework/decorators && typedoc && node ./docs.js",
+        "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js ../../../docs/modules/framework/decorators",
         "format": "prettier -c --write ./src"
     },
     "author": "NodulusTeam",
@@ -16,10 +16,14 @@
     "publishConfig": {
         "access": "public"
     },
-    "dependencies": {
+    "dependencies": {},
+    "peerDependencies": {
         "@methodus/framework-commons": "^7.0.3",
         "@methodus/framework-injection": "^7.0.2"
     },
-    "devDependencies": {},
+    "devDependencies": {
+        "@methodus/framework-commons": "^7.0.3",
+        "@methodus/framework-injection": "^7.0.2"
+    },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }

@@ -1,4 +1,4 @@
-[A Methodus guide](modules/framework/decorators/README.md)
+[A Methodus guide](README.md)
 
 # A Methodus guide
 
@@ -6,34 +6,34 @@
 
 ### Namespaces
 
-* [framework](modules/framework/decorators/modules/framework.md)
+* [framework](modules/framework.md)
 
 ### Classes
 
-* [MethodHandler](modules/framework/decorators/classes/methodhandler.md)
-* [ModuleClass](modules/framework/decorators/classes/moduleclass.md)
-* [Proxy](modules/framework/decorators/classes/proxy.md)
-* [TestAll](modules/framework/decorators/classes/testall.md)
-* [TestClass](modules/framework/decorators/classes/testclass.md)
+* [MethodHandler](classes/methodhandler.md)
+* [ModuleClass](classes/moduleclass.md)
+* [Proxy](classes/proxy.md)
+* [TestAll](classes/testall.md)
+* [TestClass](classes/testclass.md)
 
 ### Variables
 
-* [_default](modules/framework/decorators/README.md#const-_default)
-* [methodMetadataKey](modules/framework/decorators/README.md#const-methodmetadatakey)
+* [_default](README.md#const-_default)
+* [methodMetadataKey](README.md#const-methodmetadatakey)
 
 ### Functions
 
-* [Auth](modules/framework/decorators/README.md#auth)
-* [ClientConfiguration](modules/framework/decorators/README.md#clientconfiguration)
-* [Method](modules/framework/decorators/README.md#method)
-* [MethodConfig](modules/framework/decorators/README.md#methodconfig)
-* [MethodMock](modules/framework/decorators/README.md#methodmock)
-* [MethodPipe](modules/framework/decorators/README.md#methodpipe)
-* [Module](modules/framework/decorators/README.md#module)
-* [ModuleConfiguration](modules/framework/decorators/README.md#moduleconfiguration)
-* [PluginConfiguration](modules/framework/decorators/README.md#pluginconfiguration)
-* [RouterConfiguration](modules/framework/decorators/README.md#routerconfiguration)
-* [ServerConfiguration](modules/framework/decorators/README.md#serverconfiguration)
+* [Auth](README.md#auth)
+* [ClientConfiguration](README.md#clientconfiguration)
+* [Method](README.md#method)
+* [MethodConfig](README.md#methodconfig)
+* [MethodMock](README.md#methodmock)
+* [MethodPipe](README.md#methodpipe)
+* [Module](README.md#module)
+* [ModuleConfiguration](README.md#moduleconfiguration)
+* [PluginConfiguration](README.md#pluginconfiguration)
+* [RouterConfiguration](README.md#routerconfiguration)
+* [ServerConfiguration](README.md#serverconfiguration)
 
 ## Variables
 
@@ -49,9 +49,9 @@ ___
 
 • **methodMetadataKey**: *"methodus"* = "methodus"
 
-*Defined in [framework-decorators/src/method/method.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/method/method.ts#L3)*
+*Defined in [framework-decorators/src/method/method.ts:3](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/method/method.ts#L3)*
 
-*Defined in [framework-decorators/src/method/method-pipe.ts:3](modules/framework/decorators/https://github.com/nodulusteam/methodus.dev/blob/9fa5503/modules/framework/framework-decorators/src/method/method-pipe.ts#L3)*
+*Defined in [framework-decorators/src/method/method-pipe.ts:3](https://github.com/nodulusteam/methodus.dev/blob/1c41eb7/modules/framework/framework-decorators/src/method/method-pipe.ts#L3)*
 
 ## Functions
 
