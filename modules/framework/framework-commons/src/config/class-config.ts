@@ -1,4 +1,4 @@
-import { MethodType, ServerType } from "../interfaces";
+import { MethodType, ServerType } from '../interfaces';
 
 
 /**

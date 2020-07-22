@@ -6,7 +6,7 @@
     "types": "lib/index.d.ts",
     "scripts": {
         "build": "rm -rf ./lib && tsc",
-        "test": "jest --silent && yarn coverage",
+        "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
         "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common"
     },
