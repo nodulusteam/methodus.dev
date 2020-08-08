@@ -24,5 +24,6 @@ export function ModuleConfiguration(moduleClass: ClassRef) {
         setupObject.servers = setupObject.servers.concat(moduleObject.servers);
         setupObject.clients = setupObject.clients.concat(moduleObject.clients);
         setupObject.plugins = setupObject.plugins.concat(moduleObject.plugins);
+        target.prototype.constructor();
     };
 }

@@ -8,5 +8,5 @@ export async function validate(args: any[]): Promise<boolean | string | string[]
             }
         }
     }
-    return (!validations.length) ? false : validations;
+    return (!validations.length) ? false : true;
 }

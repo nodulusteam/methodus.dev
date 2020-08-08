@@ -20,7 +20,5 @@
         "@methodus/framework-commons": "^7.0.3",
         "reflect-metadata": "^0.1.13"
     },
-    "devDependencies": {
-    },
-    "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
+    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

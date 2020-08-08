@@ -1,8 +1,7 @@
 import { MethodusConfig } from './config';
 import { MethodusClassConfig } from './class-config';
-import { MethodType, ServerType } from '../interfaces';
+import { MethodType, ServerType, TransportType } from '../interfaces';
 import { MethodusClientConfig } from './client-config';
-import { TransportType } from '../../lib';
 import { ServerConfig } from './server-config';
 
 class TestClass {

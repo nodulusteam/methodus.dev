@@ -8,7 +8,8 @@
         "build": "rm -rf ./lib && tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
-        "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common"
+        "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
+        "mutation":"stryker run --fileLogLevel trace --logLevel debug"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
@@ -18,5 +19,5 @@
     "dependencies": {
         "reflect-metadata": "^0.1.13"
     },
-    "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
+    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

@@ -35,12 +35,11 @@
         "@methodus/server": "^7.0.3",
         "@types/jquery": "^3.2.16",
         "express-basic-auth": "^1.2.0"
-
     },
     "peerDependencies": {
         "@methodus/platform-express": "^7.0.0",
         "@methodus/platform-rest": "^7.0.0",
         "@methodus/server": "^7.0.0"
     },
-    "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
+    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

@@ -13,3 +13,6 @@ modules/platform-grpc/dist/
 yarn.lock
 docs_old/
 modules/docs/
+
+# stryker temp files
+.stryker-tmp
