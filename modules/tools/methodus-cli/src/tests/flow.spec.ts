@@ -1,7 +1,8 @@
 import * as path from 'path';
-import { flow, goForQuestions } from '../flow';
+import { flow, goForQuestions, flowAllPaths } from '../flow';
 import { random } from 'faker';
 import * as gracefulFs from 'graceful-fs';
+const mockInquirer = require('mock-inquirer')
 
 const SANDBOX = path.join(process.cwd(), 'sandbox');
 
@@ -19,10 +20,30 @@ describe('Test the flow', () => {
         }
     });
 
-    it.skip('goForQuestions', async () => {
-        await goForQuestions({ template: 'application' });
-        expect(true).toBe(true);
-    });
+    describe('test commands', () => {
+        const cliPath = __dirname + '/flow.js';
+
+        it('open methodus select application', async () => {
+            let reset = mockInquirer([{
+                template: 'application'
+            },{
+                name: projectName
+            }])
+            await flowAllPaths('');
+            expect(true).toBe(true);
+        })
+
+        it('open methodus select controller', async () => {
+            let reset = mockInquirer([{
+                template: 'controller'
+            },{
+                name: `${projectName}.controller`
+            }])
+            await flowAllPaths('');
+            expect(true).toBe(true);
+        })
+    })
+
 
     it('generate', async () => {
         await flow('application', projectName);
@@ -63,13 +84,5 @@ describe('Test the flow', () => {
     });
 
 
-    it('no item type', async () => {
-        process.env.APPLICATION_DIR = path.join(SANDBOX, projectName);
-        try {
-            await flow('generate');
-        } catch (error) {
-            expect(error).toBe('Are you missing a name?');
-        }
 
-    });
 });

@@ -16,10 +16,6 @@
     "publishConfig": {
         "access": "public"
     },
-    "peerDependencies": {
-        "@methodus/framework-commons": "^7.0.3",
-        "@methodus/framework-injection": "^7.0.2"
-    },
     "devDependencies": {
         "@methodus/framework-commons": "^7.0.3",
         "@methodus/framework-injection": "^7.0.2"

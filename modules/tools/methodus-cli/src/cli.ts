@@ -25,7 +25,6 @@ export class CLI {
         this.CURR_DIR = process.env.APPLICATION_DIR || process.cwd();
     }
     generate(projectChoice: string, templatePath: string, moduleFilePath?: string) {
-        debugger;
         const tartgetPath = path.join(
             this.CURR_DIR,
             camelCaseToDash(this.projectName)

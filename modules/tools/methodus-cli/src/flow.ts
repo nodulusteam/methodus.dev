@@ -20,19 +20,23 @@ const QUESTIONS = [
         message: 'What project template would you like to generate?',
         choices: CHOICES,
         when: () => !yargs.argv['template'],
-    },
-    // ,
-    // {
-    //   name: 'name',
-    //   type: 'input',
-    //   message: 'Project name:',
-    //   when: () => !yargs.argv['name'],
-    //   validate: (input: string) => {
-    //     if (/^([A-Za-z\-\_\d])+$/.test(input)) return true;
-    //     else return 'Project name may only include letters, numbers, underscores and hashes.';
-    //   }
-    // }
+    }
 ];
+
+
+export async function flowAllPaths(
+    verb: string,
+    what?: string,
+    name?: string,
+    moduleName?: string
+) {
+    if (!verb) { //cli was ran by just "methodus"
+        const templateSelection: { template: string } = await inquirer.prompt([QUESTIONS[0]]);
+        verb = templateSelection.template;
+    }
+    await flow(verb, what, name, moduleName);
+
+}
 
 export async function flow(
     verb: string,
@@ -46,6 +50,11 @@ export async function flow(
             const templateConfig: TemplateConfig = getTemplateConfig(
                 templatePath
             );
+            const nameAnswer: any = await inquirer.prompt(templateConfig.args as any);
+            if (!what) {
+                what = nameAnswer['name'];
+            }
+
             if (templateConfig && what) {
                 new CLI(what, templateConfig).generate(
                     verb,
@@ -56,9 +65,10 @@ export async function flow(
 
         case 'generate':
         case 'g':
-            if (!name) {
-                throw 'Are you missing a name?';
-            }
+        case 'controller':
+        case 'module':
+        case 'service':
+
             const map = {
                 controller: 'controller',
                 c: 'controller',
@@ -68,58 +78,39 @@ export async function flow(
                 m: 'module',
             };
 
-            if (what) {
-                await generate(map[what], moduleName, name);
-                return;
+            const templatItemPath = path.join(TEMPLATES_BASE, map[what || verb]);
+            const templateItemConfig: TemplateConfig = getTemplateConfig(
+                templatItemPath
+            );
+
+            if (!name) {
+                const nameItemAnswer: any = await inquirer.prompt(templateItemConfig.args as any);
+                name = nameItemAnswer['name'];
+            }
+            const cli = createCli(map[what || verb]);
+            try {
+                const modules = listModules(cli);
+                if (!moduleName || !modules[moduleName!]) {
+                    if (moduleName && !modules[moduleName!]) {
+                        console.warn(`couldn't find module '${moduleName}'`);
+                    }
+                    const modulesAnswers: any = await inquirer.prompt([{
+                        name: 'modules',
+                        type: 'list',
+                        message: 'Bind to module',
+                        choices: Object.keys(modules),
+                        when: () => !yargs.argv['modules'],
+                    }]);
+                    moduleName = modulesAnswers['modules'];
+                }
+                await generate(map[what || verb], modules[moduleName!], name!);
+            } catch (error) {
+                console.log(error);
             }
 
-            const answers = await inquirer.prompt([QUESTIONS[0]]);
-            await goForQuestions(answers);
+            return;
 
-        // inquirer.prompt([QUESTIONS[0]]).then(async (answers: any) => {
-        //     answers = Object.assign({}, answers); //yargs.argv
-        //     const projectChoice = answers['template'];
-        //     const templatePath = path.join(
-        //         __dirname,
-        //         '..',
-        //         'templates',
-        //         projectChoice
-        //     );
-        //     const templateConfig: TemplateConfig = getTemplateConfig(
-        //         templatePath
-        //     );
-        //     if (templateConfig) {
-        //         answers = await inquirer.prompt(templateConfig.args as any);
-        //         const projectName = answers['name'];
-        //         new CLI(projectName, templateConfig).generate(
-        //             projectChoice,
-        //             templatePath
-        //         );
-        //     }
-        // });
     }
-
-    const answers2 = await inquirer.prompt([QUESTIONS[0]]);
-    await goForQuestions(answers2);
-    //    .then(async (answers: any) => {
-    //         answers = Object.assign({}, answers); //yargs.argv
-    //         const projectChoice = answers['template'];
-    //         const templatePath = path.join(
-    //             __dirname,
-    //             '..',
-    //             'templates',
-    //             projectChoice
-    //         );
-    //         const templateConfig: TemplateConfig = getTemplateConfig(templatePath);
-    //         if (templateConfig) {
-    //             answers = await inquirer.prompt(templateConfig.args as any);
-    //             const projectName = answers['name'];
-    //             await new CLI(projectName, templateConfig).generate(
-    //                 projectChoice,
-    //                 templatePath
-    //             );
-    //         }
-    //     });
 }
 
 
@@ -132,7 +123,6 @@ export async function goForQuestions(answers: any) {
         'templates',
         projectChoice
     );
-    debugger;
     const templateConfig: TemplateConfig = getTemplateConfig(
         templatePath
     );
@@ -146,7 +136,6 @@ export async function goForQuestions(answers: any) {
         const cli = new CLI(projectName, templateConfig);
         const modules = listModules(cli);
 
-        debugger;
         const modulesAnswers: any = await inquirer.prompt([{
             name: 'modules',
             type: 'list',
@@ -216,9 +205,7 @@ function patchModuleFile(
         skipFileDependencyResolution: true,
     });
 
-    const moduleSourceFile = project.getSourceFile(
-        path.join(controllerCli.CURR_DIR, moduleFilePath)
-    );
+    const moduleSourceFile = project.getSourceFile(moduleFilePath);
     if (moduleSourceFile) {
         const propertyToHandle = propertiesForTemplates[templateKey];
 
@@ -271,7 +258,7 @@ function createItem(
     const controllerPath = path.dirname(moduleFile);
 
     controllerCli.createDirectoryContents(
-        path.join(controllerCli.CURR_DIR, controllerPath),
+        controllerPath,
         path.join(TEMPLATES_BASE, templateKey),
         name,
         controllerCli.templateConfig
@@ -281,24 +268,26 @@ function createItem(
 
 
 function listModules(controllerCli: CLI) {
+    const moduleObject = {};
     const project = new Project({
         tsConfigFilePath: `${controllerCli.CURR_DIR}/tsconfig.json`,
         skipFileDependencyResolution: true,
     });
 
-    const moduleFiles = project.getSourceFiles().map((
+    project.getSourceFiles().forEach((
         moduleSourceFile
     ) => {
         for (const classInFile of moduleSourceFile.getClasses()) {
             const moduleDecorators = classInFile.getDecorator('Module');
             if (moduleDecorators) {
-                return (moduleDecorators.getArguments()[0] as any).getLiteralValue();
+                const key = (moduleDecorators.getArguments()[0] as any).getLiteralValue();
+                moduleObject[key] = moduleSourceFile.getFilePath();
+
             }
         }
-        return undefined;
-    }).filter((file) => file !== undefined);
-    return moduleFiles;
-
+    });
+    moduleObject['No Module'] = null;
+    return moduleObject;
 }
 
 function listTree() {

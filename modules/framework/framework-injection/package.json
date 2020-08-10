@@ -17,8 +17,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.3",
-        "reflect-metadata": "^0.1.13"
+        "@methodus/framework-commons": "^7.0.3"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

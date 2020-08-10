@@ -9,7 +9,7 @@
             "console": "internalConsole",
             "name": "T | Run jest",
             "type": "node",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": ["--verbose"],
@@ -21,16 +21,16 @@
 
         {
             "type": "node",
-            "stopOnEntry": true,
+            "stopOnEntry": false,
             "outputCapture": "std",
             "request": "launch",
             "name": "Create module",
-            "console": "internalConsole",
+            "console": "integratedTerminal",
             "skipFiles": ["<node_internals>/**"],
             "sourceMaps": true,
             "program": "${workspaceFolder}/dist/index.js",
             "env": {
-                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x\\xaaf-methodus"
             },
             "args": ["generate", "module", "MyModule2"]
         },
@@ -105,7 +105,7 @@
             "console": "integratedTerminal",
             "skipFiles": ["<node_internals>/**"],
             "env": {
-                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\ProjectX"
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\Project-x\\xaaf-methodus"
             },
             "program": "${workspaceFolder}/dist/index.js",
             "args": [
@@ -113,7 +113,7 @@
                 "controller",
                 "MyController",
                 "--module",
-                "MyLogicModule"
+                "newModule"
             ]
         },
 
@@ -137,7 +137,7 @@
             "name": "No args",
             "skipFiles": ["<node_internals>/**"],
             "env": {
-                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x"
+                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj\\project-x\\xaaf-methodus"
             },
             "program": "${workspaceFolder}/dist/index.js",
             "args": []
@@ -151,9 +151,9 @@
             "outputCapture": "std",
             "program": "${workspaceFolder}/dist/index.js",
             "env": {
-                "APPLICATION_DIR": "C:\\Git\\methodus\\ROiPRoj"
+                "APPLICATION_DIR": "C:\\Git\\Xander\\XAAF\\xaaf-methodus"
             },
-            "args": ["application", "ProjectX"]
+            "args": ["application", "xaaf-methodus"]
         }
     ]
 }

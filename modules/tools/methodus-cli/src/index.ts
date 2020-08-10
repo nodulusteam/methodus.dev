@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import * as yargs from 'yargs';
-import { flow } from './flow';
+import { flowAllPaths } from './flow';
 const colors: any = require('colors');
 
 const commandArguments = yargs.argv;
-flow(
+flowAllPaths(
     commandArguments._[0],
     commandArguments._[1],
     commandArguments._[2],
