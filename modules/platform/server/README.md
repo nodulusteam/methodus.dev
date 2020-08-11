@@ -1,6 +1,6 @@
 # ![logo](docs/_media/methodus_32.png) Methodus
 
-![travis](https://travis-ci.org/nodulusteam/methodus.dev.svg?branch=master "travis")
+[![Build Status](https://travis-ci.org/nodulusteam/methodus.dev.svg?branch=master)](https://travis-ci.org/nodulusteam/methodus.dev)
  
 
 ## Introduction
