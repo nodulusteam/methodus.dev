@@ -20,8 +20,6 @@ export class ExpressRouter {
             methodus.middlewares.forEach((element: any) => {
                 if (element) {
                     globalMiddlewares.push(element);
-                } else {
-                    // logger.error('could not load middleware');
                 }
             });
         }

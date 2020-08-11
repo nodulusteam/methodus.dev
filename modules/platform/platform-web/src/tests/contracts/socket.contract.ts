@@ -1,5 +1,5 @@
 import * as M from '../../lib/index';
-const activeSockets: any[] = new Array<any>();
+export const activeSockets: any[] = new Array<any>();
 
 @M.MethodConfig('SocketController')
 export class SocketController {

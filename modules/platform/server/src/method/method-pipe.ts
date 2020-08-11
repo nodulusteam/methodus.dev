@@ -3,7 +3,7 @@ import commons, { MethodType, MethodError, MethodResult } from '@methodus/framew
 import injection from '@methodus/framework-injection';
 import { Servers } from '../servers/serversList';
 import { ResponseParser } from '../response/response-parser';
- 
+
 const methodMetadataKey = 'methodus';
 /** the @Method decorator registers route listeners
  *  @param {Verbs} verb - the HTTP verb for the route.
@@ -12,9 +12,6 @@ const methodMetadataKey = 'methodus';
  */
 
 export function verbBasedMethod(target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>, verb?: string, route?: string, middlewares?: Function[]) {
-    // export function MethodPipe(verb: string, route: string, middlewares?: any[]) {
-    //     return (target: any, propertyKey: string, descriptor: TypedPropertyDescriptor<any>) => {
-    // we will return a MethodResult or a MEthodError
     let methodResult: MethodResult | MethodError | any = null;
     target.methodus = target.methodus || {};
     const name = target.name || target.constructor.name;
@@ -46,11 +43,9 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
         }
         let methodus: any = mTarget;
         if (!methodus) {
-            // if the target dont contain the methodus metadaat, try to get it from the Reflection API
             methodus = Reflect.getOwnMetadata(methodMetadataKey, target, propertyKey) || {};
         }
         const config = Servers.classes[configName];
-
         if (!config) {
             const client = Servers.clients[configName];
             const existingClassMetadata = injection.ClassContainer.get(configName);
@@ -59,10 +54,8 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
                 methodus.resolver = client.resolver;
                 try {
-
                     const result = await client.transportType.send(methodus, args, paramsMap, []);
                     return result;
-
                 } catch (ex) {
                     if (Buffer.isBuffer(ex.error)) {
                         ex.error = ex.error.toString();
@@ -70,18 +63,12 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                     }
                 }
             } else {
-
                 const result = await originalMethod.apply(this, args);
                 return result;
-
             }
 
         } else {
-
-            // try to get the method metadata from the Relection API.
-
             const existingClassMetadata: any = injection.ClassContainer.get(methodus.name);
-
             // merge the configuration object
             Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
 
@@ -102,11 +89,9 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
             // run and store the result
             const restHeaders: any = null;
             try {
-
                 const mappedArgs = paramsMap.map((param) => {
                     return { [param.name || param.from]: ParserResponse.args[param.index] };
                 });
-
                 commons.logger.info(`@Method::call`, methodType, originalMethod.name, ...mappedArgs);
                 switch (methodType) {
                     case MethodType.Mock:
@@ -116,36 +101,27 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                         methodResult = originalMethod.apply(this, ParserResponse.args);
                         break;
                 }
-
             } catch (error) {
                 error.statusCode = error.statusCode || 500;
                 commons.logger.error(error);
-
                 if (ParserResponse.isRest) {
                     return parser.response(args, error, restHeaders);
-
                 } else {
                     throw (error);
                 }
-
             }
 
             if (ParserResponse.isRest) {
                 if (methodResult.toString() === '[object Promise]') {
                     methodResult.then((resolvedPromise: any) => {
-                        // methodResult = new MethodResult(StreamFromPromise(methodResult, { objectmode: true }));
                         return parser.response(args, resolvedPromise, restHeaders);
-
                     });
                 } else {
                     return parser.response(args, methodResult, restHeaders);
                 }
-
             } else {
-
                 commons.logger.info(`@Method::OK`, methodType, originalMethod.name);
                 return methodResult;
-
             }
 
         }
@@ -167,12 +143,11 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
         });
     }
     return descriptor;
-};
+}
 
 
 function validateServerIsRunning() {
     if (!Servers) {
         throw (new Error(`methodus server is not running, did you miss a 'run' statement?`));
     }
-    // }
 }

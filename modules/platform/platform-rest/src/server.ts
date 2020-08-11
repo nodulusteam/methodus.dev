@@ -62,21 +62,9 @@ export class Server {
     }
 
     async start() {
-        // add this instance to the global bridge of servers
-        // Bridge.set(this.serverKey, { server: this });
-
-        // if (this.config && this._plugins && this._plugins.length > 0) {
-        //     const loader = new PluginLoader();
-        //     await loader.config(this.config, this._plugins);
-        // }
-        const onStart: any = new Array<Function>();
 
         if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
-                if (server.onStart) {
-                    onStart.push(server.onStart);
-                }
-
                 const aServerInstance = Clients.get(this.instanceId, server.type.name);
                 if (!aServerInstance) {
                     server.instanceId = this.instanceId;
