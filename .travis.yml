@@ -25,6 +25,10 @@ deploy:
     branch: master
 addons:
   sonarcloud:
-    organization: "nodulusteam-github"
+    organization: "nodulusteam-github" # the key of the org you chose at step #3  
+before_script:
+  - yarn bootstrap
+  - yarn build
+  - yarn test
 script:
   - sonar-scanner    
