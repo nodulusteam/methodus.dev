@@ -23,10 +23,3 @@ deploy:
   on:
     node: "12"
     tags: true
-addons:
-  sonarcloud:
-    organization: "nodulusteam-github" # the key of the org you chose at step #3  
-before_script:
-  - yarn test 
-script:
-  - sonar-scanner
