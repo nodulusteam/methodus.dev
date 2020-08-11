@@ -1,6 +1,5 @@
-import { MethodConfig, Method, Body, Param, MethodResult, MethodError, Inject } from '@methodus/server';
+import { MethodConfig, Method, Body, Param, MethodResult, Inject } from '@methodus/server';
 import { Verbs } from '@methodus/platform-express';
-import { Http } from '@methodus/platform-rest';
 
 import { RemoteService } from './remote.service';
 

@@ -90,8 +90,8 @@ export async function flow(
             const cli = createCli(map[what || verb]);
             try {
                 const modules = listModules(cli);
-                if (!moduleName || !modules[moduleName!]) {
-                    if (moduleName && !modules[moduleName!]) {
+                if (!moduleName || !modules[moduleName]) {
+                    if (moduleName && !modules[moduleName]) {
                         console.warn(`couldn't find module '${moduleName}'`);
                     }
                     const modulesAnswers: any = await inquirer.prompt([{
@@ -147,9 +147,7 @@ export async function goForQuestions(answers: any) {
         let moduleFilePath;// = await findModule('AppModule', cli);
         if (moduleName) {
             moduleFilePath = await findModule(moduleName, cli);
-        } else {
-
-        }
+        } 
 
         cli.generate(
             projectChoice,
