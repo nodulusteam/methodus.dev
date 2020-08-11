@@ -5,11 +5,11 @@
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "scripts": {
-        "test": "jest && yarn coverage",
+        "test": "../../../node_modules/.bin/jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-express.json",
-        "build": "rimraf ./lib && tsc && yarn link",
+        "build": "../../../node_modules/.bin/rimraf ./lib && tsc && yarn link",
         "docs": "typedoc",
-        "format": "prettier -c --write ./src"
+        "format": "../../../node_modules/.bin/prettier -c --write ./src"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
