@@ -11,6 +11,7 @@ before_install:
 before_script:
   - yarn run lerna run prepublish
 script:
+  - yarn bootstrap
   - yarn build
   - yarn test
 before_deploy:
