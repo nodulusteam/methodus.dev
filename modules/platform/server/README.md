@@ -1,9 +1,7 @@
 # ![logo](docs/_media/methodus_32.png) Methodus
-![rating](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=sqale_rating "rating")
-![reliability](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=reliability_rating "reliability")
-![coverage](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=coverage "coverage")
-![vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=nodulusteam_-methodus-server&metric=vulnerabilities "coverage")
-![build](https://github.com/nodulusteam/methodus.dev/workflows/build/badge.svg)
+
+![travis](https://travis-ci.org/nodulusteam/methodus.dev.svg?branch=master "travis")
+ 
 
 ## Introduction
 Methodus is a framework for building efficient, developer friendly, scalable Node.js server/server/client applications. It uses Typescript Decorators to annotate and define the application, allowing developers to focus on the actual functionality the application needs. Its "Build now, Decide later" design patterns and architecture is what makes Methodus so versatile and powerfull.
