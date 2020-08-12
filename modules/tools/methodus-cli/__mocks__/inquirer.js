@@ -1,6 +1,9 @@
+const random = require('faker').random;
+
 const inquirer = {
     prompt: jest.fn(async () => {
-        return { name: 'myapp', template: 'application' };
+        const projectName = random.alphaNumeric(8);
+        return { name: projectName, template: 'application' };
     }),
 
 };
