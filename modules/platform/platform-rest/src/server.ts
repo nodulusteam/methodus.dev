@@ -62,7 +62,6 @@ export class Server {
     }
 
     async start() {
-
         if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
                 const aServerInstance = Clients.get(this.instanceId, server.type.name);

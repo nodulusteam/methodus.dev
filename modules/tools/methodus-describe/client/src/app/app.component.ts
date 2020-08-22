@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
 
   }
   ngOnInit() {
-    (window as any).describe_color = this.selectColor(Math.floor(Math.random() * 10), 10);
+    (window as any).describe_color = this.selectColor(1, 10);
   }
   selectColor(colorNum, colors) {
     if (colors < 1) {

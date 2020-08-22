@@ -12,7 +12,7 @@ import { ProxiedController } from '../controllers/proxy.controller';
 import { CopyController } from '../controllers/controller.copy';
 
 @decorators.ServerConfiguration(Express, { port: process.env.PORT || 8020 })
-@decorators.PluginConfiguration(path.join(__dirname, '../../index'), { path: '/mydes' })
+@decorators.PluginConfiguration(path.join(__dirname, '../../index'), { path: '/describe' })
 @decorators.RouterConfiguration(TestController, Express)
 @decorators.RouterConfiguration(CopyController, Express)
 @decorators.RouterConfiguration(ProxiedController, Express)

@@ -2,12 +2,12 @@
     "name": "@methodus/platform-express",
     "version": "7.0.2",
     "description": "Express plugin for methodus",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
         "test": "../../../node_modules/.bin/jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-express.json",
-        "build": "../../../node_modules/.bin/rimraf ./lib && tsc && yarn link",
+        "build": "../../../node_modules/.bin/rimraf ./dist && tsc && yarn link",
         "docs": "typedoc",
         "format": "../../../node_modules/.bin/prettier -c --write ./src"
     },

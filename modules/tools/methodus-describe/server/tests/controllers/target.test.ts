@@ -2,13 +2,12 @@ import decorators from '@methodus/framework-decorators';
 import { Mapping, MethodResult } from '@methodus/framework-commons';
 import { Verbs } from '@methodus/platform-express';
 
-@decorators.MethodConfig('TestTarget', [], '/api/test')
+@decorators.MethodConfig('TestTarget', [], '/api/test-contracts')
 export class TestTarget {
 
     @decorators.MethodMock({})
     @decorators.Method(Verbs.Get, '/comments')
-    public async list(@Mapping.Query('filter') filter: any = {}, @Mapping.Query('pageNumber') pageNumber: number = 1,
-        @Mapping.Query('pageSize') pageSize: number = 10): Promise<any> {
+    public async list(@Mapping.Query('pageNumber') pageNumber: number = 1, @Mapping.Query('pageSize') pageSize: number = 10): Promise<any> {
         return new MethodResult({});
     }
 

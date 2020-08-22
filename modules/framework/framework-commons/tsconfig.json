@@ -19,7 +19,7 @@
     "compilerOptions": {
         "target": "ESNEXT",
         "module": "commonjs",
-        "outDir": "lib/",
+        "outDir": "dist/",
         "rootDir": "src",
         "lib": ["es2016", "es2015"],
         "declaration": true /* Generates corresponding '.d.ts' file. */,

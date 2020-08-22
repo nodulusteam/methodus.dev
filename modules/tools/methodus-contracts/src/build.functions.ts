@@ -20,17 +20,17 @@ export async function Builder(options: BuildOptions, contract?: string) {
     if (contract) {
         buildConfiguration = require(contract) as Configuration;
     } else {
-        const filePath = path.resolve(path.join(process.cwd(), process.argv[2].toString()));
+        const buildPath = process.argv[2] ? process.argv[2].toString() : '';
+        const filePath = path.resolve(path.join(process.cwd(), buildPath));
         Console.log(colors.green('>> loading build configuration from:'), filePath);
         buildConfiguration = require(filePath) as KeysConfiguration;
-
         options.publish = process.argv[3] === '-p' || publish;
     }
 
-    if(buildConfiguration.protobuf){
+    if (buildConfiguration.protobuf) {
         options.isProtobuf = true;
     }
-    
+
     const checkList: string[] = [];
     await build(buildConfiguration, checkList, options);
     Console.log(checkList.join('\n'));

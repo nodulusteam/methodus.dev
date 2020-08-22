@@ -67,14 +67,9 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
 
         const config = Servers.classes[configName];
         if (!config) {
-            let client = Servers.clients[configName];
-
-
-
+            const client = Servers.clients[configName];
             const existingClassMetadata: any = injection.ClassContainer.get(configName);
             if (client) {
-
-
                 // merge the configuration object
                 Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
                 if (getClassOf(target) === '[object Object]') {// the target is an instance not a class

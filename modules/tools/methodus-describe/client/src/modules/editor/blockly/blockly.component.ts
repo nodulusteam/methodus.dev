@@ -41,20 +41,20 @@ let generalObject: BlocklyComponent = null;
 const persistingEvents = ['move', 'create', 'delete', 'change'];
 
 Blockly.BlockSvg.prototype.addError = function () {
-  Blockly.utils.removeClass(this.svgGroup_, 'expect-success');
-  Blockly.utils.addClass(this.svgGroup_, 'expect-error');
+  Blockly.utils.dom.removeClass(this.svgGroup_, 'expect-success');
+  Blockly.utils.dom.addClass(this.svgGroup_, 'expect-error');
 };
 
 Blockly.BlockSvg.prototype.addSuccess = function () {
-  Blockly.utils.removeClass(this.svgGroup_, 'expect-error');
-  Blockly.utils.addClass(this.svgGroup_, 'expect-success');
+  Blockly.utils.dom.removeClass(this.svgGroup_, 'expect-error');
+  Blockly.utils.dom.addClass(this.svgGroup_, 'expect-success');
 };
 
 Blockly.BlockSvg.prototype.removeError = function () {
-  Blockly.utils.removeClass(this.svgGroup_, 'expect-error');
+  Blockly.utils.dom.removeClass(this.svgGroup_, 'expect-error');
 };
 Blockly.BlockSvg.prototype.removeSuccess = function () {
-  Blockly.utils.removeClass(this.svgGroup_, 'expect-success');
+  Blockly.utils.dom.removeClass(this.svgGroup_, 'expect-success');
 };
 
 Blockly.Block.prototype.getCommentText = function () {
@@ -161,7 +161,7 @@ export class BlocklyComponent implements OnInit {
     Injector.get<DescribeView>('DescribeView')
       .dashboard()
       .then(methods => {
-        const ControllersCategory = new Category('Controllers', '#603278', [], null);
+        const LovalControllersCategory = new Category('Local Controllers', '#603278', [], null);
         methods.routes.forEach(controller => {
           const blocks = [];
 
@@ -185,9 +185,39 @@ export class BlocklyComponent implements OnInit {
             apiObjects[controller.name][method] = controller.methodus._descriptors[method];
           });
           allBlocks = allBlocks.concat(blocks);
-          ControllersCategory.blocks.push(new Category(controller.name, '#603278', blocks, null) as any);
+          LovalControllersCategory.blocks.push(new Category(controller.name, '#603278', blocks, null) as any);
         });
-        categories.push(ControllersCategory);
+        categories.push(LovalControllersCategory);
+
+        const RemoteControllersCategory = new Category('Remote Controllers', '#603278', [], null);
+
+        methods.remoteRoutes.forEach(controller => {
+          const blocks = [];
+
+          Object.keys(controller.methodus._descriptors).forEach(method => {
+            const blockName = `${controller.name}_${method}_block`.toLowerCase();
+            const block: any = new MethodBlock(
+              method,
+              blockName,
+              controller.methodus._descriptors[method],
+              this.persist,
+              controller.name,
+              this.lastBlockId,
+              this.output
+            );
+
+            if (controller.methodus.prefix) {
+              block.method.prefix = controller.methodus.prefix;
+            }
+            blocks.push(block);
+            apiObjects[controller.name] = apiObjects[controller.name] || {};
+            apiObjects[controller.name][method] = controller.methodus._descriptors[method];
+          });
+          allBlocks = allBlocks.concat(blocks);
+          RemoteControllersCategory.blocks.push(new Category(controller.name, '#603278', blocks, null) as any);
+        });
+        categories.push(RemoteControllersCategory);
+
         //  new Category(blocks, '#603278', controller.name, null
 
         this.ngxToolboxBuilder.nodes = [

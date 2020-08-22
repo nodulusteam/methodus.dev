@@ -12,7 +12,7 @@ const authMiddlware = basicAuth({
 
 
 
-@decorators.MethodConfig('CopyController', [authMiddlware], '/api')
+@decorators.MethodConfig('CopyController', [authMiddlware], '/api/copy')
 export class CopyController extends BaseController {
 
     @decorators.Method(Verbs.Put, '/posts')

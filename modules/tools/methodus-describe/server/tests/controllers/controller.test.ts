@@ -4,7 +4,7 @@ import { Verbs } from '@methodus/platform-express';
 import { BaseController } from './controller.base';
 import { UserModel } from '../models/user.model';
 
-@decorators.MethodConfig('TestController', [], '/api/player')
+@decorators.MethodConfig('TestController', [], '/api/remotes')
 export class TestController extends BaseController {
 
     @decorators.Method(Verbs.Put, '/')

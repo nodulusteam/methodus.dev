@@ -6,6 +6,7 @@ import { MethodType } from '@methodus/framework-commons';
 
 export class ExpressRouter {
     public routers: any = [];
+    public globalMiddlewares: any[] = [];
     constructor(obj: any, methodType: MethodType, app: any) {
 
         let keyName = obj.name;
@@ -15,11 +16,10 @@ export class ExpressRouter {
         obj = injection.Injector.get(keyName);
 
         const methodus = commons.util.maybeMethodus(obj)[keyName];
-        const globalMiddlewares: any[] = [];
         if (methodus.middlewares) {
             methodus.middlewares.forEach((element: any) => {
                 if (element) {
-                    globalMiddlewares.push(element);
+                    this.globalMiddlewares.push(element);
                 }
             });
         }
@@ -40,7 +40,7 @@ export class ExpressRouter {
                     throw `Validation error, missing Verb ${JSON.stringify(item)}`;
                 }
                 const verb = item.verb.toLowerCase();
-                const functionArray = [...globalMiddlewares];
+                const functionArray = [...this.globalMiddlewares];
                 if (item.middlewares) {
                     item.middlewares.forEach((element: any) => {
                         if (element) {

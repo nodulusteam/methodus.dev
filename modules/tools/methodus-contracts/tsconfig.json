@@ -3,7 +3,7 @@
         "target": "es5",
         "moduleResolution": "node",
         "module": "commonjs",
-        "outDir": "lib",
+        "outDir": "dist",
         "rootDir": "src",
         "sourceMap": true, /* Generates corresponding '.map' file. */
         "declaration": true,

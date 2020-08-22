@@ -2,8 +2,8 @@
     "name": "@methodus/server",
     "version": "7.0.3",
     "description": "Server components for @methodus workflow",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "directories": {
         "test": "tests",
         "examples": "examples"
@@ -26,8 +26,8 @@
         "url": "https://github.com/nodulusteam/-methodus-server"
     },
     "scripts": {
-        "build": "rm -rf ./lib && tsc",
-        "watch": "rm -rf ./lib && tsc -w",
+        "build": "rm -rf ./dist && tsc",
+        "watch": "rm -rf ./dist && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-server.json",

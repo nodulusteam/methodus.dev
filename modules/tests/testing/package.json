@@ -3,10 +3,10 @@
     "version": "7.0.2",
     "description": "",
     "private": true,
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "build": "rimraf ./lib && tsc",
+        "build": "rimraf ./dist && tsc",
         "test": "jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-testing.json"
     },

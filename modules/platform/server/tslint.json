@@ -42,5 +42,8 @@
             "statements"
         ]
     },
+    "exclude": [
+        "node_modules"
+    ],
     "rulesDirectory": []
 }

@@ -57,20 +57,7 @@ describe('TestFormComponent', () => {
       .compileComponents();
       fixture = TestBed.createComponent(TestFormComponent);
       component = fixture.componentInstance;
-    // // add it to TestBed module in `providers` array:
 
-    // fixture = TestBed.createComponent(TestFormComponent);
-    // component = fixture.componentInstance;
-    // component.methodInfo = {
-    //   'verb': 'GET', 'route': '/api/player', 'propertyKey': 'list',
-    //   'params':
-    //     [{ 'type': 'object', 'from': 'query', 'index': 0, 'name': 'filter' },
-    //     { 'type': 'number', 'from': 'query', 'index': 1, 'name': 'pageNumber' },
-    //     { 'type': 'number', 'from': 'query', 'index': 2, 'name': 'pageSize' },
-    //     { 'type': 'string', 'from': 'headers', 'index': 3, 'name': 'host' }]
-    // };
-    // fixture.detectChanges();
-    // expect(component).toBeTruthy();
   }));
 
 

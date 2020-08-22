@@ -27,7 +27,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/lib/response/method.result.test.js",
+            "program": "${workspaceRoot}/dist/response/method.result.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [

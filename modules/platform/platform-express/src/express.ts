@@ -9,18 +9,22 @@ import { ExpressRouter } from './routing';
 import * as http from 'http';
 import * as https from 'https';
 import * as fileUpload from 'express-fileupload';
+import { ExpressOptions } from './options';
 
 /**
  * @hidden
  */
 export class ExpressPlugin extends BaseServer {
     _app: any;
-    constructor(port: any, onStart?: any) {
+    constructor(options: ExpressOptions) {
         super();
         this._app = express();
-        this._app.use(fileUpload({
-            limits: { fileSize: 50 * 1024 * 1024 },
-        }));
+        if (options.fileUpload) {
+            this._app.use(fileUpload({
+                limits: { fileSize: options.fileUpload || 50 * 1024 * 1024 },
+            }));
+        }
+
 
         this._app.use(bodyParser.urlencoded({
             extended: true,
@@ -33,33 +37,37 @@ export class ExpressPlugin extends BaseServer {
         this._app.set('view engine', 'ejs');
         const viewPath = path.join(__dirname, '..', '..', '..', 'views');
         this._app.set('views', viewPath);
-        // Add headers
-        this._app.use((req: any, res: any, next: any) => {
-            // Website you wish to allow to connect
-            if (req.headers.origin) {
-                res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-            }
 
-            // Request methods you wish to allow
-            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-            let headersX = Object.keys(req.headers).map((headerName: any) => {
-                return headerName.split('-').map((word: any) => {
-                    return headerName.charAt(0).toUpperCase() + headerName.substr(1);
-                }).join('-');
-            }).join(',');
-            headersX = 'Content-Type,' + headersX;
 
-            // Request headers you wish to allow
-            res.setHeader('Access-Control-Allow-Headers', headersX);
-            // Set to true if you need the website to include cookies in the requests sent
-            // to the API (e.g. in case you use sessions)
-            res.setHeader('Access-Control-Allow-Credentials', true);
-            // Pass to next layer of middleware
-            next();
-        });
+        if (options.cors) {
+            // Add headers
+            this._app.use((req: any, res: any, next: any) => {
+                // Website you wish to allow to connect
+                if (req.headers.origin) {
+                    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+                }
 
-        if (onStart) {
-            onStart.forEach((eventStart: any) => {
+                // Request methods you wish to allow
+                res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+                let headersX = Object.keys(req.headers).map((headerName: any) => {
+                    return headerName.split('-').map((word: any) => {
+                        return headerName.charAt(0).toUpperCase() + headerName.substr(1);
+                    }).join('-');
+                }).join(',');
+                headersX = 'Content-Type,' + headersX;
+
+                // Request headers you wish to allow
+                res.setHeader('Access-Control-Allow-Headers', headersX);
+                // Set to true if you need the website to include cookies in the requests sent
+                // to the API (e.g. in case you use sessions)
+                res.setHeader('Access-Control-Allow-Credentials', true);
+                // Pass to next layer of middleware
+                next();
+            });
+        }
+
+        if (options.onStart) {
+            options.onStart.forEach((eventStart: any) => {
                 eventStart(this._app);
             });
         }
@@ -70,7 +78,7 @@ export class ExpressPlugin extends BaseServer {
             const serverType = server.type.name;
             console.info(`> Starting Express server on port ${server.options.port}`);
 
-            parentServer._app[serverType] = new ExpressPlugin(server.options.port, server.options.onStart);
+            parentServer._app[serverType] = new ExpressPlugin(server.options);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
             parentServer.app = app._app;
 

@@ -1,4 +1,3 @@
-lib
 node_modules/
 logs/
 coverage/
@@ -13,6 +12,7 @@ modules/platform-grpc/dist/
 yarn.lock
 docs_old/
 modules/docs/
+dist
 
 # stryker temp files
 .stryker-tmp

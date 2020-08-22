@@ -2,10 +2,10 @@
     "name": "@methodus/framework-decorators",
     "version": "7.0.2",
     "description": "Server Decorators for methodus",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "build": "../../../node_modules/.bin/rimraf ./lib && yarn format & tsc",
+        "build": "../../../node_modules/.bin/rimraf ./dist && yarn format & tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json",
         "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js ../../../docs/modules/framework/decorators",
