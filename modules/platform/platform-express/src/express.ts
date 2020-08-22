@@ -25,7 +25,6 @@ export class ExpressPlugin extends BaseServer {
             }));
         }
 
-
         this._app.use(bodyParser.urlencoded({
             extended: true,
         }));
@@ -37,7 +36,6 @@ export class ExpressPlugin extends BaseServer {
         this._app.set('view engine', 'ejs');
         const viewPath = path.join(__dirname, '..', '..', '..', 'views');
         this._app.set('views', viewPath);
-
 
         if (options.cors) {
             // Add headers
@@ -77,11 +75,9 @@ export class ExpressPlugin extends BaseServer {
         if (server.options) {
             const serverType = server.type.name;
             console.info(`> Starting Express server on port ${server.options.port}`);
-
             parentServer._app[serverType] = new ExpressPlugin(server.options);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
             parentServer.app = app._app;
-
             if (server.options.secured) {
                 const httpsServer = Servers.get(server.instanceId, 'https')
                     || https.createServer({
@@ -90,28 +86,21 @@ export class ExpressPlugin extends BaseServer {
                         passphrase: server.options.passphrase,
                     }, app._app);
                 parentServer._app.https = httpsServer;
-
                 Servers.set(server.instanceId, 'https', httpsServer);
-
             } else {
-
                 const httpServer = Servers.get(server.instanceId, 'http')
                     || http.createServer(app._app);
                 parentServer._app.http = httpServer;
-
                 Servers.set(server.instanceId, 'http', httpServer);
             }
-
-
-
         } else {
             throw new Error('Missing configuration options for Express');
         }
     }
 
     close() {
+        this._app.removeAllListeners();
         return true;
-        // this._app.close();
     }
 
     useClass(classType: any, methodType: any) {

@@ -2,7 +2,6 @@ import { injectionModule as injection } from '@methodus/server';
 import { TestTarget } from './controllers/target.test';
 import { ExpressSecuredTestServer } from './servers/express.server.https';
 
-
 describe('Test Express configuration', () => {
     const testTarget = injection.Injector.get(TestTarget);
     let server: ExpressSecuredTestServer;
@@ -30,7 +29,6 @@ describe('Test Express configuration', () => {
         expect(response.result.length).toBe(5);
     });
 
-
     it('create', async () => {
         const response = await testTarget.create('cookie-value', {}, 'my user name');
         expect(response.result.name).toBe('my user name');
@@ -38,10 +36,8 @@ describe('Test Express configuration', () => {
 
     it('read', async () => {
         try {
-            
             await testTarget.read(511798);
         } catch (error) {
-            
             expect(error).toBeDefined();
         }
     });
@@ -57,39 +53,23 @@ describe('Test Express configuration', () => {
     it('delete', async () => {
         const result = await testTarget.delete();
         expect(result).toBeDefined();
-
         const result2 = await testTarget.delete2();
         expect(result2).toBeDefined();
-
     });
 
 
     it('delete2', async () => {
-
-
         const result2 = await testTarget.delete2();
         expect(result2).toBeDefined();
-
     });
 
     it('headers', async () => {
-
-
         const result2 = await testTarget.headers({ applicaiotn: 'json' });
         expect(result2).toBeDefined();
-
     });
 
     it('buffer1', async () => {
-
-
         const result2 = await testTarget.buffer1();
         expect(result2).toBeDefined();
-
     });
-
-
-  
-
-
 });
