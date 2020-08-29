@@ -1,16 +1,18 @@
 {
     "exclude": ["docs"],
     "typedocOptions": {
-        "theme": "markdown",
+        "exclude": "**/*+(index|.spec|.e2e).ts",
+        "module": "commonjs",
         "excludeExternals": "true",
         "excludeNotExported": "true",
-        "target": "ES6",
-        "includeDeclarations": "true",
+        "target": "commonjs",
+        "includeDeclarations": "false",
         "mode": "file",
-        "name": "A Methodus guide",
-        "readme": "none",
+        "baseUrl": "modules/framework/decorators",
+        "name": "Methodus - framework decorators",
+        "readme": "readme.md",
         "out": "../../../docs/modules/framework/decorators",
-        "exclude": "tests"
+        "theme": "markdown"
     },
     "compilerOptions": {
         "target": "es2015",

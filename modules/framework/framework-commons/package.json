@@ -8,7 +8,7 @@
         "build": "rm -rf ./dist && tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
-        "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
+        "docs": "rm -rf ../../../docs/modules/framework/common/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
         "mutation":"stryker run --fileLogLevel trace --logLevel debug"
     },
     "author": "NodulusTeam",

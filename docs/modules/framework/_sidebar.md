@@ -8,7 +8,7 @@
     * [Framework](modules/framework/main.md)
         * [Common](modules/framework/common/README.md)
         * [Decorators](modules/framework/decorators/README.md)
-        * [Injection](modules/framework/injection/globals.md)
+        * [Injection](modules/framework/injection/README.md)
     * [Platform](modules/platform/main.md)
     * [Tools](modules/tools/main.md)
 * [Examples](examples/index.md)

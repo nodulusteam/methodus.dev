@@ -4,6 +4,14 @@ module.exports = {
     testMatch: ['<rootDir>/src/**/*.spec.ts'],
     collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/tests/**/*'],
     collectCoverage: true,
+    reporters: [
+        'default',
+        ['../../../node_modules/jest-html-reporter', {
+          'outputPath': '../../../docs/modules/framework/decorators/tests.html',
+          'pageTitle': 'Test Report'
+        }]
+      ],
+
     "coverageReporters": ["lcov","json"],
     coverageThreshold: {
         global: {

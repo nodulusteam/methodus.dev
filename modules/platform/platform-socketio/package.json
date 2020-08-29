@@ -7,7 +7,7 @@
         "test": "jest && yarn coverage",
         "build": "rimraf ./dist && yarn format && tsc",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json",
-        "docs": "typedoc",
+        "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio",
         "format": "prettier -c --write ./src"
     },
     "author": "nodulusteam",

@@ -8,7 +8,7 @@
         "build": "../../../node_modules/.bin/rimraf ./dist && yarn format & tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json",
-        "docs": "../../../node_modules/.bin/typedoc && node ../../../docs/docs.js ../../../docs/modules/framework/decorators",
+        "docs": "rm -rf  ../../../docs/modules/framework/decorators && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/decorators",
         "format": "../../../node_modules/.bin/prettier -c --write ./src"
     },
     "author": "NodulusTeam",

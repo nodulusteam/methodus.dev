@@ -23,7 +23,7 @@
         "test:client:models": "./dist/client.js ./build_vars/models/build.json",
         "test:client:inherit": "./dist/client.js ./build_vars/inherit/build.json",
         "pretest": "tsc",
-        "docs": "typedoc",
+        "docs": "rm -rf ../../../docs/modules/tools/contracts/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/tools/contracts",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-contracts -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "author": "NodulusTeam",

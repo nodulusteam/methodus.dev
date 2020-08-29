@@ -14,6 +14,20 @@ The library is used to define transport related integrations using TypeScript de
 Decorated client contract classes can be created manually or auto generated using the [@methodus/contracts](https://github.com/nodulusteam/tools/methodus-contracts) package.
 
 
+<!-- tabs:start -->
+#### ** Reference **
+
+[filename](globals.md ':include')
+ 
+#### ** Tests overview **
+
+[tests](tests.html ':include :type=iframe width=100% height=100%')
+
+
+
+<!-- tabs:end -->
+
+
 
 
 

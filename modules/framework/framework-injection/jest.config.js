@@ -8,6 +8,13 @@ module.exports = {
     "<rootDir>/src/**/*.ts",
     "!<rootDir>/src/tests/**/*"
   ],
+  reporters: [
+    'default',
+    ['../../../node_modules/jest-html-reporter', {
+      'outputPath': '../../../docs/modules/framework/injection/tests.html',
+      'pageTitle': 'Test Report'
+    }]
+  ],
   collectCoverage: true,
   "coverageReporters": ["lcov","json"],
   "coverageThreshold": {

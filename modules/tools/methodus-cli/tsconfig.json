@@ -17,16 +17,18 @@
         "noUnusedLocals": false
     },
     "typedocOptions": {
-        "theme": "markdown",
+        "exclude": "**/*+(index|.spec|.e2e).ts,tests",
+        "module": "commonjs",
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "commonjs",
-        "includeDeclarations": "true",
-        "mode": "module",
-        "name": "A Methodus guide",
-        "readme": "none",
-        "out": "../../docs/modules/tools/cli",
-        "exclude": "tests"
+        "includeDeclarations": "false",
+        "mode": "file",
+        "baseUrl": "modules/tools/cli",
+        "name": "Methodus - tools/cli",
+        "readme": "readme.md",
+        "out": "../../../docs/modules/tools/cli",
+        "theme": "markdown"
     },
     "exclude": ["node_modules", "dist", "sandbox", "templates"]
 }

@@ -84,3 +84,18 @@ Model API data objects and manage DB access (mongodb)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_large)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_shield)
+
+
+
+<!-- tabs:start -->
+#### ** Reference **
+
+[filename](globals.md ':include')
+ 
+#### ** Tests overview **
+
+[tests](tests.html ':include :type=iframe width=100% height=100%')
+
+
+
+<!-- tabs:end -->

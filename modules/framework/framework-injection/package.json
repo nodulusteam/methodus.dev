@@ -8,7 +8,7 @@
         "test": "jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-injection.json",
         "build": "rimraf ./dist && tsc",
-        "docs": "typedoc",
+        "docs": "rm -rf  ../../../docs/modules/framework/injection && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/injection",
         "format": "prettier -c --write ./src"
     },
     "author": "NodulusTeam",

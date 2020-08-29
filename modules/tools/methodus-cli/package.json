@@ -9,7 +9,7 @@
         "start": "node src/index.ts",
         "build": "shx rm -rf dist && tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn clear-sandbox && yarn coverage",
-        "docs": "typedoc",
+        "docs": "rm -rf ../../../docs/modules/tools/cli/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/tools/cli",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-cli.json"
     },
     "bin": {
