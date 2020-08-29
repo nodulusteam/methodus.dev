@@ -11,9 +11,7 @@ before_install:
 before_script:
   - yarn run lerna run prepublish
 script:
-  - yarn bootstrap
-  - yarn build
-  - yarn test
+  - yarn ci
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
