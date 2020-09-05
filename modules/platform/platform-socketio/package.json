@@ -3,6 +3,27 @@
     "version": "7.0.3",
     "description": "",
     "main": "dist/index.js",
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/platforms/platform-socketio"
+    },
+    "keywords": [
+        "methodus",
+        "unified application framework",
+        "microservice",
+        "rpc",
+        "socketio",
+        "eventsourcing",
+        "agnostic",
+        "independent",
+        "framework",
+        "typescript",
+        "bind",
+        "application"
+    ],
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
     "scripts": {
         "test": "jest && yarn coverage",
         "build": "rimraf ./dist && yarn format && tsc",
@@ -10,18 +31,14 @@
         "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio",
         "format": "prettier -c --write ./src"
     },
-    "author": "nodulusteam",
-    "license": "ISC",
+ 
     "publishConfig": {
         "access": "public"
     },
     "peerDependencies": {
         "@methodus/server": "^7.0.0"
     },
-    "dependencies": {
-        "@methodus/framework-commons": "^7.0.4",
-        "@methodus/framework-decorators": "^7.0.3",
-        "@methodus/framework-injection": "^7.0.3",
+    "dependencies": {       
         "@methodus/server": "^7.0.5",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"

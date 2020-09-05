@@ -4,6 +4,26 @@
     "description": "Server Decorators for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/framework/framework-decorators"
+    },
+    "keywords": [
+        "methodus",
+        "unified application framework",
+        "microservice",
+        "rpc",
+        "eventsourcing",
+        "agnostic",
+        "independent",
+        "framework",
+        "typescript",
+        "bind",
+        "application"
+    ],
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
     "scripts": {
         "build": "../../../node_modules/.bin/rimraf ./dist && yarn format & tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
@@ -11,8 +31,7 @@
         "docs": "rm -rf  ../../../docs/modules/framework/decorators && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/decorators",
         "format": "../../../node_modules/.bin/prettier -c --write ./src"
     },
-    "author": "NodulusTeam",
-    "license": "BSD-3-Clause",
+ 
     "publishConfig": {
         "access": "public"
     },

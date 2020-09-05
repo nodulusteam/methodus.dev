@@ -4,15 +4,17 @@
     "description": "Server components for @methodus workflow",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "directories": {
-        "test": "tests",
-        "examples": "examples"
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/platforms/platform-web"
     },
     "keywords": [
         "methodus",
         "unified application framework",
         "microservice",
         "rpc",
+        "web",
         "eventsourcing",
         "agnostic",
         "independent",
@@ -21,10 +23,8 @@
         "bind",
         "application"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/nodulusteam/-methodus-server"
-    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
     "scripts": {
         "build": "rm -rf ./dist && tsc",
         "watch": "rm -rf ./dist && tsc -w",
@@ -35,8 +35,6 @@
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "rm -rf output && npm run test"
     },
-    "author": "NodulusTeam",
-    "license": "BSD-3-Clause",
     "publishConfig": {
         "access": "public"
     },

@@ -2,6 +2,25 @@
     "name": "@methodus/cli",
     "version": "7.0.6",
     "main": "dist/index.js",
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/tools/methodus-cli"
+    },
+    "keywords": [
+        "methodus",
+        "unified application framework",
+        "microservice",
+        "rpc",
+        "web",
+        "eventsourcing",
+        "agnostic",
+        "independent",
+        "framework",
+        "typescript",
+        "bind",
+        "application"
+    ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
@@ -15,19 +34,6 @@
     "bin": {
         "methodus": "./dist/index.js"
     },
-    "keywords": [
-        "methodus",
-        "unified application framework",
-        "microservice",
-        "rpc",
-        "eventsourcing",
-        "agnostic",
-        "independent",
-        "framework",
-        "typescript",
-        "bind",
-        "application"
-    ],
     "devDependencies": {
         "@types/ejs": "^2.6.0",
         "@types/faker": "^4.1.9",

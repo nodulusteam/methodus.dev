@@ -4,6 +4,26 @@
     "description": "Dependency injection for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/framework/framework-injection"
+    },
+    "keywords": [
+        "methodus",
+        "unified application framework",
+        "microservice",
+        "rpc",
+        "eventsourcing",
+        "agnostic",
+        "independent",
+        "framework",
+        "typescript",
+        "bind",
+        "application"
+    ],
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
     "scripts": {
         "test": "jest --silent && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-injection.json",
@@ -11,8 +31,6 @@
         "docs": "rm -rf  ../../../docs/modules/framework/injection && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/injection",
         "format": "prettier -c --write ./src"
     },
-    "author": "NodulusTeam",
-    "license": "BSD-3-Clause",
     "publishConfig": {
         "access": "public"
     },

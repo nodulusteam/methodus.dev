@@ -11,9 +11,10 @@
         "client": "contracts-client ./build.json",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-describe -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8c7c7f129d82d3fe77455df4bf7607c5dacbfdc2"
     },
+    "homepage": "https://methodus.dev",
     "repository": {
         "type": "git",
-        "url": "https://github.com/nodulusteam/-methodus-describe"
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/tools/methodus-contracts"
     },
     "keywords": [
         "methodus",
@@ -28,9 +29,6 @@
     "devDependencies": {
         "@methodus/contracts": "^7.0.4",
         "@methodus/data": "^2.0.33",
-        "@methodus/framework-commons": "^7.0.4",
-        "@methodus/framework-decorators": "^7.0.3",
-        "@methodus/framework-injection": "^7.0.3",
         "@methodus/platform-express": "^7.0.3",
         "@methodus/platform-rest": "^7.0.3",
         "@methodus/server": "^7.0.5",

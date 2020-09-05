@@ -4,6 +4,27 @@
     "description": "Express plugin for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/platforms/platform-express"
+    },
+    "keywords": [
+        "methodus",
+        "unified application framework",
+        "microservice",
+        "rpc",
+        "express",
+        "eventsourcing",
+        "agnostic",
+        "independent",
+        "framework",
+        "typescript",
+        "bind",
+        "application"
+    ],
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
     "scripts": {
         "test": "../../../node_modules/.bin/jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-express.json",
@@ -11,14 +32,11 @@
         "docs": "rm -rf ../../../docs/modules/platforms/express/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/express",
         "format": "../../../node_modules/.bin/prettier -c --write ./src"
     },
-    "author": "NodulusTeam",
-    "license": "BSD-3-Clause",
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
         "@methodus/server": "^7.0.5",
-        "@types/express-session": "^1.17.0",
         "body-parser": "^1.19.0",
         "compression": "^1.7.0",
         "cookie-parser": "^1.4.4",
@@ -30,10 +48,8 @@
         "fast-safe-stringify": "^2.0.7"
     },
     "devDependencies": {
+        "@types/express-session": "^1.17.0",
         "@methodus/data": "^2.0.35",
-        "@methodus/framework-commons": "^7.0.4",
-        "@methodus/framework-decorators": "^7.0.3",
-        "@methodus/framework-injection": "^7.0.3",
         "@methodus/platform-rest": "^7.0.3",
         "@types/cookie-parser": "^1.4.2",
         "@types/etag": "^1.8.0",
