@@ -4,6 +4,13 @@
     "description": "Commons for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "homepage": "https://methodus.dev",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/methodus.dev/tree/master/modules/framework/framework-commons"
+    },
+    "author": "NodulusTeam",
+    "license": "BSD-3-Clause",
     "scripts": {
         "build": "rm -rf ./dist && tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
@@ -11,8 +18,6 @@
         "docs": "rm -rf ../../../docs/modules/framework/common/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
         "mutation": "stryker run --fileLogLevel trace --logLevel debug"
     },
-    "author": "NodulusTeam",
-    "license": "BSD-3-Clause",
     "publishConfig": {
         "access": "public"
     },

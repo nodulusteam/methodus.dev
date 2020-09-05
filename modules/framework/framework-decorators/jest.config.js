@@ -6,6 +6,10 @@ module.exports = {
     collectCoverage: true,
     reporters: [
         'default',
+        ['../../../node_modules/jest-html-reporters', {      
+          'filename': '../../../docs/modules/framework/decorators/test_dashboard.html',
+          'expand': true
+        }],
         ['../../../node_modules/jest-html-reporter', {
           'outputPath': '../../../docs/modules/framework/decorators/tests.html',
           'pageTitle': 'Test Report'
