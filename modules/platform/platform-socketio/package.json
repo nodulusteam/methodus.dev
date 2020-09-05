@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "7.0.3",
+    "version": "7.0.4",
     "description": "",
     "main": "dist/index.js",
     "homepage": "https://methodus.dev",
@@ -31,15 +31,14 @@
         "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio",
         "format": "prettier -c --write ./src"
     },
- 
     "publishConfig": {
         "access": "public"
     },
     "peerDependencies": {
         "@methodus/server": "^7.0.0"
     },
-    "dependencies": {       
-        "@methodus/server": "^7.0.5",
+    "dependencies": {
+        "@methodus/server": "^7.0.6",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"
     },
