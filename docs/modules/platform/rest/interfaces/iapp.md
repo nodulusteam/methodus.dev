@@ -31,7 +31,7 @@ Name | Type |
 
 ▸ **set**(`key`: string, `value`: any): *void*
 
-*Defined in [src/server.ts:11](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/server.ts#L11)*
+*Defined in [src/server.ts:11](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/server.ts#L11)*
 
 **Parameters:**
 

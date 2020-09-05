@@ -62,7 +62,7 @@
 
 Ƭ **nameStruct**: *object*
 
-*Defined in [src/response/response-parser.ts:10](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/response/response-parser.ts#L10)*
+*Defined in [src/response/response-parser.ts:10](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/response/response-parser.ts#L10)*
 
 this function parses values from the request object into the function args
 
@@ -80,7 +80,7 @@ this function parses values from the request object into the function args
 
 • **ServerPlugin**: *[EmitterPlugin](classes/emitterplugin.md)‹›* = new EmitterPlugin()
 
-*Defined in [src/tests/servers/emitter.server.ts:13](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/servers/emitter.server.ts#L13)*
+*Defined in [src/tests/servers/emitter.server.ts:13](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/servers/emitter.server.ts#L13)*
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 • **Servers**: *any* = (global as any).METHODUS_BRIDGE
 
-*Defined in [src/servers/serversList.ts:45](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/servers/serversList.ts#L45)*
+*Defined in [src/servers/serversList.ts:45](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/servers/serversList.ts#L45)*
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 • **getClassOf**: *any* = Function.prototype.call.bind(Object.prototype.toString)
 
-*Defined in [src/method/method.ts:9](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/method.ts#L9)*
+*Defined in [src/method/method.ts:9](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/method.ts#L9)*
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 • **logger**: *Logger‹›* = commons.logger
 
-*Defined in [src/plugins.ts:2](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/plugins.ts#L2)*
+*Defined in [src/plugins.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/plugins.ts#L2)*
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 • **messageServer**: *CustomMessageServer* = new CustomMessageServer()
 
-*Defined in [src/tests/servers/emitter.plugin.ts:94](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/servers/emitter.plugin.ts#L94)*
+*Defined in [src/tests/servers/emitter.plugin.ts:94](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/servers/emitter.plugin.ts#L94)*
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 • **metadataKey**: *"methodus"* = "methodus"
 
-*Defined in [src/tests/servers/emitter.plugin.ts:12](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/servers/emitter.plugin.ts#L12)*
+*Defined in [src/tests/servers/emitter.plugin.ts:12](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/servers/emitter.plugin.ts#L12)*
 
 ___
 
@@ -128,9 +128,9 @@ ___
 
 • **methodMetadataKey**: *"methodus"* = "methodus"
 
-*Defined in [src/method/method.ts:10](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/method.ts#L10)*
+*Defined in [src/method/method.ts:10](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/method.ts#L10)*
 
-*Defined in [src/method/method-pipe.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/method-pipe.ts#L7)*
+*Defined in [src/method/method-pipe.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/method-pipe.ts#L7)*
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 • **resultEmitter**: *EventEmitter* = new EventEmitter()
 
-*Defined in [src/tests/servers/emitter.plugin.ts:17](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/servers/emitter.plugin.ts#L17)*
+*Defined in [src/tests/servers/emitter.plugin.ts:17](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/servers/emitter.plugin.ts#L17)*
 
 ## Functions
 
@@ -146,7 +146,7 @@ ___
 
 ▸ **deserialize**(`item`: object | any): *any*
 
-*Defined in [src/method/deserialize.ts:27](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L27)*
+*Defined in [src/method/deserialize.ts:27](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L27)*
 
 Deserialize values according to their types
 
@@ -164,7 +164,7 @@ ___
 
 ▸ **handleResult**(`methodResult`: any): *Promise‹any›*
 
-*Defined in [src/method/method.ts:205](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/method.ts#L205)*
+*Defined in [src/method/method.ts:205](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/method.ts#L205)*
 
 **Parameters:**
 
@@ -180,7 +180,7 @@ ___
 
 ▸ **returnJson**(`str`: string): *any*
 
-*Defined in [src/method/deserialize.ts:59](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L59)*
+*Defined in [src/method/deserialize.ts:59](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L59)*
 
 **Parameters:**
 
@@ -196,7 +196,7 @@ ___
 
 ▸ **validateServerIsRunning**(): *void*
 
-*Defined in [src/method/method.ts:246](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/method.ts#L246)*
+*Defined in [src/method/method.ts:246](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/method.ts#L246)*
 
 **Returns:** *void*
 
@@ -206,7 +206,7 @@ ___
 
 ▸ **verbBasedMethod**(`target`: any, `propertyKey`: string, `descriptor`: TypedPropertyDescriptor‹any›, `verb?`: undefined | string, `route?`: undefined | string, `middlewares?`: Function[]): *TypedPropertyDescriptor‹any›*
 
-*Defined in [src/method/method.ts:23](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/method.ts#L23)*
+*Defined in [src/method/method.ts:23](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/method.ts#L23)*
 
 the @Method decorator registers route listeners
 
@@ -229,13 +229,13 @@ Name | Type | Description |
 
 ### ▪ **primitiveArray**: *object*
 
-*Defined in [src/method/deserialize.ts:5](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L5)*
+*Defined in [src/method/deserialize.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L5)*
 
 ###  bool
 
 ▸ **bool**(`val`: string | boolean): *boolean*
 
-*Defined in [src/method/deserialize.ts:6](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L6)*
+*Defined in [src/method/deserialize.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L6)*
 
 **Parameters:**
 
@@ -249,7 +249,7 @@ Name | Type |
 
 ▸ **date**(`val`: string): *Date*
 
-*Defined in [src/method/deserialize.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L7)*
+*Defined in [src/method/deserialize.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L7)*
 
 **Parameters:**
 
@@ -263,7 +263,7 @@ Name | Type |
 
 ▸ **object**(`val`: string | any): *any*
 
-*Defined in [src/method/deserialize.ts:9](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L9)*
+*Defined in [src/method/deserialize.ts:9](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L9)*
 
 **Parameters:**
 
@@ -277,7 +277,7 @@ Name | Type |
 
 ▸ **string**(`val`: string): *string*
 
-*Defined in [src/method/deserialize.ts:8](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/method/deserialize.ts#L8)*
+*Defined in [src/method/deserialize.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/method/deserialize.ts#L8)*
 
 **Parameters:**
 

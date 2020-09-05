@@ -23,7 +23,7 @@
 
 Defined in dist/interfaces.d.ts:29
 
-*Defined in [src/interfaces.ts:25](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/interfaces.ts#L25)*
+*Defined in [src/interfaces.ts:25](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/interfaces.ts#L25)*
 
 #### Type declaration:
 
@@ -39,7 +39,7 @@ ___
 
 Defined in dist/interfaces.d.ts:28
 
-*Defined in [src/interfaces.ts:24](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/interfaces.ts#L24)*
+*Defined in [src/interfaces.ts:24](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/interfaces.ts#L24)*
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 Defined in dist/interfaces.d.ts:27
 
-*Defined in [src/interfaces.ts:23](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/interfaces.ts#L23)*
+*Defined in [src/interfaces.ts:23](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/interfaces.ts#L23)*
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 Defined in dist/interfaces.d.ts:26
 
-*Defined in [src/interfaces.ts:22](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/interfaces.ts#L22)*
+*Defined in [src/interfaces.ts:22](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/interfaces.ts#L22)*

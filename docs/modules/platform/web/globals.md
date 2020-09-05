@@ -52,9 +52,9 @@
 
 • **ANNOTATIONS**: *"__annotations__"* = "__annotations__"
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:2](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/injector.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L2)*
 
-*Defined in [modules/platform/platform-web/src/lib/di/singleton.ts:2](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/singleton.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/di/singleton.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/singleton.ts#L2)*
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 • **RegExInsideParentheses**: *RegExp‹›* = /[(][^)]*[)]/
 
-*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:18](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/inject.ts#L18)*
+*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:18](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/inject.ts#L18)*
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 • **RegExParenthesesAndSpaces**: *RegExp‹›* = /[()\s]/g
 
-*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:19](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/inject.ts#L19)*
+*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:19](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/inject.ts#L19)*
 
 ___
 
@@ -78,7 +78,7 @@ ___
 
 • **socket**: *any* = null
 
-*Defined in [modules/platform/platform-web/src/lib/transports/socket.ts:2](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/transports/socket.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/transports/socket.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/socket.ts#L2)*
 
 ## Functions
 
@@ -86,7 +86,7 @@ ___
 
 ▸ **GetArgumentNames**(`functionString`: any): *string[]*
 
-*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:20](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/inject.ts#L20)*
+*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:20](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/inject.ts#L20)*
 
 **Parameters:**
 
@@ -102,7 +102,7 @@ ___
 
 ▸ **Inject**(`name?`: string): *any*
 
-*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/inject.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/inject.ts#L4)*
 
 **Parameters:**
 
@@ -118,7 +118,7 @@ ___
 
 ▸ **Injectable**(`nameToken?`: string): *DecoratorFactory*
 
-*Defined in [modules/platform/platform-web/src/lib/di/injectable.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/injectable.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/di/injectable.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injectable.ts#L4)*
 
 **Parameters:**
 
@@ -134,7 +134,7 @@ ___
 
 ▸ **Method**(`verb`: [Verbs](enums/verbs.md), `route`: string): *(Anonymous function)*
 
-*Defined in [modules/platform/platform-web/src/lib/decorators/method.ts:12](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/decorators/method.ts#L12)*
+*Defined in [modules/platform/platform-web/src/lib/decorators/method.ts:12](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/decorators/method.ts#L12)*
 
 the @Method decorator registers the model with the odm
 
@@ -153,7 +153,7 @@ ___
 
 ▸ **MethodConfig**(`name`: string, `middlewares?`: any[], `baseRoute?`: string): *(Anonymous function)*
 
-*Defined in [modules/platform/platform-web/src/lib/decorators/method-config.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/decorators/method-config.ts#L7)*
+*Defined in [modules/platform/platform-web/src/lib/decorators/method-config.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/decorators/method-config.ts#L7)*
 
 the MethodConfig decorator registers the controller as a router
 
@@ -173,7 +173,7 @@ ___
 
 ▸ **MethodConfigBase**(`name`: string): *(Anonymous function)*
 
-*Defined in [modules/platform/platform-web/src/lib/decorators/method-config-base.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/decorators/method-config-base.ts#L7)*
+*Defined in [modules/platform/platform-web/src/lib/decorators/method-config-base.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/decorators/method-config-base.ts#L7)*
 
 the MethodConfig decorator registers the controller as a router
 
@@ -191,7 +191,7 @@ ___
 
 ▸ **Singleton**(): *DecoratorFactory*
 
-*Defined in [modules/platform/platform-web/src/lib/di/singleton.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/singleton.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/di/singleton.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/singleton.ts#L4)*
 
 **Returns:** *DecoratorFactory*
 
@@ -201,7 +201,7 @@ ___
 
 ▸ **build**(`from`: string, `name?`: string, `type?`: any): *(Anonymous function)*
 
-*Defined in [modules/platform/platform-web/src/lib/decorators/params.ts:17](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/decorators/params.ts#L17)*
+*Defined in [modules/platform/platform-web/src/lib/decorators/params.ts:17](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/decorators/params.ts#L17)*
 
 **Parameters:**
 
@@ -219,7 +219,7 @@ ___
 
 ▸ **getConstructorArgumentsNames**(`constructor`: any, `index`: number): *any*
 
-*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:12](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/di/inject.ts#L12)*
+*Defined in [modules/platform/platform-web/src/lib/di/inject.ts:12](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/inject.ts#L12)*
 
 **Parameters:**
 
@@ -236,7 +236,7 @@ ___
 
 ▸ **pushParams**(`target`: [MethodusClass](classes/methodusclass.md), `propertyKey`: string, `param`: [ParamsMap](classes/paramsmap.md)): *void*
 
-*Defined in [modules/platform/platform-web/src/lib/decorators/params.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/decorators/params.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/decorators/params.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/decorators/params.ts#L4)*
 
 **Parameters:**
 

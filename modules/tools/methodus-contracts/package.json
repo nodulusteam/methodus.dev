@@ -12,7 +12,7 @@
         "tslint": "tslint --project",
         "test": "yarn test:all && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-contracts.json",
-        "test:all": "jest",
+        "test:all": "../../../node_modules/.bin/jest",
         "test:server": "run-s test:server:* ",
         "test:server:simple": "./dist/build.js ./build_vars/simple/build.json",
         "test:server:models": "./dist/build.js ./build_vars/models/build.json",

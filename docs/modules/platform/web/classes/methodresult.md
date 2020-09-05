@@ -34,7 +34,7 @@
 
 \+ **new MethodResult**(`result`: T, `total?`: number, `page?`: number): *[MethodResult](methodresult.md)*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:6](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L6)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L6)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ Name | Type |
 
 • **page**: *any*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L4)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **result**: *T*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:2](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L2)*
 
 ___
 
@@ -68,7 +68,7 @@ ___
 
 • **statusCode**? : *number*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:6](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L6)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L6)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **stream**: *any*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:3](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L3)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:3](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L3)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **total**? : *number*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:5](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L5)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L5)*
 
 ## Methods
 
@@ -92,7 +92,7 @@ ___
 
 ▸ **pipe**(`streamToPipe`: any): *void*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:16](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodResult.ts#L16)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodResult.ts:16](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodResult.ts#L16)*
 
 **Parameters:**
 

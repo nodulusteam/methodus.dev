@@ -43,7 +43,7 @@ Defined in dist/clients-list.d.ts:5
 
 Defined in dist/clients-list.d.ts:4
 
-*Defined in [src/clients-list.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/clients-list.ts#L7)*
+*Defined in [src/clients-list.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/clients-list.ts#L7)*
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 Defined in dist/clients-list.d.ts:3
 
-*Defined in [src/clients-list.ts:5](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/clients-list.ts#L5)*
+*Defined in [src/clients-list.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/clients-list.ts#L5)*
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 Defined in dist/clients-list.d.ts:5
 
-*Defined in [src/clients-list.ts:8](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/clients-list.ts#L8)*
+*Defined in [src/clients-list.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/clients-list.ts#L8)*
 
 ## Methods
 

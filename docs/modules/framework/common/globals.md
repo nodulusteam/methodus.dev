@@ -56,6 +56,7 @@
 
 ### Functions
 
+* [Application](#application)
 * [Body](#body)
 * [Cookies](#cookies)
 * [Files](#files)
@@ -65,6 +66,7 @@
 * [Request](#request)
 * [Response](#response)
 * [SecurityContext](#securitycontext)
+* [Session](#session)
 * [build](#build)
 * [pushParams](#pushparams)
 * [recurseODM](#recurseodm)
@@ -161,6 +163,32 @@ ___
 Defined in modules/framework/framework-commons/dist/fp/index.d.ts:10
 
 ## Functions
+
+###  Application
+
+▸ **Application**(`name?`: undefined | string): *function*
+
+Defined in modules/framework/framework-commons/dist/param/params.d.ts:10
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`name?` | undefined &#124; string |
+
+**Returns:** *function*
+
+▸ (`target`: any, `propertyKey`: string | symbol, `parameterIndex`: number): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`target` | any |
+`propertyKey` | string &#124; symbol |
+`parameterIndex` | number |
+
+___
 
 ###  Body
 
@@ -325,7 +353,7 @@ ___
 
 ▸ **Request**(`name?`: undefined | string): *function*
 
-Defined in modules/framework/framework-commons/dist/param/params.d.ts:10
+Defined in modules/framework/framework-commons/dist/param/params.d.ts:12
 
 **Parameters:**
 
@@ -351,7 +379,7 @@ ___
 
 ▸ **Response**(`name?`: undefined | string): *function*
 
-Defined in modules/framework/framework-commons/dist/param/params.d.ts:9
+Defined in modules/framework/framework-commons/dist/param/params.d.ts:11
 
 **Parameters:**
 
@@ -385,6 +413,32 @@ Name | Type |
 ------ | ------ |
 `name?` | undefined &#124; string |
 `type?` | any |
+
+**Returns:** *function*
+
+▸ (`target`: any, `propertyKey`: string | symbol, `parameterIndex`: number): *void*
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`target` | any |
+`propertyKey` | string &#124; symbol |
+`parameterIndex` | number |
+
+___
+
+###  Session
+
+▸ **Session**(`name?`: undefined | string): *function*
+
+Defined in modules/framework/framework-commons/dist/param/params.d.ts:9
+
+**Parameters:**
+
+Name | Type |
+------ | ------ |
+`name?` | undefined &#124; string |
 
 **Returns:** *function*
 

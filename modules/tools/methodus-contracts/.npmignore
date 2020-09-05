@@ -1,5 +1,6 @@
 *
-!lib/**
+!dist/**
+**/tests/*
 !template/**
 !package.json
 !readme.md

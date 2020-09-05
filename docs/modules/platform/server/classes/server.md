@@ -18,10 +18,12 @@
 * [_plugins](server.md#private-_plugins)
 * [app](server.md#app)
 * [config](server.md#optional-config)
-* [httpServer](server.md#private-httpserver)
-* [httpsServer](server.md#private-httpsserver)
-* [instanceId](server.md#private-instanceid)
-* [port](server.md#private-port)
+* [httpServer](server.md#httpserver)
+* [httpsServer](server.md#httpsserver)
+* [instanceId](server.md#instanceid)
+* [methodHandler](server.md#optional-methodhandler)
+* [methodPipeHandler](server.md#optional-methodpipehandler)
+* [port](server.md#port)
 * [serverKey](server.md#serverkey)
 
 ### Methods
@@ -40,7 +42,7 @@
 
 \+ **new Server**(`port?`: number | string, `app?`: any, `httpServer?`: any): *[Server](server.md)*
 
-*Defined in [src/server.ts:27](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L27)*
+*Defined in [src/server.ts:30](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L30)*
 
 **Parameters:**
 
@@ -58,7 +60,7 @@ Name | Type |
 
 • **_app**: *any*
 
-*Defined in [src/server.ts:22](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L22)*
+*Defined in [src/server.ts:22](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L22)*
 
 ___
 
@@ -66,7 +68,7 @@ ___
 
 • **_plugins**: *PluginEntry[]* = []
 
-*Defined in [src/server.ts:26](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L26)*
+*Defined in [src/server.ts:26](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L26)*
 
 ___
 
@@ -74,7 +76,7 @@ ___
 
 • **app**: *any*
 
-*Defined in [src/server.ts:18](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L18)*
+*Defined in [src/server.ts:18](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L18)*
 
 ___
 
@@ -82,39 +84,55 @@ ___
 
 • **config**? : *MethodusConfig*
 
-*Defined in [src/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L19)*
+*Defined in [src/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L19)*
 
 ___
 
-### `Private` httpServer
+###  httpServer
 
 • **httpServer**: *any*
 
-*Defined in [src/server.ts:23](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L23)*
+*Defined in [src/server.ts:23](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L23)*
 
 ___
 
-### `Private` httpsServer
+###  httpsServer
 
 • **httpsServer**: *any*
 
-*Defined in [src/server.ts:24](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L24)*
+*Defined in [src/server.ts:24](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L24)*
 
 ___
 
-### `Private` instanceId
+###  instanceId
 
 • **instanceId**: *string*
 
-*Defined in [src/server.ts:27](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L27)*
+*Defined in [src/server.ts:27](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L27)*
 
 ___
 
-### `Private` port
+### `Optional` methodHandler
+
+• **methodHandler**? : *[MethodHandler](methodhandler.md) | null*
+
+*Defined in [src/server.ts:29](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L29)*
+
+___
+
+### `Optional` methodPipeHandler
+
+• **methodPipeHandler**? : *[MethodPipeHandler](methodpipehandler.md) | null*
+
+*Defined in [src/server.ts:30](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L30)*
+
+___
+
+###  port
 
 • **port**: *number* = 0
 
-*Defined in [src/server.ts:25](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L25)*
+*Defined in [src/server.ts:25](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L25)*
 
 ___
 
@@ -122,7 +140,7 @@ ___
 
 • **serverKey**: *string*
 
-*Defined in [src/server.ts:20](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L20)*
+*Defined in [src/server.ts:20](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L20)*
 
 ## Methods
 
@@ -130,7 +148,7 @@ ___
 
 ▸ **configure**(`config`: MethodusConfig): *this*
 
-*Defined in [src/server.ts:54](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L54)*
+*Defined in [src/server.ts:55](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L55)*
 
 **Parameters:**
 
@@ -146,7 +164,7 @@ ___
 
 ▸ **kill**(): *void*
 
-*Defined in [src/server.ts:195](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L195)*
+*Defined in [src/server.ts:196](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L196)*
 
 **Returns:** *void*
 
@@ -156,7 +174,7 @@ ___
 
 ▸ **makeid**(): *string*
 
-*Defined in [src/server.ts:45](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L45)*
+*Defined in [src/server.ts:46](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L46)*
 
 **Returns:** *string*
 
@@ -166,7 +184,7 @@ ___
 
 ▸ **plugins**(`plugins`: PluginEntry[]): *this*
 
-*Defined in [src/server.ts:49](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L49)*
+*Defined in [src/server.ts:50](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L50)*
 
 **Parameters:**
 
@@ -182,7 +200,7 @@ ___
 
 ▸ **start**(): *Promise‹this›*
 
-*Defined in [src/server.ts:85](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L85)*
+*Defined in [src/server.ts:86](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L86)*
 
 **Returns:** *Promise‹this›*
 
@@ -192,7 +210,7 @@ ___
 
 ▸ **useClass**(`_class`: any): *void*
 
-*Defined in [src/server.ts:159](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L159)*
+*Defined in [src/server.ts:160](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L160)*
 
 **Parameters:**
 
@@ -208,7 +226,7 @@ ___
 
 ▸ **useClient**(`_class`: any): *void*
 
-*Defined in [src/server.ts:61](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L61)*
+*Defined in [src/server.ts:62](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L62)*
 
 **Parameters:**
 

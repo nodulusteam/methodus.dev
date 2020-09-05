@@ -29,7 +29,7 @@
 
 \+ **new MethodError**(`error`: string, `statusCode?`: number): *[MethodError](methoderror.md)*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodError.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodError.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodError.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodError.ts#L4)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ Name | Type |
 
 • **error**: *string*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodError.ts:3](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodError.ts#L3)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodError.ts:3](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodError.ts#L3)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **statusCode**: *number*
 
-*Defined in [modules/platform/platform-web/src/lib/response/methodError.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/lib/response/methodError.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/response/methodError.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/response/methodError.ts#L4)*
 
 ___
 

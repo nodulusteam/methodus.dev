@@ -8,6 +8,10 @@
 
 * ConfiguredServer
 
+* ConfiguredServer
+
+* ConfiguredServer
+
   ↳ **ExpressTestServer**
 
 ## Index
@@ -49,7 +53,13 @@
 
 *Overrides void*
 
-Defined in platform/platform-express/dist/tests/servers/express.server.http.d.ts:2
+Defined in platform/platform-express/dist/tests/http/express.server.http.d.ts:2
+
+**Returns:** *[ExpressTestServer](expresstestserver.md)*
+
+\+ **new ExpressTestServer**(): *[ExpressTestServer](expresstestserver.md)*
+
+Defined in platform/platform-express/dist/tests/session/express.server.session.d.ts:2
 
 **Returns:** *[ExpressTestServer](expresstestserver.md)*
 
@@ -87,7 +97,7 @@ Defined in platform/server/dist/server.configured.d.ts:6
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:62
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:62
 
 **Parameters:**
 
@@ -115,7 +125,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:72
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:72
 
 **Parameters:**
 
@@ -136,7 +146,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:77
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:77
 
 **Returns:** *Array‹string | symbol›*
 
@@ -150,7 +160,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:69
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:69
 
 **Returns:** *number*
 
@@ -192,7 +202,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:73
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:73
 
 **Parameters:**
 
@@ -212,7 +222,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:70
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:70
 
 **Parameters:**
 
@@ -232,7 +242,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:66
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:66
 
 **Parameters:**
 
@@ -260,7 +270,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:63
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:63
 
 **Parameters:**
 
@@ -288,7 +298,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:64
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:64
 
 **Parameters:**
 
@@ -316,7 +326,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:75
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:75
 
 **Parameters:**
 
@@ -344,7 +354,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:76
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:76
 
 **Parameters:**
 
@@ -372,7 +382,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:71
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:71
 
 **Parameters:**
 
@@ -392,7 +402,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:67
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:67
 
 **Parameters:**
 
@@ -412,7 +422,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:65
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:65
 
 **Parameters:**
 
@@ -440,7 +450,7 @@ ___
 
 *Overrides void*
 
-Defined in platform/platform-express/node_modules/@types/node/events.d.ts:68
+Defined in platform/platform-express/node_modules/@types/node/ts3.1/events.d.ts:68
 
 **Parameters:**
 

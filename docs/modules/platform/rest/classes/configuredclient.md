@@ -70,7 +70,7 @@ Name | Type |
 
 Defined in dist/client.configured.d.ts:5
 
-*Defined in [src/client.configured.ts:6](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/client.configured.ts#L6)*
+*Defined in [src/client.configured.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/client.configured.ts#L6)*
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 Defined in dist/client.configured.d.ts:6
 
-*Defined in [src/client.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-rest/src/client.configured.ts#L7)*
+*Defined in [src/client.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/client.configured.ts#L7)*
 
 ___
 

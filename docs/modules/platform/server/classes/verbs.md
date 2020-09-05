@@ -23,7 +23,7 @@
 
 ▪ **Delete**: *string* = "DELETE"
 
-*Defined in [src/tests/models/verbs.ts:7](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/models/verbs.ts#L7)*
+*Defined in [src/tests/models/verbs.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/models/verbs.ts#L7)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 ▪ **Get**: *string* = "GET"
 
-*Defined in [src/tests/models/verbs.ts:2](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/models/verbs.ts#L2)*
+*Defined in [src/tests/models/verbs.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/models/verbs.ts#L2)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 ▪ **Head**: *string* = "HEAD"
 
-*Defined in [src/tests/models/verbs.ts:6](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/models/verbs.ts#L6)*
+*Defined in [src/tests/models/verbs.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/models/verbs.ts#L6)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 ▪ **Patch**: *string* = "PATCH"
 
-*Defined in [src/tests/models/verbs.ts:5](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/models/verbs.ts#L5)*
+*Defined in [src/tests/models/verbs.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/models/verbs.ts#L5)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 ▪ **Post**: *string* = "POST"
 
-*Defined in [src/tests/models/verbs.ts:3](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/models/verbs.ts#L3)*
+*Defined in [src/tests/models/verbs.ts:3](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/models/verbs.ts#L3)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 ▪ **Put**: *string* = "PUT"
 
-*Defined in [src/tests/models/verbs.ts:4](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/models/verbs.ts#L4)*
+*Defined in [src/tests/models/verbs.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/models/verbs.ts#L4)*

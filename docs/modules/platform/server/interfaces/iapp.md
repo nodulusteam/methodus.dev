@@ -18,7 +18,7 @@
 
 ▸ **set**(`key`: string, `value`: any): *void*
 
-*Defined in [src/server.ts:13](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/server.ts#L13)*
+*Defined in [src/server.ts:13](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/server.ts#L13)*
 
 **Parameters:**
 

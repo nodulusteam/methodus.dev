@@ -18,7 +18,7 @@
 
 ▸ **log**(...`args`: any[]): *void*
 
-*Defined in [src/tests/controllers/logger.service.ts:5](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/server/src/tests/controllers/logger.service.ts#L5)*
+*Defined in [src/tests/controllers/logger.service.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/tests/controllers/logger.service.ts#L5)*
 
 **Parameters:**
 

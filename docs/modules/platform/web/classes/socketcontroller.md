@@ -22,7 +22,7 @@
 
 • **activeSockets**: *any[]* = new Array<any>()
 
-*Defined in [modules/platform/platform-web/src/tests/contracts/socket.contract.ts:6](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/tests/contracts/socket.contract.ts#L6)*
+*Defined in [modules/platform/platform-web/src/tests/contracts/socket.contract.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/tests/contracts/socket.contract.ts#L6)*
 
 ## Methods
 
@@ -30,7 +30,7 @@
 
 ▸ **connect**(`socket`: any): *Promise‹[MethodResult](methodresult.md)›*
 
-*Defined in [modules/platform/platform-web/src/tests/contracts/socket.contract.ts:9](https://github.com/nodulusteam/methodus.dev/blob/a3e1495/modules/platform/platform-web/src/tests/contracts/socket.contract.ts#L9)*
+*Defined in [modules/platform/platform-web/src/tests/contracts/socket.contract.ts:9](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/tests/contracts/socket.contract.ts#L9)*
 
 **Parameters:**
 
