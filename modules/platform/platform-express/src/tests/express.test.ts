@@ -1,6 +1,6 @@
 import { injectionModule as injection } from '@methodus/server';
 import { TestTarget } from './controllers/target.test';
-import { ExpressSecuredTestServer } from './servers/express.server.https';
+import { ExpressSecuredTestServer } from './https/express.server.https';
 
 (async () => {
     const testTarget = injection.Injector.get(TestTarget);

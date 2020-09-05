@@ -1,6 +1,6 @@
 process.env.test = 'true';
 import decorators from '@methodus/framework-decorators';
-import { ExtressTestModule } from './express.module';
+import { ExpressTestModule } from '../servers/express.module';
 import { Express } from '../../index';
 import * as fs from 'fs';
 import * as path from 'path';
@@ -27,7 +27,7 @@ const options: ExpressOptions = {
  */
 @decorators.ServerConfiguration(Express, options)
 @decorators.PluginConfiguration('@methodus/describe')
-@decorators.ModuleConfiguration(ExtressTestModule)
+@decorators.ModuleConfiguration(ExpressTestModule)
 @decorators.ClientConfiguration(TestTarget, Http, 'https://localhost:8020')
 export class ExpressSecuredTestServer extends ConfiguredServer {
     constructor() {

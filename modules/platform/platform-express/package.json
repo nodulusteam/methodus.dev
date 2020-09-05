@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "@methodus/server": "^7.0.3",
+        "@types/express-session": "^1.17.0",
         "body-parser": "^1.19.0",
         "compression": "^1.7.0",
         "cookie-parser": "^1.4.4",
@@ -25,13 +26,14 @@
         "errorhandler": "^1.5.0",
         "express": "^4.17.1",
         "express-fileupload": "^1.1.6",
+        "express-session": "^1.17.1",
         "fast-safe-stringify": "^2.0.7"
     },
     "devDependencies": {
+        "@methodus/data": "^2.0.35",
         "@methodus/framework-commons": "^7.0.3",
         "@methodus/framework-decorators": "^7.0.2",
         "@methodus/framework-injection": "^7.0.2",
-        "@methodus/data": "^2.0.35",
         "@methodus/platform-rest": "^7.0.2",
         "@types/cookie-parser": "^1.4.2",
         "@types/etag": "^1.8.0",

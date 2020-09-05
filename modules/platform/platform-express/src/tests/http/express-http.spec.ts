@@ -1,13 +1,14 @@
 import { injectionModule as injection } from '@methodus/server';
-import { TestTarget } from './controllers/target.test';
-import { ExpressSecuredTestServer } from './servers/express.server.https';
+import { TestTarget } from '../controllers/target.test';
+import { ExpressTestServer } from './express.server.http';
+
 
 describe('Test Express configuration', () => {
     const testTarget = injection.Injector.get(TestTarget);
-    let server: ExpressSecuredTestServer;
+    let server: ExpressTestServer;
     beforeAll(async () => {
         await new Promise(async (resolve, reject) => {
-            server = new ExpressSecuredTestServer();
+            server = new ExpressTestServer();
             server.on('ready', () => {
                 resolve();
             });
@@ -28,6 +29,7 @@ describe('Test Express configuration', () => {
         const response = await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
         expect(response.result.length).toBe(5);
     });
+
 
     it('create', async () => {
         const response = await testTarget.create('cookie-value', {}, 'my user name');

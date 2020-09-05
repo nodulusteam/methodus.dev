@@ -1,6 +1,6 @@
 {
     "name": "@methodus/describe",
-    "version": "7.1.2",
+    "version": "7.1.4",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {

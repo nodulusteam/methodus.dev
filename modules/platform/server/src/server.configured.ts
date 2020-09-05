@@ -49,7 +49,7 @@ export class ConfiguredServer extends EventEmitter {
         }
 
         await server.start();
-        this.emit('ready');
+        this.emit('ready', server);
 
     }
 

@@ -16,7 +16,6 @@ export class RemoteCallService {
       argsForRequest.push(param.value);
     });
 
-    debugger;
     const restRequest = new Rest(uri, methodInformation.verb,
       methodInformation.params, argsForRequest);
     const response = await fetch(restRequest.request, restRequest.options);

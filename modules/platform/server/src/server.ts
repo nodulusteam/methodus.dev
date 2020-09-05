@@ -20,11 +20,14 @@ export class Server {
     public serverKey: string;
 
     public _app: any = {};
-    private httpServer: any;
-    private httpsServer: any;
-    private port: number = 0;
+    public httpServer: any;
+    public httpsServer: any;
+    public port: number = 0;
     private _plugins: PluginEntry[] = [];
-    private instanceId: string;
+    public instanceId: string;
+
+    public methodHandler?: MethodHandler | null;
+    public methodPipeHandler?: MethodPipeHandler | null;
 
     constructor(port?: number | string, app?: any, httpServer?: any) {
         if (port) {
@@ -36,10 +39,8 @@ export class Server {
         this.serverKey = this.makeid();
         this.instanceId = Servers.addServer(this);
         //bind handlers
-        const handler: MethodHandler | null = injection.Injector.get<MethodHandler>('MethodHandler');
-        console.log(handler);
-        const handlerPipe: MethodPipeHandler | null = injection.Injector.get<MethodPipeHandler>('MethodPipeHandler');
-        console.log(handlerPipe);
+        this.methodHandler = injection.Injector.get<MethodHandler>('MethodHandler');
+        this.methodPipeHandler = injection.Injector.get<MethodPipeHandler>('MethodPipeHandler');
     }
 
     makeid() {
@@ -92,7 +93,7 @@ export class Server {
             const loader = new PluginLoader();
             await loader.config(this.config, this._plugins);
         }
-        const onStart:any[] = [];
+        const onStart: any[] = [];
         if (this.httpServer) {
             Servers.set(this.instanceId, 'http', this.httpServer);
         }
@@ -129,14 +130,14 @@ export class Server {
                 }
             });
 
-            const httpServerIntance = Servers.get(this.instanceId, 'http');
-            if (httpServerIntance) {
-                httpServerIntance.listen(this.port);
+            this.httpServer  = Servers.get(this.instanceId, 'http');
+            if (this.httpServer) {
+                this.httpServer.listen(this.port);
             }
 
-            const httpsServerIntance = Servers.get(this.instanceId, 'https');
-            if (httpsServerIntance) {
-                httpsServerIntance.listen(this.port);
+            this.httpsServer = Servers.get(this.instanceId, 'https');
+            if (this.httpsServer) {
+                this.httpsServer.listen(this.port);
             }
 
         }

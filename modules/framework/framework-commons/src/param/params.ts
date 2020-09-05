@@ -84,6 +84,15 @@ export function SecurityContext(name?: string, type?: any) {
     return build('security_context', name, type);
 }
 
+export function Session(name?: string) {
+    return build('session', name);
+}
+
+export function Application(name?: string) {
+    return build('application', name);
+}
+ 
+
 export function Response(name?: string) {
     return build('response', name);
 }
