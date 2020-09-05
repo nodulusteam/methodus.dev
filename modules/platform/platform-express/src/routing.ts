@@ -1,6 +1,6 @@
 import * as express from 'express';
-import { injectionModule as injection, commonsModule as commons } from '@methodus/server';
-import { MethodType } from '@methodus/framework-commons';
+import injection from '@methodus/server/injection';
+import commons, { MethodType } from '@methodus/server/commons';
 
 
 

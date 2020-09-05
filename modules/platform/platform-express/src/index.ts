@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import * as express from 'express';
-import { ServerDefinition } from '@methodus/framework-commons';
+import { ServerDefinition } from '@methodus/server/commons';
 import { ExpressPlugin } from './express';
 import { RestParser, RestResponse } from './parser';
 

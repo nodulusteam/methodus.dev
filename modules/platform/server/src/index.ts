@@ -1,9 +1,6 @@
-import decorators from '@methodus/framework-decorators';
-import commons from '@methodus/framework-commons';
-import injection from '@methodus/framework-injection';
+
 export * from './method/index';
 export * from './response';
-
 export * from './server';
 export * from './servers';
 export * from './server.configured';
@@ -21,6 +18,3 @@ export * from '@methodus/framework-commons';
 // export const MethodError = _MethodError;
 // export const MethodResultStatus = _MethodResultStatus;
 
-export const commonsModule = commons;
-export const injectionModule = injection;
-export const decoratorsModule = decorators;

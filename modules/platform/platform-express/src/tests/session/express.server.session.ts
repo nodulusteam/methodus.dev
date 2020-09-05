@@ -1,4 +1,4 @@
-import decorators from '@methodus/framework-decorators';
+import decorators from '@methodus/server/decorators';
 import { ConfiguredServer } from '@methodus/server';
 import { Http } from '@methodus/platform-rest';
 import { ExpressSessionTestModule } from './express-session.module';

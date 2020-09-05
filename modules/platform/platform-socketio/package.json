@@ -25,17 +25,14 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "test": "jest && yarn coverage",
-        "build": "rimraf ./dist && yarn format && tsc",
+        "test": "../../../node_modules/.bin/jest && yarn coverage",
+        "build": "rm -rf ./dist &&  tsc",
+        "lint":"prettier -c --write ./src",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json",
-        "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio",
-        "format": "prettier -c --write ./src"
+        "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio"
     },
     "publishConfig": {
         "access": "public"
-    },
-    "peerDependencies": {
-        "@methodus/server": "^7.0.0"
     },
     "dependencies": {
         "@methodus/server": "^7.0.6",

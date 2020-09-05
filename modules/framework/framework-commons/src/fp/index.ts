@@ -2,18 +2,18 @@
  * @hidden
  */
 export class fp {
-    public  maybe(object: any): any {
+    public static maybe(object: any): any {
         if (!object) {
             return {};
         }
         return object;
     }
 
-    public  unique(myArray: any): any {
+    public static unique(myArray: any): any {
         return [...new Set(myArray)];
     }
 
-    public  maybeProto(object: any): any {
+    public static maybeProto(object: any): any {
         if (!object || object.methodus) {
             return object;
         }
@@ -28,7 +28,7 @@ export class fp {
         return proto;
     }
 
-    public  maybeMethodus(object: any): any {
+    public static maybeMethodus(object: any): any {
         if (!object) {
             return null;
         }
@@ -50,7 +50,7 @@ export class fp {
         return proto.methodus;
     }
 
-    public  maybeEach(object: any, callback: any) {
+    public static maybeEach(object: any, callback: any) {
         if (object.forEach) {
             object.forEach((item: any) => {
                 callback(item);
@@ -58,7 +58,7 @@ export class fp {
         }
     }
 
-    public  maybeJson(object: any): object {
+    public static maybeJson(object: any): object {
         if (!object) {
             return {};
         }
@@ -69,7 +69,7 @@ export class fp {
         }
     }
 
-    public  maybeString(object: any): string {
+    public static maybeString(object: any): string {
         if (!object) {
             return '';
         }
@@ -78,4 +78,4 @@ export class fp {
 
 }
 
-export const util = new fp();
+ 

@@ -1,7 +1,7 @@
 import { DataController } from './data.controller';
 import { ScreenModel } from '../models/screen.model';
-import { MethodResult, Mapping } from '@methodus/framework-commons';
-import decorators from '@methodus/framework-decorators';
+import { MethodResult, Mapping } from '@methodus/server/commons';
+import decorators from '@methodus/server/decorators';
 /**
  * @hidden
  */

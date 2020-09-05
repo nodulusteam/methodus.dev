@@ -2,8 +2,8 @@ const debug = require('debug')('methodus');
 import * as http from 'http';
 const metadataKey = 'methodus';
 import * as socketIO from 'socket.io';
-import { commonsModule as commons, Servers } from '@methodus/server';
-import { BaseServer } from '@methodus/framework-commons';
+import {   Servers } from '@methodus/server';
+import commons, { BaseServer } from '@methodus/server/commons';
 /**
  * @hidden
  */

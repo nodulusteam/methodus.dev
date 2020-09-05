@@ -7,7 +7,7 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "rimraf ./dist && tsc",
-        "test": "jest && yarn coverage",
+        "test": "../../../node_modules/.bin/jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-testing.json"
     },
     "author": "nodulusteam",

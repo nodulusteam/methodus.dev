@@ -1,6 +1,6 @@
 import { Verbs } from '../shim';
-import { MethodResult,Mapping } from '@methodus/framework-commons';
-import decorators from '@methodus/framework-decorators';
+import { MethodResult,Mapping } from '@methodus/server/commons';
+import decorators from '@methodus/server/decorators';
 /**
  * @hidden
  */

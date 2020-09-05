@@ -1,6 +1,7 @@
-import { injectionModule, decoratorsModule as decorators } from '@methodus/server';
+import decorators from '@methodus/server/decorators';
+import injection from '@methodus/server/injection';
 import { TestLogger } from './logger.service';
-import { MethodResult } from '@methodus/framework-commons';
+import { MethodResult } from '@methodus/server/commons';
 /**
  * @hidden
  */
@@ -10,7 +11,7 @@ export class DataService {
     public async special(id: string) {
         return new MethodResult(id);
     }
-    constructor(@injectionModule.Inject() private testLogger: TestLogger) {
+    constructor(@injection.Inject() private testLogger: TestLogger) {
         this.testLogger.log('instance created for DataService');
     }
 

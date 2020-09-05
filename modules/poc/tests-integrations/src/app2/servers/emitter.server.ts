@@ -1,7 +1,8 @@
 import * as path from 'path';
 import { ConfiguredServer, } from '@methodus/server';
 import decorators from '@methodus/framework-decorators';
-import { deserialize, injectionModule as injection } from '@methodus/server';
+import { deserialize } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { MethodResult, MethodError } from '@methodus/framework-commons';
 import { TestController } from '../controllers/';
 import { TestTarget } from '../controllers/';

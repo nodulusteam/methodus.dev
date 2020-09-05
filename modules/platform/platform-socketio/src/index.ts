@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import { ServerDefinition } from '@methodus/framework-commons';
+import { ServerDefinition } from '@methodus/server/commons';
 import { SocketIOPlugin } from './socketio';
 import { SocketIOParser, SocketIOResponse } from './parser';
 import { send } from './transport';

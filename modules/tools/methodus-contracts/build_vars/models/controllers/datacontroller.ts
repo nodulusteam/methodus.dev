@@ -1,7 +1,7 @@
-import { commonsModule as commons, decoratorsModule as decorators, MethodResult, Verbs } from '@methodus/server';
+import commons, { Mapping,MethodResult, Verbs } from '@methodus/server/commons';
+import decorators from '@methodus/server/decorators';
 import { Query as DataQuery } from '@methodus/data';
 import { UserModel } from '../models/user.model';
-const Mapping = commons.Mapping;
 @decorators.MethodConfigBase('Data')
 export class DataController {
 

@@ -1,5 +1,5 @@
 process.env.test = 'true';
-import decorators from '@methodus/framework-decorators';
+import decorators from '@methodus/server/decorators';
 import { ConfiguredServer } from '@methodus/server';
 import { ExpressTestModule } from '../servers/express.module';
 import { Express, ExpressOptions } from '../../index';

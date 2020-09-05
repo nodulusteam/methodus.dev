@@ -1,5 +1,5 @@
 import { Mocker, deserialize } from '@methodus/server';
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { MethodResult, MethodError } from '@methodus/framework-commons';
 import { TestController } from './controllers';
 

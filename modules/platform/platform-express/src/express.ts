@@ -5,7 +5,7 @@ import * as cookieParser from 'cookie-parser';
 import * as expressSession from 'express-session';
 import * as path from 'path';
 import { Servers } from '@methodus/server';
-import { BaseServer } from '@methodus/framework-commons';
+import { BaseServer } from '@methodus/server/commons';
 import { ExpressRouter } from './routing';
 import * as http from 'http';
 import * as https from 'https';

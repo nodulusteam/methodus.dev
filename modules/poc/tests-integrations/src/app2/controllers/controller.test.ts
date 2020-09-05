@@ -1,7 +1,4 @@
-import {
-    injectionModule as injection,
-
-} from '@methodus/server';
+import injection from '@methodus/server/injection';
 import decorators from '@methodus/framework-decorators';
 import { AuthType, MethodResult, MethodResultStatus, MethodError, Mapping } from '@methodus/framework-commons';
 import { TestLogger } from './logger.service';

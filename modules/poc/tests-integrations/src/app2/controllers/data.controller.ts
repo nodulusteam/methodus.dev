@@ -1,4 +1,5 @@
-import { MethodConfigBase, injectionModule as injection } from '@methodus/server';
+import { MethodConfigBase} from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { MethodResult } from '@methodus/framework-commons';
 import decorators from '@methodus/framework-decorators';
 /**

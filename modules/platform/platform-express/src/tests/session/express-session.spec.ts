@@ -1,4 +1,4 @@
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/server/injection';
 import { TestTarget } from '../controllers/target.test';
 import { ExpressTestServer } from './express.server.session';
 describe('Test Express session configuration', () => {

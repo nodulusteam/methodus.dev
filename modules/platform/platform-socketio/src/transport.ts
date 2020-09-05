@@ -1,4 +1,4 @@
-import commonsModule from '@methodus/framework-commons';
+import commons from '@methodus/server/commons';
 /**
  * @hidden
  */
@@ -20,7 +20,7 @@ export function send(methodus: any, functionArgs: any, paramsMap: any, securityC
             socket.emit(messageName, dataObject, (data: any) => {
                 socket.close();
                 if (data.error && data.statusCode) {
-                    commonsModule.logger.error(data);
+                    commons.logger.error(data);
                     reject(data);
                 } else {
                     resolve(data);

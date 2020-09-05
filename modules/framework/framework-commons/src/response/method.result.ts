@@ -1,4 +1,4 @@
-import { util } from "../fp";
+import { fp } from "../fp";
 
  
 export class MethodResult<T = any> {
@@ -33,7 +33,7 @@ export class MethodResult<T = any> {
         this._on[key] = value;
     }
     public linkAction(propertyKey: any, linksSource: any, rel?: string, datasource: any = {}, host: string = '') {
-        const methodus = util.maybeMethodus(linksSource);
+        const methodus = fp.maybeMethodus(linksSource);
         const links = methodus[linksSource.name];
         const mappedLinks: any = Object.values(links._descriptors).filter((action: any) => {
             return propertyKey === action.propertyKey;

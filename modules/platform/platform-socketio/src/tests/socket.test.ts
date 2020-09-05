@@ -1,6 +1,6 @@
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/server/injection';
 
 (async () => {
     const testTarget = injection.Injector.get(TestTarget);

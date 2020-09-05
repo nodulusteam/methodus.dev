@@ -1,7 +1,7 @@
 
 import 'reflect-metadata';
 import { Servers } from '@methodus/server';
-import commons, { ITransport } from '@methodus/framework-commons';
+import commons, { ITransport } from '@methodus/server/commons';
 import { EventEmitter } from 'events';
 
 const metadataKey = 'methodus';

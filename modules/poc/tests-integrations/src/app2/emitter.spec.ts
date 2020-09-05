@@ -4,7 +4,7 @@ import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
  
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/server/injection';
 
 
 describe('Test Emitter configuration', () => {

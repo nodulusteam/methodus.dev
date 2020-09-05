@@ -1,4 +1,4 @@
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import deocorators from '@methodus/framework-decorators';
 import { MethodResult, Mapping } from '@methodus/framework-commons';
 import { DataController } from './data.controller';

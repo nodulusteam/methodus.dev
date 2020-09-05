@@ -1,5 +1,6 @@
 *
 !dist/**/*
+!*.d.ts
 !package.json
 !README.md
 !docs

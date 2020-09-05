@@ -1,4 +1,4 @@
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
 

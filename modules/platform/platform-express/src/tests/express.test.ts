@@ -1,4 +1,4 @@
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { TestTarget } from './controllers/target.test';
 import { ExpressSecuredTestServer } from './https/express.server.https';
 

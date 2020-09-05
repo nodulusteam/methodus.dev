@@ -1,4 +1,5 @@
-import { decoratorsModule as decorators, ConfiguredServer } from '@methodus/server';
+import { ConfiguredServer } from '@methodus/server';
+import decorators from '@methodus/server/decorators';
 import { TestController, TestTarget } from '../controllers/';
 import { SocketIO } from '../../index';
 

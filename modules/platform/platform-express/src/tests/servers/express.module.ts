@@ -1,5 +1,5 @@
-import { injectionModule as injection } from '@methodus/server';
-import decorators from '@methodus/framework-decorators';
+import injection from '@methodus/server/injection';
+import decorators from '@methodus/server/decorators';
 import { MethodHandler, MethodPipeHandler } from '@methodus/server';
 import { Express } from '../../index';
 import { ScreensDataController } from '../controllers/screen.data.controller';

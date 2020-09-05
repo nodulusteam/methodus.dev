@@ -1,11 +1,12 @@
 
 import {
-    injectionModule as injection,
+ 
      ConfiguredServer,
 } from '@methodus/server';
 import { Http } from '@methodus/platform-rest';
 import { TestTarget } from '../controllers';
-import decorators from '@methodus/framework-decorators';
+import decorators from '@methodus/server/decorators';
+import injection from '@methodus/server/injection';
 /**
  * @hidden
  */

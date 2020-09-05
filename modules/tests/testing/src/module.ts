@@ -1,4 +1,4 @@
-import { injectionModule as injection } from '@methodus/server';
+import injection from '@methodus/framework-injection';
 import { TestMap } from './test-map';
 export class Module {
     public testMap: TestMap
