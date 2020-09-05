@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-commons",
-    "version": "7.0.3",
+    "version": "7.0.4",
     "description": "Commons for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
         "docs": "rm -rf ../../../docs/modules/framework/common/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
-        "mutation":"stryker run --fileLogLevel trace --logLevel debug"
+        "mutation": "stryker run --fileLogLevel trace --logLevel debug"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",

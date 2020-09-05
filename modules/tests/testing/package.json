@@ -1,6 +1,6 @@
 {
     "name": "@methodus/testing",
-    "version": "7.0.2",
+    "version": "7.0.3",
     "description": "",
     "private": true,
     "main": "dist/index.js",
@@ -13,12 +13,10 @@
     "author": "nodulusteam",
     "license": "ISC",
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.3",
-        "@methodus/framework-decorators": "^7.0.2",
-        "@methodus/framework-injection": "^7.0.2",
-        "@methodus/server": "^7.0.3"
-    },
-    "devDependencies": {
+        "@methodus/framework-commons": "^7.0.4",
+        "@methodus/framework-decorators": "^7.0.3",
+        "@methodus/framework-injection": "^7.0.3",
+        "@methodus/server": "^7.0.5"
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }
