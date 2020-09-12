@@ -1,4 +1,7 @@
 *
+!decorators/*
+!injection/*
+!commons/*
 !dist/**/*
 !*.d.ts
 !package.json

@@ -1,0 +1,1 @@
+export { default } from '@methodus/framework-decorators';
