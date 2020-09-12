@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "7.0.4",
+    "version": "7.0.5",
     "description": "",
     "main": "dist/index.js",
     "homepage": "https://methodus.dev",
@@ -27,7 +27,7 @@
     "scripts": {
         "test": "../../../node_modules/.bin/jest && yarn coverage",
         "build": "rm -rf ./dist &&  tsc",
-        "lint":"prettier -c --write ./src",
+        "lint": "prettier -c --write ./src",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json",
         "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio"
     },
@@ -35,7 +35,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/server": "^7.0.6",
+        "@methodus/server": "^7.0.7",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"
     },

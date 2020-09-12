@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "7.0.6",
+    "version": "7.0.7",
     "description": "Server components for @methodus workflow",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -39,9 +39,9 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.5",
-        "@methodus/framework-decorators": "^7.0.4",
-        "@methodus/framework-injection": "^7.0.4",
+        "@methodus/framework-commons": "^7.0.6",
+        "@methodus/framework-decorators": "^7.0.5",
+        "@methodus/framework-injection": "^7.0.5",
         "debug": "^4.1.1",
         "fast-safe-stringify": "^2.0.7",
         "method-override": "^2.3.9",
