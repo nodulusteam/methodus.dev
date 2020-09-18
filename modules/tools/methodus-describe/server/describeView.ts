@@ -1,7 +1,7 @@
 import * as path from 'path';
 import { Mock } from './mock';
-import injection from '@methodus/framework-injection';
-import decorators from '@methodus/framework-decorators';
+import injection from '@methodus/server/injection';
+import decorators from '@methodus/server/decorators';
 import { MethodResult, Mapping } from '@methodus/framework-commons';
 import { Verbs } from '@methodus/platform-rest';
 

@@ -1,8 +1,8 @@
+import { Mocker } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { ExpressTestServer } from './servers/';
 import { DescribeView } from '../describeView';
 import { TestTarget, TestController } from './controllers';
-import { Mocker } from '@methodus/server';
-import injection from '@methodus/framework-injection';
 import { CopyController } from './controllers/controller.copy';
 const TIMEOUT = 1000 * 5 * 60;
 

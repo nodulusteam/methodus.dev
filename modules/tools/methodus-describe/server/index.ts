@@ -1,5 +1,5 @@
 import * as path from 'path';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/server/injection';
 import { Express } from '@methodus/platform-express';
 import { DescribeView } from './describeView';
 
