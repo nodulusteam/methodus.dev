@@ -1,2 +1,2 @@
-export { default } from '@methodus/framework-injection';
-export * from '@methodus/framework-injection';
+const injection = require('@methodus/framework-injection');
+module.exports = injection;
