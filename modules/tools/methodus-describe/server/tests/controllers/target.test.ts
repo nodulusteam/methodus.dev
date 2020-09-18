@@ -1,5 +1,5 @@
-import decorators from '@methodus/framework-decorators';
-import { Mapping, MethodResult } from '@methodus/framework-commons';
+import decorators from '@methodus/server/decorators';
+import { Mapping, MethodResult } from '@methodus/server/commons';
 import { Verbs } from '@methodus/platform-express';
 
 @decorators.MethodConfig('TestTarget', [], '/api/test-contracts')

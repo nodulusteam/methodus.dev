@@ -2,7 +2,7 @@ import {
       ConfiguredServer,
 } from '@methodus/server';
 
-import decorators from '@methodus/framework-decorators';
+import decorators from '@methodus/server/decorators';
 
 import { Express } from '@methodus/platform-express';
 import { Http } from '@methodus/platform-rest';

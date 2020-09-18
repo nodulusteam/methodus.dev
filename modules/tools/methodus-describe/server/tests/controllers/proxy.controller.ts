@@ -1,4 +1,4 @@
-import decorators from '@methodus/framework-decorators';
+import decorators from '@methodus/server/decorators';
 import { Mapping, MethodResult } from '@methodus/framework-commons';
 import { Verbs } from '@methodus/platform-express';
 
