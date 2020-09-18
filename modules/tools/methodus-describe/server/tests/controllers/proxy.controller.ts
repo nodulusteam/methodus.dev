@@ -1,5 +1,5 @@
 import decorators from '@methodus/server/decorators';
-import { Mapping, MethodResult } from '@methodus/framework-commons';
+import { Mapping, MethodResult } from '@methodus/server/commons';
 import { Verbs } from '@methodus/platform-express';
 
 @decorators.Proxy.ProxyClass(__dirname, 'ProxiedController', `./controller.test`)
