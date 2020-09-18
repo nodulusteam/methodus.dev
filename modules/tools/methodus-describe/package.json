@@ -5,7 +5,7 @@
     "main": "build/index.js",
     "scripts": {
         "build:additionals": "rimraf build && tsc && yarn client && cd client && yarn && yarn prod && cd ..",
-        "test": "jest --coverage",
+        "test": "../../../node_modules/.bin/jest --coverage",
         "build:server": "rimraf build && tsc",
         "contract": "contracts-server ./build.json",
         "client": "contracts-client ./build.json",
