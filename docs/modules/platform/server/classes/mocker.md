@@ -19,7 +19,7 @@
 
 ▸ **mock**(`target`: any): *any*
 
-*Defined in [src/mocker.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/mocker.ts#L6)*
+*Defined in [src/mocker.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L6)*
 
 **Parameters:**
 
@@ -35,7 +35,7 @@ ___
 
 ▸ **mockServer**(`target`: any): *any*
 
-*Defined in [src/mocker.ts:14](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/mocker.ts#L14)*
+*Defined in [src/mocker.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L14)*
 
 **Parameters:**
 

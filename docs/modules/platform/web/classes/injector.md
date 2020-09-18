@@ -26,7 +26,7 @@
 
 ▪ **records**: *object[]* = []
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L5)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/di/injector.ts#L5)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 ▪ **singletons**: *any*
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L6)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/di/injector.ts#L6)*
 
 ## Methods
 
@@ -42,7 +42,7 @@ ___
 
 ▸ **get**‹**T**›(`_token`: any): *T*
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:46](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L46)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:46](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/di/injector.ts#L46)*
 
 **Type parameters:**
 
@@ -62,7 +62,7 @@ ___
 
 ▸ **inject**(`target`: any, `name?`: string): *void*
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L8)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/di/injector.ts#L8)*
 
 **Parameters:**
 
@@ -79,7 +79,7 @@ ___
 
 ▸ **register**(`name`: string, `target`: any, `deps`: any): *void*
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:38](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L38)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:38](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/di/injector.ts#L38)*
 
 **Parameters:**
 
@@ -97,7 +97,7 @@ ___
 
 ▸ **resolveAndCreate**(`tokens`: Array‹any›): *[Injector](injector.md)*
 
-*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:25](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/di/injector.ts#L25)*
+*Defined in [modules/platform/platform-web/src/lib/di/injector.ts:25](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/di/injector.ts#L25)*
 
 **Parameters:**
 

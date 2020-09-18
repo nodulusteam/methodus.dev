@@ -44,7 +44,7 @@ Name | Type |
 
 Defined in platform/platform-express/dist/parser.d.ts:10
 
-*Defined in [platform/platform-express/src/parser.ts:144](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/parser.ts#L144)*
+*Defined in [platform/platform-express/src/parser.ts:145](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/parser.ts#L145)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 Defined in platform/platform-express/dist/parser.d.ts:11
 
-*Defined in [platform/platform-express/src/parser.ts:145](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/parser.ts#L145)*
+*Defined in [platform/platform-express/src/parser.ts:146](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/parser.ts#L146)*
 
 ___
 
@@ -64,4 +64,4 @@ ___
 
 Defined in platform/platform-express/dist/parser.d.ts:12
 
-*Defined in [platform/platform-express/src/parser.ts:146](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/parser.ts#L146)*
+*Defined in [platform/platform-express/src/parser.ts:147](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/parser.ts#L147)*

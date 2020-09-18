@@ -44,7 +44,7 @@ Name | Type |
 
 Defined in modules/platform/platform-socketio/dist/parser.d.ts:8
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:89](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-socketio/src/parser.ts#L89)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:89](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-socketio/src/parser.ts#L89)*
 
 ___
 
@@ -54,7 +54,7 @@ ___
 
 Defined in modules/platform/platform-socketio/dist/parser.d.ts:9
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:90](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-socketio/src/parser.ts#L90)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:90](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-socketio/src/parser.ts#L90)*
 
 ___
 
@@ -64,4 +64,4 @@ ___
 
 Defined in modules/platform/platform-socketio/dist/parser.d.ts:10
 
-*Defined in [modules/platform/platform-socketio/src/parser.ts:91](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-socketio/src/parser.ts#L91)*
+*Defined in [modules/platform/platform-socketio/src/parser.ts:91](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-socketio/src/parser.ts#L91)*

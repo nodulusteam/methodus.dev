@@ -10,17 +10,17 @@
 
 ### Methods
 
-* [maybe](#maybe)
-* [maybeEach](#maybeeach)
-* [maybeJson](#maybejson)
-* [maybeMethodus](#maybemethodus)
-* [maybeProto](#maybeproto)
-* [maybeString](#maybestring)
-* [unique](#unique)
+* [maybe](#static-maybe)
+* [maybeEach](#static-maybeeach)
+* [maybeJson](#static-maybejson)
+* [maybeMethodus](#static-maybemethodus)
+* [maybeProto](#static-maybeproto)
+* [maybeString](#static-maybestring)
+* [unique](#static-unique)
 
 ## Methods
 
-###  maybe
+### `Static` maybe
 
 ▸ **maybe**(`object`: any): *any*
 
@@ -36,7 +36,7 @@ Name | Type |
 
 ___
 
-###  maybeEach
+### `Static` maybeEach
 
 ▸ **maybeEach**(`object`: any, `callback`: any): *void*
 
@@ -53,7 +53,7 @@ Name | Type |
 
 ___
 
-###  maybeJson
+### `Static` maybeJson
 
 ▸ **maybeJson**(`object`: any): *object*
 
@@ -69,7 +69,7 @@ Name | Type |
 
 ___
 
-###  maybeMethodus
+### `Static` maybeMethodus
 
 ▸ **maybeMethodus**(`object`: any): *any*
 
@@ -85,7 +85,7 @@ Name | Type |
 
 ___
 
-###  maybeProto
+### `Static` maybeProto
 
 ▸ **maybeProto**(`object`: any): *any*
 
@@ -101,7 +101,7 @@ Name | Type |
 
 ___
 
-###  maybeString
+### `Static` maybeString
 
 ▸ **maybeString**(`object`: any): *string*
 
@@ -117,7 +117,7 @@ Name | Type |
 
 ___
 
-###  unique
+### `Static` unique
 
 ▸ **unique**(`myArray`: any): *any*
 

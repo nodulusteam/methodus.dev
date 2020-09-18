@@ -28,7 +28,7 @@ ___
 
 • **debug**: *any* = require('debug')('methodus')
 
-*Defined in [modules/platform/platform-socketio/src/socketio.ts:1](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-socketio/src/socketio.ts#L1)*
+*Defined in [modules/platform/platform-socketio/src/socketio.ts:1](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-socketio/src/socketio.ts#L1)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **metadataKey**: *"methodus"* = "methodus"
 
-*Defined in [modules/platform/platform-socketio/src/socketio.ts:3](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-socketio/src/socketio.ts#L3)*
+*Defined in [modules/platform/platform-socketio/src/socketio.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-socketio/src/socketio.ts#L3)*

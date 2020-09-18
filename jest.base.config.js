@@ -15,13 +15,13 @@ module.exports = {
   reporters: [
     'default',
      
-    ['./node_modules/jest-html-reporters', {      
+    ['jest-html-reporters', {      
       'filename': 'coverage/test_dashboard.html',
       'expand': true
     }],
 
 
-    ['../../../node_modules/jest-html-reporter', {
+    ['jest-html-reporter', {
       'outputPath': 'coverage/tests.html',
       'pageTitle': 'Test Report'
     }]

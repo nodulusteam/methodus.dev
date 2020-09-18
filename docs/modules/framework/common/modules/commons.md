@@ -30,6 +30,6 @@ ___
 
 ### `Const` util
 
-• **util**: *[fp](../classes/fp.md)*
+• **util**: *typeof fp*
 
 Defined in modules/framework/framework-commons/dist/index.d.ts:8

@@ -58,7 +58,7 @@
 
 Defined in dist/interfaces.d.ts:1
 
-*Defined in [src/interfaces.ts:1](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/interfaces.ts#L1)*
+*Defined in [src/interfaces.ts:1](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L1)*
 
 #### Type declaration:
 
@@ -72,7 +72,7 @@ ___
 
 Defined in dist/interfaces.d.ts:20
 
-*Defined in [src/interfaces.ts:20](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/interfaces.ts#L20)*
+*Defined in [src/interfaces.ts:20](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L20)*
 
 #### Type declaration:
 
@@ -90,7 +90,7 @@ ___
 
 Defined in dist/web-request.d.ts:4
 
-*Defined in [src/web-request.ts:14](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L14)*
+*Defined in [src/web-request.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L14)*
 
 #### Type declaration:
 
@@ -124,7 +124,7 @@ Defined in dist/web-request.d.ts:4
 
 Defined in dist/clients-list.d.ts:12
 
-*Defined in [src/clients-list.ts:42](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/clients-list.ts#L42)*
+*Defined in [src/clients-list.ts:42](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/clients-list.ts#L42)*
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 • **TESTBASE**: *"http://jsonplaceholder.typicode.com"* = "http://jsonplaceholder.typicode.com"
 
-*Defined in [src/tests/rest.test.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/tests/rest.test.ts#L4)*
+*Defined in [src/tests/rest.test.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/tests/rest.test.ts#L4)*
 
 ___
 
@@ -154,7 +154,7 @@ ___
 
 • **btoa**: *any* = require('btoa')
 
-*Defined in [src/encoder.ts:1](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/encoder.ts#L1)*
+*Defined in [src/encoder.ts:1](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/encoder.ts#L1)*
 
 ___
 
@@ -162,7 +162,7 @@ ___
 
 • **getClassOf**: *any* = Function.prototype.call.bind(Object.prototype.toString)
 
-*Defined in [src/method/method.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/method/method.ts#L7)*
+*Defined in [src/method/method.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/method/method.ts#L7)*
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 • **logger**: *Logger‹›* = new commons.Logger('transports:http')
 
-*Defined in [src/web-request.ts:12](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L12)*
+*Defined in [src/web-request.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L12)*
 
 ___
 
@@ -178,7 +178,7 @@ ___
 
 • **methodMetadataKey**: *"methodus"* = "methodus"
 
-*Defined in [src/method/method.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/method/method.ts#L8)*
+*Defined in [src/method/method.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/method/method.ts#L8)*
 
 ___
 
@@ -190,7 +190,7 @@ Defined in dist/sender.d.ts:5
 
 Defined in dist/index.d.ts:6
 
-*Defined in [src/sender.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/sender.ts#L8)*
+*Defined in [src/sender.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/sender.ts#L8)*
 
 ## Functions
 
@@ -198,7 +198,7 @@ Defined in dist/index.d.ts:6
 
 ▸ **createResult**(`requestResult`: any): *MethodResult‹any›*
 
-*Defined in [src/sender.ts:27](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/sender.ts#L27)*
+*Defined in [src/sender.ts:27](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/sender.ts#L27)*
 
 **Parameters:**
 
@@ -214,7 +214,7 @@ ___
 
 ▸ **handleAuth**(`requestOptions`: any, `payload`: [RequestPayload](globals.md#requestpayload), `that`: any): *Promise‹any›*
 
-*Defined in [src/web-request.ts:227](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L227)*
+*Defined in [src/web-request.ts:227](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L227)*
 
 **Parameters:**
 
@@ -232,7 +232,7 @@ ___
 
 ▸ **handleFiles**(`requestOptions`: any, `payload`: [RequestPayload](globals.md#requestpayload)): *any*
 
-*Defined in [src/web-request.ts:263](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L263)*
+*Defined in [src/web-request.ts:263](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L263)*
 
 **Parameters:**
 
@@ -249,7 +249,7 @@ ___
 
 ▸ **handleHeaders**(`requestOptions`: any, `payload`: [RequestPayload](globals.md#requestpayload)): *any*
 
-*Defined in [src/web-request.ts:292](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L292)*
+*Defined in [src/web-request.ts:292](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L292)*
 
 **Parameters:**
 
@@ -266,7 +266,7 @@ ___
 
 ▸ **handleParamsMap**(`paramsMap`: any[], `payload`: [RequestPayload](globals.md#requestpayload)): *object*
 
-*Defined in [src/web-request.ts:84](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L84)*
+*Defined in [src/web-request.ts:84](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L84)*
 
 **Parameters:**
 
@@ -305,7 +305,7 @@ ___
 
 ▸ **handleProxy**(`requestOptions`: any, `payload`: [RequestPayload](globals.md#requestpayload)): *any*
 
-*Defined in [src/web-request.ts:175](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L175)*
+*Defined in [src/web-request.ts:175](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L175)*
 
 **Parameters:**
 
@@ -322,7 +322,7 @@ ___
 
 ▸ **handleQuery**(`payload`: [RequestPayload](globals.md#requestpayload)): *object*
 
-*Defined in [src/web-request.ts:142](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-rest/src/web-request.ts#L142)*
+*Defined in [src/web-request.ts:142](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/web-request.ts#L142)*
 
 **Parameters:**
 

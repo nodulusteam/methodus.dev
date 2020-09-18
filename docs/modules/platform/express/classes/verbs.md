@@ -25,7 +25,7 @@
 
 Defined in platform/platform-express/dist/verbs.d.ts:7
 
-*Defined in [platform/platform-express/src/verbs.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/verbs.ts#L7)*
+*Defined in [platform/platform-express/src/verbs.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/verbs.ts#L7)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Defined in platform/platform-express/dist/verbs.d.ts:2
 
-*Defined in [platform/platform-express/src/verbs.ts:2](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/verbs.ts#L2)*
+*Defined in [platform/platform-express/src/verbs.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/verbs.ts#L2)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Defined in platform/platform-express/dist/verbs.d.ts:6
 
-*Defined in [platform/platform-express/src/verbs.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/verbs.ts#L6)*
+*Defined in [platform/platform-express/src/verbs.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/verbs.ts#L6)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 Defined in platform/platform-express/dist/verbs.d.ts:5
 
-*Defined in [platform/platform-express/src/verbs.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/verbs.ts#L5)*
+*Defined in [platform/platform-express/src/verbs.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/verbs.ts#L5)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 Defined in platform/platform-express/dist/verbs.d.ts:3
 
-*Defined in [platform/platform-express/src/verbs.ts:3](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/verbs.ts#L3)*
+*Defined in [platform/platform-express/src/verbs.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/verbs.ts#L3)*
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 Defined in platform/platform-express/dist/verbs.d.ts:4
 
-*Defined in [platform/platform-express/src/verbs.ts:4](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/verbs.ts#L4)*
+*Defined in [platform/platform-express/src/verbs.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/verbs.ts#L4)*

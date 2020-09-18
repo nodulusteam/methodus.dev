@@ -18,6 +18,6 @@
 
 ▸ **handle**(): *void*
 
-*Defined in [src/mocker.ts:35](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/mocker.ts#L35)*
+*Defined in [src/mocker.ts:35](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L35)*
 
 **Returns:** *void*

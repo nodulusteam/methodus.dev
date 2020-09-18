@@ -30,7 +30,7 @@
 
 \+ **new Rest**(`uri`: string, `verb`: [Verbs](../enums/verbs.md), `paramsMap`: [ParamsMap](paramsmap.md)[], `args`: any[]): *[Rest](rest.md)*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L8)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L8)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ Name | Type |
 
 • **options**: *any*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:7](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L7)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L7)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 • **request**: *any*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L8)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L8)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 ▪ **interceptor**: *function*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:6](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L6)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L6)*
 
 #### Type declaration:
 
@@ -83,7 +83,7 @@ Name | Type |
 
 ▸ **parse**(`verb`: [Verbs](../enums/verbs.md), `paramsMap`: [ParamsMap](paramsmap.md)[], `args`: any[]): *any*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:25](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L25)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:25](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L25)*
 
 **Parameters:**
 
@@ -101,7 +101,7 @@ ___
 
 ▸ **send**(): *Promise‹any›*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:123](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L123)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:123](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L123)*
 
 **Returns:** *Promise‹any›*
 
@@ -111,7 +111,7 @@ ___
 
 ▸ **intercept**(`interceptor`: function): *void*
 
-*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:19](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/lib/transports/rest.ts#L19)*
+*Defined in [modules/platform/platform-web/src/lib/transports/rest.ts:19](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/transports/rest.ts#L19)*
 
 **Parameters:**
 

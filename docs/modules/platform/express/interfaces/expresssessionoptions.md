@@ -21,7 +21,7 @@
 
 Defined in platform/platform-express/dist/options.d.ts:16
 
-*Defined in [platform/platform-express/src/options.ts:18](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/options.ts#L18)*
+*Defined in [platform/platform-express/src/options.ts:18](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/options.ts#L18)*
 
 #### Type declaration:
 
@@ -35,4 +35,4 @@ ___
 
 Defined in platform/platform-express/dist/options.d.ts:15
 
-*Defined in [platform/platform-express/src/options.ts:17](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-express/src/options.ts#L17)*
+*Defined in [platform/platform-express/src/options.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/options.ts#L17)*

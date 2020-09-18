@@ -18,7 +18,7 @@
 
 ▸ **parse**(`args`: any, `paramsMap`: any, `functionArgs`: any): *[ParserResponse](parserresponse.md)*
 
-*Defined in [src/mocker.ts:27](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/server/src/mocker.ts#L27)*
+*Defined in [src/mocker.ts:27](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L27)*
 
 **Parameters:**
 

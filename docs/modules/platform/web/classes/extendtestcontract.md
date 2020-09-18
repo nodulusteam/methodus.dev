@@ -28,7 +28,7 @@
 
 \+ **new ExtendTestContract**(`testContract`: [TestContract](testcontract.md)): *[ExtendTestContract](extendtestcontract.md)*
 
-*Defined in [modules/platform/platform-web/src/tests/contracts/extend.contract.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/tests/contracts/extend.contract.ts#L8)*
+*Defined in [modules/platform/platform-web/src/tests/contracts/extend.contract.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/tests/contracts/extend.contract.ts#L8)*
 
 **Parameters:**
 
@@ -46,7 +46,7 @@ Name | Type |
 
 *Inherited from [BaseTestContract](basetestcontract.md).[base](basetestcontract.md#base)*
 
-*Defined in [modules/platform/platform-web/src/tests/contracts/base.contract.ts:5](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L5)*
+*Defined in [modules/platform/platform-web/src/tests/contracts/base.contract.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L5)*
 
 ## Methods
 
@@ -56,7 +56,7 @@ Name | Type |
 
 *Inherited from [BaseTestContract](basetestcontract.md).[baseAction](basetestcontract.md#baseaction)*
 
-*Defined in [modules/platform/platform-web/src/tests/contracts/base.contract.ts:8](https://github.com/nodulusteam/methodus.dev/blob/58b1bce/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L8)*
+*Defined in [modules/platform/platform-web/src/tests/contracts/base.contract.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/tests/contracts/base.contract.ts#L8)*
 
 **Parameters:**
 
