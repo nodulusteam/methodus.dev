@@ -22,8 +22,8 @@ export class InjectorType {
         const annotations = target.hasOwnProperty(ANNOTATIONS)
             ? target[ANNOTATIONS]
             : Object.defineProperty(target, ANNOTATIONS, { value: [] })[
-                  ANNOTATIONS
-              ];
+            ANNOTATIONS
+            ];
 
         const constructorArgs = Reflect.getOwnMetadata(
             'design:paramtypes',
@@ -111,12 +111,15 @@ export class InjectorType {
 }
 
 // // test for globals
-// if (!(global as any).METHODUS_BRIDGE) {
-//     (global as any).METHODUS_BRIDGE = {};
-// }
-// const bridge = (global as any).METHODUS_BRIDGE;
-// if (!bridge.Injector) {
-//     bridge.Injector = new InjectorType();
-// }
+let bridge = { Injector: new InjectorType() };
+if (global) {
+    if (!(global as any).METHODUS_BRIDGE) {
+        (global as any).METHODUS_BRIDGE = bridge;
+    }
+    bridge = (global as any).METHODUS_BRIDGE;
+}
+if (!bridge.Injector) {
+    bridge.Injector = new InjectorType();
+}
 
-export const Injector: InjectorType = new InjectorType();
+export const Injector: InjectorType = bridge.Injector;
