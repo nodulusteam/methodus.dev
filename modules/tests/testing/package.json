@@ -1,6 +1,6 @@
 {
     "name": "@methodus/testing",
-    "version": "7.0.7",
+    "version": "7.0.8",
     "description": "",
     "private": true,
     "main": "dist/index.js",
@@ -14,9 +14,9 @@
     "license": "ISC",
     "dependencies": {
         "@methodus/framework-commons": "^7.0.8",
-        "@methodus/framework-decorators": "^7.0.7",
-        "@methodus/framework-injection": "^7.0.7",
-        "@methodus/server": "^7.0.9"
+        "@methodus/framework-decorators": "^7.0.8",
+        "@methodus/framework-injection": "^7.0.8",
+        "@methodus/server": "^7.0.10"
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
 }
