@@ -14,8 +14,9 @@ export class Common {
 
         rimraf.sync(path.join(target, 'build'));
 
+
         const sourceProject = new MethodusProject(source, packageName, options);
-        const targetProject =  new MethodusProject(target, packageName, options); //options.isProtobuf ? new ProtoProject(target, packageName, options) :
+        const targetProject = new MethodusProject(target, packageName, options); //options.isProtobuf ? new ProtoProject(target, packageName, options) :
 
         if (configuration.models && Object.keys(configuration.models).length > 0) {
             Object.keys(configuration.models).forEach((modelKey) => {
@@ -23,6 +24,10 @@ export class Common {
                 const modelFile = sourceProject.project.addExistingSourceFile(path.join(source, model.path));
                 targetProject.ProxifyFromModel(modelFile, 'models', modelKey.toLocaleLowerCase());
             });
+            const indexPath = path.join(target, ROOTSRC, 'models',);
+            ModelsIndex(configuration, source, indexPath, packageName);
+            targetProject.project.addExistingSourceFileIfExists(path.join(indexPath, 'index.ts'));
+            targetProject.project.saveSync();
         }
 
 
@@ -32,6 +37,10 @@ export class Common {
                 const sourceFile = sourceProject.project.addExistingSourceFile(path.join(source, contract.path));
                 targetProject.ProxifyFromFile(sourceFile, 'contracts', contractKey.toLocaleLowerCase(), options);
             });
+            const indexPath = path.join(target, ROOTSRC, 'contracts');
+            ContractsIndex(configuration, source, indexPath, packageName);
+            targetProject.project.addExistingSourceFileIfExists(path.join(indexPath, 'index.ts'));
+            targetProject.project.saveSync();
         }
 
         if (configuration.includes) {
@@ -40,6 +49,10 @@ export class Common {
                 const sourceFile = sourceProject.project.addExistingSourceFile(path.join(source, include.path));
                 targetProject.HandleIncludeFile(sourceFile, 'includes', options);
             });
+            const indexPath = path.join(target, ROOTSRC, 'includes');
+            IncludesIndex(configuration, source, indexPath, packageName);
+            targetProject.project.addExistingSourceFileIfExists(path.join(indexPath, 'index.ts'));
+            targetProject.project.saveSync();
         }
 
         const format: FormatCodeSettings = {
@@ -49,9 +62,6 @@ export class Common {
         const prefernces: UserPreferences = {
             importModuleSpecifierPreference: "non-relative"
         }
-
-
-
 
         targetProject.project.getSourceFiles().forEach((finalFile) => {
             finalFile.fixMissingImports(format, prefernces);
@@ -67,18 +77,7 @@ export class Common {
             finalFile.saveSync();
         });
 
-        if (configuration.includes) {
-            IncludesIndex(configuration, source, path.join(target, ROOTSRC, 'includes'), packageName);
-        }
 
-        if (configuration.contracts) {
-            ContractsIndex(configuration, source, path.join(target, ROOTSRC, 'contracts'), packageName);
-        }
-
-        if (configuration.models && Object.keys(configuration.models).length > 0) {
-
-            ModelsIndex(configuration, source, path.join(target, ROOTSRC, 'models'), packageName);
-        }
         targetProject.Exportify(configuration, target, packageName, options);
         return targetProject;
     }

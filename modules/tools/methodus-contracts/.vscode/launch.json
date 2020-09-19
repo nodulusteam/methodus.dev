@@ -23,7 +23,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile server contracts | Simple",
-            "program": "${workspaceRoot}\\lib\\build.js",
+            "program": "${workspaceRoot}\\dist\\build.js",
             "args": [
                 "./build_vars/simple/build.json"
             ],
@@ -33,6 +33,7 @@
             "outFiles": [],
             "sourceMaps": true,
             "env": {
+                "KEEP_SRC": "true",
                 "DEBUG": "none",
                 "NODE_ENV": "debug"
             }

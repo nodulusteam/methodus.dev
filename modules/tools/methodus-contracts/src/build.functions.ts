@@ -66,7 +66,7 @@ async function singleBuild(configurationItem, destPath, checkList: string[], opt
                     sourcePath, destPath);
 
             } else {
-                builder = new Server(configurationItem, '', sourcePath, destPath);
+                builder = new Server(configurationItem,  sourcePath, destPath);
 
             }
 

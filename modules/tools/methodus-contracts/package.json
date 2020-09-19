@@ -50,10 +50,14 @@
     "devDependencies": {
         "@types/lodash": "^4.14.75",
         "@types/shelljs": "^0.8.8",
-        "jsdoc-regex": "^1.0.1"
+        "jsdoc-regex": "^1.0.1",
+        "@methodus/platform-express": "^7.0.7",
+        "@methodus/platform-rest": "^7.0.7",
+        "@methodus/server": "^7.0.9"
     },
     "dependencies": {
         "@methodus/data": "^2.0.35",
+        
         "colors": "^1.1.2",
         "rimraf": "^3.0.1",
         "shelljs": "^0.7.8",
