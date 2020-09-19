@@ -1,8 +1,10 @@
-import commons, { Mapping,MethodResult, Verbs } from '@methodus/server/commons';
+import commons, { Mapping, MethodResult } from '@methodus/server/commons';
+import { Verbs } from '@methodus/platform-express';
+import { MethodConfigBase } from '@methodus/server';
 import decorators from '@methodus/server/decorators';
 import { Query as DataQuery } from '@methodus/data';
 import { UserModel } from '../models/user.model';
-@decorators.MethodConfigBase('Data')
+@MethodConfigBase('Data')
 export class DataController {
 
     /*

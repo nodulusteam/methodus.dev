@@ -1,4 +1,4 @@
-import decorators from '@methodus/framework-decorators';
+import decorators from '@methodus/server/decorators';
 /*start custom*/
 import { BaseController } from './basecontroller';
 /*end custom*/

@@ -1,8 +1,8 @@
-import { MethodConfig } from '@methodus/server';
+import decorators from '@methodus/server/decorators';
 /*start custom*/
 import { BaseController } from './basecontroller';
 /*end custom*/
-@MethodConfig('Inherit')
+@decorators.MethodConfig('Inherit')
 export class Inherit extends BaseController {
 
 }
