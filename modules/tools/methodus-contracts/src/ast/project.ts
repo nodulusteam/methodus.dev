@@ -4,6 +4,7 @@ import {
 } from 'ts-morph';
 import * as path from 'path';
 import { HEADER, Configuration, BuildOptions } from '../builder-models/interfaces';
+import { ModuleKind, ModuleResolutionKind } from 'typescript';
 
 
 export class MethodusProject {
@@ -26,7 +27,9 @@ export class MethodusProject {
                 usePrefixAndSuffixTextForRename: false
             },
             compilerOptions: {
-                target: (options.isClient) ? ScriptTarget.ES5 : ScriptTarget.ESNext,
+                target: (options.isClient) ? ScriptTarget.ES5 : ScriptTarget.ES5,
+                module: ModuleKind.CommonJS,
+                moduleResolution: ModuleResolutionKind.NodeJs,
                 declaration: true,
                 sourceMap: true,
                 preserveConstEnums: true,

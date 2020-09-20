@@ -29,9 +29,7 @@ export class Server {
         if (configuration.npmrc) {
             UseCustomTemplate(path.join(source, configuration.npmrc), '.npmrc', target);
         }
-        if (configuration.tsconfig) {
-            UseCustomTemplate(path.join(source, configuration.tsconfig), 'tsconfig.json', target);
-        }
+     
     }
     public publish(dest) {
         this.Installer.publish(dest);
