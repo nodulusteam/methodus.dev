@@ -1,6 +1,7 @@
 import {
     ScriptTarget,
-    Project, createWrappedNode, ClassDeclaration, IndentationText, NewLineKind, QuoteKind, FormatCodeSettings, UserPreferences, SourceFile, MethodDeclaration
+    Project, createWrappedNode, ClassDeclaration, IndentationText, NewLineKind, QuoteKind, FormatCodeSettings,
+    UserPreferences, SourceFile, MethodDeclaration
 } from 'ts-morph';
 import * as path from 'path';
 import { HEADER, Configuration, BuildOptions } from '../builder-models/interfaces';
@@ -97,7 +98,6 @@ export class MethodusProject {
         const xparams = method.getParameters();
 
         xparams.forEach((arg, i) => {
-            console.log(arg.getFullText());
             const paramDecorator = arg.getDecorators();
             if (paramDecorator && paramDecorator[0] && paramDecorator[0].getName() === 'SecurityContext') {
                 arg.remove();
@@ -223,11 +223,11 @@ export class MethodusProject {
             if (!options.isClient) {
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/framework-decorators',
-                    defaultImport: 'decorators'
+                    namedImports: ['Proxy']
                 });
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/framework-commons',
-                    namedImports: ['MethodResult', 'Mapping']
+                    namedImports: ['Mapping']
                 });
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/platform-rest',
@@ -297,6 +297,7 @@ export class MethodusProject {
                     sourceFile.addStatements(`new ${classDec.getName()}()`);
                 }
 
+                sourceFile.fixMissingImports({}, { disableSuggestions: true });
                 sourceFile.saveSync();
 
 
@@ -353,6 +354,7 @@ export class MethodusProject {
         try {
 
             sourceFile.fixMissingImports(format, prefernces);
+
             sourceFile.saveSync();
         } catch (error) {
             console.error(file.getFilePath());

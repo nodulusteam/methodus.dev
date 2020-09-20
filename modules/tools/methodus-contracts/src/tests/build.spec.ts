@@ -33,7 +33,7 @@ describe('Build with args', () => {
             try {
                 const result = await Builder(options);
             } catch (error) {
-                console.log(error);
+                console.error(error);
                 expect(error).toBe('could not publish contract');
             }
 
