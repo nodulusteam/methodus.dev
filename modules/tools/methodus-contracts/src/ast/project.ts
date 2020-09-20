@@ -214,26 +214,13 @@ export class MethodusProject {
         const classes = file.getClasses();
         if (classes) {
             if (!options.isClient) {
-
                 sourceFile.addImportDeclaration({
-                    moduleSpecifier: '@methodus/server',
-                    namedImports: [
-                        'Proxy',
-                        'MethodConfig',
-                        'MethodConfigBase',
-                        'Method',
-                        'Param',
-                        'Query',
-                        'Headers',
-                        'Body',
-                        'SecurityContext',
-                        'Files',
-                        'Verbs',
-                        'MethodResult',
-                        'MethodMock',
-                        'Injectable',
-                        'Inject'
-                    ]
+                    moduleSpecifier: '@methodus/framework-decorators',
+                    defaultImport: 'decorators'
+                });
+                sourceFile.addImportDeclaration({
+                    moduleSpecifier: '@methodus/framework-commons',
+                    defaultImport: 'commons'
                 });
             } else {
                 sourceFile.addImportDeclaration({
