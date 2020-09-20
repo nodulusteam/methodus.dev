@@ -29,13 +29,12 @@ describe('Test Emitter configuration', () => {
 
 
     it('testTypes', async () => {
-
         await testTarget.testTypes(new Date().toISOString() as any);
     });
 
 
 
-    xit('list', async () => {
+    it.skip('list', async () => {
         resultEmitter.on('list', (data) => {
             expect(data.result.length).toBe(5);
         });
@@ -43,7 +42,7 @@ describe('Test Emitter configuration', () => {
     });
 
 
-    xit('listDefaults', async () => {
+    it.skip('listDefaults', async () => {
         resultEmitter.on('listdefaults', (data) => {
             expect(data.result.length).toBe(5);
         });
@@ -51,7 +50,7 @@ describe('Test Emitter configuration', () => {
         await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
     });
 
-    xit('read', async () => {
+    it.skip('read', async () => {
         resultEmitter.on('read', (data) => {
             expect(data.error).toBe('intended error');
         });

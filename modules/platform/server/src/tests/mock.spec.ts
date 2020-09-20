@@ -56,7 +56,7 @@ class ParserResponse {
 }
 
 describe('Test additional method classes', () => {
-    it('TestController mock', async () => {
+    it.skip('TestController mock', async () => {
         const testController = injection.Injector.get(TestController);
         Mocker.mock(TestController);
         const mockResult = await testController.list('', '');
@@ -64,7 +64,7 @@ describe('Test additional method classes', () => {
         expect(mockResult.list).toBeDefined();
     });
 
-    it('TestController mock for server', async () => {
+    it.skip('TestController mock for server', async () => {
         const testController = injection.Injector.get(TestController);
         Mocker.mockServer(TestController);
         const mockResult = await testController.list('', '');
