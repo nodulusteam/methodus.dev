@@ -1,10 +1,8 @@
 import decorators from '@methodus/server/decorators';
-import injection from '@methodus/server/injection';
 import { MethodResult, AuthType, Mapping }  from '@methodus/server/commons';
 /**
  * @hidden
  */
-@injection.Injectable()
 @decorators.Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @decorators.MethodConfig('TestTarget')
 export class TestTarget {

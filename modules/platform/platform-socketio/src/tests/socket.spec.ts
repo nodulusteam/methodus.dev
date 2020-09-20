@@ -2,7 +2,7 @@ import injection from '@methodus/server/injection';
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
 
-describe.skip('Test SocketIO configuration', () => {
+describe('Test SocketIO configuration', () => {
     const testTarget = injection.Injector.get(TestTarget);
     let server: SocketTestServer;
     beforeAll(async () => {
@@ -14,7 +14,7 @@ describe.skip('Test SocketIO configuration', () => {
         });
     });
 
-    it.skip('list', async () => {
+    it('list', async () => {
         const response = await testTarget.list('someauth', 'up');
         expect(response.result.length).toEqual(5);
     });

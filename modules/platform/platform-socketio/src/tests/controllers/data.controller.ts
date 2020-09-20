@@ -1,13 +1,10 @@
-import { MethodConfigBase } from '@methodus/server';
 import decorators from '@methodus/server/decorators';
 import { MethodResult, Mapping } from '@methodus/server/commons';
-import injection from '@methodus/server/injection';
 
 /**
  * @hidden
  */
-@injection.Singleton()
-@MethodConfigBase('DataController')
+@decorators.MethodConfig('DataController')
 export class DataController {
     public repository: any;
     constructor(repo: any) {
