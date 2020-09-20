@@ -15,7 +15,7 @@
         "theme": "markdown"
     },
     "compilerOptions": {
-        "target": "es2015",
+        "target": "ES5",
         "module": "commonjs",
         "outDir": "dist/",
         "rootDir": "src",

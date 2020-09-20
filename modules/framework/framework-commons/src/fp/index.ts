@@ -9,9 +9,9 @@ export class fp {
         return object;
     }
 
-    public static unique(myArray: any): any {
-        return [...new Set(myArray)];
-    }
+    // public static unique(myArray: any): any {
+    //     return [...new Set(myArray)];
+    // }
 
     public static maybeProto(object: any): any {
         if (!object || object.methodus) {

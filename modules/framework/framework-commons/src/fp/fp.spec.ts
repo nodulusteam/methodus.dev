@@ -36,10 +36,10 @@ describe('Test the FP functions', () => {
 
     });
 
-    it('unique', async () => {
-        const parsed = fp.unique([1, 1, 1, 2, 3, 4]);
-        expect(JSON.stringify(parsed)).toBe(JSON.stringify([1, 2, 3, 4]));
-    });
+    // it('unique', async () => {
+    //     const parsed = fp.unique([1, 1, 1, 2, 3, 4]);
+    //     expect(JSON.stringify(parsed)).toBe(JSON.stringify([1, 2, 3, 4]));
+    // });
 
 
     it('maybeEach', async () => {
