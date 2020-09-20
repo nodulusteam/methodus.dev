@@ -22,6 +22,9 @@ export class Client {
         if (configuration.npmrc) {
             UseCustomTemplate(path.join(source, configuration.npmrc), '.npmrc', target);
         }
+        if (configuration.tsconfig) {
+            UseCustomTemplate(path.join(source, configuration.tsconfig), 'tsconfig.json', target);
+        }
 
     }
     // public link(dest: string) {

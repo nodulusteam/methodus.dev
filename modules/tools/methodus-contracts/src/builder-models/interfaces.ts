@@ -26,6 +26,7 @@ export interface Configuration {
     contractNameServer: string;
     contractNameClient: string;
     npmrc: string;
+    tsconfig: string;
     npmignore: string;
     models: Map<string, ModelConfiguration>;
     contracts: Map<string, ModelConfiguration>;
