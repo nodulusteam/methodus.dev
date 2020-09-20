@@ -9,7 +9,7 @@
             "console": "internalConsole",
             "name": "T | Run jest",
             "type": "node",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
@@ -26,7 +26,7 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/lib/tests/socket.test.js",
+            "program": "${workspaceRoot}/dist/tests/socket.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
