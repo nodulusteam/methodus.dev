@@ -4,7 +4,7 @@ import {
 } from 'ts-morph';
 import * as path from 'path';
 import { HEADER, Configuration, BuildOptions } from '../builder-models/interfaces';
-import { ModuleKind, ModuleResolutionKind } from 'typescript';
+import { ModuleKind, ModuleResolutionKind, SyntaxKind } from 'typescript';
 
 
 export class MethodusProject {
@@ -97,12 +97,19 @@ export class MethodusProject {
         const xparams = method.getParameters();
 
         xparams.forEach((arg, i) => {
+            console.log(arg.getFullText());
             const paramDecorator = arg.getDecorators();
             if (paramDecorator && paramDecorator[0] && paramDecorator[0].getName() === 'SecurityContext') {
                 arg.remove();
             } else {
-                if (options.isClient && paramDecorator[0] && paramDecorator[0].getText().indexOf('@M') !== 0) {
-                    paramDecorator[0].replaceWithText(`@M.P.${paramDecorator[0].getText().substr(1)}`)
+                if (paramDecorator[0] && paramDecorator[0].getText().indexOf('@M') !== 0) {
+                    if (options.isClient) {
+                        paramDecorator[0].replaceWithText(`@M.P.${paramDecorator[0].getText().substr(1)}`)
+                    }
+                    else {
+                        paramDecorator[0].replaceWithText(`@Mapping.${paramDecorator[0].getText().substr(1)}`)
+                    }
+
                 }
             }
         });
@@ -220,7 +227,11 @@ export class MethodusProject {
                 });
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/framework-commons',
-                    defaultImport: 'commons'
+                    namedImports: ['MethodResult', 'Mapping']
+                });
+                sourceFile.addImportDeclaration({
+                    moduleSpecifier: '@methodus/platform-rest',
+                    namedImports: ['Verbs']
                 });
             } else {
                 sourceFile.addImportDeclaration({
@@ -275,11 +286,11 @@ export class MethodusProject {
                 });
 
                 targetClass.getMethods().forEach((method: MethodDeclaration) => {
-                    this.HandleMethod(method, options);
-                });
-
-                targetClass.getStaticMethods().forEach((method) => {
-                    this.HandleMethod(method, options);
+                    if (!method.hasModifier(SyntaxKind.PrivateKeyword)) {
+                        this.HandleMethod(method, options);
+                    } else {
+                        method.remove();
+                    }
                 });
 
                 if (options.isClient) {

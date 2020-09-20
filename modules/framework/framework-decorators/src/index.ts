@@ -34,3 +34,8 @@ export namespace framework.decorators {
 }
 
 export default framework.decorators;
+export * from './proxy/proxy';
+export * from './auth';
+export * from './module';
+export * from './class';
+export * from './method';

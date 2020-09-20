@@ -1,15 +1,12 @@
 import decorators from '@methodus/server/decorators';
-import commons, { Mapping,MethodResult } from '@methodus/server/commons';
+import { Mapping, MethodResult } from '@methodus/framework-commons';
 import { Verbs } from '@methodus/platform-express';
 import { Mock } from '../mocks/mock';
 
-
-
-
 @decorators.MethodConfig('Simple')
 export class Simple {
-    constructor() {
-
+    private async _simplyPrivate(@Mapping.Param('id') id: string): Promise<MethodResult> {
+        return new MethodResult({ Name: 'roi' });
     }
     @decorators.MethodMock(Mock.simple)
     @decorators.Method(Verbs.Get, '/simple/get')
@@ -23,4 +20,6 @@ export class Simple {
     public async post(@Mapping.Param('id') id: string): Promise<MethodResult> {
         return new MethodResult({ Name: 'roi' });
     }
+
+
 }
