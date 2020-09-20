@@ -9,5 +9,7 @@
     "author": "",
     "license": "ISC",
     "devDependencies": {},
-    "dependencies": {}
+    "dependencies": {
+        "@methodus/platform-web": "^7.0.0"
+    }
 }
