@@ -38,7 +38,7 @@ export class TestController {
 
 
 
-    @decorators.MethodMock({})
+    @decorators.MethodMock({ list: [1, 2, 3] })
     @decorators.Method(Verbs.Get, '/api/player')
     public async list(
         @Mapping.Headers('auth') auth: string = 'kkk',
@@ -48,7 +48,6 @@ export class TestController {
         result.on('finish', (data: any) => {
             return data;
         });
-        //  result.setHeader('good-header', generateUuid());
         return result;
     }
 

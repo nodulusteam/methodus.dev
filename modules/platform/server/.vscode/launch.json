@@ -9,7 +9,7 @@
             "console": "internalConsole",
             "name": "T | Run jest",
             "type": "node",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
