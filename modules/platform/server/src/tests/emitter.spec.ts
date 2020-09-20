@@ -7,7 +7,7 @@ import injection from '@methodus/framework-injection';
 
 
 
-describe('Test Emitter configuration', () => {
+describe.skip('Test Emitter configuration', () => {
     let testTarget: TestTarget;
     let server: EmitterTestServer;
 
@@ -28,7 +28,7 @@ describe('Test Emitter configuration', () => {
     });
 
 
-    it('testTypes', async () => {
+    it.skip('testTypes', async () => {
         await testTarget.testTypes(new Date().toISOString() as any);
     });
 
