@@ -1,9 +1,9 @@
 // tslint:disable-next-line:no-reference
 /// <reference path="./method.ts" />
 import 'reflect-metadata';
-import { MethodType, ServerType } from '@methodus/framework-commons';
+import { MethodType, ServerType } from '@methodus/framework-decorators/commons';
 import { Servers } from '../servers/serversList';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 
 // tslint:disable-next-line:no-namespace
 export namespace Methods {
@@ -13,7 +13,7 @@ export namespace Methods {
      */
     export function MethodConfigBase(name: string, middlewares?: Function[], repository?: any) {
         return (target: any) => {
-
+            debugger
             const existingMetadata = injection.ClassContainer.get(name) || {};
             existingMetadata.name = name;
             const original = target.prototype.constructor;
@@ -30,7 +30,7 @@ export namespace Methods {
             proto.methodus_base = JSON.parse(JSON.stringify(proto.methodus[name]));
 
 
-
+            debugger
             Servers.classes[target.name] = {
                 classType: target,
                 controller: target, methodType: MethodType.Local,

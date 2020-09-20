@@ -1,7 +1,8 @@
 import { Mocker } from '../mocker';
 import { TestController } from './controllers';
-import injection from '@methodus/framework-injection';
-import { MethodResult, MethodError, deserialize } from './shim';
+import injection from '@methodus/framework-decorators/injection';
+import { deserialize } from '../method/deserialize';
+import { MethodError, MethodResult } from '@methodus/framework-decorators/commons';
 
 
 

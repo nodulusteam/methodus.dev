@@ -1,7 +1,7 @@
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 import { TestLogger } from './logger.service';
-import { MethodResult } from '@methodus/framework-commons';
+import { MethodResult } from '@methodus/framework-decorators/commons';
 
 /**
  * @hidden

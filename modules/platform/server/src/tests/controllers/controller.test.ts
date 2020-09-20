@@ -1,11 +1,11 @@
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 
 
 
 import { TestLogger } from './logger.service';
 import { ScreenModel } from '../models/screen.model';
-import { MethodResult, Mapping, AuthType, MethodError, MethodResultStatus } from '@methodus/framework-commons';
+import { MethodResult, Mapping, AuthType, MethodError, MethodResultStatus } from '@methodus/framework-decorators/commons';
 import { Verbs } from '../models/verbs';
 import { MethodHandler } from '../../method/handlers/method.handler';
 import { MethodPipeHandler } from '../../method/handlers/pipe.handler';

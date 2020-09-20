@@ -1,6 +1,6 @@
-import commons from '@methodus/framework-commons';
+import commons from '@methodus/framework-decorators/commons';
 const logger = commons.logger;
-import { MethodusConfig, PluginEntry } from '@methodus/framework-commons';
+import { MethodusConfig, PluginEntry } from '@methodus/framework-decorators/commons';
 export class PluginLoader {
 
     constructor() {

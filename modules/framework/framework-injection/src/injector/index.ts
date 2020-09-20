@@ -113,10 +113,10 @@ export class InjectorType {
 // // test for globals
 let bridge = { Injector: new InjectorType() };
 if (global) {
-    if (!(global as any).METHODUS_BRIDGE) {
-        (global as any).METHODUS_BRIDGE = bridge;
+    if (!(global as any).METHODUS_DI) {
+        (global as any).METHODUS_DI = bridge;
     }
-    bridge = (global as any).METHODUS_BRIDGE;
+    bridge = (global as any).METHODUS_DI;
 }
 if (!bridge.Injector) {
     bridge.Injector = new InjectorType();

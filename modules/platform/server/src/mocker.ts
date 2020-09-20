@@ -1,5 +1,5 @@
-import { TransportType,MethodusClientConfig } from '@methodus/framework-commons';
-import injection from '@methodus/framework-injection';
+import { TransportType,MethodusClientConfig } from '@methodus/framework-decorators/commons';
+import injection from '@methodus/framework-decorators/injection';
 
 
 export class Mocker {

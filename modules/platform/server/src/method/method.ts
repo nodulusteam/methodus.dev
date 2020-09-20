@@ -1,10 +1,10 @@
 import 'reflect-metadata';
-import commons, { MethodType, TransportType, MethodResult, MethodError, MethodResultStatus, validate } from '@methodus/framework-commons';
+import commons, { MethodType, TransportType, MethodResult, MethodError, MethodResultStatus, validate } from '@methodus/framework-decorators/commons';
 import { ResponseParser } from '../response';
 import { Servers } from '../servers/serversList';
 
 import stringify from 'fast-safe-stringify';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 
 const getClassOf = Function.prototype.call.bind(Object.prototype.toString);
 const methodMetadataKey = 'methodus';

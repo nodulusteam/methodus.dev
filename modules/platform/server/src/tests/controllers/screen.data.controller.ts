@@ -1,10 +1,10 @@
 import { DataController } from './data.controller';
 import { ScreenModel } from '../models/screen.model';
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 
 import { TestLogger } from './logger.service';
-import { MethodResult, Mapping } from '@methodus/framework-commons';
+import { MethodResult, Mapping } from '@methodus/framework-decorators/commons';
 import { Verbs } from '../models/verbs';
 
 /**

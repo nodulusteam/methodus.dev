@@ -5,7 +5,7 @@ import 'reflect-metadata';
 
  
 import { EventEmitter } from 'events';
-import commons, { ITransport } from '@methodus/framework-commons';
+import commons, { ITransport } from '@methodus/framework-decorators/commons';
 import { Servers } from '../../servers/serversList';
  
  

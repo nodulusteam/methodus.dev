@@ -1,5 +1,5 @@
 import { v1 as uuidv1 } from 'uuid';
-import { Dictionary, ServerDefinition } from '@methodus/framework-commons';
+import { Dictionary, ServerDefinition } from '@methodus/framework-decorators/commons';
 
 export class ServersList {
     public instances: Dictionary = {};

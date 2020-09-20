@@ -1,2 +1,2 @@
-const injection = require('@methodus/framework-injection');
+const injection = require('@methodus/framework-decorators/injection');
 module.exports = injection;

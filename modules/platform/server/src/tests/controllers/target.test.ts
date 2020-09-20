@@ -1,6 +1,6 @@
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-injection';
-import { Mapping, MethodResult, AuthType } from '@methodus/framework-commons';
+import injection from '@methodus/framework-decorators/injection';
+import { Mapping, MethodResult, AuthType } from '@methodus/framework-decorators/commons';
 import { Verbs } from '../models/verbs';
 /**
  * @hidden

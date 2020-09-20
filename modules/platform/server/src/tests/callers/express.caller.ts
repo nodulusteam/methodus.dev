@@ -1,6 +1,6 @@
 
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 import { TestTarget } from '../controllers/';
 import { ConfiguredServer } from '../../server.configured';
  

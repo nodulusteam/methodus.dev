@@ -2,13 +2,14 @@ import injection from '@methodus/server/injection';
 import { TestTarget } from '../controllers/target.test';
 import { ExpressTestServer } from './express.server.session';
 describe('Test Express session configuration', () => {
-    const testTarget = injection.Injector.get(TestTarget);
+    let testTarget:TestTarget;
     let server: ExpressTestServer;
 
     beforeAll(async () => {
         await new Promise(async (resolve, reject) => {
             server = new ExpressTestServer();
             server.on('ready', () => {
+                testTarget = injection.Injector.get(TestTarget);
                 resolve();
             });
         });
@@ -19,7 +20,7 @@ describe('Test Express session configuration', () => {
     });
 
     it('list', async () => {
-        const response = await testTarget.create();
+        const response = await testTarget.create({},{},'some-name');
         expect(response.result).toBeDefined();
         return true;
     });

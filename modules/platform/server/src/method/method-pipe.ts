@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import commons, { MethodType, MethodError, MethodResult } from '@methodus/framework-commons';
-import injection from '@methodus/framework-injection';
+import commons, { MethodType, MethodError, MethodResult } from '@methodus/framework-decorators/commons';
+import injection from '@methodus/framework-decorators/injection';
 import { Servers } from '../servers/serversList';
 import { ResponseParser } from '../response/response-parser';
 

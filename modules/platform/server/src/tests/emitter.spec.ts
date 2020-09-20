@@ -3,7 +3,7 @@ process.env.test = 'true';
 import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 
 
 

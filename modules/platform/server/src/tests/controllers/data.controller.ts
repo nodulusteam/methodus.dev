@@ -1,5 +1,5 @@
 import decorators from '@methodus/framework-decorators';
-import { Mapping, MethodResult } from '@methodus/framework-commons';
+import { Mapping, MethodResult } from '@methodus/framework-decorators/commons';
 import { Verbs } from '../models/verbs';
 /**
  * @hidden

@@ -1,3 +1,4 @@
 *
+!commons
 !dist/**/*
 !package.json

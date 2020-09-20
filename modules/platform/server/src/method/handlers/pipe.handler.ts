@@ -1,4 +1,4 @@
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 import { verbBasedMethod } from '../method-pipe';
 
 @injection.Injectable('MethodPipeHandler')

@@ -1,11 +1,11 @@
 import * as path from 'path';
 
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 import { TestController } from '../controllers/';
 import { TestTarget } from '../controllers/';
 import { EmitterPlugin } from './emitter.plugin';
-import { MethodResult, MethodError } from '@methodus/framework-commons';
+import { MethodResult, MethodError } from '@methodus/framework-decorators/commons';
 import { ConfiguredServer } from '../../server.configured';
 import { deserialize } from '../../method/deserialize';
  

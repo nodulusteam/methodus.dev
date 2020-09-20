@@ -1,5 +1,5 @@
 
-import commons from '@methodus/framework-commons';
+import commons from '@methodus/framework-decorators/commons';
 
 
 const primitiveArray: any = {

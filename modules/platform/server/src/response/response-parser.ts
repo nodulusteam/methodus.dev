@@ -1,5 +1,5 @@
-import { ServerType } from '@methodus/framework-commons';
-import injection from '@methodus/framework-injection';
+import { ServerType } from '@methodus/framework-decorators/commons';
+import injection from '@methodus/framework-decorators/injection';
 
 /** this function parses values from the request object into the function args
  *  @param {any} args - the arguments sent to the original function.

@@ -1,2 +1,2 @@
-export { default } from '@methodus/framework-injection';
-export * from '@methodus/framework-injection';
+export { default } from '@methodus/framework-decorators/injection';
+export * from '@methodus/framework-decorators/injection';

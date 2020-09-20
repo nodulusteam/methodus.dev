@@ -1,11 +1,11 @@
 import 'reflect-metadata';
 import { Servers } from './servers';
-import commons, { MethodusConfig, ServerConfig, PluginEntry } from '@methodus/framework-commons';
+import commons, { MethodusConfig, ServerConfig, PluginEntry } from '@methodus/framework-decorators/commons';
 import { MethodHandler } from './method/handlers/method.handler';
 import { MethodPipeHandler } from './method/handlers/pipe.handler';
 
 import { PluginLoader } from './plugins';
-import injection from '@methodus/framework-injection';
+import injection from '@methodus/framework-decorators/injection';
 import { v1 as uuidv1 } from 'uuid';
 
 
