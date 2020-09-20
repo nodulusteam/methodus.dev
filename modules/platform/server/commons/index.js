@@ -1,2 +1,2 @@
-const commons = require('@methodus/framework-commons');
+const commons = require('@methodus/framework-decorators/commons');
 module.exports = commons;
