@@ -1,5 +1,6 @@
 // tslint:disable-next-line:no-reference
 /// <reference path="./method.ts" />
+
 import 'reflect-metadata';
 import { MethodType, ServerType } from '@methodus/framework-decorators/commons';
 import { Servers } from '../servers/serversList';
@@ -13,7 +14,6 @@ export namespace Methods {
      */
     export function MethodConfigBase(name: string, middlewares?: Function[], repository?: any) {
         return (target: any) => {
-            debugger
             const existingMetadata = injection.ClassContainer.get(name) || {};
             existingMetadata.name = name;
             const original = target.prototype.constructor;
@@ -29,8 +29,6 @@ export namespace Methods {
             proto.methodus[name].isBase = true;
             proto.methodus_base = JSON.parse(JSON.stringify(proto.methodus[name]));
 
-
-            debugger
             Servers.classes[target.name] = {
                 classType: target,
                 controller: target, methodType: MethodType.Local,
@@ -38,7 +36,6 @@ export namespace Methods {
             };
 
             const methods = Object.getOwnPropertyNames(target.prototype);
-
             methods.forEach((methodName: string): void => {
                 return target.prototype[methodName];
             });
@@ -49,7 +46,6 @@ export namespace Methods {
                     return target.prototype.constructor[methodName];
                 });
             }
-
 
             proto.methodus_base.middlewares = middlewares;
             target.methodus_base = proto.methodus_base;
