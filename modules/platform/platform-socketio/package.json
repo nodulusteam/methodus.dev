@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "7.0.8",
+    "version": "7.0.9",
     "description": "",
     "main": "dist/index.js",
     "homepage": "https://methodus.dev",
@@ -35,7 +35,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/server": "^7.0.10",
+        "@methodus/server": "^7.0.11",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"
     },

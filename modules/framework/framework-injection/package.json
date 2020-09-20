@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-injection",
-    "version": "7.0.8",
+    "version": "7.0.9",
     "description": "Dependency injection for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
