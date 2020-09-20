@@ -26,8 +26,7 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
-    "devDependencies": {
-        "@methodus/contracts": "^7.0.11",
+    "devDependencies": {         
         "@methodus/data": "^2.0.33",
         "@methodus/platform-express": "^7.0.9",
         "@methodus/platform-rest": "^7.0.9",
