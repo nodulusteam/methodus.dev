@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-decorators",
-    "version": "7.0.11",
+    "version": "7.0.12",
     "description": "Server Decorators for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -35,8 +35,8 @@
         "access": "public"
     },
     "devDependencies": {
-        "@methodus/framework-commons": "^7.0.8",
-        "@methodus/framework-injection": "^7.0.9"
+        "@methodus/framework-commons": "^7.0.9",
+        "@methodus/framework-injection": "^7.0.10"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }
