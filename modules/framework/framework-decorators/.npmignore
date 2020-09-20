@@ -1,5 +1,5 @@
 *
-!commons
-!injection
+!commons/**/*
+!injection/**/*
 !dist/**/*
 !package.json
