@@ -21,7 +21,7 @@
 
 • **from**? : *string*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/params-map.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:2](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/params-map.ts#L2)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **index**? : *number*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/params-map.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:4](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/params-map.ts#L4)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **name**? : *string*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/params-map.ts#L5)*
+*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:5](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/params-map.ts#L5)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **to**? : *string*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/params-map.ts#L3)*
+*Defined in [modules/platform/platform-web/src/lib/commons/params-map.ts:3](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/params-map.ts#L3)*

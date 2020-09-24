@@ -19,7 +19,7 @@
 
 • **Delete**: = "DELETE"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L7)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:7](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L7)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **Get**: = "GET"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:2](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L2)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **Head**: = "HEAD"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L6)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:6](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L6)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **Patch**: = "PATCH"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L5)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:5](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L5)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **Post**: = "POST"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L3)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:3](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L3)*
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • **Put**: = "PUT"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:4](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L4)*

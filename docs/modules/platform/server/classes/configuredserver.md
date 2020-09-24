@@ -50,7 +50,7 @@
 
 *Overrides void*
 
-*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/server.configured.ts#L8)*
+*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/server.configured.ts#L8)*
 
 **Parameters:**
 
@@ -66,7 +66,7 @@ Name | Type |
 
 • **server**? : *[Server](server.md)*
 
-*Defined in [src/server.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/server.configured.ts#L7)*
+*Defined in [src/server.configured.ts:7](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/server.configured.ts#L7)*
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 • **target**: *any*
 
-*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/server.configured.ts#L8)*
+*Defined in [src/server.configured.ts:8](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/server.configured.ts#L8)*
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 ▸ **init**(): *Promise‹void›*
 
-*Defined in [src/server.configured.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/server.configured.ts#L17)*
+*Defined in [src/server.configured.ts:17](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/server.configured.ts#L17)*
 
 **Returns:** *Promise‹void›*
 
@@ -189,7 +189,7 @@ ___
 
 ▸ **kill**(): *void*
 
-*Defined in [src/server.configured.ts:56](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/server.configured.ts#L56)*
+*Defined in [src/server.configured.ts:56](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/server.configured.ts#L56)*
 
 **Returns:** *void*
 

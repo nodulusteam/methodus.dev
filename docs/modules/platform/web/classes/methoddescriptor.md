@@ -23,7 +23,7 @@
 
 • **methodType**? : *[MethodType](../enums/methodtype.md)*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:6](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L6)*
+*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:6](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L6)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **middlewares**? : *any*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L8)*
+*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:8](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L8)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **params**? : *[ParamsMap](paramsmap.md)[]*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:9](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L9)*
+*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:9](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L9)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **propertyKey**? : *string*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:7](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L7)*
+*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:7](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L7)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **route**? : *string*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:5](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L5)*
+*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:5](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L5)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 • **verb**? : *[Verbs](../enums/verbs.md)*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L4)*
+*Defined in [modules/platform/platform-web/src/lib/commons/method-descriptor.ts:4](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/method-descriptor.ts#L4)*

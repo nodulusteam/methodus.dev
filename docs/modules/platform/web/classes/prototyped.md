@@ -18,4 +18,4 @@
 
 • **prototype**? : *any*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/prototyped.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/prototyped.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/commons/prototyped.ts:2](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/prototyped.ts#L2)*

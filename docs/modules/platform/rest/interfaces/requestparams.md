@@ -25,7 +25,7 @@
 
 Defined in dist/interfaces.d.ts:14
 
-*Defined in [src/interfaces.ts:13](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L13)*
+*Defined in [src/interfaces.ts:13](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/interfaces.ts#L13)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 Defined in dist/interfaces.d.ts:17
 
-*Defined in [src/interfaces.ts:16](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L16)*
+*Defined in [src/interfaces.ts:16](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/interfaces.ts#L16)*
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 Defined in dist/interfaces.d.ts:15
 
-*Defined in [src/interfaces.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L14)*
+*Defined in [src/interfaces.ts:14](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/interfaces.ts#L14)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 Defined in dist/interfaces.d.ts:18
 
-*Defined in [src/interfaces.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L17)*
+*Defined in [src/interfaces.ts:17](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/interfaces.ts#L17)*
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 Defined in dist/interfaces.d.ts:13
 
-*Defined in [src/interfaces.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L12)*
+*Defined in [src/interfaces.ts:12](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/interfaces.ts#L12)*
 
 ___
 
@@ -75,4 +75,4 @@ ___
 
 Defined in dist/interfaces.d.ts:16
 
-*Defined in [src/interfaces.ts:15](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/interfaces.ts#L15)*
+*Defined in [src/interfaces.ts:15](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/interfaces.ts#L15)*

@@ -22,7 +22,7 @@
 
 \+ **new PluginLoader**(): *[PluginLoader](pluginloader.md)*
 
-*Defined in [src/plugins.ts:4](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/plugins.ts#L4)*
+*Defined in [src/plugins.ts:4](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/plugins.ts#L4)*
 
 **Returns:** *[PluginLoader](pluginloader.md)*
 
@@ -32,7 +32,7 @@
 
 ▸ **config**(`serverConfiguration`: MethodusConfig, `pluginList`: PluginEntry[]): *Promise‹void›*
 
-*Defined in [src/plugins.ts:9](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/plugins.ts#L9)*
+*Defined in [src/plugins.ts:9](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/plugins.ts#L9)*
 
 **Parameters:**
 

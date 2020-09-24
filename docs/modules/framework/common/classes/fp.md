@@ -16,7 +16,6 @@
 * [maybeMethodus](#static-maybemethodus)
 * [maybeProto](#static-maybeproto)
 * [maybeString](#static-maybestring)
-* [unique](#static-unique)
 
 ## Methods
 
@@ -40,7 +39,7 @@ ___
 
 ▸ **maybeEach**(`object`: any, `callback`: any): *void*
 
-Defined in modules/framework/framework-commons/dist/fp/index.d.ts:6
+Defined in modules/framework/framework-commons/dist/fp/index.d.ts:5
 
 **Parameters:**
 
@@ -57,7 +56,7 @@ ___
 
 ▸ **maybeJson**(`object`: any): *object*
 
-Defined in modules/framework/framework-commons/dist/fp/index.d.ts:7
+Defined in modules/framework/framework-commons/dist/fp/index.d.ts:6
 
 **Parameters:**
 
@@ -73,7 +72,7 @@ ___
 
 ▸ **maybeMethodus**(`object`: any): *any*
 
-Defined in modules/framework/framework-commons/dist/fp/index.d.ts:5
+Defined in modules/framework/framework-commons/dist/fp/index.d.ts:4
 
 **Parameters:**
 
@@ -89,7 +88,7 @@ ___
 
 ▸ **maybeProto**(`object`: any): *any*
 
-Defined in modules/framework/framework-commons/dist/fp/index.d.ts:4
+Defined in modules/framework/framework-commons/dist/fp/index.d.ts:3
 
 **Parameters:**
 
@@ -105,7 +104,7 @@ ___
 
 ▸ **maybeString**(`object`: any): *string*
 
-Defined in modules/framework/framework-commons/dist/fp/index.d.ts:8
+Defined in modules/framework/framework-commons/dist/fp/index.d.ts:7
 
 **Parameters:**
 
@@ -114,19 +113,3 @@ Name | Type |
 `object` | any |
 
 **Returns:** *string*
-
-___
-
-### `Static` unique
-
-▸ **unique**(`myArray`: any): *any*
-
-Defined in modules/framework/framework-commons/dist/fp/index.d.ts:3
-
-**Parameters:**
-
-Name | Type |
------- | ------ |
-`myArray` | any |
-
-**Returns:** *any*

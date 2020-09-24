@@ -27,7 +27,7 @@
 
 • **name**: *string* = "Plugin"
 
-*Defined in [src/tests/servers/emitter.plugin.ts:64](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/tests/servers/emitter.plugin.ts#L64)*
+*Defined in [src/tests/servers/emitter.plugin.ts:64](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/tests/servers/emitter.plugin.ts#L64)*
 
 ## Methods
 
@@ -35,7 +35,7 @@
 
 ▸ **register**(`server`: any, `parentServer`: any): *void*
 
-*Defined in [src/tests/servers/emitter.plugin.ts:66](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/tests/servers/emitter.plugin.ts#L66)*
+*Defined in [src/tests/servers/emitter.plugin.ts:66](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/tests/servers/emitter.plugin.ts#L66)*
 
 **Parameters:**
 
@@ -52,7 +52,7 @@ ___
 
 ▸ **send**(`methodus`: any, `functionArgs`: any, `paramsMap`: any, `securityContext`: any): *Promise‹any›*
 
-*Defined in [src/tests/servers/emitter.plugin.ts:72](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/tests/servers/emitter.plugin.ts#L72)*
+*Defined in [src/tests/servers/emitter.plugin.ts:72](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/tests/servers/emitter.plugin.ts#L72)*
 
 **Parameters:**
 

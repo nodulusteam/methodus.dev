@@ -20,7 +20,7 @@
 
 • **Http**: = "Http"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:13](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L13)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:13](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L13)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **Kafka**: = "Kafka"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L17)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:17](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L17)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **Local**: = "Local"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:12](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L12)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:12](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L12)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **MQ**: = "MQ"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:14](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L14)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:14](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L14)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **Mock**: = "Mock"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:18](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L18)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:18](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L18)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **Redis**: = "Redis"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:15](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L15)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:15](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L15)*
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 • **Socket**: = "Socket"
 
-*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:16](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/enums.ts#L16)*
+*Defined in [modules/platform/platform-web/src/lib/commons/enums.ts:16](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/enums.ts#L16)*

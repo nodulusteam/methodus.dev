@@ -24,7 +24,7 @@
 
 \+ **new ParserResponse**(`args`: any, `isRest`: boolean, `securityContext`: any): *[ParserResponse](parserresponse.md)*
 
-*Defined in [src/mocker.ts:44](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L44)*
+*Defined in [src/mocker.ts:44](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/mocker.ts#L44)*
 
 **Parameters:**
 
@@ -42,9 +42,9 @@ Name | Type |
 
 • **args**: *any*
 
-*Defined in [src/mocker.ts:42](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L42)*
+*Defined in [src/mocker.ts:42](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/mocker.ts#L42)*
 
-*Defined in [src/tests/servers/emitter.server.ts:137](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/tests/servers/emitter.server.ts#L137)*
+*Defined in [src/tests/servers/emitter.server.ts:137](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/tests/servers/emitter.server.ts#L137)*
 
 ___
 
@@ -52,9 +52,9 @@ ___
 
 • **isRest**: *boolean*
 
-*Defined in [src/mocker.ts:43](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L43)*
+*Defined in [src/mocker.ts:43](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/mocker.ts#L43)*
 
-*Defined in [src/tests/servers/emitter.server.ts:138](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/tests/servers/emitter.server.ts#L138)*
+*Defined in [src/tests/servers/emitter.server.ts:138](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/tests/servers/emitter.server.ts#L138)*
 
 ___
 
@@ -62,6 +62,6 @@ ___
 
 • **securityContext**: *any*
 
-*Defined in [src/mocker.ts:44](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/mocker.ts#L44)*
+*Defined in [src/mocker.ts:44](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/mocker.ts#L44)*
 
-*Defined in [src/tests/servers/emitter.server.ts:139](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/server/src/tests/servers/emitter.server.ts#L139)*
+*Defined in [src/tests/servers/emitter.server.ts:139](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/server/src/tests/servers/emitter.server.ts#L139)*

@@ -47,7 +47,7 @@ Defined in dist/server.d.ts:11
 
 Defined in dist/server.d.ts:10
 
-*Defined in [src/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/server.ts#L19)*
+*Defined in [src/server.ts:19](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/server.ts#L19)*
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 Defined in dist/server.d.ts:7
 
-*Defined in [src/server.ts:16](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/server.ts#L16)*
+*Defined in [src/server.ts:16](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/server.ts#L16)*
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 Defined in dist/server.d.ts:8
 
-*Defined in [src/server.ts:17](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/server.ts#L17)*
+*Defined in [src/server.ts:17](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/server.ts#L17)*
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 Defined in dist/server.d.ts:11
 
-*Defined in [src/server.ts:20](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/server.ts#L20)*
+*Defined in [src/server.ts:20](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/server.ts#L20)*
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 Defined in dist/server.d.ts:9
 
-*Defined in [src/server.ts:18](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-rest/src/server.ts#L18)*
+*Defined in [src/server.ts:18](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-rest/src/server.ts#L18)*
 
 ## Methods
 

@@ -1,4 +1,4 @@
 *
-!public/**
-!build/**
-!package.json
+!public/*
+!build/*
+!./package.json

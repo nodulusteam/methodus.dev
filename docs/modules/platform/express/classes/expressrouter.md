@@ -43,7 +43,7 @@ Name | Type |
 
 Defined in platform/platform-express/dist/routing.d.ts:4
 
-*Defined in [platform/platform-express/src/routing.ts:9](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/routing.ts#L9)*
+*Defined in [platform/platform-express/src/routing.ts:9](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-express/src/routing.ts#L9)*
 
 ___
 
@@ -53,4 +53,4 @@ ___
 
 Defined in platform/platform-express/dist/routing.d.ts:3
 
-*Defined in [platform/platform-express/src/routing.ts:8](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-express/src/routing.ts#L8)*
+*Defined in [platform/platform-express/src/routing.ts:8](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-express/src/routing.ts#L8)*

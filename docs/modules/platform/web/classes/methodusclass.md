@@ -19,7 +19,7 @@
 
 • **methodus**: *any*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/methodus-class.ts:3](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L3)*
+*Defined in [modules/platform/platform-web/src/lib/commons/methodus-class.ts:3](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L3)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **name**? : *string*
 
-*Defined in [modules/platform/platform-web/src/lib/commons/methodus-class.ts:2](https://github.com/nodulusteam/methodus.dev/blob/0787b65/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L2)*
+*Defined in [modules/platform/platform-web/src/lib/commons/methodus-class.ts:2](https://github.com/nodulusteam/methodus.dev/blob/8d1d711/modules/platform/platform-web/src/lib/commons/methodus-class.ts#L2)*
