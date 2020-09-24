@@ -4,11 +4,11 @@
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {
-        "build:additionals": "rimraf build && tsc && yarn client && cd client && yarn && yarn prod && cd ..",
+        "build:additionals": "yarn build:server && yarn client-contracts && yarn build:client ",
+        "build:client":"cd client && yarn && yarn prod && cd ..",
         "test": "../../../node_modules/.bin/jest --coverage",
         "build:server": "rimraf build && tsc",
-        "contract": "contracts-server ./build.json",
-        "client": "contracts-client ./build.json",
+        "client-contracts": "contracts-client ./build.json",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-describe -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8c7c7f129d82d3fe77455df4bf7607c5dacbfdc2"
     },
     "homepage": "https://methodus.dev",
