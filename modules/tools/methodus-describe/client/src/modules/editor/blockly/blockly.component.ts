@@ -100,7 +100,7 @@ export class BlocklyComponent implements OnInit {
         'ctrl+shift+c',
         (event: KeyboardEvent): any => {
           this._clipboardService.copyFromContent(generalObject.activeBlockText);
-          let e: ExtendedKeyboardEvent = event;
+          let e: any = event;
           e.returnValue = false; // Prevent bubbling
           return e;
         },
@@ -118,7 +118,7 @@ export class BlocklyComponent implements OnInit {
             Blockly.Xml.domToBlock(domXml, Blockly.mainWorkspace);
           });
 
-          let e: ExtendedKeyboardEvent = event;
+          let e: any = event;
           e.returnValue = false; // Prevent bubbling
           return e;
         },

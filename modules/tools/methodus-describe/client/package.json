@@ -75,6 +75,7 @@
     "zone.js": "~0.10.2"
   },
   "devDependencies": {
+    "@types/mousetrap":"~1.6.3",
     "@angular-devkit/build-angular": "~0.901.0",
     "@angular/cli": "~9.1.0",
     "@angular/compiler-cli": "~9.1.0",
