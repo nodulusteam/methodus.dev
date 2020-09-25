@@ -1,11 +1,11 @@
 {
     "name": "@methodus/describe",
-    "version": "7.1.19",
+    "version": "7.1.20",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {
         "build:additionals": "yarn build:server && yarn client-contracts && yarn build:client ",
-        "build:client":"cd client && yarn && yarn prod && cd ..",
+        "build:client": "cd client && yarn && yarn prod && cd ..",
         "test": "../../../node_modules/.bin/jest --coverage",
         "build:server": "rimraf build && tsc",
         "client-contracts": "contracts-client ./build.json",
