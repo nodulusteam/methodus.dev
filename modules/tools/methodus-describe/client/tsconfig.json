@@ -10,8 +10,7 @@
         "experimentalDecorators": true,
         "target": "es2015",
         "typeRoots": ["node_modules/@types", "assets"],
-        "lib": ["es2018", "dom"],
-        "types": ["chai", "mocha", "core-js", "selenium-webdriver", "node", "jquery", "jasmine"],
+        "lib": ["es2015", "es2018", "dom"],
         "module": "esnext",
         "baseUrl": "./"
     },
