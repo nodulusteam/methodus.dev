@@ -1,3 +1,5 @@
+import { CompilerOptions } from "ts-morph";
+
 export interface KeysConfiguration {
     [key: string]: Configuration;
 }
@@ -21,11 +23,13 @@ export interface BindindConfiguration {
 
 export interface Configuration {
     buildPath: string;
+    path: string;
     srcFolder: string;
     packageName: string;
     contractNameServer: string;
     contractNameClient: string;
     npmrc: string;
+    tsConfig: string;
     npmignore: string;
     models: Map<string, ModelConfiguration>;
     contracts: Map<string, ModelConfiguration>;
@@ -53,5 +57,9 @@ export class BuildOptions {
     publish: boolean;
     isMocked?: boolean;
     isProtobuf?: boolean;
+    tsConfig?: string;
+    compilerOptions?: CompilerOptions;
+    target: string = '';
+    source: string = '';
 }
 

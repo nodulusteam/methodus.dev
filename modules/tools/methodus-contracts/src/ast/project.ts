@@ -7,14 +7,30 @@ import * as path from 'path';
 import { HEADER, Configuration, BuildOptions } from '../builder-models/interfaces';
 import { ModuleKind, ModuleResolutionKind, SyntaxKind } from 'typescript';
 
-
 export class MethodusProject {
     project: Project;
     sourceFiles: any[];
 
     constructor(public projectPath: string, public packageName: string, options: BuildOptions) {
-        this.project = new Project({
 
+        const activeOptions: Record<string, unknown> = {};
+        if (!options.tsConfig) {
+            activeOptions.compilerOptions = {
+                target: ScriptTarget.ES5,
+                module: ModuleKind.CommonJS,
+                moduleResolution: ModuleResolutionKind.NodeJs,
+                declaration: true,
+                sourceMap: true,
+                preserveConstEnums: true,
+                emitDecoratorMetadata: true,
+                experimentalDecorators: true,
+                outDir: `${projectPath}/lib`,
+            }
+        } else {
+            activeOptions.tsConfigFilePath = options.tsConfig;
+        }
+
+        this.project = new Project({
             manipulationSettings: {
                 // TwoSpaces, FourSpaces, EightSpaces, or Tab
                 indentationText: IndentationText.Tab,
@@ -27,19 +43,9 @@ export class MethodusProject {
                 // the renaming section of the documentation).
                 usePrefixAndSuffixTextForRename: false
             },
-            compilerOptions: {
-                target: (options.isClient) ? ScriptTarget.ES5 : ScriptTarget.ES5,
-                module: ModuleKind.CommonJS,
-                moduleResolution: ModuleResolutionKind.NodeJs,
-                declaration: true,
-                sourceMap: true,
-                preserveConstEnums: true,
-                emitDecoratorMetadata: true,
-                experimentalDecorators: true,
-                outDir: `${projectPath}/lib`,
-
-            }
+            ...activeOptions
         });
+
         this.project.addExistingSourceFiles(`${projectPath}/src/**/*{.ts}`);
         this.sourceFiles = this.project.getSourceFiles();
     }
@@ -223,10 +229,10 @@ export class MethodusProject {
             if (!options.isClient) {
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/framework-decorators',
-                    namedImports: ['Proxy']
+                    namedImports: ['Proxy', 'MethodConfig', 'Method']
                 });
                 sourceFile.addImportDeclaration({
-                    moduleSpecifier: '@methodus/framework-commons',
+                    moduleSpecifier: '@methodus/framework-decorators/commons',
                     namedImports: ['Mapping']
                 });
                 sourceFile.addImportDeclaration({
@@ -275,9 +281,10 @@ export class MethodusProject {
                 });
 
                 if (!options.isClient) {
+                    const relativeFilename = file.getFilePath().replace(process.cwd().replace(/\\/g, '/'), '');
                     targetClass.insertDecorator(0, {
                         name: 'Proxy.ProxyClass',
-                        arguments: [`'${this.packageName}'`, `'${classDec.getName()}'`, `'${file.getFilePath()}'`]
+                        arguments: [`'${this.packageName}'`, `'${classDec.getName()}'`, `'.${relativeFilename}'`]
                     });
                 }
 
@@ -364,8 +371,7 @@ export class MethodusProject {
 
 
 
-    Exportify(buildConfiguration: Configuration,
-        target: string, packageName: string, options: BuildOptions): SourceFile {
+    Exportify(buildConfiguration: Configuration): SourceFile {
         const indexPath = path.join(this.projectPath, 'src', 'index.ts');
         const indexFile = this.project.createSourceFile(indexPath, undefined, { overwrite: true });
 

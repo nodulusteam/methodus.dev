@@ -7,10 +7,26 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "T | Consume server contracts | Simple",
-            "program": "${workspaceRoot}\\lib\\build_consumers\\server\\simple\\index.js",
+            "name": "T | Run jest",
+            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
             "args": [],
-            "cwd": "${workspaceRoot}\\",
+            "outputCapture": "std",
+            "cwd": "${workspaceRoot}",
+            "console": "internalConsole",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+                "DEBUG": "none",
+                "NODE_ENV": "debug"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "T | Consume server contracts | Simple",
+            "program": "${workspaceRoot}/build_consumers/server/simple/index.js",
+            "args": [],
+            "cwd": "${workspaceRoot}",
             "console": "internalConsole",
             "outFiles": [],
             "sourceMaps": true,
@@ -23,7 +39,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile server contracts | Simple",
-            "program": "${workspaceRoot}\\dist\\build.js",
+            "program": "${workspaceRoot}/dist/build.js",
             "args": [
                 "./build_vars/simple/build.json"
             ],
@@ -42,7 +58,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile client contracts | Simple",
-            "program": "${workspaceRoot}\\lib\\client.js",
+            "program": "${workspaceRoot}/dist/client.js",
             "args": [
                 "./build_vars/simple/build.json"
             ],
@@ -60,7 +76,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile server contracts | Models",
-            "program": "${workspaceRoot}\\lib\\build.js",
+            "program": "${workspaceRoot}/dist/build.js",
             "args": [
                 "./build_vars/models/build.json"
             ],
@@ -77,7 +93,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile client contracts | Models",
-            "program": "${workspaceRoot}\\lib\\client.js",
+            "program": "${workspaceRoot}/dist/client.js",
             "args": [
                 "./build_vars/models/build.json"
             ],
@@ -94,7 +110,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile server contracts | Inherit",
-            "program": "${workspaceRoot}\\lib\\build.js",
+            "program": "${workspaceRoot}/dist/build.js",
             "args": [
                 "./build_vars/inherit/build.json"
             ],
@@ -111,7 +127,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile client contracts | Inherit",
-            "program": "${workspaceRoot}\\lib\\client.js",
+            "program": "${workspaceRoot}/dist/client.js",
             "args": [
                 "./build_vars/inherit/build.json"
             ],
@@ -128,7 +144,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile contracts",
-            "program": "${workspaceRoot}\\lib\\build.js",
+            "program": "${workspaceRoot}/dist/build.js",
             "args": [
                 "./build.json"
             ],
@@ -149,7 +165,7 @@
             "type": "node",
             "request": "launch",
             "name": "U | Compile client contracts",
-            "program": "${workspaceRoot}\\lib\\client.js",
+            "program": "${workspaceRoot}/dist/client.js",
             "args": [
                 "./build.json"
             ],

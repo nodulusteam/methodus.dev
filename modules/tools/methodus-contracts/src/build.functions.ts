@@ -7,25 +7,20 @@ import { Common } from './builder-models/common';
 import { Server } from './builder-models/server';
 
 const Console = console;
-
-
-process.env.NODE_CONFIG_DIR = path.join(process.cwd(), 'config');
-
 export async function Builder(options: BuildOptions, contract?: string) {
     let buildConfiguration: Configuration | KeysConfiguration;
-    const pkg = require(path.join('..', 'package.json'));
 
+    const pkg = require(path.join('..', 'package.json'));
     Console.log(colors.blue(`>> methodus ${options.isClient ? 'client' : 'server'} contract builder. v${pkg.version}`));
+
     let publish = false;
-    if (contract) {
-        buildConfiguration = require(contract) as Configuration;
-    } else {
-        const buildPath = process.argv[2] ? process.argv[2].toString() : '';
-        const filePath = path.resolve(path.join(process.cwd(), buildPath));
-        Console.log(colors.green('>> loading build configuration from:'), filePath);
-        buildConfiguration = require(filePath) as KeysConfiguration;
-        options.publish = process.argv[3] === '-p' || publish;
-    }
+    const buildPath = process.argv[2] ? process.argv[2].toString() : '';
+    const filePath = contract || path.resolve(path.join(process.cwd(), buildPath));
+    Console.log(colors.green('>> loading build configuration from:'), filePath);
+
+    buildConfiguration = require(filePath) as KeysConfiguration;
+    options.publish = process.argv[3] === '-p' || publish;
+
 
     if (buildConfiguration.protobuf) {
         options.isProtobuf = true;
@@ -41,7 +36,7 @@ export async function Builder(options: BuildOptions, contract?: string) {
 
 
 
-async function singleBuild(configurationItem, destPath, checkList: string[], options: BuildOptions) {
+async function singleBuild(configurationItem: Configuration, destPath, checkList: string[], options: BuildOptions) {
 
     let sourcePath = process.cwd();
     if (!configurationItem.buildPath) {
@@ -64,13 +59,13 @@ async function singleBuild(configurationItem, destPath, checkList: string[], opt
             if (options.isClient) {
                 builder = new Client(configurationItem,
                     sourcePath, destPath);
-
             } else {
-                builder = new Server(configurationItem,  sourcePath, destPath);
-
+                builder = new Server(configurationItem, sourcePath, destPath);
             }
 
-            const targetProject = Common.newCommonFlow(configurationItem, '', destPath, sourcePath, options);
+            options.source = sourcePath;
+            options.target = destPath;
+            const targetProject = await Common.newCommonFlow(configurationItem, '', options);
             await targetProject.project.emit();
             return builder;
         }
@@ -97,10 +92,14 @@ async function postBuild(destPath, checkList, builder, singleConfiguration, opti
     checkList.push(`${singleConfiguration}: ok`);
 }
 
-async function build(buildConfiguration: any, checkList: string[], options: BuildOptions) {
+
+
+
+
+async function build(buildConfiguration: KeysConfiguration, checkList: string[], options: BuildOptions) {
     for (const singleConfiguration of Object.keys(buildConfiguration)) {
 
-        const configurationItem = buildConfiguration[singleConfiguration];
+        const configurationItem: Configuration = buildConfiguration[singleConfiguration];
         Console.log(colors.green(` > ${singleConfiguration}`));
 
         const destPath = path.resolve(path.join(configurationItem.buildPath, options.isClient ? configurationItem.contractNameClient : configurationItem.contractNameServer));
@@ -108,7 +107,7 @@ async function build(buildConfiguration: any, checkList: string[], options: Buil
         try {
             await postBuild(destPath, checkList, builder, singleConfiguration, options);
         } catch (error) {
-            console.error(error)
+            Console.error(error)
         }
     }
     return true;

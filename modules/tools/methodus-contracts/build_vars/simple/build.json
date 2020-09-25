@@ -6,6 +6,7 @@
         "path": "./build_vars/simple",
         "models": {},
         "npmignore": "./.npmignore",
+        "tsConfig1": "./tsconfig.contract.json",
         "contracts": {
             "Simple": {
                 "path": "./controllers/simple.controller.ts"

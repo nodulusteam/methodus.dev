@@ -1,6 +1,6 @@
-import commons, { MethodType, ClassRef } from '@methodus/framework-commons';
-import injection from '@methodus/framework-injection';
-import * as path from 'path';
+import commons, { ClassRef } from '@methodus/framework-commons';
+// import injection from '@methodus/framework-injection';
+// import * as path from 'path';
 
 export class Proxy {
     public static ProxyClass(
@@ -10,11 +10,12 @@ export class Proxy {
     ) {
         return (target: ClassRef) => {
             const methodus = commons.util.maybeMethodus(target)[className];
-            let classTransport = MethodType.Http;
-            const cls = injection.ClassContainer.get(className);
-            if (cls) {
-                classTransport = MethodType.Local;
-            }
+            // let classTransport = MethodType.Http;
+            // const cls = injection.ClassContainer.get(className);
+            // debugger;
+            // if (cls) {
+            //     classTransport = MethodType.Local;
+            // }
 
             if (!methodus) {
                 throw new Error(
@@ -22,51 +23,51 @@ export class Proxy {
                 );
             }
 
-            if (!classTransport || classTransport === MethodType.Local) {
-                const startPathForLoad = packageName;
-                const localLoadPath = path
-                    .join(startPathForLoad, localClassPath)
-                    .replace(/\\/g, '/');
+            // if ( classTransport === MethodType.Local) {
+            //     const startPathForLoad = packageName;
+            //     const localLoadPath = path
+            //         .join(startPathForLoad, localClassPath)
+            //         .replace(/\\/g, '/');
 
-                commons.logger.info(`trying to load ${localLoadPath} locally`);
+            //     commons.logger.info(`trying to load ${localLoadPath} locally`);
 
-                try {
-                    const localClass = require(localLoadPath);
-                    commons.logger.info(
-                        `succesfully loaded ${localLoadPath} locally`
-                    );
-                    return localClass[className];
-                } catch (error) {
-                    try {
-                        commons.logger.info(
-                            `will try other options ${localClassPath} locally`
-                        );
-                        const localClass = require(path.join(
-                            process.cwd(),
-                            startPathForLoad,
-                            localClassPath
-                        ));
-                        commons.logger.info(
-                            `succesfully loaded ${localClass} locally`
-                        );
-                        return localClass[className];
-                    } catch (exception) {
-                        commons.logger.info(
-                            `will try last option ${localClassPath} locally`
-                        );
-                        const localClass = require(path.join(
-                            process.cwd(),
-                            'node_modules',
-                            startPathForLoad,
-                            localClassPath
-                        ));
-                        commons.logger.info(
-                            `succesfully loaded ${localClass} locally`
-                        );
-                        return localClass[className];
-                    }
-                }
-            }
+            //     try {
+            //         const localClass = require(localLoadPath);
+            //         commons.logger.info(
+            //             `succesfully loaded ${localLoadPath} locally`
+            //         );
+            //         return localClass[className];
+            //     } catch (error) {
+            //         try {
+            //             commons.logger.info(
+            //                 `will try other options ${localClassPath} locally`
+            //             );
+            //             const localClass = require(path.join(
+            //                 process.cwd(),
+            //                 startPathForLoad,
+            //                 localClassPath
+            //             ));
+            //             commons.logger.info(
+            //                 `succesfully loaded ${localClass} locally`
+            //             );
+            //             return localClass[className];
+            //         } catch (exception) {
+            //             commons.logger.info(
+            //                 `will try last option ${localClassPath} locally`
+            //             );
+            //             const localClass = require(path.join(
+            //                 process.cwd(),
+            //                 'node_modules',
+            //                 startPathForLoad,
+            //                 localClassPath
+            //             ));
+            //             commons.logger.info(
+            //                 `succesfully loaded ${localClass} locally`
+            //             );
+            //             return localClass[className];
+            //         }
+            //     }
+            // }
             commons.logger.info(`using the contract class for ${className}`);
             return target;
         };

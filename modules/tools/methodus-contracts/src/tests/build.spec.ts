@@ -3,6 +3,7 @@ import * as path from 'path';
 import { BuildOptions } from '../builder-models/interfaces';
 
 describe('Build server contracts', () => {
+    jest.setTimeout(1000 * 60 * 5)
     const all = ['simple', 'models', 'inherit', 'grpc'];
     all.forEach((contract) => {
         test('Build server contracts', async () => {
@@ -20,6 +21,7 @@ describe('Build server contracts', () => {
 
 
 describe('Build with args', () => {
+    jest.setTimeout(1000 * 60 * 5)
     const all = ['simple'];
     all.forEach((contract) => {
         test('Build server contracts', async () => {

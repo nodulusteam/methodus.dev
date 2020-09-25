@@ -3,7 +3,7 @@ import * as path from 'path';
 import { BuildOptions } from '../builder-models/interfaces';
 
 describe('Build server contracts', () => {
-
+    jest.setTimeout(1000 * 60 * 5)
     async function tester(contract: string) {
         try {
             const options = new BuildOptions(true, false);
