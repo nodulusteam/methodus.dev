@@ -1,6 +1,7 @@
 
 export interface ExpressOptions {
     port: string | number;
+    ipAddress?: string;
     secured?: boolean;
     key?: Buffer;
     cert?: Buffer;

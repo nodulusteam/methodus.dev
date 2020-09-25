@@ -23,6 +23,7 @@ export class Server {
     public httpServer: any;
     public httpsServer: any;
     public port: number = 0;
+    public ipAddress: string = '0.0.0.0';
     private _plugins: PluginEntry[] = [];
     public instanceId: string;
 
@@ -130,14 +131,14 @@ export class Server {
                 }
             });
 
-            this.httpServer  = Servers.get(this.instanceId, 'http');
+            this.httpServer = Servers.get(this.instanceId, 'http');
             if (this.httpServer) {
-                this.httpServer.listen(this.port);
+                this.httpServer.listen(this.port, this.ipAddress);
             }
 
             this.httpsServer = Servers.get(this.instanceId, 'https');
             if (this.httpsServer) {
-                this.httpsServer.listen(this.port);
+                this.httpsServer.listen(this.port, this.ipAddress);
             }
 
         }

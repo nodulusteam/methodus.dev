@@ -233,7 +233,7 @@ export class MethodusProject {
                 });
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/framework-decorators/commons',
-                    namedImports: ['Mapping']
+                    namedImports: ['Mapping', 'MethodResult', 'MethodResultStatus']
                 });
                 sourceFile.addImportDeclaration({
                     moduleSpecifier: '@methodus/platform-rest',
