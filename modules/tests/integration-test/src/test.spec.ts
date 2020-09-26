@@ -1,4 +1,6 @@
 import { AppModule } from './app-module';
- 
-const appModule = new AppModule();
- 
+
+it('create AppModule', () => {
+    const appModule = new AppModule();
+    expect(appModule).toBeDefined();
+})

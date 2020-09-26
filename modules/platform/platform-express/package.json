@@ -26,7 +26,7 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "test": "../../../node_modules/.bin/jest && yarn coverage",
+        "test": "../../../node_modules/.bin/jest --runInBand && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-express.json",
         "build": "../../../node_modules/.bin/rimraf ./dist && tsc && yarn link",
         "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/express/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/express",
