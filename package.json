@@ -50,7 +50,6 @@
         "cov": "rimraf output && npm run test"
     },
     "devDependencies": {
-        "@changesets/cli": "^2.9.1",
         "@methodus/data": "^2.0.0",
         "@monorepo-utils/collect-changelog": "^2.2.0",
         "@stryker-mutator/core": "^3.3.1",
