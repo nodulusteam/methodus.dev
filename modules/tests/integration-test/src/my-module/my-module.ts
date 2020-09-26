@@ -1,7 +1,6 @@
-import { Module } from '@methodus/server';
+import decorators from '@methodus/server/decorators';
 import { SingleControllerName } from "./single-controller-name/single-controller-name";
-
-@Module('MyModule')
+@decorators.Module('MyModule')
 export class MyModule {
     constructor() {
 

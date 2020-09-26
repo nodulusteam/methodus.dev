@@ -28,7 +28,7 @@
     "scripts": {
         "webpack": "./node_modules/.bin/webpack --config webpack.config.dev.js --display-error-details",
         "watch": "./node_modules/.bin/webpack . --watch",
-        "build": "npm run clear && tsc && npm run webpack && yarn link",
+        "build": "yarn clear && tsc && yarn webpack && yarn link",
         "serve": "webpack-dev-server",
         "clear": "../../../node_modules/.bin/rimraf build output coverage dist",
         "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/web/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/web",

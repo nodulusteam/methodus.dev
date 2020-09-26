@@ -1,4 +1,4 @@
-import { Injector } from '@methodus/server';
+import injection from '@methodus/server/injection';
 import { SingleControllerName } from './single-controller-name';
 
 describe('SingleControllerName', () => {
@@ -6,7 +6,7 @@ describe('SingleControllerName', () => {
      
     let controller: SingleControllerName;
     beforeAll(() => {        
-        controller = Injector.get(SingleControllerName);
+        controller = injection.Injector.get(SingleControllerName);
     })
 
     it('Controller created', async () => {

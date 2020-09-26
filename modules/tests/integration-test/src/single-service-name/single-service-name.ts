@@ -1,7 +1,6 @@
-import { Injectable } from '@methodus/server';
+import injection from '@methodus/server/injection';
 
-
-@Injectable('SingleServiceName')
+@injection.Injectable('SingleServiceName')
 export class SingleServiceName {
     constructor() {
 
