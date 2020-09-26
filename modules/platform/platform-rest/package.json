@@ -48,7 +48,6 @@
     },
     "devDependencies": {
         "@types/tunnel": "^0.0.1",
-        "cross-env": "^7.0.2",
         "jest-mock-axios": "^3.2.0"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"

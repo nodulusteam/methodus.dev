@@ -40,23 +40,10 @@
     },
     "dependencies": {
         "@methodus/framework-decorators": "^7.0.13",
-        "debug": "^4.1.1",
+        "debug": "^4.2.0",
         "fast-safe-stringify": "^2.0.7",
-        "method-override": "^2.3.9",
-        "reflect-metadata": "^0.1.10",
         "uuid": "^8.1.0"
     },
-    "devDependencies": {
-        "@methodus/data": "^2.0.0",
-        "@types/mongodb": "^3.1.27",
-        "@types/uuid": "^3.4.4",
-        "child-process-debug": "0.0.7",
-        "memory-streams": "^0.1.3",
-        "mkdirp": "^0.5.1",
-        "nedb": "^1.8.0",
-        "nedb-promise": "^2.0.1",
-        "opn-cli": "^4.0.0",
-        "standard-version": "^8.0.1"
-    },
+    "devDependencies": {},
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }
