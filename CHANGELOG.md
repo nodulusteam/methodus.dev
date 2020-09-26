@@ -1,6 +1,9 @@
 # v7.0.2
 [2020-09-26]
 
+### Features
+
+* feature: automated changelogs ([`77415a3`](https://github.com/nodulusteam/methodus.dev/commit/77415a3e73754a01d1f7adb40db1f4a9e7d3d884))
 
 
 
