@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "7.0.15",
+    "version": "7.0.16",
     "description": "Server components for @methodus workflow",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -39,11 +39,10 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-decorators": "^7.0.13",
+        "@methodus/framework-decorators": "^7.0.14",
         "debug": "^4.2.0",
         "fast-safe-stringify": "^2.0.7",
         "uuid": "^8.1.0"
     },
-    "devDependencies": {},
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

@@ -1,6 +1,6 @@
 {
     "name": "@methodus/describe",
-    "version": "7.1.21",
+    "version": "7.1.22",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "scripts": {
@@ -27,9 +27,9 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "devDependencies": {
-        "@methodus/platform-express": "^7.0.13",
-        "@methodus/platform-rest": "^7.0.13",
-        "@methodus/server": "^7.0.15",
+        "@methodus/platform-express": "^7.0.14",
+        "@methodus/platform-rest": "^7.0.14",
+        "@methodus/server": "^7.0.16",
         "@types/jquery": "^3.2.16",
         "express-basic-auth": "^1.2.0"
     },
