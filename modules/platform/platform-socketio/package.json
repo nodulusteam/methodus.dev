@@ -26,10 +26,10 @@
     "license": "BSD-3-Clause",
     "scripts": {
         "test": "../../../node_modules/.bin/jest && yarn coverage",
-        "build": "rm -rf ./dist &&  tsc",
+        "build": "../../../node_modules/.bin/rimraf ./dist &&  tsc",
         "lint": "prettier -c --write ./src",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json",
-        "docs": "rm -rf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio"
+        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio"
     },
     "publishConfig": {
         "access": "public"

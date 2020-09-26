@@ -35,9 +35,9 @@
         "express-basic-auth": "^1.2.0"
     },
     "peerDependencies": {
-        "@methodus/platform-express": "^7.0.0",
-        "@methodus/platform-rest": "^7.0.0",
-        "@methodus/server": "^7.0.0"
+        "@methodus/platform-express": "^7.0.13",
+        "@methodus/platform-rest": "^7.0.13",
+        "@methodus/server": "^7.0.15"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

@@ -25,10 +25,10 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "build": "rm -rf ./dist && tsc",
+        "build": "../../../node_modules/.bin/rimraf ./dist && tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
-        "docs": "rm -rf ../../../docs/modules/framework/common/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
+        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/framework/common/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
         "mutation": "stryker run --fileLogLevel trace --logLevel debug"
     },
     "publishConfig": {

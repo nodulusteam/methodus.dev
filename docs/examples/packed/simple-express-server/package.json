@@ -8,8 +8,8 @@
     "start": "nodemon build/index.js localhost 8080"
   },
   "dependencies": {
-    "@methodus/platform-express": "^5.0.11",
-    "@methodus/server": "^5.0.19"
+    "@methodus/platform-express": "^7.0.13",
+    "@methodus/server": "^7.0.15"
   },
   "devDependencies": {
     "@types/node": "^12.0.7",

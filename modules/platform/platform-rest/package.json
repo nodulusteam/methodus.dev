@@ -29,7 +29,7 @@
         "test": "rimraf ./dist && tsc && jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-rest.json",
         "build": "rimraf ./dist && yarn format && tsc && yarn link",
-        "docs": "rm -rf ../../../docs/modules/platforms/rest/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/rest",
+        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/rest/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/rest",
         "format": "prettier -c --write ./src"
     },
     "publishConfig": {

@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/platform-express": "^7.0.0",
-    "@methodus/platform-rest": "^7.0.0",
+    "@methodus/platform-express": "^7.0.13",
+    "@methodus/platform-rest": "^7.0.13",
     "@methodus/framework-decorators": "^7.0.0",
     "@methodus/framework-commons": "^7.0.0"
   }

@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/platform-express": "^5.0.12"
+    "@methodus/platform-express": "^7.0.13"
   }
 }

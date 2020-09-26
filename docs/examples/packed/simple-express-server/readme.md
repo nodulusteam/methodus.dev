@@ -47,7 +47,7 @@ After running your server you should be able to browse to http://localhost:6695/
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/server": "^3.0.18",
+    "@methodus/server": "^7.0.15",
     "@types/node": "^12.0.0"
   },
   "peerDependencies": {

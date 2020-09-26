@@ -29,7 +29,7 @@
         "test": "../../../node_modules/.bin/jest && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-express.json",
         "build": "../../../node_modules/.bin/rimraf ./dist && tsc && yarn link",
-        "docs": "rm -rf ../../../docs/modules/platforms/express/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/express",
+        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/express/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/express",
         "format": "../../../node_modules/.bin/prettier -c --write ./src"
     },
     "publishConfig": {

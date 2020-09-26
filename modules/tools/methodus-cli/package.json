@@ -24,11 +24,11 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "clear-sandbox": "shx rm -rf sandbox",
+        "clear-sandbox": "shx ../../../node_modules/.bin/rimraf sandbox",
         "start": "node src/index.ts",
-        "build": "shx rm -rf dist && tsc",
+        "build": "shx ../../../node_modules/.bin/rimraf dist && tsc",
         "test": "../../../node_modules/.bin/jest --coverage && yarn clear-sandbox && yarn coverage",
-        "docs": "rm -rf ../../../docs/modules/tools/cli/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/tools/cli",
+        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/tools/cli/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/tools/cli",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-cli.json"
     },
     "bin": {

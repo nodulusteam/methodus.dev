@@ -26,14 +26,14 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "build": "rm -rf ./dist && tsc",
-        "watch": "rm -rf ./dist && tsc -w",
+        "build": "../../../node_modules/.bin/rimraf ./dist && tsc",
+        "watch": "../../../node_modules/.bin/rimraf ./dist && tsc -w",
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-server.json",
-        "docs": "rm -rf ../../../docs/modules/platforms/server/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/server",
+        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/server/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/server",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
-        "cov": "rm -rf output && npm run test"
+        "cov": "../../../node_modules/.bin/rimraf output && npm run test"
     },
     "publishConfig": {
         "access": "public"

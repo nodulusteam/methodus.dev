@@ -22,8 +22,8 @@ This simple controller is not doing any thing.
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/describe": "^4.0.10",
-    "@methodus/server": "^3.0.18",
+    "@methodus/describe": "^7.1.21",
+    "@methodus/server": "^7.0.15",
     "@types/node": "^12.0.0"
   },
   "peerDependencies": {

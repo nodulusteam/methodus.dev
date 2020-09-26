@@ -1,0 +1,21 @@
+{
+    "name": "integration-test",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "build": "tsc",
+        "test": "../../../node_modules/.bin/jest"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@methodus/platform-express": "^7.0.13",
+        "@methodus/platform-rest": "^7.0.13",
+        "@methodus/server": "^7.0.15"
+    },
+    "devDependencies": {
+        "jest": "^25.3.0",
+        "ts-jest": "^25.3.1"
+    }
+}
