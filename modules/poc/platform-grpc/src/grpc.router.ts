@@ -13,17 +13,6 @@ export class gRpcRouter {
         obj = Injector.get(keyName);
 
         const methodus = fp.maybeMethodus(obj)[keyName];
-        const globalMiddlewares: any[] = [];
-        if (methodus.middlewares) {
-            methodus.middlewares.forEach((element: any) => {
-                if (element) {
-                    globalMiddlewares.push(element);
-                } else {
-                    // logger.error('could not load middleware');
-                }
-            });
-        }
-
         const routerDataObject: any = {};
         //create service entry
         const service = new protobuf.Service(methodus.name);
