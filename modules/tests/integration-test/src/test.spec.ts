@@ -1,6 +1,14 @@
 import { AppModule } from './app-module';
 
-it('create AppModule', () => {
-    const appModule = new AppModule();
-    expect(appModule).toBeDefined();
+
+describe('test the AppModule', ()=>{
+    let appModule:AppModule;
+    afterAll(()=>{
+        appModule.kill();
+    });
+    it('create AppModule', () => {
+        appModule = new AppModule();
+        expect(appModule).toBeDefined();
+    })
 })
+

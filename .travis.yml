@@ -27,6 +27,7 @@ addons:
 before_script:
   - yarn global add @methodus/contracts
   - yarn ci
+  - yarn test:integrations
   - yarn test:cli
   - yarn test:contracts
 script:

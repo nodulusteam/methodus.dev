@@ -34,9 +34,9 @@
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
         "test": "lerna run test",
-        "test:cli":"lerna run test:cli",
-        "test:contracts":"lerna run test:contracts && yarn coverage",
-
+        "test:cli": "lerna run test:cli",
+        "test:integrations": "lerna run test:integrations",
+        "test:contracts": "lerna run test:contracts && yarn coverage",
         "mutation": "lerna run mutation",
         "coverage": "node ./coverage.js",
         "bump": "lerna version patch --no-push",
@@ -49,7 +49,6 @@
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
         "cov": "rimraf output && npm run test"
     },
-
     "devDependencies": {
         "@changesets/cli": "^2.9.1",
         "@methodus/data": "^2.0.0",
