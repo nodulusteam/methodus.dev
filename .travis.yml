@@ -27,6 +27,7 @@ addons:
 before_script:
   - yarn global add @methodus/contracts
   - yarn ci
-  - test:contracts
+  - yarn test:cli
+  - yarn test:contracts
 script:
   - sonar-scanner    

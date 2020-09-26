@@ -34,7 +34,9 @@
         "tslint": "tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
         "test": "lerna run test",
+        "test:cli":"lerna run test:cli",
         "test:contracts":"lerna run test:contracts && yarn coverage",
+
         "mutation": "lerna run mutation",
         "coverage": "node ./coverage.js",
         "bump": "lerna version patch --no-push",
