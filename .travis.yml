@@ -26,6 +26,7 @@ addons:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 before_script:
   - yarn global add @methodus/contracts
-  - travis_wait yarn ci
+  - yarn ci
+  - test:contracts
 script:
   - sonar-scanner    

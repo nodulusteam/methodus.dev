@@ -31,7 +31,7 @@
     "scripts": {
         "build": "rimraf ./dist && tsc",
         "tslint": "tslint --project",
-        "test": "yarn test:all && yarn coverage",
+        "test:contracts": "yarn test:all && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-contracts.json",
         "test:all": "../../../node_modules/.bin/jest",
         "test:server": "run-s test:server:* ",
