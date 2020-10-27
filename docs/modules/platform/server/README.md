@@ -2,7 +2,7 @@
 
 # Server components
 
-# ![logo](docs/_media/methodus_32.png) Methodus
+# ![logo](/docs/_media/methodus_32.png) Methodus
 
 [![Build Status](https://travis-ci.org/nodulusteam/methodus.dev.svg?branch=master)](https://travis-ci.org/nodulusteam/methodus.dev)
  
