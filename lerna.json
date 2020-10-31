@@ -1,6 +1,5 @@
 {
     "ignoreChanges": ["@methodus/platform-fastify", "@methodus/platform-grpc", "@methodus/framework-integrations"],
-    "packages": ["modules/framework/*", "modules/platform/*", "modules/tests/*", "modules/tools/*"],
     "command": {
         "publish": {
             "ignoreChanges": ["modules/tests", "*.md"],
@@ -9,7 +8,7 @@
         }
     },
     "ignore": ["@methodus/platform-fastify", "@methodus/platform-grpc", "@methodus/framework-integrations"],
-    "useWorkspaces": false,
+    "useWorkspaces": true,
     "npmClient": "yarn",
     "version": "independent"
 }

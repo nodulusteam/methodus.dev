@@ -13,6 +13,5 @@
         "@methodus/platform-express": "^7.0.13",
         "@methodus/platform-rest": "^7.0.13",
         "@methodus/server": "^7.0.15"
-    },
-    "devDependencies": {}
+    }
 }

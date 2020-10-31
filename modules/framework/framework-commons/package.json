@@ -25,10 +25,10 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "build": "../../../node_modules/.bin/rimraf ./dist && tsc",
-        "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
+        "build": "yarn rimraf ./dist && tsc",
+        "test": "yarn jest --coverage && yarn coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-commons.json",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/framework/common/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/common",
+        "docs": "yarn rimraf ../../../docs/modules/framework/common/* && yarn typedoc && node ../../../docs/docs.js modules/framework/common",
         "mutation": "stryker run --fileLogLevel trace --logLevel debug"
     },
     "publishConfig": {
@@ -36,6 +36,17 @@
     },
     "dependencies": {
         "reflect-metadata": "^0.1.13"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/node": "^10.0.0",
+        "docsify": "^4.10.2",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.8",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^4.0.0"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

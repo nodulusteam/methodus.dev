@@ -25,17 +25,29 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "test": "jest --silent && yarn coverage",
+        "test": "yarn jest --silent && yarn run coverage",
         "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-injection.json",
-        "build": "rimraf ./dist && tsc",
-        "docs": "../../../node_modules/.bin/rimraf  ../../../docs/modules/framework/injection && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/injection",
-        "format": "prettier -c --write ./src"
+        "build": "yarn rimraf ./dist && yarn tsc",
+        "docs": "yarn  rimraf  ../../../docs/modules/framework/injection && yarn  typedoc && node ../../../docs/docs.js modules/framework/injection",
+        "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.10"
+        "@methodus/framework-commons": "^7.0.10",
+        "reflect-metadata": "^0.1.13"
+    },
+    "devDependencies": {
+        "@types/jest": "^24.0.23",
+        "@types/node": "^10.0.0",
+        "docsify": "^4.10.2",
+        "jest": "^24.9.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.8",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^4.0.0"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

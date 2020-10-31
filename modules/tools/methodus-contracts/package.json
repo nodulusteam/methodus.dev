@@ -4,8 +4,8 @@
     "description": "",
     "main": "dist/index.js",
     "bin": {
-        "contracts-server": "dist/build.js",
-        "contracts-client": "dist/client.js"
+        "contracts-client": "dist/client.js",
+        "contracts-server": "dist/build.js"
     },
     "homepage": "https://methodus.dev",
     "repository": {
