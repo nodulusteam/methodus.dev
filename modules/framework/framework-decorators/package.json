@@ -25,18 +25,34 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "build": "../../../node_modules/.bin/rimraf ./dist && yarn format & tsc",
-        "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json",
-        "docs": "../../../node_modules/.bin/rimraf  ../../../docs/modules/framework/decorators && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/decorators",
-        "format": "../../../node_modules/.bin/prettier -c --write ./src"
+        "build": "yarn rimraf ./dist && yarn run format && yarn tsc",
+        "test": "yarn jest --coverage && yarn coverage",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json -o",
+        "docs": "yarn rimraf  ../../../docs/modules/framework/decorators && yarn typedoc && node ../../../docs/docs.js modules/framework/decorators",
+        "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
         "access": "public"
     },
+    "dependencies": {
+        "reflect-metadata": "^0.1.13"
+    },
     "devDependencies": {
         "@methodus/framework-commons": "^7.0.10",
-        "@methodus/framework-injection": "^7.0.11"
+        "@methodus/framework-injection": "^7.0.11",
+        "@types/jest": "^24.0.23",
+        "@types/node": "^10.0.0",
+        "cpr": "^3.0.1",
+        "docsify": "^4.10.2",
+        "jest": "^24.9.0",
+        "jest-html-reporters": "^2.0.3",
+        "prettier": "^2.0.5",
+        "replace-in-file": "^6.1.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.19.2",
+        "typedoc-plugin-markdown": "^3.0.11",
+        "typescript": "^4.0.0"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

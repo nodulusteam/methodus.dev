@@ -46,7 +46,7 @@ export class MethodusProject {
             ...activeOptions
         });
 
-        this.project.addExistingSourceFiles(`${projectPath}/src/**/*{.ts}`);
+        this.project.addSourceFilesAtPaths(`${projectPath}/src/**/*{.ts}`);
         this.sourceFiles = this.project.getSourceFiles();
     }
 

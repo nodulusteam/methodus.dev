@@ -1,7 +1,7 @@
 <!-- tabs:start -->
 #### ** Reference **
 
-[filename](globals.md ':include')
+[Reference](index.html ':include :type=iframe width=100% height=100%')
  
 #### ** Tests overview **
 

@@ -24,26 +24,43 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "clear-sandbox": "../../../node_modules/.bin/rimraf sandbox",
+        "clear-sandbox": "yarn rimraf sandbox",
         "start": "node src/index.ts",
-        "build": "../../../node_modules/.bin/rimraf dist && tsc",
-        "test:cli": "../../../node_modules/.bin/jest --coverage && yarn clear-sandbox && yarn coverage",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/tools/cli/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/tools/cli",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-cli.json"
+        "build": "yarn rimraf dist && yarn tsc",
+        "test:cli": "yarn jest --coverage && yarn clear-sandbox && yarn coverage",
+        "docs": "yarn rimraf ../../../docs/modules/tools/cli/* && yarn typedoc && node ../../../docs/docs.js modules/tools/cli",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-cli.json -o"
     },
     "bin": {
         "methodus": "./dist/index.js"
     },
     "devDependencies": {
+        "@methodus/data": "^2.0.0",
         "@types/ejs": "^2.6.0",
         "@types/faker": "^4.1.9",
         "@types/glob": "^7.1.1",
         "@types/graceful-fs": "^4.1.3",
         "@types/inquirer": "^0.0.43",
+        "@types/jest": "^24.0.23",
+        "@types/node": "^10.0.0",
         "@types/shelljs": "^0.8.0",
+        "@types/tunnel": "^0.0.1",
+        "@types/uuid": "^3.4.4",
         "@types/yargs": "^11.1.1",
+        "cpr": "^3.0.1",
+        "docsify": "^4.10.2",
         "faker": "^4.1.0",
-        "mock-inquirer": "^1.0.3"
+        "jest": "^24.9.0",
+        "jest-mock-axios": "^3.2.0",
+        "mock-inquirer": "^1.0.3",
+        "prettier": "^2.0.5",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.8",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^4.0.0",
+        "uuid": "^8.1.0"
     },
     "dependencies": {
         "colors": "^1.4.0",

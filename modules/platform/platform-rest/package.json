@@ -26,11 +26,11 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "test": "rimraf ./dist && tsc && jest && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-rest.json",
-        "build": "rimraf ./dist && yarn format && tsc && yarn link",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/rest/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/rest",
-        "format": "prettier -c --write ./src"
+        "test": "yarn rimraf ./dist && yarn tsc && yarn jest && yarn run coverage",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-rest.json -o",
+        "build": "rimraf ./dist && yarn format && yarn tsc",
+        "docs": "yarn rimraf ../../../docs/modules/platforms/rest/* && yarn typedoc && node ../../../docs/docs.js modules/platforms/rest",
+        "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
         "access": "public"
@@ -47,8 +47,23 @@
         "tunnel": "^0.0.6"
     },
     "devDependencies": {
+        "@methodus/data": "^2.0.0",
+        "@types/jest": "^24.0.23",
+        "@types/node": "^10.0.0",
         "@types/tunnel": "^0.0.1",
-        "jest-mock-axios": "^3.2.0"
+        "@types/uuid": "^3.4.4",
+        "cpr": "^3.0.1",
+        "docsify": "^4.10.2",
+        "jest": "^24.9.0",
+        "jest-mock-axios": "^3.2.0",
+        "prettier": "^2.0.5",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^24.2.0",
+        "typedoc": "^0.17.8",
+        "typedoc-plugin-markdown": "^2.3.1",
+        "typescript": "^4.0.0",
+        "uuid": "^8.1.0"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

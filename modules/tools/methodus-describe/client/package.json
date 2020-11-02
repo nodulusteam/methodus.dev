@@ -1,21 +1,17 @@
 {
-    "name": "@methodus/describe",
+    "name": "@methodus/describe-ui",
     "version": "0.0.2",
     "license": "MIT",
     "scripts": {
-        "ng": "ng",
-        "start": "ng serve --proxy-config proxy.conf.json",
-        "prod": "ng build --prod",
-        "build": "ng build",
-        "test": "ng test  --code-coverage",
-        "lint": "ng lint",
-        "sync": "contracts-client ../server/build.json && yarn upgrade @methodus/describe-client"
+        "ng": "yarn ng",
+        "start": "yarn ng serve --proxy-config proxy.conf.json",
+        "prod": "yarn ng build --prod",
+        "build": "yarn ng build",
+        "test": "yarn ng test  --code-coverage",
+        "lint": "yarn ng lint",
+        "sync": "yarn contracts-client ../server/build.json && yarn run upgrade @methodus/describe-client"
     },
-    "private": false,
-    "resolutions": {
-        "acorn": "^6.2.1",
-        "@types/mousetrap": "1.6.3"
-    },
+    "private": true,
     "browserslist": [
         "> 5%"
     ],

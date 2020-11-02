@@ -10,9 +10,9 @@
         "mode": "file",
         "baseUrl":"modules/framework/commons", 
         "name": "Methodus - framework commons",
-        "readme": "readme.md",
+        "readme": "none",
         "out": "../../../docs/modules/framework/common",
-        "theme": "markdown"
+        // "theme": "markdown"
        
         
     },

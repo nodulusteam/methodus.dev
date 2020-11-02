@@ -1,4 +1,4 @@
-import { ServerDefinition } from "../interfaces";
+import { ServerDefinition } from '../interfaces';
 
 /**
  * @hidden

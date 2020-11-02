@@ -27,8 +27,13 @@
         "modules/framework/*",
         "modules/platform/*",
         "modules/tests/*",
-        "modules/tools/*"
+        "modules/tools/*",
+        "!modules/tools/methodus-describe/*"
     ],
+    "resolutions": {
+        "acorn": "^6.2.1",
+        "@types/mousetrap": "1.6.3"
+    },
     "scripts": {
         "ci": "yarn && run-s bootstrap build test build:additionals docs",
         "clean": "rimraf ./modules/**/**/yarn.lock && rimraf ./modules/**/**/node_modules/* && rimraf ./modules/**/**/dist && rimraf ./modules/**/**/coverage",
@@ -96,6 +101,11 @@
         "tslint": "^5.11.0",
         "typedoc": "^0.17.8",
         "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^3.9.5"
+        "typescript": "^4.0.0"
+    },
+    "dependenciesMeta": {
+        "ts-morph@8.1.2": {
+            "unplugged": true
+        }
     }
 }

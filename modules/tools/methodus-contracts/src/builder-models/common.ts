@@ -26,12 +26,12 @@ export class Common {
         if (configuration.models && Object.keys(configuration.models).length > 0) {
             Object.keys(configuration.models).forEach((modelKey) => {
                 const model = configuration.models[modelKey];
-                const modelFile = sourceProject.project.addExistingSourceFile(path.join(options.source, model.path));
+                const modelFile = sourceProject.project.addSourceFileAtPath(path.join(options.source, model.path));
                 targetProject.ProxifyFromModel(modelFile, 'models', modelKey.toLocaleLowerCase());
             });
             const indexPath = path.join(options.target, ROOTSRC, 'models',);
             ModelsIndex(configuration, options.source, indexPath, packageName);
-            targetProject.project.addExistingSourceFileIfExists(path.join(indexPath, 'index.ts'));
+            targetProject.project.addSourceFileAtPathIfExists(path.join(indexPath, 'index.ts'));
             targetProject.project.saveSync();
         }
 
@@ -39,24 +39,24 @@ export class Common {
         if (configuration.contracts) {
             Object.keys(configuration.contracts).forEach((contractKey) => {
                 const contract = configuration.contracts[contractKey];
-                const sourceFile = sourceProject.project.addExistingSourceFile(path.join(options.source, contract.path));
+                const sourceFile = sourceProject.project.addSourceFileAtPath(path.join(options.source, contract.path));
                 targetProject.ProxifyFromFile(sourceFile, 'contracts', contractKey.toLocaleLowerCase(), options);
             });
             const indexPath = path.join(options.target, ROOTSRC, 'contracts');
             ContractsIndex(configuration, options.source, indexPath, packageName);
-            targetProject.project.addExistingSourceFileIfExists(path.join(indexPath, 'index.ts'));
+            targetProject.project.addSourceFileAtPathIfExists(path.join(indexPath, 'index.ts'));
             targetProject.project.saveSync();
         }
 
         if (configuration.includes) {
             Object.keys(configuration.includes).forEach((includeKey) => {
                 const include = configuration.includes[includeKey];
-                const sourceFile = sourceProject.project.addExistingSourceFile(path.join(options.source, include.path));
+                const sourceFile = sourceProject.project.addSourceFileAtPath(path.join(options.source, include.path));
                 targetProject.HandleIncludeFile(sourceFile, 'includes', options);
             });
             const indexPath = path.join(options.target, ROOTSRC, 'includes');
             IncludesIndex(configuration, options.source, indexPath, packageName);
-            targetProject.project.addExistingSourceFileIfExists(path.join(indexPath, 'index.ts'));
+            targetProject.project.addSourceFileAtPathIfExists(path.join(indexPath, 'index.ts'));
             targetProject.project.saveSync();
         }
 
