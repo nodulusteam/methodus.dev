@@ -3390,6 +3390,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./modules/tests/testing/",
           "packageDependencies": [
             ["@methodus/testing", "workspace:modules/tests/testing"],
+            ["@methodus/data", "npm:2.0.35"],
             ["@methodus/framework-commons", "workspace:modules/framework/framework-commons"],
             ["@methodus/framework-decorators", "workspace:modules/framework/framework-decorators"],
             ["@methodus/framework-injection", "workspace:modules/framework/framework-injection"],
@@ -3406,6 +3407,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["reflect-metadata", "npm:0.1.13"],
             ["rimraf", "npm:3.0.2"],
             ["ts-jest", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:24.3.0"],
+            ["tslib", "npm:1.14.1"],
             ["typedoc", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:0.17.8"],
             ["typedoc-plugin-markdown", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:2.4.0"],
             ["typescript", "patch:typescript@npm%3A4.0.5#builtin<compat/typescript>::version=4.0.5&hash=5bf698"],

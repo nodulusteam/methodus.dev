@@ -37,7 +37,7 @@
     "scripts": {
         "ci": "yarn && run-s bootstrap build test build:additionals docs",
         "clean": "rimraf ./modules/**/**/yarn.lock && rimraf ./modules/**/**/node_modules/* && rimraf ./modules/**/**/dist && rimraf ./modules/**/**/coverage",
-        "build": "lerna run build",
+        "build": "yarn workspaces foreach -ptv run build",
         "build:additionals": "lerna run build:additionals",
         "bootstrap": "lerna bootstrap && yarn bootstrap:link",
         "bootstrap:link": "lerna link",

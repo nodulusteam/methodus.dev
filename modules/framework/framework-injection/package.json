@@ -28,7 +28,7 @@
         "test": "yarn jest --silent && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-injection.json -o",
         "build": "yarn rimraf ./dist && yarn tsc",
-        "docs": "yarn  rimraf  ../../../docs/modules/framework/injection && yarn  typedoc && node ../../../docs/docs.js modules/framework/injection",
+        "docs": "yarn rimraf  ../../../docs/modules/framework/injection && yarn typedoc && node ../../../docs/docs.js modules/framework/injection",
         "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {

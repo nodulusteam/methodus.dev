@@ -25,7 +25,7 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "build": "yarn rimraf ./dist && tsc",
+        "build": "yarn rimraf ./dist && yarn tsc",
         "test": "yarn jest --coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-commons.json -o",
         "docs": "yarn rimraf ../../../docs/modules/framework/common/* && yarn typedoc && node ../../../docs/docs.js modules/framework/common",

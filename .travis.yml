@@ -25,10 +25,10 @@ addons:
   sonarcloud:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 before_script:
-  - yarn global add @methodus/contracts
-  - yarn ci
-  - yarn test:integrations
-  - yarn test:cli
-  - yarn test:contracts
+  - npm i -g @methodus/contracts
+  - yarn run ci
+  - yarn run test:integrations
+  - yarn run test:cli
+  - yarn run test:contracts
 script:
   - sonar-scanner    

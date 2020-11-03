@@ -2788,6 +2788,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@methodus/testing@workspace:modules/tests/testing"
   dependencies:
+    "@methodus/data": ^2.0.35
     "@methodus/framework-commons": ^7.0.10
     "@methodus/framework-decorators": ^7.0.14
     "@methodus/framework-injection": ^7.0.11
@@ -2804,6 +2805,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     rimraf: ^3.0.1
     ts-jest: ^24.2.0
+    tslib: ^1.10.0
     typedoc: ^0.17.8
     typedoc-plugin-markdown: ^2.3.1
     typescript: ^4.0.0
