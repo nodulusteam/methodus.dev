@@ -28,11 +28,12 @@
         "modules/platform/*",
         "modules/tests/*",
         "modules/tools/*",
-        "!modules/tools/methodus-describe/*"
+        "modules/tools/methodus-describe/client"
     ],
     "resolutions": {
         "acorn": "^6.2.1",
-        "@types/mousetrap": "1.6.3"
+        "@types/mousetrap": "1.6.3",
+        "clone": "2.1.2"
     },
     "scripts": {
         "ci": "yarn && run-s build test build:additionals docs",
