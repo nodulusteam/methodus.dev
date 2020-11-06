@@ -24,8 +24,7 @@ deploy:
 addons:
   sonarcloud:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
-before_script:
-  - npm i -g @methodus/contracts
+before_script: 
   - yarn run ci
   - yarn run test:integrations
   - yarn run test:cli

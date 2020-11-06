@@ -35,7 +35,7 @@
         "@types/mousetrap": "1.6.3"
     },
     "scripts": {
-        "ci": "yarn && run-s bootstrap build test build:additionals docs",
+        "ci": "yarn && run-s build test build:additionals docs",
         "clean": "rimraf ./modules/**/**/yarn.lock && rimraf ./modules/**/**/node_modules/* && rimraf ./modules/**/**/dist && rimraf ./modules/**/**/coverage",
         "build": "yarn workspaces foreach -ptv run build",
         "build:additionals": "lerna run build:additionals",
