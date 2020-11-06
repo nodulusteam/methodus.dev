@@ -3,8 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TestClass | Methodus - framework decorators</title>
-	<meta name="description" content="Documentation for Methodus - framework decorators">
+	<title>ClassA | Methodus - framework injection</title>
+	<meta name="description" content="Documentation for Methodus - framework injection">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">Methodus - framework decorators</a>
+					<a href="../index.html" class="title">Methodus - framework injection</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -49,13 +49,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../index.html">Globals</a>
+					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="testclass.html">TestClass</a>
+					<a href="classa.html">ClassA</a>
 				</li>
 			</ul>
-			<h1>Class TestClass</h1>
+			<h1>Class ClassA</h1>
 		</div>
 	</div>
 </header>
@@ -66,7 +66,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">TestClass</span>
+						<span class="target">ClassA</span>
 					</li>
 				</ul>
 			</section>
@@ -77,7 +77,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="testclass.html#add" class="tsd-kind-icon">add</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="classa.html#getsum" class="tsd-kind-icon">get<wbr>Sum</a></li>
 							</ul>
 						</section>
 					</div>
@@ -86,19 +86,28 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="add" class="tsd-anchor"></a>
-					<h3>add</h3>
+					<a name="getsum" class="tsd-anchor"></a>
+					<h3>get<wbr>Sum</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Sum<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, b<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/fdbd69b/modules/framework/framework-decorators/src/proxy/proxy.test.ts#L22">src/proxy/proxy.test.ts:22</a></li>
+									<li>Defined in dist/di.test.d.ts:2</li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>a: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>b: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -108,71 +117,62 @@
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="../index.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class">
-						<a href="methodhandler.html" class="tsd-kind-icon">Method<wbr>Handler</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="moduleclass.html" class="tsd-kind-icon">Module<wbr>Class</a>
-					</li>
-					<li class=" tsd-kind-class">
-						<a href="proxy.html" class="tsd-kind-icon">Proxy</a>
+					<li class=" tsd-kind-enum">
+						<a href="../enums/registrationtypes.html" class="tsd-kind-icon">Registration<wbr>Types</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class">
-						<a href="testclass.html" class="tsd-kind-icon">Test<wbr>Class</a>
+						<a href="classa.html" class="tsd-kind-icon">ClassA</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="testclass.html#add" class="tsd-kind-icon">add</a>
+								<a href="classa.html#getsum" class="tsd-kind-icon">get<wbr>Sum</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable">
-						<a href="../index.html#_default" class="tsd-kind-icon">_default</a>
+					<li class=" tsd-kind-class">
+						<a href="classb.html" class="tsd-kind-icon">ClassB</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="injectortype.html" class="tsd-kind-icon">Injector<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="main.html" class="tsd-kind-icon">Main</a>
 					</li>
 					<li class=" tsd-kind-variable">
-						<a href="../index.html#methodmetadatakey" class="tsd-kind-icon">method<wbr>Metadata<wbr>Key</a>
+						<a href="../globals.html#annotations" class="tsd-kind-icon">ANNOTATIONS</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#injector" class="tsd-kind-icon">Injector</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#regexinsideparentheses" class="tsd-kind-icon">Reg<wbr>ExInside<wbr>Parentheses</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="../globals.html#regexparenthesesandspaces" class="tsd-kind-icon">Reg<wbr>ExParentheses<wbr>And<wbr>Spaces</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../index.html#auth" class="tsd-kind-icon">Auth</a>
+						<a href="../globals.html#getargumentnames" class="tsd-kind-icon">Get<wbr>Argument<wbr>Names</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../index.html#clientconfiguration" class="tsd-kind-icon">Client<wbr>Configuration</a>
+						<a href="../globals.html#inject" class="tsd-kind-icon">Inject</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../index.html#method" class="tsd-kind-icon">Method</a>
+						<a href="../globals.html#injectable" class="tsd-kind-icon">Injectable</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../index.html#methodconfig" class="tsd-kind-icon">Method<wbr>Config</a>
+						<a href="../globals.html#singleton" class="tsd-kind-icon">Singleton</a>
 					</li>
 					<li class=" tsd-kind-function">
-						<a href="../index.html#methodmock" class="tsd-kind-icon">Method<wbr>Mock</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../index.html#methodpipe" class="tsd-kind-icon">Method<wbr>Pipe</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../index.html#module" class="tsd-kind-icon">Module</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../index.html#moduleconfiguration" class="tsd-kind-icon">Module<wbr>Configuration</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../index.html#pluginconfiguration" class="tsd-kind-icon">Plugin<wbr>Configuration</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../index.html#routerconfiguration" class="tsd-kind-icon">Router<wbr>Configuration</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="../index.html#serverconfiguration" class="tsd-kind-icon">Server<wbr>Configuration</a>
+						<a href="../globals.html#getconstructorargumentsnames" class="tsd-kind-icon">get<wbr>Constructor<wbr>Arguments<wbr>Names</a>
 					</li>
 				</ul>
 			</nav>
@@ -189,7 +189,7 @@
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
-				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
