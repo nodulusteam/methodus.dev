@@ -12,7 +12,7 @@
         "name": "Methodus - platform/express",
         "readme": "readme.md",
         "out": "../../../docs/modules/platform/express",
-        "theme": "markdown"
+       // "theme": "markdown"
     },
     "compilerOptions": {
         "importHelpers": false,

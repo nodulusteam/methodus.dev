@@ -3,7 +3,7 @@
         "docs"
     ],
     "typedocOptions": {
-        "theme": "markdown",
+        //"theme": "markdown",
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "ES6",

@@ -12,7 +12,7 @@
         "name": "Server components",
         "readme": "readme.md",
         "out": "../../../docs/modules/platform/server",
-        "theme": "markdown"
+      //  "theme": "markdown"
     },
     "compilerOptions": {
         "esModuleInterop": true,

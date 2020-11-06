@@ -12,7 +12,7 @@
         "name": "SocketIO components",
         "readme": "readme.md",
         "out": "../../../docs/modules/platform/socketio",
-        "theme": "markdown"
+      //  "theme": "markdown"
     },
     "compilerOptions": {
         "importHelpers": false,
