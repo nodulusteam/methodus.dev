@@ -1,8 +1,4 @@
-[Server components](README.md) › [Globals](globals.md)
-
-# Server components
-
-# ![logo](/docs/_media/methodus_32.png) Methodus
+# ![logo](docs/_media/methodus_32.png) Methodus
 
 [![Build Status](https://travis-ci.org/nodulusteam/methodus.dev.svg?branch=master)](https://travis-ci.org/nodulusteam/methodus.dev)
  
@@ -12,6 +8,7 @@ Methodus is a framework for building efficient, developer friendly, scalable Nod
 
 Using transport abstractions, Methodus application code can connect to any NodeJS framework, with builtin support for the HTTP/HTTP2 protocols and builtin routers for express/fastify. 
 
+
 ## Philosophy
 We love developing applications, but the process requires the we predecide allot before we actually begin.
 * What framework to use?
@@ -20,6 +17,8 @@ We love developing applications, but the process requires the we predecide allot
 
 Once these decisions are made, they are rarely changed. And since changes cost money, they are never made.
 So, by abstracting the framework code from our logic code, we get a generic application, that can run on virtually any protocol/framework.
+
+
 
 >#### From the dungeon master,
 > My fellow adventures developer, I welcome you into Methodus. 
@@ -47,6 +46,7 @@ But first you should ask yourself this:
 7. Are you going to consume this service using another application or a frontend application?
 
     *With methodus / methodus-client services can be consumed using code contracts*
+
 
     
 
@@ -78,10 +78,14 @@ Model API data objects and manage DB access (mongodb)
 ![@methodus/data](https://img.shields.io/npm/v/@methodus/data?color=%23994d00&label=%40methodus%2Fdata&style=flat-square)
 ![@methodus/describe](https://img.shields.io/npm/v/@methodus/describe?color=%2353c653&label=%40methodus%2Fdescribe&style=flat-square)
 
+
+
 ## License
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_large)
 
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fnodulusteam%2Fmethodus.dev?ref=badge_shield)
+
+
 
 <!-- tabs:start -->
 #### ** Reference **
@@ -91,5 +95,7 @@ Model API data objects and manage DB access (mongodb)
 #### ** Tests overview **
 
 [tests](tests.html ':include :type=iframe width=100% height=100%')
+
+
 
 <!-- tabs:end -->

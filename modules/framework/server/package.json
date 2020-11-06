@@ -31,7 +31,7 @@
         "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
         "test": "yarn jest --coverage && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-server.json -o",
-        "docs": "yarn rimraf ../../../docs/modules/platforms/server/* && yarn typedoc && node ../../../docs/docs.js modules/platforms/server",
+        "docs": "yarn rimraf ../../../docs/modules/platform/server/* && yarn typedoc && node ../../../docs/docs.js modules/platform/server",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "publishConfig": {
