@@ -3664,10 +3664,10 @@ __metadata:
 
 "@methodus/describe-client@file:../@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient":
   version: 7.1.22
-  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=8e1947&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient"
+  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=19aed4&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient"
   dependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: 2e2da9c23cc7dc2a33a7a7ffa73866aa5c470e4eee8dbe6405922a972541e7a62a5b6abfc81b6fc04f0dcb0751e5c998aa3c6a9e14f1d7c16910d0a50d46c060
+  checksum: 6f823e1bba6067156438cabb5181814cfbd9999d6399463fe91f4f321dd2c51191b91c50567401f6558969b10b0178c3b6de035952b7845c024f0c0fe018c8c8
   languageName: node
   linkType: hard
 

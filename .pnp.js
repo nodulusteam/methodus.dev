@@ -4730,10 +4730,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@methodus/describe-client", [
-        ["file:../@methodus/describe-client#../@methodus/describe-client::hash=8e1947&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient", {
-          "packageLocation": "./.yarn/cache/@methodus-describe-client-file-2d850101d2-2e2da9c23c.zip/node_modules/@methodus/describe-client/",
+        ["file:../@methodus/describe-client#../@methodus/describe-client::hash=19aed4&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient", {
+          "packageLocation": "./.yarn/cache/@methodus-describe-client-file-a02d8c1634-6f823e1bba.zip/node_modules/@methodus/describe-client/",
           "packageDependencies": [
-            ["@methodus/describe-client", "file:../@methodus/describe-client#../@methodus/describe-client::hash=8e1947&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient"],
+            ["@methodus/describe-client", "file:../@methodus/describe-client#../@methodus/describe-client::hash=19aed4&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient"],
             ["@methodus/platform-web", "workspace:modules/platform/platform-web"]
           ],
           "linkType": "HARD",
@@ -4761,7 +4761,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@fortawesome/fontawesome-svg-core", "npm:1.2.32"],
             ["@fortawesome/free-solid-svg-icons", "npm:5.6.3"],
             ["@kids-lab.io/node-blockly", "npm:0.1.7"],
-            ["@methodus/describe-client", "file:../@methodus/describe-client#../@methodus/describe-client::hash=8e1947&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient"],
+            ["@methodus/describe-client", "file:../@methodus/describe-client#../@methodus/describe-client::hash=19aed4&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Ftools%2Fmethodus-describe%2Fclient"],
             ["@methodus/platform-web", "workspace:modules/platform/platform-web"],
             ["@ng-dynamic-forms/core", "virtual:ca2a70a5612415f6a8f67f3d4e436cc4ce3915a05fcc2a4322245d4980fc3d3beea65a74fa09bb240d1091860617893584619a7b0dd05109fb48ae6cfaa76534#npm:10.1.0"],
             ["@ng-dynamic-forms/ui-bootstrap", "virtual:ca2a70a5612415f6a8f67f3d4e436cc4ce3915a05fcc2a4322245d4980fc3d3beea65a74fa09bb240d1091860617893584619a7b0dd05109fb48ae6cfaa76534#npm:10.1.0"],
