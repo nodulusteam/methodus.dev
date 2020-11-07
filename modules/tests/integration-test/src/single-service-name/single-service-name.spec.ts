@@ -6,7 +6,7 @@ describe('SingleServiceName', () => {
 
     let service: SingleServiceName;
     beforeAll(() => {
-        service = injection.Injector.get(SingleServiceName);
+        service = injection.Injector.resolve<SingleServiceName>('SingleServiceName');
     })
 
     it('Service created', async () => {

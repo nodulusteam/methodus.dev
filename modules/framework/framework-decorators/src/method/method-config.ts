@@ -12,14 +12,15 @@ export function MethodConfig(
 ) {
     return (target: any) => {
         //use the injectable logic here
-        injection.Injector.inject(
-            injection.RegistrationTypes.Controller,
+        injection.Injector.registerSingleton(
+            name,
+            // injection.RegistrationTypes.Controller,
             target,
-            name
-        );
-        const instance = injection.Injector.get(name);
 
-        const existingMetadata = injection.Injector.get(name) || {};
+        );
+        const instance = injection.Injector.resolve<typeof target>(name);
+
+        const existingMetadata = injection.Injector.resolve<typeof target>(name) || {};
         existingMetadata.name = name;
         let proto = target.prototype || target.__proto__;
 

@@ -23,7 +23,7 @@ export class TestController {
     /**
      *
      */
-    constructor(@injection.Inject() private testLogger: TestLogger) {
+    constructor(@injection.Inject('TestLogger') private testLogger: TestLogger) {
         this.testLogger.log('instance created for TestController');
     }
 

@@ -11,7 +11,7 @@
         "baseUrl": "modules/framework/decorators",
         "name": "Methodus - framework decorators",
         "readme": "none",
-        "out": "../../../docs/modules/framework/decorators"        
+        "out": "../../../docs/modules/framework/decorators"
     },
     "compilerOptions": {
         "target": "ES5",
@@ -36,7 +36,6 @@
         "noFallthroughCasesInSwitch": true /* Report errors for fallthrough cases in switch statement. */,
         /* Module Resolution Options */
         "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
-        "types": ["node", "jest"],
         "inlineSourceMap": false,
         "inlineSources": false,
         "experimentalDecorators": true,

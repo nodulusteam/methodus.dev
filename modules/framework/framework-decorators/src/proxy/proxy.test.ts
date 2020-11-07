@@ -3,23 +3,23 @@ import { MethodConfig } from '../method/method-config';
 import { Method } from '../method/method';
 import injection from '@methodus/framework-injection';
 
-@injection.Inject('MethodHandler')
+@injection.Injectable('MethodHandler')
 class MethodHandler {
-    methodDecorator() {}
+    methodDecorator() { }
 }
 
-injection.Injector.register(
+injection.Injector.registerSingleton(
+    'MethodHandler',
     MethodHandler,
-    [],
-    injection.RegistrationTypes.Service,
-    'MethodHandler'
+    // [],
+    // injection.RegistrationTypes.Service,
 );
 
 @MethodConfig('TestClass')
 @Proxy.ProxyClass('me', 'TestClass', '')
 class TestClass {
     @Method()
-    public add() {}
+    public add() { }
 }
 
 new TestClass();

@@ -40,8 +40,8 @@ export class Server {
         this.serverKey = this.makeid();
         this.instanceId = Servers.addServer(this);
         //bind handlers
-        this.methodHandler = injection.Injector.get<MethodHandler>('MethodHandler');
-        this.methodPipeHandler = injection.Injector.get<MethodPipeHandler>('MethodPipeHandler');
+        this.methodHandler = injection.Injector.resolve<MethodHandler>('MethodHandler');
+        this.methodPipeHandler = injection.Injector.resolve<MethodPipeHandler>('MethodPipeHandler');
     }
 
     makeid() {

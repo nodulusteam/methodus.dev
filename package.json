@@ -28,7 +28,7 @@
         "modules/platform/*",
         "modules/tests/*",
         "modules/tools/*",
-        "modules/tools/methodus-describe/client"
+        "!modules/tools/methodus-describe/*"
     ],
     "resolutions": {
         "acorn": "^6.2.1",

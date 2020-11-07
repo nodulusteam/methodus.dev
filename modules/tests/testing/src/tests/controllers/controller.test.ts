@@ -8,14 +8,14 @@ import { ScreenModel } from '../models/screen.model';
 /**
  * @hidden
  */
-@injection.Injectable()
+@injection.Injectable('TestController')
 @decorators.Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @decorators.MethodConfig('TestController')
 export class TestController {
     /**
      *
      */
-    constructor(@injection.Inject() private testLogger: TestLogger) {
+    constructor(@injection.Inject('TestLogger') private testLogger: TestLogger) {
         this.testLogger.log('instance created for TestController');
     }
 

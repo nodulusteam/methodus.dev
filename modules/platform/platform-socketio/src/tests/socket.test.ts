@@ -3,7 +3,7 @@ import { TestTarget } from './controllers/';
 import injection from '@methodus/server/injection';
 
 (async () => {
-    const testTarget = injection.Injector.get(TestTarget);
+    const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
     let server: SocketTestServer;
 
     await new Promise(async (resolve, reject) => {

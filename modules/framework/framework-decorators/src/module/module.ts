@@ -18,10 +18,10 @@ export function Module(name?: string) {
             original.prototype.options.name = name;
         }
 
-        injection.Injector.inject(
-            injection.RegistrationTypes.Module,
+        injection.Injector.registerSingleton(
+            //injection.RegistrationTypes.Module,
+            name!,
             target,
-            name
         );
     };
 }

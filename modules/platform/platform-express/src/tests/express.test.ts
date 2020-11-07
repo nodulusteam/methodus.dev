@@ -3,7 +3,7 @@ import { TestTarget } from './controllers/target.test';
 import { ExpressSecuredTestServer } from './https/express.server.https';
 
 (async () => {
-    const testTarget = injection.Injector.get(TestTarget);
+    const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
     let server: ExpressSecuredTestServer;
     await new Promise(async (resolve, reject) => {
         server = new ExpressSecuredTestServer();

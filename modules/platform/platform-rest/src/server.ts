@@ -22,9 +22,8 @@ export class Server {
     constructor() {
         this.serverKey = this.makeid();
         this.instanceId = Clients.addServer(this);
-        //bind handlers
-        const handler: MethodHandler | null = injection.Injector.get<MethodHandler>('MethodHandler');
-        console.log(handler);
+        const handler: MethodHandler | null = injection.Injector.resolve<MethodHandler>('MethodHandler');
+        (handler !== null);
     }
 
     makeid() {

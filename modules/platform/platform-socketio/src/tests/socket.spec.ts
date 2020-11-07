@@ -3,7 +3,7 @@ import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
 
 describe('Test SocketIO configuration', () => {
-    const testTarget = injection.Injector.get(TestTarget);
+    const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
     let server: SocketTestServer;
     beforeAll(async () => {
         await new Promise(async (resolve, reject) => {

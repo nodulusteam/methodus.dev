@@ -50,7 +50,7 @@ export function Method(
             return a.index - b.index;
         });
 
-        const methodHandler = injection.Injector.get('MethodHandler');
+        const methodHandler = injection.Injector.resolve<typeof target>('MethodHandler');
         return methodHandler.methodDecorator.apply(this, [
             target,
             propertyKey,

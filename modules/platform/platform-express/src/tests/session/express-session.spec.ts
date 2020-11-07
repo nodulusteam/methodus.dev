@@ -9,7 +9,7 @@ describe('Test Express session configuration', () => {
         await new Promise(async (resolve, reject) => {
             server = new ExpressTestServer();
             server.on('ready', () => {
-                testTarget = injection.Injector.get(TestTarget);
+                testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
                 resolve();
             });
         });

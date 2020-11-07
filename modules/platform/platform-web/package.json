@@ -28,7 +28,7 @@
     "scripts": {
         "webpack": "yarn webpack --config webpack.config.dev.js --display-error-details",
         "watch": "yarn webpack . --watch",
-        "build": "yarn clear && yarn tsc && yarn run webpack",
+        "build": "yarn clear && yarn rollup -c rollup.config.js",
         "serve": "yarn webpack-dev-server",
         "clear": "yarn rimraf build output coverage dist",
         "docs": "yarn rimraf ../../../docs/modules/platform/web/* && yarn typedoc && node ../../../docs/docs.js modules/platform/web",
@@ -67,7 +67,11 @@
         "webpack-system-register": "^1.6.0"
     },
     "dependencies": {
-        "reflect-metadata": "^0.1.13"
+        "@rollup/plugin-commonjs": "^16.0.0",
+        "@rollup/plugin-node-resolve": "^10.0.0",
+        "reflect-metadata": "^0.1.13",
+        "rollup": "^2.33.1",
+        "rollup-plugin-typescript2": "^0.29.0"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }

@@ -4,7 +4,7 @@ import { ExpressTestServer } from './express.server.http';
 
 
 describe('Test Express configuration', () => {
-    const testTarget = injection.Injector.get(TestTarget);
+    const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
     let server: ExpressTestServer;
     beforeAll(async () => {
         await new Promise(async (resolve, reject) => {
@@ -46,7 +46,7 @@ describe('Test Express configuration', () => {
 
     it('getByField', async () => {
         try {
-            await testTarget.getByField(511798);
+            await testTarget.getByField('field', 511798);
         } catch (error) {
             expect(error).toBeDefined();
         }

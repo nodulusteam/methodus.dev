@@ -6,7 +6,7 @@ describe('SingleControllerName', () => {
      
     let controller: SingleControllerName;
     beforeAll(() => {        
-        controller = injection.Injector.get(SingleControllerName);
+        controller = injection.Injector.resolve<SingleControllerName>('SingleControllerName');
     })
 
     it('Server created', async () => {

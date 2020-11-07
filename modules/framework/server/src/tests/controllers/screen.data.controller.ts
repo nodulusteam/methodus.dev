@@ -20,7 +20,7 @@ export class ScreensDataController extends DataController {
         // const item = await this.repository.get(id);
         return new MethodResult(result);
     }
-    constructor(@injection.Inject('TestLogger', 'testLogger') private testLogger: TestLogger) {
+    constructor(@injection.Inject('TestLogger') private testLogger: TestLogger) {
         super(ScreenModel);
         this.testLogger.log('instance created for ScreensDataController');
         this.repository = ScreenModel;

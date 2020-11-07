@@ -7,6 +7,6 @@ export class Module {
         this.testMap = (testMap) ? testMap : new TestMap();
     }
     get<T>(name: string) {
-        return injection.Injector.get<T>(name);
+        return injection.Injector.resolve<T>(name);
     }
 }

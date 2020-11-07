@@ -11,7 +11,7 @@ export class DataService {
     public async special(id: string) {
         return new MethodResult(id);
     }
-    constructor(@injection.Inject() private testLogger: TestLogger) {
+    constructor(@injection.Inject('TestLogger') private testLogger: TestLogger) {
         this.testLogger.log('instance created for DataService');
     }
 

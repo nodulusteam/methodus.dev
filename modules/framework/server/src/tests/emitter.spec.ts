@@ -16,7 +16,7 @@ describe.skip('Test Emitter configuration', () => {
     });
 
     beforeAll(() => {
-        testTarget = injection.Injector.get(TestTarget);
+        testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
 
         return new Promise(async (resolve, reject) => {
             server = new EmitterTestServer();
