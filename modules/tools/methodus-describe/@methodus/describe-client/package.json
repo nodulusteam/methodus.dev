@@ -1,0 +1,16 @@
+{
+    "name": "@methodus/describe-client",
+    "version": "7.1.22",
+    "description": "",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "module": "lib/index.js",
+    "scripts": {},
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {},
+    "dependencies": {
+        "@methodus/platform-web": "^7.0.0"
+    }
+}
+
