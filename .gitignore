@@ -11,6 +11,6 @@ build/*
 modules/platform-grpc/dist/
 docs_old/
 dist
-
+.yarn/cache/*
 # stryker temp files
 .stryker-tmp
