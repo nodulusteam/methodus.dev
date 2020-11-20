@@ -1,6 +1,6 @@
 import { Mocker } from '@methodus/server';
 import injection from '@methodus/server/injection';
-import { ExpressTestServer } from './servers/';
+import { ExpressTestServer } from './servers';
 import { DescribeView } from '../describeView';
 import { TestTarget, TestController } from './controllers';
 import { CopyController } from './controllers/controller.copy';

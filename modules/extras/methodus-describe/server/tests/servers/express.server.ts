@@ -7,7 +7,7 @@ import decorators from '@methodus/server/decorators';
 import { Express } from '@methodus/platform-express';
 import { Http } from '@methodus/platform-rest';
 import * as path from 'path';
-import { TestController, TestTarget } from '../controllers/';
+import { TestController, TestTarget } from '../controllers';
 import { ProxiedController } from '../controllers/proxy.controller';
 import { CopyController } from '../controllers/controller.copy';
 
