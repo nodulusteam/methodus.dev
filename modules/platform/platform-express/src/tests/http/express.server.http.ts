@@ -18,9 +18,7 @@ const options: ExpressOptions = {
 @decorators.ModuleConfiguration(ExpressTestModule)
 @decorators.ClientConfiguration(TestTarget, Http, 'http://localhost:8030')
 export class ExpressTestServer extends ConfiguredServer {
-    constructor() {
-        super(ExpressTestServer);
-    }
+
 }
 (() => {
     if (process.env.TESTMODE === 'run') {

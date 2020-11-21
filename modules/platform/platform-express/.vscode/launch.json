@@ -9,15 +9,13 @@
             "console": "internalConsole",
             "name": "T | Run jest",
             "type": "node",
-            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["run", "--inspect-brk", "jest"],
             "stopOnEntry": false,
             "outputCapture": "std",
-            "args": [
-                "--verbose"
-            ],
+            "args": ["--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
             "env": {
                 //"DEBUG":"methodus:*"
             }
@@ -27,30 +25,19 @@
             "console": "internalConsole",
             "name": "T | Run test",
             "type": "node",
-            "program": "${workspaceRoot}/dist/tests/express.test.js",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "node",
+                "${workspaceRoot}/dist/tests/express.test.js"
+            ],
             "stopOnEntry": false,
             "outputCapture": "std",
-            "args": [
-                "--verbose"
-            ],
+            "args": ["--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
             "env": {
                 "DEBUG": "methodus:*,express:*"
             }
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${workspaceFolder}\\index.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
         }
     ]
 }

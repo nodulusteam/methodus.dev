@@ -2096,7 +2096,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/express-fileupload", "npm:1.1.5"],
             ["@types/express-session", "npm:1.17.0"],
             ["@types/jest", "npm:26.0.15"],
-            ["@types/node", "npm:10.17.44"],
+            ["@types/node", "npm:14.14.9"],
             ["@types/uuid", "npm:3.4.9"],
             ["body-parser", "npm:1.19.0"],
             ["compression", "npm:1.7.4"],
@@ -3259,6 +3259,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-12.19.3-92b4bcb802-ef8ae4d868.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:12.19.3"]
+          ],
+          "linkType": "HARD",
+        }],
+        ["npm:14.14.9", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-14.14.9-7ed4d3e449-df0405c708.zip/node_modules/@types/node/",
+          "packageDependencies": [
+            ["@types/node", "npm:14.14.9"]
           ],
           "linkType": "HARD",
         }]

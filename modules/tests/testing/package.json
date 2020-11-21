@@ -35,7 +35,7 @@
         "tslib": "^1.10.0",
         "typedoc": "^0.17.8",
         "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^4.0.0",
+        "typescript": "^4.1.2",
         "uuid": "^8.1.0"
     },
     "gitHead": "052f1bb6422ec4c528afc3caef5cff57e110973b"
