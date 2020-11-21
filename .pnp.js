@@ -99,7 +99,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@methodus/data", "npm:2.0.35"],
             ["@monorepo-utils/collect-changelog", "npm:2.3.1"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/mongodb", "npm:3.5.33"],
             ["@types/node", "npm:10.17.44"],
             ["@types/uuid", "npm:3.4.9"],
@@ -982,16 +982,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@jest/types", [
-        ["npm:24.9.0", {
-          "packageLocation": "./.yarn/cache/@jest-types-npm-24.9.0-d3aae63b88-7cd388ad9d.zip/node_modules/@jest/types/",
-          "packageDependencies": [
-            ["@jest/types", "npm:24.9.0"],
-            ["@types/istanbul-lib-coverage", "npm:2.0.3"],
-            ["@types/istanbul-reports", "npm:1.1.2"],
-            ["@types/yargs", "npm:13.0.11"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:26.6.2", {
           "packageLocation": "./.yarn/cache/@jest-types-npm-26.6.2-fca9877d98-5c511d7807.zip/node_modules/@jest/types/",
           "packageDependencies": [
@@ -1880,7 +1870,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:7.1.3"],
             ["@types/graceful-fs", "npm:4.1.4"],
             ["@types/inquirer", "npm:0.0.43"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/shelljs", "npm:0.8.8"],
             ["@types/tunnel", "npm:0.0.1"],
@@ -1926,7 +1916,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:7.1.3"],
             ["@types/graceful-fs", "npm:4.1.4"],
             ["@types/inquirer", "npm:0.0.43"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/lodash", "npm:4.14.165"],
             ["@types/node", "npm:10.17.44"],
             ["@types/shelljs", "npm:0.8.8"],
@@ -1985,7 +1975,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/dev", "workspace:."],
             ["@methodus/data", "npm:2.0.35"],
             ["@monorepo-utils/collect-changelog", "npm:2.3.1"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/mongodb", "npm:3.5.33"],
             ["@types/node", "npm:10.17.44"],
             ["@types/uuid", "npm:3.4.9"],
@@ -2027,7 +2017,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./modules/framework/framework-commons/",
           "packageDependencies": [
             ["@methodus/framework-commons", "workspace:modules/framework/framework-commons"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["cpr", "npm:3.0.1"],
             ["debug", "virtual:bf8a43affbc373a8591f180cbe3acbfb918cd929dd20e1b84c5fd0055b22f3c6a7a5a97bf103919072af46955bfcdeae1322f1e11a9309b201a0d0e8c64dc8c9#npm:4.3.0"],
@@ -2051,7 +2041,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/framework-decorators", "workspace:modules/framework/framework-decorators"],
             ["@methodus/framework-commons", "workspace:modules/framework/framework-commons"],
             ["@methodus/framework-injection", "workspace:modules/framework/framework-injection"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["cpr", "npm:3.0.1"],
             ["docsify", "npm:4.11.6"],
@@ -2075,7 +2065,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@methodus/framework-injection", "workspace:modules/framework/framework-injection"],
             ["@methodus/framework-commons", "workspace:modules/framework/framework-commons"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["cpr", "npm:3.0.1"],
             ["docsify", "npm:4.11.6"],
@@ -2105,7 +2095,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/express", "npm:4.17.8"],
             ["@types/express-fileupload", "npm:1.1.5"],
             ["@types/express-session", "npm:1.17.0"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/uuid", "npm:3.4.9"],
             ["body-parser", "npm:1.19.0"],
@@ -2141,7 +2131,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/framework-commons", "workspace:modules/framework/framework-commons"],
             ["@methodus/framework-decorators", "workspace:modules/framework/framework-decorators"],
             ["@methodus/framework-injection", "workspace:modules/framework/framework-injection"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/tunnel", "npm:0.0.1"],
             ["@types/uuid", "npm:3.4.9"],
@@ -2181,7 +2171,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/express", "npm:4.17.8"],
             ["@types/express-fileupload", "npm:1.1.5"],
             ["@types/express-session", "npm:1.17.0"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/socket.io", "npm:2.1.11"],
             ["@types/uuid", "npm:3.4.9"],
@@ -2209,7 +2199,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/platform-web", "workspace:modules/platform/platform-web"],
             ["@rollup/plugin-commonjs", "virtual:6c60b418ec990f991d801d5b6fa3ae37e3a70656d35ccd462d507ab2120471902392aed0efa0dae966233f573fc3b086544f7206fdd564fef71ed278e2b68b41#npm:16.0.0"],
             ["@rollup/plugin-node-resolve", "virtual:6c60b418ec990f991d801d5b6fa3ae37e3a70656d35ccd462d507ab2120471902392aed0efa0dae966233f573fc3b086544f7206fdd564fef71ed278e2b68b41#npm:10.0.0"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/socket.io", "npm:2.1.11"],
             ["@types/uuid", "npm:3.4.9"],
@@ -2247,7 +2237,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/server", "workspace:modules/framework/server"],
             ["@methodus/data", "npm:2.0.35"],
             ["@methodus/framework-decorators", "workspace:modules/framework/framework-decorators"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/uuid", "npm:3.4.9"],
             ["cpr", "npm:3.0.1"],
@@ -2276,7 +2266,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/framework-decorators", "workspace:modules/framework/framework-decorators"],
             ["@methodus/framework-injection", "workspace:modules/framework/framework-injection"],
             ["@methodus/server", "workspace:modules/framework/server"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/tunnel", "npm:0.0.1"],
             ["@types/uuid", "npm:3.4.9"],
@@ -3171,15 +3161,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/istanbul-reports", [
-        ["npm:1.1.2", {
-          "packageLocation": "./.yarn/cache/@types-istanbul-reports-npm-1.1.2-4f435a3d0f-92bd1f76a4.zip/node_modules/@types/istanbul-reports/",
-          "packageDependencies": [
-            ["@types/istanbul-reports", "npm:1.1.2"],
-            ["@types/istanbul-lib-coverage", "npm:2.0.3"],
-            ["@types/istanbul-lib-report", "npm:3.0.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:3.0.0", {
           "packageLocation": "./.yarn/cache/@types-istanbul-reports-npm-3.0.0-e6fb7a309c-8aee794ea2.zip/node_modules/@types/istanbul-reports/",
           "packageDependencies": [
@@ -3190,11 +3171,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/jest", [
-        ["npm:24.9.1", {
-          "packageLocation": "./.yarn/cache/@types-jest-npm-24.9.1-c1de6578fe-2a950309a2.zip/node_modules/@types/jest/",
+        ["npm:26.0.15", {
+          "packageLocation": "./.yarn/cache/@types-jest-npm-26.0.15-123adbed89-42fe39d582.zip/node_modules/@types/jest/",
           "packageDependencies": [
-            ["@types/jest", "npm:24.9.1"],
-            ["jest-diff", "npm:24.9.0"]
+            ["@types/jest", "npm:26.0.15"],
+            ["jest-diff", "npm:26.6.2"],
+            ["pretty-format", "npm:26.6.2"]
           ],
           "linkType": "HARD",
         }]
@@ -3581,14 +3563,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-yargs-npm-11.1.7-f8aff60509-84ef92c707.zip/node_modules/@types/yargs/",
           "packageDependencies": [
             ["@types/yargs", "npm:11.1.7"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:13.0.11", {
-          "packageLocation": "./.yarn/cache/@types-yargs-npm-13.0.11-8fa4e6dc51-8592d76c18.zip/node_modules/@types/yargs/",
-          "packageDependencies": [
-            ["@types/yargs", "npm:13.0.11"],
-            ["@types/yargs-parser", "npm:15.0.0"]
           ],
           "linkType": "HARD",
         }],
@@ -7521,13 +7495,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["diff-sequences", [
-        ["npm:24.9.0", {
-          "packageLocation": "./.yarn/cache/diff-sequences-npm-24.9.0-1cf0c4cb19-049107ba80.zip/node_modules/diff-sequences/",
-          "packageDependencies": [
-            ["diff-sequences", "npm:24.9.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:26.6.2", {
           "packageLocation": "./.yarn/cache/diff-sequences-npm-26.6.2-fbf1967570-dd1eb6e52f.zip/node_modules/diff-sequences/",
           "packageDependencies": [
@@ -10428,7 +10395,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/platform-express", "workspace:modules/platform/platform-express"],
             ["@methodus/platform-rest", "workspace:modules/platform/platform-rest"],
             ["@methodus/server", "workspace:modules/framework/server"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:10.17.44"],
             ["@types/tunnel", "npm:0.0.1"],
             ["@types/uuid", "npm:3.4.9"],
@@ -11485,17 +11452,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["jest-diff", [
-        ["npm:24.9.0", {
-          "packageLocation": "./.yarn/cache/jest-diff-npm-24.9.0-31c04948a4-ba4aa10e57.zip/node_modules/jest-diff/",
-          "packageDependencies": [
-            ["jest-diff", "npm:24.9.0"],
-            ["chalk", "npm:2.4.2"],
-            ["diff-sequences", "npm:24.9.0"],
-            ["jest-get-type", "npm:24.9.0"],
-            ["pretty-format", "npm:24.9.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:26.6.2", {
           "packageLocation": "./.yarn/cache/jest-diff-npm-26.6.2-06ca2a96ca-05d0f1bdba.zip/node_modules/jest-diff/",
           "packageDependencies": [
@@ -11575,13 +11531,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["jest-get-type", [
-        ["npm:24.9.0", {
-          "packageLocation": "./.yarn/cache/jest-get-type-npm-24.9.0-18c591f6f2-0e6164dff2.zip/node_modules/jest-get-type/",
-          "packageDependencies": [
-            ["jest-get-type", "npm:24.9.0"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:26.3.0", {
           "packageLocation": "./.yarn/cache/jest-get-type-npm-26.3.0-a481f14d96-fc3e2d2b90.zip/node_modules/jest-get-type/",
           "packageDependencies": [
@@ -15973,17 +15922,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["pretty-format", [
-        ["npm:24.9.0", {
-          "packageLocation": "./.yarn/cache/pretty-format-npm-24.9.0-cf0850262c-a61c5c21a6.zip/node_modules/pretty-format/",
-          "packageDependencies": [
-            ["pretty-format", "npm:24.9.0"],
-            ["@jest/types", "npm:24.9.0"],
-            ["ansi-regex", "npm:4.1.0"],
-            ["ansi-styles", "npm:3.2.1"],
-            ["react-is", "npm:16.13.1"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:26.6.2", {
           "packageLocation": "./.yarn/cache/pretty-format-npm-26.6.2-6edfcf7149-5ad34fc128.zip/node_modules/pretty-format/",
           "packageDependencies": [
@@ -16354,13 +16292,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["react-is", [
-        ["npm:16.13.1", {
-          "packageLocation": "./.yarn/cache/react-is-npm-16.13.1-a9b9382b4f-11bcf1267a.zip/node_modules/react-is/",
-          "packageDependencies": [
-            ["react-is", "npm:16.13.1"]
-          ],
-          "linkType": "HARD",
-        }],
         ["npm:17.0.1", {
           "packageLocation": "./.yarn/cache/react-is-npm-17.0.1-876b80f7e5-5a83dfc78e.zip/node_modules/react-is/",
           "packageDependencies": [
@@ -19281,7 +19212,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/$$virtual/ts-jest-virtual-756ce60dac/0/cache/ts-jest-npm-26.4.4-6fd34d9b91-bee46b789c.zip/node_modules/ts-jest/",
           "packageDependencies": [
             ["ts-jest", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:26.4.4"],
-            ["@types/jest", "npm:24.9.1"],
+            ["@types/jest", "npm:26.0.15"],
             ["@types/typescript", null],
             ["bs-logger", "npm:0.2.6"],
             ["buffer-from", "npm:1.1.1"],

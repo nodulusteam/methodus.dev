@@ -293,7 +293,7 @@ export class MethodusProject {
                 });
 
                 targetClass.getMethods().forEach((method: MethodDeclaration) => {
-                    if (!method.hasModifier(SyntaxKind.PrivateKeyword)) {
+                    if (!method.hasModifier(SyntaxKind.PrivateKeyword as any)) {
                         this.HandleMethod(method, options);
                     } else {
                         method.remove();

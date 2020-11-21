@@ -21,7 +21,7 @@ describe.skip('Test Emitter configuration', () => {
         return new Promise(async (resolve, reject) => {
             server = new EmitterTestServer();
             server.on('ready', () => {
-                resolve();
+                resolve({});
             });
         });
 

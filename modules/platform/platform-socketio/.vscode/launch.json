@@ -9,16 +9,13 @@
             "console": "internalConsole",
             "name": "T | Run jest",
             "type": "node",
-            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["run", "--inspect-brk", "jest"],
             "stopOnEntry": false,
             "outputCapture": "std",
-            "args": [
-                "--detectOpenHandles",
-                "--verbose"
-            ],
+            "args": ["--detectOpenHandles", "--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
             "env": {}
         },
         {
@@ -29,13 +26,11 @@
             "program": "${workspaceRoot}/dist/tests/socket.test.js",
             "stopOnEntry": false,
             "outputCapture": "std",
-            "args": [
-                "--verbose"
-            ],
+            "args": ["--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": {}
-        },
+        }
     ]
 }

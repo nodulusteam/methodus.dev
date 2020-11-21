@@ -8,7 +8,7 @@ import { ExpressSecuredTestServer } from './https/express.server.https';
     await new Promise(async (resolve, reject) => {
         server = new ExpressSecuredTestServer();
         server.on('ready', () => {
-            resolve();
+            resolve({});
         });
     });
 

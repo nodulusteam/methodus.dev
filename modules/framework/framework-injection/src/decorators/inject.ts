@@ -1,4 +1,7 @@
-import { Injector } from '../injector';
+import 'reflect-metadata';
+import { Injector } from "../container";
+
+
 
 export function Inject(name?: string, propertyName?: string): any {
     return function (
@@ -17,7 +20,7 @@ export function Inject(name?: string, propertyName?: string): any {
             );
         }
         if (propertyName) {
-            target.prototype[propertyName] = Injector.get(
+            target.prototype[propertyName] = Injector.resolve(
                 constructorArgs[parameterIndex]
             );
         } else {

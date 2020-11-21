@@ -9,7 +9,7 @@ describe('Test Express configuration', () => {
         await new Promise(async (resolve, reject) => {
             server = new ExpressSecuredTestServer();
             server.on('ready', () => {
-                resolve();
+                resolve({});
             });
         });
     });

@@ -7,6 +7,7 @@
         "rootDir": "src",
         "sourceMap": true /* Generates corresponding '.map' file. */,
         "declaration": true,
+        "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": false /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
         "strict": true /* Enable all strict type-checking options. */,
@@ -45,8 +46,8 @@
         "baseUrl": "modules/tools/contracts",
         "name": "Methodus - tools/contracts",
         "readme": "readme.md",
-        "out": "../../../docs/modules/tools/contracts",
-      //  "theme": "markdown"
+        "out": "../../../docs/modules/tools/contracts"
+        //  "theme": "markdown"
     },
     "compileOnSave": true
 }

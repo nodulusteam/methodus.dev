@@ -1,4 +1,7 @@
-import { ConfiguredServer } from '@methodus/server';
+import { ConfiguredServer, MethodHandler, MethodPipeHandler } from '@methodus/server';
+new MethodHandler();
+new MethodPipeHandler();
+
 import decorators from '@methodus/server/decorators';
 import { TestController, TestTarget } from '../controllers/';
 import { SocketIO } from '../../index';

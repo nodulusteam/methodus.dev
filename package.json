@@ -67,7 +67,7 @@
     "devDependencies": {
         "@methodus/data": "^2.0.0",
         "@monorepo-utils/collect-changelog": "^2.2.0",
-        "@types/jest": "^24.0.23",
+        "@types/jest": "^26.0.15",
         "@types/mongodb": "^3.5.23",
         "@types/node": "^10.0.0",
         "@types/uuid": "^3.4.4",

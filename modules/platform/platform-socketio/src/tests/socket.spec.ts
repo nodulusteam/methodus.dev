@@ -1,15 +1,20 @@
 import injection from '@methodus/server/injection';
+
+
 import { SocketTestServer } from './servers/socket.server';
 import { TestTarget } from './controllers/';
+
+
+
 
 describe('Test SocketIO configuration', () => {
     const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
     let server: SocketTestServer;
-    beforeAll(async () => {
-        await new Promise(async (resolve, reject) => {
+    beforeAll(() => {
+        return new Promise((resolve, reject) => {
             server = new SocketTestServer();
             server.on('ready', () => {
-                resolve();
+                resolve({});
             });
         });
     });

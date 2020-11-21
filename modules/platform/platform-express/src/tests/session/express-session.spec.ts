@@ -10,7 +10,7 @@ describe('Test Express session configuration', () => {
             server = new ExpressTestServer();
             server.on('ready', () => {
                 testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
-                resolve();
+                resolve({});
             });
         });
     });

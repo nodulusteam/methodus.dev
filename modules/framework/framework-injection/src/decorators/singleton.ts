@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import { Injector, RegistrationTypes } from '../injector';
 import { Dictionary, ClassRef } from '@methodus/framework-commons';
+import { Injector } from '../container';
 const ANNOTATIONS = '__annotations__';
 
 export function Singleton(name?: string) {
@@ -12,8 +12,7 @@ export function Singleton(name?: string) {
             ];
 
         annotations.push('singleton');
-
-        Injector.inject(RegistrationTypes.Service, cls, name);
+        Injector.register(name || cls, {useValue: new cls()});
 
         return cls;
     }

@@ -18,7 +18,7 @@ export function Module(name?: string) {
             original.prototype.options.name = name;
         }
 
-        injection.Injector.registerSingleton(
+        injection.Injector.register(
             //injection.RegistrationTypes.Module,
             name!,
             target,

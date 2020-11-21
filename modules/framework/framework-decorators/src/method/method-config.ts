@@ -12,7 +12,7 @@ export function MethodConfig(
 ) {
     return (target: any) => {
         //use the injectable logic here
-        injection.Injector.registerSingleton(
+        injection.Injector.register(
             name,
             // injection.RegistrationTypes.Controller,
             target,

@@ -6,7 +6,7 @@ import injection from '@methodus/server/injection';
     const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
     let server: SocketTestServer;
 
-    await new Promise(async (resolve, reject) => {
+    await new Promise<void>(async (resolve, reject) => {
         server = new SocketTestServer();
         server.on('ready', () => {
             resolve();

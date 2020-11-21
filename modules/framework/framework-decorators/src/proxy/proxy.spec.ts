@@ -8,7 +8,7 @@ class MethodHandler {
     methodDecorator() { }
 }
 
-injection.Injector.registerSingleton(
+injection.Injector.register(
     'MethodHandler',
     MethodHandler,
     // [],
