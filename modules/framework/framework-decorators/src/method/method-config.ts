@@ -19,7 +19,6 @@ export function MethodConfig(
 
         );
         const instance = injection.Injector.resolve<typeof target>(name);
-
         const existingMetadata = injection.Injector.resolve<typeof target>(name) || {};
         existingMetadata.name = name;
         let proto = target.prototype || target.__proto__;

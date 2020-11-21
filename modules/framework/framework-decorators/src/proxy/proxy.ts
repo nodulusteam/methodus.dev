@@ -10,19 +10,11 @@ export class Proxy {
     ) {
         return (target: ClassRef) => {
             const methodus = commons.util.maybeMethodus(target)[className];
-            // let classTransport = MethodType.Http;
-            // const cls = injection.ClassContainer.get(className);
-            // debugger;
-            // if (cls) {
-            //     classTransport = MethodType.Local;
-            // }
-
             if (!methodus) {
                 throw new Error(
                     `error finding configuration ${packageName} ${className},${localClassPath}`
                 );
             }
-
             // if ( classTransport === MethodType.Local) {
             //     const startPathForLoad = packageName;
             //     const localLoadPath = path
