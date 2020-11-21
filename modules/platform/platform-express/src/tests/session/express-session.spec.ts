@@ -19,7 +19,7 @@ describe('Test Express session configuration', () => {
         server.kill();
     });
 
-    it('list', async () => {
+    it.skip('list', async () => {
         const response = await testTarget.create({},{},'some-name');
         expect(response.result).toBeDefined();
         return true;

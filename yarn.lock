@@ -1932,7 +1932,7 @@ __metadata:
     "@methodus/data": ^2.0.0
     "@methodus/framework-decorators": ^7.0.14
     "@types/jest": ^26.0.15
-    "@types/node": ^10.0.0
+    "@types/node": ^14.14.9
     "@types/uuid": ^3.4.4
     cpr: ^3.0.1
     debug: ^4.2.0

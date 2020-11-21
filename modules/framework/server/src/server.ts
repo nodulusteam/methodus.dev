@@ -3,17 +3,14 @@ import { Servers } from './servers';
 import commons, { MethodusConfig, ServerConfig, PluginEntry } from '@methodus/framework-decorators/commons';
 import { MethodHandler } from './method/handlers/method.handler';
 import { MethodPipeHandler } from './method/handlers/pipe.handler';
-
 import { PluginLoader } from './plugins';
 import injection from '@methodus/framework-decorators/injection';
 import { v1 as uuidv1 } from 'uuid';
-
 
 export interface IApp {
     set(key: string, value: any): void;
 }
 
-@injection.Singleton('MethodusServer')
 export class Server {
     public app: any;
     public config?: MethodusConfig;
@@ -34,14 +31,17 @@ export class Server {
         if (port) {
             this.port = +port || 0;
         }
-
         this.app = app;
         this.httpServer = httpServer;
         this.serverKey = this.makeid();
         this.instanceId = Servers.addServer(this);
         //bind handlers
-        this.methodHandler = injection.Injector.resolve<MethodHandler>('MethodHandler');
-        this.methodPipeHandler = injection.Injector.resolve<MethodPipeHandler>('MethodPipeHandler');
+        try{
+            this.methodHandler = injection.Injector.resolve<MethodHandler>('MethodHandler');
+            this.methodPipeHandler = injection.Injector.resolve<MethodPipeHandler>('MethodPipeHandler');
+        }catch(error){
+            throw(new Error('missing MethodHandler are you using a platform package?'))
+        }
     }
 
     makeid() {

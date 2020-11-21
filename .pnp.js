@@ -2238,7 +2238,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@methodus/data", "npm:2.0.35"],
             ["@methodus/framework-decorators", "workspace:modules/framework/framework-decorators"],
             ["@types/jest", "npm:26.0.15"],
-            ["@types/node", "npm:10.17.44"],
+            ["@types/node", "npm:14.14.9"],
             ["@types/uuid", "npm:3.4.9"],
             ["cpr", "npm:3.0.1"],
             ["debug", "virtual:bf8a43affbc373a8591f180cbe3acbfb918cd929dd20e1b84c5fd0055b22f3c6a7a5a97bf103919072af46955bfcdeae1322f1e11a9309b201a0d0e8c64dc8c9#npm:4.3.0"],
