@@ -1942,6 +1942,7 @@ __metadata:
     reflect-metadata: ^0.1.13
     rimraf: ^3.0.1
     ts-jest: ^26.4.4
+    tslib: ^2.0.3
     typedoc: ^0.17.8
     typedoc-plugin-markdown: ^2.3.1
     typescript: ^4.1.2
@@ -17489,6 +17490,13 @@ resolve@1.17.0:
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: f44fe7f216946b17d3e3074df3746372703cf24e9127b4c045511456e8e4bf25515fb0a1bb3937676cc305651c5d4fcb6377b0588a4c6a957e748c4c28905d17
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "tslib@npm:2.0.3"
+  checksum: 447bfca5deaa157806c3f77eaba74d05dd0b38b014e47ce79d98b5c77ce7d91b00a687ba13ca1b5a74d35ca1098ac7a072c0a97fad06f0266612f2a03a6c8e8f
   languageName: node
   linkType: hard
 

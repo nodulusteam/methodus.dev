@@ -44,7 +44,6 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
     const originalMethod = descriptor.value;
     // const {value} = descriptor;
     const value = async function (...args: any[]) {
-
         target = this;//Injector.get(target.name);
         validateServerIsRunning();
         // extract metadata for class and method
@@ -73,9 +72,9 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 // merge the configuration object
                 Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
                 if (getClassOf(target) === '[object Object]') {// the target is an instance not a class
-                    Object.assign(client, this);
-                    if (this.credentials) {
-                        methodus._auth!.options = this.credentials;
+                    Object.assign(client, target);
+                    if (target.credentials) {
+                        methodus._auth!.options = target.credentials;
                     }
                 }
 
@@ -173,7 +172,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                         }
                         break;
                     case MethodType.Local:
-                        let instanceFromDI = this;// Injector.get(configName) || this;
+                        let instanceFromDI = target;// Injector.get(configName) || this;
 
                         methodResult = await originalMethod.apply(instanceFromDI, ParserResponse.args);
                         break;

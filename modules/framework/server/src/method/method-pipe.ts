@@ -63,7 +63,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                     }
                 }
             } else {
-                const result = await originalMethod.apply(this, args);
+                const result = await originalMethod.apply(target, args);
                 return result;
             }
 
@@ -98,7 +98,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                         methodResult = new MethodResult(methodus._mocks[propertyKey]);
                         break;
                     case MethodType.Local:
-                        methodResult = originalMethod.apply(this, ParserResponse.args);
+                        methodResult = originalMethod.apply(target, ParserResponse.args);
                         break;
                 }
             } catch (error) {

@@ -1,5 +1,5 @@
 process.env.test = 'true';
-
+debugger;
 import { EmitterTestServer } from './servers/emitter.server';
 import { resultEmitter } from './servers/emitter.plugin';
 import { TestTarget } from './controllers/';
@@ -16,8 +16,9 @@ describe.skip('Test Emitter configuration', () => {
     });
 
     beforeAll(() => {
+        debugger;
         testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
-
+        debugger;
         return new Promise(async (resolve, reject) => {
             server = new EmitterTestServer();
             server.on('ready', () => {

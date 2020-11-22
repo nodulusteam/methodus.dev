@@ -11,7 +11,6 @@ export interface IApp {
     set(key: string, value: any): void;
 }
 
-@injection.Singleton('MethodusServer')
 export class Server {
     public app: any;
     public config?: MethodusConfig;

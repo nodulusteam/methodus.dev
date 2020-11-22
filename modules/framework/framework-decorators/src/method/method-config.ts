@@ -13,10 +13,7 @@ export function MethodConfig(
     return (target: any) => {
         //use the injectable logic here
         injection.Injector.register(
-            name,
-            // injection.RegistrationTypes.Controller,
-            target,
-
+            name || target, { useClass: target }
         );
         const instance = injection.Injector.resolve<typeof target>(name);
         const existingMetadata = injection.Injector.resolve<typeof target>(name) || {};
