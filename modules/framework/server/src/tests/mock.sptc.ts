@@ -1,5 +1,5 @@
-import { Mocker } from '../mocker';
-import { TestController } from './controllers';
+// import { Mocker } from '../mocker';
+// import { TestController } from './controllers';
 import injection from '@methodus/framework-decorators/injection';
 import { deserialize } from '../method/deserialize';
 import { MethodError, MethodResult } from '@methodus/framework-decorators/commons';
@@ -56,21 +56,21 @@ class ParserResponse {
     }
 }
 
-describe('Test additional method classes', () => {
-    it.skip('TestController mock', async () => {
-        const testController = injection.Injector.resolve<TestController>('TestController');
-        Mocker.mock(TestController);
-        const mockResult = await testController.list('', '');
-        expect(mockResult).toBeDefined();
-        expect(mockResult.list).toBeDefined();
-    });
+// describe('Test additional method classes', () => {
+//     it.skip('TestController mock', async () => {
+//         const testController = injection.Injector.resolve<TestController>('TestController');
+//         Mocker.mock(TestController);
+//         const mockResult = await testController.list('', '');
+//         expect(mockResult).toBeDefined();
+//         expect(mockResult.list).toBeDefined();
+//     });
 
-    it.skip('TestController mock for server', async () => {
-        const testController = injection.Injector.resolve<TestController>('TestController');
-        Mocker.mockServer(TestController);
-        const mockResult = await testController.list('', '');
-        expect(mockResult).toBeDefined();
-        expect(mockResult.list).toBeDefined();
-    });
+//     it.skip('TestController mock for server', async () => {
+//         const testController = injection.Injector.resolve<TestController>('TestController');
+//         Mocker.mockServer(TestController);
+//         const mockResult = await testController.list('', '');
+//         expect(mockResult).toBeDefined();
+//         expect(mockResult.list).toBeDefined();
+//     });
 
-});
+// });
