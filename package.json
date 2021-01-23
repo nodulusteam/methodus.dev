@@ -28,6 +28,7 @@
         "modules/platform/*",
         "modules/tests/*",
         "modules/tools/*",
+        "modules/tools/methodus-cli/sandbox/*",
         "!modules/tools/methodus-describe/*"
     ],
     "resolutions": {

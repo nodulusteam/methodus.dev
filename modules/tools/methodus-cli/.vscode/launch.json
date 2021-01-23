@@ -9,15 +9,18 @@
             "console": "internalConsole",
             "name": "T | Run jest",
             "type": "node",
-            "program": "${workspaceRoot}/../../../node_modules/jest/bin/jest",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["run", "--inspect-brk", "jest"],
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": ["--verbose"],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
-            "env": {}
+            "env": {
+                //"DEBUG":"methodus:*"
+            }
         },
+         
 
         {
             "type": "node",
