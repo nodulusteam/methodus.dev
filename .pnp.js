@@ -67,10 +67,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:modules/tools/methodus-cli"
       },
       {
-        "name": "tspsesvg",
-        "reference": "workspace:modules/tools/methodus-cli/sandbox/tspsesvg"
-      },
-      {
         "name": "@methodus/contracts",
         "reference": "workspace:modules/tools/methodus-contracts"
       }
@@ -90,8 +86,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       ["@methodus/platform-web", ["workspace:modules/platform/platform-web"]],
       ["@methodus/server", ["workspace:modules/framework/server"]],
       ["@methodus/testing", ["workspace:modules/tests/testing"]],
-      ["integration-test", ["workspace:modules/tests/integration-test"]],
-      ["tspsesvg", ["workspace:modules/tools/methodus-cli/sandbox/tspsesvg"]]
+      ["integration-test", ["workspace:modules/tests/integration-test"]]
     ],
     "fallbackPool": [
     ],
@@ -3197,15 +3192,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pretty-format", "npm:26.6.2"]
           ],
           "linkType": "HARD",
-        }],
-        ["npm:26.0.20", {
-          "packageLocation": "./.yarn/cache/@types-jest-npm-26.0.20-e4c9c054bf-221e39c7c9.zip/node_modules/@types/jest/",
-          "packageDependencies": [
-            ["@types/jest", "npm:26.0.20"],
-            ["jest-diff", "npm:26.6.2"],
-            ["pretty-format", "npm:26.6.2"]
-          ],
-          "linkType": "HARD",
         }]
       ]],
       ["@types/json-schema", [
@@ -3286,13 +3272,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-node-npm-12.19.3-92b4bcb802-ef8ae4d868.zip/node_modules/@types/node/",
           "packageDependencies": [
             ["@types/node", "npm:12.19.3"]
-          ],
-          "linkType": "HARD",
-        }],
-        ["npm:13.13.40", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-13.13.40-1882731473-a0e9433459.zip/node_modules/@types/node/",
-          "packageDependencies": [
-            ["@types/node", "npm:13.13.40"]
           ],
           "linkType": "HARD",
         }],
@@ -4356,15 +4335,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["are-we-there-yet", "npm:1.1.5"],
             ["delegates", "npm:1.0.0"],
             ["readable-stream", "npm:2.3.7"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["arg", [
-        ["npm:4.1.3", {
-          "packageLocation": "./.yarn/cache/arg-npm-4.1.3-1748b966a8-81b3b40b15.zip/node_modules/arg/",
-          "packageDependencies": [
-            ["arg", "npm:4.1.3"]
           ],
           "linkType": "HARD",
         }]
@@ -19378,33 +19348,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "typescript"
           ],
           "linkType": "HARD",
-        }],
-        ["virtual:d2220e1db86e27148d2c8074d5645ec743608d6b35ba2f225672b931528f166fe825bc6d5a20ad9eaf747be2b64de75e0022d91e03d38b6899005cf1dd498308#npm:25.5.1", {
-          "packageLocation": "./.yarn/$$virtual/ts-jest-virtual-e5c7a0d61f/0/cache/ts-jest-npm-25.5.1-bd5c9383d8-438de5a364.zip/node_modules/ts-jest/",
-          "packageDependencies": [
-            ["ts-jest", "virtual:d2220e1db86e27148d2c8074d5645ec743608d6b35ba2f225672b931528f166fe825bc6d5a20ad9eaf747be2b64de75e0022d91e03d38b6899005cf1dd498308#npm:25.5.1"],
-            ["@types/jest", "npm:26.0.20"],
-            ["@types/typescript", null],
-            ["bs-logger", "npm:0.2.6"],
-            ["buffer-from", "npm:1.1.1"],
-            ["fast-json-stable-stringify", "npm:2.1.0"],
-            ["jest", "npm:26.6.3"],
-            ["json5", "npm:2.1.3"],
-            ["lodash.memoize", "npm:4.1.2"],
-            ["make-error", "npm:1.3.6"],
-            ["micromatch", "npm:4.0.2"],
-            ["mkdirp", "npm:0.5.5"],
-            ["semver", "npm:6.3.0"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5bf698"],
-            ["yargs-parser", "npm:18.1.3"]
-          ],
-          "packagePeers": [
-            "@types/jest",
-            "@types/typescript",
-            "jest",
-            "typescript"
-          ],
-          "linkType": "HARD",
         }]
       ]],
       ["ts-loader", [
@@ -19445,26 +19388,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@dsherret/to-absolute-glob", "npm:2.0.2"],
             ["@ts-morph/common", "npm:0.6.0"],
             ["code-block-writer", "npm:10.1.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["ts-node", [
-        ["virtual:d2220e1db86e27148d2c8074d5645ec743608d6b35ba2f225672b931528f166fe825bc6d5a20ad9eaf747be2b64de75e0022d91e03d38b6899005cf1dd498308#npm:8.10.2", {
-          "packageLocation": "./.yarn/$$virtual/ts-node-virtual-849ca6f3a3/0/cache/ts-node-npm-8.10.2-b4fe5a56b0-cd6e023e07.zip/node_modules/ts-node/",
-          "packageDependencies": [
-            ["ts-node", "virtual:d2220e1db86e27148d2c8074d5645ec743608d6b35ba2f225672b931528f166fe825bc6d5a20ad9eaf747be2b64de75e0022d91e03d38b6899005cf1dd498308#npm:8.10.2"],
-            ["@types/typescript", null],
-            ["arg", "npm:4.1.3"],
-            ["diff", "npm:4.0.2"],
-            ["make-error", "npm:1.3.6"],
-            ["source-map-support", "npm:0.5.19"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5bf698"],
-            ["yn", "npm:3.1.1"]
-          ],
-          "packagePeers": [
-            "@types/typescript",
-            "typescript"
           ],
           "linkType": "HARD",
         }]
@@ -19518,24 +19441,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "typescript"
           ],
           "linkType": "HARD",
-        }]
-      ]],
-      ["tspsesvg", [
-        ["workspace:modules/tools/methodus-cli/sandbox/tspsesvg", {
-          "packageLocation": "./modules/tools/methodus-cli/sandbox/tspsesvg/",
-          "packageDependencies": [
-            ["tspsesvg", "workspace:modules/tools/methodus-cli/sandbox/tspsesvg"],
-            ["@methodus/platform-express", "workspace:modules/platform/platform-express"],
-            ["@methodus/platform-rest", "workspace:modules/platform/platform-rest"],
-            ["@methodus/server", "workspace:modules/framework/server"],
-            ["@types/jest", "npm:26.0.20"],
-            ["@types/node", "npm:13.13.40"],
-            ["jest", "npm:26.6.3"],
-            ["ts-jest", "virtual:d2220e1db86e27148d2c8074d5645ec743608d6b35ba2f225672b931528f166fe825bc6d5a20ad9eaf747be2b64de75e0022d91e03d38b6899005cf1dd498308#npm:25.5.1"],
-            ["ts-node", "virtual:d2220e1db86e27148d2c8074d5645ec743608d6b35ba2f225672b931528f166fe825bc6d5a20ad9eaf747be2b64de75e0022d91e03d38b6899005cf1dd498308#npm:8.10.2"],
-            ["typescript", "patch:typescript@npm%3A3.9.7#builtin<compat/typescript>::version=3.9.7&hash=5bf698"]
-          ],
-          "linkType": "SOFT",
         }]
       ]],
       ["tsutils", [
@@ -21163,15 +21068,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/yeast-npm-0.1.2-19a347595d-ce326a71c7.zip/node_modules/yeast/",
           "packageDependencies": [
             ["yeast", "npm:0.1.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["yn", [
-        ["npm:3.1.1", {
-          "packageLocation": "./.yarn/cache/yn-npm-3.1.1-8ad4259784-bff63b8056.zip/node_modules/yn/",
-          "packageDependencies": [
-            ["yn", "npm:3.1.1"]
           ],
           "linkType": "HARD",
         }]
