@@ -26,8 +26,11 @@ addons:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 before_script: 
   - yarn run ci
+  - ls ./coverage
   - yarn run test:integrations
+  - ls ./coverage
   - yarn run test:cli
+  - ls ./coverage
   - yarn run test:contracts
 script:
   - sonar-scanner    
