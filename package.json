@@ -50,7 +50,7 @@
         "test": "yarn workspaces foreach -ptv run test",
         "test:cli": "lerna run test:cli",
         "test:integrations": "yarn workspaces foreach -ptv run test:integrations",
-        "test:contracts": "yarn workspaces foreach -ptv run test:contracts && yarn coverage",
+        "test:contracts": "yarn workspaces foreach -ptv run test:contracts && yarn run coverage",
         "mutation": "lerna run mutation",
         "coverage": "node ./coverage.js",
         "bump": "lerna version patch --no-push",
