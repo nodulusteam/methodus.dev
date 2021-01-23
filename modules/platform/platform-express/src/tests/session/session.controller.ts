@@ -7,7 +7,7 @@ import { Verbs } from '../shim';
 @decorators.MethodConfig('SessionController',)
 export class SessionController {
     @decorators.Method(Verbs.Post, '/api/player')
-    public async create(@Mapping.Session() session?: any): Promise<MethodResult> {
+    public async create(@Mapping.Body() body?: any ,@Mapping.Session() session?: any): Promise<MethodResult> {
         return new MethodResult(session);
     }
 }

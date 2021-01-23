@@ -2,7 +2,7 @@ import { deserialize } from '@methodus/server';
 import injection from '@methodus/server/injection';
 import { MethodError, MethodResult } from '@methodus/server/commons';
 import stringify from 'fast-safe-stringify';
-import * as etag from 'etag';
+import etag from 'etag';
 /**
  * @hidden
  */

@@ -1,4 +1,4 @@
- 
+
 import { AuthMiddleware } from '../middlewares/auth.middleware';
 import { MethodMiddleware } from '../middlewares/method.middleware';
 import { Verbs } from '../shim';
@@ -25,7 +25,7 @@ export class TestController {
     public async list(
         @Mapping.Headers('auth') auth: string = 'kkk',
         @Mapping.Query('order_by') orderBy: string = 'asc'): Promise<any> {
-        const result = new MethodResult([1, 2, 3, 4, 5], 5, 2);
+        const result = new MethodResult({ auth, orderBy, data: [1, 2, 3, 4, 5] });
         result.pipe({});
         result.on('finish', (data: any) => {
             return data;
@@ -48,7 +48,7 @@ export class TestController {
         return new MethodResultStatus([1, 2, 3, 4, 5], 203, 5, 1);
     }
 
-    @decorators.MethodPipe(Verbs.Post, '/api/player')
+    @decorators.Method(Verbs.Post, '/api/player')
     public async create(@Mapping.Files('files') files: any,
         @Mapping.Cookies('cookies') cookies: any, @Mapping.Body('name') name: string) {
         return new MethodResult({ name });

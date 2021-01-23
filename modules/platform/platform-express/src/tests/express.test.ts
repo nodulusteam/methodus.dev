@@ -1,26 +1,32 @@
-import injection from '@methodus/server/injection';
-import { TestTarget } from './controllers/target.test';
-import { ExpressSecuredTestServer } from './https/express.server.https';
+import { ExpressTestServer } from './http/express.server';
+import request from 'supertest';
 
 (async () => {
-    const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
-    let server: ExpressSecuredTestServer;
+    let server: any;
     await new Promise(async (resolve, reject) => {
-        server = new ExpressSecuredTestServer();
+        server = new ExpressTestServer();
         server.on('ready', () => {
             resolve({});
         });
     });
 
-    try {
-        const response = await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
-        return response;
-
-    } catch (error) {
-        console.log(error);
-    }
+    //  const testTarget = injection.Injector.resolve<TestTarget>('TestTarget');
+   return request(server?.server._app.express._app).get('/api/player/1')
+        .expect(500);
 
 })();
+
+// request.get('/api/playerdata/defaults').then(console.log).catch(console.error);
+
+// try {
+//     const response = await testTarget.listdefaults({ param1: '1', param2: '2' }, {}, {}, {}, {}, {}, {}, {}, {});
+//     return response;
+
+// } catch (error) {
+//     console.log(error);
+// }
+
+// }) ();
 
 
 

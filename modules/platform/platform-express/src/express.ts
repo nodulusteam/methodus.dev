@@ -1,15 +1,13 @@
 import 'reflect-metadata';
-import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
-import * as expressSession from 'express-session';
+import express from 'express';
+import bodyParser from 'body-parser';
+import cookieParser from 'cookie-parser';
+import expressSession from 'express-session';
 import * as path from 'path';
 import { Servers } from '@methodus/server';
 import { BaseServer } from '@methodus/server/commons';
 import { ExpressRouter } from './routing';
-import * as http from 'http';
-import * as https from 'https';
-import * as fileUpload from 'express-fileupload';
+import fileUpload from 'express-fileupload';
 import { ExpressOptions } from './options';
 
 /**
@@ -81,20 +79,15 @@ export class ExpressPlugin extends BaseServer {
             parentServer._app[serverType] = new ExpressPlugin(server.options);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
             parentServer.app = app._app;
-            if (server.options.secured) {
-                const httpsServer = Servers.get(server.instanceId, 'https')
-                    || https.createServer({
-                        cert: server.options.cert,
-                        key: server.options.key,
-                        passphrase: server.options.passphrase,
-                    }, app._app);
-                parentServer._app.https = httpsServer;
-                Servers.set(server.instanceId, 'https', httpsServer);
-            } else {
-                const httpServer = Servers.get(server.instanceId, 'http')
-                    || http.createServer(app._app);
-                parentServer._app.http = httpServer;
-                Servers.set(server.instanceId, 'http', httpServer);
+            if (server.options.port) {
+                if (server.options.secured) {
+                    const httpsServer = Servers.get(server.instanceId, 'https')
+                    parentServer._app.https = httpsServer;
+                   
+                } else {
+                    const httpServer = Servers.get(server.instanceId, 'http');
+                    parentServer._app.http = httpServer;
+                }
             }
         } else {
             throw new Error('Missing configuration options for Express');

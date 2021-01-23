@@ -2097,6 +2097,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/express-session", "npm:1.17.0"],
             ["@types/jest", "npm:26.0.15"],
             ["@types/node", "npm:14.14.9"],
+            ["@types/supertest", "npm:2.0.10"],
             ["@types/uuid", "npm:3.4.9"],
             ["body-parser", "npm:1.19.0"],
             ["compression", "npm:1.7.4"],
@@ -2114,6 +2115,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest-html-reporters", "npm:2.1.0"],
             ["reflect-metadata", "npm:0.1.13"],
             ["rimraf", "npm:3.0.2"],
+            ["superagent", "npm:6.1.0"],
+            ["supertest", "npm:6.1.1"],
             ["ts-jest", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:26.4.4"],
             ["typedoc", "virtual:1c650f73d823f32c4791b77deab250208ff05c75571febe84fcd9714010dd59f0644502a5408e012b1f4d0162b43aef908a42d8a55ed05d333735c24d4565508#npm:0.19.2"],
             ["typedoc-plugin-markdown", "virtual:1c650f73d823f32c4791b77deab250208ff05c75571febe84fcd9714010dd59f0644502a5408e012b1f4d0162b43aef908a42d8a55ed05d333735c24d4565508#npm:3.0.11"],
@@ -2988,6 +2991,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["@types/cookiejar", [
+        ["npm:2.1.2", {
+          "packageLocation": "./.yarn/cache/@types-cookiejar-npm-2.1.2-2588120a7c-4bb5d0d07e.zip/node_modules/@types/cookiejar/",
+          "packageDependencies": [
+            ["@types/cookiejar", "npm:2.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["@types/ejs", [
         ["npm:2.7.0", {
           "packageLocation": "./.yarn/cache/@types-ejs-npm-2.7.0-6fc540ba4a-0b38abdf09.zip/node_modules/@types/ejs/",
@@ -3524,6 +3536,27 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/@types-stack-utils-npm-2.0.0-8ded8461bc-662312302e.zip/node_modules/@types/stack-utils/",
           "packageDependencies": [
             ["@types/stack-utils", "npm:2.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/superagent", [
+        ["npm:4.1.10", {
+          "packageLocation": "./.yarn/cache/@types-superagent-npm-4.1.10-56c7076140-6ef5ebd6e0.zip/node_modules/@types/superagent/",
+          "packageDependencies": [
+            ["@types/superagent", "npm:4.1.10"],
+            ["@types/cookiejar", "npm:2.1.2"],
+            ["@types/node", "npm:12.19.3"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/supertest", [
+        ["npm:2.0.10", {
+          "packageLocation": "./.yarn/cache/@types-supertest-npm-2.0.10-112745dbce-9ceae7e743.zip/node_modules/@types/supertest/",
+          "packageDependencies": [
+            ["@types/supertest", "npm:2.0.10"],
+            ["@types/superagent", "npm:4.1.10"]
           ],
           "linkType": "HARD",
         }]
@@ -6763,6 +6796,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["cookiejar", [
+        ["npm:2.1.2", {
+          "packageLocation": "./.yarn/cache/cookiejar-npm-2.1.2-081d78ab06-4c733c15c1.zip/node_modules/cookiejar/",
+          "packageDependencies": [
+            ["cookiejar", "npm:2.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["copy-concurrently", [
         ["npm:1.0.5", {
           "packageLocation": "./.yarn/cache/copy-concurrently-npm-1.0.5-a20f3c4b55-62ad9de2dc.zip/node_modules/copy-concurrently/",
@@ -8912,6 +8954,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mime-types", "npm:2.1.27"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:3.0.0", {
+          "packageLocation": "./.yarn/cache/form-data-npm-3.0.0-b01f488350-1af88217b4.zip/node_modules/form-data/",
+          "packageDependencies": [
+            ["form-data", "npm:3.0.0"],
+            ["asynckit", "npm:0.4.0"],
+            ["combined-stream", "npm:1.0.8"],
+            ["mime-types", "npm:2.1.27"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["formatio", [
@@ -8920,6 +8972,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["formatio", "npm:1.1.1"],
             ["samsam", "npm:1.1.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["formidable", [
+        ["npm:1.2.2", {
+          "packageLocation": "./.yarn/cache/formidable-npm-1.2.2-0f629105a1-9fe5ef38d5.zip/node_modules/formidable/",
+          "packageDependencies": [
+            ["formidable", "npm:1.2.2"]
           ],
           "linkType": "HARD",
         }]
@@ -13679,6 +13740,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["mime", "npm:2.4.6"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:2.5.0", {
+          "packageLocation": "./.yarn/cache/mime-npm-2.5.0-fe8ccb73fd-19f6f7046c.zip/node_modules/mime/",
+          "packageDependencies": [
+            ["mime", "npm:2.5.0"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["mime-db", [
@@ -16177,6 +16245,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["qs", "npm:6.7.0"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:6.9.6", {
+          "packageLocation": "./.yarn/cache/qs-npm-6.9.6-fee5de1427-853715ab6d.zip/node_modules/qs/",
+          "packageDependencies": [
+            ["qs", "npm:6.9.6"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["query-string", [
@@ -18604,6 +18679,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["duplexer", "npm:0.1.2"],
             ["minimist", "npm:1.2.5"],
             ["through", "npm:2.3.8"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["superagent", [
+        ["npm:6.1.0", {
+          "packageLocation": "./.yarn/cache/superagent-npm-6.1.0-053b76aea5-bc21d32d9d.zip/node_modules/superagent/",
+          "packageDependencies": [
+            ["superagent", "npm:6.1.0"],
+            ["component-emitter", "npm:1.3.0"],
+            ["cookiejar", "npm:2.1.2"],
+            ["debug", "virtual:bf8a43affbc373a8591f180cbe3acbfb918cd929dd20e1b84c5fd0055b22f3c6a7a5a97bf103919072af46955bfcdeae1322f1e11a9309b201a0d0e8c64dc8c9#npm:4.3.0"],
+            ["fast-safe-stringify", "npm:2.0.7"],
+            ["form-data", "npm:3.0.0"],
+            ["formidable", "npm:1.2.2"],
+            ["methods", "npm:1.1.2"],
+            ["mime", "npm:2.5.0"],
+            ["qs", "npm:6.9.6"],
+            ["readable-stream", "npm:3.6.0"],
+            ["semver", "npm:7.3.2"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["supertest", [
+        ["npm:6.1.1", {
+          "packageLocation": "./.yarn/cache/supertest-npm-6.1.1-f32857c64c-18b03819af.zip/node_modules/supertest/",
+          "packageDependencies": [
+            ["supertest", "npm:6.1.1"],
+            ["methods", "npm:1.1.2"],
+            ["superagent", "npm:6.1.0"]
           ],
           "linkType": "HARD",
         }]

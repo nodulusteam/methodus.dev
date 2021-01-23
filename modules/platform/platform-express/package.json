@@ -37,6 +37,7 @@
     },
     "dependencies": {
         "@methodus/server": "^7.0.16",
+        "@types/supertest": "^2.0.10",
         "body-parser": "^1.19.0",
         "compression": "^1.7.0",
         "cookie-parser": "^1.4.4",
@@ -66,6 +67,8 @@
         "jest-html-reporters": "^2.1.0",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.1",
+        "superagent": "^6.1.0",
+        "supertest": "^6.1.1",
         "ts-jest": "^26.4.4",
         "typedoc": "^0.19.2",
         "typedoc-plugin-markdown": "^3.0.11",

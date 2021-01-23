@@ -1,5 +1,5 @@
 {
-    "exclude": ["docs"],
+    "exclude": ["docs", "**/*.spec.ts", "**/*.test.ts"],
     "typedocOptions": {
         "exclude": "**/*+(index|.spec|.e2e).ts,tests",
         "module": "commonjs",
@@ -11,12 +11,14 @@
         "baseUrl": "modules/platform/express",
         "name": "Methodus - platform/express",
         "readme": "readme.md",
-        "out": "../../../docs/modules/platform/express",
-       // "theme": "markdown"
+        "out": "../../../docs/modules/platform/express"
+        // "theme": "markdown"
     },
     "compilerOptions": {
+        "skipLibCheck": false,
         "importHelpers": false,
-        "target": "ES5" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
+        "esModuleInterop": true,
+        "target": "ES2015" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
         "module": "commonjs",
         "outDir": "dist/",
         "rootDir": "src",

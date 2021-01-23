@@ -132,12 +132,12 @@ export class Server {
             });
 
             this.httpServer = Servers.get(this.instanceId, 'http');
-            if (this.httpServer) {
+            if (this.httpServer && this.port) {
                 this.httpServer.listen(this.port, this.ipAddress);
             }
 
             this.httpsServer = Servers.get(this.instanceId, 'https');
-            if (this.httpsServer) {
+            if (this.httpsServer && this.port) {
                 this.httpsServer.listen(this.port, this.ipAddress);
             }
 
