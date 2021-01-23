@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import expressSession from 'express-session';
 import * as path from 'path';
-import { Servers } from '@methodus/server';
+import { Servers, ServerCreator } from '@methodus/server';
 import { BaseServer } from '@methodus/server/commons';
 import { ExpressRouter } from './routing';
 import fileUpload from 'express-fileupload';
@@ -80,12 +80,13 @@ export class ExpressPlugin extends BaseServer {
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
             parentServer.app = app._app;
             if (server.options.port) {
+                const serverCreator = new ServerCreator();
                 if (server.options.secured) {
-                    const httpsServer = Servers.get(server.instanceId, 'https')
+                    const httpsServer = Servers.get(server.instanceId, 'https') || serverCreator.createHttps(parentServer.app, server.options);
                     parentServer._app.https = httpsServer;
-                   
+
                 } else {
-                    const httpServer = Servers.get(server.instanceId, 'http');
+                    const httpServer = Servers.get(server.instanceId, 'http') || serverCreator.createHttp(parentServer.app);
                     parentServer._app.http = httpServer;
                 }
             }
