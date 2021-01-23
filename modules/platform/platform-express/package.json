@@ -29,7 +29,7 @@
         "test": "yarn jest --runInBand && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-express.json -o",
         "build": "yarn rimraf ./dist && yarn tsc",
-        "docs": "yarn rimraf ../../../docs/modules/platform/express/* && yarn typedoc && node ../../../docs/docs.js modules/platform/express",
+        "docs": "yarn rimraf ../../../docs/modules/platform/express/ && yarn typedoc && node ../../../docs/docs.js modules/platform/express",
         "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {

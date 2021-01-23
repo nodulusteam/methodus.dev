@@ -2,7 +2,7 @@
     "exclude": ["docs"],
     "typedocOptions": {
         "exclude": "**/*+(index|.spec|.e2e).ts",
-        "module": "commonjs",
+        "module": "ES2015",
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "commonjs",
