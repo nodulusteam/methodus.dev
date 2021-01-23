@@ -26,7 +26,7 @@
     "license": "BSD-3-Clause",
     "scripts": {
         "build": "yarn rimraf ./dist && yarn tsc",
-        "test": "yarn jest --coverage",
+        "test": "yarn jest --coverage && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-commons.json -o",
         "docs": "yarn rimraf ../../../docs/modules/framework/common/* && yarn typedoc && node ../../../docs/docs.js modules/framework/common",
         "mutation": "stryker run --fileLogLevel trace --logLevel debug"

@@ -85,6 +85,12 @@
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface"><a href="interfaces/diapi.html" class="tsd-kind-icon">DIapi</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Variables</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-variable"><a href="globals.html#annotations" class="tsd-kind-icon">ANNOTATIONS</a></li>
@@ -103,6 +109,12 @@
 								<li class="tsd-kind-function"><a href="globals.html#getconstructorargumentsnames" class="tsd-kind-icon">get<wbr>Constructor<wbr>Arguments<wbr>Names</a></li>
 							</ul>
 						</section>
+						<section class="tsd-index-section ">
+							<h3>Object literals</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-object-literal"><a href="globals.html#bridge" class="tsd-kind-icon">bridge</a></li>
+							</ul>
+						</section>
 					</div>
 				</section>
 			</section>
@@ -114,17 +126,19 @@
 					<div class="tsd-signature tsd-kind-icon">ANNOTATIONS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"__annotations__"</span><span class="tsd-signature-symbol"> = &quot;__annotations__&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/03ee63a/modules/framework/framework-injection/src/decorators/singleton.ts#L4">src/decorators/singleton.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/decorators/singleton.ts#L4">src/decorators/singleton.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable">
 					<a name="injector" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> Injector</h3>
-					<div class="tsd-signature tsd-kind-icon">Injector<span class="tsd-signature-symbol">:</span> <a href="classes/injectortype.html" class="tsd-signature-type">InjectorType</a></div>
+					<div class="tsd-signature tsd-kind-icon">Injector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DIapi</span><span class="tsd-signature-symbol"> = bridge.Injector</span></div>
 					<aside class="tsd-sources">
 						<ul>
+							<li>Defined in dist/container.d.ts:7</li>
 							<li>Defined in dist/injector/index.d.ts:17</li>
+							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/container.ts#L26">src/container.ts:26</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,7 +148,7 @@
 					<div class="tsd-signature tsd-kind-icon">Reg<wbr>ExInside<wbr>Parentheses<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /[(][^)]*[)]/</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/03ee63a/modules/framework/framework-injection/src/decorators/inject.ts#L35">src/decorators/inject.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/decorators/inject.ts#L38">src/decorators/inject.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -144,7 +158,7 @@
 					<div class="tsd-signature tsd-kind-icon">Reg<wbr>ExParentheses<wbr>And<wbr>Spaces<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">RegExp</span><span class="tsd-signature-symbol"> = /[()\s]/g</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/03ee63a/modules/framework/framework-injection/src/decorators/inject.ts#L36">src/decorators/inject.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/decorators/inject.ts#L39">src/decorators/inject.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -161,7 +175,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/03ee63a/modules/framework/framework-injection/src/decorators/inject.ts#L37">src/decorators/inject.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/decorators/inject.ts#L40">src/decorators/inject.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -184,7 +198,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in dist/decorators/inject.d.ts:1</li>
+									<li>Defined in dist/decorators/inject.d.ts:2</li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -292,7 +306,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/03ee63a/modules/framework/framework-injection/src/decorators/inject.ts#L29">src/decorators/inject.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/decorators/inject.ts#L32">src/decorators/inject.ts:32</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -307,6 +321,29 @@
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Object literals</h2>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal">
+					<a name="bridge" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagLet">Let</span> bridge</h3>
+					<div class="tsd-signature tsd-kind-icon">bridge<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/container.ts#L11">src/container.ts:11</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="bridge.injector" class="tsd-anchor"></a>
+						<h3>Injector</h3>
+						<div class="tsd-signature tsd-kind-icon">Injector<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DependencyContainer</span><span class="tsd-signature-symbol"> = container</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/nodulusteam/methodus.dev/blob/91b737f/modules/framework/framework-injection/src/container.ts#L11">src/container.ts:11</a></li>
+							</ul>
+						</aside>
+					</section>
 				</section>
 			</section>
 		</div>
@@ -338,6 +375,9 @@
 					<li class=" tsd-kind-class">
 						<a href="classes/main.html" class="tsd-kind-icon">Main</a>
 					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/diapi.html" class="tsd-kind-icon">DIapi</a>
+					</li>
 					<li class=" tsd-kind-variable">
 						<a href="globals.html#annotations" class="tsd-kind-icon">ANNOTATIONS</a>
 					</li>
@@ -365,6 +405,9 @@
 					<li class=" tsd-kind-function">
 						<a href="globals.html#getconstructorargumentsnames" class="tsd-kind-icon">get<wbr>Constructor<wbr>Arguments<wbr>Names</a>
 					</li>
+					<li class=" tsd-kind-object-literal">
+						<a href="globals.html#bridge" class="tsd-kind-icon">bridge</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -378,6 +421,9 @@
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
