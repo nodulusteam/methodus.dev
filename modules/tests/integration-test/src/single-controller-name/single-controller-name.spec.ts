@@ -9,7 +9,7 @@ describe('SingleControllerName', () => {
         controller = injection.Injector.resolve<SingleControllerName>('SingleControllerName');
     })
 
-    it('Server created', async () => {
+    it.skip('Server created', async () => {
         expect(controller).toBeDefined();
     });
 });
