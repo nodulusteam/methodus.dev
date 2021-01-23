@@ -1,8 +1,8 @@
 import { DataController } from './data.controller';
 import { ScreenModel } from '../models/screen.model';
 import decorators from '@methodus/server/decorators';
-import injection from '@methodus/server/injection';
-import { TestLogger } from './logger.service';
+//import injection from '@methodus/server/injection';
+//import { TestLogger } from './logger.service';
 import { MethodResult, Mapping } from '@methodus/server/commons';
 /**
  * @hidden
@@ -17,9 +17,10 @@ export class ScreensDataController extends DataController {
         // const item = await this.repository.get(id);
         return new MethodResult(result);
     }
-    constructor(@injection.Inject('TestLogger') private testLogger: TestLogger) {
+    //@injection.Inject('TestLogger') private testLogger: TestLogger
+    constructor() {
         super(ScreenModel);
-        this.testLogger.log('instance created for ScreensDataController');
+        // this.testLogger.log('instance created for ScreensDataController');
         this.repository = ScreenModel;
     }
 
