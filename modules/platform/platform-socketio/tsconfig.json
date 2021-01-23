@@ -11,8 +11,7 @@
         "baseUrl": "modules/platform/socketio",
         "name": "SocketIO components",
         "readme": "readme.md",
-        "out": "../../../docs/modules/platform/socketio",
-      //  "theme": "markdown"
+        "out": "../../../docs/modules/platform/socketio"
     },
     "compilerOptions": {
         "importHelpers": false,

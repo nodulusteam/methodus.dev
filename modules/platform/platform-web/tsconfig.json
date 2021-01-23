@@ -29,6 +29,5 @@
         "name": "Web platform components",
         "readme": "readme.md",
         "out": "../../../docs/modules/platform/web"
-        // "theme": "markdown"
     }
 }

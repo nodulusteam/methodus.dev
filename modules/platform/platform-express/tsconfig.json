@@ -12,7 +12,6 @@
         "name": "Methodus - platform/express",
         "readme": "readme.md",
         "out": "../../../docs/modules/platform/express"
-        // "theme": "markdown"
     },
     "compilerOptions": {
         "skipLibCheck": false,

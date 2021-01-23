@@ -47,7 +47,6 @@
         "name": "Methodus - tools/contracts",
         "readme": "readme.md",
         "out": "../../../docs/modules/tools/contracts"
-        //  "theme": "markdown"
     },
     "compileOnSave": true
 }

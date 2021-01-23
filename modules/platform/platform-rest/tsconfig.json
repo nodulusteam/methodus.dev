@@ -11,8 +11,7 @@
         "baseUrl": "modules/platform/rest",
         "name": "Methodus - platform rest",
         "readme": "readme.md",
-        "out": "../../../docs/modules/platform/rest",
-        "theme": "markdown"
+        "out": "../../../docs/modules/platform/rest"
     },
     "compilerOptions": {
         "importHelpers": false,

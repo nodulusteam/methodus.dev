@@ -12,9 +12,6 @@
         "name": "Methodus - framework commons",
         "readme": "none",
         "out": "../../../docs/modules/framework/common",
-        // "theme": "markdown"
-       
-        
     },
     "compilerOptions": {
         "target": "ES5",
