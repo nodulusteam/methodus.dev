@@ -17,12 +17,14 @@ export class Server {
     public serverKey: string;
     public _app: any = {};
     private instanceId: string;
-
+    private _handler: MethodHandler | null
     constructor() {
         this.serverKey = this.makeid();
         this.instanceId = Clients.addServer(this);
-        const handler: MethodHandler | null = injection.Injector.resolve<MethodHandler>('MethodHandler');
-        (handler !== null);
+        this._handler = injection.Injector.resolve<MethodHandler>('MethodHandler');
+        if (!this._handler) {
+            throw new Error('missing MethodHandler');
+        }
     }
 
     makeid() {
