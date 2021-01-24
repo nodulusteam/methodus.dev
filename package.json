@@ -38,7 +38,7 @@
         "underscore.string": "3.3.5"
     },
     "scripts": {
-        "ci": "yarn && yarn run-s build test:all build:additionals docs",
+        "ci": "yarn && yarn run-s build test:all coverage build:additionals docs",
         "clean": "yarn rimraf ./modules/**/**/dist && yarn rimraf ./modules/**/**/coverage",
         "build": "yarn workspaces foreach -ptv run  build",
         "build:additionals": "yarn workspaces foreach -ptv run build:additionals",
