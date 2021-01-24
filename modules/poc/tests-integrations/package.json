@@ -13,7 +13,7 @@
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.8",
+        "@methodus/framework-commons": "^7.0.10",
         "@methodus/framework-decorators": "^7.0.7",
         "@methodus/framework-injection": "^7.0.11",
         "@methodus/platform-express": "^7.0.13",
