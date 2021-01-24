@@ -8,7 +8,7 @@
     "scripts": {
         "build": "rimraf ./lib && tsc",
         "test": "jest && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-integrations.json"
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-integrations.json -o"
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",

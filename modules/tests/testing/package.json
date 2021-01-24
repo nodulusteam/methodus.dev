@@ -8,7 +8,7 @@
     "scripts": {
         "build": "yarn rimraf ./dist && tsc",
         "test:integrations": "yarn jest --detectOpenHandles --forceExit && yarn coverage",
-        "coverage": "cpr ./coverage/coverage-final.json ../../../coverage/coverage-testing.json"
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-testing.json -o"
     },
     "author": "nodulusteam",
     "license": "ISC",
