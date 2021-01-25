@@ -29,7 +29,7 @@
         "modules/tests/*",
         "modules/tools/*",
         "!modules/tools/methodus-cli/sandbox/*",
-        "!modules/tools/methodus-describe/*"
+        "!modules/extras/*"
     ],
     "resolutions": {
         "acorn": "^6.2.1",
@@ -41,7 +41,7 @@
         "ci": "yarn && yarn run-s build test:all coverage build:additionals docs",
         "clean": "yarn rimraf ./modules/**/**/dist && yarn rimraf ./modules/**/**/coverage",
         "build": "yarn lerna run build",
-        "build:additionals": "yarn workspaces foreach -ptv run build:additionals",
+        "build:additionals": "lerna run build:additionals",
         "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
         "test": "yarn workspaces foreach -ptv run test",
