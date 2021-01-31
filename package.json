@@ -38,7 +38,7 @@
         "underscore.string": "3.3.5"
     },
     "scripts": {
-        "ci:build": "yarn && yarn run-s build test:all coverage build:additionals docs",
+        "ci:build": "yarn && yarn run-s build test:all coverage docs",
         "clean": "yarn rimraf ./modules/**/**/dist && yarn rimraf ./modules/**/**/coverage",
         "build": "yarn lerna run build",
         "build:additionals": "lerna run build:additionals",
