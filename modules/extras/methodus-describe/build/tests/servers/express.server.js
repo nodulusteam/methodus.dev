@@ -38,7 +38,7 @@ const decorators_1 = __importDefault(require("@methodus/server/decorators"));
 const platform_express_1 = require("@methodus/platform-express");
 const platform_rest_1 = require("@methodus/platform-rest");
 const path = __importStar(require("path"));
-const controllers_1 = require("../controllers/");
+const controllers_1 = require("../controllers");
 const proxy_controller_1 = require("../controllers/proxy.controller");
 const controller_copy_1 = require("../controllers/controller.copy");
 let ExpressTestServer = ExpressTestServer_1 = class ExpressTestServer extends server_1.ConfiguredServer {

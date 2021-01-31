@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const server_1 = require("@methodus/server");
 const injection_1 = __importDefault(require("@methodus/server/injection"));
-const servers_1 = require("./servers/");
+const servers_1 = require("./servers");
 const describeView_1 = require("../describeView");
 const controllers_1 = require("./controllers");
 const controller_copy_1 = require("./controllers/controller.copy");

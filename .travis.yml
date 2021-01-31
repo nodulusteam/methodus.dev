@@ -11,7 +11,7 @@ before_install:
 before_script:
   - yarn run lerna run prepublish
 script:
-  - yarn run ci
+  - yarn run ci:build
 before_deploy:
   - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
 deploy:
@@ -25,6 +25,6 @@ addons:
   sonarcloud:
     organization: "nodulusteam-github" # the key of the org you chose at step #3  
 before_script: 
-  - yarn run ci
+  - yarn run ci:build
 script:
   - sonar-scanner    
