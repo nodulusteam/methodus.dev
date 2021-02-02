@@ -1606,7 +1606,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/contracts@^7.0.20, @methodus/contracts@workspace:modules/tools/methodus-contracts":
+"@methodus/contracts@workspace:modules/tools/methodus-contracts":
   version: 0.0.0-use.local
   resolution: "@methodus/contracts@workspace:modules/tools/methodus-contracts"
   dependencies:
@@ -1671,28 +1671,6 @@ __metadata:
   checksum: 90f41c58c0d1a6ea54baae436f84c3243bb0ab97ec4d9c84a6a772667af45b958238cc7533d0b75cf0e658be098cdd40659ec8e144578be12ef3b72a97073bd0
   languageName: node
   linkType: hard
-
-"@methodus/describe@workspace:modules/extras/methodus-describe":
-  version: 0.0.0-use.local
-  resolution: "@methodus/describe@workspace:modules/extras/methodus-describe"
-  dependencies:
-    "@methodus/contracts": ^7.0.20
-    "@methodus/platform-express": ^7.0.14
-    "@methodus/platform-rest": ^7.0.14
-    "@methodus/server": ^7.0.16
-    "@types/jquery": ^3.2.16
-    express-basic-auth: ^1.2.0
-    rimraf: ^3.0.1
-    ts-jest: ^26.4.4
-    typedoc: ^0.17.8
-    typedoc-plugin-markdown: ^2.3.1
-    typescript: ^4.1.2
-  peerDependencies:
-    "@methodus/platform-express": ^7.0.13
-    "@methodus/platform-rest": ^7.0.14
-    "@methodus/server": ^7.0.15
-  languageName: unknown
-  linkType: soft
 
 "@methodus/dev@workspace:.":
   version: 0.0.0-use.local
@@ -2797,15 +2775,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/jquery@npm:^3.2.16":
-  version: 3.5.5
-  resolution: "@types/jquery@npm:3.5.5"
-  dependencies:
-    "@types/sizzle": "*"
-  checksum: 9e3c34451577c6916ac9de8a26fd8bce2831cb5861116514cba4a984189067635a3e084039308324d8e20bfa5f2e1ce7725a509110e5e05487b91f9369b1ae43
-  languageName: node
-  linkType: hard
-
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.6":
   version: 7.0.6
   resolution: "@types/json-schema@npm:7.0.6"
@@ -3085,13 +3054,6 @@ __metadata:
     "@types/glob": "*"
     "@types/node": "*"
   checksum: faf9d4aa31e83c46d5451221e614b437b11bfc289208d6016aab7181af284cef38d7a009a16fa73abe9bc578e0f206d7032023f9282edc7f6601c62c4a6c26ed
-  languageName: node
-  linkType: hard
-
-"@types/sizzle@npm:*":
-  version: 2.3.2
-  resolution: "@types/sizzle@npm:2.3.2"
-  checksum: 447a1c3f39f0e47ffdbccd1df58d63e8b67dc001f44f26f43ac8243db7834a3d956cebc8abe9272ecbdccfc8f4ec0ae74b811ccdad5b6cddaf8f0968513d618a
   languageName: node
   linkType: hard
 
@@ -4340,15 +4302,6 @@ __metadata:
     mixin-deep: ^1.2.0
     pascalcase: ^0.1.1
   checksum: 84e30392fd028df388b209cfb800e1ab4156b3cc499bd46f96ce6271fd17f10302ba6b87d4a56c6946cc77b6571502d45d73c7948a63a84f9ffd421f81232dd5
-  languageName: node
-  linkType: hard
-
-"basic-auth@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "basic-auth@npm:2.0.1"
-  dependencies:
-    safe-buffer: 5.1.2
-  checksum: 8ba373742caf9ef8e680ff77cf3f38208a6709d54c41a59148784d3c9cdb14167338e10ec6f9e5cc97a5096dd347813432a9afed6d5306d67e2cfdd85530976e
   languageName: node
   linkType: hard
 
@@ -7467,15 +7420,6 @@ __metadata:
     jest-message-util: ^26.6.2
     jest-regex-util: ^26.0.0
   checksum: a4ec4cbafac8b05eb02a8af5f086dede84a3a701abbfdafeadca24a1d286bd07035b32b2864a6ff012a733009beb0b96c10469b40832c5ee0d2dd0bb6b50a5b0
-  languageName: node
-  linkType: hard
-
-"express-basic-auth@npm:^1.2.0":
-  version: 1.2.0
-  resolution: "express-basic-auth@npm:1.2.0"
-  dependencies:
-    basic-auth: ^2.0.1
-  checksum: 69fd91b3540b8bd1f94d486c5886cd3a392182ff2ffa847bba6bfebbe9d716f3638413b3718da333b6f1aebd63bf0ed9be1240f2e77abf9f74a3d756900ab829
   languageName: node
   linkType: hard
 

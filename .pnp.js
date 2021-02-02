@@ -23,10 +23,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         "reference": "workspace:."
       },
       {
-        "name": "@methodus/describe",
-        "reference": "workspace:modules/extras/methodus-describe"
-      },
-      {
         "name": "@methodus/framework-commons",
         "reference": "workspace:modules/framework/framework-commons"
       },
@@ -80,7 +76,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
     "fallbackExclusionList": [
       ["@methodus/cli", ["workspace:modules/tools/methodus-cli"]],
       ["@methodus/contracts", ["workspace:modules/tools/methodus-contracts"]],
-      ["@methodus/describe", ["workspace:modules/extras/methodus-describe"]],
       ["@methodus/dev", ["workspace:."]],
       ["@methodus/framework-commons", ["workspace:modules/framework/framework-commons"]],
       ["@methodus/framework-decorators", ["workspace:modules/framework/framework-decorators"]],
@@ -1973,26 +1968,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@methodus/describe", [
-        ["workspace:modules/extras/methodus-describe", {
-          "packageLocation": "./modules/extras/methodus-describe/",
-          "packageDependencies": [
-            ["@methodus/describe", "workspace:modules/extras/methodus-describe"],
-            ["@methodus/contracts", "workspace:modules/tools/methodus-contracts"],
-            ["@methodus/platform-express", "workspace:modules/platform/platform-express"],
-            ["@methodus/platform-rest", "workspace:modules/platform/platform-rest"],
-            ["@methodus/server", "workspace:modules/framework/server"],
-            ["@types/jquery", "npm:3.5.5"],
-            ["express-basic-auth", "npm:1.2.0"],
-            ["rimraf", "npm:3.0.2"],
-            ["ts-jest", "virtual:02394fb6dbbd0d9daa9576ea833af195c91f9861bea24374eaadcf54f6fdddca9db2785635ad7d1b76b139bbffc2081657439c54283344e0adeccef641dacd54#npm:26.4.4"],
-            ["typedoc", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:0.17.8"],
-            ["typedoc-plugin-markdown", "virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:2.4.2"],
-            ["typescript", "patch:typescript@npm%3A4.1.2#builtin<compat/typescript>::version=4.1.2&hash=5bf698"]
-          ],
-          "linkType": "SOFT",
-        }]
-      ]],
       ["@methodus/dev", [
         ["workspace:.", {
           "packageLocation": "./",
@@ -3219,16 +3194,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
-      ["@types/jquery", [
-        ["npm:3.5.5", {
-          "packageLocation": "./.yarn/cache/@types-jquery-npm-3.5.5-d23de0fc59-9e3c344515.zip/node_modules/@types/jquery/",
-          "packageDependencies": [
-            ["@types/jquery", "npm:3.5.5"],
-            ["@types/sizzle", "npm:2.3.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
       ["@types/json-schema", [
         ["npm:7.0.6", {
           "packageLocation": "./.yarn/cache/@types-json-schema-npm-7.0.6-b307979e18-820cabe35a.zip/node_modules/@types/json-schema/",
@@ -3551,15 +3516,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/shelljs", "npm:0.8.8"],
             ["@types/glob", "npm:7.1.3"],
             ["@types/node", "npm:12.19.3"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["@types/sizzle", [
-        ["npm:2.3.2", {
-          "packageLocation": "./.yarn/cache/@types-sizzle-npm-2.3.2-762bc9adaa-447a1c3f39.zip/node_modules/@types/sizzle/",
-          "packageDependencies": [
-            ["@types/sizzle", "npm:2.3.2"]
           ],
           "linkType": "HARD",
         }]
@@ -5001,16 +4957,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/base64id-npm-2.0.0-ef4afeee0a-9151705349.zip/node_modules/base64id/",
           "packageDependencies": [
             ["base64id", "npm:2.0.0"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["basic-auth", [
-        ["npm:2.0.1", {
-          "packageLocation": "./.yarn/cache/basic-auth-npm-2.0.1-f1627ef330-8ba373742c.zip/node_modules/basic-auth/",
-          "packageDependencies": [
-            ["basic-auth", "npm:2.0.1"],
-            ["safe-buffer", "npm:5.1.2"]
           ],
           "linkType": "HARD",
         }]
@@ -8464,16 +8410,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["type-is", "npm:1.6.18"],
             ["utils-merge", "npm:1.0.1"],
             ["vary", "npm:1.1.2"]
-          ],
-          "linkType": "HARD",
-        }]
-      ]],
-      ["express-basic-auth", [
-        ["npm:1.2.0", {
-          "packageLocation": "./.yarn/cache/express-basic-auth-npm-1.2.0-bac6b4efeb-69fd91b354.zip/node_modules/express-basic-auth/",
-          "packageDependencies": [
-            ["express-basic-auth", "npm:1.2.0"],
-            ["basic-auth", "npm:2.0.1"]
           ],
           "linkType": "HARD",
         }]
@@ -19386,32 +19322,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["ts-jest", [
-        ["virtual:02394fb6dbbd0d9daa9576ea833af195c91f9861bea24374eaadcf54f6fdddca9db2785635ad7d1b76b139bbffc2081657439c54283344e0adeccef641dacd54#npm:26.4.4", {
-          "packageLocation": "./.yarn/$$virtual/ts-jest-virtual-dec528d208/0/cache/ts-jest-npm-26.4.4-6fd34d9b91-bee46b789c.zip/node_modules/ts-jest/",
-          "packageDependencies": [
-            ["ts-jest", "virtual:02394fb6dbbd0d9daa9576ea833af195c91f9861bea24374eaadcf54f6fdddca9db2785635ad7d1b76b139bbffc2081657439c54283344e0adeccef641dacd54#npm:26.4.4"],
-            ["@types/jest", "npm:26.0.15"],
-            ["@types/typescript", null],
-            ["bs-logger", "npm:0.2.6"],
-            ["buffer-from", "npm:1.1.1"],
-            ["fast-json-stable-stringify", "npm:2.1.0"],
-            ["jest", null],
-            ["jest-util", "npm:26.6.2"],
-            ["json5", "npm:2.1.3"],
-            ["lodash.memoize", "npm:4.1.2"],
-            ["make-error", "npm:1.3.6"],
-            ["mkdirp", "npm:1.0.4"],
-            ["semver", "npm:7.3.2"],
-            ["typescript", "patch:typescript@npm%3A4.1.2#builtin<compat/typescript>::version=4.1.2&hash=5bf698"],
-            ["yargs-parser", "npm:20.2.4"]
-          ],
-          "packagePeers": [
-            "@types/typescript",
-            "jest",
-            "typescript"
-          ],
-          "linkType": "HARD",
-        }],
         ["virtual:76c128d8a5f5edcc76c3ee722f9fa063c1803e33c0a8e8c30bcdd7aa4b208673df8a7d7ce6f06cc8390c4954e1d5c5782d5a516bb6a0d35a385f772fd1ab62c2#npm:26.4.4", {
           "packageLocation": "./.yarn/$$virtual/ts-jest-virtual-756ce60dac/0/cache/ts-jest-npm-26.4.4-6fd34d9b91-bee46b789c.zip/node_modules/ts-jest/",
           "packageDependencies": [

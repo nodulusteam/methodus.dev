@@ -52,10 +52,8 @@ export class RestParser {
                 functionArgs.push(value);
             });
             isRest = true;
-
         } else {
             functionArgs = args;
-            isRest = false;
         }
 
         return new ParserResponse(functionArgs, isRest, securityContext);
