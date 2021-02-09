@@ -25,6 +25,11 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "readme.md"
+        ]
+    },
     "scripts": {
         "test": "yarn rimraf ./dist && yarn tsc && yarn jest && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-rest.json -o",

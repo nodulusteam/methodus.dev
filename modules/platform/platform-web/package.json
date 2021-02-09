@@ -25,6 +25,11 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "readme.md"
+        ]
+    },
     "scripts": {
         "webpack": "yarn webpack --config webpack.config.dev.js --display-error-details",
         "watch": "yarn webpack . --watch",

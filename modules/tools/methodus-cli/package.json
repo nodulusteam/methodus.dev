@@ -23,6 +23,11 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "README.md"
+        ]
+    },
     "scripts": {
         "clear-sandbox": "yarn rimraf sandbox",
         "start": "node src/index.ts",

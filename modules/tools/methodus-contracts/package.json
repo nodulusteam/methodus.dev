@@ -26,6 +26,11 @@
         "bind",
         "application"
     ],
+    "docs": {
+        "content": [
+            "readme.md"
+        ]
+    },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {

@@ -25,6 +25,11 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "README.md"
+        ]
+    },
     "scripts": {
         "build": "yarn rimraf ./dist && yarn tsc",
         "watch": "yarn rimraf ./dist && yarn tsc -w",
