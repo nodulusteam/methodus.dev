@@ -48,7 +48,7 @@ const fs = require('fs');
         pkg.docs.content.forEach((file) => {
             const filename = file.substr(file.lastIndexOf('/') + 1);
 
-            tryToCopy(path.join(process.cwd(), file), `${destinationPath}/${filename}`);
+            tryToCopy(path.join(process.cwd(), file), path.join(destinationPath, filename));
         });
     }
 
