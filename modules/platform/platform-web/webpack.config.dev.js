@@ -3,7 +3,7 @@ module.exports = {
     mode: 'development',
     devtool: 'source-map',
     devServer: { inline: false },
-    entry: ['./src/lib/index.ts'],
+    entry: ['./src/index.ts'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'methodus-client.js',

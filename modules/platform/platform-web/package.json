@@ -1,9 +1,9 @@
 {
     "name": "@methodus/platform-web",
-    "version": "7.0.5",
+    "version": "7.0.6",
     "description": "Zero dependencies, Browser library for Contract based API access",
     "main": "dist/methodus-client.js",
-    "types": "build/lib/index.d.ts",
+    "types": "dist/index.d.ts",
     "homepage": "https://methodus.dev",
     "repository": {
         "type": "git",
@@ -31,8 +31,6 @@
         ]
     },
     "scripts": {
-        "webpack": "yarn webpack --config webpack.config.dev.js --display-error-details",
-        "watch": "yarn webpack . --watch",
         "build": "yarn clear && yarn rollup -c rollup.config.js",
         "serve": "yarn webpack-dev-server",
         "clear": "yarn rimraf build output coverage dist",
@@ -45,13 +43,19 @@
         "access": "public"
     },
     "devDependencies": {
+        "@rollup/plugin-commonjs": "^16.0.0",
+        "@rollup/plugin-json": "^4.1.0",
+        "@rollup/plugin-node-resolve": "^10.0.0",
+        "@types/axios": "^0.14.0",
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
+        "@types/rollup-plugin-node-builtins": "^2",
+        "@types/rollup-plugin-node-globals": "^1",
         "@types/socket.io": "^2.1.2",
         "@types/uuid": "^3.4.4",
+        "axios-mock-adapter": "^1.19.0",
         "cpr": "^3.0.1",
         "docsify": "^4.10.2",
-        "fetch-mock": "^7.3.9",
         "istanbul-instrumenter-loader": "^3.0.1",
         "jest": "^26.6.3",
         "jest-fetch-mock": "^2.1.2",
@@ -59,27 +63,21 @@
         "node-fetch": "^2.6.0",
         "reflect-metadata": "^0.1.13",
         "rimraf": "^3.0.1",
-        "trash-cli": "^3.0.0",
+        "rollup": "^2.33.1",
+        "rollup-plugin-node-builtins": "^2.1.2",
+        "rollup-plugin-node-globals": "^1.4.0",
+        "rollup-plugin-typescript2": "^0.29.0",
         "ts-jest": "^26.4.4",
         "ts-loader": "^6.0.4",
         "tslib": "^1.10.0",
         "typedoc": "^0.19.2",
         "typedoc-plugin-markdown": "^3.0.11",
         "typescript": "^4.1.2",
-        "webpack": "^5.3.2",
-        "webpack-cli": "^4.1.0",
-        "webpack-dev-server": "^3.1.11",
-        "webpack-system-register": "^1.6.0"
+        "webpack-dev-server": "^3.1.11"
     },
     "dependencies": {
-        "@rollup/plugin-commonjs": "^16.0.0",
-        "@rollup/plugin-node-resolve": "^10.0.0",
-        "@types/axios": "^0.14.0",
         "axios": "^0.21.1",
-        "axios-mock-adapter": "^1.19.0",
-        "reflect-metadata": "^0.1.13",
-        "rollup": "^2.33.1",
-        "rollup-plugin-typescript2": "^0.29.0"
+        "reflect-metadata": "^0.1.13"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
 }
