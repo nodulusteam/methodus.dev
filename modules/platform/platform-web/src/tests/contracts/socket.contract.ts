@@ -1,4 +1,4 @@
-import * as M from '../../lib/index';
+import * as M from '../..';
 
 @M.MethodConfig('SocketController')
 export class SocketController {

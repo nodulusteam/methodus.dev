@@ -19,16 +19,16 @@
             "request": "launch",
             "console": "internalConsole",
             "name": "T | Run jest",
-            "type": "node",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "runtimeArgs": [ "run", "--inspect-brk", "jest"],
+            "runtimeExecutable": "yarn",
             "stopOnEntry": false,
             "outputCapture": "std",
             "args": [
-              
+                
             ],
             "sourceMaps": true,
             "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
+             
             "env": {
                 "PORT": "4200",
                 "DEBUG": "none",

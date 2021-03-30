@@ -1,4 +1,4 @@
-import * as M from '../../lib';
+import * as M from '../..';
 
 @M.MethodConfigBase('BaseTestContract')
 export class BaseTestContract {

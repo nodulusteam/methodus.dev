@@ -1,6 +1,6 @@
-import * as M from '../../lib/index';
+import * as M from '../..';
 import { BaseTestContract } from './base.contract';
-import { Inject } from '../../lib/index';
+import { Inject } from '../..';
 import { TestContract } from './simple.contract';
 
 @M.Injectable('ExtendTestContract')

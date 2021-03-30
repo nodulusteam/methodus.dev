@@ -74,6 +74,9 @@
     "dependencies": {
         "@rollup/plugin-commonjs": "^16.0.0",
         "@rollup/plugin-node-resolve": "^10.0.0",
+        "@types/axios": "^0.14.0",
+        "axios": "^0.21.1",
+        "axios-mock-adapter": "^1.19.0",
         "reflect-metadata": "^0.1.13",
         "rollup": "^2.33.1",
         "rollup-plugin-typescript2": "^0.29.0"

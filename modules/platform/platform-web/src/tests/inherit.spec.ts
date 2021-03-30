@@ -1,8 +1,9 @@
-const customGlobal: any = window as any;
-customGlobal.fetch = require('jest-fetch-mock');
-customGlobal.fetchMock = customGlobal.fetch;
-import { Injector } from '../lib';
-import { MethodResult, MethodType, Rest, MethodError } from '../lib';
+var axios = require("axios");
+var MockAdapter = require("axios-mock-adapter");
+var mock = new MockAdapter(axios);
+
+import { Injector } from '../';
+import { MethodResult, MethodType, Rest, MethodError } from '../';
 import { TestContract, ExtendTestContract } from './contracts';
 
 
@@ -24,9 +25,11 @@ Rest.intercept((req) => {
 describe('Call using inherit controllers', () => {
     test('ExtendTestContract', async () => {
         const testContract = Injector.get<ExtendTestContract>(ExtendTestContract);
-        customGlobal.fetch.mockResponseOnce(JSON.stringify({ status: 200, body: { 'ok': 1 } }));
-        const result: any = await testContract.baseAction(1, 'test');
-        expect(result.body.ok).toBe(1);
+        mock.onGet("/api/posts/1/test").reply(200,
+            { 'ok': 1 }
+          );
+            const result: any = await testContract.baseAction(1, 'test');
+            expect(result.ok).toBe(1);
     });
 });
 

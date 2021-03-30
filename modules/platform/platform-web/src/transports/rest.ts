@@ -1,5 +1,7 @@
 import { ParamsMap, Verbs } from '../commons';
 import { MethodError } from '../response/methodError';
+import axios  from 'axios';
+import {AxiosRequestConfig} from 'axios';
 
 export class Rest {
 
@@ -14,13 +16,11 @@ export class Rest {
             Rest.interceptor(this.options);
         }
 
-        this.request = new Request(this.options.uri);
+        // this.request = new Request(this.options.uri);
     }
     public static intercept(interceptor: (options: any) => {}) {
         Rest.interceptor = interceptor;
     }
-
-
 
     public parse(verb: Verbs, paramsMap: ParamsMap[], args: any[]) {
         const queryString: any = [];
@@ -38,7 +38,6 @@ export class Rest {
             redirect: 'follow',
 
         };
-
 
         paramsMap.forEach((param: ParamsMap) => {
             if (param.index !== undefined && args[param.index] !== undefined) {
@@ -62,7 +61,6 @@ export class Rest {
                                 } else {
                                     queryString.push({ name: key, value: queryObject[key] });
                                 }
-
                             });
                         }
                         break;
@@ -121,24 +119,26 @@ export class Rest {
         return this.options;
     }
     public async send() {
-        const response = await fetch(this.request, this.options);
-        if (response.ok) {
-            const clone = response.clone();
-            try {
 
-                return await response.json();
-            } catch (error) {
-                return await  clone.blob();
-            }
+        const requestOptions: AxiosRequestConfig = {
+            method: this.options.method,
+            url: this.options.uri,
+            timeout: 1000 * 60 * 5,
+            data: this.options.body
+        };
+        const response = await axios(requestOptions);
+        if (response.status === 200) {
+            return response.data;
+            // const clone = response.clone();
+            // try {
+
+            //     return await response.json();
+            // } catch (error) {
+            //     return await  clone.blob();
+            // }
         } else {
-            let errorText = response.statusText;
-            if (response.body) {
-                try {
-                    errorText = (await response.json()).error;
-                } catch{
-                }
-            }
-            throw (new MethodError(errorText, response.status));
+            console.error(response);
+            throw (new MethodError(response.data, response.status));
         }
     }
 

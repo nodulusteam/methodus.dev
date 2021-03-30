@@ -1,4 +1,4 @@
-import * as M from '../../lib/index';
+import * as M from '../..';
 @M.Singleton()
 @M.MethodConfig('TestContract')
 export class TestContract {
