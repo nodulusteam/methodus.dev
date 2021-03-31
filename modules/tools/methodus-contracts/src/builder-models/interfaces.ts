@@ -22,6 +22,7 @@ export interface BindindConfiguration {
 }
 
 export interface Configuration {
+    runner: string;
     buildPath: string;
     path: string;
     srcFolder: string;

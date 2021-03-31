@@ -14,7 +14,7 @@ export class Server {
     target?: MethodusProject;
     constructor(configuration: Configuration, source: string, target: string) {
 
-        this.Installer = new Installer();
+        this.Installer = new Installer(configuration);
         const originalPackage = require(path.join(source, PKGJSON));
         UseTemplate('_package.json', PKGJSON, target,
             { name: configuration.contractNameServer, version: originalPackage.version });

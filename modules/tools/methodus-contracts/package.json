@@ -1,6 +1,6 @@
 {
     "name": "@methodus/contracts",
-    "version": "7.0.20",
+    "version": "7.0.21",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -44,7 +44,7 @@
         "test:server:models": "./dist/build.js ./build_vars/models/build.json",
         "test:server:inherit": "./dist/build.js ./build_vars/inherit/build.json",
         "test:server:consumer:simple": "node build_consumers/server/simple/index.js",
-        "test:client": "run-s test:client:*",
+        "test:client": "yarn run-s test:client:*",
         "test:client:simple": "./dist/client.js ./build_vars/simple/build.json",
         "test:client:models": "./dist/client.js ./build_vars/models/build.json",
         "test:client:inherit": "./dist/client.js ./build_vars/inherit/build.json",
@@ -63,7 +63,7 @@
         "@types/inquirer": "^0.0.43",
         "@types/jest": "^26.0.15",
         "@types/lodash": "^4.14.75",
-        "@types/node": "^10.0.0",
+        "@types/node": "^12.12.2",
         "@types/shelljs": "^0.8.8",
         "@types/tunnel": "^0.0.1",
         "@types/uuid": "^3.4.4",
@@ -85,7 +85,7 @@
         "uuid": "^8.1.0"
     },
     "dependencies": {
-        "@methodus/data": "^2.0.35",
+        "@methodus/data": "^3.0.2-beta",
         "colors": "^1.1.2",
         "rimraf": "^3.0.1",
         "shelljs": "^0.7.8",

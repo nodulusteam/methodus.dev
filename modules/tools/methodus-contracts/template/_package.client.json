@@ -3,13 +3,14 @@
     "version": "{version}",
     "description": "",
     "main": "lib/index.js",
+    "browser": "lib/index.js",
     "types": "lib/index.d.ts",
     "module": "lib/index.js",
     "scripts": {},
     "author": "",
-    "license": "ISC",
+    "license": "UNLICENSED",
     "devDependencies": {},
-    "dependencies": {
+    "peerDependencies": {
         "@methodus/platform-web": "^7.0.0"
     }
 }
