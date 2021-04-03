@@ -1,6 +1,6 @@
 {
     "name": "@methodus/contracts",
-    "version": "7.0.21",
+    "version": "7.0.22",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -88,7 +88,7 @@
         "@methodus/data": "^3.0.2-beta",
         "colors": "^1.1.2",
         "rimraf": "^3.0.1",
-        "shelljs": "^0.7.8",
+        "shelljs": "^0.8.4",
         "shelljs.exec": "^1.1.8",
         "ts-morph": "^8.1.2"
     },
