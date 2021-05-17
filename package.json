@@ -46,7 +46,7 @@
         "pretest": "[ -d coverage ] || mkdir coverage",
         "test": "yarn workspaces foreach -ptv run test",
         "test:all": "yarn run test && yarn run test:integrations && yarn run test:contracts && yarn run test:cli && yarn run coverage",
-        "test:cli": "yarn workspaces foreach -ptv run test:cli",
+        "test:cli": "lerna run test:cli",
         "test:integrations": "lerna run test:integrations",
         "test:contracts": "lerna run test:contracts",
         "mutation": "yarn workspaces foreach -ptv run mutation",
