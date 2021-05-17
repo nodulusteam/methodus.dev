@@ -78,6 +78,9 @@ describe('Call contract methods to activate the underlying transport', () => {
 
         const result: any = await testContract.action2(1, 'test', 3);
         expect(result.ok).toBe(1);
+        expect(result.id).toBe(1);
+        expect(result.name).toBe('test');
+        expect(result.size).toBe(3);
     });
 
     test('action2', async () => {

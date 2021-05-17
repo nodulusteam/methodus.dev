@@ -75,14 +75,20 @@ export class ExpressPlugin extends BaseServer {
     public static register(server: any, parentServer: any) {
         if (server.options) {
             const serverType = server.type.name;
-            console.info(`> Starting Express server on port ${server.options.port}`);
-            parentServer._app[serverType] = new ExpressPlugin(server.options);
+
+            let options = server.options;
+            if(typeof server.options === 'function'){
+                options = server.options.call();
+            }
+
+            console.info(`> Starting Express server on port ${options.port}`);
+            parentServer._app[serverType] = new ExpressPlugin(options);
             const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
             parentServer.app = app._app;
-            if (server.options.port) {
+            if (options.port) {
                 const serverCreator = new ServerCreator();
-                if (server.options.secured) {
-                    const httpsServer = Servers.get(server.instanceId, 'https') || serverCreator.createHttps(parentServer.app, server.options);
+                if (options.secured) {
+                    const httpsServer = Servers.get(server.instanceId, 'https') || serverCreator.createHttps(parentServer.app, options);
                     parentServer._app.https = httpsServer;
 
                 } else {
