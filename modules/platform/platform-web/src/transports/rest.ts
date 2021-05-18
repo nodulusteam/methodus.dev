@@ -115,10 +115,6 @@ export class Rest {
         return this.options;
     }
 
-private parseItem(){
-    
-}
-
     public async send() {
         const requestOptions: AxiosRequestConfig = {
             method: this.options.method,
@@ -141,13 +137,4 @@ private parseItem(){
             throw new MethodError(response.data, response.status);
         }
     }
-
-    // public async execute() {
-    //     const response = await fetch(this.request, this.options);
-    //     if (response.ok) {
-    //         return response.json();
-    //     } else {
-    //         throw (new MethodError(response.statusText, response.status));
-    //     }
-    // }
 }

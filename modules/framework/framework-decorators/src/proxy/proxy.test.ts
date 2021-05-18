@@ -5,21 +5,21 @@ import injection from '@methodus/framework-injection';
 
 @injection.Injectable('MethodHandler')
 class MethodHandler {
-    methodDecorator() { }
+    methodDecorator() {
+        return null;
+    }
 }
 
 injection.Injector.register(
     'MethodHandler',
-    MethodHandler,
-    // [],
-    // injection.RegistrationTypes.Service,
+    MethodHandler
 );
 
 @MethodConfig('TestClass')
 @Proxy.ProxyClass('me', 'TestClass', '')
 class TestClass {
     @Method()
-    public add() { }
+    public add() {}
 }
 
 new TestClass();
