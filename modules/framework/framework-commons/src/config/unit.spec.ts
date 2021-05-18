@@ -5,7 +5,6 @@ import { MethodusClientConfig } from './client-config';
 import { ServerConfig } from './server-config';
 
 class TestClass {
-    constructor() { }
 }
 describe('Test additional method classes', () => {
     it('MethodusConfig', async () => {

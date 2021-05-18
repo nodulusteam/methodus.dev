@@ -1,49 +1,33 @@
-// import { Mocker } from '../mocker';
-// import { TestController } from './controllers';
 import injection from '@methodus/framework-decorators/injection';
 import { deserialize } from '../method/deserialize';
 import { MethodError, MethodResult } from '@methodus/framework-decorators/commons';
-
-
 
 @injection.Injectable('ParserForundefined')
 export class ParserForMocker {
     /**
      *
      */
-    constructor() {
-
-    }
+    constructor() {}
     parse(args: any, paramsMap: any, functionArgs: any): ParserResponse {
-
-
         functionArgs = functionArgs || [];
         paramsMap.forEach((item: any) => {
             let value = null;
-            const typeForDeserialization = (item.actualType.odm) ? item.actualType : item.type;
+            const typeForDeserialization = item.actualType.odm ? item.actualType : item.type;
             value = deserialize({ value: args[item.index], type: typeForDeserialization });
             functionArgs.push(value);
         });
         return new ParserResponse(functionArgs, false, {});
     }
-
 }
-
-
 
 /**
  * @hidden
  */
 @injection.Injectable('ResponseForundefined')
 export class MockerResponse {
-    constructor() { }
-
     public handle(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
-
         return methodResult;
-
     }
-
 }
 class ParserResponse {
     args: any;
@@ -55,22 +39,3 @@ class ParserResponse {
         this.securityContext = securityContext;
     }
 }
-
-// describe('Test additional method classes', () => {
-//     it.skip('TestController mock', async () => {
-//         const testController = injection.Injector.resolve<TestController>('TestController');
-//         Mocker.mock(TestController);
-//         const mockResult = await testController.list('', '');
-//         expect(mockResult).toBeDefined();
-//         expect(mockResult.list).toBeDefined();
-//     });
-
-//     it.skip('TestController mock for server', async () => {
-//         const testController = injection.Injector.resolve<TestController>('TestController');
-//         Mocker.mockServer(TestController);
-//         const mockResult = await testController.list('', '');
-//         expect(mockResult).toBeDefined();
-//         expect(mockResult.list).toBeDefined();
-//     });
-
-// });
