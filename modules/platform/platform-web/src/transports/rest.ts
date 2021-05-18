@@ -1,10 +1,7 @@
 import { ParamsMap, Verbs } from '../commons';
 import { MethodError } from '../response/methodError';
-import axios  from 'axios';
-import {AxiosRequestConfig} from 'axios';
-
+import axios, { AxiosRequestConfig } from 'axios';
 export class Rest {
-
     public static interceptor: (options: any) => {} | undefined;
     public options: any = {};
     public request: any;
@@ -15,8 +12,6 @@ export class Rest {
         if (Rest.interceptor !== undefined) {
             Rest.interceptor(this.options);
         }
-
-        // this.request = new Request(this.options.uri);
     }
     public static intercept(interceptor: (options: any) => {}) {
         Rest.interceptor = interceptor;
@@ -36,7 +31,6 @@ export class Rest {
             method: verb,
             mode: 'cors',
             redirect: 'follow',
-
         };
 
         paramsMap.forEach((param: ParamsMap) => {
@@ -51,7 +45,6 @@ export class Rest {
                         if (param.name) {
                             queryString.push({ name: param.name, value: args[param.index] });
                         } else {
-
                             const queryObject = args[param.index];
                             Object.keys(queryObject).forEach((key: string) => {
                                 if (Array.isArray(queryObject[key])) {
@@ -99,15 +92,18 @@ export class Rest {
             }
         });
         if (queryString.length > 0) {
-            this.options.uri = this.options.uri + '?' + queryString.map((item: any) => {
-                if (typeof item.value === 'object') {
-                    return `${item.name}=${encodeURIComponent(JSON.stringify(item.value))}`;
-
-                } else {
-                    return `${item.name}=${encodeURIComponent(item.value)}`;
-
-                }
-            }).join('&');
+            this.options.uri =
+                this.options.uri +
+                '?' +
+                queryString
+                    .map((item: any) => {
+                        if (typeof item.value === 'object') {
+                            return `${item.name}=${encodeURIComponent(JSON.stringify(item.value))}`;
+                        } else {
+                            return `${item.name}=${encodeURIComponent(item.value)}`;
+                        }
+                    })
+                    .join('&');
         }
 
         if (body && Object.keys(body).length > 0) {
@@ -118,13 +114,17 @@ export class Rest {
 
         return this.options;
     }
-    public async send() {
 
+private parseItem(){
+    
+}
+
+    public async send() {
         const requestOptions: AxiosRequestConfig = {
             method: this.options.method,
             url: this.options.uri,
             timeout: 1000 * 60 * 5,
-            data: this.options.body
+            data: this.options.body,
         };
         const response = await axios(requestOptions);
         if (response.status === 200) {
@@ -138,7 +138,7 @@ export class Rest {
             // }
         } else {
             console.error(response);
-            throw (new MethodError(response.data, response.status));
+            throw new MethodError(response.data, response.status);
         }
     }
 
