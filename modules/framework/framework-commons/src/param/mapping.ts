@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 // tslint:disable-next-line:no-namespace
 export namespace Mapping {
-    function recurseODM(odm: any) {
+    export function recurseODM(odm: any) {
         const _objectSchema: any = {};
         Object.values(odm.fields).forEach((field: any) => {
             if (field.odm && field.odm.odm) {
@@ -13,7 +13,7 @@ export namespace Mapping {
         return _objectSchema;
     }
 
-    function pushParams(target: any, propertyKey: any, param: any) {
+    export function pushParams(target: any, propertyKey: any, param: any) {
         const designType = Reflect.getMetadata('design:paramtypes', target, propertyKey);
 
         const actualParam = designType[param.index];

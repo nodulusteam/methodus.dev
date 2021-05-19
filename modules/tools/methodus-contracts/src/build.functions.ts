@@ -66,7 +66,10 @@ async function singleBuild(configurationItem: Configuration, destPath, checkList
             options.source = sourcePath;
             options.target = destPath;
             const targetProject = await Common.newCommonFlow(configurationItem, '', options);
-            await targetProject.project.emit();
+            const emitResult = await targetProject.project.emit();
+            for (const diagnostic of emitResult.getDiagnostics()) {
+                console.warn(diagnostic.getMessageText());
+            }
             return builder;
         }
 

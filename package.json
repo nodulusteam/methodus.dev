@@ -45,7 +45,7 @@
         "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
         "test": "yarn workspaces foreach -ptv run test",
-        "test:all": "yarn run test && yarn run test:integrations && yarn run test:contracts && yarn run test:cli && yarn run coverage",
+        "test:all": "yarn run test && yarn run-p test:integrations test:contracts test:cli",
         "test:cli": "lerna run test:cli",
         "test:integrations": "lerna run test:integrations",
         "test:contracts": "lerna run test:contracts",
