@@ -1,0 +1,28 @@
+{
+    "compilerOptions": {
+        "typeRoots": [
+            "./node_modules/@types"
+        ],
+        "declaration": true,
+        "outDir": "lib",
+        "rootDir": "src",
+        "target": "es2017",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "skipLibCheck": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "types": [
+            "node",
+            "mongodb",
+            "mocha"
+        ]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

@@ -1,0 +1,35 @@
+import { Repo } from '../../';
+export declare class Case extends Repo<Case> {
+    _id: string;
+    _company_id: string;
+    aggregation_key: string;
+    case_type: string;
+    company_id: string;
+    compliance_items: string;
+    created_at: Date;
+    created_by: string;
+    created_by_name: string;
+    description: string;
+    edited_at: Date;
+    editor_id: string;
+    editor_name: string;
+    escalate_case: boolean;
+    escalation_details: any;
+    id: string;
+    is_att_threat_intelect: boolean;
+    new_comment: boolean;
+    recommendation: string;
+    resolution_note: string;
+    severity: string;
+    status: string;
+    status_id: string;
+    title: string;
+    viewer_id: string;
+    views: number;
+    company_name: string;
+    viewer_name: string;
+    status_name: string;
+    closed_at: Date;
+    files: any;
+    constructor(_case?: {});
+}

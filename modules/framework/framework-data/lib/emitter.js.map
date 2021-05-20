@@ -1,0 +1,1 @@
+{"version":3,"file":"emitter.js","sourceRoot":"","sources":["../src/emitter.ts"],"names":[],"mappings":";;;AAAA,mCAAsC;AAGtC,MAAa,WAAY,SAAQ,qBAAY;IACzC,OAAO,CAAC,KAAK,EAAE,UAA2B;QACtC,IAAI,CAAC,IAAI,CAAC,KAAK,EAAE,UAAU,CAAC,CAAC;IACjC,CAAC;CACJ;AAJD,kCAIC;AAEY,QAAA,gBAAgB,GAAG,IAAI,WAAW,EAAE,CAAC"}
