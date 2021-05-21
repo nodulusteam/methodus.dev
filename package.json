@@ -23,14 +23,17 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
-    "workspaces": [
-        "modules/framework/*",
-        "modules/platform/*",
-        "modules/tests/*",
-        "modules/tools/*",
-        "!modules/extras/*",
-        "!modules/tools/methodus-cli/sandbox/*"
-    ],
+    "workspaces": {
+        "packages": [
+            "modules/framework/*",
+            "modules/platform/*",
+            "modules/tests/*",
+            "modules/tools/*",
+            "!modules/extras/*",
+            "!modules/tools/methodus-cli/sandbox/*"
+        ],
+        "nohoist": []
+    },
     "resolutions": {
         "acorn": "^6.2.1",
         "@types/mousetrap": "1.6.3",
@@ -45,7 +48,7 @@
         "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
         "test": "yarn workspaces foreach -ptv run test",
-        "test:all": "yarn run test && yarn run-p test:integrations test:contracts test:cli",
+        "test:all": "yarn run test && yarn run-s test:integrations test:contracts test:cli",
         "test:cli": "lerna run test:cli",
         "test:integrations": "lerna run test:integrations",
         "test:contracts": "lerna run test:contracts",
@@ -63,7 +66,6 @@
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "devDependencies": {
-        "@methodus/data": "^2.0.0",
         "@monorepo-utils/collect-changelog": "^2.2.0",
         "@types/jest": "^26.0.15",
         "@types/mongodb": "^3.5.23",

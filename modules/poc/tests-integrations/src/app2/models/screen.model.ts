@@ -1,4 +1,4 @@
-import { Repo, Field, ModelInMemory, Validator } from '@methodus/data';
+import { Repo, Field, ModelInMemory, Validator } from '@methodus/framework-data';
 
 /**
  * @hidden

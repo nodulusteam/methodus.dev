@@ -10,7 +10,7 @@
         ]
     },
     "scripts": {
-        "build": "yarn tsc",
+        "build": "yarn rimraf dist && yarn tsc",
         "test": "jest --runInBand",
         "testold": "npm run build && nyc --reporter=lcov --reporter=html mocha --timeout 10000 lib/tests/**/*.spec.js --recursive"
     },

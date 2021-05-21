@@ -48,7 +48,7 @@
         "@methodus/server": "^7.0.16"
     },
     "devDependencies": {
-        "@methodus/data": "^2.0.35",
+        "@methodus/framework-data": "^1.0.0",
         "@methodus/platform-rest": "^7.0.14",
         "@methodus/server": "^7.0.16",
         "@types/body-parser": "^1.19.0",

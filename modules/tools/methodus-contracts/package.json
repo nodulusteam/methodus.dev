@@ -85,7 +85,7 @@
         "uuid": "^8.1.0"
     },
     "dependencies": {
-        "@methodus/data": "^3.0.2-beta",
+        "@methodus/framework-data": "^1.0.0",
         "colors": "^1.1.2",
         "rimraf": "^3.0.1",
         "shelljs": "^0.8.4",

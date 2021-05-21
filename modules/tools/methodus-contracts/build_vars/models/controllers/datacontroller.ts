@@ -2,7 +2,7 @@ import commons, { Mapping, MethodResult } from '@methodus/server/commons';
 import { Verbs } from '@methodus/platform-express';
 import { MethodConfigBase } from '@methodus/server';
 import decorators from '@methodus/server/decorators';
-import { Query as DataQuery } from '@methodus/data';
+import { Query as DataQuery } from '@methodus/framework-data';
 import { UserModel } from '../models/user.model';
 @MethodConfigBase('Data')
 export class DataController {

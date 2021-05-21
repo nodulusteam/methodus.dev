@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 import { Mapping } from './mapping';
-import { Field, ModelInMemory } from '@methodus/framewrok-data';
+import { Field, ModelInMemory } from '@methodus/framework-data';
 
 @ModelInMemory('TargetClass')
 class TargetClass {

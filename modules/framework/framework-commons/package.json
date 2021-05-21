@@ -44,7 +44,7 @@
         "reflect-metadata": "^0.1.13"
     },
     "devDependencies": {
-        "@methodus/framewrok-data": "^1.0.0",
+        "@methodus/framework-data": "^1.0.0",
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
         "cpr": "^3.0.1",
