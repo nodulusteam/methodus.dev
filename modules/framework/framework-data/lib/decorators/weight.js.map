@@ -1,1 +1,0 @@
-{"version":3,"file":"weight.js","sourceRoot":"","sources":["../../src/decorators/weight.ts"],"names":[],"mappings":";;;AAAA,yDAAwD;AAExD;;GAEG;AACH,SAAgB,MAAM,CAAC,KAAW;IAC9B,OAAO,qCAAkB,CAAC;QACtB,IAAI,EAAE,QAAQ;QACd,KAAK,EAAE,QAAQ;QACf,KAAK,EAAE,KAAK;KACf,CAAC,CAAC;AACP,CAAC;AAND,wBAMC"}

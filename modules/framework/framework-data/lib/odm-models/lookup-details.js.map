@@ -1,1 +1,0 @@
-{"version":3,"file":"lookup-details.js","sourceRoot":"","sources":["../../src/odm-models/lookup-details.ts"],"names":[],"mappings":";;;AAAA,MAAa,aAAa;IACtB,YAAmB,MAAc,EAAS,QAAgB,EAAS,MAAc,EAAS,UAAkB,EAAS,cAAsB;QAAxH,WAAM,GAAN,MAAM,CAAQ;QAAS,aAAQ,GAAR,QAAQ,CAAQ;QAAS,WAAM,GAAN,MAAM,CAAQ;QAAS,eAAU,GAAV,UAAU,CAAQ;QAAS,mBAAc,GAAd,cAAc,CAAQ;IAC3I,CAAC;CACJ;AAHD,sCAGC"}

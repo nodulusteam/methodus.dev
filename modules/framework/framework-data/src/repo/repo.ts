@@ -10,7 +10,6 @@ import { EventDataEmitter } from '../emitter';
 import { ChangesEvent } from './changes-event';
 import { RepoHelper } from './repo-helper';
 
-
 export abstract class Repo<T> /*implements IRepo*/ {
     private dataArray: any;
     private static odm: Odm;
@@ -47,21 +46,21 @@ export abstract class Repo<T> /*implements IRepo*/ {
 
         const cleanObject = Object.assign({}, data);
         delete cleanObject[DBHandler.keyMode];
-        let result = await dbConnection.collection(odm.collectionName)
-            .findOneAndUpdate({ [DBHandler.keyMode]: data[DBHandler.keyMode] }, { $set: cleanObject },
-                {
-                    returnOriginal: true,
-                    upsert: true
-                });
+        let result = await dbConnection.collection(odm.collectionName).findOneAndUpdate(
+            { [DBHandler.keyMode]: data[DBHandler.keyMode] },
+            { $set: cleanObject },
+            {
+                returnOriginal: true,
+                upsert: true,
+            }
+        );
 
         const changesData: any = ChangesEvent.findChanges(result, data);
-        const eventData = new DataChangeEvent(odm.collectionName, changesData, data)
+        const eventData = new DataChangeEvent(odm.collectionName, changesData, data);
         EventDataEmitter.changes(`update::${odm.collectionName}`, eventData);
 
         if (Array.isArray(data)) {
-            const dataArray = [data].
-                reduce((acc, v) => acc.concat(v), new Array()).
-                map((d, i) => Object.assign({ [DBHandler.keyMode]: result.result.upserted[i] }, d));
+            const dataArray = [data].reduce((acc, v) => acc.concat(v), new Array()).map((d, i) => Object.assign({ [DBHandler.keyMode]: result.result.upserted[i] }, d));
             if (dataArray.length > 0) {
                 result = RepoHelper.transformOut(odm, dataArray);
             }
@@ -83,12 +82,12 @@ export abstract class Repo<T> /*implements IRepo*/ {
         data = RepoHelper.cleanOdm(data);
 
         let result;
-        try{
+        try {
             await this.createCollection(dbConnection, odm.collectionName, (odm as any).schemaValidaor);
-        }catch(error){
-            console.log('collection exists');
+        } catch (error) {
+            // console.log('collection exists');
         }
-        
+
         if (Array.isArray(data)) {
             result = await dbConnection.collection(odm.collectionName).insertMany(data);
         } else {
@@ -97,8 +96,7 @@ export abstract class Repo<T> /*implements IRepo*/ {
         result = RepoHelper.transformOut(odm, result.ops);
         const inserted = Array.isArray(result) && result.length === 1 ? result[0] : result;
 
-        EventDataEmitter.emit('create::' + odm.collectionName,
-            new DataChangeEvent(odm.collectionName, null, inserted));
+        EventDataEmitter.emit('create::' + odm.collectionName, new DataChangeEvent(odm.collectionName, null, inserted));
 
         return inserted;
     }
@@ -109,15 +107,15 @@ export abstract class Repo<T> /*implements IRepo*/ {
      */
 
     static async save<T>(data: {}) {
-        const odm = getOdm<T>(data) || this.odm as ODM;
+        const odm = getOdm<T>(data) || (this.odm as ODM);
         const connection = await DBHandler.getConnection(odm.connectionName);
-        return await Repo._save(odm, data, connection) as T;
+        return (await Repo._save(odm, data, connection)) as T;
     }
 
     async save(): Promise<T> {
         const odm = getOdm<T>(this);
         const connection = await DBHandler.getConnection(odm.connectionName);
-        return await Repo._save(getOdm<T>(this), this, connection) as T;
+        return (await Repo._save(getOdm<T>(this), this, connection)) as T;
     }
 
     /**
@@ -126,16 +124,16 @@ export abstract class Repo<T> /*implements IRepo*/ {
      */
 
     static async insert<T>(data: T | T[]): Promise<T> {
-        const odm = getOdm<T>(data) || this.odm as ODM;
+        const odm = getOdm<T>(data) || (this.odm as ODM);
         const connection = await DBHandler.getConnection(odm.connectionName);
-        return await Repo._insert(odm, data, connection) as T;
+        return (await Repo._insert(odm, data, connection)) as T;
     }
 
     async insert(): Promise<T> {
         const odm = getOdm<T>(this);
         const data = this.dataArray || this;
         const connection = await DBHandler.getConnection(odm.connectionName);
-        return await Repo._insert(odm, data, connection) as T;
+        return (await Repo._insert(odm, data, connection)) as T;
     }
 
     /**
@@ -152,24 +150,20 @@ export abstract class Repo<T> /*implements IRepo*/ {
     }
 
     static async update<T>(filter: any, dataToUpdate: T, upsert: boolean = false, replace: boolean = false): Promise<T> {
-        const odm: ODM = getOdm<T>(dataToUpdate) || this.odm as ODM;
+        const odm: ODM = getOdm<T>(dataToUpdate) || (this.odm as ODM);
         RepoHelper.cleanOdm(dataToUpdate);
         const filterTransformed = RepoHelper.transformIn(odm, filter);
         const connection = await DBHandler.getConnection(odm.connectionName);
-        let originalObject = await connection.collection(odm.collectionName)
-            .find(filterTransformed).toArray();
+        let originalObject = await connection.collection(odm.collectionName).find(filterTransformed).toArray();
         if (originalObject.length > 0) {
             originalObject = RepoHelper.transformOut(odm, originalObject[0]);
         }
         const finalResult = replace ? dataToUpdate : RepoHelper.smartMerge(originalObject, dataToUpdate);
         const dataToUpdateTransformed = RepoHelper.transformIn(odm, finalResult);
-        const recordBefore = await connection.collection(odm.collectionName)
-            .findOneAndUpdate(filterTransformed,
-                replace ? dataToUpdateTransformed : { $set: dataToUpdateTransformed },
-                {
-                    returnOriginal: true,
-                    upsert,
-                });
+        const recordBefore = await connection.collection(odm.collectionName).findOneAndUpdate(filterTransformed, replace ? dataToUpdateTransformed : { $set: dataToUpdateTransformed }, {
+            returnOriginal: true,
+            upsert,
+        });
 
         // proccess data after update/replace: transform out, merge and emit if needed
         if (recordBefore && recordBefore.ok && recordBefore.value) {
@@ -188,18 +182,19 @@ export abstract class Repo<T> /*implements IRepo*/ {
         const updateDataTransformed = RepoHelper.transformIn(odm, updateData);
         const updatedFilter = RepoHelper.transformIn(odm, filter);
         const connection = await DBHandler.getConnection(odm.connectionName);
-        const result = await connection.collection(odm.collectionName)
-            .updateMany(updatedFilter,
-                { $set: updateDataTransformed },
-                {
-                    upsert,
-                });
+        const result = await connection.collection(odm.collectionName).updateMany(
+            updatedFilter,
+            { $set: updateDataTransformed },
+            {
+                upsert,
+            }
+        );
 
         return result;
     }
 
     static async delete<T>(filter: any, model: T = null, justOne: boolean = true) {
-        const odm: any = model ? getOdm<T>(model) : this.odm as ODM;
+        const odm: any = model ? getOdm<T>(model) : (this.odm as ODM);
         const connection = await DBHandler.getConnection(odm.connectionName);
         let result;
 
@@ -236,12 +231,17 @@ export abstract class Repo<T> /*implements IRepo*/ {
 
     static async createCollection(db: any, collName: string, validator: any) {
         const collections = await db.collections();
-        if (!collections.map(c => c.s.name).includes(collName)) {
+        if (!collections.map((c) => c.s.name).includes(collName)) {
             try {
                 await db.createCollection(collName, validator);
             } catch (error) {
-                logger.error(error);
-                await db.createCollection(collName);
+                if (error.message.includes('Exists')) {
+                    logger.warn(error);
+                } else {
+                    await db.createCollection(collName);
+                    // logger.error(error);
+                }
+                //
             }
         }
     }

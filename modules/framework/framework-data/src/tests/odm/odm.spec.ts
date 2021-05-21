@@ -7,22 +7,23 @@ import { ObjectID } from 'mongodb';
 import { TransformDirection, Transform, Field, ObjectId, Model, Repo, IsoDate, Number } from '../../';
 import { DBHandler } from '../../connect';
 import { ModelInMemory } from '../../decorators';
+import { truncateCollections, getConnection } from '../setup';
 DBHandler.config = {
     connections: {
         'default': {
-            server: 'mongodb://localhost:27017',
-            db: 'test',
-            poolSize: 10,
-            ssl: false,
-            exchanges: ['event-bus', 'cache-bus'],
-            readPreference: 'primaryPreferred'
+            server: process.env.MONGO_URL,
+            // db: 'test',
+            // poolSize: 10,
+            // ssl: false,
+            // exchanges: ['event-bus', 'cache-bus'],
+            // readPreference: 'primaryPreferred'
         }
     }
 
 }
 
 @ModelInMemory('Temp')
-export class Temp extends Repo<Temp>{
+export class Temp extends Repo<Temp> {
     @ObjectId()
     @Field('id')
     public _id?: string;
@@ -72,17 +73,20 @@ export class UserRole extends Repo<UserRole> {
         super(data, UserRole);
         this.temp = new Temp({
             name: 'ron test',
-            created_at: new Date()
+            created_at: new Date(),
         });
     }
 }
 
-
 describe('odm', () => {
-    let alert: Alert;
-    beforeEach(() => {
-        alert = new Alert();
-    })
+    // let alert: Alert;
+    // beforeEach(() => {
+    //     alert = new Alert();
+    // });
+
+    afterEach(async () => {
+        await truncateCollections();
+    });
 
     it('schema field validator full data', async () => {
         const role = new UserRole({
@@ -91,7 +95,7 @@ describe('odm', () => {
             created_by: 'Ron Okavi',
             role: 'role',
             level: '1',
-            order: 8.8
+            order: 8.8,
         });
         const result: any = await role.insert();
         expect(result.order).to.be.equal(role.order);
@@ -104,14 +108,13 @@ describe('odm', () => {
             created_by: 'Ron Okavi',
             role: 'role',
             level: '1',
-            order: 8.8
+            order: 8.8,
         });
         const result = await role.insert();
 
         // const result: UserRole = await Repo.insert<UserRole>(role);
         expect(result.order).to.be.equal(role.order);
     });
-
 
     it('save with generic type', async () => {
         const role = new UserRole({
@@ -120,7 +123,7 @@ describe('odm', () => {
             created_by: 'Ron Okavi',
             role: 'role',
             level: '1',
-            order: 8.8
+            order: 8.8,
         });
         const result = await role.save();
 
@@ -136,7 +139,7 @@ describe('odm', () => {
             created_by: 'Ron Okavi',
             role: 'role',
             level: '1',
-            order: 8.8
+            order: 8.8,
         });
         const result = await role.save();
 
@@ -179,7 +182,7 @@ describe('odm', () => {
             expect(metadata.fields['_id'].propertyKey).to.be.equal('_id');
         });
     
-        describe('transform', () => {
+        describe.skip('transform', () => {
     
             it('should transform in, replace id to _id', () => {
                 let _id = new ObjectID().toString();
@@ -198,7 +201,7 @@ describe('odm', () => {
             //it('should transform out, replace _id to id');
         });
     
-        describe('trying to get odm', () => {
+        describe.skip('trying to get odm', () => {
     
             it('should get odm for userrole', () => {
                 let odm: ODM = Reflect.getMetadata('odm', UserRole);

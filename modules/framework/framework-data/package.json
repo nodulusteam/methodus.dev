@@ -1,13 +1,18 @@
 {
-    "name": "@methodus/framewrok-data",
+    "name": "@methodus/framework-data",
     "version": "1.0.0",
     "description": "Mongodb / Cosmosdb data access Modeling for Methodus",
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "workspaces": {
+        "nohoist": [
+            "jest"
+        ]
+    },
     "scripts": {
-        "build": "rimraf lib && tsc",
-        "buildw": "rimraf lib && tsc -w",
-        "test": "npm run build && nyc --reporter=lcov --reporter=html mocha --timeout 10000 lib/tests/**/*.spec.js --recursive"
+        "build": "yarn tsc",
+        "test": "jest --runInBand",
+        "testold": "npm run build && nyc --reporter=lcov --reporter=html mocha --timeout 10000 lib/tests/**/*.spec.js --recursive"
     },
     "repository": {
         "type": "git",
@@ -25,6 +30,7 @@
         "flat": "^4.0.0",
         "generic-pool": "^3.3.0",
         "is-buffer": "^1.1.6",
+        "jest": "^26.6.3",
         "lodash": "^4.17.4",
         "logelas": "^4.0.0",
         "mongodb": "3.6.3",
@@ -34,9 +40,10 @@
         "reflect-metadata": "^0.1.10"
     },
     "devDependencies": {
+        "@shelf/jest-mongodb": "^1.2.4",
         "@types/chai": "^4.0.0",
+        "@types/jest": "^26.0.23",
         "@types/lodash": "^4.14.116",
-        "@types/mocha": "^2.2.41",
         "@types/mongodb": "*",
         "@types/node": "^10.0.0",
         "chai": "^3.5.0",
@@ -48,6 +55,7 @@
         "proxyquire-2": "1.0.7",
         "rimraf": "^3.0.0",
         "sinon": "^4.4.9",
+        "ts-jest": "^26.5.6",
         "typescript": "^4.2.4"
     }
 }

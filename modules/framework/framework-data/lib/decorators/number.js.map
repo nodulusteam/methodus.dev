@@ -1,1 +1,0 @@
-{"version":3,"file":"number.js","sourceRoot":"","sources":["../../src/decorators/number.ts"],"names":[],"mappings":";;;AAAA,yDAAwD;AACxD;;GAEG;AACH,SAAgB,MAAM,CAAC,KAAW,EAAE,SAAkB;IAClD,OAAO,qCAAkB,CAAC;QACtB,IAAI,EAAE,SAAS,IAAI,QAAQ;QAC3B,KAAK,EAAE,QAAQ;QACf,KAAK,EAAE,KAAK;KACf,CAAC,CAAC;AACP,CAAC;AAND,wBAMC"}

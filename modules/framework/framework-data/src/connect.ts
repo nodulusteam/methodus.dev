@@ -72,6 +72,7 @@ export class DBHandler {
           useUnifiedTopology: true,
         });
         logger.info(this, `initiating DB connection to: ${dbAddress}`, options);
+
         mongo.MongoClient.connect(dbAddress, options, (err, client) => {
           if (err) {
             reject(err);

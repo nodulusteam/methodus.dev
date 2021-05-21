@@ -4,6 +4,7 @@ import {
     Model, Field, ObjectId,  Number
 } from '../../';
 import { DBHandler } from '../../connect';
+import { truncateCollections } from '../setup';
 const expect = require('chai').expect;
 
 
@@ -47,7 +48,17 @@ class AlertModel extends Repo<AlertModel> {
 
 
 describe('test the odm', function () {
+    afterEach(async () => {
+        await truncateCollections();
+    });
 
+    DBHandler.config = {
+        connections: {
+            default: {
+                server: process.env.MONGO_URL
+            },
+        },
+    };
     it('transform string(number) value to number', async () => {
         const count = '8';
         const data: any =
