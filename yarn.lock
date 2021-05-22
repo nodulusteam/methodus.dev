@@ -2734,10 +2734,10 @@ __metadata:
 
 "@methodus/describe-client@file:../@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient":
   version: 8.0.3
-  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=304290&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient"
-  dependencies:
+  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=6d712f&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient"
+  peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: f5b7a13ca5ffd86aaecda34cd9d664e85861d8d80394688d7a11cd4d4f24950f302e5f6835a9ef53107c984c159e26e5aeb3260cd1a1b7bf83e44fda7fd5f216
+  checksum: 6576408293a2e57fe1bd9943133435843c250ea6b6e81bb74624963c817b3d749bc1686fd2c40217e98a678e513a90661df9534cde179ebd22cb40198b33832c
   languageName: node
   linkType: hard
 
@@ -3138,16 +3138,6 @@ __metadata:
     webpack-dev-server: ^3.1.11
   languageName: unknown
   linkType: soft
-
-"@methodus/platform-web@npm:^7.0.0":
-  version: 7.0.6
-  resolution: "@methodus/platform-web@npm:7.0.6"
-  dependencies:
-    axios: ^0.21.1
-    reflect-metadata: ^0.1.13
-  checksum: 66e4aadf5cfa3b3a473002ed1bab4edda173d8ecee98578393619f461cf34b5bbca7bb2241d8c19f1ed67234d985192c10a39dfdf4b564dca599f9d7b3b7c269
-  languageName: node
-  linkType: hard
 
 "@methodus/server@^8.0.3, @methodus/server@workspace:modules/framework/server":
   version: 0.0.0-use.local
