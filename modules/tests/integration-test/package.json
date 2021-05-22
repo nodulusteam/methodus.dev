@@ -10,12 +10,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@methodus/platform-express": "^7.0.13",
-        "@methodus/platform-rest": "^7.0.14",
-        "@methodus/server": "^7.0.15"
+        "@methodus/platform-express": "^8.0.1",
+        "@methodus/platform-rest": "^8.0.1",
+        "@methodus/server": "^8.0.1"
     },
     "devDependencies": {
-        "@methodus/framework-data": "^1.0.0",
+        "@methodus/framework-data": "^8.0.1",
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
         "@types/tunnel": "^0.0.1",
@@ -32,5 +32,6 @@
         "typedoc-plugin-markdown": "^2.3.1",
         "typescript": "^4.1.2",
         "uuid": "^8.1.0"
-    }
+    },
+    "version": "8.0.1"
 }

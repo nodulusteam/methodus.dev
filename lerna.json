@@ -1,14 +1,25 @@
 {
-    "ignoreChanges": ["@methodus/platform-fastify", "@methodus/platform-grpc", "@methodus/framework-integrations"],
+    "ignoreChanges": [
+        "@methodus/platform-fastify",
+        "@methodus/platform-grpc",
+        "@methodus/framework-integrations"
+    ],
     "command": {
         "publish": {
-            "ignoreChanges": ["modules/tests", "*.md"],
+            "ignoreChanges": [
+                "modules/tests",
+                "*.md"
+            ],
             "message": "chore(release): publish",
             "registry": "https://registry.npmjs.org"
         }
     },
-    "ignore": ["@methodus/platform-fastify", "@methodus/platform-grpc", "@methodus/framework-integrations"],
+    "ignore": [
+        "@methodus/platform-fastify",
+        "@methodus/platform-grpc",
+        "@methodus/framework-integrations"
+    ],
     "useWorkspaces": true,
     "npmClient": "yarn",
-    "version": "8.0.0"
+    "version": "8.0.1"
 }
