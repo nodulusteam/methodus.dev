@@ -10,12 +10,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@methodus/platform-express": "^8.0.3",
-        "@methodus/platform-rest": "^8.0.3",
-        "@methodus/server": "^8.0.3"
+        "@methodus/platform-express": "^8.0.4",
+        "@methodus/platform-rest": "^8.0.4",
+        "@methodus/server": "^8.0.4"
     },
     "devDependencies": {
-        "@methodus/framework-data": "^8.0.3",
+        "@methodus/framework-data": "^8.0.4",
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
         "@types/tunnel": "^0.0.1",
@@ -33,5 +33,5 @@
         "typescript": "^4.1.2",
         "uuid": "^8.1.0"
     },
-    "version": "8.0.3"
+    "version": "8.0.4"
 }

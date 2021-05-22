@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-injection",
-    "version": "8.0.3",
+    "version": "8.0.4",
     "description": "Dependency injection for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -40,7 +40,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^8.0.3",
+        "@methodus/framework-commons": "^8.0.4",
         "reflect-metadata": "^0.1.13",
         "tsyringe": "^4.3.0"
     },

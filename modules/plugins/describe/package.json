@@ -1,6 +1,6 @@
 {
     "name": "@methodus/describe",
-    "version": "8.0.3",
+    "version": "8.0.4",
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "installConfig": {
@@ -31,10 +31,10 @@
         "@angular/cli": "~9.1.0",
         "@angular/compiler-cli": "~9.1.0",
         "@angular/language-service": "~9.1.0",
-        "@methodus/contracts": "^8.0.3",
-        "@methodus/platform-express": "^8.0.3",
-        "@methodus/platform-rest": "^8.0.3",
-        "@methodus/server": "^8.0.3",
+        "@methodus/contracts": "^8.0.4",
+        "@methodus/platform-express": "^8.0.4",
+        "@methodus/platform-rest": "^8.0.4",
+        "@methodus/server": "^8.0.4",
         "@types/chai": "^4.2.0",
         "@types/jasmine": "~3.3.8",
         "@types/jasminewd2": "~2.0.3",
@@ -61,6 +61,6 @@
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626",
     "dependencies": {
-        "@methodus/platform-web": "^8.0.2"
+        "@methodus/platform-web": "^8.0.4"
     }
 }
