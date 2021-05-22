@@ -1,0 +1,97 @@
+.results-block{
+    height: 100%;
+    width: 100%;    
+    border: 1px solid gray; 
+    .editor-container {
+        height: 100%!important;
+    }  
+}
+
+.right-btn{
+    float: right;
+    
+}
+.active{
+    background-color: #ffffdd!important;
+}
+
+.output{
+    font-family: monospace;
+    background-color: #000000;
+    color: white;
+    font-size: 11px;
+    padding: 8px;
+    height: 100%;
+    label{
+        line-height: 50%;
+        display: block;
+        font-size: 10px;
+        font-weight: bold;
+        line-break: normal;
+    }
+
+}
+.btn-xs{
+    border: 0px;
+    width: 20px;
+    height: 20px;
+    padding:1px;
+    margin: 0;
+}
+.cursor{
+    cursor: pointer;
+}
+.no-break{
+    word-break:keep-all;white-space: nowrap;
+}
+.code-container{
+    border: 1px solid #898989;
+    height: 250px;
+    .editor-container {
+        height: 100%!important;
+    }  
+}
+.navigation-results{
+    width: 100%;
+}
+.test-form{
+    height: 100%;    
+    width: 100%;    
+   
+  
+}
+.form-material{
+    padding: 10px;
+}
+.full-size{
+    width: 100%;
+    
+}
+.form-footer{
+    padding: 5px;
+    width: 100%;
+    border-top: 1px solid #000000;
+}
+
+.card-block{
+    padding: 10px;
+    width: 100%;
+}
+.scroller{
+    overflow: auto;
+}
+
+ 
+
+.spinner-border {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-bottom;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 50%;
+    -webkit-animation: spinner-border .75s linear infinite;
+    animation: spinner-border .75s linear infinite;
+}
+ 

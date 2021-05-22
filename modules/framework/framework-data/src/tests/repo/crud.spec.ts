@@ -39,7 +39,7 @@ describe('repo', () => {
             expect(alertFromDb.id).to.be.equal(id.toHexString());
         });
 
-        it.skip('should update alert in db', async () => {
+        xit('should update alert in db', async () => {
             const id = new ObjectID();
 
             console.log(

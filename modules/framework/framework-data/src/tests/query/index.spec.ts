@@ -57,7 +57,7 @@ describe('check the following methods: between, and, or, paging, filter', () => 
         expect(result.results.length).to.equal(5);
     });
 
-    it.skip("filter all alerts with severity high or critical or those are missing severity field, also have company_id POC and created_by_name 'LidoR11 Achiyosef' or 'Shoshi X Brojak' ", async () => {
+    xit("filter all alerts with severity high or critical or those are missing severity field, also have company_id POC and created_by_name 'LidoR11 Achiyosef' or 'Shoshi X Brojak' ", async () => {
         const alerts = alertsData();
         await Alert.insert(alerts);
         let query = new Query(Alert)
@@ -83,7 +83,7 @@ describe('check the following methods: between, and, or, paging, filter', () => 
         expect(result.total_cases).to.be.equal(2);
     });
 
-    it.skip('filter all Case by company id and status id in close', async () => {
+    xit('filter all Case by company id and status id in close', async () => {
         await Case.insert(casesData());
         let query = new Query(Case).filter({ _company_id: 'POC' }).in('status_id', ['59d1c3bb6d74f228cc778c9b']).count('total_cases');
         let result = await query.run(ReturnType.Single);

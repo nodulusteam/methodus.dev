@@ -59,7 +59,7 @@ describe('repo tests - by inheritance', () => {
         expect(alert.id.toString()).is.equal(id.toString());
     });
 
-    it.skip('repo find test', async () => {
+    xit('repo find test', async () => {
         const id = new ObjectID();
         //given
        console.log(id,
@@ -76,7 +76,7 @@ describe('repo tests - by inheritance', () => {
         expect(alert.id.toString()).is.equal(id.toString());
     });
 
-    it.skip('repo find test static', async () => {
+    xit('repo find test static', async () => {
         const id = new ObjectID();
         //given
         await Alert.insert({
