@@ -5,18 +5,18 @@ import {
 import decorators from '@methodus/server/decorators';
 
 import { Express } from '@methodus/platform-express';
-import { Http } from '@methodus/platform-rest';
+// import { Http } from '@methodus/platform-rest';
 import * as path from 'path';
 import { TestController, TestTarget } from '../controllers/';
 import { ProxiedController } from '../controllers/proxy.controller';
 import { CopyController } from '../controllers/controller.copy';
 
 @decorators.ServerConfiguration(Express, { port: process.env.PORT || 8020 })
-@decorators.PluginConfiguration(path.join(__dirname, '../../index'), { path: '/describe' })
+@decorators.PluginConfiguration(path.join(__dirname, '../../'), { path: '/describe' })
 @decorators.RouterConfiguration(TestController, Express)
 @decorators.RouterConfiguration(CopyController, Express)
 @decorators.RouterConfiguration(ProxiedController, Express)
-@decorators.ClientConfiguration(TestTarget, Http, `https://jsonplaceholder.typicode.com`)
+// @decorators.ClientConfiguration(TestTarget, Http, `https://jsonplaceholder.typicode.com`)
 export class ExpressTestServer extends ConfiguredServer {
     constructor() {
         super(ExpressTestServer);

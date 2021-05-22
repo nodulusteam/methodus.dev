@@ -4,11 +4,6 @@
     "description": "Mongodb / Cosmosdb data access Modeling for Methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "workspaces": {
-        "nohoist": [
-            "jest"
-        ]
-    },
     "scripts": {
         "build": "yarn rimraf dist && yarn tsc",
         "test": "jest --runInBand",

@@ -3,7 +3,6 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import expressSession from 'express-session';
-import * as path from 'path';
 import { Servers, ServerCreator } from '@methodus/server';
 import { BaseServer } from '@methodus/server/commons';
 import { ExpressRouter } from './routing';
@@ -38,9 +37,9 @@ export class ExpressPlugin extends BaseServer {
         this._app.use(cookieParser());
 
         this._app.set('showStackError', true);
-        this._app.set('view engine', 'ejs');
-        const viewPath = path.join(__dirname, '..', '..', '..', 'views');
-        this._app.set('views', viewPath);
+        // this._app.set('view engine', 'ejs');
+        // const viewPath = path.join(__dirname, '..', '..', '..', 'views');
+        // this._app.set('views', viewPath);
         if (options.session) {
             this._app.use(expressSession(options.session));
         }
@@ -116,7 +115,7 @@ export class ExpressPlugin extends BaseServer {
                     const httpsServer =
                         Servers.get(server.instanceId, 'https') ||
                         serverCreator.createHttps(parentServer.app, options);
-                    Servers.set(server.instanceId, 'https', httpsServer);
+                     Servers.set(server.instanceId, 'https', httpsServer);
                     parentServer._app.https = httpsServer;
                 } else {
                     const httpServer =

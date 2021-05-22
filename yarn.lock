@@ -2734,10 +2734,10 @@ __metadata:
 
 "@methodus/describe-client@file:../@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient":
   version: 8.0.3
-  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=6d712f&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient"
+  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=46923d&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: 6576408293a2e57fe1bd9943133435843c250ea6b6e81bb74624963c817b3d749bc1686fd2c40217e98a678e513a90661df9534cde179ebd22cb40198b33832c
+  checksum: 1b5582ab938cdaa7fafc942eb87ceccfc182aad32ecfadbbe8c37f724a405a9d9b90898ba466e6d0621e7d60c1a79b2b2683dcceeb2512a5017d87f1c5d03781
   languageName: node
   linkType: hard
 
@@ -2826,13 +2826,33 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@methodus/describe@workspace:modules/plugins/describe"
   dependencies:
+    "@angular-devkit/build-angular": ~0.901.0
+    "@angular/cli": ~9.1.0
+    "@angular/compiler-cli": ~9.1.0
+    "@angular/language-service": ~9.1.0
     "@methodus/contracts": ^8.0.3
     "@methodus/platform-express": ^8.0.3
     "@methodus/platform-rest": ^8.0.3
+    "@methodus/platform-web": ^8.0.2
     "@methodus/server": ^8.0.3
+    "@types/chai": ^4.2.0
+    "@types/jasmine": ~3.3.8
+    "@types/jasminewd2": ~2.0.3
     "@types/jquery": ^3.2.16
+    "@types/mousetrap": 1.6.3
+    "@types/node": ^12.11.1
+    codelyzer: ^5.1.2
     express-basic-auth: ^1.2.0
+    jasmine-core: ~3.4.0
+    jasmine-spec-reporter: ~4.2.1
+    karma: ~4.1.0
+    karma-chrome-launcher: ~2.2.0
+    karma-coverage-istanbul-reporter: ~2.0.1
+    karma-jasmine: ~2.0.1
+    karma-jasmine-html-reporter: ^1.4.0
+    protractor: ~5.4.0
     rimraf: ^3.0.2
+    ts-node: ^9.1.1
   peerDependencies:
     "@methodus/platform-express": ^8.0.3
     "@methodus/platform-rest": ^8.0.3
@@ -5443,6 +5463,13 @@ __metadata:
     delegates: ^1.0.0
     readable-stream: ^2.0.6
   checksum: 2d6fdb0ddde9b8cb120b6851b42c75f6b6db78b540b579a00d144ad38cb9e1bdf1248e5454049fcf5b47ef61d1a6f2ea433a8e38984158afd441bc1e0db7a625
+  languageName: node
+  linkType: hard
+
+"arg@npm:^4.1.0":
+  version: 4.1.3
+  resolution: "arg@npm:4.1.3"
+  checksum: 81b3b40b1529c4fbf75b12f7c3e6fb2dcce9e78072063babc169de9b4f40777788f3d2b04380f659ef676a756e03ccfbfe78adf4477353bda906295fa69dab89
   languageName: node
   linkType: hard
 
@@ -8456,6 +8483,13 @@ __metadata:
     safe-buffer: ^5.0.1
     sha.js: ^2.4.8
   checksum: 98957676a93081678a2a915ae14898d65aac9b5651ffa55b8888484dd9d79c06d3cb3f85b137cd833ab536d87adee17394bb2b0efc591ea0e34110266d5bcd75
+  languageName: node
+  linkType: hard
+
+"create-require@npm:^1.1.0":
+  version: 1.1.1
+  resolution: "create-require@npm:1.1.1"
+  checksum: babd307893abfb26d77ae11cb9d6b6cfa6d18c9cee435cf70b5a3fb44aa8d90c9ec26ea89cbb16e0a94b8d34f5fcaee164b90ed526cdd3158955673ab9652d01
   languageName: node
   linkType: hard
 
@@ -22135,7 +22169,7 @@ resolve@~1.1.7:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:^0.5.5, source-map-support@npm:^0.5.6, source-map-support@npm:~0.5.12":
+"source-map-support@npm:^0.5.17, source-map-support@npm:^0.5.5, source-map-support@npm:^0.5.6, source-map-support@npm:~0.5.12":
   version: 0.5.19
   resolution: "source-map-support@npm:0.5.19"
   dependencies:
@@ -23655,6 +23689,27 @@ resolve@~1.1.7:
     "@ts-morph/common": ~0.6.0
     code-block-writer: ^10.1.0
   checksum: fa41e1a1064853df73c08bf867db971b1d566274ef1d5c0da5d9e319d12e857f3a1771fe342177f1939cb1c23760e06ca78ea0faf158b08bb994f01e224e2d5c
+  languageName: node
+  linkType: hard
+
+"ts-node@npm:^9.1.1":
+  version: 9.1.1
+  resolution: "ts-node@npm:9.1.1"
+  dependencies:
+    arg: ^4.1.0
+    create-require: ^1.1.0
+    diff: ^4.0.1
+    make-error: ^1.1.1
+    source-map-support: ^0.5.17
+    yn: 3.1.1
+  peerDependencies:
+    typescript: ">=2.7"
+  bin:
+    ts-node: dist/bin.js
+    ts-node-script: dist/bin-script.js
+    ts-node-transpile-only: dist/bin-transpile.js
+    ts-script: dist/bin-script-deprecated.js
+  checksum: a90db4a342872cd0e7a80babdfcb15d2f7c06e700d735003098f7cc79db575c3380580c58a19ae0d0eaab553af083651d4237060c92170e6f8ac4e64693113ea
   languageName: node
   linkType: hard
 
@@ -25624,6 +25679,13 @@ typescript@~4.0.2:
   version: 0.1.2
   resolution: "yeast@npm:0.1.2"
   checksum: ce326a71c7f25059ef7581121104c21d2837511a95cb44604f9e1825c5722f5b65324fb0b1d20bcfe3975efe45e418106100aa0d0e9fc502f90f3d07d059e177
+  languageName: node
+  linkType: hard
+
+"yn@npm:3.1.1":
+  version: 3.1.1
+  resolution: "yn@npm:3.1.1"
+  checksum: bff63b80568d80c711670935427494dde47cdf97e8b04196b140ce0af519c81c5ee857eddad0caa8b422dd65aea0157bbfaacbb1546bebba623f0f383d5d9ae5
   languageName: node
   linkType: hard
 

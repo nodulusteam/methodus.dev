@@ -2,11 +2,6 @@
     "name": "@methodus/describe-ui",
     "version": "0.0.2",
     "license": "MIT",
-    "workspaces": {
-        "nohoist": [
-            "**"
-        ]
-    },
     "installConfig": {
         "hoistingLimits": "dependencies"
     },
@@ -15,13 +10,9 @@
         "start": "ng serve --proxy-config proxy.conf.json",
         "prod": "ng build --prod",
         "build": "ng build",
-        "test": "ng test  --code-coverage",
+        "test:not": "ng test  --code-coverage --watch",
         "lint": "ng lint",
         "sync": "contracts-client ../server/build.json && yarn add ../@methodus/describe-client"
-    },
-    "resolutions": {
-        "acorn": "^6.2.1",
-        "@types/mousetrap": "1.6.3"
     },
     "browserslist": [
         "> 5%"

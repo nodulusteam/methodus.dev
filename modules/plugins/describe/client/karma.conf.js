@@ -31,13 +31,13 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_DEBUG,
     autoWatch: true,
-    browsers: ['ChromeHeadless'],
+    browsers: ['Chrome'],
     customLaunchers: {
       ChromeNoSandbox: {
         base: 'Chrome',
         flags: ['--no-sandbox']
       }
     },
-    singleRun: true
+    singleRun: false
   });
 };

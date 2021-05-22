@@ -5,6 +5,24 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch TypeScript",
+            "type": "node",
+            "console": "integratedTerminal",
+            "request": "launch",
+            "runtimeExecutable": "/usr/local/bin/node",
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "args": ["./server/tests/servers/autorun.ts", "--transpile-only"],
+            "cwd": "${workspaceFolder}",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": ["<node_internals>/**", "node_modules/**"],
+            "env": {
+              "DEBUG": "express:*",
+              "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json",
+              "PORT":"3060"
+            }
+          },
+
+        {
             "type": "node",
             "request": "launch",
             "name": "Launch Program",

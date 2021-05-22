@@ -3,13 +3,12 @@ import { Mock } from './mock';
 import injection from '@methodus/server/injection';
 import decorators from '@methodus/server/decorators';
 import { MethodResult, Mapping } from '@methodus/server/commons';
-import { Verbs } from '@methodus/platform-rest';
+import { Verbs } from '@methodus/platform-express';
 
 function getBridge(): any {
     return (global as any).METHODUS_BRIDGE;
 }
 @decorators.MethodConfig('DescribeView')
-
 export class DescribeView {
     public maybeMethodus(object: any): any {
         const proto = object.prototype || object.__proto__;
@@ -47,7 +46,7 @@ export class DescribeView {
     public async getMethodusData(): Promise<MethodResult> {
         const data = getBridge();
         const routes: any = [];
-        Object.keys(data.classes).forEach(cls => {
+        Object.keys(data.classes).forEach((cls) => {
             const methodus = this.maybeMethodus(data.classes[cls].classType);
             const pj = this.loadPJ();
             routes.push({ name: cls, methodus, info: pj });
@@ -85,15 +84,15 @@ export class DescribeView {
         const ignoreInClasse = ['DescribeView', 'ConfigView'];
 
         Object.keys(data.classes)
-            .filter(cls => ignoreInClasse.indexOf(cls) === -1)
-            .forEach(cls => {
+            .filter((cls) => ignoreInClasse.indexOf(cls) === -1)
+            .forEach((cls) => {
                 const methodus = this.maybeMethodus(data.classes[cls].classType);
                 const pj = { version: getVersionFromPackageFile(methodus.name) };
                 routes.push({ info: pj, active: true, methodus, name: cls });
             });
 
         const remoteRoutes: any = [];
-        Object.keys(data.clients).forEach(cls => {
+        Object.keys(data.clients).forEach((cls) => {
             const methodus = this.maybeMethodus(data.clients[cls].classType);
             const pj = { version: getVersionFromPackageFile(methodus.name) };
             remoteRoutes.push({ info: pj, active: true, methodus, name: cls });
@@ -107,6 +106,7 @@ export class DescribeView {
             },
             { app: { version: mainpj.version, name: mainpj.name } }
         );
+
         return new MethodResult(result);
     }
 
@@ -160,7 +160,10 @@ export class DescribeView {
 
 function getVersionFromPackageFile(name) {
     try {
-        const pj = require(path.join(process.cwd(), 'node_modules', name, 'package.json'));
+        const pj = require(path.join(process.cwd(), 'package.json'));
         return pj.version;
-    } catch (error) { }
+    } catch (error) {
+        debugger;
+        console.error(error);
+    }
 }
