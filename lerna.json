@@ -10,5 +10,5 @@
     "ignore": ["@methodus/platform-fastify", "@methodus/platform-grpc", "@methodus/framework-integrations"],
     "useWorkspaces": true,
     "npmClient": "yarn",
-    "version": "independent"
+    "version": "8.0.0"
 }

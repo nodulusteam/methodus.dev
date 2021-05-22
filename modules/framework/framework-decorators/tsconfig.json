@@ -2,13 +2,6 @@
     "exclude": ["docs"],
     "typedocOptions": {
         "exclude": "**/*+(index|.spec|.e2e).ts",
-        "module": "commonjs",
-        "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "commonjs",
-        "includeDeclarations": "false",
-        "mode": "file",
-        "baseUrl": "modules/framework/decorators",
         "name": "Methodus - framework decorators",
         "readme": "none",
         "out": "../../../docs/modules/framework/decorators"
