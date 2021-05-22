@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-data",
-    "version": "8.0.2",
+    "version": "8.0.3",
     "description": "Mongodb / Cosmosdb data access Modeling for Methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -38,8 +38,6 @@
         "reflect-metadata": "^0.1.10"
     },
     "devDependencies": {
-        "mongodb": "3.6.3",
-        "mongodb-memory-server": "^6.9.3",
         "@shelf/jest-mongodb": "^1.2.4",
         "@types/chai": "^4.0.0",
         "@types/jest": "^26.0.23",
@@ -50,6 +48,8 @@
         "cross-env": "^5.0.5",
         "faker": "^5.4.0",
         "mocha": "^2.5.3",
+        "mongodb": "3.6.3",
+        "mongodb-memory-server": "^6.9.3",
         "npm-run-all": "^4.1.5",
         "nyc": "^13.1.0",
         "proxyquire-2": "1.0.7",

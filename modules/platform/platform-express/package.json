@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-express",
-    "version": "8.0.2",
+    "version": "8.0.3",
     "description": "Express plugin for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -41,7 +41,7 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/server": "^8.0.2",
+        "@methodus/server": "^8.0.3",
         "@types/supertest": "^2.0.10",
         "body-parser": "^1.19.0",
         "compression": "^1.7.0",
@@ -55,8 +55,8 @@
         "fast-safe-stringify": "^2.0.7"
     },
     "devDependencies": {
-        "@methodus/framework-data": "^8.0.2",
-        "@methodus/platform-rest": "^8.0.2",
+        "@methodus/framework-data": "^8.0.3",
+        "@methodus/platform-rest": "^8.0.3",
         "@types/body-parser": "^1.19.0",
         "@types/cookie-parser": "^1.4.2",
         "@types/etag": "^1.8.0",
