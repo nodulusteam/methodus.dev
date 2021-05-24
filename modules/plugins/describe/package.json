@@ -4,13 +4,12 @@
     "description": "Api explorer for Methodus applications",
     "main": "build/index.js",
     "installConfig": {
-        "hoistingLimits": "workspaces"
+        "hoistingLimits": "dependencies"
     },
     "scripts": {
         "build": "yarn build:additionals",
-        "build:additionals": "yarn run build:server && yarn run client-contracts && yarn run build:client ",
-        "build:client": "cd client && yarn && yarn prod && cd ..",
-        "test:describe": "../../../node_modules/.bin/jest --runInBand --coverage",
+        "build:additionals": "yarn run build:server && yarn run client-contracts",
+        "test:describe": "yarn jest --runInBand --coverage",
         "build:server": "yarn rimraf build && tsc",
         "client-contracts": "contracts-client ./build.json",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-describe -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=8c7c7f129d82d3fe77455df4bf7607c5dacbfdc2"

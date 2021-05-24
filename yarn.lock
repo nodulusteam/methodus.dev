@@ -2648,7 +2648,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@methodus/cli@workspace:modules/tools/methodus-cli"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
     "@types/ejs": ^2.6.0
     "@types/faker": ^4.1.9
     "@types/glob": ^7.1.1
@@ -2687,14 +2687,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/contracts@^8.0.3, @methodus/contracts@workspace:modules/tools/methodus-contracts":
+"@methodus/contracts@^8.0.4, @methodus/contracts@workspace:modules/tools/methodus-contracts":
   version: 0.0.0-use.local
   resolution: "@methodus/contracts@workspace:modules/tools/methodus-contracts"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/platform-express": ^8.0.3
-    "@methodus/platform-rest": ^8.0.3
-    "@methodus/server": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/platform-express": ^8.0.4
+    "@methodus/platform-rest": ^8.0.4
+    "@methodus/server": ^8.0.4
     "@types/ejs": ^2.6.0
     "@types/faker": ^4.1.9
     "@types/glob": ^7.1.1
@@ -2732,18 +2732,18 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/describe-client@file:../@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient":
+"@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
   version: 8.0.3
-  resolution: "@methodus/describe-client@file:../@methodus/describe-client#../@methodus/describe-client::hash=46923d&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe%2Fclient"
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=46923d&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
   checksum: 1b5582ab938cdaa7fafc942eb87ceccfc182aad32ecfadbbe8c37f724a405a9d9b90898ba466e6d0621e7d60c1a79b2b2683dcceeb2512a5017d87f1c5d03781
   languageName: node
   linkType: hard
 
-"@methodus/describe-ui@workspace:modules/plugins/describe/client":
+"@methodus/describe-ui@workspace:modules/plugins/describe-ui":
   version: 0.0.0-use.local
-  resolution: "@methodus/describe-ui@workspace:modules/plugins/describe/client"
+  resolution: "@methodus/describe-ui@workspace:modules/plugins/describe-ui"
   dependencies:
     "@angular-devkit/build-angular": ~0.901.0
     "@angular/animations": ~9.1.1
@@ -2762,8 +2762,8 @@ __metadata:
     "@fortawesome/fontawesome-svg-core": ~1.2.12
     "@fortawesome/free-solid-svg-icons": ~5.6.3
     "@kids-lab.io/node-blockly": ~0.1.7
-    "@methodus/describe-client": ../@methodus/describe-client
-    "@methodus/platform-web": ^8.0.2
+    "@methodus/describe-client": ../describe/@methodus/describe-client
+    "@methodus/platform-web": ^8.0.4
     "@ng-dynamic-forms/core": ~10.1.0
     "@ng-dynamic-forms/ui-bootstrap": ~10.1.0
     "@types/chai": ^4.2.0
@@ -2830,11 +2830,11 @@ __metadata:
     "@angular/cli": ~9.1.0
     "@angular/compiler-cli": ~9.1.0
     "@angular/language-service": ~9.1.0
-    "@methodus/contracts": ^8.0.3
-    "@methodus/platform-express": ^8.0.3
-    "@methodus/platform-rest": ^8.0.3
-    "@methodus/platform-web": ^8.0.2
-    "@methodus/server": ^8.0.3
+    "@methodus/contracts": ^8.0.4
+    "@methodus/platform-express": ^8.0.4
+    "@methodus/platform-rest": ^8.0.4
+    "@methodus/platform-web": ^8.0.4
+    "@methodus/server": ^8.0.4
     "@types/chai": ^4.2.0
     "@types/jasmine": ~3.3.8
     "@types/jasminewd2": ~2.0.3
@@ -2906,11 +2906,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/framework-commons@^8.0.3, @methodus/framework-commons@workspace:modules/framework/framework-commons":
+"@methodus/framework-commons@^8.0.4, @methodus/framework-commons@workspace:modules/framework/framework-commons":
   version: 0.0.0-use.local
   resolution: "@methodus/framework-commons@workspace:modules/framework/framework-commons"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^10.0.0
     cpr: ^3.0.1
@@ -2927,7 +2927,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/framework-data@^8.0.3, @methodus/framework-data@workspace:modules/framework/framework-data":
+"@methodus/framework-data@^8.0.4, @methodus/framework-data@workspace:modules/framework/framework-data":
   version: 0.0.0-use.local
   resolution: "@methodus/framework-data@workspace:modules/framework/framework-data"
   dependencies:
@@ -2967,12 +2967,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/framework-decorators@^8.0.3, @methodus/framework-decorators@workspace:modules/framework/framework-decorators":
+"@methodus/framework-decorators@^8.0.4, @methodus/framework-decorators@workspace:modules/framework/framework-decorators":
   version: 0.0.0-use.local
   resolution: "@methodus/framework-decorators@workspace:modules/framework/framework-decorators"
   dependencies:
-    "@methodus/framework-commons": ^8.0.3
-    "@methodus/framework-injection": ^8.0.3
+    "@methodus/framework-commons": ^8.0.4
+    "@methodus/framework-injection": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^10.0.0
     cpr: ^3.0.1
@@ -2990,11 +2990,11 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/framework-injection@^8.0.3, @methodus/framework-injection@workspace:modules/framework/framework-injection":
+"@methodus/framework-injection@^8.0.4, @methodus/framework-injection@workspace:modules/framework/framework-injection":
   version: 0.0.0-use.local
   resolution: "@methodus/framework-injection@workspace:modules/framework/framework-injection"
   dependencies:
-    "@methodus/framework-commons": ^8.0.3
+    "@methodus/framework-commons": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^10.0.0
     cpr: ^3.0.1
@@ -3010,13 +3010,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/platform-express@^8.0.3, @methodus/platform-express@workspace:modules/platform/platform-express":
+"@methodus/platform-express@^8.0.4, @methodus/platform-express@workspace:modules/platform/platform-express":
   version: 0.0.0-use.local
   resolution: "@methodus/platform-express@workspace:modules/platform/platform-express"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/platform-rest": ^8.0.3
-    "@methodus/server": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/platform-rest": ^8.0.4
+    "@methodus/server": ^8.0.4
     "@types/body-parser": ^1.19.0
     "@types/cookie-parser": ^1.4.2
     "@types/etag": ^1.8.0
@@ -3052,14 +3052,14 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/platform-rest@^8.0.3, @methodus/platform-rest@workspace:modules/platform/platform-rest":
+"@methodus/platform-rest@^8.0.4, @methodus/platform-rest@workspace:modules/platform/platform-rest":
   version: 0.0.0-use.local
   resolution: "@methodus/platform-rest@workspace:modules/platform/platform-rest"
   dependencies:
-    "@methodus/framework-commons": ^8.0.3
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/framework-decorators": ^8.0.3
-    "@methodus/framework-injection": ^8.0.3
+    "@methodus/framework-commons": ^8.0.4
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/framework-decorators": ^8.0.4
+    "@methodus/framework-injection": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^10.0.0
     "@types/tunnel": ^0.0.1
@@ -3089,9 +3089,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@methodus/platform-socketio@workspace:modules/platform/platform-socketio"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/platform-rest": ^8.0.3
-    "@methodus/server": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/platform-rest": ^8.0.4
+    "@methodus/server": ^8.0.4
     "@types/body-parser": ^1.19.0
     "@types/cookie-parser": ^1.4.2
     "@types/etag": ^1.8.0
@@ -3120,7 +3120,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/platform-web@^8.0.2, @methodus/platform-web@workspace:modules/platform/platform-web":
+"@methodus/platform-web@^8.0.4, @methodus/platform-web@workspace:modules/platform/platform-web":
   version: 0.0.0-use.local
   resolution: "@methodus/platform-web@workspace:modules/platform/platform-web"
   dependencies:
@@ -3159,12 +3159,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@methodus/server@^8.0.3, @methodus/server@workspace:modules/framework/server":
+"@methodus/server@^8.0.4, @methodus/server@workspace:modules/framework/server":
   version: 0.0.0-use.local
   resolution: "@methodus/server@workspace:modules/framework/server"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/framework-decorators": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/framework-decorators": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^14.14.9
     "@types/uuid": ^3.4.4
@@ -3188,11 +3188,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@methodus/testing@workspace:modules/tests/testing"
   dependencies:
-    "@methodus/framework-commons": ^8.0.3
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/framework-decorators": ^8.0.3
-    "@methodus/framework-injection": ^8.0.3
-    "@methodus/server": ^8.0.3
+    "@methodus/framework-commons": ^8.0.4
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/framework-decorators": ^8.0.4
+    "@methodus/framework-injection": ^8.0.4
+    "@methodus/server": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^10.0.0
     "@types/tunnel": ^0.0.1
@@ -12746,10 +12746,10 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "integration-test@workspace:modules/tests/integration-test"
   dependencies:
-    "@methodus/framework-data": ^8.0.3
-    "@methodus/platform-express": ^8.0.3
-    "@methodus/platform-rest": ^8.0.3
-    "@methodus/server": ^8.0.3
+    "@methodus/framework-data": ^8.0.4
+    "@methodus/platform-express": ^8.0.4
+    "@methodus/platform-rest": ^8.0.4
+    "@methodus/server": ^8.0.4
     "@types/jest": ^26.0.15
     "@types/node": ^10.0.0
     "@types/tunnel": ^0.0.1

@@ -1,6 +1,6 @@
 {
     "name": "@methodus/describe-client",
-    "version": "8.0.3",
+    "version": "8.0.4",
     "description": "",
     "main": "lib/index.js",
     "browser": "lib/index.js",

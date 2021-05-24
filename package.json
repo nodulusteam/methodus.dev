@@ -28,8 +28,7 @@
             "modules/framework/*",
             "modules/platform/*",
             "modules/tests/*",
-            "modules/plugins/describe/",
-            "modules/plugins/describe/client/",
+            "modules/plugins/*",
             "modules/tools/*",
             "!modules/extras/*",
             "!modules/tools/methodus-cli/sandbox/*"

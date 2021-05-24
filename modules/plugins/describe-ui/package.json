@@ -13,7 +13,7 @@
         "build": "ng build",
         "test:not": "ng test  --code-coverage --watch",
         "lint": "ng lint",
-        "sync": "contracts-client ../server/build.json && yarn add ../@methodus/describe-client"
+        "sync": "contracts-client ../describe/server/build.json && yarn add ../describe/@methodus/describe-client"
     },
     "browserslist": [
         "> 5%"
@@ -32,7 +32,7 @@
         "@fortawesome/fontawesome-svg-core": "~1.2.12",
         "@fortawesome/free-solid-svg-icons": "~5.6.3",
         "@kids-lab.io/node-blockly": "~0.1.7",
-        "@methodus/describe-client": "../@methodus/describe-client",
+        "@methodus/describe-client": "../describe/@methodus/describe-client",
         "@methodus/platform-web": "^8.0.4",
         "@ng-dynamic-forms/core": "~10.1.0",
         "@ng-dynamic-forms/ui-bootstrap": "~10.1.0",
