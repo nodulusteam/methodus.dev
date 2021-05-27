@@ -1,6 +1,6 @@
 {
     "name": "@methodus/dev",
-    "version": "8.0.3",
+    "version": "8.0.4",
     "private": true,
     "description": "Methodus - agnostic framework for node",
     "keywords": [
