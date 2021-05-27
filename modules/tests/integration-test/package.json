@@ -10,7 +10,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@methodus/platform-express": "^8.0.6",
+        "@methodus/platform-express": "^8.0.7",
         "@methodus/platform-rest": "^8.0.5",
         "@methodus/server": "^8.0.5"
     },
@@ -33,5 +33,5 @@
         "typescript": "^4.1.2",
         "uuid": "^8.1.0"
     },
-    "version": "8.0.6"
+    "version": "8.0.7"
 }

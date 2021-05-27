@@ -1,7 +1,7 @@
 {
     "name": "@methodus/describe-ui",
     "private": true,
-    "version": "8.0.6",
+    "version": "8.0.7",
     "license": "MIT",
     "installConfig": {
         "hoistingLimits": "dependencies"
@@ -33,7 +33,7 @@
         "@fortawesome/free-solid-svg-icons": "~5.6.3",
         "@kids-lab.io/node-blockly": "~0.1.7",
         "@methodus/describe-client": "../describe/@methodus/describe-client",
-        "@methodus/platform-web": "^8.0.4",
+        "@methodus/platform-web": "^8.0.7",
         "@ng-dynamic-forms/core": "~10.1.0",
         "@ng-dynamic-forms/ui-bootstrap": "~10.1.0",
         "acorn": "5.7.4",

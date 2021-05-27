@@ -1,6 +1,6 @@
 {
     "name": "@methodus/contracts",
-    "version": "8.0.6",
+    "version": "8.0.7",
     "description": "",
     "main": "dist/index.js",
     "bin": {
@@ -53,7 +53,7 @@
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-contracts -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "devDependencies": {
-        "@methodus/platform-express": "^8.0.6",
+        "@methodus/platform-express": "^8.0.7",
         "@methodus/platform-rest": "^8.0.5",
         "@methodus/server": "^8.0.5",
         "@types/ejs": "^2.6.0",
