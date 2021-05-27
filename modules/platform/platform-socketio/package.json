@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "8.0.5",
+    "version": "8.0.8",
     "description": "",
     "main": "dist/index.js",
     "homepage": "https://methodus.dev",
@@ -48,9 +48,9 @@
         "@methodus/server": "^7.0.16"
     },
     "devDependencies": {
-        "@methodus/framework-data": "^8.0.5",
-        "@methodus/platform-rest": "^8.0.5",
-        "@methodus/server": "^8.0.5",
+        "@methodus/framework-data": "^8.0.8",
+        "@methodus/platform-rest": "^8.0.8",
+        "@methodus/server": "^8.0.8",
         "@types/body-parser": "^1.19.0",
         "@types/cookie-parser": "^1.4.2",
         "@types/etag": "^1.8.0",

@@ -1,6 +1,6 @@
 {
     "name": "@methodus/cli",
-    "version": "8.0.5",
+    "version": "8.0.8",
     "main": "dist/index.js",
     "homepage": "https://methodus.dev",
     "repository": {
@@ -40,7 +40,7 @@
         "methodus": "./dist/index.js"
     },
     "devDependencies": {
-        "@methodus/framework-data": "^8.0.5",
+        "@methodus/framework-data": "^8.0.8",
         "@types/ejs": "^2.6.0",
         "@types/faker": "^4.1.9",
         "@types/glob": "^7.1.1",

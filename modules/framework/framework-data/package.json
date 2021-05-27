@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-data",
-    "version": "8.0.5",
+    "version": "8.0.8",
     "description": "Mongodb / Cosmosdb data access Modeling for Methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
