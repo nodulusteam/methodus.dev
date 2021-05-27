@@ -1,0 +1,1 @@
+require('../@methodus/contract/client');
