@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-rest",
-    "version": "8.0.4",
+    "version": "8.0.5",
     "description": "REST plugin for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -41,9 +41,9 @@
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^8.0.4",
-        "@methodus/framework-decorators": "^8.0.4",
-        "@methodus/framework-injection": "^8.0.4",
+        "@methodus/framework-commons": "^8.0.5",
+        "@methodus/framework-decorators": "^8.0.5",
+        "@methodus/framework-injection": "^8.0.5",
         "atob": "^2.1.2",
         "axios": "^0.19.2",
         "axios-mock-adapter": "^1.18.1",
@@ -52,7 +52,7 @@
         "tunnel": "^0.0.6"
     },
     "devDependencies": {
-        "@methodus/framework-data": "^8.0.4",
+        "@methodus/framework-data": "^8.0.5",
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
         "@types/tunnel": "^0.0.1",
