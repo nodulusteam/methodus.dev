@@ -1,5 +1,12 @@
 {
     "exclude": ["docs","**/*.spec.ts"],
+    "typedocOptions": {
+        "exclude": "**/*+(index|.spec|.e2e).ts",
+        "name": "Methodus - framework decorators",
+        "readme": "none",
+        "out": "../../../docs/modules/framework/decorators"
+    },
+
     "compilerOptions": {
         "target": "ES5",
         "module": "commonjs",

@@ -2733,11 +2733,11 @@ __metadata:
   linkType: soft
 
 "@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
-  version: 8.0.3
-  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=46923d&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
+  version: 8.0.4
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=3ee53b&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: 1b5582ab938cdaa7fafc942eb87ceccfc182aad32ecfadbbe8c37f724a405a9d9b90898ba466e6d0621e7d60c1a79b2b2683dcceeb2512a5017d87f1c5d03781
+  checksum: c85e35ebd2fa0b895c09a09120bd51921c1108c539b4e6b856fa57a9fe2cd080705bdb83b08846fca64523f7572895923a0c90dbd4e7b4118023448a7698dfac
   languageName: node
   linkType: hard
 
@@ -2873,7 +2873,7 @@ __metadata:
     child-process-debug: 0.0.7
     commitizen: ^4.1.2
     cross-env: ^7.0.2
-    docsify: ^4.10.2
+    docsify: ^4.12.1
     istanbul-api: ^3.0.0
     istanbul-lib-coverage: ^3.0.0
     istanbul-lib-report: ^3.0.0
@@ -9484,7 +9484,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"docsify@npm:^4.10.2":
+"docsify@npm:^4.10.2, docsify@npm:^4.12.1":
   version: 4.12.1
   resolution: "docsify@npm:4.12.1"
   dependencies:

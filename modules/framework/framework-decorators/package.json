@@ -33,7 +33,7 @@
         "build": "yarn rimraf ./dist && yarn tsc",
         "test": "yarn jest --coverage && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json -o",
-        "docs": "yarn rimraf  ../../../docs/modules/framework/decorators && yarn typedoc ./src && node ../../../docs/docs.js modules/framework/decorators",
+        "docs": "yarn rimraf  ../../../docs/modules/framework/decorators && yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json && node ../../../docs/docs.js modules/framework/decorators",
         "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
