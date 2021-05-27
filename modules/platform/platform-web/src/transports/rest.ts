@@ -107,7 +107,7 @@ export class Rest {
         }
 
         if (body && Object.keys(body).length > 0) {
-            Object.assign(this.options, options, { body: JSON.stringify(body) });
+            Object.assign(this.options, options, { body });
         } else {
             Object.assign(this.options, options);
         }

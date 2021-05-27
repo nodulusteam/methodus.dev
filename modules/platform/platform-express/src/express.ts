@@ -1,6 +1,5 @@
 import 'reflect-metadata';
 import express from 'express';
-import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import expressSession from 'express-session';
 import { Servers, ServerCreator } from '@methodus/server';
@@ -28,12 +27,12 @@ export class ExpressPlugin extends BaseServer {
         }
 
         this._app.use(
-            bodyParser.urlencoded({
+            express.urlencoded({
                 extended: true,
             })
         );
 
-        this._app.use(bodyParser.json({ limit: '10mb' }));
+        this._app.use(express.json({ limit: '10mb' })); 
         this._app.use(cookieParser());
 
         this._app.set('showStackError', true);
