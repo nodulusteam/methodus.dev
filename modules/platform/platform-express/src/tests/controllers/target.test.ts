@@ -40,7 +40,6 @@ export class TestTarget {
 
     @decorators.Method(Verbs.Get, '/api/player/:player_id')
     public async read(@Mapping.Param('player_id') playerId: number): Promise<MethodResult> {
-        debugger;
         return new MethodResult({});
     }
 

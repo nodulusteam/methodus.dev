@@ -197,7 +197,6 @@ export class TestFormComponent implements OnInit {
   async testMethod() {
     const values = [];
     this.inRequest = true;
-
     this.methodInfo.params.forEach((param) => {
       if (!this.forTextBox(param.from, param.type)) {
         try {

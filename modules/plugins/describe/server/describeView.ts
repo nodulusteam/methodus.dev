@@ -163,7 +163,6 @@ function getVersionFromPackageFile(name) {
         const pj = require(path.join(process.cwd(), 'package.json'));
         return pj.version;
     } catch (error) {
-        debugger;
         console.error(error);
     }
 }

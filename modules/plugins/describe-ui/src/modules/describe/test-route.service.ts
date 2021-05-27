@@ -31,8 +31,7 @@ export class TestRouteService {
       }
     }
 
-
-    const response = await fetch(restRequest.request, restRequest.options);
+    const response = await fetch(restRequest.options.uri, restRequest.options);
     return response;
   }
 
