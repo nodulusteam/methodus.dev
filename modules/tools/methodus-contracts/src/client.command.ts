@@ -1,1 +1,1 @@
-require('../@methodus/contract/client');
+require('./client');
