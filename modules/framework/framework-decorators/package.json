@@ -26,14 +26,16 @@
     "license": "BSD-3-Clause",
     "docs": {
         "content": [
-            "readme.md"
+            "readme.md",
+            "coverage/test_dashboard.html"
         ]
     },
     "scripts": {
         "build": "yarn rimraf ./dist && yarn tsc",
         "test": "yarn jest --coverage && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json -o",
-        "docs": "yarn rimraf  ../../../docs/modules/framework/decorators && yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json && node ../../../docs/docs.js modules/framework/decorators",
+        "docs": "yarn rimraf  ../../../docs/modules/framework/decorators && yarn docs:doctype && node ../../../docs/docs.js modules/framework/decorators",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
         "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
@@ -48,7 +50,6 @@
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
         "cpr": "^3.0.1",
-        "docsify": "^4.10.2",
         "jest": "^26.6.3",
         "jest-html-reporters": "^2.1.0",
         "prettier": "^2.0.5",
@@ -56,7 +57,7 @@
         "rimraf": "^3.0.1",
         "ts-jest": "^26.4.4",
         "typedoc": "^0.20.36",
-        "typedoc-plugin-markdown": "^3.0.11",
+        "typedoc-plugin-markdown": "^3.9.0",
         "typescript": "^4.1.2"
     },
     "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"

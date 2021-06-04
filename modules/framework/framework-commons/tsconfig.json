@@ -2,15 +2,9 @@
     "exclude": ["docs", "node_modules"],
     "typedocOptions": {
         "exclude": "**/*+(index|.spec|.e2e).ts",      
-        "module": "commonjs",
         "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "commonjs",
-        "includeDeclarations": "false",
-        "mode": "file",
-        "baseUrl":"modules/framework/commons", 
         "name": "Methodus - framework commons",
-        "readme": "none",
+        "readme": "readem,md",
         "out": "../../../docs/modules/framework/common",
     },
     "compilerOptions": {

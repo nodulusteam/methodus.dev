@@ -23,21 +23,21 @@ const fs = require('fs');
         console.error('Error occurred:', error);
     }
 }
-{
-    const options = {
-        files: path.join(process.cwd(), `../../../docs/${libPath}/**/*.md`),
-        from: '[Globals](../globals.md)',
-        to: (match) => {
-            return match.replace('[Globals](../globals.md)', `[Globals](/${libPath}/globals.md)`);
-        }
-    };
-    try {
-        replace.sync(options);
-    }
-    catch (error) {
-        console.error('Error occurred:', error);
-    }
-}
+// {
+//     const options = {
+//         files: path.join(process.cwd(), `../../../docs/${libPath}/**/*.md`),
+//         from: '[Globals](../globals.md)',
+//         to: (match) => {
+//             return match.replace('[Globals](../globals.md)', `[Globals](/${libPath}/globals.md)`);
+//         }
+//     };
+//     try {
+//         replace.sync(options);
+//     }
+//     catch (error) {
+//         console.error('Error occurred:', error);
+//     }
+// }
 {
 
     // load package.json for the package

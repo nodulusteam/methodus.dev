@@ -20,40 +20,46 @@
 
 ### constructor
 
-\+ **new ParserResponse**(`args`: *any*, `isRest`: *boolean*, `securityContext`: *any*): [*ParserResponse*](/modules/platform/socketio/parser.parserresponse.md)
+• **new ParserResponse**(`args`, `isRest`, `securityContext`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `args` | *any* |
-| `isRest` | *boolean* |
-| `securityContext` | *any* |
+| `args` | `any` |
+| `isRest` | `boolean` |
+| `securityContext` | `any` |
 
-**Returns:** [*ParserResponse*](/modules/platform/socketio/parser.parserresponse.md)
+#### Defined in
 
-Defined in: [modules/platform/platform-socketio/src/parser.ts:91](#L91)
+[modules/platform/platform-socketio/src/parser.ts:91](#L91)
 
 ## Properties
 
 ### args
 
-• **args**: *any*
+• **args**: `any`
 
-Defined in: [modules/platform/platform-socketio/src/parser.ts:89](#L89)
+#### Defined in
+
+[modules/platform/platform-socketio/src/parser.ts:89](#L89)
 
 ___
 
 ### isRest
 
-• **isRest**: *boolean*
+• **isRest**: `boolean`
 
-Defined in: [modules/platform/platform-socketio/src/parser.ts:90](#L90)
+#### Defined in
+
+[modules/platform/platform-socketio/src/parser.ts:90](#L90)
 
 ___
 
 ### securityContext
 
-• **securityContext**: *any*
+• **securityContext**: `any`
 
-Defined in: [modules/platform/platform-socketio/src/parser.ts:91](#L91)
+#### Defined in
+
+[modules/platform/platform-socketio/src/parser.ts:91](#L91)

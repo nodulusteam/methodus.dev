@@ -12,6 +12,8 @@
 
 ### SocketIO
 
-• `Const` **SocketIO**: ServerDefinition
+• `Const` **SocketIO**: `ServerDefinition`
 
-Defined in: [modules/platform/platform-socketio/src/index.ts:7](#L7)
+#### Defined in
+
+[modules/platform/platform-socketio/src/index.ts:7](#L7)

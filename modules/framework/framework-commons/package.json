@@ -26,14 +26,16 @@
     "license": "BSD-3-Clause",
     "docs": {
         "content": [
-            "readme.md"
+            "readme.md",
+            "coverage/test_dashboard.html"
         ]
     },
     "scripts": {
         "build": "yarn rimraf ./dist && yarn tsc",
         "test": "yarn jest --coverage && yarn run coverage",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-commons.json -o",
-        "docs": "yarn rimraf ../../../docs/modules/framework/common/* && yarn typedoc && node ../../../docs/docs.js modules/framework/common",
+        "docs": "yarn rimraf ../../../docs/modules/framework/common/ && yarn docs:doctype && node ../../../docs/docs.js modules/framework/common",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
         "mutation": "stryker run --fileLogLevel trace --logLevel debug"
     },
     "publishConfig": {
@@ -48,14 +50,13 @@
         "@types/jest": "^26.0.15",
         "@types/node": "^10.0.0",
         "cpr": "^3.0.1",
-        "docsify": "^4.10.2",
         "jest": "^26.6.3",
         "jest-html-reporters": "^2.1.0",
         "rimraf": "^3.0.1",
         "ts-jest": "^26.5.6",
-        "typedoc": "^0.19.2",
-        "typedoc-plugin-markdown": "^3.0.11",
-        "typescript": "^4.1.2"
+        "typedoc": "^0.20.36",
+        "typedoc-plugin-markdown": "^3.9.0",
+        "typescript": "~4.0.0"
     },
     "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }
