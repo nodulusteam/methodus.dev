@@ -1,7 +1,8 @@
+const jestBase = require('../../../jest.base.config');
+
+
 module.exports = {
-    verbose: true,
-    preset: 'ts-jest',
-    testEnvironment: 'node',
+   ...jestBase,
     moduleFileExtensions: ['js', 'ts', 'json'],
     testMatch: ['<rootDir>/src/**/*.spec.ts'],
     collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/tests/**/*'],

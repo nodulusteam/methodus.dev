@@ -1,18 +1,6 @@
 {
     "exclude": ["docs", "modules/*", "integration-test/*", "dist"],
-    "typedocOptions": {
-        "exclude": "**/*+(index|.spec|.e2e).ts",
-        "module": "commonjs",
-        "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "es2015",
-        "includeDeclarations": "false",
-        "mode": "file",
-        "baseUrl": "modules/platform/server",
-        "name": "Server components",
-        "readme": "readme.md",
-        "out": "../../../docs/modules/platform/server"
-    },
+
     "compilerOptions": {
         "esModuleInterop": true,
         "importHelpers": true,

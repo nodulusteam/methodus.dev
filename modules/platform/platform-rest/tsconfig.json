@@ -1,18 +1,6 @@
 {
     "exclude": ["docs"],
-    "typedocOptions": {
-        "exclude": "**/*+(index|.spec|.e2e).ts",
-        "module": "commonjs",
-        "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "commonjs",
-        "includeDeclarations": "false",
-        "mode": "file",
-        "baseUrl": "modules/platform/rest",
-        "name": "Methodus - platform rest",
-        "readme": "readme.md",
-        "out": "../../../docs/modules/platform/rest"
-    },
+ 
     "compilerOptions": {
         "importHelpers": false,
         "target": "ES5" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,

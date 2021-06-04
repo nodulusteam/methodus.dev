@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        /* Basic Options */
+        "target": "ES5",
+        "rootDir": "src",
+        "outDir": "./build/",
+        "lib": ["ES2017", "ES2015", "dom"] /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
+        "module": "ES2015" /* Specify module code generation: 'none', commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */,
+        "jsx": "preserve" /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */,
+        /* Strict Type-Checking Options */
+        "strict": false /* Enable all strict type-checking options. */,
+        "declaration": true /* Generates corresponding '.d.ts' file. */,
+        "sourceMap": true /* Generates corresponding '.map' file. */,
+        "esModuleInterop": true,
+        "moduleResolution":"node",
+        "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
+        "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */
+    },
+    "typedocOptions": {
+        "exclude": "**/*+(index|.spec|.e2e).ts",
+        "name": "Web platform components",
+        "readme": "none",
+        "out": "../../../docs/modules/platform/web"
+    }
+}

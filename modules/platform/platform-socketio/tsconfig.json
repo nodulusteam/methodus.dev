@@ -1,11 +1,6 @@
 {
     "exclude": ["docs"],
-    "typedocOptions": {
-        "exclude": "**/*+(index|.spec|.e2e).ts",
-        "name": "SocketIO components",
-        "readme": "readme.md",
-        "out": "../../../docs/modules/platform/socketio"
-    },
+
     "compilerOptions": {
         "importHelpers": false,
         "target": "ES2015" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,

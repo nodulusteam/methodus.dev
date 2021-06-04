@@ -26,7 +26,8 @@
     "license": "BSD-3-Clause",
     "docs": {
         "content": [
-            "readme.md"
+            "readme.md",
+            "coverage/test_dashboard.html"
         ]
     },
     "scripts": {
@@ -34,7 +35,8 @@
         "build": "yarn rimraf ./dist && yarn  tsc",
         "lint": "prettier -c --write ./src",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json -o",
-        "docs": "yarn rimraf ./dist && yarn rimraf ../../../docs/modules/platform/socketio/ && yarn typedoc ./src && node ../../../docs/docs.js modules/platform/socketio"
+        "docs": "yarn rimraf ./dist && yarn rimraf ../../../docs/modules/platform/socketio/ && yarn docs:doctype && node ../../../docs/docs.js modules/platform/socketio",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none"
     },
     "publishConfig": {
         "access": "public"

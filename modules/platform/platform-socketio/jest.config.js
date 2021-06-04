@@ -1,6 +1,9 @@
+const jestBase = require('../../../jest.base.config');
+
+
+
 module.exports = {
-    preset: "ts-jest",
-    testEnvironment: "node",
+   ...jestBase,
     testMatch: [
       "<rootDir>/src/**/*.spec.ts"
     ],

@@ -15,19 +15,5 @@
         "moduleResolution":"node",
         "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
         "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */
-    },
-    "typedocOptions": {
-        "moduleResolution":"node",
-        "exclude": "**/*+(index|.spec|.e2e).ts",
-        "module": "ES2015",
-        "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "es5",
-        "includeDeclarations": "false",
-        "mode": "file",
-        "baseUrl": "modules/platform/web",
-        "name": "Web platform components",
-        "readme": "readme.md",
-        "out": "../../../docs/modules/platform/web"
     }
 }
