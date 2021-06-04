@@ -34,7 +34,7 @@
         "build": "yarn rimraf ./dist && yarn  tsc",
         "lint": "prettier -c --write ./src",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json -o",
-        "docs": "yarn rimraf ../../../docs/modules/platform/socketio/ && yarn typedoc ./src && node ../../../docs/docs.js modules/platform/socketio"
+        "docs": "yarn rimraf ./dist && yarn rimraf ../../../docs/modules/platform/socketio/ && yarn typedoc ./src && node ../../../docs/docs.js modules/platform/socketio"
     },
     "publishConfig": {
         "access": "public"
