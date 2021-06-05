@@ -2731,10 +2731,10 @@ __metadata:
 
 "@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
   version: 8.0.9
-  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=9e067e&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=9f08cf&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: e506fdeac9c5cbbd9366e101f8b0a8e47604295cb148dba36a9cb7d8201cd057413095992a3ebb0dcc826dbd355b1215966402b1bf6ee83c2c2f382c26ae4fad
+  checksum: 1a93d5d7973c1d9c8fd75ce38e6b512e556fb22ce90ee387ab7eb97b73243990da33dbbda9bddee307153656feacf202b461d8891032143239a7ce83bafacc90
   languageName: node
   linkType: hard
 
@@ -3049,7 +3049,7 @@ __metadata:
     "@types/tunnel": ^0.0.1
     "@types/uuid": ^3.4.4
     atob: ^2.1.2
-    axios: ^0.19.2
+    axios: ^0.21.1
     axios-mock-adapter: ^1.18.1
     btoa: ^1.2.1
     cpr: ^3.0.1
@@ -5884,15 +5884,6 @@ __metadata:
   dependencies:
     follow-redirects: ^1.10.0
   checksum: 864fb7b5d077d236737f10adca53bf451a93f35a15271f56fba8da07265a02d26b7d881b935a6697dc6adb0549ea3e56d2eecb403edaa3bb78f6479901c10f69
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.19.2":
-  version: 0.19.2
-  resolution: "axios@npm:0.19.2"
-  dependencies:
-    follow-redirects: 1.5.10
-  checksum: bad346deea24050f9953ce09bb8015f85a99a7b8f016806adccfab0b8981827d1fbee9c77c0ef7c70cc48392c1af6bbc65e07c3e88221d17282d2d5fd0a191f6
   languageName: node
   linkType: hard
 
@@ -9090,7 +9081,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"debug@npm:3.1.0, debug@npm:=3.1.0, debug@npm:~3.1.0":
+"debug@npm:3.1.0, debug@npm:~3.1.0":
   version: 3.1.0
   resolution: "debug@npm:3.1.0"
   dependencies:
@@ -11135,15 +11126,6 @@ __metadata:
     debug: ^2.2.0
     stream-consume: ^0.1.0
   checksum: bbb5c9117a962e85494203fcc48e6697a771f7ac4ac83cf74c3a572d4025e2bd620d798fcffc94ae9e40a9f459ec33e6bfae72cccf473b56718d528f7dc98c1c
-  languageName: node
-  linkType: hard
-
-"follow-redirects@npm:1.5.10":
-  version: 1.5.10
-  resolution: "follow-redirects@npm:1.5.10"
-  dependencies:
-    debug: =3.1.0
-  checksum: 6e58e02c31337b6b41ffc3d5f3d49920b7db428eddcf374537da00ef121fe473983e12d8557f4304287604168d3efcc288d1f009abaf4c9d61e5db0c0cee3c4a
   languageName: node
   linkType: hard
 
