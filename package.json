@@ -43,7 +43,7 @@
     "scripts": {
         "ci:build": "yarn && yarn run-s build test:all coverage docs",
         "clean": "yarn rimraf ./modules/**/**/dist && yarn rimraf ./modules/**/**/coverage",
-        "build": "yarn workspaces foreach -tv run build",
+        "build": "yarn workspaces foreach --topological-dev -v  run build",
         "build:additionals": "lerna run build:additionals",
         "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
