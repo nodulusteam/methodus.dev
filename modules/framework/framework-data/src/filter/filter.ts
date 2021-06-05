@@ -21,22 +21,18 @@ export class FilterServerUtility {
     }
 
     public handleODM(filter: any) {
-        //let cloneFilter = JSON.parse(JSON.stringify(filter));
         let cloneFilter = filter;
         let propertyKey = filter.filter_by;
         if (!propertyKey) {
             try {
                 propertyKey = Object.keys(cloneFilter)[0];
-            } catch (err) {
-
-            }
+            } catch (err) {}
         }
         if (this.model && this.model.odm) {
             if (this.model.odm[propertyKey]) {
                 if (this.model.odm[propertyKey].identifier === 'objectid') {
                     FilterServerUtility.singleOrArray(cloneFilter, ObjectID, propertyKey);
-                }
-                else if (this.model.odm[propertyKey].type === 'number') {
+                } else if (this.model.odm[propertyKey].type === 'number') {
                     FilterServerUtility.singleOrArray(cloneFilter, Odm.parseToNumber, propertyKey);
                 }
             }
@@ -51,8 +47,7 @@ export class FilterServerUtility {
 
     findInOdm(odm: any, find: any) {
         for (let field in odm) {
-            if (odm[field].displayName && odm[field].displayName === find)
-                return odm[field];
+            if (odm[field].displayName && odm[field].displayName === find) return odm[field];
         }
     }
 
@@ -83,14 +78,12 @@ export class FilterServerUtility {
                         current[key] = current[key].map((item: any) => {
                             return func(item);
                         });
-                    }
-                    else {
+                    } else {
                         current[key] = func(current[key]);
                     }
                     return current;
                 });
-            }
-            else {
+            } else {
                 returnValue = func(current);
             }
         }
@@ -99,110 +92,111 @@ export class FilterServerUtility {
     }
 
     private filterTree: any = {
-        'during': (filterDuring: any) => {
+        during: (filterDuring: any) => {
             const timeObject: ITimeObject = this.buildTimeObject(filterDuring);
             return {
                 [filterDuring.filter_by]: {
                     $gte: timeObject.startTime,
-                    $lte: timeObject.endTime
-                }
+                    $lte: timeObject.endTime,
+                },
             };
         },
-        'hasFields': (filterHasFields: any) => {
+        hasFields: (filterHasFields: any) => {
             const hasFields = {};
             hasFields[filterHasFields[FILTER_BY]] = {
-                '$exists': true
+                $exists: true,
             };
             return hasFields;
         },
-        'hasFields_not': (filterHasFieldsNot: any) => {
+        hasFields_not: (filterHasFieldsNot: any) => {
             const hasFieldsNot = {};
             hasFieldsNot[filterHasFieldsNot[FILTER_BY]] = {
-                '$exists': false
+                $exists: false,
             };
             return hasFieldsNot;
         },
-        'gt': (filterGT: any) => {
+        gt: (filterGT: any) => {
             const gt = {};
             gt[filterGT[FILTER_BY]] = {
-                '$gt': filterGT.value
+                $gt: filterGT.value,
             };
             return gt;
         },
-        'gte': (filterGTE: any) => {
+        gte: (filterGTE: any) => {
             const gte = {};
             gte[filterGTE[FILTER_BY]] = {
-                '$gte': filterGTE.value
+                $gte: filterGTE.value,
             };
             return gte;
         },
-        'lt': (filterLT: any) => {
+        lt: (filterLT: any) => {
             const lt = {};
             lt[filterLT[FILTER_BY]] = {
-                '$lt': filterLT.value
+                $lt: filterLT.value,
             };
             return lt;
         },
-        'lte': (filterLTE: any) => {
+        lte: (filterLTE: any) => {
             const lte = {};
             lte[filterLTE[FILTER_BY]] = {
-                '$lte': filterLTE.value
+                $lte: filterLTE.value,
             };
             return lte;
         },
 
-        'match': (filterMatch) => {
+        match: (filterMatch) => {
             return {
                 [filterMatch[FILTER_BY]]: {
-                    '$in': [new RegExp(escapeRegExp(filterMatch.value), 'i')]
-                }
+                    $in: [new RegExp(escapeRegExp(filterMatch.value), 'i')],
+                },
             };
         },
-        'not_match': (filterNotMatch) => {
+        not_match: (filterNotMatch) => {
             return {
                 [filterNotMatch[FILTER_BY]]: {
-                    '$nin': [new RegExp(escapeRegExp(filterNotMatch.value), 'i')]
-                }
+                    $nin: [new RegExp(escapeRegExp(filterNotMatch.value), 'i')],
+                },
             };
         },
-        'include': (filterInclude) => {
+        include: (filterInclude) => {
             return {
                 [filterInclude[FILTER_BY]]: {
-                    '$in': [new RegExp(escapeRegExp(filterInclude.value), 'i')]
-                }
+                    $in: [new RegExp(escapeRegExp(filterInclude.value), 'i')],
+                },
             };
         },
-        'not_include': (filterNotInclude) => {
+        not_include: (filterNotInclude) => {
             return {
                 [filterNotInclude[FILTER_BY]]: {
-                    '$nin': [new RegExp(escapeRegExp(filterNotInclude.value), 'i')]
-                }
+                    $nin: [new RegExp(escapeRegExp(filterNotInclude.value), 'i')],
+                },
             };
         },
-        'ne': (filterNE) => {
+        ne: (filterNE) => {
             const ne = {};
             ne[filterNE[FILTER_BY]] = {
-                '$ne': filterNE.value
+                $ne: filterNE.value,
             };
             return ne;
         },
-        'eq': (filterEQ) => {
+        eq: (filterEQ) => {
             let eq = {};
             eq[filterEQ[FILTER_BY]] = {
-                '$eq': filterEQ.value
+                $eq: filterEQ.value,
             };
             return eq;
         },
-        'default': (filterDefault) => {
+        default: (filterDefault) => {
             let defaul = {};
             defaul[filterDefault[FILTER_BY]] = {
-                '$eq': filterDefault.value
+                $eq: filterDefault.value,
             };
             return defaul;
-        }
+        },
     };
 
-    public build(queryFilters?, query?, literal?): any { //literal is a patch for when we use fields like 'alert.title' and need to treat it as a flat property
+    public build(queryFilters?, query?, literal?): any {
+        // literal is a patch for when we use fields like 'alert.title' and need to treat it as a flat property
 
         let filters = [],
             sortObject = [],
@@ -217,15 +211,11 @@ export class FilterServerUtility {
                 } else {
                     filter = queryFilters[i];
                 }
-                //
-                //Check to make sure filter object is not empty
                 if (Object.keys(filter).length !== 0 && filter !== JSON.stringify({}) && !filter.order_by /*&& (filter.filter || filter.nested)*/) {
-                    /*if (filter.filter === 'during') {
-                        filter.value = this.getDateDuring(filter.value);
-                    }*/
                     filters.push(filter);
                 } else if (Object.keys(filter).length !== 0 && filter !== JSON.stringify({}) && filter.order_by) {
-                    if (filter.filter) { // split filters into sort,filter.
+                    if (filter.filter) {
+                        // split filters into sort,filter.
                         const newFilter = Object.assign({}, filter);
                         delete newFilter.order_by;
                         delete newFilter.sort;
@@ -235,7 +225,6 @@ export class FilterServerUtility {
                 }
             }
         } else {
-            //TODO check to make sure JSON.parse will work
             if (typeof queryFilters === 'string') {
                 filter = JSON.parse(queryFilters);
             } else {
@@ -255,12 +244,10 @@ export class FilterServerUtility {
                 if (filter.value !== null && typeof filter.value !== 'undefined') {
                     let valueAsString = filter.value.toString();
                     return valueAsString !== '';
-                }
-                else {
+                } else {
                     if ((filter && typeof filter !== 'undefined') || Object.keys(filter).length > 0) {
                         return true;
-                    }
-                    else {
+                    } else {
                         return false;
                     }
                 }
@@ -275,20 +262,16 @@ export class FilterServerUtility {
     private buildTimeObject(duringer: any): ITimeObject {
         return {
             startTime: new Date(duringer.value.start),
-            endTime: new Date(duringer.value.end)
-        }
+            endTime: new Date(duringer.value.end),
+        };
     }
 
     private makeFilterFunction(filters: any, literal: any, sortObject?: any): any {
-        let
-            predicate: any,
-            filterFunction: any,
-            i: number;
+        let predicate: any, filterFunction: any, i: number;
 
         for (i = 0; i < filters.length; i++) {
             if (filters[i].filter_by) {
-
-                //convert the filter property name using the transformation
+                // convert the filter property name using the transformation
                 const convertedFilter = Odm.transform(this.model.odm, { [filters[i].filter_by]: filters[i].value }, TransformDirection.IN);
                 if (convertedFilter && Object.keys(convertedFilter).length > 0) {
                     filters[i].filter_by = Object.keys(convertedFilter)[0];
@@ -298,15 +281,13 @@ export class FilterServerUtility {
                 filters[i].literal = literal;
 
                 const tempFilter = this.model.odm.fields[filters[i].filter_by];
-                if ((tempFilter && tempFilter.type === 'Number') && !isNaN(filters[i].value)) {
+                if (tempFilter && tempFilter.type === 'Number' && !isNaN(filters[i].value)) {
                     filters[i].value = filters[i].value * 1;
                 }
 
                 predicate = this.makePredicate(filters[i])(this.handleODM(filters[i]));
-
             } else if (filters[i].nested) {
                 predicate = this.makeFilterFunction(filters[i].nested, literal);
-
             } else if (typeof filters[i] === 'object') {
                 predicate = this.handleODM(filters[i]);
             }
@@ -332,8 +313,8 @@ export class FilterServerUtility {
         }
 
         if (filters.length > 0) {
-            for (let x = 0; x < filters.length; x++) {
-                let currentPredicate = filters[x].predicate;
+            for (let filter of filters) {
+                let currentPredicate = filter.predicate;
                 if (currentPredicate.predicate) {
                     delete currentPredicate.predicate;
                 }
@@ -347,67 +328,9 @@ export class FilterServerUtility {
         return obj;
     }
 
-    // private getDateDuring(value: any) {
-    //     const start = new Date(value.start);
-    //     const end = new Date(value.end);
-    //     return { start, end };
-    // }
-
     private makePredicate(filter: any): any {
-
-        //let filterName = filter.filter + ((filter.logic) ? '_' + filter.logic : '');
         let filterTreeNode = this.filterTree[filter.filter] || this.filterTree['default'];
-        if (filter.logic)
-            filterTreeNode.logic = filter.logic;
+        if (filter.logic) filterTreeNode.logic = filter.logic;
         return filterTreeNode;
     }
-
-    // private handleTimeRange(query: any) {
-    //     let duringer = null;
-    //     //we build the filters in order to find a date filter, if it exists we will use a date index for the base predicate
-
-    //     let filtersList = [],
-    //         filter;
-    //     let queryFilters = query.filters;
-    //     if (typeof queryFilters === 'string') {
-    //         queryFilters = JSON.parse(queryFilters);
-    //     }
-
-    //     if (Array.isArray(queryFilters)) {
-    //         for (let i = 0; i < queryFilters.length; i++) {
-    //             //filter = JSON.parse(query.filters[i]);
-    //             //Check to make sure filter object is not empty
-    //             if (typeof queryFilters[i] === 'string') {
-    //                 filter = JSON.parse(queryFilters[i]);
-    //             } else {
-    //                 filter = queryFilters[i];
-    //             }
-    //             if (Object.keys(filter).length !== 0 && JSON.stringify(filter) !== JSON.stringify({})) {
-    //                 filtersList.push(filter);
-    //             }
-    //         }
-    //     } else {
-    //         //TODO check to make sure JSON.parse will work
-    //         filter = queryFilters;
-
-    //         if (Object.keys(filter).length !== 0 && filter !== JSON.stringify({})) {
-    //             filtersList.push(filter);
-    //         }
-    //     }
-    //     duringer = _.head(_.filter(filtersList, item => item.filter === 'during'));
-
-    //     if (duringer) {
-
-    //         let sortFromFilter = _.head(_.filter(filtersList, item => item.sort === 'desc'));
-
-    //         if (sortFromFilter) {
-    //             duringer.sort = sortFromFilter.sort;
-    //         } else {
-    //             duringer.sort = query.sort === 'desc' ? 'desc' : 'asc';
-    //         }
-
-    //     }
-
-    //     return duringer;
-    // }
 }

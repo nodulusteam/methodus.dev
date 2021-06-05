@@ -15,14 +15,6 @@ export class MethodError extends Error {
         }
         super(message);
        
-        // if (error.error && error.statusCode) {
-        //     this.statusText = error.error;
-        //     this.error = error.error;
-        //     this.statusCode = error.statusCode;
-        //     this.stack = error.stack;
-        // } else {
-        //     this.error = error;
-        // }
         this.error = message;
         this.statusCode = statusCode || 500;
         if (additional) {

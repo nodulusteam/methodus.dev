@@ -294,7 +294,7 @@ export class Query {
 
     exists(...args: any[]): Query {
 
-        let match = this.queryHelper.findOperator(Operator.$MATCH);// || { [Operator.$MATCH]: { '$and': [] } };
+        let match = this.queryHelper.findOperator(Operator.$MATCH);
         args.forEach((filterKey: string) => {
             let existFilter = {
                 '$and': [{
@@ -506,9 +506,3 @@ export class Query {
         return Object.assign({}, additionalOptions);
     }
 }
-
-/*export class QueryFragment{
-    constructor(filter: any) {
-        return {}
-    }
-}*/
