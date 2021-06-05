@@ -1,18 +1,5 @@
 {
     "exclude": ["docs","modules/*", "integration-test/*"],
-    "typedocOptions": {
-        "module": "commonjs",
-        "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "es2015",
-        "includeDeclarations": "true",
-        "mode": "modules",
-        "name": "A Methodus guide",
-        "readme": "none",
-        "out": "docs/documentation",
-        "exclude": "tests",
-        "excludePrivate": true
-    },
     "compilerOptions": {
         "importHelpers": false,
         "target": "ESNEXT" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', or 'ESNEXT'. */,
