@@ -54,9 +54,9 @@
         "ts-node": "^9.1.1"
     },
     "peerDependencies": {
-        "@methodus/platform-express": "^8.0.3",
-        "@methodus/platform-rest": "^8.0.3",
-        "@methodus/server": "^8.0.3"
+        "@methodus/platform-express": "^8.0.8",
+        "@methodus/platform-rest": "^8.0.8",
+        "@methodus/server": "^8.0.8"
     },
     "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626",
     "dependencies": {

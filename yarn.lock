@@ -2731,10 +2731,10 @@ __metadata:
 
 "@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
   version: 8.0.9
-  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=9f08cf&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=6991dc&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: 1a93d5d7973c1d9c8fd75ce38e6b512e556fb22ce90ee387ab7eb97b73243990da33dbbda9bddee307153656feacf202b461d8891032143239a7ce83bafacc90
+  checksum: 0f6d92f026e51c983661dcf98c47555383f9ae82917fc00d7d072c7dec7901293fbd163258a8e431dd7019fe7c87bafd236e8d3ad6499d873375af096c2f6c26
   languageName: node
   linkType: hard
 
@@ -2851,9 +2851,9 @@ __metadata:
     rimraf: ^3.0.2
     ts-node: ^9.1.1
   peerDependencies:
-    "@methodus/platform-express": ^8.0.3
-    "@methodus/platform-rest": ^8.0.3
-    "@methodus/server": ^8.0.3
+    "@methodus/platform-express": ^8.0.8
+    "@methodus/platform-rest": ^8.0.8
+    "@methodus/server": ^8.0.8
   languageName: unknown
   linkType: soft
 
@@ -3098,7 +3098,7 @@ __metadata:
     typedoc-plugin-markdown: ^3.9.0
     typescript: ^4.1.2
   peerDependencies:
-    "@methodus/server": ^7.0.16
+    "@methodus/server": ^8.0.8
   languageName: unknown
   linkType: soft
 
@@ -12972,7 +12972,6 @@ fsevents@~2.1.2:
     rimraf: ^3.0.1
     ts-jest: ^26.4.4
     typedoc: ^0.20.36
-    typedoc-plugin-markdown: ^3.9.0
     typescript: ^4.1.2
     uuid: ^8.1.0
   languageName: unknown

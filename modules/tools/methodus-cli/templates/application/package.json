@@ -10,9 +10,9 @@
     },
     "license": "MIT",
     "dependencies": {        
-        "@methodus/platform-express": "^7.0.13",
-        "@methodus/platform-rest": "^7.0.14",
-        "@methodus/server": "^7.0.15"
+        "@methodus/platform-express": "^8.0.8",
+        "@methodus/platform-rest": "^8.0.8",
+        "@methodus/server": "^8.0.8"
     },
     "devDependencies": {
         "@types/jest": "^26.0.9",
