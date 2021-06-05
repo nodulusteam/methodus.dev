@@ -6,12 +6,12 @@ module.exports = {
     collectCoverageFrom: ['<rootDir>/src/**/*.ts', '!<rootDir>/src/tests/**/*', '!<rootDir>/src/**/*test*'],
     collectCoverage: true,
     coverageReporters: ['json', 'lcov', 'text', 'clover'],
-    'coverageThreshold': {
+    coverageThreshold: {
       'global': {
-        'branches': 10,
-        'functions': 10,
-        'lines': 10,
-        'statements': 10
+        'branches': 1,
+        'functions': 1,
+        'lines': 1,
+        'statements': 1
       }
     }
 };
