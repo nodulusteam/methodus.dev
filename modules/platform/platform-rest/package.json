@@ -47,7 +47,7 @@
         "@methodus/framework-decorators": "^8.0.8",
         "@methodus/framework-injection": "^8.0.8",
         "atob": "^2.1.2",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "axios-mock-adapter": "^1.18.1",
         "btoa": "^1.2.1",
         "js-base64": "^2.5.2",

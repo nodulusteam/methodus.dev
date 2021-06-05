@@ -2731,10 +2731,10 @@ __metadata:
 
 "@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
   version: 8.0.9
-  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=0e7b90&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=9e067e&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: f4dbe31dfcc68fa507c7e61180595308c4c9ea8ecd78b66d2178564a4bcc1d5a3e4c46a485e38dfdb413610093ac469f16ad65b3616b8a6a88cfbbb7f2921472
+  checksum: e506fdeac9c5cbbd9366e101f8b0a8e47604295cb148dba36a9cb7d8201cd057413095992a3ebb0dcc826dbd355b1215966402b1bf6ee83c2c2f382c26ae4fad
   languageName: node
   linkType: hard
 
