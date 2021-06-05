@@ -19,7 +19,7 @@ export function Model<T>(collectionName: string, transform: Transform = Transfor
     return function (target): void {
         let odm: ODM<T> = Reflect.getMetadata(metadataKey, target.prototype);
 
-        if (target.odm) { //inheritance mode
+        if (target.odm) {  
             odm = Object.assign(_.cloneDeep(target.odm), odm); //clone target odm to keep base class memebers
         }
 
@@ -28,14 +28,11 @@ export function Model<T>(collectionName: string, transform: Transform = Transfor
         odm.transform = transform;
         odm.broadcastChanges = broadcastChanges;
         Reflect.defineMetadata(metadataKey, odm, target);
-        // TODO: To be removed if not needed
         target.prototype['validate'] = validate;
         target.odm = odm;
         target.prototype.odm = odm;
-        // TODO:Ron: global as any????
         (global as any).models = (global as any).models || {};
         (global as any).models[collectionName] = { odm: odm };
-        // createCollection(collectionName, odm, initialData);
     }
 
 }

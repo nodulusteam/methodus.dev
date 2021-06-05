@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/framework-data": "^1.0.0",
-    "@methodus/server": "^7.0.15"
+    "@methodus/framework-data": "^8.0.8",
+    "@methodus/server": "^8.0.8"
   }
 }

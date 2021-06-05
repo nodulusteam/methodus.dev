@@ -11,7 +11,7 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 // Methodus contract.
-// Generated at: Sat Jun 05 2021 15:04:10 GMT+0300 (Israel Daylight Time)
+// Generated at: Sat Jun 05 2021 23:02:31 GMT+0300 (Israel Daylight Time)
 /**/
 __exportStar(require("./mock"), exports);
 //# sourceMappingURL=index.js.map

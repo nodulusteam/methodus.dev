@@ -36,6 +36,7 @@ export class DataChangeEvent<T = any> {
             const result = await connection.collection(this.collectionName).updateMany({
                 [collectionProp.key]: Odm.applyObjectID(id)
             }, { $set: commentData });
+            return result;
         }
         catch (ex) {
             logger.error(this, ex);

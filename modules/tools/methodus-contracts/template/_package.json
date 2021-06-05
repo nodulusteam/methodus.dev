@@ -13,6 +13,6 @@
     "license": "ISC",
     "devDependencies": {},
     "dependencies": {
-        "@methodus/platform-rest": "^7.0.14"
+        "@methodus/platform-rest": "^8.0.8"
     }
 }

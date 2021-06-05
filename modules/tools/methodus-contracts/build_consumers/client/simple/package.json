@@ -13,7 +13,7 @@
     "@client/inherit": "file:../../../build_path/@client/inherit",
     "@client/models": "file:../../../build_path/@client/models",
     "@methodus/platform-web": "^7.0.0",
-    "@methodus/server": "^7.0.15",
+    "@methodus/server": "^8.0.8",
     "@server-contracts/simple": "file:../../../build_path/@server-contracts/simple",
     "@server/inherit": "file:../../../build_path/@server/inherit",
     "@server/models": "file:../../../build_path/@server/models",

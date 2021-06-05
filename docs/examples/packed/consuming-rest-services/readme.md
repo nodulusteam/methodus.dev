@@ -23,7 +23,7 @@ This simple controller is not doing any thing.
   "license": "ISC",
   "dependencies": {
     "@methodus/describe": "^7.1.21",
-    "@methodus/server": "^7.0.15",
+    "@methodus/server": "^8.0.8",
     "@types/node": "^12.0.0"
   },
   "peerDependencies": {

@@ -47,7 +47,7 @@
         "socket.io-client": "^2.3.0"
     },
     "peerDependencies": {
-        "@methodus/server": "^7.0.16"
+        "@methodus/server": "^8.0.8"
     },
     "devDependencies": {
         "@methodus/framework-data": "^8.0.8",
