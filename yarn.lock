@@ -2721,7 +2721,6 @@ __metadata:
     ts-jest: ^26.4.4
     ts-morph: ^8.1.2
     typedoc: ^0.20.36
-    typedoc-plugin-markdown: ^3.9.0
     typescript: ^4.1.2
     uuid: ^8.1.0
   bin:
@@ -2732,10 +2731,10 @@ __metadata:
 
 "@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
   version: 8.0.9
-  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=d459b6&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=0e7b90&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: a4db71f6995ef5405971b45b0787bf8a4989adec6d362c9336fb1d5438742ab0aa4da50c3a6bb4c3998ff203ba60df3faa5abfd5aef69082e8253555ed9278a6
+  checksum: f4dbe31dfcc68fa507c7e61180595308c4c9ea8ecd78b66d2178564a4bcc1d5a3e4c46a485e38dfdb413610093ac469f16ad65b3616b8a6a88cfbbb7f2921472
   languageName: node
   linkType: hard
 
@@ -2995,7 +2994,6 @@ __metadata:
     ts-jest: ^26.4.4
     tsyringe: ^4.3.0
     typedoc: ^0.20.36
-    typedoc-plugin-markdown: ^3.9.0
     typescript: ^4.1.2
   languageName: unknown
   linkType: soft
@@ -3160,7 +3158,6 @@ __metadata:
     ts-jest: ^26.4.4
     tslib: ^2.0.3
     typedoc: ^0.20.36
-    typedoc-plugin-markdown: ^3.9.0
     typescript: ^4.1.2
     uuid: ^8.1.0
   languageName: unknown

@@ -25,7 +25,8 @@
     "license": "BSD-3-Clause",
     "docs": {
         "content": [
-            "README.md"
+            "README.md",
+            "coverage/test_dashboard.html"
         ]
     },
     "scripts": {
@@ -33,7 +34,8 @@
         "start": "node src/index.ts",
         "build": "yarn rimraf dist && yarn tsc",
         "test:cli": "yarn jest --coverage && yarn clear-sandbox && yarn coverage",
-        "docs": "yarn rimraf ../../../docs/modules/tools/cli/* && yarn typedoc && node ../../../docs/docs.js modules/tools/cli",
+        "docs": "yarn rimraf ../../../docs/modules/tools/cli/ && yarn docs:doctype && node ../../../docs/docs.js modules/tools/cli",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
         "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-cli.json -o"
     },
     "bin": {

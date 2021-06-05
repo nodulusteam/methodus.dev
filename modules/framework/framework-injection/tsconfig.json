@@ -9,7 +9,7 @@
         "rootDir": "src",
         "lib": ["es2016", "es2015"],
         "declaration": true /* Generates corresponding '.d.ts' file. */,
-        "sourceMap": false /* Generates corresponding '.map' file. */,
+        "sourceMap": true /* Generates corresponding '.map' file. */,
         "removeComments": true /* Do not emit comments to output. */,
         // "noEmit": true,                        /* Do not emit outputs. */
         // "importHelpers": true,                 /* Import emit helpers from 'tslib'. */

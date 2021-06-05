@@ -6,7 +6,7 @@
         "outDir": "dist",
         "rootDir": "src",
         "sourceMap": true /* Generates corresponding '.map' file. */,
-        "declaration": true,
+        "declaration": false,
         "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": false /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
@@ -34,5 +34,12 @@
         "lib": ["es2017", "es2015"]
     },
     "include": ["src/**/*.ts", "tests"],
+    "exclude": ["node_modules/**", "build_consumers", "build_path", "node_modules"],
+    "typedocOptions": {
+        "exclude": "**/*+(index|.spec|.e2e).ts,tests",
+        "name": "Methodus - tools/contracts",
+        "readme": "none",
+        "out": "../../../docs/modules/tools/contracts"
+    },
     "compileOnSave": true
 }

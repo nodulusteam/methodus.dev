@@ -52,7 +52,7 @@ exports.DescribeView = void 0;
 var M = require("@methodus/platform-web");
 var includes_1 = require("../includes");
 // Methodus contract.
-// Generated at: Fri May 28 2021 00:52:39 GMT+0300 (Israel Daylight Time)
+// Generated at: Sat Jun 05 2021 03:00:42 GMT+0300 (Israel Daylight Time)
 var DescribeView = /** @class */ (function () {
     function DescribeView() {
     }
