@@ -33,12 +33,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
-
-
-           - name: Run a one-line script
-        run: yarn && yarn run ci:build    
-      - uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}    
-
           
