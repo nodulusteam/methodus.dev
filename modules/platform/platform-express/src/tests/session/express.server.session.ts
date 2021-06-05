@@ -1,12 +1,9 @@
 import decorators from '@methodus/server/decorators';
 import { ConfiguredServer } from '@methodus/server';
-import { Http } from '@methodus/platform-rest';
 import { ExpressSessionTestModule } from './express-session.module';
 import { Express, ExpressOptions } from '../../index';
-import { TestTarget } from '../controllers/target.test';
 
 const options: ExpressOptions = {
-    port: process.env.PORT || 8031,
     secured: false,
     fileUpload: true,
     cors: false,
@@ -18,7 +15,6 @@ const options: ExpressOptions = {
 
 @decorators.ServerConfiguration(Express, options)
 @decorators.ModuleConfiguration(ExpressSessionTestModule)
-@decorators.ClientConfiguration(TestTarget, Http, 'http://localhost:8031')
 export class ExpressTestServer extends ConfiguredServer {
     constructor() {
         super(ExpressTestServer);

@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-socketio",
-    "version": "7.0.14",
+    "version": "8.0.8",
     "description": "",
     "main": "dist/index.js",
     "homepage": "https://methodus.dev",
@@ -24,23 +24,54 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "readme.md",
+            "coverage/test_dashboard.html"
+        ]
+    },
     "scripts": {
-        "test": "../../../node_modules/.bin/jest && yarn coverage",
-        "build": "../../../node_modules/.bin/rimraf ./dist &&  tsc",
+        "test": "yarn jest && yarn run coverage",
+        "build": "yarn rimraf ./dist && yarn  tsc",
         "lint": "prettier -c --write ./src",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/socketio/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/socketio"
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-socketio.json -o",
+        "docs": "yarn rimraf ./dist && yarn rimraf ../../../docs/modules/platform/socketio/ && yarn docs:doctype && node ../../../docs/docs.js modules/platform/socketio",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@methodus/server": "^7.0.16",
+        "debug": "^4.2.0",
         "socket.io": "^2.3.0",
         "socket.io-client": "^2.3.0"
     },
-    "devDependencies": {
-        "@types/socket.io": "^2.1.2"
+    "peerDependencies": {
+        "@methodus/server": "^7.0.16"
     },
-    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
+    "devDependencies": {
+        "@methodus/framework-data": "^8.0.8",
+        "@methodus/platform-rest": "^8.0.8",
+        "@methodus/server": "^8.0.8",
+        "@types/body-parser": "^1.19.0",
+        "@types/cookie-parser": "^1.4.2",
+        "@types/etag": "^1.8.0",
+        "@types/express": "^4.17.2",
+        "@types/express-fileupload": "^1.1.0",
+        "@types/express-session": "^1.17.0",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^10.0.0",
+        "@types/socket.io": "^2.1.2",
+        "@types/uuid": "^3.4.4",
+        "cpr": "^3.0.1",
+        "jest": "^26.6.3",
+        "jest-html-reporters": "^2.1.0",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typedoc-plugin-markdown": "^3.9.0",
+        "typescript": "^4.1.2"
+    },
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }

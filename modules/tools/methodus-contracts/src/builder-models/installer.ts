@@ -1,9 +1,10 @@
 import * as shelljs from 'shelljs';
 import * as exec from 'shelljs.exec';
+import { Configuration } from './interfaces';
  
 export class Installer {
     shell: any;
-    constructor() {
+    constructor(public configuration: Configuration) {
         this.shell = shelljs;
     }
 
@@ -11,7 +12,7 @@ export class Installer {
         const cwd = process.cwd();
         this.shell.cd(destFolder);
 
-        let commandStr = 'npm pack';
+        let commandStr = `${this.configuration.runner} pack`;
         if (process.env.YARN) {
             commandStr = 'yarn pack';
         }

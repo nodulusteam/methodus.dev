@@ -9,8 +9,9 @@
         * [Common](modules/framework/common/README.md)
         * [Decorators](modules/framework/decorators/README.md)
         * [Injection](modules/framework/injection/README.md)
+        * [Server](modules/framework/server/README.md)
     * [Platform](modules/platform/main.md)
-        * [Server](modules/platform/server/README.md)
+     
         * [Express](modules/platform/express/README.md)
         * [Rest](modules/platform/rest/README.md)
         * [Web](modules/platform/web/README.md)
@@ -26,7 +27,7 @@
 <!-- 
 * [Client](https://www.npmjs.com/package/@methodus/client)
 * [Contracts](https://www.npmjs.com/package/@methodus/contracts)
-* [Data](https://www.npmjs.com/package/@methodus/data)
+* [Data](https://www.npmjs.com/package/@methodus/framework-data)
 * [Describe plugin](https://www.npmjs.com/package/@methodus/describe) -->
 
 <small>`Refresh to change colors.`<small>

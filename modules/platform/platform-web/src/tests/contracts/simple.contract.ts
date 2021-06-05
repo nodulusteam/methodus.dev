@@ -1,4 +1,4 @@
-import * as M from '../../lib/index';
+import * as M from '../..';
 @M.Singleton()
 @M.MethodConfig('TestContract')
 export class TestContract {
@@ -19,7 +19,7 @@ export class TestContract {
         @M.P.Param('id') id: number,
         @M.P.Param('name') name: string,
         @M.P.Query('size') size: number) {
-        return { ok: 1 };
+        return { ok: 1 , id, name, size};
     }
 
     @M.Method(M.Verbs.Post, '/api/action3/xaction/:action')

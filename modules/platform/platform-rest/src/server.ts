@@ -11,20 +11,20 @@ export interface IApp {
     set(key: string, value: any): void;
 }
 
-@injection.Singleton('MethodusServer')
 export class Server {
     public app: any;
     public config?: MethodusConfig;
     public serverKey: string;
     public _app: any = {};
     private instanceId: string;
-
+    private _handler: MethodHandler | null
     constructor() {
         this.serverKey = this.makeid();
         this.instanceId = Clients.addServer(this);
-        //bind handlers
-        const handler: MethodHandler | null = injection.Injector.get<MethodHandler>('MethodHandler');
-        console.log(handler);
+        this._handler = injection.Injector.resolve<MethodHandler>('MethodHandler');
+        if (!this._handler) {
+            throw new Error('missing MethodHandler');
+        }
     }
 
     makeid() {

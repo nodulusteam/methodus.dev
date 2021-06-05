@@ -5,7 +5,6 @@ import { MethodusClientConfig } from './client-config';
 import { ServerConfig } from './server-config';
 
 class TestClass {
-    constructor() { }
 }
 describe('Test additional method classes', () => {
     it('MethodusConfig', async () => {
@@ -44,8 +43,7 @@ describe('Test additional method classes', () => {
     });
 
     it('ServerConfig', async () => {
-        let config = new ServerConfig(TestClass, { onStart: 'go' });
-        config = new ServerConfig(TestClass);
+        const config = new ServerConfig(TestClass);
         expect(config).toBeDefined();
     });
 

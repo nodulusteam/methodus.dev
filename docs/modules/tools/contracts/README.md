@@ -78,11 +78,11 @@ The `build.json` file can contain more than one project
 <!-- tabs:start -->
 #### ** Reference **
 
-[filename](globals.md ':include')
+[filename](index.html ':include')
  
 #### ** Tests overview **
 
-[tests](tests.html ':include :type=iframe width=100% height=100%')
+[tests](test_dashboard.html ':include :type=iframe width=100% height=100%')
 
 
 

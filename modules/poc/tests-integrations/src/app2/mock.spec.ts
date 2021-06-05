@@ -33,14 +33,9 @@ export class ParserForMocker {
  */
 @injection.Injectable('ResponseForundefined')
 export class MockerResponse {
-    constructor() { }
-
     public handle(args: any, methodResult: MethodResult | MethodError | any, headers: any) {
-
         return methodResult;
-
     }
-
 }
 class ParserResponse {
     args: any;

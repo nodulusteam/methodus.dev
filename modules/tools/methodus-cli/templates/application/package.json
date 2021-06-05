@@ -11,7 +11,7 @@
     "license": "MIT",
     "dependencies": {        
         "@methodus/platform-express": "^7.0.13",
-        "@methodus/platform-rest": "^7.0.13",
+        "@methodus/platform-rest": "^7.0.14",
         "@methodus/server": "^7.0.15"
     },
     "devDependencies": {

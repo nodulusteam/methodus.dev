@@ -14,7 +14,7 @@ export async function Builder(options: BuildOptions, contract?: string) {
     Console.log(colors.blue(`>> methodus ${options.isClient ? 'client' : 'server'} contract builder. v${pkg.version}`));
 
     let publish = false;
-    const buildPath = process.argv[2] ? process.argv[2].toString() : '';
+    const buildPath = process.argv[2] ? process.argv[2].toString() : './build.json';
     const filePath = contract || path.resolve(path.join(process.cwd(), buildPath));
     Console.log(colors.green('>> loading build configuration from:'), filePath);
 
@@ -66,7 +66,10 @@ async function singleBuild(configurationItem: Configuration, destPath, checkList
             options.source = sourcePath;
             options.target = destPath;
             const targetProject = await Common.newCommonFlow(configurationItem, '', options);
-            await targetProject.project.emit();
+            const emitResult = await targetProject.project.emit();
+            for (const diagnostic of emitResult.getDiagnostics()) {
+                console.warn(diagnostic.getMessageText());
+            }
             return builder;
         }
 

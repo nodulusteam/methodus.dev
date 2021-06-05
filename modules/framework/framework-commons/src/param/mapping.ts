@@ -1,7 +1,7 @@
 import 'reflect-metadata';
 // tslint:disable-next-line:no-namespace
 export namespace Mapping {
-    function recurseODM(odm: any) {
+    export function recurseODM(odm: any) {
         const _objectSchema: any = {};
         Object.values(odm.fields).forEach((field: any) => {
             if (field.odm && field.odm.odm) {
@@ -13,8 +13,12 @@ export namespace Mapping {
         return _objectSchema;
     }
 
-    function pushParams(target: any, propertyKey: any, param: any) {
-        const designType = Reflect.getMetadata('design:paramtypes', target, propertyKey);
+    export function pushParams(target: any, propertyKey: any, param: any) {
+        const designType = Reflect.getMetadata(
+            'design:paramtypes',
+            target,
+            propertyKey
+        );
 
         const actualParam = designType[param.index];
         let objectSchema: any = null;
@@ -27,8 +31,12 @@ export namespace Mapping {
         } else if (actualParam && actualParam.type) {
             typeName = actualParam.type;
         } else {
-            typeName = (designType && designType[param.index] !== undefined && designType[param.index].name) ?
-                designType[param.index].name.toLowerCase() : 'any';
+            typeName =
+                designType &&
+                designType[param.index] !== undefined &&
+                designType[param.index].name
+                    ? designType[param.index].name.toLowerCase()
+                    : 'any';
             if (param.type) {
                 typeName = param.type;
             }
@@ -39,19 +47,51 @@ export namespace Mapping {
 
         target.methodus = target.methodus || {};
         const name = target.name || target.constructor.name;
-        target.methodus[name] = target.methodus[name] || { _auth: {}, _events: {}, _descriptors: {} };
+        target.methodus[name] = target.methodus[name] || {
+            _auth: {},
+            _events: {},
+            _descriptors: {},
+        };
         const mTarget = target.methodus[name];
 
-        mTarget._descriptors[propertyKey] = mTarget._descriptors[propertyKey] || { params: [] };
-        mTarget._descriptors[propertyKey].params.push(Object.assign({}, param, { type: typeName, actualType: actualParam, schema: objectSchema }));
+        mTarget._descriptors[propertyKey] = mTarget._descriptors[
+            propertyKey
+        ] || { params: [] };
+        mTarget._descriptors[propertyKey].params.push(
+            Object.assign({}, param, {
+                type: typeName,
+                actualType: actualParam,
+                schema: objectSchema,
+            })
+        );
     }
 
-    function build(from: string, name?: string, type?: string, defaultValue?: any) {
-        return (target: any, propertyKey: string | symbol, parameterIndex: number) => {
+    function build(
+        from: string,
+        name?: string,
+        type?: string,
+        defaultValue?: any
+    ) {
+        return (
+            target: any,
+            propertyKey: string | symbol,
+            parameterIndex: number
+        ) => {
             if (name) {
-                pushParams(target, propertyKey, { type, from, index: parameterIndex, defaultValue, name });
+                pushParams(target, propertyKey, {
+                    type,
+                    from,
+                    index: parameterIndex,
+                    defaultValue,
+                    name,
+                });
             } else {
-                pushParams(target, propertyKey, { type, from, index: parameterIndex, defaultValue });
+                pushParams(target, propertyKey, {
+                    type,
+                    from,
+                    index: parameterIndex,
+                    defaultValue,
+                });
             }
         };
     }
@@ -92,7 +132,6 @@ export namespace Mapping {
         return build('application', name);
     }
 
-
     export function Response(name?: string) {
         return build('response', name);
     }
@@ -100,6 +139,4 @@ export namespace Mapping {
     export function Request(name?: string) {
         return build('request', name);
     }
-
 }
-

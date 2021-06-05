@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-decorators",
-    "version": "7.0.14",
+    "version": "8.0.8",
     "description": "Server Decorators for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -24,19 +24,41 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "readme.md",
+            "coverage/test_dashboard.html"
+        ]
+    },
     "scripts": {
-        "build": "../../../node_modules/.bin/rimraf ./dist && yarn format & tsc",
-        "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json",
-        "docs": "../../../node_modules/.bin/rimraf  ../../../docs/modules/framework/decorators && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/decorators",
-        "format": "../../../node_modules/.bin/prettier -c --write ./src"
+        "build": "yarn rimraf ./dist && yarn tsc",
+        "test": "yarn jest --coverage && yarn run coverage",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-decorators.json -o",
+        "docs": "yarn rimraf  ../../../docs/modules/framework/decorators && yarn docs:doctype && node ../../../docs/docs.js modules/framework/decorators",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
+        "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
         "access": "public"
     },
-    "devDependencies": {
-        "@methodus/framework-commons": "^7.0.10",
-        "@methodus/framework-injection": "^7.0.11"
+    "dependencies": {
+        "reflect-metadata": "^0.1.13"
     },
-    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
+    "devDependencies": {
+        "@methodus/framework-commons": "^8.0.8",
+        "@methodus/framework-injection": "^8.0.8",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^10.0.0",
+        "cpr": "^3.0.1",
+        "jest": "^26.6.3",
+        "jest-html-reporters": "^2.1.0",
+        "prettier": "^2.0.5",
+        "replace-in-file": "^6.1.0",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typedoc-plugin-markdown": "^3.9.0",
+        "typescript": "^4.1.2"
+    },
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }

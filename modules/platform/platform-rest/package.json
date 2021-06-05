@@ -1,6 +1,6 @@
 {
     "name": "@methodus/platform-rest",
-    "version": "7.0.14",
+    "version": "8.0.8",
     "description": "REST plugin for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -25,20 +25,27 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "readme.md",
+            "coverage/test_dashboard.html"
+        ]
+    },
     "scripts": {
-        "test": "rimraf ./dist && tsc && jest && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-rest.json",
-        "build": "rimraf ./dist && yarn format && tsc && yarn link",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/rest/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/rest",
-        "format": "prettier -c --write ./src"
+        "test": "yarn rimraf ./dist && yarn tsc && yarn jest && yarn run coverage",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-rest.json -o",
+        "build": "rimraf ./dist && yarn tsc",
+        "docs": "yarn rimraf ../../../docs/modules/platform/rest/ && yarn docs:doctype && node ../../../docs/docs.js modules/platform/rest",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
+        "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.10",
-        "@methodus/framework-decorators": "^7.0.14",
-        "@methodus/framework-injection": "^7.0.11",
+        "@methodus/framework-commons": "^8.0.8",
+        "@methodus/framework-decorators": "^8.0.8",
+        "@methodus/framework-injection": "^8.0.8",
         "atob": "^2.1.2",
         "axios": "^0.19.2",
         "axios-mock-adapter": "^1.18.1",
@@ -47,8 +54,22 @@
         "tunnel": "^0.0.6"
     },
     "devDependencies": {
+        "@methodus/framework-data": "^8.0.8",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^10.0.0",
         "@types/tunnel": "^0.0.1",
-        "jest-mock-axios": "^3.2.0"
+        "@types/uuid": "^3.4.4",
+        "cpr": "^3.0.1",
+        "jest": "^26.6.3",
+        "jest-mock-axios": "^3.2.0",
+        "prettier": "^2.0.5",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typedoc-plugin-markdown": "^3.9.0",
+        "typescript": "^4.1.2",
+        "uuid": "^8.1.0"
     },
-    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }

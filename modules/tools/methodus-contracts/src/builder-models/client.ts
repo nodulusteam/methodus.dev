@@ -9,7 +9,7 @@ export class Client {
     Installer: Installer;
     constructor(configuration: Configuration, source: string, target: string) {
 
-        this.Installer = new Installer();
+        this.Installer = new Installer(configuration);
         const originalPackage = require(path.join(source, PKGJSON));
         UseTemplate('_package.client.json', PKGJSON, target,
             { name: configuration.contractNameClient, version: originalPackage.version });
@@ -25,9 +25,6 @@ export class Client {
         
 
     }
-    // public link(dest: string) {
-    //     this.Installer.link(dest);
-    // }
 
     public publish(dest: string) {
         this.Installer.publish(dest);

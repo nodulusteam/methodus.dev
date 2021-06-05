@@ -1,7 +1,6 @@
 {
     "exclude": ["docs"],
     "typedocOptions": {
-        "theme": "markdown",
         "excludeExternals": "true",
         "excludeNotExported": "true",
         "target": "ES6",

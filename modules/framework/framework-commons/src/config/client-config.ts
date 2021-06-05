@@ -1,4 +1,4 @@
-import { TransportType } from "../interfaces";
+import { TransportType } from '../interfaces';
 
 /**
  * @hidden

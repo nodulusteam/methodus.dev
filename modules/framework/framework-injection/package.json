@@ -1,6 +1,6 @@
 {
     "name": "@methodus/framework-injection",
-    "version": "7.0.11",
+    "version": "8.0.8",
     "description": "Dependency injection for methodus",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -24,18 +24,36 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "readme.md"
+        ]
+    },
     "scripts": {
-        "test": "jest --silent && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-injection.json",
-        "build": "rimraf ./dist && tsc",
-        "docs": "../../../node_modules/.bin/rimraf  ../../../docs/modules/framework/injection && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/framework/injection",
-        "format": "prettier -c --write ./src"
+        "test": "yarn jest --coverage && yarn run coverage",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-injection.json -o",
+        "build": "yarn rimraf ./dist && yarn tsc",
+        "docs": "yarn rimraf  ../../../docs/modules/framework/injection && yarn docs:doctype && node ../../../docs/docs.js modules/framework/injection",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
+        "format": "yarn prettier -c --write ./src"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-commons": "^7.0.10"
+        "@methodus/framework-commons": "^8.0.8",
+        "reflect-metadata": "^0.1.13",
+        "tsyringe": "^4.3.0"
     },
-    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
+    "devDependencies": {
+        "@types/jest": "^26.0.15",
+        "@types/node": "^10.0.0",
+        "cpr": "^3.0.1",
+        "jest": "^26.6.3",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typescript": "^4.1.2"
+    },
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }

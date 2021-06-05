@@ -3,17 +3,14 @@ import { Servers } from './servers';
 import commons, { MethodusConfig, ServerConfig, PluginEntry } from '@methodus/framework-decorators/commons';
 import { MethodHandler } from './method/handlers/method.handler';
 import { MethodPipeHandler } from './method/handlers/pipe.handler';
-
 import { PluginLoader } from './plugins';
 import injection from '@methodus/framework-decorators/injection';
 import { v1 as uuidv1 } from 'uuid';
-
 
 export interface IApp {
     set(key: string, value: any): void;
 }
 
-@injection.Singleton('MethodusServer')
 export class Server {
     public app: any;
     public config?: MethodusConfig;
@@ -27,21 +24,24 @@ export class Server {
     private _plugins: PluginEntry[] = [];
     public instanceId: string;
 
-    public methodHandler?: MethodHandler | null;
-    public methodPipeHandler?: MethodPipeHandler | null;
+    public methodHandler = new MethodHandler();
+    public methodPipeHandler = new MethodPipeHandler();
 
     constructor(port?: number | string, app?: any, httpServer?: any) {
         if (port) {
             this.port = +port || 0;
         }
-
         this.app = app;
         this.httpServer = httpServer;
         this.serverKey = this.makeid();
         this.instanceId = Servers.addServer(this);
         //bind handlers
-        this.methodHandler = injection.Injector.get<MethodHandler>('MethodHandler');
-        this.methodPipeHandler = injection.Injector.get<MethodPipeHandler>('MethodPipeHandler');
+        try {
+            this.methodHandler = injection.Injector.resolve<MethodHandler>('MethodHandler');
+            this.methodPipeHandler = injection.Injector.resolve<MethodPipeHandler>('MethodPipeHandler');
+        } catch (error) {
+            throw new Error('missing MethodHandler are you using a platform package?');
+        }
     }
 
     makeid() {
@@ -58,11 +58,8 @@ export class Server {
         return this;
     }
 
-
-
     public useClient(_class: any) {
         if (_class.classType) {
-
             const methodusClass = _class.classType;
             let configName = methodusClass.name;
             if (!configName && methodusClass.constructor) {
@@ -75,9 +72,7 @@ export class Server {
             if (metaObject) {
                 metaObject.methodType = _class.transportType.name;
                 injection.ClassContainer.set(configName, metaObject);
-                commons.logger
-                    .info(`using client class ${_class.classType.name} in ${_class.transportType.name} mode`);
-
+                commons.logger.info(`using client class ${_class.classType.name} in ${_class.transportType.name} mode`);
             } else {
                 commons.logger.error('could not load metadata for ' + configName);
             }
@@ -107,7 +102,6 @@ export class Server {
 
         if (this.config && this.config.servers) {
             this.config.servers.forEach((server: ServerConfig) => {
-
                 if (server.options && server.options.port) {
                     this.port = server.options.port;
                 }
@@ -132,15 +126,14 @@ export class Server {
             });
 
             this.httpServer = Servers.get(this.instanceId, 'http');
-            if (this.httpServer) {
+            if (this.httpServer && this.port) {
                 this.httpServer.listen(this.port, this.ipAddress);
             }
 
             this.httpsServer = Servers.get(this.instanceId, 'https');
-            if (this.httpsServer) {
+            if (this.httpsServer && this.port) {
                 this.httpsServer.listen(this.port, this.ipAddress);
             }
-
         }
         if (this.config) {
             const classes = this.config.classes.entries();
@@ -163,7 +156,6 @@ export class Server {
         Object.keys(Servers.instances).forEach((serverId: any) => {
             const server = Servers.instances[serverId];
             if (_class.classType) {
-
                 const methodusClass = _class.classType;
                 let configName = methodusClass.name;
                 if (!configName && methodusClass.constructor) {
@@ -179,8 +171,7 @@ export class Server {
                         metaObject.instanceId = serverInstance.instanceId;
                         injection.ClassContainer.set(configName, metaObject);
 
-                        commons.logger.info(
-                            `using server class ${configName} in ${_class.methodType} mode`);
+                        commons.logger.info(`using server class ${configName} in ${_class.methodType} mode`);
 
                         const activeServers = Servers.get(serverInstance.instanceId, serverTypeName);
                         if (activeServers) {
@@ -206,5 +197,4 @@ export class Server {
         });
         Servers.reset();
     }
-
 }

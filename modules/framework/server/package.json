@@ -1,6 +1,6 @@
 {
     "name": "@methodus/server",
-    "version": "7.0.16",
+    "version": "8.0.8",
     "description": "Server components for @methodus workflow",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -25,24 +25,44 @@
     ],
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "docs": {
+        "content": [
+            "README.md",
+            "coverage/test_dashboard.html"
+        ]
+    },
     "scripts": {
-        "build": "../../../node_modules/.bin/rimraf ./dist && tsc",
-        "watch": "../../../node_modules/.bin/rimraf ./dist && tsc -w",
-        "tslint": "tslint -c tslint.json 'src/**/*.ts'",
-        "test": "../../../node_modules/.bin/jest --coverage && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-server.json",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/platforms/server/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/platforms/server",
-        "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
-        "cov": "../../../node_modules/.bin/rimraf output && npm run test"
+        "build": "yarn rimraf ./dist && yarn tsc",
+        "watch": "yarn rimraf ./dist && yarn tsc -w",
+        "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
+        "test": "yarn jest --coverage && yarn run coverage",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-server.json -o",
+        "docs": "yarn rimraf ../../../docs/modules/framework/server/ && yarn docs:doctype && node ../../../docs/docs.js modules/framework/server",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
+        "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-server -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "publishConfig": {
         "access": "public"
     },
     "dependencies": {
-        "@methodus/framework-decorators": "^7.0.14",
+        "@methodus/framework-decorators": "^8.0.8",
         "debug": "^4.2.0",
         "fast-safe-stringify": "^2.0.7",
+        "tslib": "^2.0.3",
         "uuid": "^8.1.0"
     },
-    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
+    "devDependencies": {
+        "@methodus/framework-data": "^8.0.8",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^14.14.9",
+        "@types/uuid": "^3.4.4",
+        "cpr": "^3.0.1",
+        "jest": "^26.6.3",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typescript": "^4.1.2"
+    },
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }

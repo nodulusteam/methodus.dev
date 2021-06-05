@@ -5,16 +5,39 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
             "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
+            "console": "internalConsole",
+            "name": "T | Run jest",
+            "type": "node",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": ["run", "--inspect-brk", "jest"],
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": ["--verbose"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "env": {
+                //"DEBUG":"methodus:*"
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run test",
+            "type": "node",
+            "runtimeExecutable": "yarn",
+            "runtimeArgs": [
+                "node",
+                "${workspaceRoot}/dist/tests/express.test.js"
             ],
-            "program": "${workspaceFolder}\\lib\\testing.test.js",
-            "outFiles": [
-                "${workspaceFolder}/**/*.js"
-            ]
+            "stopOnEntry": false,
+            "outputCapture": "std",
+            "args": ["--verbose"],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "env": {
+                "DEBUG": "methodus:*,express:*"
+            }
         }
     ]
 }

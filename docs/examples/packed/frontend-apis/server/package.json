@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@methodus/data": "^2.0.35",
+    "@methodus/framework-data": "^1.0.0",
     "@methodus/describe": "^7.1.21",
     "@methodus/platform-express": "^7.0.13",
     "@methodus/platform-rest": "^7.0.13",

@@ -3,16 +3,16 @@ import { MethodConfig } from '../method/method-config';
 import { Method } from '../method/method';
 import injection from '@methodus/framework-injection';
 
-@injection.Inject('MethodHandler')
+@injection.Injectable('MethodHandler')
 class MethodHandler {
-    methodDecorator() {}
+    methodDecorator() {
+        return null;
+    }
 }
 
 injection.Injector.register(
-    MethodHandler,
-    [],
-    injection.RegistrationTypes.Service,
-    'MethodHandler'
+    'MethodHandler',
+    MethodHandler
 );
 
 @MethodConfig('TestClass')

@@ -49,8 +49,7 @@ export function MethodPipe(
         paramsMap.sort((a, b) => {
             return a.index - b.index;
         });
-
-        const methodHandler = injection.Injector.get('MethodPipeHandler');
+        const methodHandler = injection.Injector.resolve<typeof target>('MethodPipeHandler');
         return methodHandler.methodDecorator.apply(this, [
             target,
             propertyKey,

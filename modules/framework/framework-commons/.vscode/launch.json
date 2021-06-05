@@ -4,24 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {
-            "request": "launch",
-            "console": "internalConsole",
-            "name": "T | Run jest",
-            "type": "node",
-            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
-            "stopOnEntry": false,
-            "outputCapture": "std",
-            "args": [
-                "--verbose"
-            ],
-            "sourceMaps": true,
-            "cwd": "${workspaceRoot}",
-            "runtimeExecutable": null,
-            "env": {
-                "DEBUG":"methodus:*"
-            }
-        },
+         
         {
             "request": "launch",
             "console": "internalConsole",

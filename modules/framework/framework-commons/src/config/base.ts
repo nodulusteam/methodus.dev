@@ -1,4 +1,4 @@
-import { IMethodusConfig, ClassRef, MethodType, Dictionary } from "../interfaces";
+import { IMethodusConfig, ClassRef, MethodType, Dictionary } from '../interfaces';
 
 export abstract class BaseServer { // implements Methodus.Server
     config?: IMethodusConfig;

@@ -1,0 +1,87 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch TypeScript",
+            "type": "node",
+            "console": "integratedTerminal",
+            "request": "launch",
+            "runtimeExecutable": "/usr/local/bin/node",
+            "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
+            "args": ["./server/tests/servers/autorun.ts", "--transpile-only"],
+            "cwd": "${workspaceFolder}",
+            "internalConsoleOptions": "openOnSessionStart",
+            "skipFiles": ["<node_internals>/**", "node_modules/**"],
+            "env": {
+              "DEBUG": "express:*",
+              "TS_NODE_PROJECT": "${workspaceFolder}/tsconfig.json",
+              "PORT":"3060"
+            }
+          },
+
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Launch Program",
+            "program": "${workspaceFolder}/build/index.js"
+            
+        },
+      
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run describe tests",
+            "type": "node",
+            "program": "${workspaceRoot}/node_modules/jest/bin/jest",
+            "stopOnEntry": false,
+            "args": [],
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "env": {
+                "NODE_LOG_CONSOLE": "true",
+                "NODE_LOG_LEVEL": "trace",
+                "NODE_ENV": "test",
+            }
+        },
+        {
+            "request": "launch",
+            "console": "internalConsole",
+            "name": "T | Run Test server",
+            "sourceMaps": true,
+            "cwd": "${workspaceRoot}",
+            "runtimeExecutable": null,
+            "type": "node",
+            "program": "${workspaceFolder}/build/tests/servers/autorun.js",
+            "env": {
+                "DEBUG": "methodus:*",
+                "PORT": "3050",
+                "NODE_ENV": "test",
+                "NODE_LOG_CONSOLE": "true"
+            }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "U | Compile client contracts ",
+            "runtimeExecutable": "/usr/local/bin/node",
+            "runtimeArgs": ["--trace-warnings"],
+            "program": "./node_modules/@methodus/contracts/dist/client.js",
+            "args": ["./build.json"],
+            "cwd": "${workspaceRoot}",
+            "console": "internalConsole",
+            "outputCapture": "std",
+            "outFiles": [],
+            "sourceMaps": true,
+            "env": {
+              "KEEP_SRC": "false",
+              "YARN": "true",
+              "DEBUG": "none",
+              "NODE_ENV": "debug"
+            }
+        }
+    ]
+}

@@ -1,11 +1,9 @@
-import injection from '@methodus/server/injection';
 import { Verbs } from '../shim';
 import decorators from '@methodus/server/decorators';
 import { MethodResult, AuthType, Mapping } from '@methodus/server/commons';
 /**
  * @hidden
  */
-@injection.Injectable()
 @decorators.Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @decorators.MethodConfig('TestTarget')
 export class TestTarget {
@@ -18,11 +16,11 @@ export class TestTarget {
 
 
 
-    @decorators.MethodMock({})
+    // @decorators.MethodMock({})
     @decorators.Method(Verbs.Get, '/api/player')
     public async list(@Mapping.Headers('auth') auth: string,
         @Mapping.Query('order_by') orderBy: string): Promise<MethodResult> {
-        return new MethodResult({});
+        return new MethodResult({ auth, orderBy });
     }
 
     @decorators.Method(Verbs.Get, '/api/playerdata/defaults')

@@ -13,8 +13,8 @@ export class ResponseParser {
     response: any;
     constructor(type: ServerType | nameStruct) {
         const name = (type as nameStruct).name ? (type as nameStruct).name : type;
-        this.parser = injection.Injector.get(`ParserFor${name}`);
-        const responseClass = injection.Injector.get(`ResponseFor${name}`);
+        this.parser = injection.Injector.resolve(`ParserFor${name}`);
+        const responseClass = injection.Injector.resolve(`ResponseFor${name}`);
         if (!this.parser || !responseClass) {
             throw new Error(`No ${name} parser loaded, are you missing an additional package?`)
         }

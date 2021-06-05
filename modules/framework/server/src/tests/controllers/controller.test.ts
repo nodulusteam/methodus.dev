@@ -1,9 +1,9 @@
 import decorators from '@methodus/framework-decorators';
-import injection from '@methodus/framework-decorators/injection';
+// import injection from '@methodus/framework-decorators/injection';
 
 
 
-import { TestLogger } from './logger.service';
+// import { TestLogger } from './logger.service';
 import { ScreenModel } from '../models/screen.model';
 import { MethodResult, Mapping, AuthType, MethodError, MethodResultStatus } from '@methodus/framework-decorators/commons';
 import { Verbs } from '../models/verbs';
@@ -15,7 +15,6 @@ new MethodHandler();
 /**
  * @hidden
  */
-@injection.Injectable()
 @decorators.Auth(AuthType.Basic, { user: 'user', pass: 'pass' })
 @decorators.MethodConfig('TestController')
 export class TestController {
@@ -23,8 +22,8 @@ export class TestController {
     /**
      *
      */
-    constructor(@injection.Inject() private testLogger: TestLogger) {
-        this.testLogger.log('instance created for TestController');
+    constructor() { //@injection.Inject('TestLogger') private testLogger: TestLogger
+        // this.testLogger.log('instance created for TestController');
     }
 
 

@@ -38,6 +38,7 @@ const projects = [
   'rest',
   'testing',
   'server',
+  'web',
   //'integrations',
   'cli',
   'contracts'

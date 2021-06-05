@@ -54,19 +54,16 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 Object.assign(methodus, methodus._descriptors[propertyKey], existingClassMetadata);
                 methodus.resolver = client.resolver;
                 try {
-                    const result = await client.transportType.send(methodus, args, paramsMap, []);
-                    return result;
+                    return client.transportType.send(methodus, args, paramsMap, []);
                 } catch (ex) {
                     if (Buffer.isBuffer(ex.error)) {
                         ex.error = ex.error.toString();
-                        throw (ex);
+                        throw ex;
                     }
                 }
             } else {
-                const result = await originalMethod.apply(this, args);
-                return result;
+                return originalMethod.apply(target, args);
             }
-
         } else {
             const existingClassMetadata: any = injection.ClassContainer.get(methodus.name);
             // merge the configuration object
@@ -98,7 +95,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                         methodResult = new MethodResult(methodus._mocks[propertyKey]);
                         break;
                     case MethodType.Local:
-                        methodResult = originalMethod.apply(this, ParserResponse.args);
+                        methodResult = originalMethod.apply(target, ParserResponse.args);
                         break;
                 }
             } catch (error) {
@@ -107,7 +104,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 if (ParserResponse.isRest) {
                     return parser.response(args, error, restHeaders);
                 } else {
-                    throw (error);
+                    throw error;
                 }
             }
 
@@ -123,9 +120,7 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 commons.logger.info(`@Method::OK`, methodType, originalMethod.name);
                 return methodResult;
             }
-
         }
-
     };
     delete descriptor.value;
     delete descriptor.writable;
@@ -141,13 +136,12 @@ export function verbBasedMethod(target: any, propertyKey: string, descriptor: Ty
                 return value.apply(this, arguments as any);
             },
         });
-    }
+    };
     return descriptor;
 }
 
-
 function validateServerIsRunning() {
     if (!Servers) {
-        throw (new Error(`methodus server is not running, did you miss a 'run' statement?`));
+        throw new Error(`methodus server is not running, did you miss a 'run' statement?`);
     }
 }

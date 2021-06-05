@@ -21,8 +21,6 @@ describe('Test the flow', () => {
     });
 
     describe('test commands', () => {
-        const cliPath = __dirname + '/flow.js';
-
         it('open methodus select application', async () => {
             let reset = mockInquirer([{
                 template: 'application'
@@ -37,7 +35,7 @@ describe('Test the flow', () => {
             let reset = mockInquirer([{
                 template: 'controller'
             },{
-                name: `${projectName}.controller`
+                name: `${projectName}`
             }])
             await flowAllPaths('');
             expect(true).toBe(true);

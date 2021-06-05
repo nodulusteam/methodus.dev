@@ -1,12 +1,13 @@
 {
     "compilerOptions": {
-        "target": "es2015",
+        "target": "es2017",
         "moduleResolution": "node",
         "module": "commonjs",
         "outDir": "dist",
         "rootDir": "src",
         "sourceMap": true /* Generates corresponding '.map' file. */,
         "declaration": true,
+        "skipLibCheck": true,
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": false /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
         "strict": true /* Enable all strict type-checking options. */,
@@ -30,24 +31,8 @@
         /* Experimental Options */
         "experimentalDecorators": true /* Enables experimental support for ES7 decorators. */,
         "emitDecoratorMetadata": true /* Enables experimental support for emitting type metadata for decorators. */,
-        "lib": ["es2017", "es2015"],
-        "types": ["jest", "node"]
+        "lib": ["es2017", "es2015"]
     },
     "include": ["src/**/*.ts", "tests"],
-    "exclude": ["node_modules/**", "build_consumers", "build_path", "node_modules"],
-    "typedocOptions": {
-        "exclude": "**/*+(index|.spec|.e2e).ts,tests",
-        "module": "commonjs",
-        "excludeExternals": "true",
-        "excludeNotExported": "true",
-        "target": "commonjs",
-        "includeDeclarations": "false",
-        "mode": "file",
-        "baseUrl": "modules/tools/contracts",
-        "name": "Methodus - tools/contracts",
-        "readme": "readme.md",
-        "out": "../../../docs/modules/tools/contracts",
-        "theme": "markdown"
-    },
     "compileOnSave": true
 }

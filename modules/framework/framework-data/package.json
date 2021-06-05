@@ -1,0 +1,57 @@
+{
+    "name": "@methodus/framework-data",
+    "version": "8.0.8",
+    "description": "Mongodb / Cosmosdb data access Modeling for Methodus",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "yarn rimraf dist && yarn tsc",
+        "test": "jest --runInBand",
+        "testold": "npm run build && nyc --reporter=lcov --reporter=html mocha --timeout 10000 lib/tests/**/*.spec.js --recursive"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/nodulusteam/-methodus-data"
+    },
+    "author": "",
+    "license": "ISC",
+    "peerDependencies": {
+        "mongodb": "^3.*.*"
+    },
+    "dependencies": {
+        "class-validator": "^0.12.2",
+        "debug": "^4.1.1",
+        "escape-string-regexp": "^1.0.5",
+        "flat": "^4.0.0",
+        "generic-pool": "^3.3.0",
+        "is-buffer": "^1.1.6",
+        "jest": "^26.6.3",
+        "lodash": "^4.17.4",
+        "logelas": "^4.0.0",
+        "obj-stringify": "^1.0.0",
+        "object-diff": "0.0.4",
+        "reflect-metadata": "^0.1.10"
+    },
+    "devDependencies": {
+        "@shelf/jest-mongodb": "^1.2.4",
+        "@types/chai": "^4.0.0",
+        "@types/jest": "^26.0.23",
+        "@types/lodash": "^4.14.116",
+        "@types/mongodb": "*",
+        "@types/node": "^10.0.0",
+        "chai": "^3.5.0",
+        "cross-env": "^5.0.5",
+        "faker": "^5.4.0",
+        "mocha": "^2.5.3",
+        "mongodb": "3.6.3",
+        "mongodb-memory-server": "^6.9.3",
+        "npm-run-all": "^4.1.5",
+        "nyc": "^13.1.0",
+        "proxyquire-2": "1.0.7",
+        "rimraf": "^3.0.0",
+        "sinon": "^4.4.9",
+        "ts-jest": "^26.5.6",
+        "typescript": "^4.2.4"
+    },
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
+}

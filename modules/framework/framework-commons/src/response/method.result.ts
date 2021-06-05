@@ -38,6 +38,7 @@ export class MethodResult<T = any> {
         const mappedLinks: any = Object.values(links._descriptors).filter((action: any) => {
             return propertyKey === action.propertyKey;
         });
+
         const actionProp = mappedLinks[0];
         if (Array.isArray(this.result)) {
             this.result.forEach((item) => {

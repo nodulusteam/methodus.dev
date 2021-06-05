@@ -1,4 +1,4 @@
-import { Repo, Model, Field } from '@methodus/data';
+import { Repo, Model, Field } from '@methodus/framework-data';
 
 @Model('User')
 export class UserModel extends Repo<UserModel> {

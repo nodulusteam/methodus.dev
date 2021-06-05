@@ -46,7 +46,7 @@ export class MethodusProject {
             ...activeOptions
         });
 
-        this.project.addExistingSourceFiles(`${projectPath}/src/**/*{.ts}`);
+        this.project.addSourceFilesAtPaths(`${projectPath}/src/**/*{.ts}`);
         this.sourceFiles = this.project.getSourceFiles();
     }
 
@@ -256,7 +256,7 @@ export class MethodusProject {
             });
 
 
-            const classDec = createWrappedNode(classes[0].compilerNode) as ClassDeclaration;
+            const classDec: ClassDeclaration = createWrappedNode(classes[0].compilerNode);
 
 
             try {
@@ -293,7 +293,7 @@ export class MethodusProject {
                 });
 
                 targetClass.getMethods().forEach((method: MethodDeclaration) => {
-                    if (!method.hasModifier(SyntaxKind.PrivateKeyword)) {
+                    if (!method.hasModifier(SyntaxKind.PrivateKeyword as any)) {
                         this.HandleMethod(method, options);
                     } else {
                         method.remove();
@@ -330,7 +330,7 @@ export class MethodusProject {
             console.log(`file ${file.getFilePath()} doesn't contain a class model`);
             return;
         }
-        const classDec = createWrappedNode(classes[0].compilerNode) as ClassDeclaration;
+        const classDec:ClassDeclaration = createWrappedNode(classes[0].compilerNode);
         const modelClass = sourceFile.addClass(classDec.getStructure());
 
 

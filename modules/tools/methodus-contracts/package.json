@@ -1,11 +1,11 @@
 {
     "name": "@methodus/contracts",
-    "version": "7.0.20",
+    "version": "8.0.9",
     "description": "",
     "main": "dist/index.js",
     "bin": {
-        "contracts-server": "dist/build.js",
-        "contracts-client": "dist/client.js"
+        "contracts-client": "dist/client.command.js",
+        "contracts-server": "dist/build.command.js"
     },
     "homepage": "https://methodus.dev",
     "repository": {
@@ -26,42 +26,71 @@
         "bind",
         "application"
     ],
+    "docs": {
+        "content": [
+            "README.md",
+            "coverage/test_dashboard.html"
+        ]
+    },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
     "scripts": {
-        "build": "rimraf ./dist && tsc",
-        "tslint": "tslint --project",
+        "build": "yarn rimraf ./dist && yarn tsc",
+        "tslint": "yarn tslint --project",
         "test:contracts": "yarn test:all && yarn coverage",
-        "coverage": "cp ./coverage/coverage-final.json ../../../coverage/coverage-contracts.json",
-        "test:all": "../../../node_modules/.bin/jest --detectOpenHandles --forceExit",
-        "test:server": "run-s test:server:* ",
+        "coverage": "yarn cpr ./coverage/coverage-final.json ../../../coverage/coverage-contracts.json -o",
+        "test:all": "yarn jest --detectOpenHandles --forceExit",
+        "test:server": "yarn run-s test:server:* ",
         "test:server:simple": "./dist/build.js ./build_vars/simple/build.json",
         "test:server:models": "./dist/build.js ./build_vars/models/build.json",
         "test:server:inherit": "./dist/build.js ./build_vars/inherit/build.json",
         "test:server:consumer:simple": "node build_consumers/server/simple/index.js",
-        "test:client": "run-s test:client:*",
+        "test:client": "yarn run-s test:client:*",
         "test:client:simple": "./dist/client.js ./build_vars/simple/build.json",
         "test:client:models": "./dist/client.js ./build_vars/models/build.json",
         "test:client:inherit": "./dist/client.js ./build_vars/inherit/build.json",
         "pretest": "tsc",
-        "docs": "../../../node_modules/.bin/rimraf ../../../docs/modules/tools/contracts/* && ../../../node_modules/.bin/typedoc && node ../../../docs/docs.js modules/tools/contracts",
+        "docs": "yarn rimraf ../../../docs/modules/tools/contracts/ && yarn docs:doctype && node ../../../docs/docs.js modules/tools/contracts",
+        "docs:doctype": "yarn typedoc ./src/index.ts --tsconfig ./tsconfig.docs.json --plugin none",
         "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus-contracts -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "devDependencies": {
-        "@methodus/platform-express": "^7.0.14",
-        "@methodus/platform-rest": "^7.0.14",
-        "@methodus/server": "^7.0.16",
+        "@methodus/platform-express": "^8.0.8",
+        "@methodus/platform-rest": "^8.0.8",
+        "@methodus/server": "^8.0.8",
+        "@types/ejs": "^2.6.0",
+        "@types/faker": "^4.1.9",
+        "@types/glob": "^7.1.1",
+        "@types/graceful-fs": "^4.1.3",
+        "@types/inquirer": "^0.0.43",
+        "@types/jest": "^26.0.15",
         "@types/lodash": "^4.14.75",
+        "@types/node": "^12.12.2",
         "@types/shelljs": "^0.8.8",
-        "jsdoc-regex": "^1.0.1"
+        "@types/tunnel": "^0.0.1",
+        "@types/uuid": "^3.4.4",
+        "@types/yargs": "^11.1.1",
+        "cpr": "^3.0.1",
+        "faker": "^4.1.0",
+        "jest": "^26.6.3",
+        "jest-mock-axios": "^3.2.0",
+        "jsdoc-regex": "^1.0.1",
+        "mock-inquirer": "^1.0.3",
+        "prettier": "^2.0.5",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typescript": "^4.1.2",
+        "uuid": "^8.1.0"
     },
     "dependencies": {
-        "@methodus/data": "^2.0.35",
+        "@methodus/framework-data": "^8.0.8",
         "colors": "^1.1.2",
         "rimraf": "^3.0.1",
-        "shelljs": "^0.7.8",
+        "shelljs": "^0.8.4",
         "shelljs.exec": "^1.1.8",
-        "ts-morph": "^4.0.0"
+        "ts-morph": "^8.1.2"
     },
-    "gitHead": "b73ae22d11228b1c979ba5ccbb1e023a44c80626"
+    "gitHead": "dbcb235e5969c7ac71b8d388051ade62bc837e95"
 }

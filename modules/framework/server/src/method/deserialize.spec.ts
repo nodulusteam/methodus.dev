@@ -27,7 +27,7 @@ describe('Deserialize', () => {
     });
 
     it('object with deserializer with a class type', () => {
-        const deserializeResult = deserialize({ type: requestedType, value: '{ "name": "my name" }' });
+        const deserializeResult = deserialize({ type: RequestedType, value: '{ "name": "my name" }' });
         expect(deserializeResult.name).toBe('my name');
     });
 
@@ -42,11 +42,11 @@ describe('Deserialize', () => {
     });
 });
 
-class requestedType {
+class RequestedType {
     /**
      *
      */
-    constructor(data: requestedType) {
+    constructor(data: RequestedType) {
         this.name = data.name;
     }
     name: string;

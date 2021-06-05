@@ -14,17 +14,10 @@ module.exports = {
   ],
   reporters: [
     'default',
-     
-    ['jest-html-reporters', {      
+    ['jest-html-reporters', {
       'filename': 'coverage/test_dashboard.html',
       'expand': true
     }],
-
-
-    ['jest-html-reporter', {
-      'outputPath': 'coverage/tests.html',
-      'pageTitle': 'Test Report'
-    }]
   ],
   collectCoverage: true,
   "coverageReporters": ["json", "lcov", "text", "clover"],

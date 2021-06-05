@@ -1,15 +1,11 @@
 import 'reflect-metadata';
-import * as express from 'express';
-import * as bodyParser from 'body-parser';
-import * as cookieParser from 'cookie-parser';
-import * as expressSession from 'express-session';
-import * as path from 'path';
-import { Servers } from '@methodus/server';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import expressSession from 'express-session';
+import { Servers, ServerCreator } from '@methodus/server';
 import { BaseServer } from '@methodus/server/commons';
 import { ExpressRouter } from './routing';
-import * as http from 'http';
-import * as https from 'https';
-import * as fileUpload from 'express-fileupload';
+import fileUpload from 'express-fileupload';
 import { ExpressOptions } from './options';
 
 /**
@@ -21,22 +17,28 @@ export class ExpressPlugin extends BaseServer {
         super();
         this._app = express();
         if (options.fileUpload) {
-            this._app.use(fileUpload({
-                limits: { fileSize: options.fileUpload || 50 * 1024 * 1024 },
-            }));
+            this._app.use(
+                fileUpload({
+                    limits: {
+                        fileSize: options.fileUpload || 50 * 1024 * 1024,
+                    },
+                })
+            );
         }
 
-        this._app.use(bodyParser.urlencoded({
-            extended: true,
-        }));
+        this._app.use(
+            express.urlencoded({
+                extended: true,
+            })
+        );
 
-        this._app.use(bodyParser.json({ limit: '10mb' }));
+        this._app.use(express.json({ limit: '10mb' })); 
         this._app.use(cookieParser());
 
         this._app.set('showStackError', true);
-        this._app.set('view engine', 'ejs');
-        const viewPath = path.join(__dirname, '..', '..', '..', 'views');
-        this._app.set('views', viewPath);
+        // this._app.set('view engine', 'ejs');
+        // const viewPath = path.join(__dirname, '..', '..', '..', 'views');
+        // this._app.set('views', viewPath);
         if (options.session) {
             this._app.use(expressSession(options.session));
         }
@@ -45,17 +47,32 @@ export class ExpressPlugin extends BaseServer {
             this._app.use((req: any, res: any, next: any) => {
                 // Website you wish to allow to connect
                 if (req.headers.origin) {
-                    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+                    res.setHeader(
+                        'Access-Control-Allow-Origin',
+                        req.headers.origin
+                    );
                 }
 
                 // Request methods you wish to allow
-                res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-                let headersX = Object.keys(req.headers).map((headerName: any) => {
-                    return headerName.split('-').map((word: any) => {
-                        return headerName.charAt(0).toUpperCase() + headerName.substr(1);
-                    }).join('-');
-                }).join(',');
-                headersX = 'Content-Type,Authorization,x-request-id,' + headersX;
+                res.setHeader(
+                    'Access-Control-Allow-Methods',
+                    'GET, POST, OPTIONS, PUT, PATCH, DELETE'
+                );
+                let headersX = Object.keys(req.headers)
+                    .map((headerName: any) => {
+                        return headerName
+                            .split('-')
+                            .map((word: any) => {
+                                return (
+                                    headerName.charAt(0).toUpperCase() +
+                                    headerName.substr(1)
+                                );
+                            })
+                            .join('-');
+                    })
+                    .join(',');
+                headersX =
+                    'Content-Type,Authorization,x-request-id,' + headersX;
 
                 // Request headers you wish to allow
                 res.setHeader('Access-Control-Allow-Headers', headersX);
@@ -77,24 +94,35 @@ export class ExpressPlugin extends BaseServer {
     public static register(server: any, parentServer: any) {
         if (server.options) {
             const serverType = server.type.name;
-            console.info(`> Starting Express server on port ${server.options.port}`);
-            parentServer._app[serverType] = new ExpressPlugin(server.options);
-            const app = Servers.set(server.instanceId, server.type.name, parentServer._app[serverType]);
+
+            let options = server.options;
+            if (typeof server.options === 'function') {
+                options = server.options.call();
+            }
+
+            console.info(`> Starting Express server on port ${options.port}`);
+            parentServer._app[serverType] = new ExpressPlugin(options);
+            const app = Servers.set(
+                server.instanceId,
+                server.type.name,
+                parentServer._app[serverType]
+            );
             parentServer.app = app._app;
-            if (server.options.secured) {
-                const httpsServer = Servers.get(server.instanceId, 'https')
-                    || https.createServer({
-                        cert: server.options.cert,
-                        key: server.options.key,
-                        passphrase: server.options.passphrase,
-                    }, app._app);
-                parentServer._app.https = httpsServer;
-                Servers.set(server.instanceId, 'https', httpsServer);
-            } else {
-                const httpServer = Servers.get(server.instanceId, 'http')
-                    || http.createServer(app._app);
-                parentServer._app.http = httpServer;
-                Servers.set(server.instanceId, 'http', httpServer);
+            if (options.port) {
+                const serverCreator = new ServerCreator();
+                if (options.secured) {
+                    const httpsServer =
+                        Servers.get(server.instanceId, 'https') ||
+                        serverCreator.createHttps(parentServer.app, options);
+                     Servers.set(server.instanceId, 'https', httpsServer);
+                    parentServer._app.https = httpsServer;
+                } else {
+                    const httpServer =
+                        Servers.get(server.instanceId, 'http') ||
+                        serverCreator.createHttp(parentServer.app);
+                    Servers.set(server.instanceId, 'http', httpServer);
+                    parentServer._app.http = httpServer;
+                }
             }
         } else {
             throw new Error('Missing configuration options for Express');

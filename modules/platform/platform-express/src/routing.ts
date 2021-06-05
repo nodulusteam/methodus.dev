@@ -13,7 +13,7 @@ export class ExpressRouter {
         if (!keyName) {
             keyName = obj.constructor.name;
         }
-        obj = injection.Injector.get(keyName);
+        obj = injection.Injector.resolve(keyName);
 
         const methodus = commons.util.maybeMethodus(obj)[keyName];
         if (methodus.middlewares) {

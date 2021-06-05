@@ -4,15 +4,33 @@
     "private": true,
     "main": "index.js",
     "scripts": {
-        "build": "tsc",
-        "test:integrations": "../../../node_modules/.bin/jest --runInBand --detectOpenHandles --forceExit"
+        "build": "yarn tsc",
+        "test:integrations": "yarn jest --runInBand --detectOpenHandles --forceExit"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@methodus/platform-express": "^7.0.13",
-        "@methodus/platform-rest": "^7.0.13",
-        "@methodus/server": "^7.0.15"
+        "@methodus/platform-express": "^8.0.8",
+        "@methodus/platform-rest": "^8.0.8",
+        "@methodus/server": "^8.0.8"
     },
-    "devDependencies": {}
+    "devDependencies": {
+        "@methodus/framework-data": "^8.0.8",
+        "@types/jest": "^26.0.15",
+        "@types/node": "^10.0.0",
+        "@types/tunnel": "^0.0.1",
+        "@types/uuid": "^3.4.4",
+        "cpr": "^3.0.1",
+        "jest": "^26.6.3",
+        "jest-mock-axios": "^3.2.0",
+        "prettier": "^2.0.5",
+        "reflect-metadata": "^0.1.13",
+        "rimraf": "^3.0.1",
+        "ts-jest": "^26.4.4",
+        "typedoc": "^0.20.36",
+        "typedoc-plugin-markdown": "^3.9.0",
+        "typescript": "^4.1.2",
+        "uuid": "^8.1.0"
+    },
+    "version": "8.0.8"
 }

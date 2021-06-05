@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "declaration": false,
+        "rootDir": "src",
+        "outDir": "dist",
+        "target": "es5",
+        "lib": ["ES2017"],
+        "sourceMap": true,
+        "allowJs": false,
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitReturns": true,
+        "noImplicitThis": true,
+        "noImplicitAny": true,
+        "esModuleInterop": true,
+        "strictNullChecks": true,
+        "suppressImplicitAnyIndexErrors": true,
+        "noUnusedLocals": false
+    },
+    "typedocOptions": {
+        "exclude": "**/*+(index|.spec|.e2e).ts,tests",
+        "name": "Methodus - tools/cli",
+        "readme": "none",
+        "out": "../../../docs/modules/tools/cli"
+    },
+    "exclude": ["node_modules", "dist", "sandbox", "templates"]
+}

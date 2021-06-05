@@ -1,10 +1,10 @@
-const customGlobal: any = window as any;
-customGlobal.fetch = require('jest-fetch-mock');
-customGlobal.fetchMock = customGlobal.fetch;
+ 
 
-import { Injector, MethodType } from '../lib';
+import { Injector, MethodType } from '../';
 import { SocketController } from './contracts';
-
+var axios = require("axios");
+var MockAdapter = require("axios-mock-adapter");
+var mock = new MockAdapter(axios);
 
 (window as any).METHODUS_CONFIG = {
     'SocketController':
@@ -27,7 +27,9 @@ describe('Call SocketController', () => {
         };
 
         const testContract = Injector.get<SocketController>(SocketController);
-        customGlobal.fetch.mockResponseOnce(JSON.stringify({ status: 200, body: { 'ok': 1 } }));
+        mock.onPost("/posts/noname/?item=xxx").reply(200,
+            { 'ok': 1 }
+          );
         const result: any = await testContract.connect({});
         expect(result.io).toBeDefined();
     });

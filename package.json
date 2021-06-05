@@ -1,6 +1,6 @@
 {
     "name": "@methodus/dev",
-    "version": "7.0.2",
+    "version": "8.0.4",
     "private": true,
     "description": "Methodus - agnostic framework for node",
     "keywords": [
@@ -23,41 +23,51 @@
     },
     "author": "NodulusTeam",
     "license": "BSD-3-Clause",
+    "workspaces": {
+        "packages": [
+            "modules/framework/*",
+            "modules/platform/*",
+            "modules/tests/*",
+            "modules/plugins/*",
+            "modules/tools/*",
+            "!modules/extras/*",
+            "!modules/tools/methodus-cli/sandbox/*"
+        ]
+    },
+    "resolutions": {
+        "acorn": "^6.2.1",
+        "@types/mousetrap": "1.6.3",
+        "clone": "2.1.2",
+        "underscore.string": "3.3.5"
+    },
     "scripts": {
-        "ci": "yarn && run-s bootstrap build test build:additionals docs",
-        "clean": "rimraf ./modules/**/**/yarn.lock && rimraf ./modules/**/**/node_modules/* && rimraf ./modules/**/**/dist && rimraf ./modules/**/**/coverage",
-        "build": "lerna run build",
+        "ci:build": "yarn && yarn run-s build test:all coverage docs",
+        "clean": "yarn rimraf ./modules/**/**/dist && yarn rimraf ./modules/**/**/coverage",
+        "build": "yarn lerna run build",
         "build:additionals": "lerna run build:additionals",
-        "bootstrap": "lerna bootstrap && yarn bootstrap:link",
-        "bootstrap:link": "lerna link",
-        "watch": "rimraf ./lib && tsc -w",
-        "tslint": "tslint -c tslint.json 'src/**/*.ts'",
+        "tslint": "yarn tslint -c tslint.json 'src/**/*.ts'",
         "pretest": "[ -d coverage ] || mkdir coverage",
-        "test": "lerna run test",
+        "test": "yarn workspaces foreach -ptv run test",
+        "test:all": "yarn run test && yarn run-s test:integrations test:contracts test:cli",
         "test:cli": "lerna run test:cli",
         "test:integrations": "lerna run test:integrations",
-        "test:contracts": "lerna run test:contracts && yarn coverage",
-        "mutation": "lerna run mutation",
+        "test:contracts": "lerna run test:contracts",
+        "mutation": "yarn workspaces foreach -ptv run mutation",
         "coverage": "node ./coverage.js",
         "bump": "lerna version patch --no-push",
-        "publish-ci": "yarn commit-version | exit 0 && lerna publish from-package -y --no-verify-access ",
+        "publish-ci": "yarn commit-version | exit 0 && yarn lerna publish from-package -y --no-verify-access ",
         "commit-version": "git add . && git commit -m \"chore(release): publish `node -p 'require(\"./lerna.json\").version'`\"",
         "release": "lerna publish from-package",
         "changelog": "auto-changelog --template changelog-template.hbs -p -u --commit-limit false",
         "changelog-debug": "auto-changelog --template changelog-template.hbs -p --template json --output changelog-data.json",
-        "docs:serve": "docsify serve ./docs",
-        "docs": "lerna run docs",
+        "docs:serve": "yarn docsify serve ./docs",
+        "docs": "yarn workspaces foreach -ptv run docs",
         "docsweb": "cross-env NODE_OPTIONS=--max_old_space_size=8192 typedoc --mode modules --out docs/documentation ./",
-        "sonar": "sonar-scanner.bat -Dsonar.projectKey=nodulusteam_-methodus -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432",
-        "cov": "rimraf output && npm run test"
+        "sonar": "sonar-scanner -Dsonar.projectKey=nodulusteam_-methodus -Dsonar.organization=nodulusteam-github -Dsonar.sources=. -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=e01e7adc2647251c0651a3bab28de27b479b4432"
     },
     "devDependencies": {
-        "@methodus/data": "^2.0.0",
         "@monorepo-utils/collect-changelog": "^2.2.0",
-        "@stryker-mutator/core": "^3.3.1",
-        "@stryker-mutator/jest-runner": "^3.3.1",
-        "@stryker-mutator/typescript": "^3.3.1",
-        "@types/jest": "^24.0.23",
+        "@types/jest": "^26.0.15",
         "@types/mongodb": "^3.5.23",
         "@types/node": "^10.0.0",
         "@types/uuid": "^3.4.4",
@@ -65,14 +75,11 @@
         "child-process-debug": "0.0.7",
         "commitizen": "^4.1.2",
         "cross-env": "^7.0.2",
-        "docsify": "^4.10.2",
+        "docsify-cli": "^4.4.3",
         "istanbul-api": "^3.0.0",
         "istanbul-lib-coverage": "^3.0.0",
         "istanbul-lib-report": "^3.0.0",
         "istanbul-reports": "^3.0.2",
-        "jest": "^24.9.0",
-        "jest-html-reporter": "^3.1.3",
-        "jest-html-reporters": "^2.0.3",
         "lerna": "^3.22.1",
         "lerna-semantic-release": "^9.1.0",
         "memory-streams": "^0.1.3",
@@ -86,11 +93,15 @@
         "rimraf": "^3.0.1",
         "semantic-release": "^17.1.2",
         "standard-version": "^8.0.1",
-        "ts-jest": "^24.2.0",
         "tslint": "^5.11.0",
-        "typedoc": "^0.17.8",
-        "typedoc-plugin-markdown": "^2.3.1",
-        "typescript": "^3.9.5"
+        "typescript": "^4.1.2"
     },
-    "dependencies": {}
+    "dependenciesMeta": {
+        "jest-html-reporters@2.1.0": {
+            "unplugged": true
+        },
+        "ts-morph@8.1.2": {
+            "unplugged": true
+        }
+    }
 }

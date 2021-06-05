@@ -1,4 +1,4 @@
-import { Repo, Field, ModelInMemory } from '@methodus/data';
+import { Repo, Field, ModelInMemory } from '@methodus/framework-data';
 
 @ModelInMemory('Todo')
 export class TodoModel extends Repo<TodoModel> {
