@@ -24,7 +24,7 @@ export function Inject(name?: string, propertyName?: string): any {
                 constructorArgs[parameterIndex]
             );
         } else {
-            throw `missing property name for injection`;
+            throw new Error(`missing property name for injection`);
         }
     };
 }

@@ -14,7 +14,6 @@ describe('Injection decorators', () => {
     });
 
     it('Use dependency', async () => {
-        //Injector.inject(RegistrationTypes.Service, ClassB, 'ClassB');
         const mainModule = Injector.resolve<Main>('Main');
         const result = mainModule.add(2, 3);
         expect(mainModule).toBeDefined();

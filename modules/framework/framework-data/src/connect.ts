@@ -100,7 +100,7 @@ export class DBHandler {
       { poolSize: 10 },
       { replicaSet: undefined },
       { ssl: false },
-      { readPreference: ReadPreference.PRIMARY_PREFERRED },
+      { readPreference: mongo.ReadPreference.PRIMARY_PREFERRED },
       { user: undefined },
       { password: undefined },
       { useUnifiedTopology: true },
