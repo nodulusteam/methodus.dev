@@ -1,9 +1,7 @@
 
 import 'reflect-metadata';
 import { ODM } from '../odm-models';
-import { logger } from '../logger';
 const metadataKey: string = 'odm';
- 
 
 /** the model decorator registers the model with the odm
  *  @param {string} name - the name of the db (mongo) collection.

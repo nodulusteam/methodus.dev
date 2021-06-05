@@ -24,8 +24,9 @@ describe('BlocklyComponent', () => {
 
   beforeEach(async(() => {
 
-    new DescribeView();
-
+    const contract = new DescribeView();
+    contract.action;
+    
     jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
     TestBed.configureTestingModule({
       imports: [

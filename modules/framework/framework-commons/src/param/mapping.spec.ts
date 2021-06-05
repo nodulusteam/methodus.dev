@@ -24,7 +24,9 @@ class Controller {
         @Mapping.Application('application') application: string,
         @Mapping.Response('response') reponse: string,
         @Mapping.Request('request') request: string
-    ) {}
+    ) {
+        console.log(data);
+    }
 }
 
 describe('Test Mapping', () => {

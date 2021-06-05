@@ -15,18 +15,10 @@ export class MenuComponent implements OnInit {
         version: string;
         name: string;
     };
-    constructor(
-        private readonly route: ActivatedRoute,
-        private readonly router: Router,
-        private readonly location: Location,
-        private readonly _ngZone: NgZone
-    ) {}
 
     async ngOnInit() {
         const dashboard = await Injector.get<DescribeView>('DescribeView').dashboard();
-
         this.app = dashboard.app;
-
         this.color = (window as any).describe_color;
     }
 }

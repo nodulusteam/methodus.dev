@@ -43,8 +43,7 @@ describe('Test additional method classes', () => {
     });
 
     it('ServerConfig', async () => {
-        let config = new ServerConfig(TestClass, { onStart: 'go' });
-        config = new ServerConfig(TestClass);
+        const config = new ServerConfig(TestClass);
         expect(config).toBeDefined();
     });
 

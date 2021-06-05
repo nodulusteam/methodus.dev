@@ -1,9 +1,7 @@
 
 import 'reflect-metadata';
 import { ODM } from '../odm-models';
-import { logger } from '../logger';
 const metadataKey: string = 'odm';
-import * as _ from 'lodash';
 
 
 

@@ -3,7 +3,7 @@ import 'reflect-metadata';
 import { ODM } from '../odm-models';
 import { logger } from '../logger';
 const metadataKey: string = 'odm';
-import { Transform, TransformDirection } from '../enums/';
+import { Transform } from '../enums/';
 import { DBHandler } from '../connect';
 import * as _ from 'lodash';
 import { validate } from './validator';

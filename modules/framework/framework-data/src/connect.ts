@@ -1,5 +1,4 @@
 import * as mongo from "mongodb";
-import { Db, ReadPreference } from "mongodb";
 import { logger } from "./logger";
 
 export class DBHandler {
@@ -36,7 +35,7 @@ export class DBHandler {
           }
         },
         acquire: async () => {
-          return await DBHandler.connectionsPromises[connectionName];
+          return DBHandler.connectionsPromises[connectionName];
         },
         destroy: (client) => {
           client.disconnect();
@@ -46,10 +45,9 @@ export class DBHandler {
       factory.create(this.config);
       DBHandler.connectionPools[connectionName] = factory;
     }
-    const connection = await DBHandler.connectionPools[
+    return DBHandler.connectionPools[
       connectionName
     ].acquire();
-    return connection;
   }
 
   static async initConnection(config, connectionName?: string) {
