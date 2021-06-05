@@ -1,11 +1,8 @@
 import "reflect-metadata";
-import { logger } from '../logger';
-import { Transform, TransformDirection } from '../enums/';
 import { ODM, FieldDetails } from '../odm-models';
 
 const metadataKey: string = 'odm';
 
-// TODO:Ron: shouldn't this function be called something like setDecoratorMetadata?
 export function getDecoratorByType(fieldDetails: FieldDetails) {
     return function (target, propertyKey: string, descriptor: PropertyDescriptor): any {
         const odm: ODM = Reflect.getOwnMetadata(metadataKey, target) || new ODM();
@@ -18,18 +15,3 @@ export function getDecoratorByType(fieldDetails: FieldDetails) {
         Reflect.defineMetadata(metadataKey, odm, target);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

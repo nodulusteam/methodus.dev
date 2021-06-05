@@ -1,7 +1,5 @@
 import "reflect-metadata";
-import { logger } from '../logger';
 const metadataKey: string = 'odm';
-import { Transform, TransformDirection } from '../enums/';
 /** the Virtual decorator registers the model with the odm
  *  @param {string} name - the name for the virtual property
  *  @param {string} collectionName - the name of the foreign collection.

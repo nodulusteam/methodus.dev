@@ -1,5 +1,4 @@
-import { ODM, FieldDetails, Fields } from '../odm-models';
-import { getDecoratorByType } from './decorator_helper';
+import { ODM, FieldDetails } from '../odm-models';
 const metadataKey: string = 'odm';
 
 /** the model decorator registers the model with the odm
