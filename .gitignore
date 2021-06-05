@@ -17,3 +17,4 @@ dist
 modules/tools/methodus-describe/build/
 .yarn/
 docs/modules/**/*
+modules/plugins/describe/@methodus/describe-client/
