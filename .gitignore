@@ -15,3 +15,5 @@ dist
 # stryker temp files
 .stryker-tmp
 modules/tools/methodus-describe/build/
+.yarn/
+docs/modules/**/*
