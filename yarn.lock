@@ -2731,10 +2731,10 @@ __metadata:
 
 "@methodus/describe-client@file:../describe/@methodus/describe-client::locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui":
   version: 8.0.9
-  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=6991dc&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
+  resolution: "@methodus/describe-client@file:../describe/@methodus/describe-client#../describe/@methodus/describe-client::hash=e908cd&locator=%40methodus%2Fdescribe-ui%40workspace%3Amodules%2Fplugins%2Fdescribe-ui"
   peerDependencies:
     "@methodus/platform-web": ^7.0.0
-  checksum: 0f6d92f026e51c983661dcf98c47555383f9ae82917fc00d7d072c7dec7901293fbd163258a8e431dd7019fe7c87bafd236e8d3ad6499d873375af096c2f6c26
+  checksum: e6469f688b4b645df5c4395a680fc4a8d43cac9899453d72c7eb8aee9205ef15109190373de7cd67fffdfdc788fc37fe96d6a1898c1de0b097d9e77f7c9f646e
   languageName: node
   linkType: hard
 
@@ -2929,7 +2929,7 @@ __metadata:
     "@types/mongodb": "*"
     "@types/node": ^10.0.0
     chai: ^3.5.0
-    class-validator: ^0.12.2
+    class-validator: ^0.14.0
     cross-env: ^5.0.5
     debug: ^4.1.1
     escape-string-regexp: ^1.0.5
@@ -4732,10 +4732,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/validator@npm:13.0.0":
-  version: 13.0.0
-  resolution: "@types/validator@npm:13.0.0"
-  checksum: 22cd062bf92c81939c7610f94252a1997b0ed4d67f5f39c36db0d28dfb17d554077b8c7abe70cf91bb38bc69d2ec0110e4ccd7cc3a98e177ddcf5bbe2c654426
+"@types/validator@npm:^13.7.10":
+  version: 13.7.15
+  resolution: "@types/validator@npm:13.7.15"
+  checksum: aac0fd6a4b9ea2d222e434addaf261571b11955fc2e74632d3c4022ebb61c03e3690f1b824b4185e16441a3b3eeaa8a5a144171f73604152511fd946baffa5de
   languageName: node
   linkType: hard
 
@@ -7278,15 +7278,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"class-validator@npm:^0.12.2":
-  version: 0.12.2
-  resolution: "class-validator@npm:0.12.2"
+"class-validator@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "class-validator@npm:0.14.0"
   dependencies:
-    "@types/validator": 13.0.0
-    google-libphonenumber: ^3.2.8
-    tslib: ">=1.9.0"
-    validator: 13.0.0
-  checksum: ebd2b59df742f4750af173ae5b75fd66251da48568f60810a4aac87587dc4e9b43d42648c0c5e161cc1626e5201a3d7500fc341b31134a68d9420838fedc8771
+    "@types/validator": ^13.7.10
+    libphonenumber-js: ^1.10.14
+    validator: ^13.7.0
+  checksum: 5faf11bef14d9013e299ca152f7d2b95fcadf8290fe8681e54c6b509cd5df8d8b43999970ad18e8ee359bebdbb143cab37e212c793adf28cca09a717bb9eb7a2
   languageName: node
   linkType: hard
 
@@ -12010,13 +12009,6 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"google-libphonenumber@npm:^3.2.8":
-  version: 3.2.21
-  resolution: "google-libphonenumber@npm:3.2.21"
-  checksum: 3f71d2c297ce19d8bf7de4b524c3f37891c5c9db3b01ec5f9f16f1fb5a0563f58e6c28cdfb20f453ce63a7e7e09eb7d518f04b0c001e78a55acc2bcbb9087402
-  languageName: node
-  linkType: hard
-
 "got@npm:^9.6.0":
   version: 9.6.0
   resolution: "got@npm:9.6.0"
@@ -15564,6 +15556,13 @@ fsevents@~2.1.2:
     semver: ^7.3.5
     stringify-package: ^1.0.1
   checksum: 1edabd9c9385781cd1c2d6f8a3d0ebf27a391486db4fa34c0a8a5bea5e7c17062775071a387d27c65f732765f28ba7ec41a160f4b9b978c48b43f6aa70516fde
+  languageName: node
+  linkType: hard
+
+"libphonenumber-js@npm:^1.10.14":
+  version: 1.10.28
+  resolution: "libphonenumber-js@npm:1.10.28"
+  checksum: 6f260fc4e24cecfc2c299a52e01a726ad411120399ba2560bfceca68c26a29138e7b230e468d594682910844e7eacdf9c4545db76f83d45d0a56492fbe3717f0
   languageName: node
   linkType: hard
 
@@ -24155,17 +24154,17 @@ resolve@~1.1.7:
   languageName: node
   linkType: hard
 
-"tslib@npm:>=1.9.0, tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.2.0":
-  version: 2.2.0
-  resolution: "tslib@npm:2.2.0"
-  checksum: 2d35468c470410871c5246e43f12dcb6d0fc363b617c176f26443b9530e5c5ee8448966892a42956168d8f495da7865bda33dfe82c26c91991e28999974a618f
-  languageName: node
-  linkType: hard
-
 "tslib@npm:^1.10.0, tslib@npm:^1.7.1, tslib@npm:^1.8.0, tslib@npm:^1.8.1, tslib@npm:^1.9.0, tslib@npm:^1.9.3":
   version: 1.14.1
   resolution: "tslib@npm:1.14.1"
   checksum: f44fe7f216946b17d3e3074df3746372703cf24e9127b4c045511456e8e4bf25515fb0a1bb3937676cc305651c5d4fcb6377b0588a4c6a957e748c4c28905d17
+  languageName: node
+  linkType: hard
+
+"tslib@npm:^2.0.0, tslib@npm:^2.0.3, tslib@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "tslib@npm:2.2.0"
+  checksum: 2d35468c470410871c5246e43f12dcb6d0fc363b617c176f26443b9530e5c5ee8448966892a42956168d8f495da7865bda33dfe82c26c91991e28999974a618f
   languageName: node
   linkType: hard
 
@@ -24963,10 +24962,10 @@ typescript@~3.9.7:
   languageName: node
   linkType: hard
 
-"validator@npm:13.0.0":
-  version: 13.0.0
-  resolution: "validator@npm:13.0.0"
-  checksum: c537ecd87c245aad5466a3821c9f87909d6ddd695daddc37691863a79b481a7efc0f3d3e88d0bf001d8d9c64fb4151c4e7a92fe060899c86d8ad9c334dceac2d
+"validator@npm:^13.7.0":
+  version: 13.9.0
+  resolution: "validator@npm:13.9.0"
+  checksum: f05e869519b6b9dd9fd480c1119caf21be619d4430f65233dc2eb3d1c61fc68b4eda1045f1d600a1a3639eabf1b1a534975b0f909808b60d1b11c0d2ad0dec66
   languageName: node
   linkType: hard
 
